@@ -268,7 +268,8 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		Object src = e.getSource();
 		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(viewDesempenho.getIdadeJFT())
 				&& !e.getSource().equals(viewDesempenho.getIdadeJFT())
-				&& !e.getSource().equals(viewDesempenho.getIdadeMortalidadeJFT())) {
+				&& !e.getSource().equals(viewDesempenho.getIdadeMortalidadeJFT())
+				&& !e.getSource().equals(viewDesempenho.getControleFornecidaJFT())) {
 			System.out.println("left");
 			Component prev = viewDesempenho.getFocusTraversalPolicy().getComponentBefore(viewDesempenho,
 					(JFormattedTextField) src);
@@ -523,17 +524,20 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 				if (msg.length() != 0) {
 					JOptionPane.showMessageDialog(viewDesempenho, "Problema(s):\n" + msg, "DIGEX - Erro",
 							JOptionPane.ERROR_MESSAGE);
-					fluxoProblemaDigitacaoMortalidade();
+					fluxoProblemaDigitacaoRacoes();
 				} else if (Integer.parseInt(viewDesempenho.getIdadeMortalidadeJFT().getText()) == 0
 						&& Integer.parseInt(viewDesempenho.getNrMortalidadeJFT().getText()) == 0
 						&& Integer.parseInt(viewDesempenho.getPesoMortalidadeJFT().getText()) == 0) {
-					viewDesempenho.getConsumoJP().setBorder(defaultRmeJP);
+					viewDesempenho.getPnlMortalidade().setBorder(defaultRmeJP);
+					viewDesempenho.getControleMortalidadeJFT().setEnabled(true);
 					((JFormattedTextField) e.getSource()).transferFocus();
-					viewDesempenho.getConsumoJP().setBorder(defaultRmeJP);
-					mortosTemp
-							.add(new MortalidadeVOP(Integer.parseInt(viewDesempenho.getIdadeMortalidadeJFT().getText()),
-									Integer.parseInt(viewDesempenho.getNrMortalidadeJFT().getText()),
-									Integer.parseInt(viewDesempenho.getPesoMortalidadeJFT().getText())));
+					viewDesempenho.getControleMortalidadeJFT().requestFocus();
+					viewDesempenho.getPnlMortalidade().setBorder(defaultRmeJP);
+//					rmeTemp.add(new RmeVOP(Integer.parseInt(viewDesempenho.getOrdemJFT().getText()),
+//							Integer.parseInt(viewDesempenho.getIdadeJFT().getText()),
+//							Integer.parseInt(viewDesempenho.getFornecidaJFT().getText()),
+//							Integer.parseInt(viewDesempenho.getSobraJFT().getText()), new MortalidadeVOP(),
+//							new EliminadosVOP(), new ErrosVOP(), new AmostradosVOP(), new PesadosVOP()));
 					updateHistMortalidade();
 					viewDesempenho.getOrdemPJFT().setText("" + (++ordemRME));
 					TextFormatter.formatStringJFT(viewDesempenho.getOrdemPJFT(),
@@ -551,6 +555,53 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 				}
 			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getControleMortalidadeJFT()) {
 
+				
+				if (Integer.parseInt(viewDesempenho.getControleMortalidadeJFT().getText().trim()) == calculaControleMortalidade()) {
+					TextFormatter.formatStringJFT(src, text, 6);
+					if (mortosTemp.get(mortosTemp.size() - 1).getIdade() == idades.get(idades.size() - 1)) {
+						// IDADE DA LISTA É A ÚLTIMA, ADICIONA TODOS OS CONSUMOS NA LISTA E SEGUE PARA
+						// DIGITAR OS ERROS
+						mortos.addAll(mortosTemp);
+						mortosTemp = new ArrayList<>();
+						clearHistMortalidade();
+						ordemRME = 1;
+						// ZERA OS CONTADORES DAS IDADES DAS FASES
+						countIdades = 0;
+						countFase = 1;
+						faseAnterior = 0;
+						idadeFaseAtual = idades.get(countIdades);
+						viewDesempenho.getOrdemPJFT().setText("1");
+						viewDesempenho.getIdadeMortalidadeJFT().setEnabled(false);
+						viewDesempenho.getNrMortalidadeJFT().setEnabled(false);
+						viewDesempenho.getPesoMortalidadeJFT().setEnabled(false);
+						viewDesempenho.getControleMortalidadeJFT().setEnabled(false);
+						viewDesempenho.getIdadeMortalidadeJFT().setEnabled(true);
+						((JFormattedTextField) e.getSource()).transferFocus();
+						viewDesempenho.getIdadeMortalidadeJFT().requestFocus();
+						viewDesempenho.getPnlMortalidade().setBorder(defaultRmeJP);
+					} else {
+						mortos.addAll(mortosTemp);
+						mortosTemp = new ArrayList<>();
+						clearHistMortalidade();
+						atualizaFaseMortalidade();
+						continuarDigitacaoMortalidade();
+						ordemRME = 1;
+						viewDesempenho.getOrdemPJFT().setText("1");
+						viewDesempenho.getPnlMortalidade().setBorder(defaultRmeJP);
+						System.out.println("continua digitação dos erros");
+					}
+				} else {
+					rmeErros.addAll(rmeTemp);
+					rmeTemp = new ArrayList<>();
+					clearHistRME();
+					recuperaHistRME();
+					ordemRME = 1;
+					viewDesempenho.getOrdemJFT().setText("1");
+					viewDesempenho.getConsumoJP().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
+				}
+				
+				
+				
 			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getIdadeErrosJFT()) {
 				TextFormatter.formatStringJFT(src, text, 3);
 				viewDesempenho.getNrErrosJFT().setEnabled(true);
@@ -588,6 +639,14 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		viewDesempenho.getSobraJFT().setEnabled(false);
 		viewDesempenho.getControleFornecidaJFT().setEnabled(false);
 		viewDesempenho.getControleSobraJFT().setEnabled(false);
+	}
+
+	public void continuarDigitacaoMortos() {
+		viewDesempenho.getPnlMortalidade().setBorder(defaultRmeJP);
+		viewDesempenho.getIdadeMortalidadeJFT().setEnabled(true);
+		viewDesempenho.getIdadeMortalidadeJFT().grabFocus();
+		viewDesempenho.getNrMortalidadeJFT().setEnabled(false);
+		viewDesempenho.getPesoMortalidadeJFT().setEnabled(false);
 	}
 
 	public void fluxoProblemaDigitacaoRacoes() {
@@ -632,9 +691,6 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		return soma;
 	}
 
-	public void continuarProximaFase() {
-
-	}
 
 	public void addListas() {
 		mortos.addAll(mortosTemp);
@@ -1447,6 +1503,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		viewDesempenho.getPesoElHist2Label().setText("");
 		viewDesempenho.getPesoElHist3Label().setText("");
 		viewDesempenho.getPesoElHist4Label().setText("");
+		ordemRME = 1;
 	}
 
 	public void fluxoOkRME() {
