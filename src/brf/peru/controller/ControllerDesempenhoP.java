@@ -37,7 +37,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 
 	private final ControllerP controller;
 	private final DesempenhoBOP desempenhoBO;
-	private int controleBaia, controleRME;
+	private int controleBaia, controleRME, ordemRME, ordemP;
 	private ViewDesempenhoP viewDesempenho;
 	private Border defaultBaiaJP, defaultRmeJP, defaultPesagemJP;
 	private List<DesempenhoVOP> desempenho;
@@ -60,9 +60,17 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 	private List<PesadosVOP> pesadosTemp;
 	private List<PesadosVOP> pesadosErros;
 	private List<Integer> idades;
-	private Integer idadeFaseAtual, faseAnterior, countFase, countIdades, somaValoresRacao, somaControlePesagem;
-
-	private int ordemRME, ordemP;
+	private Integer idadeFaseAtual, faseAnterior, countFase, countIdades, somaValoresRacao, somaControleRacoes;
+	private Integer somaControleMortalidade, somaValoresMortalidade, idadeFaseAtualMortalidade, faseAnteriorMortalidade,
+			countFaseMortalidade, countIdadesMortalidade;
+	private Integer somaControleEliminados, somaValoresEliminados, idadeFaseAtualEliminados, faseAnteriorEliminados,
+			countFaseEliminados, countIdadesEliminados;
+	private Integer somaControleErros, somaValoresErros, idadeFaseAtualErros, faseAnteriorErros, countFaseErros,
+			countIdadesErros;
+	private Integer somaControleAmostrados, somaValoresAmostrados, idadeFaseAtualAmostrados, faseAnteriorAmostrados,
+			countFaseAmostrados, countIdadesAmostrados;
+	private Integer somaControlePesados, somaValoresPesados, idadeFaseAtualPesados, faseAnteriorPesados,
+			countFasePesados, countIdadesPesados;
 
 	public ControllerDesempenhoP(ControllerP c, DesempenhoBOP desempenhoBO) {
 		controller = c;
@@ -82,14 +90,45 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		defaultPesagemJP = viewDesempenho.getPesagemJP().getBorder();
 		idades = idadesFases;
 		countIdades = 0;
+		countIdadesMortalidade = 0;
+		countIdadesEliminados = 0;
+		countIdadesErros = 0;
+		countIdadesAmostrados = 0;
+		countIdadesPesados = 0;
 		faseAnterior = 0;
+		faseAnteriorMortalidade = 0;
+		faseAnteriorEliminados = 0;
+		faseAnteriorErros = 0;
+		faseAnteriorAmostrados = 0;
+		faseAnteriorPesados = 0;
 		countFase = 1;
+		countFaseMortalidade = 1;
+		countFaseEliminados = 1;
+		countFaseErros = 1;
+		countFaseAmostrados = 1;
+		countFasePesados = 1;
 		somaValoresRacao = 0;
+		somaValoresMortalidade = 0;
+		somaValoresEliminados = 0;
+		somaValoresErros = 0;
+		somaValoresAmostrados = 0;
+		somaValoresPesados = 0;
 		idadeFaseAtual = idades.get(countIdades);
+		idadeFaseAtualMortalidade = idades.get(countIdades);
+		idadeFaseAtualEliminados = idades.get(countIdades);
+		idadeFaseAtualErros = idades.get(countIdades);
+		idadeFaseAtualAmostrados = idades.get(countIdades);
+		idadeFaseAtualPesados = idades.get(countIdades);
+		somaControleRacoes = 0;
+		somaControleMortalidade = 0;
+		somaControleEliminados = 0;
+		somaControleErros = 0;
+		somaControleAmostrados = 0;
+		somaControlePesados = 0;
 		viewDesempenho.getFaseConsumoLabel().setText("Fase " + countFase + " (Idade " + idadeFaseAtual + ")");
 		// viewDesempenho.getFasePesagemLabel().setText("Fase " + countFase + " (Idade "
 		// + idadeFaseAtual + ")");
-		somaControlePesagem = 0;
+		
 
 		rme = new ArrayList<>();
 		rmeTemp = new ArrayList<>();
@@ -488,7 +527,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 						rme.addAll(rmeTemp);
 						rmeTemp = new ArrayList<>();
 						clearHistRME();
-						atualizaFase();
+						atualizaFaseRacao();
 						continuarDigitacaoRacoes();
 						ordemRME = 1;
 						viewDesempenho.getOrdemJFT().setText("1");
@@ -515,19 +554,20 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 				((JFormattedTextField) e.getSource()).transferFocus();
 				viewDesempenho.getPesoMortalidadeJFT().requestFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getPesoMortalidadeJFT()) {
-				TextFormatter.formatStringJFT(src, text, 6);
+				TextFormatter.formatStringJFT(src, text, 5);
 				String msg = desempenhoBO.verificaMortalidade(
 						Integer.parseInt(viewDesempenho.getIdadeMortalidadeJFT().getText()),
 						Integer.parseInt(viewDesempenho.getNrMortalidadeJFT().getText()),
-						Integer.parseInt(viewDesempenho.getPesoMortalidadeJFT().getText()), faseAnterior,
-						idadeFaseAtual);
+						Integer.parseInt(viewDesempenho.getPesoMortalidadeJFT().getText()), faseAnteriorMortalidade,
+						idadeFaseAtualMortalidade);
 				if (msg.length() != 0) {
 					JOptionPane.showMessageDialog(viewDesempenho, "Problema(s):\n" + msg, "DIGEX - Erro",
 							JOptionPane.ERROR_MESSAGE);
-					fluxoProblemaDigitacaoRacoes();
+					fluxoProblemaDigitacaoMortalidade();
 				} else if (Integer.parseInt(viewDesempenho.getIdadeMortalidadeJFT().getText()) == 0
 						&& Integer.parseInt(viewDesempenho.getNrMortalidadeJFT().getText()) == 0
 						&& Integer.parseInt(viewDesempenho.getPesoMortalidadeJFT().getText()) == 0) {
+					TextFormatter.formatStringJFT(src, text, 5);
 					viewDesempenho.getPnlMortalidade().setBorder(defaultRmeJP);
 					viewDesempenho.getControleMortalidadeJFT().setEnabled(true);
 					((JFormattedTextField) e.getSource()).transferFocus();
@@ -538,8 +578,6 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 //							Integer.parseInt(viewDesempenho.getFornecidaJFT().getText()),
 //							Integer.parseInt(viewDesempenho.getSobraJFT().getText()), new MortalidadeVOP(),
 //							new EliminadosVOP(), new ErrosVOP(), new AmostradosVOP(), new PesadosVOP()));
-					updateHistMortalidade();
-					viewDesempenho.getOrdemPJFT().setText("" + (++ordemRME));
 					TextFormatter.formatStringJFT(viewDesempenho.getOrdemPJFT(),
 							viewDesempenho.getOrdemPJFT().getText(), 3);
 				} else {
@@ -551,57 +589,66 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 					viewDesempenho.getOrdemPJFT().setText("" + (++ordemRME));
 					TextFormatter.formatStringJFT(viewDesempenho.getOrdemPJFT(),
 							viewDesempenho.getOrdemPJFT().getText(), 3);
-					continuarDigitacaoRacoes();
+					continuarDigitacaoMortalidade();
 				}
 			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getControleMortalidadeJFT()) {
-
-				
-				if (Integer.parseInt(viewDesempenho.getControleMortalidadeJFT().getText().trim()) == calculaControleMortalidade()) {
-					TextFormatter.formatStringJFT(src, text, 6);
-					if (mortosTemp.get(mortosTemp.size() - 1).getIdade() == idades.get(idades.size() - 1)) {
-						// IDADE DA LISTA É A ÚLTIMA, ADICIONA TODOS OS CONSUMOS NA LISTA E SEGUE PARA
-						// DIGITAR OS ERROS
-						mortos.addAll(mortosTemp);
-						mortosTemp = new ArrayList<>();
-						clearHistMortalidade();
-						ordemRME = 1;
-						// ZERA OS CONTADORES DAS IDADES DAS FASES
-						countIdades = 0;
-						countFase = 1;
-						faseAnterior = 0;
-						idadeFaseAtual = idades.get(countIdades);
-						viewDesempenho.getOrdemPJFT().setText("1");
-						viewDesempenho.getIdadeMortalidadeJFT().setEnabled(false);
-						viewDesempenho.getNrMortalidadeJFT().setEnabled(false);
-						viewDesempenho.getPesoMortalidadeJFT().setEnabled(false);
-						viewDesempenho.getControleMortalidadeJFT().setEnabled(false);
-						viewDesempenho.getIdadeMortalidadeJFT().setEnabled(true);
-						((JFormattedTextField) e.getSource()).transferFocus();
-						viewDesempenho.getIdadeMortalidadeJFT().requestFocus();
-						viewDesempenho.getPnlMortalidade().setBorder(defaultRmeJP);
+				TextFormatter.formatStringJFT(src, text, 6);
+				if (calculaControleMortalidade() != 0) {
+					if (Integer.parseInt(viewDesempenho.getControleMortalidadeJFT().getText()
+							.trim()) == calculaControleMortalidade()) {
+						if (mortosTemp.get(mortosTemp.size() - 1).getIdade() == idades.get(idades.size() - 1)) {
+							// IDADE DA LISTA É A ÚLTIMA, ADICIONA TODOS OS CONSUMOS NA LISTA E SEGUE PARA
+							// DIGITAR OS ERROS
+							mortos.addAll(mortosTemp);
+							mortosTemp = new ArrayList<>();
+							clearHistMortalidade();
+							ordemRME = 1;
+							// ZERA OS CONTADORES DAS IDADES DAS FASES
+							countIdades = 0;
+							countFase = 1;
+							faseAnterior = 0;
+							idadeFaseAtual = idades.get(countIdades);
+							viewDesempenho.getOrdemPJFT().setText("1");
+							viewDesempenho.getIdadeMortalidadeJFT().setEnabled(false);
+							viewDesempenho.getNrMortalidadeJFT().setEnabled(false);
+							viewDesempenho.getPesoMortalidadeJFT().setEnabled(false);
+							viewDesempenho.getControleMortalidadeJFT().setEnabled(false);
+							viewDesempenho.getIdadeEliminadosJFT().setEnabled(true);
+							((JFormattedTextField) e.getSource()).transferFocus();
+							viewDesempenho.getIdadeEliminadosJFT().requestFocus();
+							viewDesempenho.getPnlMortalidade().setBorder(defaultRmeJP);
+						} else {
+							mortos.addAll(mortosTemp);
+							mortosTemp = new ArrayList<>();
+							clearHistMortalidade();
+							atualizaFaseMortalidade();
+							continuarDigitacaoMortalidade();
+							ordemRME = 1;
+							viewDesempenho.getOrdemPJFT().setText("1");
+							viewDesempenho.getPnlMortalidade().setBorder(defaultRmeJP);
+							System.out.println("continua digitação dos erros");
+						}
 					} else {
-						mortos.addAll(mortosTemp);
-						mortosTemp = new ArrayList<>();
-						clearHistMortalidade();
-						atualizaFaseMortalidade();
-						continuarDigitacaoMortalidade();
+						rmeErros.addAll(rmeTemp);
+						rmeTemp = new ArrayList<>();
+						clearHistRME();
+						recuperaHistRME();
 						ordemRME = 1;
-						viewDesempenho.getOrdemPJFT().setText("1");
-						viewDesempenho.getPnlMortalidade().setBorder(defaultRmeJP);
-						System.out.println("continua digitação dos erros");
+						viewDesempenho.getOrdemJFT().setText("1");
+						viewDesempenho.getConsumoJP().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
 					}
 				} else {
-					rmeErros.addAll(rmeTemp);
-					rmeTemp = new ArrayList<>();
-					clearHistRME();
-					recuperaHistRME();
+					mortos.addAll(mortosTemp);
+					mortosTemp = new ArrayList<>();
+					clearHistMortalidade();
+					atualizaFaseMortalidade();
+					continuarDigitacaoMortalidade();
 					ordemRME = 1;
-					viewDesempenho.getOrdemJFT().setText("1");
-					viewDesempenho.getConsumoJP().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
+					viewDesempenho.getOrdemPJFT().setText("1");
+					viewDesempenho.getPnlMortalidade().setBorder(defaultRmeJP);
+					System.out.println("continua digitação dos erros");
 				}
-				
-				
-				
+
 			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getIdadeErrosJFT()) {
 				TextFormatter.formatStringJFT(src, text, 3);
 				viewDesempenho.getNrErrosJFT().setEnabled(true);
@@ -618,7 +665,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 
 	}
 
-	public void atualizaFase() {
+	public void atualizaFaseRacao() {
 		if (faseAnterior != idadeFaseAtual) {
 			faseAnterior = idadeFaseAtual;
 		}
@@ -628,6 +675,20 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		if (countIdades < idades.size()) {
 			idadeFaseAtual = idades.get(countIdades);
 			viewDesempenho.getFaseConsumoLabel().setText("Fase " + countFase + " (Idade " + idadeFaseAtual + ")");
+		}
+	}
+
+	public void atualizaFaseMortalidade() {
+		if (faseAnteriorMortalidade != idadeFaseAtualMortalidade) {
+			faseAnteriorMortalidade = idadeFaseAtualMortalidade;
+		}
+		countIdadesMortalidade++;
+		countFaseMortalidade++;
+		somaValoresMortalidade = 0;
+		if (countIdadesMortalidade < idades.size()) {
+			idadeFaseAtualMortalidade = idades.get(countIdadesMortalidade);
+			viewDesempenho.getFaseConsumoLabel()
+					.setText("Fase " + countFaseMortalidade + " (Idade " + idadeFaseAtualMortalidade + ")");
 		}
 	}
 
@@ -641,7 +702,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		viewDesempenho.getControleSobraJFT().setEnabled(false);
 	}
 
-	public void continuarDigitacaoMortos() {
+	public void continuarDigitacaoMortalidade() {
 		viewDesempenho.getPnlMortalidade().setBorder(defaultRmeJP);
 		viewDesempenho.getIdadeMortalidadeJFT().setEnabled(true);
 		viewDesempenho.getIdadeMortalidadeJFT().grabFocus();
@@ -690,7 +751,6 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		}
 		return soma;
 	}
-
 
 	public void addListas() {
 		mortos.addAll(mortosTemp);
@@ -908,43 +968,43 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 	}
 
 	public Integer somarTotalControlePesagem() {
-		somaControlePesagem = 0;
+		somaControleRacoes = 0;
 		for (MortalidadeVOP morto : mortosTemp) {
 			if (morto.getIdade() >= faseAnterior && morto.getIdade() <= idadeFaseAtual) {
-				somaControlePesagem += morto.getIdade();
-				somaControlePesagem += morto.getPeso();
-				somaControlePesagem += morto.getQuantidade();
+				somaControleRacoes += morto.getIdade();
+				somaControleRacoes += morto.getPeso();
+				somaControleRacoes += morto.getQuantidade();
 			}
 		}
 		for (EliminadosVOP eliminado : eliminadosTemp) {
 			if (eliminado.getIdade() >= faseAnterior && eliminado.getIdade() <= idadeFaseAtual) {
-				somaControlePesagem += eliminado.getIdade();
-				somaControlePesagem += eliminado.getPeso();
-				somaControlePesagem += eliminado.getQuantidade();
+				somaControleRacoes += eliminado.getIdade();
+				somaControleRacoes += eliminado.getPeso();
+				somaControleRacoes += eliminado.getQuantidade();
 			}
 		}
 		for (ErrosVOP erro : errosTemp) {
 			if (erro.getIdade() >= faseAnterior && erro.getIdade() <= idadeFaseAtual) {
-				somaControlePesagem += erro.getIdade();
-				somaControlePesagem += erro.getPeso();
-				somaControlePesagem += erro.getQuantidade();
+				somaControleRacoes += erro.getIdade();
+				somaControleRacoes += erro.getPeso();
+				somaControleRacoes += erro.getQuantidade();
 			}
 		}
 		for (AmostradosVOP amostrado : amostradosTemp) {
 			if (amostrado.getIdade() > faseAnterior && amostrado.getIdade() <= idadeFaseAtual) {
-				somaControlePesagem += amostrado.getIdade();
-				somaControlePesagem += amostrado.getPeso();
-				somaControlePesagem += amostrado.getQuantidade();
+				somaControleRacoes += amostrado.getIdade();
+				somaControleRacoes += amostrado.getPeso();
+				somaControleRacoes += amostrado.getQuantidade();
 			}
 		}
 		for (PesadosVOP pesado : pesadosTemp) {
 			if (pesado.getIdade() > faseAnterior && pesado.getIdade() <= idadeFaseAtual) {
-				somaControlePesagem += pesado.getIdade();
-				somaControlePesagem += pesado.getPeso();
-				somaControlePesagem += pesado.getQuantidade();
+				somaControleRacoes += pesado.getIdade();
+				somaControleRacoes += pesado.getPeso();
+				somaControleRacoes += pesado.getQuantidade();
 			}
 		}
-		return somaControlePesagem;
+		return somaControleRacoes;
 	}
 
 	public Integer getMaiorLista() {
@@ -1389,8 +1449,8 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		viewDesempenho.getPesoMHist3Label().setText(viewDesempenho.getPesoMHist4Label().getText());
 		viewDesempenho.getPesoMHist4Label().setText(viewDesempenho.getPesoMHist5Label().getText());
 		viewDesempenho.getPesoMHist5Label().setText(viewDesempenho.getPesoMortalidadeJFT().getText());
-		if (!rmeErros.isEmpty()) {
-			recuperaHistRME();
+		if (!mortosErros.isEmpty()) {
+			recuperaHistMortalidade();
 		} else {
 			viewDesempenho.getIdadeMortalidadeJFT().setText("000");
 			viewDesempenho.getNrMortalidadeJFT().setText("00000");
@@ -1445,6 +1505,53 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		viewDesempenho.getControleFornecidaJFT().setText("000000");
 		viewDesempenho.getControleSobraJFT().setEnabled(false);
 		viewDesempenho.getControleSobraJFT().setText("000000");
+	}
+	
+	public void recuperaHistMortalidade() {
+		viewDesempenho.getIdadeMortalidadeJFT().setText("" + mortosErros.get(0).getIdade());
+		TextFormatter.formatStringJFT(viewDesempenho.getIdadeMortalidadeJFT(), viewDesempenho.getIdadeMortalidadeJFT().getText(), 3);
+		viewDesempenho.getNrMortalidadeJFT().setText("" + mortosErros.get(0).getQuantidade());
+		TextFormatter.formatStringJFT(viewDesempenho.getNrMortalidadeJFT(), viewDesempenho.getNrMortalidadeJFT().getText(), 5);
+		viewDesempenho.getPesoMortalidadeJFT().setText("" + mortosErros.get(0).getPeso());
+		TextFormatter.formatStringJFT(viewDesempenho.getPesoMortalidadeJFT(), viewDesempenho.getPesoMortalidadeJFT().getText(), 5);
+		mortosErros.remove(0);
+
+		viewDesempenho.getIdadeMortalidadeJFT().setEnabled(true);
+		viewDesempenho.getIdadeMortalidadeJFT().requestFocus();
+		viewDesempenho.getNrMortalidadeJFT().setEnabled(false);
+		viewDesempenho.getNrMortalidadeJFT().setText("00000");
+		viewDesempenho.getPesoMortalidadeJFT().setEnabled(false);
+		viewDesempenho.getPesoMortalidadeJFT().setText("00000");
+		viewDesempenho.getControleMortalidadeJFT().setEnabled(false);
+		viewDesempenho.getControleMortalidadeJFT().setText("00000");;
+	}
+
+	public void clearHistMortalidade() {
+		viewDesempenho.getOrdemPJFT().setText("");
+		viewDesempenho.getIdadeMortalidadeJFT().setText("");
+		viewDesempenho.getNrMortalidadeJFT().setText("");
+		viewDesempenho.getPesoMortalidadeJFT().setText("");
+		viewDesempenho.getControleMortalidadeJFT().setText("");
+		viewDesempenho.getOrdemPHist1Label().setText("");
+		viewDesempenho.getOrdemPHist2Label().setText("");
+		viewDesempenho.getOrdemPHist3Label().setText("");
+		viewDesempenho.getOrdemPHist4Label().setText("");
+		viewDesempenho.getOrdemPHist5Label().setText("");
+		viewDesempenho.getIdadeMHist1Label().setText("");
+		viewDesempenho.getIdadeMHist2Label().setText("");
+		viewDesempenho.getIdadeMHist3Label().setText("");
+		viewDesempenho.getIdadeMHist4Label().setText("");
+		viewDesempenho.getIdadeMHist5Label().setText("");
+		viewDesempenho.getNrMHist1Label().setText("");
+		viewDesempenho.getNrMHist2Label().setText("");
+		viewDesempenho.getNrMHist3Label().setText("");
+		viewDesempenho.getNrMHist4Label().setText("");
+		viewDesempenho.getNrMHist5Label().setText("");
+		viewDesempenho.getPesoMHist1Label().setText("");
+		viewDesempenho.getPesoMHist2Label().setText("");
+		viewDesempenho.getPesoMHist3Label().setText("");
+		viewDesempenho.getPesoMHist4Label().setText("");
+		viewDesempenho.getPesoMHist5Label().setText("");
 	}
 
 	public void clearHistRME() {
