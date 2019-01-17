@@ -128,7 +128,6 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		viewDesempenho.getFaseConsumoLabel().setText("Fase " + countFase + " (Idade " + idadeFaseAtual + ")");
 		// viewDesempenho.getFasePesagemLabel().setText("Fase " + countFase + " (Idade "
 		// + idadeFaseAtual + ")");
-		
 
 		rme = new ArrayList<>();
 		rmeTemp = new ArrayList<>();
@@ -374,32 +373,32 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 				TextFormatter.formatStringJFT(src, text, 3);
 				viewDesempenho.getLadoJFT().setEnabled(true);
 				((JFormattedTextField) e.getSource()).transferFocus();
-				viewDesempenho.getLadoJFT().requestFocus();
+				viewDesempenho.getLadoJFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getLadoJFT()) {
 				TextFormatter.formatStringJFT(src, text, 1);
 				viewDesempenho.getSexoJFT().setEnabled(true);
 				((JFormattedTextField) e.getSource()).transferFocus();
-				viewDesempenho.getSexoJFT().requestFocus();
+				viewDesempenho.getSexoJFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getSexoJFT()) {
 				TextFormatter.formatStringJFT(src, text, 1);
 				viewDesempenho.getLinhagemJFT().setEnabled(true);
 				((JFormattedTextField) e.getSource()).transferFocus();
-				viewDesempenho.getLinhagemJFT().requestFocus();
+				viewDesempenho.getLinhagemJFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getLinhagemJFT()) {
 				TextFormatter.formatStringJFT(src, text, 2);
 				viewDesempenho.getTrataJFT().setEnabled(true);
 				((JFormattedTextField) e.getSource()).transferFocus();
-				viewDesempenho.getTrataJFT().requestFocus();
+				viewDesempenho.getTrataJFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getTrataJFT()) {
 				TextFormatter.formatStringJFT(src, text, 1);
 				viewDesempenho.getAvesAlojadasJFT().setEnabled(true);
 				((JFormattedTextField) e.getSource()).transferFocus();
-				viewDesempenho.getAvesAlojadasJFT().requestFocus();
+				viewDesempenho.getAvesAlojadasJFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getAvesAlojadasJFT()) {
 				TextFormatter.formatStringJFT(src, text, 3);
 				viewDesempenho.getControleBaiaJFT().setEnabled(true);
 				((JFormattedTextField) e.getSource()).transferFocus();
-				viewDesempenho.getControleBaiaJFT().requestFocus();
+				viewDesempenho.getControleBaiaJFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getControleBaiaJFT()) {
 				TextFormatter.formatStringJFT(src, text, 4);
 				controleBaia = Integer.parseInt(viewDesempenho.getControleBaiaJFT().getText());
@@ -441,12 +440,12 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 				TextFormatter.formatStringJFT(src, text, 3);
 				viewDesempenho.getFornecidaJFT().setEnabled(true);
 				((JFormattedTextField) e.getSource()).transferFocus();
-				viewDesempenho.getFornecidaJFT().requestFocus();
+				viewDesempenho.getFornecidaJFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getFornecidaJFT()) {
 				TextFormatter.formatStringJFT(src, text, 5);
 				viewDesempenho.getSobraJFT().setEnabled(true);
 				((JFormattedTextField) e.getSource()).transferFocus();
-				viewDesempenho.getSobraJFT().requestFocus();
+				viewDesempenho.getSobraJFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getSobraJFT()) {
 				TextFormatter.formatStringJFT(src, text, 5);
 				String msg = desempenhoBO.verificaRacao(Integer.parseInt(viewDesempenho.getIdadeJFT().getText()),
@@ -462,14 +461,14 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 					viewDesempenho.getConsumoJP().setBorder(defaultRmeJP);
 					viewDesempenho.getControleFornecidaJFT().setEnabled(true);
 					((JFormattedTextField) e.getSource()).transferFocus();
-					viewDesempenho.getControleFornecidaJFT().requestFocus();
+					viewDesempenho.getControleFornecidaJFT().grabFocus();
 					viewDesempenho.getConsumoJP().setBorder(defaultRmeJP);
 //					rmeTemp.add(new RmeVOP(Integer.parseInt(viewDesempenho.getOrdemJFT().getText()),
 //							Integer.parseInt(viewDesempenho.getIdadeJFT().getText()),
 //							Integer.parseInt(viewDesempenho.getFornecidaJFT().getText()),
 //							Integer.parseInt(viewDesempenho.getSobraJFT().getText()), new MortalidadeVOP(),
 //							new EliminadosVOP(), new ErrosVOP(), new AmostradosVOP(), new PesadosVOP()));
-					updateHistRME();
+//					updateHistRME();
 					viewDesempenho.getOrdemJFT().setText("" + (++ordemRME));
 					TextFormatter.formatStringJFT(viewDesempenho.getOrdemJFT(), viewDesempenho.getOrdemJFT().getText(),
 							3);
@@ -492,7 +491,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 					viewDesempenho.getControleFornecidaJFT().setEnabled(false);
 					viewDesempenho.getControleSobraJFT().setEnabled(true);
 					((JFormattedTextField) e.getSource()).transferFocus();
-					viewDesempenho.getControleSobraJFT().requestFocus();
+					viewDesempenho.getControleSobraJFT().grabFocus();
 				} else {
 					rmeErros.addAll(rmeTemp);
 					rmeTemp = new ArrayList<>();
@@ -521,7 +520,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 						viewDesempenho.getControleSobraJFT().setEnabled(false);
 						viewDesempenho.getIdadeMortalidadeJFT().setEnabled(true);
 						((JFormattedTextField) e.getSource()).transferFocus();
-						viewDesempenho.getIdadeMortalidadeJFT().requestFocus();
+						viewDesempenho.getIdadeMortalidadeJFT().grabFocus();
 						viewDesempenho.getConsumoJP().setBorder(defaultRmeJP);
 					} else {
 						rme.addAll(rmeTemp);
@@ -547,12 +546,12 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 				TextFormatter.formatStringJFT(src, text, 3);
 				viewDesempenho.getNrMortalidadeJFT().setEnabled(true);
 				((JFormattedTextField) e.getSource()).transferFocus();
-				viewDesempenho.getNrMortalidadeJFT().requestFocus();
+				viewDesempenho.getNrMortalidadeJFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getNrMortalidadeJFT()) {
 				TextFormatter.formatStringJFT(src, text, 2);
 				viewDesempenho.getPesoMortalidadeJFT().setEnabled(true);
 				((JFormattedTextField) e.getSource()).transferFocus();
-				viewDesempenho.getPesoMortalidadeJFT().requestFocus();
+				viewDesempenho.getPesoMortalidadeJFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getPesoMortalidadeJFT()) {
 				TextFormatter.formatStringJFT(src, text, 5);
 				String msg = desempenhoBO.verificaMortalidade(
@@ -567,19 +566,16 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 				} else if (Integer.parseInt(viewDesempenho.getIdadeMortalidadeJFT().getText()) == 0
 						&& Integer.parseInt(viewDesempenho.getNrMortalidadeJFT().getText()) == 0
 						&& Integer.parseInt(viewDesempenho.getPesoMortalidadeJFT().getText()) == 0) {
-					TextFormatter.formatStringJFT(src, text, 5);
 					viewDesempenho.getPnlMortalidade().setBorder(defaultRmeJP);
-					viewDesempenho.getControleMortalidadeJFT().setEnabled(true);
-					((JFormattedTextField) e.getSource()).transferFocus();
-					viewDesempenho.getControleMortalidadeJFT().requestFocus();
-					viewDesempenho.getPnlMortalidade().setBorder(defaultRmeJP);
+					viewDesempenho.getControleMort().setEnabled(true);
+					viewDesempenho.getControleMort().grabFocus();
 //					rmeTemp.add(new RmeVOP(Integer.parseInt(viewDesempenho.getOrdemJFT().getText()),
 //							Integer.parseInt(viewDesempenho.getIdadeJFT().getText()),
 //							Integer.parseInt(viewDesempenho.getFornecidaJFT().getText()),
 //							Integer.parseInt(viewDesempenho.getSobraJFT().getText()), new MortalidadeVOP(),
 //							new EliminadosVOP(), new ErrosVOP(), new AmostradosVOP(), new PesadosVOP()));
-					TextFormatter.formatStringJFT(viewDesempenho.getOrdemPJFT(),
-							viewDesempenho.getOrdemPJFT().getText(), 3);
+//					TextFormatter.formatStringJFT(viewDesempenho.getOrdemPJFT(),
+//							viewDesempenho.getOrdemPJFT().getText(), 3);
 				} else {
 					mortosTemp
 							.add(new MortalidadeVOP(Integer.parseInt(viewDesempenho.getIdadeMortalidadeJFT().getText()),
@@ -587,14 +583,14 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 									Integer.parseInt(viewDesempenho.getPesoMortalidadeJFT().getText())));
 					updateHistMortalidade();
 					viewDesempenho.getOrdemPJFT().setText("" + (++ordemRME));
-					TextFormatter.formatStringJFT(viewDesempenho.getOrdemPJFT(),
-							viewDesempenho.getOrdemPJFT().getText(), 3);
+//					TextFormatter.formatStringJFT(viewDesempenho.getOrdemPJFT(),
+//							viewDesempenho.getOrdemPJFT().getText(), 3);
 					continuarDigitacaoMortalidade();
 				}
-			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getControleMortalidadeJFT()) {
+			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getControleMort()) {
 				TextFormatter.formatStringJFT(src, text, 6);
 				if (calculaControleMortalidade() != 0) {
-					if (Integer.parseInt(viewDesempenho.getControleMortalidadeJFT().getText()
+					if (Integer.parseInt(viewDesempenho.getControleMort().getText()
 							.trim()) == calculaControleMortalidade()) {
 						if (mortosTemp.get(mortosTemp.size() - 1).getIdade() == idades.get(idades.size() - 1)) {
 							// IDADE DA LISTA É A ÚLTIMA, ADICIONA TODOS OS CONSUMOS NA LISTA E SEGUE PARA
@@ -612,10 +608,10 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 							viewDesempenho.getIdadeMortalidadeJFT().setEnabled(false);
 							viewDesempenho.getNrMortalidadeJFT().setEnabled(false);
 							viewDesempenho.getPesoMortalidadeJFT().setEnabled(false);
-							viewDesempenho.getControleMortalidadeJFT().setEnabled(false);
+							viewDesempenho.getControleMort().setEnabled(false);
 							viewDesempenho.getIdadeEliminadosJFT().setEnabled(true);
 							((JFormattedTextField) e.getSource()).transferFocus();
-							viewDesempenho.getIdadeEliminadosJFT().requestFocus();
+							viewDesempenho.getIdadeEliminadosJFT().grabFocus();
 							viewDesempenho.getPnlMortalidade().setBorder(defaultRmeJP);
 						} else {
 							mortos.addAll(mortosTemp);
@@ -653,12 +649,12 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 				TextFormatter.formatStringJFT(src, text, 3);
 				viewDesempenho.getNrErrosJFT().setEnabled(true);
 				((JFormattedTextField) e.getSource()).transferFocus();
-				viewDesempenho.getNrErrosJFT().requestFocus();
+				viewDesempenho.getNrErrosJFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getNrErrosJFT()) {
 				TextFormatter.formatStringJFT(src, text, 3);
 				viewDesempenho.getPesoErrosJFT().setEnabled(true);
 				((JFormattedTextField) e.getSource()).transferFocus();
-				viewDesempenho.getPesoErrosJFT().requestFocus();
+				viewDesempenho.getPesoErrosJFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getPesoErrosJFT()) {
 			}
 		}
@@ -1500,30 +1496,34 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		rmeErros.remove(0);
 
 		viewDesempenho.getIdadeJFT().setEnabled(true);
-		viewDesempenho.getIdadeJFT().requestFocus();
+		viewDesempenho.getIdadeJFT().grabFocus();
 		viewDesempenho.getControleFornecidaJFT().setEnabled(false);
 		viewDesempenho.getControleFornecidaJFT().setText("000000");
 		viewDesempenho.getControleSobraJFT().setEnabled(false);
 		viewDesempenho.getControleSobraJFT().setText("000000");
 	}
-	
+
 	public void recuperaHistMortalidade() {
 		viewDesempenho.getIdadeMortalidadeJFT().setText("" + mortosErros.get(0).getIdade());
-		TextFormatter.formatStringJFT(viewDesempenho.getIdadeMortalidadeJFT(), viewDesempenho.getIdadeMortalidadeJFT().getText(), 3);
+		TextFormatter.formatStringJFT(viewDesempenho.getIdadeMortalidadeJFT(),
+				viewDesempenho.getIdadeMortalidadeJFT().getText(), 3);
 		viewDesempenho.getNrMortalidadeJFT().setText("" + mortosErros.get(0).getQuantidade());
-		TextFormatter.formatStringJFT(viewDesempenho.getNrMortalidadeJFT(), viewDesempenho.getNrMortalidadeJFT().getText(), 5);
+		TextFormatter.formatStringJFT(viewDesempenho.getNrMortalidadeJFT(),
+				viewDesempenho.getNrMortalidadeJFT().getText(), 5);
 		viewDesempenho.getPesoMortalidadeJFT().setText("" + mortosErros.get(0).getPeso());
-		TextFormatter.formatStringJFT(viewDesempenho.getPesoMortalidadeJFT(), viewDesempenho.getPesoMortalidadeJFT().getText(), 5);
+		TextFormatter.formatStringJFT(viewDesempenho.getPesoMortalidadeJFT(),
+				viewDesempenho.getPesoMortalidadeJFT().getText(), 5);
 		mortosErros.remove(0);
 
 		viewDesempenho.getIdadeMortalidadeJFT().setEnabled(true);
-		viewDesempenho.getIdadeMortalidadeJFT().requestFocus();
+		viewDesempenho.getIdadeMortalidadeJFT().grabFocus();
 		viewDesempenho.getNrMortalidadeJFT().setEnabled(false);
 		viewDesempenho.getNrMortalidadeJFT().setText("00000");
 		viewDesempenho.getPesoMortalidadeJFT().setEnabled(false);
 		viewDesempenho.getPesoMortalidadeJFT().setText("00000");
-		viewDesempenho.getControleMortalidadeJFT().setEnabled(false);
-		viewDesempenho.getControleMortalidadeJFT().setText("00000");;
+		viewDesempenho.getControleMort().setEnabled(false);
+		viewDesempenho.getControleMort().setText("00000");
+		;
 	}
 
 	public void clearHistMortalidade() {
@@ -1531,7 +1531,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		viewDesempenho.getIdadeMortalidadeJFT().setText("");
 		viewDesempenho.getNrMortalidadeJFT().setText("");
 		viewDesempenho.getPesoMortalidadeJFT().setText("");
-		viewDesempenho.getControleMortalidadeJFT().setText("");
+		viewDesempenho.getControleMort().setText("");
 		viewDesempenho.getOrdemPHist1Label().setText("");
 		viewDesempenho.getOrdemPHist2Label().setText("");
 		viewDesempenho.getOrdemPHist3Label().setText("");
@@ -1641,8 +1641,8 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		viewDesempenho.getTrataJFT().setEnabled(false);
 		viewDesempenho.getAvesAlojadasJFT().setEnabled(false);
 		viewDesempenho.getControleBaiaJFT().setEnabled(false);
-		viewDesempenho.getIdadeJFT().setEnabled(true);
-		viewDesempenho.getIdadeJFT().grabFocus();
+		viewDesempenho.getControleMort().setEnabled(true);
+		viewDesempenho.getControleMort().grabFocus();
 	}
 
 	@Override
