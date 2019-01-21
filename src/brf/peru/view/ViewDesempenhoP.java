@@ -21,11 +21,11 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 	private javax.swing.JFormattedTextField controleSobraJFT;
 	private JLabel eliminadosJP1;
 	private JLabel faseConsumoLabel;
-	private JLabel fasePesagemLabel1;
-	private JLabel fasePesagemLabel2;
-	private JLabel fasePesagemLabel3;
-	private JLabel fasePesagemLabel4;
-	private JLabel fasePesagemLabel5;
+	private JLabel faseMortalidadeLabel;
+	private JLabel faseEliminadosLabel;
+	private JLabel faseErrosLabel;
+	private JLabel faseAmostradosLabel;
+	private JLabel fasePesagemLabel;
 	private JLabel fornecidaHist1Label;
 	private JLabel fornecidaHist2Label;
 	private JLabel fornecidaHist3Label;
@@ -340,7 +340,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		ordemAmostradosJFT = new javax.swing.JFormattedTextField();
 		controleAmostradosJFT = new javax.swing.JFormattedTextField();
 		jLabel54 = new JLabel();
-		fasePesagemLabel4 = new JLabel();
+		faseAmostradosLabel = new JLabel();
 		pnlPesagem = new javax.swing.JPanel();
 		jPanel7 = new javax.swing.JPanel();
 		jLabel20 = new JLabel();
@@ -374,7 +374,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		ordemPesagemJFT = new javax.swing.JFormattedTextField();
 		controlePesagemJFT = new javax.swing.JFormattedTextField();
 		jLabel56 = new JLabel();
-		fasePesagemLabel5 = new JLabel();
+		fasePesagemLabel = new JLabel();
 		jPanel5 = new javax.swing.JPanel();
 		jLabel17 = new JLabel();
 		jLabel18 = new JLabel();
@@ -415,7 +415,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		ordemErrosJFT = new javax.swing.JFormattedTextField();
 		jLabel52 = new JLabel();
 		controleErrosJFT = new javax.swing.JFormattedTextField();
-		fasePesagemLabel3 = new JLabel();
+		faseErrosLabel = new JLabel();
 		pnlMortalidade = new javax.swing.JPanel();
 		jPanel43 = new javax.swing.JPanel();
 		jLabel5 = new JLabel();
@@ -447,7 +447,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		ordemMortalidadeHist5Label = new JLabel();
 		ordemMortalidadeJFT = new javax.swing.JFormattedTextField();
 		jLabel48 = new JLabel();
-		fasePesagemLabel1 = new JLabel();
+		faseMortalidadeLabel = new JLabel();
 		pnlEliminados = new javax.swing.JPanel();
 		jPanel13 = new javax.swing.JPanel();
 		eliminadosJP1 = new JLabel();
@@ -481,7 +481,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		ordemElHist4Label = new JLabel();
 		ordemElHist5Label = new JLabel();
 		ordemEliminadosJFT = new javax.swing.JFormattedTextField();
-		fasePesagemLabel2 = new JLabel();
+		faseEliminadosLabel = new JLabel();
 		registroLabel = new JLabel();
 		controleBaiaJFT = new javax.swing.JFormattedTextField();
 		sobraJFT = new javax.swing.JFormattedTextField();
@@ -1270,23 +1270,23 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 														.addComponent(ordemAmostradosJFT, -2, 20, -2)))))
 						.addContainerGap()));
 
-		fasePesagemLabel4.setFont(new java.awt.Font("Tahoma", 1, 11));
-		fasePesagemLabel4.setHorizontalAlignment(0);
-		fasePesagemLabel4.setText("Fase 1 (Idade 28)");
+		faseAmostradosLabel.setFont(new java.awt.Font("Tahoma", 1, 11));
+		faseAmostradosLabel.setHorizontalAlignment(0);
+		faseAmostradosLabel.setText("Fase 1 (Idade 28)");
 
 		javax.swing.GroupLayout gl_pnlAmostrados = new javax.swing.GroupLayout(pnlAmostrados);
 		pnlAmostrados.setLayout(gl_pnlAmostrados);
 		gl_pnlAmostrados
 				.setHorizontalGroup(gl_pnlAmostrados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 						.addGroup(gl_pnlAmostrados.createSequentialGroup().addContainerGap()
-								.addComponent(fasePesagemLabel4, -1, 251, 32767))
+								.addComponent(faseAmostradosLabel, -1, 251, 32767))
 						.addGroup(gl_pnlAmostrados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 								.addGroup(gl_pnlAmostrados.createSequentialGroup().addContainerGap()
 										.addComponent(jPanel8, -2, -1, -2).addContainerGap(-1, 32767))));
 
 		gl_pnlAmostrados.setVerticalGroup(gl_pnlAmostrados
 				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(gl_pnlAmostrados.createSequentialGroup().addContainerGap().addComponent(fasePesagemLabel4)
+				.addGroup(gl_pnlAmostrados.createSequentialGroup().addContainerGap().addComponent(faseAmostradosLabel)
 						.addContainerGap(-1, 32767))
 				.addGroup(gl_pnlAmostrados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gl_pnlAmostrados.createSequentialGroup()
@@ -1563,21 +1563,21 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 														.addComponent(ordemPesagemJFT, -2, 20, -2)))))
 						.addContainerGap()));
 
-		fasePesagemLabel5.setFont(new java.awt.Font("Tahoma", 1, 11));
-		fasePesagemLabel5.setHorizontalAlignment(0);
-		fasePesagemLabel5.setText("Fase 1 (Idade 28)");
+		fasePesagemLabel.setFont(new java.awt.Font("Tahoma", 1, 11));
+		fasePesagemLabel.setHorizontalAlignment(0);
+		fasePesagemLabel.setText("Fase 1 (Idade 28)");
 
 		javax.swing.GroupLayout gl_pnlPesagem = new javax.swing.GroupLayout(pnlPesagem);
 		pnlPesagem.setLayout(gl_pnlPesagem);
 		gl_pnlPesagem.setHorizontalGroup(gl_pnlPesagem.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 				.addGroup(gl_pnlPesagem.createSequentialGroup().addContainerGap()
-						.addComponent(fasePesagemLabel5, -1, 246, 32767).addContainerGap())
+						.addComponent(fasePesagemLabel, -1, 246, 32767).addContainerGap())
 				.addGroup(gl_pnlPesagem.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 						.addGroup(gl_pnlPesagem.createSequentialGroup().addContainerGap()
 								.addComponent(jPanel7, -1, -1, 32767).addContainerGap())));
 
 		gl_pnlPesagem.setVerticalGroup(gl_pnlPesagem.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(gl_pnlPesagem.createSequentialGroup().addContainerGap().addComponent(fasePesagemLabel5)
+				.addGroup(gl_pnlPesagem.createSequentialGroup().addContainerGap().addComponent(fasePesagemLabel)
 						.addContainerGap(-1, 32767))
 				.addGroup(gl_pnlPesagem.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gl_pnlPesagem.createSequentialGroup()
@@ -1887,9 +1887,9 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 												.addComponent(controleErrosJFT, -2, 20, -2)))
 						.addContainerGap()));
 
-		fasePesagemLabel3.setFont(new java.awt.Font("Tahoma", 1, 11));
-		fasePesagemLabel3.setHorizontalAlignment(0);
-		fasePesagemLabel3.setText("Fase 1 (Idade 28)");
+		faseErrosLabel.setFont(new java.awt.Font("Tahoma", 1, 11));
+		faseErrosLabel.setHorizontalAlignment(0);
+		faseErrosLabel.setText("Fase 1 (Idade 28)");
 
 		javax.swing.GroupLayout gl_pnlErros = new javax.swing.GroupLayout(pnlErros);
 		pnlErros.setLayout(gl_pnlErros);
@@ -1898,13 +1898,13 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 				.addGroup(gl_pnlErros.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 						.addGroup(gl_pnlErros.createSequentialGroup().addContainerGap().addGroup(gl_pnlErros
 								.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-								.addComponent(fasePesagemLabel3, -1, -1, 32767).addComponent(jPanel9, -2, -1, -2))
+								.addComponent(faseErrosLabel, -1, -1, 32767).addComponent(jPanel9, -2, -1, -2))
 								.addContainerGap(-1, 32767))));
 
 		gl_pnlErros.setVerticalGroup(gl_pnlErros.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 				.addGap(0, 250, 32767)
 				.addGroup(gl_pnlErros.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(gl_pnlErros.createSequentialGroup().addContainerGap().addComponent(fasePesagemLabel3)
+						.addGroup(gl_pnlErros.createSequentialGroup().addContainerGap().addComponent(faseErrosLabel)
 								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 								.addComponent(jPanel9, -2, -1, -2).addContainerGap(-1, 32767))));
 
@@ -2200,19 +2200,19 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 
 		jPanel43.setLayout(jPanel43Layout);
 
-		fasePesagemLabel1.setFont(new java.awt.Font("Tahoma", 1, 11));
-		fasePesagemLabel1.setHorizontalAlignment(0);
-		fasePesagemLabel1.setText("Fase 1 (Idade 28)");
+		faseMortalidadeLabel.setFont(new java.awt.Font("Tahoma", 1, 11));
+		faseMortalidadeLabel.setHorizontalAlignment(0);
+		faseMortalidadeLabel.setText("Fase 1 (Idade 28)");
 
 		javax.swing.GroupLayout gl_pnlMortalidade = new javax.swing.GroupLayout(pnlMortalidade);
 		gl_pnlMortalidade.setHorizontalGroup(gl_pnlMortalidade.createParallelGroup(Alignment.TRAILING)
 				.addGroup(Alignment.LEADING, gl_pnlMortalidade.createSequentialGroup().addContainerGap()
 						.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.LEADING)
 								.addComponent(jPanel43, GroupLayout.PREFERRED_SIZE, 281, GroupLayout.PREFERRED_SIZE)
-								.addComponent(fasePesagemLabel1, GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE))
+								.addComponent(faseMortalidadeLabel, GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE))
 						.addContainerGap()));
 		gl_pnlMortalidade.setVerticalGroup(gl_pnlMortalidade.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_pnlMortalidade.createSequentialGroup().addContainerGap().addComponent(fasePesagemLabel1)
+				.addGroup(gl_pnlMortalidade.createSequentialGroup().addContainerGap().addComponent(faseMortalidadeLabel)
 						.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 						.addComponent(jPanel43, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 								GroupLayout.PREFERRED_SIZE)
@@ -2493,9 +2493,9 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 												.addComponent(ordemEliminadosJFT, -2, 20, -2)))
 						.addContainerGap(-1, 32767)));
 
-		fasePesagemLabel2.setFont(new java.awt.Font("Tahoma", 1, 11));
-		fasePesagemLabel2.setHorizontalAlignment(0);
-		fasePesagemLabel2.setText("Fase 1 (Idade 28)");
+		faseEliminadosLabel.setFont(new java.awt.Font("Tahoma", 1, 11));
+		faseEliminadosLabel.setHorizontalAlignment(0);
+		faseEliminadosLabel.setText("Fase 1 (Idade 28)");
 
 		javax.swing.GroupLayout gl_pnlEliminados = new javax.swing.GroupLayout(pnlEliminados);
 		pnlEliminados.setLayout(gl_pnlEliminados);
@@ -2505,13 +2505,13 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 						.addGroup(gl_pnlEliminados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 								.addGroup(gl_pnlEliminados.createSequentialGroup().addGap(0, 0, 32767)
 										.addComponent(jPanel13, -2, -1, -2))
-								.addComponent(fasePesagemLabel2, -1, -1, 32767))
+								.addComponent(faseEliminadosLabel, -1, -1, 32767))
 						.addContainerGap()));
 
 		gl_pnlEliminados.setVerticalGroup(
 				gl_pnlEliminados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(
 						javax.swing.GroupLayout.Alignment.TRAILING,
-						gl_pnlEliminados.createSequentialGroup().addContainerGap().addComponent(fasePesagemLabel2)
+						gl_pnlEliminados.createSequentialGroup().addContainerGap().addComponent(faseEliminadosLabel)
 								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, -1, 32767)
 								.addComponent(jPanel13, -2, -1, -2).addContainerGap()));
 
@@ -2670,43 +2670,43 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 	}
 
 	public JLabel getFasePesagemLabel1() {
-		return fasePesagemLabel1;
+		return faseMortalidadeLabel;
 	}
 
 	public void setFasePesagemLabel1(JLabel fasePesagemLabel1) {
-		this.fasePesagemLabel1 = fasePesagemLabel1;
+		this.faseMortalidadeLabel = fasePesagemLabel1;
 	}
 
 	public JLabel getFasePesagemLabel2() {
-		return fasePesagemLabel2;
+		return faseEliminadosLabel;
 	}
 
 	public void setFasePesagemLabel2(JLabel fasePesagemLabel2) {
-		this.fasePesagemLabel2 = fasePesagemLabel2;
+		this.faseEliminadosLabel = fasePesagemLabel2;
 	}
 
 	public JLabel getFasePesagemLabel3() {
-		return fasePesagemLabel3;
+		return faseErrosLabel;
 	}
 
 	public void setFasePesagemLabel3(JLabel fasePesagemLabel3) {
-		this.fasePesagemLabel3 = fasePesagemLabel3;
+		this.faseErrosLabel = fasePesagemLabel3;
 	}
 
 	public JLabel getFasePesagemLabel4() {
-		return fasePesagemLabel4;
+		return faseAmostradosLabel;
 	}
 
 	public void setFasePesagemLabel4(JLabel fasePesagemLabel4) {
-		this.fasePesagemLabel4 = fasePesagemLabel4;
+		this.faseAmostradosLabel = fasePesagemLabel4;
 	}
 
 	public JLabel getFasePesagemLabel5() {
-		return fasePesagemLabel5;
+		return fasePesagemLabel;
 	}
 
 	public void setFasePesagemLabel5(JLabel fasePesagemLabel5) {
-		this.fasePesagemLabel5 = fasePesagemLabel5;
+		this.fasePesagemLabel = fasePesagemLabel5;
 	}
 
 	public JLabel getIdadeAmHist1Label() {
@@ -4663,6 +4663,46 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 
 	public javax.swing.JFormattedTextField getPesoEliminadosJFT() {
 		return pesoEliminadosJFT;
+	}
+
+	public JLabel getFaseMortalidadeLabel() {
+		return faseMortalidadeLabel;
+	}
+
+	public void setFaseMortalidadeLabel(JLabel faseMortalidadeLabel) {
+		this.faseMortalidadeLabel = faseMortalidadeLabel;
+	}
+
+	public JLabel getFaseEliminadosLabel() {
+		return faseEliminadosLabel;
+	}
+
+	public void setFaseEliminadosLabel(JLabel faseEliminadosLabel) {
+		this.faseEliminadosLabel = faseEliminadosLabel;
+	}
+
+	public JLabel getFaseErrosLabel() {
+		return faseErrosLabel;
+	}
+
+	public void setFaseErrosLabel(JLabel faseErrosLabel) {
+		this.faseErrosLabel = faseErrosLabel;
+	}
+
+	public JLabel getFaseAmostradosLabel() {
+		return faseAmostradosLabel;
+	}
+
+	public void setFaseAmostradosLabel(JLabel faseAmostradosLabel) {
+		this.faseAmostradosLabel = faseAmostradosLabel;
+	}
+
+	public JLabel getFasePesagemLabel() {
+		return fasePesagemLabel;
+	}
+
+	public void setFasePesagemLabel(JLabel fasePesagemLabel) {
+		this.fasePesagemLabel = fasePesagemLabel;
 	}
 
 

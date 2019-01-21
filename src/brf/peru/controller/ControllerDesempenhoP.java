@@ -147,12 +147,12 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 
 		ordemRME = 1;
 		ordemP = 1;
-		viewDesempenho.getOrdemJFT().setText("001");
-		viewDesempenho.getOrdemMortalidadeJFT().setText("001");
-		viewDesempenho.getOrdemEliminadosJFT().setText("001");
-		viewDesempenho.getOrdemErrosJFT().setText("001");
-		viewDesempenho.getOrdemAmostradosJFT().setText("001");
-		viewDesempenho.getOrdemPesagemJFT().setText("001");
+		viewDesempenho.getOrdemJFT().setText("1");
+		viewDesempenho.getOrdemMortalidadeJFT().setText("1");
+		viewDesempenho.getOrdemEliminadosJFT().setText("1");
+		viewDesempenho.getOrdemErrosJFT().setText("1");
+		viewDesempenho.getOrdemAmostradosJFT().setText("1");
+		viewDesempenho.getOrdemPesagemJFT().setText("1");
 		viewDesempenho.getIdadeJFT().setText("000");
 		viewDesempenho.getFornecidaJFT().setText("00000");
 		viewDesempenho.getSobraJFT().setText("00000");
@@ -179,7 +179,6 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		viewDesempenho.getPesadosJFT().setText("00000");
 		viewDesempenho.getControlePesagemJFT().setText("000000");
 
-		
 		List<Component> order = new ArrayList<>();
 		order.add(viewDesempenho.getBaiaJFT());
 		order.add(viewDesempenho.getLadoJFT());
@@ -330,7 +329,8 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		viewDesempenho.getOrdemJFT().setText("" + ordemRME);
 		viewDesempenho.getOrdemMortalidadeJFT().setText("" + ordemP);
 		TextFormatter.formatStringJFT(viewDesempenho.getOrdemJFT(), viewDesempenho.getOrdemJFT().getText(), 3);
-		TextFormatter.formatStringJFT(viewDesempenho.getOrdemMortalidadeJFT(), viewDesempenho.getOrdemMortalidadeJFT().getText(), 3);
+		TextFormatter.formatStringJFT(viewDesempenho.getOrdemMortalidadeJFT(),
+				viewDesempenho.getOrdemMortalidadeJFT().getText(), 3);
 	}
 
 	@Override
@@ -458,13 +458,13 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 								JOptionPane.WARNING_MESSAGE);
 						if (option == 0) {
 							desempenhoBO.excluirBaia(Integer.parseInt(viewDesempenho.getBaiaJFT().getText()));
-							viewDesempenho.getOrdemJFT().setText("001");
+							viewDesempenho.getOrdemJFT().setText("1");
 							fluxoOkCabecalho();
 						} else {
 							fluxoProblemaCabecalho();
 						}
 					} else {
-						viewDesempenho.getOrdemJFT().setText("001");
+						viewDesempenho.getOrdemJFT().setText("1");
 						fluxoOkCabecalho();
 					}
 				}
@@ -501,7 +501,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 //							Integer.parseInt(viewDesempenho.getSobraJFT().getText()), new MortalidadeVOP(),
 //							new EliminadosVOP(), new ErrosVOP(), new AmostradosVOP(), new PesadosVOP()));
 //					updateHistRME();
-					viewDesempenho.getOrdemJFT().setText("" + (++ordemRME));
+//					viewDesempenho.getOrdemJFT().setText("" + (++ordemRME));
 					TextFormatter.formatStringJFT(viewDesempenho.getOrdemJFT(), viewDesempenho.getOrdemJFT().getText(),
 							3);
 				} else {
@@ -545,7 +545,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 						countFase = 1;
 						faseAnterior = 0;
 						idadeFaseAtual = idades.get(countIdades);
-						viewDesempenho.getOrdemJFT().setText("001");
+						viewDesempenho.getOrdemJFT().setText("1");
 						viewDesempenho.getIdadeJFT().setEnabled(false);
 						viewDesempenho.getFornecidaJFT().setEnabled(false);
 						viewDesempenho.getSobraJFT().setEnabled(false);
@@ -561,7 +561,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 						atualizaFaseRacao();
 						continuarDigitacaoRacoes();
 						ordemRME = 1;
-						viewDesempenho.getOrdemJFT().setText("001");
+						viewDesempenho.getOrdemJFT().setText("1");
 						viewDesempenho.getConsumoJP().setBorder(defaultRmeJP);
 						System.out.println("continua digitação dos consumos");
 					}
@@ -571,7 +571,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 					clearHistRME();
 					recuperaHistRME();
 					ordemRME = 1;
-					viewDesempenho.getOrdemJFT().setText("001");
+					viewDesempenho.getOrdemJFT().setText("1");
 					viewDesempenho.getConsumoJP().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
 				}
 			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getIdadeMortalidadeJFT()) {
@@ -624,45 +624,27 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 				if (calculaControleMortalidade() != 0) {
 					if (Integer.parseInt(viewDesempenho.getControleMortalidadeJFT().getText()
 							.trim()) == calculaControleMortalidade()) {
-						if (mortosTemp.get(mortosTemp.size() - 1).getIdade() == idades.get(idades.size() - 1)) {
-							// IDADE DA LISTA É A ÚLTIMA, ADICIONA TODOS OS CONSUMOS NA LISTA E SEGUE PARA
-							// DIGITAR OS ERROS
-							mortos.addAll(mortosTemp);
-							mortosTemp = new ArrayList<>();
-							clearHistMortalidade();
-							ordemRME = 1;
-							// ZERA OS CONTADORES DAS IDADES DAS FASES
-							countIdades = 0;
-							countFase = 1;
-							faseAnterior = 0;
-							idadeFaseAtual = idades.get(countIdades);
-							viewDesempenho.getOrdemMortalidadeJFT().setText("1");
-							viewDesempenho.getIdadeMortalidadeJFT().setEnabled(false);
-							viewDesempenho.getNrMortalidadeJFT().setEnabled(false);
-							viewDesempenho.getPesoMortalidadeJFT().setEnabled(false);
-							viewDesempenho.getControleMortalidadeJFT().setEnabled(false);
-							viewDesempenho.getIdadeEliminadosJFT().setEnabled(true);
-							((JFormattedTextField) e.getSource()).transferFocus();
-							viewDesempenho.getIdadeEliminadosJFT().grabFocus();
-							viewDesempenho.getPnlMortalidade().setBorder(defaultRmeJP);
-						} else {
-							mortos.addAll(mortosTemp);
-							mortosTemp = new ArrayList<>();
-							clearHistMortalidade();
-							atualizaFaseMortalidade();
-							continuarDigitacaoMortalidade();
-							ordemRME = 1;
-							viewDesempenho.getOrdemMortalidadeJFT().setText("1");
-							viewDesempenho.getPnlMortalidade().setBorder(defaultRmeJP);
-							System.out.println("continua digitação dos erros");
-						}
-					} else {
-						rmeErros.addAll(rmeTemp);
-						rmeTemp = new ArrayList<>();
-						clearHistRME();
-						recuperaHistRME();
+						mortos.addAll(mortosTemp);
+						mortosTemp = new ArrayList<>();
+						clearHistMortalidade();
 						ordemRME = 1;
-						viewDesempenho.getOrdemJFT().setText("001");
+						atualizaFaseMortalidade();
+						viewDesempenho.getOrdemMortalidadeJFT().setText("1");
+						viewDesempenho.getIdadeMortalidadeJFT().setEnabled(false);
+						viewDesempenho.getNrMortalidadeJFT().setEnabled(false);
+						viewDesempenho.getPesoMortalidadeJFT().setEnabled(false);
+						viewDesempenho.getControleMortalidadeJFT().setEnabled(false);
+						viewDesempenho.getIdadeEliminadosJFT().setEnabled(true);
+						((JFormattedTextField) e.getSource()).transferFocus();
+						viewDesempenho.getIdadeEliminadosJFT().grabFocus();
+						viewDesempenho.getPnlMortalidade().setBorder(defaultRmeJP);
+					} else {
+						mortosErros.addAll(mortosTemp);
+						mortosTemp = new ArrayList<>();
+						clearHistMortalidade();
+						recuperaHistMortalidade();
+						ordemRME = 1;
+						viewDesempenho.getOrdemMortalidadeJFT().setText("1");
 						viewDesempenho.getConsumoJP().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
 					}
 				} else {
@@ -672,7 +654,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 					atualizaFaseMortalidade();
 					continuarDigitacaoMortalidade();
 					ordemRME = 1;
-					viewDesempenho.getOrdemMortalidadeJFT().setText("001");
+					viewDesempenho.getOrdemMortalidadeJFT().setText("1");
 					viewDesempenho.getPnlMortalidade().setBorder(defaultRmeJP);
 					System.out.println("continua digitação dos erros");
 				}
@@ -688,6 +670,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 				((JFormattedTextField) e.getSource()).transferFocus();
 				viewDesempenho.getPesoErrosJFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getPesoErrosJFT()) {
+
 			}
 		}
 
@@ -715,7 +698,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		somaValoresMortalidade = 0;
 		if (countIdadesMortalidade < idades.size()) {
 			idadeFaseAtualMortalidade = idades.get(countIdadesMortalidade);
-			viewDesempenho.getFaseConsumoLabel()
+			viewDesempenho.getFaseMortalidadeLabel()
 					.setText("Fase " + countFaseMortalidade + " (Idade " + idadeFaseAtualMortalidade + ")");
 		}
 	}
@@ -831,7 +814,8 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 	public void continuaProximaFase() {
 		clearHistP();
 		viewDesempenho.getOrdemMortalidadeJFT().setText("" + (++ordemP));
-		TextFormatter.formatStringJFT(viewDesempenho.getOrdemMortalidadeJFT(), viewDesempenho.getOrdemMortalidadeJFT().getText(), 3);
+		TextFormatter.formatStringJFT(viewDesempenho.getOrdemMortalidadeJFT(),
+				viewDesempenho.getOrdemMortalidadeJFT().getText(), 3);
 		if (faseAnterior != idadeFaseAtual) {
 			faseAnterior = idadeFaseAtual;
 		}
@@ -842,7 +826,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 			idadeFaseAtual = idades.get(countIdades);
 			viewDesempenho.getFaseConsumoLabel().setText("Fase " + countFase + " (Idade " + idadeFaseAtual + ")");
 			ordemP = 1;
-			viewDesempenho.getOrdemMortalidadeJFT().setText("001");
+			viewDesempenho.getOrdemMortalidadeJFT().setText("1");
 		}
 		fluxoContinuaDigitacao();
 		System.out.println("próx informação Pesagem");
@@ -1460,7 +1444,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		viewDesempenho.getOrdemPesagemHist2Label().setText(viewDesempenho.getOrdemHist3Label().getText());
 		viewDesempenho.getOrdemPesagemHist3Label().setText(viewDesempenho.getOrdemHist4Label().getText());
 		viewDesempenho.getOrdemPesagemHist4Label().setText(viewDesempenho.getOrdemHist5Label().getText());
-		viewDesempenho.getOrdemPesagemHist5Label().setText(viewDesempenho.getOrdemJFT().getText());
+		viewDesempenho.getOrdemPesagemHist5Label().setText(viewDesempenho.getOrdemMortalidadeJFT().getText());
 		viewDesempenho.getIdadeMHist1Label().setText(viewDesempenho.getIdadeMHist2Label().getText());
 		viewDesempenho.getIdadeMHist2Label().setText(viewDesempenho.getIdadeMHist3Label().getText());
 		viewDesempenho.getIdadeMHist3Label().setText(viewDesempenho.getIdadeMHist4Label().getText());
@@ -1540,7 +1524,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 				viewDesempenho.getIdadeMortalidadeJFT().getText(), 3);
 		viewDesempenho.getNrMortalidadeJFT().setText("" + mortosErros.get(0).getQuantidade());
 		TextFormatter.formatStringJFT(viewDesempenho.getNrMortalidadeJFT(),
-				viewDesempenho.getNrMortalidadeJFT().getText(), 5);
+				viewDesempenho.getNrMortalidadeJFT().getText(), 2);
 		viewDesempenho.getPesoMortalidadeJFT().setText("" + mortosErros.get(0).getPeso());
 		TextFormatter.formatStringJFT(viewDesempenho.getPesoMortalidadeJFT(),
 				viewDesempenho.getPesoMortalidadeJFT().getText(), 5);
@@ -1557,7 +1541,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 	}
 
 	public void clearHistMortalidade() {
-		viewDesempenho.getOrdemMortalidadeJFT().setText("");
+		viewDesempenho.getOrdemMortalidadeJFT().setText("1");
 		viewDesempenho.getIdadeMortalidadeJFT().setText("");
 		viewDesempenho.getNrMortalidadeJFT().setText("");
 		viewDesempenho.getPesoMortalidadeJFT().setText("");
