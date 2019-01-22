@@ -97,6 +97,26 @@ public class DesempenhoBOP {
 		}
 		return msg;
 	}
+	
+	public String verificaEliminados(Integer idade, Integer numero, Integer peso, Integer idadeInicioFase,
+			Integer idadeFinalFase) {
+		String msg = "";
+		int idadeFim = controller.getModel().getExperimentoVO().getInfoExp().getIdadeFase()
+				.get(controller.getModel().getExperimentoVO().getInfoExp().getIdadeFase().size() - 1);
+		if (idade > idadeFim || idade < 0) {
+			msg = msg.concat("- Idade fora do período do experimento\n");
+		} else if (idade < idadeInicioFase || idade > idadeFinalFase) {
+			if(idade != 0) {
+				msg = msg.concat(
+						"- Idade fora do período da fase. Dos " + idadeInicioFase + " aos " + idadeFinalFase + " dias.");
+			}
+		} else if (idade != 0 && numero == 0 && peso == 0) {
+			msg = msg.concat("- Nº de mortos igual à 0\n");
+		} else if (idade == 0 && numero != 0 && peso != 0 ) {
+			msg = msg.concat("- Idade não pode ser 0");
+		}
+		return msg;
+	}
 
 	public String verificaPesagem(List<RmeVOP> rme, int nrAlojados, int idadeM, int nMortos, int pMortos, int idadeElim,
 			int nElim, int pElim, int idadeEr, int nrErros, int pErros, int idadeAm, int nrAmostrados, int pAmostrados,

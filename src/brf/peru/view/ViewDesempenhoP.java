@@ -2057,6 +2057,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		pesoMortalidadeJFT.setEnabled(false);
 		
 		controleMortalidadeJFT = new JFormattedTextField();
+		controleMortalidadeJFT.setHorizontalAlignment(0);
 		controleMortalidadeJFT.setEnabled(false);
 
 //		try {
@@ -2298,7 +2299,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		idadeElHist5Label.setBorder(new javax.swing.border.SoftBevelBorder(1));
 		try {
 			idadeEliminadosJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -2306,7 +2307,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		idadeEliminadosJFT.setEnabled(false);
 		try {
 			controleEliminadosJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
