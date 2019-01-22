@@ -189,16 +189,16 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 	private javax.swing.JFormattedTextField ordemMortalidadeJFT;
 	private javax.swing.JFormattedTextField ordemErrosJFT;
 	private javax.swing.JFormattedTextField ordemAmostradosJFT;
-	private javax.swing.JFormattedTextField ordemPesagemJFT;
+	private javax.swing.JFormattedTextField ordemPesadosJFT;
 	private javax.swing.JFormattedTextField ordemEliminadosJFT;
-	private JLabel ordemPesagemHist1Label;
-	private JLabel ordemPesagemHist2Label;
-	private JLabel ordemPesagemHist3Label;
-	private JLabel ordemPesagemHist5Label;
-	private JLabel oredmAmHist4Label;
-	private JLabel oredmErHist4Label;
+	private JLabel ordemPesadosHist1Label;
+	private JLabel ordemPesadosHist2Label;
+	private JLabel ordemPesadosHist3Label;
+	private JLabel ordemPesadosHist5Label;
+	private JLabel ordemAmHist4Label;
+	private JLabel ordemErHist4Label;
 	private JLabel ordemMortalidadeHist4Label;
-	private JLabel ordemPesagemHist4Label;
+	private JLabel ordemPesadosHist4Label;
 	private JLabel pesadosHist1Label;
 	private JLabel pesadosHist2Label;
 	private JLabel pesadosHist3Label;
@@ -335,7 +335,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		ordemAmHist1Label = new JLabel();
 		ordemAmHist2Label = new JLabel();
 		ordemAmHist3Label = new JLabel();
-		oredmAmHist4Label = new JLabel();
+		ordemAmHist4Label = new JLabel();
 		ordemAmHist5Label = new JLabel();
 		ordemAmostradosJFT = new javax.swing.JFormattedTextField();
 		controleAmostradosJFT = new javax.swing.JFormattedTextField();
@@ -366,12 +366,12 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		jLabel30 = new JLabel();
 		idadePesadosHist5Label = new JLabel();
 		jLabel55 = new JLabel();
-		ordemPesagemHist1Label = new JLabel();
-		ordemPesagemHist2Label = new JLabel();
-		ordemPesagemHist3Label = new JLabel();
-		ordemPesagemHist4Label = new JLabel();
-		ordemPesagemHist5Label = new JLabel();
-		ordemPesagemJFT = new javax.swing.JFormattedTextField();
+		ordemPesadosHist1Label = new JLabel();
+		ordemPesadosHist2Label = new JLabel();
+		ordemPesadosHist3Label = new JLabel();
+		ordemPesadosHist4Label = new JLabel();
+		ordemPesadosHist5Label = new JLabel();
+		ordemPesadosJFT = new javax.swing.JFormattedTextField();
 		controlePesagemJFT = new javax.swing.JFormattedTextField();
 		jLabel56 = new JLabel();
 		fasePesagemLabel = new JLabel();
@@ -410,7 +410,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		ordemErHist1Label = new JLabel();
 		ordemErHist2Label = new JLabel();
 		ordemErHist3Label = new JLabel();
-		oredmErHist4Label = new JLabel();
+		ordemErHist4Label = new JLabel();
 		ordemErHist5Label = new JLabel();
 		ordemErrosJFT = new javax.swing.JFormattedTextField();
 		jLabel52 = new JLabel();
@@ -1095,8 +1095,8 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		ordemAmHist3Label.setHorizontalAlignment(0);
 		ordemAmHist3Label.setBorder(new javax.swing.border.SoftBevelBorder(1));
 
-		oredmAmHist4Label.setHorizontalAlignment(0);
-		oredmAmHist4Label.setBorder(new javax.swing.border.SoftBevelBorder(1));
+		ordemAmHist4Label.setHorizontalAlignment(0);
+		ordemAmHist4Label.setBorder(new javax.swing.border.SoftBevelBorder(1));
 
 		ordemAmHist5Label.setHorizontalAlignment(0);
 		ordemAmHist5Label.setBorder(new javax.swing.border.SoftBevelBorder(1));
@@ -1129,7 +1129,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 								.addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
 										.addComponent(jLabel53, -1, -1, 32767)
 										.addComponent(ordemAmHist3Label, -1, -1, 32767)
-										.addComponent(oredmAmHist4Label, javax.swing.GroupLayout.Alignment.LEADING, -1,
+										.addComponent(ordemAmHist4Label, javax.swing.GroupLayout.Alignment.LEADING, -1,
 												-1, 32767)
 										.addComponent(ordemAmHist1Label, javax.swing.GroupLayout.Alignment.LEADING, -1,
 												-1, 32767)
@@ -1261,7 +1261,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 														.addComponent(ordemAmHist3Label, -2, 14, -2)
 														.addPreferredGap(
 																javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-														.addComponent(oredmAmHist4Label, -2, 14, -2)
+														.addComponent(ordemAmHist4Label, -2, 14, -2)
 														.addPreferredGap(
 																javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
 														.addComponent(ordemAmHist5Label, -2, 14, -2)
@@ -1380,28 +1380,28 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		jLabel55.setHorizontalAlignment(0);
 		jLabel55.setText("Ordem");
 
-		ordemPesagemHist1Label.setHorizontalAlignment(0);
-		ordemPesagemHist1Label.setBorder(new javax.swing.border.SoftBevelBorder(1));
+		ordemPesadosHist1Label.setHorizontalAlignment(0);
+		ordemPesadosHist1Label.setBorder(new javax.swing.border.SoftBevelBorder(1));
 
-		ordemPesagemHist2Label.setHorizontalAlignment(0);
-		ordemPesagemHist2Label.setBorder(new javax.swing.border.SoftBevelBorder(1));
+		ordemPesadosHist2Label.setHorizontalAlignment(0);
+		ordemPesadosHist2Label.setBorder(new javax.swing.border.SoftBevelBorder(1));
 
-		ordemPesagemHist3Label.setHorizontalAlignment(0);
-		ordemPesagemHist3Label.setBorder(new javax.swing.border.SoftBevelBorder(1));
+		ordemPesadosHist3Label.setHorizontalAlignment(0);
+		ordemPesadosHist3Label.setBorder(new javax.swing.border.SoftBevelBorder(1));
 
-		ordemPesagemHist4Label.setHorizontalAlignment(0);
-		ordemPesagemHist4Label.setBorder(new javax.swing.border.SoftBevelBorder(1));
+		ordemPesadosHist4Label.setHorizontalAlignment(0);
+		ordemPesadosHist4Label.setBorder(new javax.swing.border.SoftBevelBorder(1));
 
-		ordemPesagemHist5Label.setHorizontalAlignment(0);
-		ordemPesagemHist5Label.setBorder(new javax.swing.border.SoftBevelBorder(1));
+		ordemPesadosHist5Label.setHorizontalAlignment(0);
+		ordemPesadosHist5Label.setBorder(new javax.swing.border.SoftBevelBorder(1));
 		try {
-			ordemPesagemJFT.setFormatterFactory(
+			ordemPesadosJFT.setFormatterFactory(
 					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
-		ordemPesagemJFT.setHorizontalAlignment(0);
-		ordemPesagemJFT.setEnabled(false);
+		ordemPesadosJFT.setHorizontalAlignment(0);
+		ordemPesadosJFT.setEnabled(false);
 		try {
 			controlePesagemJFT.setFormatterFactory(
 					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
@@ -1422,15 +1422,15 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 						.addGroup(jPanel7Layout.createSequentialGroup()
 								.addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
 										.addComponent(jLabel55, -1, -1, 32767)
-										.addComponent(ordemPesagemHist3Label, -1, -1, 32767)
-										.addComponent(ordemPesagemHist4Label, javax.swing.GroupLayout.Alignment.LEADING,
+										.addComponent(ordemPesadosHist3Label, -1, -1, 32767)
+										.addComponent(ordemPesadosHist4Label, javax.swing.GroupLayout.Alignment.LEADING,
 												-1, -1, 32767)
-										.addComponent(ordemPesagemHist1Label, javax.swing.GroupLayout.Alignment.LEADING,
+										.addComponent(ordemPesadosHist1Label, javax.swing.GroupLayout.Alignment.LEADING,
 												-1, -1, 32767)
-										.addComponent(ordemPesagemHist2Label, javax.swing.GroupLayout.Alignment.LEADING,
+										.addComponent(ordemPesadosHist2Label, javax.swing.GroupLayout.Alignment.LEADING,
 												-1, -1, 32767)
-										.addComponent(ordemPesagemHist5Label, -1, -1, 32767)
-										.addComponent(ordemPesagemJFT, javax.swing.GroupLayout.Alignment.LEADING))
+										.addComponent(ordemPesadosHist5Label, -1, -1, 32767)
+										.addComponent(ordemPesadosJFT, javax.swing.GroupLayout.Alignment.LEADING))
 								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 								.addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 										.addComponent(idadePesadosHist3Label, -1, -1, 32767)
@@ -1545,22 +1545,22 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 																.addComponent(nrPesadosJFT, -2, 20, -2)))
 												.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout
 														.createSequentialGroup()
-														.addComponent(ordemPesagemHist1Label, -2, 14, -2)
+														.addComponent(ordemPesadosHist1Label, -2, 14, -2)
 														.addPreferredGap(
 																javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-														.addComponent(ordemPesagemHist2Label, -2, 14, -2)
+														.addComponent(ordemPesadosHist2Label, -2, 14, -2)
 														.addPreferredGap(
 																javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-														.addComponent(ordemPesagemHist3Label, -2, 14, -2)
+														.addComponent(ordemPesadosHist3Label, -2, 14, -2)
 														.addPreferredGap(
 																javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-														.addComponent(ordemPesagemHist4Label, -2, 14, -2)
+														.addComponent(ordemPesadosHist4Label, -2, 14, -2)
 														.addPreferredGap(
 																javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-														.addComponent(ordemPesagemHist5Label, -2, 14, -2)
+														.addComponent(ordemPesadosHist5Label, -2, 14, -2)
 														.addPreferredGap(
 																javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-														.addComponent(ordemPesagemJFT, -2, 20, -2)))))
+														.addComponent(ordemPesadosJFT, -2, 20, -2)))))
 						.addContainerGap()));
 
 		fasePesagemLabel.setFont(new java.awt.Font("Tahoma", 1, 11));
@@ -1725,8 +1725,8 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		ordemErHist3Label.setHorizontalAlignment(0);
 		ordemErHist3Label.setBorder(new javax.swing.border.SoftBevelBorder(1));
 
-		oredmErHist4Label.setHorizontalAlignment(0);
-		oredmErHist4Label.setBorder(new javax.swing.border.SoftBevelBorder(1));
+		ordemErHist4Label.setHorizontalAlignment(0);
+		ordemErHist4Label.setBorder(new javax.swing.border.SoftBevelBorder(1));
 
 		ordemErHist5Label.setHorizontalAlignment(0);
 		ordemErHist5Label.setBorder(new javax.swing.border.SoftBevelBorder(1));
@@ -1760,7 +1760,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 								.addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
 										.addComponent(jLabel51, -1, -1, 32767)
 										.addComponent(ordemErHist3Label, -1, -1, 32767)
-										.addComponent(oredmErHist4Label, javax.swing.GroupLayout.Alignment.LEADING, -1,
+										.addComponent(ordemErHist4Label, javax.swing.GroupLayout.Alignment.LEADING, -1,
 												-1, 32767)
 										.addComponent(ordemErHist1Label, javax.swing.GroupLayout.Alignment.LEADING, -1,
 												-1, 32767)
@@ -1826,7 +1826,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
 										.addComponent(ordemErHist3Label, -2, 14, -2)
 										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addComponent(oredmErHist4Label, -2, 14, -2)
+										.addComponent(ordemErHist4Label, -2, 14, -2)
 										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
 										.addComponent(ordemErHist5Label, -2, 14, -2)
 										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -2230,6 +2230,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 
 		jLabel29.setHorizontalAlignment(0);
 		jLabel29.setText("Nr.");
+		
 		try {
 			nrEliminadosJFT.setFormatterFactory(
 					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
@@ -3711,11 +3712,11 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 	}
 
 	public javax.swing.JFormattedTextField getOrdemPJFT4() {
-		return ordemPesagemJFT;
+		return ordemPesadosJFT;
 	}
 
 	public void setOrdemPJFT4(javax.swing.JFormattedTextField ordemPJFT4) {
-		this.ordemPesagemJFT = ordemPJFT4;
+		this.ordemPesadosJFT = ordemPJFT4;
 	}
 
 	public javax.swing.JFormattedTextField getOrdemPJFT5() {
@@ -3727,51 +3728,51 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 	}
 
 	public JLabel getOrdemPesagemHist1Label() {
-		return ordemPesagemHist1Label;
+		return ordemPesadosHist1Label;
 	}
 
 	public void setOrdemPesagemHist1Label(JLabel ordemPesagemHist1Label) {
-		this.ordemPesagemHist1Label = ordemPesagemHist1Label;
+		this.ordemPesadosHist1Label = ordemPesagemHist1Label;
 	}
 
 	public JLabel getOrdemPesagemHist2Label() {
-		return ordemPesagemHist2Label;
+		return ordemPesadosHist2Label;
 	}
 
 	public void setOrdemPesagemHist2Label(JLabel ordemPesagemHist2Label) {
-		this.ordemPesagemHist2Label = ordemPesagemHist2Label;
+		this.ordemPesadosHist2Label = ordemPesagemHist2Label;
 	}
 
 	public JLabel getOrdemPesagemHist3Label() {
-		return ordemPesagemHist3Label;
+		return ordemPesadosHist3Label;
 	}
 
 	public void setOrdemPesagemHist3Label(JLabel ordemPesagemHist3Label) {
-		this.ordemPesagemHist3Label = ordemPesagemHist3Label;
+		this.ordemPesadosHist3Label = ordemPesagemHist3Label;
 	}
 
 	public JLabel getOrdemPesagemHist5Label() {
-		return ordemPesagemHist5Label;
+		return ordemPesadosHist5Label;
 	}
 
 	public void setOrdemPesagemHist5Label(JLabel ordemPesagemHist5Label) {
-		this.ordemPesagemHist5Label = ordemPesagemHist5Label;
+		this.ordemPesadosHist5Label = ordemPesagemHist5Label;
 	}
 
 	public JLabel getOredmAmHist4Label() {
-		return oredmAmHist4Label;
+		return ordemAmHist4Label;
 	}
 
 	public void setOredmAmHist4Label(JLabel oredmAmHist4Label) {
-		this.oredmAmHist4Label = oredmAmHist4Label;
+		this.ordemAmHist4Label = oredmAmHist4Label;
 	}
 
 	public JLabel getOredmErHist4Label() {
-		return oredmErHist4Label;
+		return ordemErHist4Label;
 	}
 
 	public void setOredmErHist4Label(JLabel oredmErHist4Label) {
-		this.oredmErHist4Label = oredmErHist4Label;
+		this.ordemErHist4Label = oredmErHist4Label;
 	}
 
 	public JLabel getOredmPHist4Label() {
@@ -3783,11 +3784,11 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 	}
 
 	public JLabel getOredmPesagemHist4Label() {
-		return ordemPesagemHist4Label;
+		return ordemPesadosHist4Label;
 	}
 
 	public void setOredmPesagemHist4Label(JLabel oredmPesagemHist4Label) {
-		this.ordemPesagemHist4Label = oredmPesagemHist4Label;
+		this.ordemPesadosHist4Label = oredmPesagemHist4Label;
 	}
 
 	public void setAvesAlojadasJFT(javax.swing.JFormattedTextField avesAlojadasJFT) {
@@ -4607,11 +4608,11 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 	}
 
 	public javax.swing.JFormattedTextField getOrdemPesagemJFT() {
-		return ordemPesagemJFT;
+		return ordemPesadosJFT;
 	}
 
 	public void setOrdemPesagemJFT(javax.swing.JFormattedTextField ordemPesagemJFT) {
-		this.ordemPesagemJFT = ordemPesagemJFT;
+		this.ordemPesadosJFT = ordemPesagemJFT;
 	}
 
 	public javax.swing.JFormattedTextField getOrdemEliminadosJFT() {
@@ -4655,11 +4656,11 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 	}
 
 	public JLabel getOrdemPesagemHist4Label() {
-		return ordemPesagemHist4Label;
+		return ordemPesadosHist4Label;
 	}
 
 	public void setOrdemPesagemHist4Label(JLabel ordemPesagemHist4Label) {
-		this.ordemPesagemHist4Label = ordemPesagemHist4Label;
+		this.ordemPesadosHist4Label = ordemPesagemHist4Label;
 	}
 
 	public javax.swing.JFormattedTextField getPesoEliminadosJFT() {
@@ -4704,6 +4705,70 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 
 	public void setFasePesagemLabel(JLabel fasePesagemLabel) {
 		this.fasePesagemLabel = fasePesagemLabel;
+	}
+
+	public JLabel getOrdemErHist4Label() {
+		return ordemErHist4Label;
+	}
+
+	public void setOrdemErHist4Label(JLabel ordemErHist4Label) {
+		this.ordemErHist4Label = ordemErHist4Label;
+	}
+
+	public JLabel getOrdemAmHist4Label() {
+		return ordemAmHist4Label;
+	}
+
+	public void setOrdemAmHist4Label(JLabel ordemAmHist4Label) {
+		this.ordemAmHist4Label = ordemAmHist4Label;
+	}
+
+	public javax.swing.JFormattedTextField getOrdemPesadosJFT() {
+		return ordemPesadosJFT;
+	}
+
+	public void setOrdemPesadosJFT(javax.swing.JFormattedTextField ordemPesadosJFT) {
+		this.ordemPesadosJFT = ordemPesadosJFT;
+	}
+
+	public JLabel getOrdemPesadosHist1Label() {
+		return ordemPesadosHist1Label;
+	}
+
+	public void setOrdemPesadosHist1Label(JLabel ordemPesadosHist1Label) {
+		this.ordemPesadosHist1Label = ordemPesadosHist1Label;
+	}
+
+	public JLabel getOrdemPesadosHist2Label() {
+		return ordemPesadosHist2Label;
+	}
+
+	public void setOrdemPesadosHist2Label(JLabel ordemPesadosHist2Label) {
+		this.ordemPesadosHist2Label = ordemPesadosHist2Label;
+	}
+
+	public JLabel getOrdemPesadosHist3Label() {
+		return ordemPesadosHist3Label;
+	}
+
+	public void setOrdemPesadosHist3Label(JLabel ordemPesadosHist3Label) {
+		this.ordemPesadosHist3Label = ordemPesadosHist3Label;
+	}
+
+	public JLabel getOrdemPesadosHist5Label() {
+		return ordemPesadosHist5Label;
+	}
+
+	public void setOrdemPesadosHist5Label(JLabel ordemPesadosHist5Label) {
+		this.ordemPesadosHist5Label = ordemPesadosHist5Label;
+	}
+
+	public JLabel getOrdemPesadosHist4Label() {
+		return ordemPesadosHist4Label;
+	}
+
+	public void setOrdemPesadosHist4Label(JLabel ordemPesadosHist4Label) {
+		this.ordemPesadosHist4Label = ordemPesadosHist4Label;
 	}
 
 

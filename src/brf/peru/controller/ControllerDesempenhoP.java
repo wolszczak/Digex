@@ -495,13 +495,6 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 					((JFormattedTextField) e.getSource()).transferFocus();
 					viewDesempenho.getControleFornecidaJFT().grabFocus();
 					viewDesempenho.getConsumoJP().setBorder(defaultRmeJP);
-//					rmeTemp.add(new RmeVOP(Integer.parseInt(viewDesempenho.getOrdemJFT().getText()),
-//							Integer.parseInt(viewDesempenho.getIdadeJFT().getText()),
-//							Integer.parseInt(viewDesempenho.getFornecidaJFT().getText()),
-//							Integer.parseInt(viewDesempenho.getSobraJFT().getText()), new MortalidadeVOP(),
-//							new EliminadosVOP(), new ErrosVOP(), new AmostradosVOP(), new PesadosVOP()));
-//					updateHistRME();
-//					viewDesempenho.getOrdemJFT().setText("" + (++ordemRME));
 					TextFormatter.formatStringJFT(viewDesempenho.getOrdemJFT(), viewDesempenho.getOrdemJFT().getText(),
 							3);
 				} else {
@@ -705,7 +698,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 					viewDesempenho.getOrdemEliminadosJFT().setText("" + (++ordemRME));
 					continuarDigitacaoEliminados();
 				}
-			}else if ((JFormattedTextField) e.getSource() == viewDesempenho.getControleEliminadosJFT()) {
+			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getControleEliminadosJFT()) {
 				TextFormatter.formatStringJFT(src, text, 6);
 				if (calculaControleEliminados() != 0) {
 					if (Integer.parseInt(viewDesempenho.getControleEliminadosJFT().getText()
@@ -748,7 +741,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 					viewDesempenho.getPnlEliminados().setBorder(defaultRmeJP);
 					System.out.println("continua digitação dos erros");
 				}
-			}else if ((JFormattedTextField) e.getSource() == viewDesempenho.getIdadeErrosJFT()) {
+			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getIdadeErrosJFT()) {
 				TextFormatter.formatStringJFT(src, text, 3);
 				viewDesempenho.getNrErrosJFT().setEnabled(true);
 				((JFormattedTextField) e.getSource()).transferFocus();
@@ -758,8 +751,237 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 				viewDesempenho.getPesoErrosJFT().setEnabled(true);
 				((JFormattedTextField) e.getSource()).transferFocus();
 				viewDesempenho.getPesoErrosJFT().grabFocus();
-			}else if ((JFormattedTextField) e.getSource() == viewDesempenho.getPesoErrosJFT()) {
-				
+			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getPesoErrosJFT()) {
+				TextFormatter.formatStringJFT(src, text, 5);
+				String msg = desempenhoBO.verificaErros(Integer.parseInt(viewDesempenho.getIdadeErrosJFT().getText()),
+						Integer.parseInt(viewDesempenho.getNrErrosJFT().getText()),
+						Integer.parseInt(viewDesempenho.getPesoErrosJFT().getText()), faseAnteriorErros,
+						idadeFaseAtualErros);
+				if (msg.length() != 0) {
+					JOptionPane.showMessageDialog(viewDesempenho, "Problema(s):\n" + msg, "DIGEX - Erro",
+							JOptionPane.ERROR_MESSAGE);
+					fluxoProblemaDigitacaoErros();
+				} else if (Integer.parseInt(viewDesempenho.getIdadeErrosJFT().getText()) == 0
+						&& Integer.parseInt(viewDesempenho.getNrErrosJFT().getText()) == 0
+						&& Integer.parseInt(viewDesempenho.getPesoErrosJFT().getText()) == 0) {
+					viewDesempenho.getPnlErros().setBorder(defaultRmeJP);
+					viewDesempenho.getControleErrosJFT().setEnabled(true);
+					viewDesempenho.getControleErrosJFT().grabFocus();
+				} else {
+					errosTemp.add(new ErrosVOP(Integer.parseInt(viewDesempenho.getIdadeErrosJFT().getText()),
+							Integer.parseInt(viewDesempenho.getNrErrosJFT().getText()),
+							Integer.parseInt(viewDesempenho.getPesoErrosJFT().getText())));
+					updateHistErros();
+					viewDesempenho.getOrdemErrosJFT().setText("" + (++ordemRME));
+					continuarDigitacaoErros();
+				}
+			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getControleErrosJFT()) {
+				TextFormatter.formatStringJFT(src, text, 6);
+				if (calculaControleErros() != 0) {
+					if (Integer.parseInt(
+							viewDesempenho.getControleErrosJFT().getText().trim()) == calculaControleErros()) {
+						erros.addAll(errosTemp);
+						errosTemp = new ArrayList<>();
+						clearHistErros();
+						ordemRME = 1;
+						atualizaFaseErros();
+						viewDesempenho.getOrdemErrosJFT().setText("1");
+						viewDesempenho.getIdadeErrosJFT().setEnabled(false);
+						viewDesempenho.getIdadeErrosJFT().setText("000");
+						viewDesempenho.getNrErrosJFT().setEnabled(false);
+						viewDesempenho.getNrErrosJFT().setText("00");
+						viewDesempenho.getPesoErrosJFT().setEnabled(false);
+						viewDesempenho.getPesoErrosJFT().setText("00000");
+						viewDesempenho.getControleErrosJFT().setEnabled(false);
+						viewDesempenho.getControleErrosJFT().setText("000000");
+						viewDesempenho.getIdadeAmostradosJFT().setEnabled(true);
+						((JFormattedTextField) e.getSource()).transferFocus();
+						viewDesempenho.getIdadeAmostradosJFT().grabFocus();
+						viewDesempenho.getPnlErros().setBorder(defaultRmeJP);
+					} else {
+						errosErros.addAll(errosTemp);
+						errosTemp = new ArrayList<>();
+						clearHistErros();
+						recuperaHistErros();
+						ordemRME = 1;
+						viewDesempenho.getOrdemErrosJFT().setText("1");
+						viewDesempenho.getPnlErros().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
+					}
+				} else {
+					errosErros.addAll(errosTemp);
+					errosTemp = new ArrayList<>();
+					clearHistErros();
+					atualizaFaseErros();
+					continuarDigitacaoErros();
+					ordemRME = 1;
+					viewDesempenho.getOrdemErrosJFT().setText("1");
+					viewDesempenho.getPnlErros().setBorder(defaultRmeJP);
+					System.out.println("continua digitação dos erros");
+				}
+			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getIdadeAmostradosJFT()) {
+				TextFormatter.formatStringJFT(src, text, 3);
+				viewDesempenho.getNrAmostradosJFT().setEnabled(true);
+				((JFormattedTextField) e.getSource()).transferFocus();
+				viewDesempenho.getNrAmostradosJFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getNrAmostradosJFT()) {
+				TextFormatter.formatStringJFT(src, text, 3);
+				viewDesempenho.getPesoAmostradosJFT().setEnabled(true);
+				((JFormattedTextField) e.getSource()).transferFocus();
+				viewDesempenho.getPesoAmostradosJFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getPesoAmostradosJFT()) {
+				TextFormatter.formatStringJFT(src, text, 5);
+				String msg = desempenhoBO.verificaAmostrados(
+						Integer.parseInt(viewDesempenho.getIdadeAmostradosJFT().getText()),
+						Integer.parseInt(viewDesempenho.getNrAmostradosJFT().getText()),
+						Integer.parseInt(viewDesempenho.getPesoAmostradosJFT().getText()), faseAnteriorAmostrados,
+						idadeFaseAtualAmostrados);
+				if (msg.length() != 0) {
+					JOptionPane.showMessageDialog(viewDesempenho, "Problema(s):\n" + msg, "DIGEX - Erro",
+							JOptionPane.ERROR_MESSAGE);
+					fluxoProblemaDigitacaoAmostrados();
+				} else if (Integer.parseInt(viewDesempenho.getIdadeAmostradosJFT().getText()) == 0
+						&& Integer.parseInt(viewDesempenho.getNrAmostradosJFT().getText()) == 0
+						&& Integer.parseInt(viewDesempenho.getPesoAmostradosJFT().getText()) == 0) {
+					viewDesempenho.getPnlAmostrados().setBorder(defaultRmeJP);
+					viewDesempenho.getControleAmostradosJFT().setEnabled(true);
+					viewDesempenho.getControleAmostradosJFT().grabFocus();
+				} else {
+					amostradosTemp
+							.add(new AmostradosVOP(Integer.parseInt(viewDesempenho.getIdadeAmostradosJFT().getText()),
+									Integer.parseInt(viewDesempenho.getNrAmostradosJFT().getText()),
+									Integer.parseInt(viewDesempenho.getPesoAmostradosJFT().getText())));
+					updateHistAmostrados();
+					viewDesempenho.getOrdemAmostradosJFT().setText("" + (++ordemRME));
+					continuarDigitacaoAmostrados();
+				}
+			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getControleAmostradosJFT()) {
+				TextFormatter.formatStringJFT(src, text, 6);
+				if (calculaControleAmostrados() != 0) {
+					if (Integer.parseInt(viewDesempenho.getControleAmostradosJFT().getText()
+							.trim()) == calculaControleAmostrados()) {
+						amostrados.addAll(amostradosTemp);
+						amostradosTemp = new ArrayList<>();
+						clearHistAmostrados();
+						ordemRME = 1;
+						atualizaFaseAmostrados();
+						viewDesempenho.getOrdemAmostradosJFT().setText("1");
+						viewDesempenho.getIdadeAmostradosJFT().setEnabled(false);
+						viewDesempenho.getIdadeAmostradosJFT().setText("000");
+						viewDesempenho.getNrAmostradosJFT().setEnabled(false);
+						viewDesempenho.getNrAmostradosJFT().setText("00");
+						viewDesempenho.getPesoAmostradosJFT().setEnabled(false);
+						viewDesempenho.getPesoAmostradosJFT().setText("00000");
+						viewDesempenho.getControleAmostradosJFT().setEnabled(false);
+						viewDesempenho.getControleAmostradosJFT().setText("000000");
+						viewDesempenho.getIdadePesadosJFT().setEnabled(true);
+						((JFormattedTextField) e.getSource()).transferFocus();
+						viewDesempenho.getIdadePesadosJFT().grabFocus();
+						viewDesempenho.getPnlAmostrados().setBorder(defaultRmeJP);
+					} else {
+						amostrados.addAll(amostradosTemp);
+						amostradosTemp = new ArrayList<>();
+						clearHistAmostrados();
+						recuperaHistAmostrados();
+						ordemRME = 1;
+						viewDesempenho.getOrdemAmostradosJFT().setText("1");
+						viewDesempenho.getPnlAmostrados().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
+					}
+				} else {
+					amostrados.addAll(amostradosTemp);
+					amostradosTemp = new ArrayList<>();
+					clearHistAmostrados();
+					atualizaFaseAmostrados();
+					continuarDigitacaoAmostrados();
+					ordemRME = 1;
+					viewDesempenho.getOrdemAmostradosJFT().setText("1");
+					viewDesempenho.getPnlAmostrados().setBorder(defaultRmeJP);
+					System.out.println("continua digitação dos Amostrados");
+				}
+			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getIdadePesadosJFT()) {
+				TextFormatter.formatStringJFT(src, text, 3);
+				viewDesempenho.getNrPesadosJFT().setEnabled(true);
+				((JFormattedTextField) e.getSource()).transferFocus();
+				viewDesempenho.getNrPesadosJFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getNrPesadosJFT()) {
+				TextFormatter.formatStringJFT(src, text, 3);
+				viewDesempenho.getPesadosJFT().setEnabled(true);
+				((JFormattedTextField) e.getSource()).transferFocus();
+				viewDesempenho.getPesadosJFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getPesadosJFT()) {
+				TextFormatter.formatStringJFT(src, text, 5);
+				String msg = desempenhoBO.verificaPesagem(
+						Integer.parseInt(viewDesempenho.getIdadePesadosJFT().getText()),
+						Integer.parseInt(viewDesempenho.getNrPesadosJFT().getText()),
+						Integer.parseInt(viewDesempenho.getPesadosJFT().getText()), faseAnteriorPesados,
+						idadeFaseAtualPesados);
+				if (msg.length() != 0) {
+					JOptionPane.showMessageDialog(viewDesempenho, "Problema(s):\n" + msg, "DIGEX - Erro",
+							JOptionPane.ERROR_MESSAGE);
+					fluxoProblemaDigitacaoPesados();
+				} else if (Integer.parseInt(viewDesempenho.getIdadePesadosJFT().getText()) == 0
+						&& Integer.parseInt(viewDesempenho.getNrPesadosJFT().getText()) == 0
+						&& Integer.parseInt(viewDesempenho.getPesadosJFT().getText()) == 0) {
+					viewDesempenho.getPnlPesagem().setBorder(defaultRmeJP);
+					viewDesempenho.getControlePesagemJFT().setEnabled(true);
+					viewDesempenho.getControlePesagemJFT().grabFocus();
+				} else {
+					pesadosTemp.add(new PesadosVOP(Integer.parseInt(viewDesempenho.getIdadePesadosJFT().getText()),
+							Integer.parseInt(viewDesempenho.getNrPesadosJFT().getText()),
+							Integer.parseInt(viewDesempenho.getPesadosJFT().getText())));
+					updateHistPesados();
+					viewDesempenho.getOrdemPesadosJFT().setText("" + (++ordemRME));
+					continuarDigitacaoPesados();
+				}
+			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getControlePesagemJFT()) {
+				TextFormatter.formatStringJFT(src, text, 6);
+				if (calculaControlePesados() != 0) {
+					if (Integer.parseInt(
+							viewDesempenho.getControlePesagemJFT().getText().trim()) == calculaControlePesados()) {
+						pesados.addAll(pesadosTemp);
+						pesadosTemp = new ArrayList<>();
+						clearHistPesados();
+						ordemRME = 1;
+						atualizaFasePesados();
+						viewDesempenho.getOrdemPesadosJFT().setText("1");
+						viewDesempenho.getIdadePesadosJFT().setEnabled(false);
+						viewDesempenho.getIdadePesadosJFT().setText("000");
+						viewDesempenho.getNrPesadosJFT().setEnabled(false);
+						viewDesempenho.getNrPesadosJFT().setText("00");
+						viewDesempenho.getPesadosJFT().setEnabled(false);
+						viewDesempenho.getPesadosJFT().setText("00000");
+						viewDesempenho.getControlePesagemJFT().setEnabled(false);
+						viewDesempenho.getControlePesagemJFT().setText("000000");
+
+						if (idadeFaseAtualPesados == idades.get(idades.size() - 1)) {
+							
+						}
+//						
+//						
+//						
+						viewDesempenho.getIdadePesadosJFT().setEnabled(true);
+						((JFormattedTextField) e.getSource()).transferFocus();
+						viewDesempenho.getIdadePesadosJFT().grabFocus();
+						viewDesempenho.getPnlPesagem().setBorder(defaultRmeJP);
+					} else {
+						pesados.addAll(pesadosTemp);
+						pesadosTemp = new ArrayList<>();
+						clearHistPesados();
+						recuperaHistPesados();
+						ordemRME = 1;
+						viewDesempenho.getOrdemPesadosJFT().setText("1");
+						viewDesempenho.getPnlPesagem().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
+					}
+				} else {
+					pesados.addAll(pesadosTemp);
+					pesadosTemp = new ArrayList<>();
+					clearHistPesados();
+					atualizaFasePesados();
+					continuarDigitacaoPesados();
+					ordemRME = 1;
+					viewDesempenho.getOrdemPesadosJFT().setText("1");
+					viewDesempenho.getPnlPesagem().setBorder(defaultRmeJP);
+					System.out.println("continua digitação dos Pesados");
+				}
 			}
 		}
 
@@ -791,7 +1013,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 					.setText("Fase " + countFaseMortalidade + " (Idade " + idadeFaseAtualMortalidade + ")");
 		}
 	}
-	
+
 	public void atualizaFaseEliminados() {
 		if (faseAnteriorEliminados != idadeFaseAtualEliminados) {
 			faseAnteriorEliminados = idadeFaseAtualEliminados;
@@ -803,6 +1025,48 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 			idadeFaseAtualEliminados = idades.get(countIdadesEliminados);
 			viewDesempenho.getFaseEliminadosLabel()
 					.setText("Fase " + countFaseEliminados + " (Idade " + idadeFaseAtualEliminados + ")");
+		}
+	}
+
+	public void atualizaFaseErros() {
+		if (faseAnteriorErros != idadeFaseAtualErros) {
+			faseAnteriorErros = idadeFaseAtualErros;
+		}
+		countIdadesErros++;
+		countFaseErros++;
+		somaValoresErros = 0;
+		if (countIdadesErros < idades.size()) {
+			idadeFaseAtualErros = idades.get(countIdadesErros);
+			viewDesempenho.getFaseErrosLabel()
+					.setText("Fase " + countFaseErros + " (Idade " + idadeFaseAtualErros + ")");
+		}
+	}
+
+	public void atualizaFaseAmostrados() {
+		if (faseAnteriorAmostrados != idadeFaseAtualAmostrados) {
+			faseAnteriorAmostrados = idadeFaseAtualAmostrados;
+		}
+		countIdadesAmostrados++;
+		countFaseAmostrados++;
+		somaValoresAmostrados = 0;
+		if (countIdadesAmostrados < idades.size()) {
+			idadeFaseAtualAmostrados = idades.get(countIdadesAmostrados);
+			viewDesempenho.getFaseAmostradosLabel()
+					.setText("Fase " + countFaseAmostrados + " (Idade " + idadeFaseAtualAmostrados + ")");
+		}
+	}
+
+	public void atualizaFasePesados() {
+		if (faseAnteriorPesados != idadeFaseAtualPesados) {
+			faseAnteriorPesados = idadeFaseAtualPesados;
+		}
+		countIdadesPesados++;
+		countFasePesados++;
+		somaValoresPesados = 0;
+		if (countIdadesPesados < idades.size()) {
+			idadeFaseAtualPesados = idades.get(countIdadesPesados);
+			viewDesempenho.getFasePesagemLabel()
+					.setText("Fase " + countFasePesados + " (Idade " + idadeFaseAtualPesados + ")");
 		}
 	}
 
@@ -828,13 +1092,37 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		viewDesempenho.getNrMortalidadeJFT().setEnabled(false);
 		viewDesempenho.getPesoMortalidadeJFT().setEnabled(false);
 	}
-	
+
 	public void continuarDigitacaoEliminados() {
 		viewDesempenho.getPnlEliminados().setBorder(defaultRmeJP);
 		viewDesempenho.getIdadeEliminadosJFT().setEnabled(true);
 		viewDesempenho.getIdadeEliminadosJFT().grabFocus();
 		viewDesempenho.getNrEliminadosJFT().setEnabled(false);
 		viewDesempenho.getPesoEliminadosJFT().setEnabled(false);
+	}
+
+	public void continuarDigitacaoErros() {
+		viewDesempenho.getPnlErros().setBorder(defaultRmeJP);
+		viewDesempenho.getIdadeErrosJFT().setEnabled(true);
+		viewDesempenho.getIdadeErrosJFT().grabFocus();
+		viewDesempenho.getNrErrosJFT().setEnabled(false);
+		viewDesempenho.getPesoErrosJFT().setEnabled(false);
+	}
+
+	public void continuarDigitacaoAmostrados() {
+		viewDesempenho.getPnlAmostrados().setBorder(defaultRmeJP);
+		viewDesempenho.getIdadeAmostradosJFT().setEnabled(true);
+		viewDesempenho.getIdadeAmostradosJFT().grabFocus();
+		viewDesempenho.getNrAmostradosJFT().setEnabled(false);
+		viewDesempenho.getPesoAmostradosJFT().setEnabled(false);
+	}
+
+	public void continuarDigitacaoPesados() {
+		viewDesempenho.getPnlPesagem().setBorder(defaultRmeJP);
+		viewDesempenho.getIdadePesadosJFT().setEnabled(true);
+		viewDesempenho.getIdadePesadosJFT().grabFocus();
+		viewDesempenho.getNrPesadosJFT().setEnabled(false);
+		viewDesempenho.getPesadosJFT().setEnabled(false);
 	}
 
 	public void fluxoProblemaDigitacaoRacoes() {
@@ -859,6 +1147,30 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		viewDesempenho.getIdadeEliminadosJFT().grabFocus();
 		viewDesempenho.getNrEliminadosJFT().setEnabled(false);
 		viewDesempenho.getPesoEliminadosJFT().setEnabled(false);
+	}
+
+	public void fluxoProblemaDigitacaoErros() {
+		viewDesempenho.getPnlErros().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
+		viewDesempenho.getIdadeErrosJFT().setEnabled(true);
+		viewDesempenho.getIdadeErrosJFT().grabFocus();
+		viewDesempenho.getNrErrosJFT().setEnabled(false);
+		viewDesempenho.getPesoErrosJFT().setEnabled(false);
+	}
+
+	public void fluxoProblemaDigitacaoAmostrados() {
+		viewDesempenho.getPnlAmostrados().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
+		viewDesempenho.getIdadeAmostradosJFT().setEnabled(true);
+		viewDesempenho.getIdadeAmostradosJFT().grabFocus();
+		viewDesempenho.getNrAmostradosJFT().setEnabled(false);
+		viewDesempenho.getPesoAmostradosJFT().setEnabled(false);
+	}
+
+	public void fluxoProblemaDigitacaoPesados() {
+		viewDesempenho.getPnlPesagem().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
+		viewDesempenho.getIdadePesadosJFT().setEnabled(true);
+		viewDesempenho.getIdadePesadosJFT().grabFocus();
+		viewDesempenho.getNrPesadosJFT().setEnabled(false);
+		viewDesempenho.getPesadosJFT().setEnabled(false);
 	}
 
 	public Integer calculaControleRacaoFornecida() {
@@ -886,13 +1198,43 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		}
 		return soma;
 	}
-	
+
 	public Integer calculaControleEliminados() {
 		Integer soma = 0;
 		for (EliminadosVOP eliminado : eliminadosTemp) {
 			soma += eliminado.getIdade();
 			soma += eliminado.getPeso();
 			soma += eliminado.getQuantidade();
+		}
+		return soma;
+	}
+
+	public Integer calculaControleErros() {
+		Integer soma = 0;
+		for (ErrosVOP erros : errosTemp) {
+			soma += erros.getIdade();
+			soma += erros.getPeso();
+			soma += erros.getQuantidade();
+		}
+		return soma;
+	}
+
+	public Integer calculaControleAmostrados() {
+		Integer soma = 0;
+		for (AmostradosVOP amostrado : amostradosTemp) {
+			soma += amostrado.getIdade();
+			soma += amostrado.getPeso();
+			soma += amostrado.getQuantidade();
+		}
+		return soma;
+	}
+
+	public Integer calculaControlePesados() {
+		Integer soma = 0;
+		for (PesadosVOP pesado : pesadosTemp) {
+			soma += pesado.getIdade();
+			soma += pesado.getPeso();
+			soma += pesado.getQuantidade();
 		}
 		return soma;
 	}
@@ -1607,16 +1949,12 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 			viewDesempenho.pack();
 		}
 	}
-	
+
 	public void updateHistEliminados() {
-		viewDesempenho.getOrdemElHist1Label()
-				.setText(viewDesempenho.getOrdemElHist2Label().getText());
-		viewDesempenho.getOrdemElHist2Label()
-				.setText(viewDesempenho.getOrdemElHist3Label().getText());
-		viewDesempenho.getOrdemElHist3Label()
-				.setText(viewDesempenho.getOrdemElHist4Label().getText());
-		viewDesempenho.getOrdemElHist4Label()
-				.setText(viewDesempenho.getOrdemElHist5Label().getText());
+		viewDesempenho.getOrdemElHist1Label().setText(viewDesempenho.getOrdemElHist2Label().getText());
+		viewDesempenho.getOrdemElHist2Label().setText(viewDesempenho.getOrdemElHist3Label().getText());
+		viewDesempenho.getOrdemElHist3Label().setText(viewDesempenho.getOrdemElHist4Label().getText());
+		viewDesempenho.getOrdemElHist4Label().setText(viewDesempenho.getOrdemElHist5Label().getText());
 		viewDesempenho.getOrdemElHist5Label().setText(viewDesempenho.getOrdemEliminadosJFT().getText());
 		viewDesempenho.getIdadeElHist1Label().setText(viewDesempenho.getIdadeElHist2Label().getText());
 		viewDesempenho.getIdadeElHist2Label().setText(viewDesempenho.getIdadeElHist3Label().getText());
@@ -1633,12 +1971,105 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		viewDesempenho.getPesoElHist3Label().setText(viewDesempenho.getPesoElHist4Label().getText());
 		viewDesempenho.getPesoElHist4Label().setText(viewDesempenho.getPesoElHist5Label().getText());
 		viewDesempenho.getPesoElHist5Label().setText(viewDesempenho.getPesoEliminadosJFT().getText());
-		if (!mortosErros.isEmpty()) {
+		if (!eliminadosErros.isEmpty()) {
 			recuperaHistEliminados();
 		} else {
 			viewDesempenho.getIdadeEliminadosJFT().setText("000");
 			viewDesempenho.getNrEliminadosJFT().setText("00000");
 			viewDesempenho.getPesoEliminadosJFT().setText("00000");
+			viewDesempenho.pack();
+		}
+	}
+
+	public void updateHistErros() {
+		viewDesempenho.getOrdemErHist1Label().setText(viewDesempenho.getOrdemErHist2Label().getText());
+		viewDesempenho.getOrdemErHist2Label().setText(viewDesempenho.getOrdemErHist3Label().getText());
+		viewDesempenho.getOrdemErHist3Label().setText(viewDesempenho.getOrdemErHist4Label().getText());
+		viewDesempenho.getOrdemErHist4Label().setText(viewDesempenho.getOrdemErHist5Label().getText());
+		viewDesempenho.getOrdemErHist5Label().setText(viewDesempenho.getOrdemErrosJFT().getText());
+		viewDesempenho.getIdadeErHist1Label().setText(viewDesempenho.getIdadeErHist2Label().getText());
+		viewDesempenho.getIdadeErHist2Label().setText(viewDesempenho.getIdadeErHist3Label().getText());
+		viewDesempenho.getIdadeErHist3Label().setText(viewDesempenho.getIdadeErHist4Label().getText());
+		viewDesempenho.getIdadeErHist4Label().setText(viewDesempenho.getIdadeErHist5Label().getText());
+		viewDesempenho.getIdadeErHist5Label().setText(viewDesempenho.getIdadeErrosJFT().getText());
+		viewDesempenho.getNrErHist1Label().setText(viewDesempenho.getNrErHist2Label().getText());
+		viewDesempenho.getNrErHist2Label().setText(viewDesempenho.getNrErHist3Label().getText());
+		viewDesempenho.getNrErHist3Label().setText(viewDesempenho.getNrErHist4Label().getText());
+		viewDesempenho.getNrErHist4Label().setText(viewDesempenho.getNrErHist5Label().getText());
+		viewDesempenho.getNrErHist5Label().setText(viewDesempenho.getNrErrosJFT().getText());
+		viewDesempenho.getPesoErHist1Label().setText(viewDesempenho.getPesoErHist2Label().getText());
+		viewDesempenho.getPesoErHist2Label().setText(viewDesempenho.getPesoErHist3Label().getText());
+		viewDesempenho.getPesoErHist3Label().setText(viewDesempenho.getPesoErHist4Label().getText());
+		viewDesempenho.getPesoErHist4Label().setText(viewDesempenho.getPesoErHist5Label().getText());
+		viewDesempenho.getPesoErHist5Label().setText(viewDesempenho.getPesoErrosJFT().getText());
+		if (!errosErros.isEmpty()) {
+			recuperaHistErros();
+		} else {
+			viewDesempenho.getIdadeErrosJFT().setText("000");
+			viewDesempenho.getNrErrosJFT().setText("00000");
+			viewDesempenho.getPesoErrosJFT().setText("00000");
+			viewDesempenho.pack();
+		}
+	}
+
+	public void updateHistAmostrados() {
+		viewDesempenho.getOrdemAmHist1Label().setText(viewDesempenho.getOrdemAmHist2Label().getText());
+		viewDesempenho.getOrdemAmHist2Label().setText(viewDesempenho.getOrdemAmHist3Label().getText());
+		viewDesempenho.getOrdemAmHist3Label().setText(viewDesempenho.getOrdemAmHist4Label().getText());
+		viewDesempenho.getOrdemAmHist4Label().setText(viewDesempenho.getOrdemAmHist5Label().getText());
+		viewDesempenho.getOrdemAmHist5Label().setText(viewDesempenho.getOrdemAmostradosJFT().getText());
+		viewDesempenho.getIdadeAmHist1Label().setText(viewDesempenho.getIdadeAmHist2Label().getText());
+		viewDesempenho.getIdadeAmHist2Label().setText(viewDesempenho.getIdadeAmHist3Label().getText());
+		viewDesempenho.getIdadeAmHist3Label().setText(viewDesempenho.getIdadeAmHist4Label().getText());
+		viewDesempenho.getIdadeAmHist4Label().setText(viewDesempenho.getIdadeAmHist5Label().getText());
+		viewDesempenho.getIdadeAmHist5Label().setText(viewDesempenho.getIdadeAmostradosJFT().getText());
+		viewDesempenho.getNrAmHist1Label().setText(viewDesempenho.getNrAmHist2Label().getText());
+		viewDesempenho.getNrAmHist2Label().setText(viewDesempenho.getNrAmHist3Label().getText());
+		viewDesempenho.getNrAmHist3Label().setText(viewDesempenho.getNrAmHist4Label().getText());
+		viewDesempenho.getNrAmHist4Label().setText(viewDesempenho.getNrAmHist5Label().getText());
+		viewDesempenho.getNrAmHist5Label().setText(viewDesempenho.getNrAmostradosJFT().getText());
+		viewDesempenho.getPesoAmHist1Label().setText(viewDesempenho.getPesoAmHist2Label().getText());
+		viewDesempenho.getPesoAmHist2Label().setText(viewDesempenho.getPesoAmHist3Label().getText());
+		viewDesempenho.getPesoAmHist3Label().setText(viewDesempenho.getPesoAmHist4Label().getText());
+		viewDesempenho.getPesoAmHist4Label().setText(viewDesempenho.getPesoAmHist5Label().getText());
+		viewDesempenho.getPesoAmHist5Label().setText(viewDesempenho.getPesoAmostradosJFT().getText());
+		if (!amostradosErros.isEmpty()) {
+			recuperaHistAmostrados();
+		} else {
+			viewDesempenho.getIdadeAmostradosJFT().setText("000");
+			viewDesempenho.getNrAmostradosJFT().setText("00000");
+			viewDesempenho.getPesoAmostradosJFT().setText("00000");
+			viewDesempenho.pack();
+		}
+	}
+
+	public void updateHistPesados() {
+		viewDesempenho.getOrdemPesadosHist1Label().setText(viewDesempenho.getOrdemPesadosHist2Label().getText());
+		viewDesempenho.getOrdemPesadosHist2Label().setText(viewDesempenho.getOrdemPesadosHist3Label().getText());
+		viewDesempenho.getOrdemPesadosHist3Label().setText(viewDesempenho.getOrdemPesadosHist4Label().getText());
+		viewDesempenho.getOrdemPesadosHist4Label().setText(viewDesempenho.getOrdemPesadosHist5Label().getText());
+		viewDesempenho.getOrdemPesadosHist5Label().setText(viewDesempenho.getOrdemPesadosJFT().getText());
+		viewDesempenho.getIdadePesadosHist1Label().setText(viewDesempenho.getIdadePesadosHist2Label().getText());
+		viewDesempenho.getIdadePesadosHist2Label().setText(viewDesempenho.getIdadePesadosHist3Label().getText());
+		viewDesempenho.getIdadePesadosHist3Label().setText(viewDesempenho.getIdadePesadosHist4Label().getText());
+		viewDesempenho.getIdadePesadosHist4Label().setText(viewDesempenho.getIdadePesadosHist5Label().getText());
+		viewDesempenho.getIdadePesadosHist5Label().setText(viewDesempenho.getIdadePesadosJFT().getText());
+		viewDesempenho.getNrPesadosHist1Label().setText(viewDesempenho.getNrPesadosHist2Label().getText());
+		viewDesempenho.getNrPesadosHist2Label().setText(viewDesempenho.getNrPesadosHist3Label().getText());
+		viewDesempenho.getNrPesadosHist3Label().setText(viewDesempenho.getNrPesadosHist4Label().getText());
+		viewDesempenho.getNrPesadosHist4Label().setText(viewDesempenho.getNrPesadosHist5Label().getText());
+		viewDesempenho.getNrPesadosHist5Label().setText(viewDesempenho.getNrPesadosJFT().getText());
+		viewDesempenho.getPesadosHist1Label().setText(viewDesempenho.getPesadosHist2Label().getText());
+		viewDesempenho.getPesadosHist2Label().setText(viewDesempenho.getPesadosHist3Label().getText());
+		viewDesempenho.getPesadosHist3Label().setText(viewDesempenho.getPesadosHist4Label().getText());
+		viewDesempenho.getPesadosHist4Label().setText(viewDesempenho.getPesadosHist5Label().getText());
+		viewDesempenho.getPesadosHist5Label().setText(viewDesempenho.getPesadosJFT().getText());
+		if (!pesadosErros.isEmpty()) {
+			recuperaHistPesados();
+		} else {
+			viewDesempenho.getIdadePesadosJFT().setText("000");
+			viewDesempenho.getNrPesadosJFT().setText("00000");
+			viewDesempenho.getPesadosJFT().setText("00000");
 			viewDesempenho.pack();
 		}
 	}
@@ -1710,7 +2141,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		viewDesempenho.getControleMortalidadeJFT().setEnabled(false);
 		viewDesempenho.getControleMortalidadeJFT().setText("00000");
 	}
-	
+
 	public void recuperaHistEliminados() {
 		viewDesempenho.getIdadeEliminadosJFT().setText("" + eliminadosErros.get(0).getIdade());
 		TextFormatter.formatStringJFT(viewDesempenho.getIdadeEliminadosJFT(),
@@ -1729,6 +2160,62 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		viewDesempenho.getPesoEliminadosJFT().setEnabled(false);
 		viewDesempenho.getControleEliminadosJFT().setEnabled(false);
 		viewDesempenho.getControleEliminadosJFT().setText("00000");
+	}
+
+	public void recuperaHistErros() {
+		viewDesempenho.getIdadeErrosJFT().setText("" + mortosErros.get(0).getIdade());
+		TextFormatter.formatStringJFT(viewDesempenho.getIdadeErrosJFT(), viewDesempenho.getIdadeErrosJFT().getText(),
+				3);
+		viewDesempenho.getNrErrosJFT().setText("" + mortosErros.get(0).getQuantidade());
+		TextFormatter.formatStringJFT(viewDesempenho.getNrErrosJFT(), viewDesempenho.getNrErrosJFT().getText(), 2);
+		viewDesempenho.getPesoErrosJFT().setText("" + mortosErros.get(0).getPeso());
+		TextFormatter.formatStringJFT(viewDesempenho.getPesoErrosJFT(), viewDesempenho.getPesoErrosJFT().getText(), 5);
+		errosErros.remove(0);
+
+		viewDesempenho.getIdadeErrosJFT().setEnabled(true);
+		viewDesempenho.getIdadeErrosJFT().grabFocus();
+		viewDesempenho.getNrErrosJFT().setEnabled(false);
+		viewDesempenho.getPesoErrosJFT().setEnabled(false);
+		viewDesempenho.getControleErrosJFT().setEnabled(false);
+		viewDesempenho.getControleErrosJFT().setText("00000");
+	}
+
+	public void recuperaHistAmostrados() {
+		viewDesempenho.getIdadeAmostradosJFT().setText("" + amostradosErros.get(0).getIdade());
+		TextFormatter.formatStringJFT(viewDesempenho.getIdadeAmostradosJFT(),
+				viewDesempenho.getIdadeAmostradosJFT().getText(), 3);
+		viewDesempenho.getNrAmostradosJFT().setText("" + amostradosErros.get(0).getQuantidade());
+		TextFormatter.formatStringJFT(viewDesempenho.getNrAmostradosJFT(),
+				viewDesempenho.getNrAmostradosJFT().getText(), 2);
+		viewDesempenho.getPesoAmostradosJFT().setText("" + amostradosErros.get(0).getPeso());
+		TextFormatter.formatStringJFT(viewDesempenho.getPesoAmostradosJFT(),
+				viewDesempenho.getPesoAmostradosJFT().getText(), 5);
+		amostradosErros.remove(0);
+
+		viewDesempenho.getIdadeAmostradosJFT().setEnabled(true);
+		viewDesempenho.getIdadeAmostradosJFT().grabFocus();
+		viewDesempenho.getNrAmostradosJFT().setEnabled(false);
+		viewDesempenho.getPesoAmostradosJFT().setEnabled(false);
+		viewDesempenho.getControleAmostradosJFT().setEnabled(false);
+		viewDesempenho.getControleAmostradosJFT().setText("00000");
+	}
+
+	public void recuperaHistPesados() {
+		viewDesempenho.getIdadePesadosJFT().setText("" + pesadosErros.get(0).getIdade());
+		TextFormatter.formatStringJFT(viewDesempenho.getIdadePesadosJFT(),
+				viewDesempenho.getIdadePesadosJFT().getText(), 3);
+		viewDesempenho.getNrPesadosJFT().setText("" + pesadosErros.get(0).getQuantidade());
+		TextFormatter.formatStringJFT(viewDesempenho.getNrPesadosJFT(), viewDesempenho.getNrPesadosJFT().getText(), 2);
+		viewDesempenho.getPesadosJFT().setText("" + pesadosErros.get(0).getPeso());
+		TextFormatter.formatStringJFT(viewDesempenho.getPesadosJFT(), viewDesempenho.getPesadosJFT().getText(), 5);
+		pesadosErros.remove(0);
+
+		viewDesempenho.getIdadePesadosJFT().setEnabled(true);
+		viewDesempenho.getIdadePesadosJFT().grabFocus();
+		viewDesempenho.getNrPesadosJFT().setEnabled(false);
+		viewDesempenho.getPesadosJFT().setEnabled(false);
+		viewDesempenho.getControlePesagemJFT().setEnabled(false);
+		viewDesempenho.getControlePesagemJFT().setText("00000");
 	}
 
 	public void clearHistMortalidade() {
@@ -1758,7 +2245,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		viewDesempenho.getPesoMHist4Label().setText("");
 		viewDesempenho.getPesoMHist5Label().setText("");
 	}
-	
+
 	public void clearHistEliminados() {
 		viewDesempenho.getOrdemEliminadosJFT().setText("");
 		viewDesempenho.getIdadeEliminadosJFT().setText("");
@@ -1785,6 +2272,90 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		viewDesempenho.getPesoElHist3Label().setText("");
 		viewDesempenho.getPesoElHist4Label().setText("");
 		viewDesempenho.getPesoElHist5Label().setText("");
+	}
+
+	public void clearHistErros() {
+		viewDesempenho.getOrdemErrosJFT().setText("");
+		viewDesempenho.getIdadeErrosJFT().setText("");
+		viewDesempenho.getNrErrosJFT().setText("");
+		viewDesempenho.getPesoErrosJFT().setText("");
+		viewDesempenho.getControleErrosJFT().setText("");
+		viewDesempenho.getOrdemErHist1Label().setText("");
+		viewDesempenho.getOrdemErHist2Label().setText("");
+		viewDesempenho.getOrdemErHist3Label().setText("");
+		viewDesempenho.getOrdemErHist4Label().setText("");
+		viewDesempenho.getOrdemErHist5Label().setText("");
+		viewDesempenho.getIdadeErHist1Label().setText("");
+		viewDesempenho.getIdadeErHist2Label().setText("");
+		viewDesempenho.getIdadeErHist3Label().setText("");
+		viewDesempenho.getIdadeErHist4Label().setText("");
+		viewDesempenho.getIdadeErHist5Label().setText("");
+		viewDesempenho.getNrErHist1Label().setText("");
+		viewDesempenho.getNrErHist2Label().setText("");
+		viewDesempenho.getNrErHist3Label().setText("");
+		viewDesempenho.getNrErHist4Label().setText("");
+		viewDesempenho.getNrErHist5Label().setText("");
+		viewDesempenho.getPesoErHist1Label().setText("");
+		viewDesempenho.getPesoErHist2Label().setText("");
+		viewDesempenho.getPesoErHist3Label().setText("");
+		viewDesempenho.getPesoErHist4Label().setText("");
+		viewDesempenho.getPesoErHist5Label().setText("");
+	}
+
+	public void clearHistAmostrados() {
+		viewDesempenho.getOrdemAmostradosJFT().setText("");
+		viewDesempenho.getIdadeAmostradosJFT().setText("");
+		viewDesempenho.getNrAmostradosJFT().setText("");
+		viewDesempenho.getPesoAmostradosJFT().setText("");
+		viewDesempenho.getControleAmostradosJFT().setText("");
+		viewDesempenho.getOrdemAmHist1Label().setText("");
+		viewDesempenho.getOrdemAmHist2Label().setText("");
+		viewDesempenho.getOrdemAmHist3Label().setText("");
+		viewDesempenho.getOrdemAmHist4Label().setText("");
+		viewDesempenho.getOrdemAmHist5Label().setText("");
+		viewDesempenho.getIdadeAmHist1Label().setText("");
+		viewDesempenho.getIdadeAmHist2Label().setText("");
+		viewDesempenho.getIdadeAmHist3Label().setText("");
+		viewDesempenho.getIdadeAmHist4Label().setText("");
+		viewDesempenho.getIdadeAmHist5Label().setText("");
+		viewDesempenho.getNrAmHist1Label().setText("");
+		viewDesempenho.getNrAmHist2Label().setText("");
+		viewDesempenho.getNrAmHist3Label().setText("");
+		viewDesempenho.getNrAmHist4Label().setText("");
+		viewDesempenho.getNrAmHist5Label().setText("");
+		viewDesempenho.getPesoAmHist1Label().setText("");
+		viewDesempenho.getPesoAmHist2Label().setText("");
+		viewDesempenho.getPesoAmHist3Label().setText("");
+		viewDesempenho.getPesoAmHist4Label().setText("");
+		viewDesempenho.getPesoAmHist5Label().setText("");
+	}
+
+	public void clearHistPesados() {
+		viewDesempenho.getOrdemPesadosJFT().setText("");
+		viewDesempenho.getIdadePesadosJFT().setText("");
+		viewDesempenho.getNrPesadosJFT().setText("");
+		viewDesempenho.getPesadosJFT().setText("");
+		viewDesempenho.getControlePesagemJFT().setText("");
+		viewDesempenho.getOrdemPesadosHist1Label().setText("");
+		viewDesempenho.getOrdemPesadosHist2Label().setText("");
+		viewDesempenho.getOrdemPesadosHist3Label().setText("");
+		viewDesempenho.getOrdemPesadosHist4Label().setText("");
+		viewDesempenho.getOrdemPesadosHist5Label().setText("");
+		viewDesempenho.getIdadePesadosHist1Label().setText("");
+		viewDesempenho.getIdadePesadosHist2Label().setText("");
+		viewDesempenho.getIdadePesadosHist3Label().setText("");
+		viewDesempenho.getIdadePesadosHist4Label().setText("");
+		viewDesempenho.getIdadePesadosHist5Label().setText("");
+		viewDesempenho.getNrPesadosHist1Label().setText("");
+		viewDesempenho.getNrPesadosHist2Label().setText("");
+		viewDesempenho.getNrPesadosHist3Label().setText("");
+		viewDesempenho.getNrPesadosHist4Label().setText("");
+		viewDesempenho.getNrPesadosHist5Label().setText("");
+		viewDesempenho.getPesadosHist1Label().setText("");
+		viewDesempenho.getPesadosHist2Label().setText("");
+		viewDesempenho.getPesadosHist3Label().setText("");
+		viewDesempenho.getPesadosHist4Label().setText("");
+		viewDesempenho.getPesadosHist5Label().setText("");
 	}
 
 	public void clearHistRME() {
@@ -1913,14 +2484,6 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		return erros;
 	}
 
-	public void setErros(List<ErrosVOP> erros) {
-		this.erros = erros;
-	}
-
-	public List<AmostradosVOP> getAmostrados() {
-		return amostrados;
-	}
-
 	public void setAmostrados(List<AmostradosVOP> amostrados) {
 		this.amostrados = amostrados;
 	}
@@ -1931,6 +2494,490 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 
 	public void setPesados(List<PesadosVOP> pesados) {
 		this.pesados = pesados;
+	}
+
+	public int getControleBaia() {
+		return controleBaia;
+	}
+
+	public void setControleBaia(int controleBaia) {
+		this.controleBaia = controleBaia;
+	}
+
+	public int getOrdemRME() {
+		return ordemRME;
+	}
+
+	public void setOrdemRME(int ordemRME) {
+		this.ordemRME = ordemRME;
+	}
+
+	public int getOrdemP() {
+		return ordemP;
+	}
+
+	public void setOrdemP(int ordemP) {
+		this.ordemP = ordemP;
+	}
+
+	public ViewDesempenhoP getViewDesempenho() {
+		return viewDesempenho;
+	}
+
+	public void setViewDesempenho(ViewDesempenhoP viewDesempenho) {
+		this.viewDesempenho = viewDesempenho;
+	}
+
+	public Border getDefaultBaiaJP() {
+		return defaultBaiaJP;
+	}
+
+	public void setDefaultBaiaJP(Border defaultBaiaJP) {
+		this.defaultBaiaJP = defaultBaiaJP;
+	}
+
+	public Border getDefaultRmeJP() {
+		return defaultRmeJP;
+	}
+
+	public void setDefaultRmeJP(Border defaultRmeJP) {
+		this.defaultRmeJP = defaultRmeJP;
+	}
+
+	public Border getDefaultPesagemJP() {
+		return defaultPesagemJP;
+	}
+
+	public void setDefaultPesagemJP(Border defaultPesagemJP) {
+		this.defaultPesagemJP = defaultPesagemJP;
+	}
+
+	public List<DesempenhoVOP> getDesempenho() {
+		return desempenho;
+	}
+
+	public void setDesempenho(List<DesempenhoVOP> desempenho) {
+		this.desempenho = desempenho;
+	}
+
+	public List<RmeVOP> getRme() {
+		return rme;
+	}
+
+	public void setRme(List<RmeVOP> rme) {
+		this.rme = rme;
+	}
+
+	public List<RmeVOP> getRmeTemp() {
+		return rmeTemp;
+	}
+
+	public void setRmeTemp(List<RmeVOP> rmeTemp) {
+		this.rmeTemp = rmeTemp;
+	}
+
+	public List<RmeVOP> getRmeErros() {
+		return rmeErros;
+	}
+
+	public void setRmeErros(List<RmeVOP> rmeErros) {
+		this.rmeErros = rmeErros;
+	}
+
+	public List<MortalidadeVOP> getMortosTemp() {
+		return mortosTemp;
+	}
+
+	public void setMortosTemp(List<MortalidadeVOP> mortosTemp) {
+		this.mortosTemp = mortosTemp;
+	}
+
+	public List<MortalidadeVOP> getMortosErros() {
+		return mortosErros;
+	}
+
+	public void setMortosErros(List<MortalidadeVOP> mortosErros) {
+		this.mortosErros = mortosErros;
+	}
+
+	public List<EliminadosVOP> getEliminadosTemp() {
+		return eliminadosTemp;
+	}
+
+	public void setEliminadosTemp(List<EliminadosVOP> eliminadosTemp) {
+		this.eliminadosTemp = eliminadosTemp;
+	}
+
+	public List<EliminadosVOP> getEliminadosErros() {
+		return eliminadosErros;
+	}
+
+	public void setEliminadosErros(List<EliminadosVOP> eliminadosErros) {
+		this.eliminadosErros = eliminadosErros;
+	}
+
+	public List<ErrosVOP> getErrosTemp() {
+		return errosTemp;
+	}
+
+	public void setErrosTemp(List<ErrosVOP> errosTemp) {
+		this.errosTemp = errosTemp;
+	}
+
+	public List<ErrosVOP> getErrosErros() {
+		return errosErros;
+	}
+
+	public void setErrosErros(List<ErrosVOP> errosErros) {
+		this.errosErros = errosErros;
+	}
+
+	public List<AmostradosVOP> getAmostradosTemp() {
+		return amostradosTemp;
+	}
+
+	public void setAmostradosTemp(List<AmostradosVOP> amostradosTemp) {
+		this.amostradosTemp = amostradosTemp;
+	}
+
+	public List<AmostradosVOP> getAmostradosErros() {
+		return amostradosErros;
+	}
+
+	public void setAmostradosErros(List<AmostradosVOP> amostradosErros) {
+		this.amostradosErros = amostradosErros;
+	}
+
+	public List<PesadosVOP> getPesadosTemp() {
+		return pesadosTemp;
+	}
+
+	public void setPesadosTemp(List<PesadosVOP> pesadosTemp) {
+		this.pesadosTemp = pesadosTemp;
+	}
+
+	public List<PesadosVOP> getPesadosErros() {
+		return pesadosErros;
+	}
+
+	public void setPesadosErros(List<PesadosVOP> pesadosErros) {
+		this.pesadosErros = pesadosErros;
+	}
+
+	public List<Integer> getIdades() {
+		return idades;
+	}
+
+	public void setIdades(List<Integer> idades) {
+		this.idades = idades;
+	}
+
+	public Integer getIdadeFaseAtual() {
+		return idadeFaseAtual;
+	}
+
+	public void setIdadeFaseAtual(Integer idadeFaseAtual) {
+		this.idadeFaseAtual = idadeFaseAtual;
+	}
+
+	public Integer getFaseAnterior() {
+		return faseAnterior;
+	}
+
+	public void setFaseAnterior(Integer faseAnterior) {
+		this.faseAnterior = faseAnterior;
+	}
+
+	public Integer getCountFase() {
+		return countFase;
+	}
+
+	public void setCountFase(Integer countFase) {
+		this.countFase = countFase;
+	}
+
+	public Integer getCountIdades() {
+		return countIdades;
+	}
+
+	public void setCountIdades(Integer countIdades) {
+		this.countIdades = countIdades;
+	}
+
+	public Integer getSomaValoresRacao() {
+		return somaValoresRacao;
+	}
+
+	public void setSomaValoresRacao(Integer somaValoresRacao) {
+		this.somaValoresRacao = somaValoresRacao;
+	}
+
+	public Integer getSomaControleRacoes() {
+		return somaControleRacoes;
+	}
+
+	public void setSomaControleRacoes(Integer somaControleRacoes) {
+		this.somaControleRacoes = somaControleRacoes;
+	}
+
+	public Integer getSomaControleMortalidade() {
+		return somaControleMortalidade;
+	}
+
+	public void setSomaControleMortalidade(Integer somaControleMortalidade) {
+		this.somaControleMortalidade = somaControleMortalidade;
+	}
+
+	public Integer getSomaValoresMortalidade() {
+		return somaValoresMortalidade;
+	}
+
+	public void setSomaValoresMortalidade(Integer somaValoresMortalidade) {
+		this.somaValoresMortalidade = somaValoresMortalidade;
+	}
+
+	public Integer getIdadeFaseAtualMortalidade() {
+		return idadeFaseAtualMortalidade;
+	}
+
+	public void setIdadeFaseAtualMortalidade(Integer idadeFaseAtualMortalidade) {
+		this.idadeFaseAtualMortalidade = idadeFaseAtualMortalidade;
+	}
+
+	public Integer getFaseAnteriorMortalidade() {
+		return faseAnteriorMortalidade;
+	}
+
+	public void setFaseAnteriorMortalidade(Integer faseAnteriorMortalidade) {
+		this.faseAnteriorMortalidade = faseAnteriorMortalidade;
+	}
+
+	public Integer getCountFaseMortalidade() {
+		return countFaseMortalidade;
+	}
+
+	public void setCountFaseMortalidade(Integer countFaseMortalidade) {
+		this.countFaseMortalidade = countFaseMortalidade;
+	}
+
+	public Integer getCountIdadesMortalidade() {
+		return countIdadesMortalidade;
+	}
+
+	public void setCountIdadesMortalidade(Integer countIdadesMortalidade) {
+		this.countIdadesMortalidade = countIdadesMortalidade;
+	}
+
+	public Integer getSomaControleEliminados() {
+		return somaControleEliminados;
+	}
+
+	public void setSomaControleEliminados(Integer somaControleEliminados) {
+		this.somaControleEliminados = somaControleEliminados;
+	}
+
+	public Integer getSomaValoresEliminados() {
+		return somaValoresEliminados;
+	}
+
+	public void setSomaValoresEliminados(Integer somaValoresEliminados) {
+		this.somaValoresEliminados = somaValoresEliminados;
+	}
+
+	public Integer getIdadeFaseAtualEliminados() {
+		return idadeFaseAtualEliminados;
+	}
+
+	public void setIdadeFaseAtualEliminados(Integer idadeFaseAtualEliminados) {
+		this.idadeFaseAtualEliminados = idadeFaseAtualEliminados;
+	}
+
+	public Integer getFaseAnteriorEliminados() {
+		return faseAnteriorEliminados;
+	}
+
+	public void setFaseAnteriorEliminados(Integer faseAnteriorEliminados) {
+		this.faseAnteriorEliminados = faseAnteriorEliminados;
+	}
+
+	public Integer getCountFaseEliminados() {
+		return countFaseEliminados;
+	}
+
+	public void setCountFaseEliminados(Integer countFaseEliminados) {
+		this.countFaseEliminados = countFaseEliminados;
+	}
+
+	public Integer getCountIdadesEliminados() {
+		return countIdadesEliminados;
+	}
+
+	public void setCountIdadesEliminados(Integer countIdadesEliminados) {
+		this.countIdadesEliminados = countIdadesEliminados;
+	}
+
+	public Integer getSomaControleErros() {
+		return somaControleErros;
+	}
+
+	public void setSomaControleErros(Integer somaControleErros) {
+		this.somaControleErros = somaControleErros;
+	}
+
+	public Integer getSomaValoresErros() {
+		return somaValoresErros;
+	}
+
+	public void setSomaValoresErros(Integer somaValoresErros) {
+		this.somaValoresErros = somaValoresErros;
+	}
+
+	public Integer getIdadeFaseAtualErros() {
+		return idadeFaseAtualErros;
+	}
+
+	public void setIdadeFaseAtualErros(Integer idadeFaseAtualErros) {
+		this.idadeFaseAtualErros = idadeFaseAtualErros;
+	}
+
+	public Integer getFaseAnteriorErros() {
+		return faseAnteriorErros;
+	}
+
+	public void setFaseAnteriorErros(Integer faseAnteriorErros) {
+		this.faseAnteriorErros = faseAnteriorErros;
+	}
+
+	public Integer getCountFaseErros() {
+		return countFaseErros;
+	}
+
+	public void setCountFaseErros(Integer countFaseErros) {
+		this.countFaseErros = countFaseErros;
+	}
+
+	public Integer getCountIdadesErros() {
+		return countIdadesErros;
+	}
+
+	public void setCountIdadesErros(Integer countIdadesErros) {
+		this.countIdadesErros = countIdadesErros;
+	}
+
+	public Integer getSomaControleAmostrados() {
+		return somaControleAmostrados;
+	}
+
+	public void setSomaControleAmostrados(Integer somaControleAmostrados) {
+		this.somaControleAmostrados = somaControleAmostrados;
+	}
+
+	public Integer getSomaValoresAmostrados() {
+		return somaValoresAmostrados;
+	}
+
+	public void setSomaValoresAmostrados(Integer somaValoresAmostrados) {
+		this.somaValoresAmostrados = somaValoresAmostrados;
+	}
+
+	public Integer getIdadeFaseAtualAmostrados() {
+		return idadeFaseAtualAmostrados;
+	}
+
+	public void setIdadeFaseAtualAmostrados(Integer idadeFaseAtualAmostrados) {
+		this.idadeFaseAtualAmostrados = idadeFaseAtualAmostrados;
+	}
+
+	public Integer getFaseAnteriorAmostrados() {
+		return faseAnteriorAmostrados;
+	}
+
+	public void setFaseAnteriorAmostrados(Integer faseAnteriorAmostrados) {
+		this.faseAnteriorAmostrados = faseAnteriorAmostrados;
+	}
+
+	public Integer getCountFaseAmostrados() {
+		return countFaseAmostrados;
+	}
+
+	public void setCountFaseAmostrados(Integer countFaseAmostrados) {
+		this.countFaseAmostrados = countFaseAmostrados;
+	}
+
+	public Integer getCountIdadesAmostrados() {
+		return countIdadesAmostrados;
+	}
+
+	public void setCountIdadesAmostrados(Integer countIdadesAmostrados) {
+		this.countIdadesAmostrados = countIdadesAmostrados;
+	}
+
+	public Integer getSomaControlePesados() {
+		return somaControlePesados;
+	}
+
+	public void setSomaControlePesados(Integer somaControlePesados) {
+		this.somaControlePesados = somaControlePesados;
+	}
+
+	public Integer getSomaValoresPesados() {
+		return somaValoresPesados;
+	}
+
+	public void setSomaValoresPesados(Integer somaValoresPesados) {
+		this.somaValoresPesados = somaValoresPesados;
+	}
+
+	public Integer getIdadeFaseAtualPesados() {
+		return idadeFaseAtualPesados;
+	}
+
+	public void setIdadeFaseAtualPesados(Integer idadeFaseAtualPesados) {
+		this.idadeFaseAtualPesados = idadeFaseAtualPesados;
+	}
+
+	public Integer getFaseAnteriorPesados() {
+		return faseAnteriorPesados;
+	}
+
+	public void setFaseAnteriorPesados(Integer faseAnteriorPesados) {
+		this.faseAnteriorPesados = faseAnteriorPesados;
+	}
+
+	public Integer getCountFasePesados() {
+		return countFasePesados;
+	}
+
+	public void setCountFasePesados(Integer countFasePesados) {
+		this.countFasePesados = countFasePesados;
+	}
+
+	public Integer getCountIdadesPesados() {
+		return countIdadesPesados;
+	}
+
+	public void setCountIdadesPesados(Integer countIdadesPesados) {
+		this.countIdadesPesados = countIdadesPesados;
+	}
+
+	public ControllerP getController() {
+		return controller;
+	}
+
+	public DesempenhoBOP getDesempenhoBO() {
+		return desempenhoBO;
+	}
+
+	public List<PesadosVOP> getPesados() {
+		return pesados;
+	}
+
+	public void setErros(List<ErrosVOP> erros) {
+		this.erros = erros;
+	}
+
+	public List<AmostradosVOP> getAmostrados() {
+		return amostrados;
 	}
 
 }
