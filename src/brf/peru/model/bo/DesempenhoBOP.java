@@ -158,7 +158,7 @@ public class DesempenhoBOP {
 		return msg;
 	}
 		
-	public String verificaPesagem(Integer idade, Integer numero, Integer peso, Integer idadeInicioFase,
+	public String verificaPesagem(List<PesadosVOP> lista, Integer idade, Integer numero, Integer peso, Integer idadeInicioFase,
 			Integer idadeFinalFase) {
 		String msg = "";
 		int idadeFim = controller.getModel().getExperimentoVO().getInfoExp().getIdadeFase()
@@ -174,6 +174,8 @@ public class DesempenhoBOP {
 			msg = msg.concat("- Nº de mortos igual à 0\n");
 		} else if (idade == 0 && numero != 0 && peso != 0 ) {
 			msg = msg.concat("- Idade não pode ser 0");
+		}else if(lista.isEmpty() && idade == 0 && numero ==0 && peso == 0) {
+			msg = msg.concat("- Obrigatório informar valores de pesagem.");
 		}
 		return msg;
 	}

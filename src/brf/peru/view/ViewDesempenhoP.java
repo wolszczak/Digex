@@ -1020,7 +1020,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		jLabel25.setText("Peso");
 		try {
 			pesoAmostradosJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1058,7 +1058,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		pesoAmHist4Label.setBorder(new javax.swing.border.SoftBevelBorder(1));
 		try {
 			idadeAmostradosJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1110,7 +1110,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		ordemAmostradosJFT.setEnabled(false);
 		try {
 			controleAmostradosJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1364,7 +1364,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		idadePesadosHist3Label.setBorder(new javax.swing.border.SoftBevelBorder(1));
 		try {
 			idadePesadosJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1404,7 +1404,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		ordemPesadosJFT.setEnabled(false);
 		try {
 			controlePesagemJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1688,7 +1688,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		pesoErHist5Label.setBorder(new javax.swing.border.SoftBevelBorder(1));
 		try {
 			idadeErrosJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1743,7 +1743,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		jLabel52.setText("Controle");
 		try {
 			controleErrosJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -2394,7 +2394,8 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 										.addComponent(nrElHist2Label, -1, -1, 32767)
 										.addComponent(nrElHist1Label, -1, -1, 32767)
 										.addComponent(nrElHist3Label, -1, -1, 32767)
-										.addComponent(nrElHist4Label, -1, -1, 32767).addComponent(nrEliminadosJFT))
+										.addComponent(nrElHist4Label, -1, -1, 32767).
+										addComponent(nrEliminadosJFT, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE))
 								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 								.addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 										.addComponent(jLabel57, -2, 48, -2)
@@ -2462,7 +2463,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
 												.addGroup(jPanel13Layout
 														.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-														.addComponent(nrEliminadosJFT, -2, 20, -2)
+														.addComponent(nrEliminadosJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
 														.addComponent(pesoEliminadosJFT, -2, 20, -2)))
 										.addGroup(jPanel13Layout.createSequentialGroup()
 												.addComponent(idadeElHist1Label, -2, 14, -2)
