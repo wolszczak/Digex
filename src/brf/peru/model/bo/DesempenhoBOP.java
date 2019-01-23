@@ -73,7 +73,7 @@ public class DesempenhoBOP {
 		} else if (idade != 0 && racao == 0 && sobra == 0) {
 			msg = msg.concat("- Entrada/Saída de ração igual à 0\n");
 		} else if (idade == 0 && racao != 0 && sobra != 0) {
-			msg = msg.concat("- Idade não pode ser 0");
+			msg = msg.concat("- Idade não pode ser 0\n");
 		}
 		return msg;
 	}
@@ -93,7 +93,9 @@ public class DesempenhoBOP {
 		} else if (idade != 0 && numero == 0 && peso == 0) {
 			msg = msg.concat("- Nº de mortos igual à 0\n");
 		} else if (idade == 0 && numero != 0 && peso != 0 ) {
-			msg = msg.concat("- Idade não pode ser 0");
+			msg = msg.concat("- Idade não pode ser 0\n");
+		}else if (idade != 0 && numero != 0 && peso == 0 ) {
+			msg = msg.concat("- Peso não pode ser 0\n");
 		}
 		return msg;
 	}
@@ -113,7 +115,9 @@ public class DesempenhoBOP {
 		} else if (idade != 0 && numero == 0 && peso == 0) {
 			msg = msg.concat("- Nº de mortos igual à 0\n");
 		} else if (idade == 0 && numero != 0 && peso != 0 ) {
-			msg = msg.concat("- Idade não pode ser 0");
+			msg = msg.concat("- Idade não pode ser 0\n");
+		}else if (idade != 0 && numero != 0 && peso == 0 ) {
+			msg = msg.concat("- Peso não pode ser 0\n");
 		}
 		return msg;
 	}
@@ -133,7 +137,9 @@ public class DesempenhoBOP {
 		} else if (idade != 0 && numero == 0 && peso == 0) {
 			msg = msg.concat("- Nº de mortos igual à 0\n");
 		} else if (idade == 0 && numero != 0 && peso != 0 ) {
-			msg = msg.concat("- Idade não pode ser 0");
+			msg = msg.concat("- Idade não pode ser 0\n");
+		}else if (idade != 0 && numero != 0 && peso == 0 ) {
+			msg = msg.concat("- Peso não pode ser 0\n");
 		}
 		return msg;
 	}
@@ -153,7 +159,9 @@ public class DesempenhoBOP {
 		} else if (idade != 0 && numero == 0 && peso == 0) {
 			msg = msg.concat("- Nº de mortos igual à 0\n");
 		} else if (idade == 0 && numero != 0 && peso != 0 ) {
-			msg = msg.concat("- Idade não pode ser 0");
+			msg = msg.concat("- Idade não pode ser 0\n");
+		}else if (idade != 0 && numero != 0 && peso == 0 ) {
+			msg = msg.concat("- Peso não pode ser 0\n");
 		}
 		return msg;
 	}
@@ -173,8 +181,10 @@ public class DesempenhoBOP {
 		} else if (idade != 0 && numero == 0 && peso == 0) {
 			msg = msg.concat("- Nº de mortos igual à 0\n");
 		} else if (idade == 0 && numero != 0 && peso != 0 ) {
-			msg = msg.concat("- Idade não pode ser 0");
-		}else if(lista.isEmpty() && idade == 0 && numero ==0 && peso == 0) {
+			msg = msg.concat("- Idade não pode ser 0\n");
+		}else if (idade != 0 && numero != 0 && peso == 0 ) {
+			msg = msg.concat("- Peso não pode ser 0\n");
+		}else if(lista.isEmpty() && idade == 0 && numero == 0 && peso == 0) {
 			msg = msg.concat("- Obrigatório informar valores de pesagem.");
 		}
 		return msg;

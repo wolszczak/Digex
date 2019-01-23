@@ -1020,7 +1020,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		jLabel25.setText("Peso");
 		try {
 			pesoAmostradosJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1314,7 +1314,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		jLabel23.setText("Peso");
 		try {
 			pesadosJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1650,7 +1650,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		jLabel28.setText("Peso");
 		try {
 			pesoErrosJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -2049,7 +2049,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 
 		try {
 			pesoMortalidadeJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -2244,7 +2244,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		jLabel57.setText("Peso");
 		try {
 			pesoEliminadosJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
