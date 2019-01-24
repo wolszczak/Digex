@@ -160,7 +160,7 @@ public class DesempenhoBOP {
 			msg = msg.concat("- Nº de mortos igual à 0\n");
 		} else if (idade == 0 && numero != 0 && peso != 0 ) {
 			msg = msg.concat("- Idade não pode ser 0\n");
-		}else if (idade != 0 && numero != 0 && peso == 0 ) {
+		} else if (idade != 0 && numero != 0 && peso == 0 ) {
 			msg = msg.concat("- Peso não pode ser 0\n");
 		}
 		return msg;
@@ -173,19 +173,19 @@ public class DesempenhoBOP {
 				.get(controller.getModel().getExperimentoVO().getInfoExp().getIdadeFase().size() - 1);
 		if (idade > idadeFim || idade < 0) {
 			msg = msg.concat("- Idade fora do período do experimento\n");
+		} else if (idade != 0 && numero == 0 && peso == 0) {
+			msg = msg.concat("- Nº de mortos igual à 0\n");
+		} else if (idade == 0 && numero != 0 && peso != 0 ) {
+			msg = msg.concat("- Idade não pode ser 0\n");
+		} else if (idade != 0 && numero != 0 && peso == 0 ) {
+			msg = msg.concat("- Peso não pode ser 0\n");
+		} else if(lista.isEmpty() && idade == 0 && numero == 0 && peso == 0) {
+			msg = msg.concat("- Obrigatório informar valores de pesagem.");
 		} else if (idade < idadeInicioFase || idade > idadeFinalFase) {
 			if(idade != 0) {
 				msg = msg.concat(
 						"- Idade fora do período da fase. Dos " + idadeInicioFase + " aos " + idadeFinalFase + " dias.");
 			}
-		} else if (idade != 0 && numero == 0 && peso == 0) {
-			msg = msg.concat("- Nº de mortos igual à 0\n");
-		} else if (idade == 0 && numero != 0 && peso != 0 ) {
-			msg = msg.concat("- Idade não pode ser 0\n");
-		}else if (idade != 0 && numero != 0 && peso == 0 ) {
-			msg = msg.concat("- Peso não pode ser 0\n");
-		}else if(lista.isEmpty() && idade == 0 && numero == 0 && peso == 0) {
-			msg = msg.concat("- Obrigatório informar valores de pesagem.");
 		}
 		return msg;
 	}

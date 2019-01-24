@@ -636,7 +636,7 @@ public class ControllerDesempenhoF extends KeyAdapter
                                 "Problema(s):\n" + msg, "DIGEX - Erro",
                                 JOptionPane.ERROR_MESSAGE);
                         fluxoProblemaPesagem();
-                    } else if (controlePesagem == 0) {  
+                    } else if (controlePesagem == 0) { 
                         SaveUpdater.startCountdown(3, viewDesempenho.getRegistroLabel());
                         desempenho.add(new DesempenhoVOF(Integer.parseInt(viewDesempenho.getBaiaJFT().getText()),
                                 Integer.parseInt(viewDesempenho.getSexoJFT().getText()),
