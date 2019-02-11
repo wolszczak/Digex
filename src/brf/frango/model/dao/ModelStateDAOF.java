@@ -1,6 +1,8 @@
 package brf.frango.model.dao;
 
 import brf.frango.model.ModelF;
+import brf.frango.model.vo.ExperimentoVOF;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
