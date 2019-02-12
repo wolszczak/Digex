@@ -8,16 +8,12 @@ public class BaiaAmostradosVOP implements Serializable {
     private int nrBaia;
     private int nasa1;
     private int peso1;
-    private int nasa2;
-    private int peso2;
     
-    public BaiaAmostradosVOP(int ordem, int nrBaia, int nasa1, int peso1, int nasa2, int peso2) {
+    public BaiaAmostradosVOP(int ordem, int nrBaia, int nasa1, int peso1) {
         this.ordem = ordem;
         this.nrBaia = nrBaia;
         this.nasa1 = nasa1;
         this.peso1 = peso1;
-        this.nasa2 = nasa2;
-        this.peso2 = peso2;
     }
 
     public int getOrdem() {
@@ -52,19 +48,4 @@ public class BaiaAmostradosVOP implements Serializable {
         this.peso1 = peso1;
     }
 
-    public int getNasa2() {
-        return nasa2;
-    }
-
-    public void setNasa2(int nasa2) {
-        this.nasa2 = nasa2;
-    }
-
-    public int getPeso2() {
-        return peso2;
-    }
-
-    public void setPeso2(int peso2) {
-        this.peso2 = peso2;
-    }
 }

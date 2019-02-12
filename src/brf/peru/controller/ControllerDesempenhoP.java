@@ -603,7 +603,8 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 						Integer.parseInt(viewDesempenho.getIdadeMortalidadeJFT().getText()),
 						Integer.parseInt(viewDesempenho.getNrMortalidadeJFT().getText()),
 						Integer.parseInt(viewDesempenho.getPesoMortalidadeJFT().getText()), faseAnteriorMortalidade,
-						idadeFaseAtualMortalidade);
+						idadeFaseAtualMortalidade,
+						Integer.parseInt(viewDesempenho.getAvesAlojadasJFT().getText()));
 				if (msg.length() != 0) {
 					JOptionPane.showMessageDialog(viewDesempenho, "Problema(s):\n" + msg, "DIGEX - Erro",
 							JOptionPane.ERROR_MESSAGE);
@@ -670,7 +671,8 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 						Integer.parseInt(viewDesempenho.getIdadeEliminadosJFT().getText()),
 						Integer.parseInt(viewDesempenho.getNrEliminadosJFT().getText()),
 						Integer.parseInt(viewDesempenho.getPesoEliminadosJFT().getText()), faseAnteriorEliminados,
-						idadeFaseAtualEliminados);
+						idadeFaseAtualEliminados,
+						Integer.parseInt(viewDesempenho.getAvesAlojadasJFT().getText()));
 				if (msg.length() != 0) {
 					JOptionPane.showMessageDialog(viewDesempenho, "Problema(s):\n" + msg, "DIGEX - Erro",
 							JOptionPane.ERROR_MESSAGE);
@@ -734,7 +736,8 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 				String msg = desempenhoBO.verificaErros(Integer.parseInt(viewDesempenho.getIdadeErrosJFT().getText()),
 						Integer.parseInt(viewDesempenho.getNrErrosJFT().getText()),
 						Integer.parseInt(viewDesempenho.getPesoErrosJFT().getText()), faseAnteriorErros,
-						idadeFaseAtualErros);
+						idadeFaseAtualErros,
+						Integer.parseInt(viewDesempenho.getAvesAlojadasJFT().getText()));
 				if (msg.length() != 0) {
 					JOptionPane.showMessageDialog(viewDesempenho, "Problema(s):\n" + msg, "DIGEX - Erro",
 							JOptionPane.ERROR_MESSAGE);
@@ -798,7 +801,8 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 						Integer.parseInt(viewDesempenho.getIdadeAmostradosJFT().getText()),
 						Integer.parseInt(viewDesempenho.getNrAmostradosJFT().getText()),
 						Integer.parseInt(viewDesempenho.getPesoAmostradosJFT().getText()), faseAnteriorAmostrados,
-						idadeFaseAtualAmostrados);
+						idadeFaseAtualAmostrados,
+						Integer.parseInt(viewDesempenho.getAvesAlojadasJFT().getText()));
 				if (msg.length() != 0) {
 					JOptionPane.showMessageDialog(viewDesempenho, "Problema(s):\n" + msg, "DIGEX - Erro",
 							JOptionPane.ERROR_MESSAGE);
@@ -863,7 +867,8 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 						Integer.parseInt(viewDesempenho.getIdadePesadosJFT().getText()),
 						Integer.parseInt(viewDesempenho.getNrPesadosJFT().getText()),
 						Integer.parseInt(viewDesempenho.getPesadosJFT().getText()), faseAnteriorPesados,
-						idadeFaseAtualPesados);
+						idadeFaseAtualPesados,
+						Integer.parseInt(viewDesempenho.getAvesAlojadasJFT().getText()));
 				if (msg.length() != 0) {
 					JOptionPane.showMessageDialog(viewDesempenho, "Problema(s):\n" + msg, "DIGEX - Erro",
 							JOptionPane.ERROR_MESSAGE);
