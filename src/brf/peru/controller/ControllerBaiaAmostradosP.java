@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JFormattedTextField;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 import brf.peru.view.ViewBaiaAmostradosP;
@@ -17,20 +18,24 @@ import brf.util.FocusOrderPolicy;
 public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListener{
 	private final ControllerP controller;
 	private ViewBaiaAmostradosP viewBaiaAmostrados;
-	private String aviario;
+	private String aviario,dataAbate;
 	private int abate, idadeAbate;
 	
 	public ControllerBaiaAmostradosP(ControllerP c) {
 		controller = c;
 	}
 	
-	public void openWindow(String aviario, int abate, String dataAbate) {
+	public void openWindow(String aviario, Integer abate, Integer idadeAbate, String dataAbate) {
 		viewBaiaAmostrados = new ViewBaiaAmostradosP();
 		viewBaiaAmostrados.setTitle("DIGEX - Peru");
 		viewBaiaAmostrados.setResizable(false);
 		viewBaiaAmostrados.setLocationRelativeTo(null);
 		viewBaiaAmostrados.setVisible(true);
-		viewBaiaAmostrados.getIdadeJFT().grabFocus();
+		
+		this.dataAbate = dataAbate;
+		this.idadeAbate = idadeAbate;
+		this.aviario = aviario;
+		this.abate = abate;
 		
 		List<Component> order = new ArrayList<>();
 		order.add(viewBaiaAmostrados.getBaia1JFT());
@@ -38,10 +43,48 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 		order.add(viewBaiaAmostrados.getBaia3JFT());
 		order.add(viewBaiaAmostrados.getBaia4JFT());
 		order.add(viewBaiaAmostrados.getBaia5JFT());
+		order.add(viewBaiaAmostrados.getNasa11JFT());
+		order.add(viewBaiaAmostrados.getNasa12JFT());
+		order.add(viewBaiaAmostrados.getNasa13JFT());
+		order.add(viewBaiaAmostrados.getNasa14JFT());
+		order.add(viewBaiaAmostrados.getNasa15JFT());
+		order.add(viewBaiaAmostrados.getPeso11JFT());
+		order.add(viewBaiaAmostrados.getPeso12JFT());
+		order.add(viewBaiaAmostrados.getPeso13JFT());
+		order.add(viewBaiaAmostrados.getPeso14JFT());
+		order.add(viewBaiaAmostrados.getPeso15JFT());
+		order.add(viewBaiaAmostrados.getNasa21JFT());
+		order.add(viewBaiaAmostrados.getNasa22JFT());
+		order.add(viewBaiaAmostrados.getNasa23JFT());
+		order.add(viewBaiaAmostrados.getNasa24JFT());
+		order.add(viewBaiaAmostrados.getNasa25JFT());
+		order.add(viewBaiaAmostrados.getPeso21JFT());
+		order.add(viewBaiaAmostrados.getPeso22JFT());
+		order.add(viewBaiaAmostrados.getPeso23JFT());
+		order.add(viewBaiaAmostrados.getPeso24JFT());
+		order.add(viewBaiaAmostrados.getPeso25JFT());
+		order.add(viewBaiaAmostrados.getNasa31JFT());
+		order.add(viewBaiaAmostrados.getNasa32JFT());
+		order.add(viewBaiaAmostrados.getNasa33JFT());
+		order.add(viewBaiaAmostrados.getNasa34JFT());
+		order.add(viewBaiaAmostrados.getNasa35JFT());
+		order.add(viewBaiaAmostrados.getPeso31JFT());
+		order.add(viewBaiaAmostrados.getPeso32JFT());
+		order.add(viewBaiaAmostrados.getPeso33JFT());
+		order.add(viewBaiaAmostrados.getPeso34JFT());
+		order.add(viewBaiaAmostrados.getPeso35JFT());
+		order.add(viewBaiaAmostrados.getControleJFT());
 		
 		FocusOrderPolicy newPolicy = new FocusOrderPolicy(order);
 		viewBaiaAmostrados.setFocusTraversalPolicy(newPolicy);
 		listenerSetup(order);
+		
+		viewBaiaAmostrados.getAviarioJFT().setText(aviario);
+		viewBaiaAmostrados.getAbateJFT().setText(String.valueOf(abate));
+		viewBaiaAmostrados.getIdadeJFT().setText(String.valueOf(idadeAbate));
+		viewBaiaAmostrados.getDataAbateJFT().setText(dataAbate);
+		viewBaiaAmostrados.getBaia1JFT().setEnabled(true);
+		viewBaiaAmostrados.getBaia1JFT().grabFocus();
 	}
 	
 	public void listenerSetup(List<Component> textFields) {
@@ -69,7 +112,16 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 	
 	@Override
 	public void keyTyped(KeyEvent e) {
-		super.keyTyped(e);
+		if (e.getKeyChar() == KeyEvent.VK_ESCAPE) {
+			int option = JOptionPane.showConfirmDialog(viewBaiaAmostrados, "Deseja realmente voltar para tela anterior?",
+					"SDDGE - Voltar", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+			if (option == 0) {
+				viewBaiaAmostrados.setVisible(false);
+				controller.startEscolhaDigRend(abate,idadeAbate,dataAbate);
+				System.out.println("Voltar");
+			}
+		}
+		
 		
 	}
 	
@@ -85,5 +137,6 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 			((JFormattedTextField) prev).grabFocus();
 		}
 	}
+	
     
 }

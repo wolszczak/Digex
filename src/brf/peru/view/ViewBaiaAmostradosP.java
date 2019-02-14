@@ -3,6 +3,9 @@ package brf.peru.view;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class ViewBaiaAmostradosP extends javax.swing.JFrame {
 
@@ -300,6 +303,7 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
         dataAbateJFT = new javax.swing.JFormattedTextField();
         jLabel23 = new javax.swing.JLabel();
         idadeJFT = new javax.swing.JFormattedTextField();
+        idadeJFT.setEditable(false);
         baiaAmostradosJP = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         ordem1JFT = new javax.swing.JFormattedTextField();
@@ -346,9 +350,14 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
         nasa2Hist5Label = new javax.swing.JLabel();
         peso2Hist5Label = new javax.swing.JLabel();
         ordem2JFT = new javax.swing.JFormattedTextField();
+        ordem2JFT.setEnabled(false);
+        ordem2JFT.setEditable(false);
         ordem3JFT = new javax.swing.JFormattedTextField();
+        ordem3JFT.setEditable(false);
         ordem4JFT = new javax.swing.JFormattedTextField();
+        ordem4JFT.setEditable(false);
         ordem5JFT = new javax.swing.JFormattedTextField();
+        ordem5JFT.setEditable(false);
         baia2JFT = new javax.swing.JFormattedTextField();
         baia3JFT = new javax.swing.JFormattedTextField();
         baia4JFT = new javax.swing.JFormattedTextField();
@@ -369,6 +378,28 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
         peso23JFT = new javax.swing.JFormattedTextField();
         peso24JFT = new javax.swing.JFormattedTextField();
         peso25JFT = new javax.swing.JFormattedTextField();
+        peso35JFT = new javax.swing.JFormattedTextField();
+        nasa35JFT = new javax.swing.JFormattedTextField();
+        peso34JFT = new javax.swing.JFormattedTextField();
+        nasa34JFT = new javax.swing.JFormattedTextField();
+        peso33JFT = new javax.swing.JFormattedTextField();
+        nasa33JFT = new javax.swing.JFormattedTextField();
+        peso32JFT = new javax.swing.JFormattedTextField();
+        nasa32JFT = new javax.swing.JFormattedTextField();
+        peso31JFT = new javax.swing.JFormattedTextField();
+        nasa31JFT = new javax.swing.JFormattedTextField();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        peso3Hist5Label = new javax.swing.JLabel();
+        nasa3Hist5Label = new javax.swing.JLabel();
+        peso3Hist4Label = new javax.swing.JLabel();
+        nasa3Hist4Label = new javax.swing.JLabel();
+        peso3Hist3Label = new javax.swing.JLabel();
+        nasa3Hist3Label = new javax.swing.JLabel();
+        peso3Hist2Label = new javax.swing.JLabel();
+        nasa3Hist2Label = new javax.swing.JLabel();
+        peso3Hist1Label = new javax.swing.JLabel();
+        nasa3Hist1Label = new javax.swing.JLabel();
         registrosLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -417,7 +448,6 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         idadeJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        idadeJFT.setEnabled(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -616,19 +646,15 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
 
         ordem2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
         ordem2JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        ordem2JFT.setEnabled(false);
 
         ordem3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
         ordem3JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        ordem3JFT.setEnabled(false);
 
         ordem4JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
         ordem4JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        ordem4JFT.setEnabled(false);
 
         ordem5JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
         ordem5JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        ordem5JFT.setEnabled(false);
 
         try {
             baia2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
@@ -726,6 +752,82 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
         peso25JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         peso25JFT.setEnabled(false);
 
+        peso35JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#####"))));
+        peso35JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        peso35JFT.setEnabled(false);
+
+        nasa35JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
+        nasa35JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        nasa35JFT.setEnabled(false);
+
+        peso34JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#####"))));
+        peso34JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        peso34JFT.setEnabled(false);
+
+        nasa34JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
+        nasa34JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        nasa34JFT.setEnabled(false);
+
+        peso33JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#####"))));
+        peso33JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        peso33JFT.setEnabled(false);
+
+        nasa33JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
+        nasa33JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        nasa33JFT.setEnabled(false);
+
+        peso32JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#####"))));
+        peso32JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        peso32JFT.setEnabled(false);
+
+        nasa32JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
+        nasa32JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        nasa32JFT.setEnabled(false);
+
+        peso31JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#####"))));
+        peso31JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        peso31JFT.setEnabled(false);
+
+        nasa31JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
+        nasa31JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        nasa31JFT.setEnabled(false);
+
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("Peso 3");
+
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel17.setText("Ident. 3");
+
+        peso3Hist5Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        peso3Hist5Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        nasa3Hist5Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nasa3Hist5Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        peso3Hist4Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        peso3Hist4Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        nasa3Hist4Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nasa3Hist4Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        peso3Hist3Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        peso3Hist3Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        nasa3Hist3Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nasa3Hist3Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        peso3Hist2Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        peso3Hist2Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        nasa3Hist2Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nasa3Hist2Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        peso3Hist1Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        peso3Hist1Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        nasa3Hist1Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nasa3Hist1Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
         javax.swing.GroupLayout baiaAmostradosJPLayout = new javax.swing.GroupLayout(baiaAmostradosJP);
         baiaAmostradosJP.setLayout(baiaAmostradosJPLayout);
         baiaAmostradosJPLayout.setHorizontalGroup(
@@ -772,17 +874,17 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
                     .addComponent(nasa15JFT))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(peso14JFT, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(peso13JFT, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(peso11JFT, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(peso1Hist2Label, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(peso1Hist1Label, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(peso14JFT)
+                    .addComponent(peso13JFT)
+                    .addComponent(peso11JFT)
+                    .addComponent(peso1Hist2Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(peso1Hist1Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(peso1Hist3Label, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(peso1Hist4Label, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(peso1Hist5Label, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(peso12JFT, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(peso15JFT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
+                    .addComponent(peso1Hist3Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(peso1Hist4Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(peso1Hist5Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(peso12JFT)
+                    .addComponent(peso15JFT, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(nasa21JFT)
@@ -799,126 +901,198 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(peso21JFT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(peso2Hist1Label, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(peso2Hist2Label, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(peso2Hist3Label, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(peso2Hist4Label, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(peso2Hist5Label, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(peso22JFT, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(peso23JFT, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(peso24JFT, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(peso25JFT, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
+                    .addComponent(peso21JFT, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(peso2Hist1Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(peso2Hist2Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(peso2Hist3Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(peso2Hist4Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(peso2Hist5Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(peso22JFT)
+                    .addComponent(peso23JFT)
+                    .addComponent(peso24JFT)
+                    .addComponent(peso25JFT))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(nasa31JFT)
+                    .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(nasa3Hist1Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(nasa3Hist2Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(nasa3Hist3Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(nasa3Hist4Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(nasa3Hist5Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(nasa32JFT)
+                    .addComponent(nasa33JFT)
+                    .addComponent(nasa34JFT)
+                    .addComponent(nasa35JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(controleJFT, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(peso31JFT, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(peso3Hist1Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(peso3Hist2Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(peso3Hist3Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(peso3Hist4Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(peso3Hist5Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(peso32JFT)
+                    .addComponent(peso33JFT)
+                    .addComponent(peso34JFT)
+                    .addComponent(peso35JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(controleJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         baiaAmostradosJPLayout.setVerticalGroup(
             baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(baiaAmostradosJPLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(ordemHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(baiaHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(nasa1Hist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(peso1Hist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(nasa2Hist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(peso2Hist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(ordemHist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(baiaHist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(nasa1Hist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(peso1Hist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(nasa2Hist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(peso2Hist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(ordemHist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(baiaHist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(nasa1Hist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(peso1Hist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(nasa2Hist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(peso2Hist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(ordemHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(baiaHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nasa1Hist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(peso1Hist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(nasa2Hist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(peso2Hist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(ordemHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(baiaHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nasa1Hist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(peso1Hist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(nasa2Hist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(peso2Hist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel1)
-                        .addComponent(jLabel2)
-                        .addComponent(jLabel3)
-                        .addComponent(jLabel4))
-                    .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel12)
-                        .addComponent(jLabel16)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(nasa21JFT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(peso21JFT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(ordem1JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(baia1JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(nasa11JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(peso11JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ordem2JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(baia2JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nasa12JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(peso12JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nasa22JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(peso22JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ordem3JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(baia3JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nasa13JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(peso13JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nasa23JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(peso23JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ordem4JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(baia4JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nasa14JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(peso14JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nasa24JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(peso24JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ordem5JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(baia5JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nasa15JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(peso15JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nasa25JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(peso25JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(controleJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(baiaAmostradosJPLayout.createSequentialGroup()
+                        .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nasa3Hist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(peso3Hist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nasa3Hist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(peso3Hist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nasa3Hist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(peso3Hist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nasa3Hist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(peso3Hist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nasa3Hist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(peso3Hist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel17))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(nasa31JFT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(peso31JFT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nasa32JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(peso32JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nasa33JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(peso33JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nasa34JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(peso34JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nasa35JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(peso35JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(controleJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(baiaAmostradosJPLayout.createSequentialGroup()
+                        .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(ordemHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(baiaHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(nasa1Hist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(peso1Hist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(nasa2Hist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(peso2Hist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(ordemHist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(baiaHist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(nasa1Hist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(peso1Hist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(nasa2Hist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(peso2Hist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(ordemHist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(baiaHist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(nasa1Hist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(peso1Hist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(nasa2Hist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(peso2Hist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(ordemHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(baiaHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nasa1Hist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(peso1Hist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(nasa2Hist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(peso2Hist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(ordemHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(baiaHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nasa1Hist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(peso1Hist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(nasa2Hist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(peso2Hist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel1)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel3)
+                                .addComponent(jLabel4))
+                            .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel12)
+                                .addComponent(jLabel16)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(nasa21JFT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(peso21JFT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(ordem1JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(baia1JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(nasa11JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(peso11JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ordem2JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(baia2JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nasa12JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(peso12JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nasa22JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(peso22JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ordem3JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(baia3JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nasa13JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(peso13JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nasa23JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(peso23JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ordem4JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(baia4JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nasa14JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(peso14JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nasa24JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(peso24JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ordem5JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(baia5JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nasa15JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(peso15JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nasa25JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(peso25JFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
 
@@ -928,34 +1102,34 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
         registrosLabel.setText("Registros salvos com sucesso!!");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(baiaAmostradosJP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(registrosLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+        	jPanel1Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(jPanel1Layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING, false)
+        				.addComponent(jPanel2, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(registrosLabel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(baiaAmostradosJP, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        			.addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(baiaAmostradosJP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(registrosLabel)
-                .addContainerGap())
+        	jPanel1Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(jPanel1Layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        			.addGap(18)
+        			.addComponent(baiaAmostradosJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(registrosLabel)
+        			.addContainerGap())
         );
+        jPanel1.setLayout(jPanel1Layout);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1021,7 +1195,9 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -1050,6 +1226,16 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
     private javax.swing.JLabel nasa2Hist3Label;
     private javax.swing.JLabel nasa2Hist4Label;
     private javax.swing.JLabel nasa2Hist5Label;
+    private javax.swing.JFormattedTextField nasa31JFT;
+    private javax.swing.JFormattedTextField nasa32JFT;
+    private javax.swing.JFormattedTextField nasa33JFT;
+    private javax.swing.JFormattedTextField nasa34JFT;
+    private javax.swing.JFormattedTextField nasa35JFT;
+    private javax.swing.JLabel nasa3Hist1Label;
+    private javax.swing.JLabel nasa3Hist2Label;
+    private javax.swing.JLabel nasa3Hist3Label;
+    private javax.swing.JLabel nasa3Hist4Label;
+    private javax.swing.JLabel nasa3Hist5Label;
     private javax.swing.JFormattedTextField ordem1JFT;
     private javax.swing.JFormattedTextField ordem2JFT;
     private javax.swing.JFormattedTextField ordem3JFT;
@@ -1080,6 +1266,563 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
     private javax.swing.JLabel peso2Hist3Label;
     private javax.swing.JLabel peso2Hist4Label;
     private javax.swing.JLabel peso2Hist5Label;
+    private javax.swing.JFormattedTextField peso31JFT;
+    private javax.swing.JFormattedTextField peso32JFT;
+    private javax.swing.JFormattedTextField peso33JFT;
+    private javax.swing.JFormattedTextField peso34JFT;
+    private javax.swing.JFormattedTextField peso35JFT;
+    private javax.swing.JLabel peso3Hist1Label;
+    private javax.swing.JLabel peso3Hist2Label;
+    private javax.swing.JLabel peso3Hist3Label;
+    private javax.swing.JLabel peso3Hist4Label;
+    private javax.swing.JLabel peso3Hist5Label;
     private javax.swing.JLabel registrosLabel;
     // End of variables declaration//GEN-END:variables
+	public javax.swing.JLabel getjLabel1() {
+		return jLabel1;
+	}
+
+	public void setjLabel1(javax.swing.JLabel jLabel1) {
+		this.jLabel1 = jLabel1;
+	}
+
+	public javax.swing.JLabel getjLabel10() {
+		return jLabel10;
+	}
+
+	public void setjLabel10(javax.swing.JLabel jLabel10) {
+		this.jLabel10 = jLabel10;
+	}
+
+	public javax.swing.JLabel getjLabel12() {
+		return jLabel12;
+	}
+
+	public void setjLabel12(javax.swing.JLabel jLabel12) {
+		this.jLabel12 = jLabel12;
+	}
+
+	public javax.swing.JLabel getjLabel13() {
+		return jLabel13;
+	}
+
+	public void setjLabel13(javax.swing.JLabel jLabel13) {
+		this.jLabel13 = jLabel13;
+	}
+
+	public javax.swing.JLabel getjLabel14() {
+		return jLabel14;
+	}
+
+	public void setjLabel14(javax.swing.JLabel jLabel14) {
+		this.jLabel14 = jLabel14;
+	}
+
+	public javax.swing.JLabel getjLabel16() {
+		return jLabel16;
+	}
+
+	public void setjLabel16(javax.swing.JLabel jLabel16) {
+		this.jLabel16 = jLabel16;
+	}
+
+	public javax.swing.JLabel getjLabel17() {
+		return jLabel17;
+	}
+
+	public void setjLabel17(javax.swing.JLabel jLabel17) {
+		this.jLabel17 = jLabel17;
+	}
+
+	public javax.swing.JLabel getjLabel2() {
+		return jLabel2;
+	}
+
+	public void setjLabel2(javax.swing.JLabel jLabel2) {
+		this.jLabel2 = jLabel2;
+	}
+
+	public javax.swing.JLabel getjLabel21() {
+		return jLabel21;
+	}
+
+	public void setjLabel21(javax.swing.JLabel jLabel21) {
+		this.jLabel21 = jLabel21;
+	}
+
+	public javax.swing.JLabel getjLabel22() {
+		return jLabel22;
+	}
+
+	public void setjLabel22(javax.swing.JLabel jLabel22) {
+		this.jLabel22 = jLabel22;
+	}
+
+	public javax.swing.JLabel getjLabel23() {
+		return jLabel23;
+	}
+
+	public void setjLabel23(javax.swing.JLabel jLabel23) {
+		this.jLabel23 = jLabel23;
+	}
+
+	public javax.swing.JLabel getjLabel3() {
+		return jLabel3;
+	}
+
+	public void setjLabel3(javax.swing.JLabel jLabel3) {
+		this.jLabel3 = jLabel3;
+	}
+
+	public javax.swing.JLabel getjLabel4() {
+		return jLabel4;
+	}
+
+	public void setjLabel4(javax.swing.JLabel jLabel4) {
+		this.jLabel4 = jLabel4;
+	}
+
+	public javax.swing.JPanel getjPanel1() {
+		return jPanel1;
+	}
+
+	public void setjPanel1(javax.swing.JPanel jPanel1) {
+		this.jPanel1 = jPanel1;
+	}
+
+	public javax.swing.JPanel getjPanel2() {
+		return jPanel2;
+	}
+
+	public void setjPanel2(javax.swing.JPanel jPanel2) {
+		this.jPanel2 = jPanel2;
+	}
+
+	public javax.swing.JFormattedTextField getNasa31JFT() {
+		return nasa31JFT;
+	}
+
+	public void setNasa31JFT(javax.swing.JFormattedTextField nasa31jft) {
+		nasa31JFT = nasa31jft;
+	}
+
+	public javax.swing.JFormattedTextField getNasa32JFT() {
+		return nasa32JFT;
+	}
+
+	public void setNasa32JFT(javax.swing.JFormattedTextField nasa32jft) {
+		nasa32JFT = nasa32jft;
+	}
+
+	public javax.swing.JFormattedTextField getNasa33JFT() {
+		return nasa33JFT;
+	}
+
+	public void setNasa33JFT(javax.swing.JFormattedTextField nasa33jft) {
+		nasa33JFT = nasa33jft;
+	}
+
+	public javax.swing.JFormattedTextField getNasa34JFT() {
+		return nasa34JFT;
+	}
+
+	public void setNasa34JFT(javax.swing.JFormattedTextField nasa34jft) {
+		nasa34JFT = nasa34jft;
+	}
+
+	public javax.swing.JFormattedTextField getNasa35JFT() {
+		return nasa35JFT;
+	}
+
+	public void setNasa35JFT(javax.swing.JFormattedTextField nasa35jft) {
+		nasa35JFT = nasa35jft;
+	}
+
+	public javax.swing.JLabel getNasa3Hist1Label() {
+		return nasa3Hist1Label;
+	}
+
+	public void setNasa3Hist1Label(javax.swing.JLabel nasa3Hist1Label) {
+		this.nasa3Hist1Label = nasa3Hist1Label;
+	}
+
+	public javax.swing.JLabel getNasa3Hist2Label() {
+		return nasa3Hist2Label;
+	}
+
+	public void setNasa3Hist2Label(javax.swing.JLabel nasa3Hist2Label) {
+		this.nasa3Hist2Label = nasa3Hist2Label;
+	}
+
+	public javax.swing.JLabel getNasa3Hist3Label() {
+		return nasa3Hist3Label;
+	}
+
+	public void setNasa3Hist3Label(javax.swing.JLabel nasa3Hist3Label) {
+		this.nasa3Hist3Label = nasa3Hist3Label;
+	}
+
+	public javax.swing.JLabel getNasa3Hist4Label() {
+		return nasa3Hist4Label;
+	}
+
+	public void setNasa3Hist4Label(javax.swing.JLabel nasa3Hist4Label) {
+		this.nasa3Hist4Label = nasa3Hist4Label;
+	}
+
+	public javax.swing.JLabel getNasa3Hist5Label() {
+		return nasa3Hist5Label;
+	}
+
+	public void setNasa3Hist5Label(javax.swing.JLabel nasa3Hist5Label) {
+		this.nasa3Hist5Label = nasa3Hist5Label;
+	}
+
+	public javax.swing.JFormattedTextField getPeso31JFT() {
+		return peso31JFT;
+	}
+
+	public void setPeso31JFT(javax.swing.JFormattedTextField peso31jft) {
+		peso31JFT = peso31jft;
+	}
+
+	public javax.swing.JFormattedTextField getPeso32JFT() {
+		return peso32JFT;
+	}
+
+	public void setPeso32JFT(javax.swing.JFormattedTextField peso32jft) {
+		peso32JFT = peso32jft;
+	}
+
+	public javax.swing.JFormattedTextField getPeso33JFT() {
+		return peso33JFT;
+	}
+
+	public void setPeso33JFT(javax.swing.JFormattedTextField peso33jft) {
+		peso33JFT = peso33jft;
+	}
+
+	public javax.swing.JFormattedTextField getPeso34JFT() {
+		return peso34JFT;
+	}
+
+	public void setPeso34JFT(javax.swing.JFormattedTextField peso34jft) {
+		peso34JFT = peso34jft;
+	}
+
+	public javax.swing.JFormattedTextField getPeso35JFT() {
+		return peso35JFT;
+	}
+
+	public void setPeso35JFT(javax.swing.JFormattedTextField peso35jft) {
+		peso35JFT = peso35jft;
+	}
+
+	public javax.swing.JLabel getPeso3Hist1Label() {
+		return peso3Hist1Label;
+	}
+
+	public void setPeso3Hist1Label(javax.swing.JLabel peso3Hist1Label) {
+		this.peso3Hist1Label = peso3Hist1Label;
+	}
+
+	public javax.swing.JLabel getPeso3Hist2Label() {
+		return peso3Hist2Label;
+	}
+
+	public void setPeso3Hist2Label(javax.swing.JLabel peso3Hist2Label) {
+		this.peso3Hist2Label = peso3Hist2Label;
+	}
+
+	public javax.swing.JLabel getPeso3Hist3Label() {
+		return peso3Hist3Label;
+	}
+
+	public void setPeso3Hist3Label(javax.swing.JLabel peso3Hist3Label) {
+		this.peso3Hist3Label = peso3Hist3Label;
+	}
+
+	public javax.swing.JLabel getPeso3Hist4Label() {
+		return peso3Hist4Label;
+	}
+
+	public void setPeso3Hist4Label(javax.swing.JLabel peso3Hist4Label) {
+		this.peso3Hist4Label = peso3Hist4Label;
+	}
+
+	public javax.swing.JLabel getPeso3Hist5Label() {
+		return peso3Hist5Label;
+	}
+
+	public void setPeso3Hist5Label(javax.swing.JLabel peso3Hist5Label) {
+		this.peso3Hist5Label = peso3Hist5Label;
+	}
+
+	public void setAbateJFT(javax.swing.JFormattedTextField abateJFT) {
+		this.abateJFT = abateJFT;
+	}
+
+	public void setAviarioJFT(javax.swing.JFormattedTextField aviarioJFT) {
+		this.aviarioJFT = aviarioJFT;
+	}
+
+	public void setBaia1JFT(javax.swing.JFormattedTextField baia1jft) {
+		baia1JFT = baia1jft;
+	}
+
+	public void setBaia2JFT(javax.swing.JFormattedTextField baia2jft) {
+		baia2JFT = baia2jft;
+	}
+
+	public void setBaia3JFT(javax.swing.JFormattedTextField baia3jft) {
+		baia3JFT = baia3jft;
+	}
+
+	public void setBaia4JFT(javax.swing.JFormattedTextField baia4jft) {
+		baia4JFT = baia4jft;
+	}
+
+	public void setBaia5JFT(javax.swing.JFormattedTextField baia5jft) {
+		baia5JFT = baia5jft;
+	}
+
+	public void setBaiaAmostradosJP(javax.swing.JPanel baiaAmostradosJP) {
+		this.baiaAmostradosJP = baiaAmostradosJP;
+	}
+
+	public void setBaiaHist1Label(javax.swing.JLabel baiaHist1Label) {
+		this.baiaHist1Label = baiaHist1Label;
+	}
+
+	public void setBaiaHist2Label(javax.swing.JLabel baiaHist2Label) {
+		this.baiaHist2Label = baiaHist2Label;
+	}
+
+	public void setBaiaHist3Label(javax.swing.JLabel baiaHist3Label) {
+		this.baiaHist3Label = baiaHist3Label;
+	}
+
+	public void setBaiaHist4Label(javax.swing.JLabel baiaHist4Label) {
+		this.baiaHist4Label = baiaHist4Label;
+	}
+
+	public void setBaiaHist5Label(javax.swing.JLabel baiaHist5Label) {
+		this.baiaHist5Label = baiaHist5Label;
+	}
+
+	public void setControleJFT(javax.swing.JFormattedTextField controleJFT) {
+		this.controleJFT = controleJFT;
+	}
+
+	public void setDataAbateJFT(javax.swing.JFormattedTextField dataAbateJFT) {
+		this.dataAbateJFT = dataAbateJFT;
+	}
+
+	public void setIdadeJFT(javax.swing.JFormattedTextField idadeJFT) {
+		this.idadeJFT = idadeJFT;
+	}
+
+	public void setNasa11JFT(javax.swing.JFormattedTextField nasa11jft) {
+		nasa11JFT = nasa11jft;
+	}
+
+	public void setNasa12JFT(javax.swing.JFormattedTextField nasa12jft) {
+		nasa12JFT = nasa12jft;
+	}
+
+	public void setNasa13JFT(javax.swing.JFormattedTextField nasa13jft) {
+		nasa13JFT = nasa13jft;
+	}
+
+	public void setNasa14JFT(javax.swing.JFormattedTextField nasa14jft) {
+		nasa14JFT = nasa14jft;
+	}
+
+	public void setNasa15JFT(javax.swing.JFormattedTextField nasa15jft) {
+		nasa15JFT = nasa15jft;
+	}
+
+	public void setNasa1Hist1Label(javax.swing.JLabel nasa1Hist1Label) {
+		this.nasa1Hist1Label = nasa1Hist1Label;
+	}
+
+	public void setNasa1Hist2Label(javax.swing.JLabel nasa1Hist2Label) {
+		this.nasa1Hist2Label = nasa1Hist2Label;
+	}
+
+	public void setNasa1Hist3Label(javax.swing.JLabel nasa1Hist3Label) {
+		this.nasa1Hist3Label = nasa1Hist3Label;
+	}
+
+	public void setNasa1Hist4Label(javax.swing.JLabel nasa1Hist4Label) {
+		this.nasa1Hist4Label = nasa1Hist4Label;
+	}
+
+	public void setNasa1Hist5Label(javax.swing.JLabel nasa1Hist5Label) {
+		this.nasa1Hist5Label = nasa1Hist5Label;
+	}
+
+	public void setNasa21JFT(javax.swing.JFormattedTextField nasa21jft) {
+		nasa21JFT = nasa21jft;
+	}
+
+	public void setNasa22JFT(javax.swing.JFormattedTextField nasa22jft) {
+		nasa22JFT = nasa22jft;
+	}
+
+	public void setNasa23JFT(javax.swing.JFormattedTextField nasa23jft) {
+		nasa23JFT = nasa23jft;
+	}
+
+	public void setNasa24JFT(javax.swing.JFormattedTextField nasa24jft) {
+		nasa24JFT = nasa24jft;
+	}
+
+	public void setNasa25JFT(javax.swing.JFormattedTextField nasa25jft) {
+		nasa25JFT = nasa25jft;
+	}
+
+	public void setNasa2Hist1Label(javax.swing.JLabel nasa2Hist1Label) {
+		this.nasa2Hist1Label = nasa2Hist1Label;
+	}
+
+	public void setNasa2Hist2Label(javax.swing.JLabel nasa2Hist2Label) {
+		this.nasa2Hist2Label = nasa2Hist2Label;
+	}
+
+	public void setNasa2Hist3Label(javax.swing.JLabel nasa2Hist3Label) {
+		this.nasa2Hist3Label = nasa2Hist3Label;
+	}
+
+	public void setNasa2Hist4Label(javax.swing.JLabel nasa2Hist4Label) {
+		this.nasa2Hist4Label = nasa2Hist4Label;
+	}
+
+	public void setNasa2Hist5Label(javax.swing.JLabel nasa2Hist5Label) {
+		this.nasa2Hist5Label = nasa2Hist5Label;
+	}
+
+	public void setOrdem1JFT(javax.swing.JFormattedTextField ordem1jft) {
+		ordem1JFT = ordem1jft;
+	}
+
+	public void setOrdem2JFT(javax.swing.JFormattedTextField ordem2jft) {
+		ordem2JFT = ordem2jft;
+	}
+
+	public void setOrdem3JFT(javax.swing.JFormattedTextField ordem3jft) {
+		ordem3JFT = ordem3jft;
+	}
+
+	public void setOrdem4JFT(javax.swing.JFormattedTextField ordem4jft) {
+		ordem4JFT = ordem4jft;
+	}
+
+	public void setOrdem5JFT(javax.swing.JFormattedTextField ordem5jft) {
+		ordem5JFT = ordem5jft;
+	}
+
+	public void setOrdemHist1Label(javax.swing.JLabel ordemHist1Label) {
+		this.ordemHist1Label = ordemHist1Label;
+	}
+
+	public void setOrdemHist2Label(javax.swing.JLabel ordemHist2Label) {
+		this.ordemHist2Label = ordemHist2Label;
+	}
+
+	public void setOrdemHist3Label(javax.swing.JLabel ordemHist3Label) {
+		this.ordemHist3Label = ordemHist3Label;
+	}
+
+	public void setOrdemHist4Label(javax.swing.JLabel ordemHist4Label) {
+		this.ordemHist4Label = ordemHist4Label;
+	}
+
+	public void setOrdemHist5Label(javax.swing.JLabel ordemHist5Label) {
+		this.ordemHist5Label = ordemHist5Label;
+	}
+
+	public void setPeso11JFT(javax.swing.JFormattedTextField peso11jft) {
+		peso11JFT = peso11jft;
+	}
+
+	public void setPeso12JFT(javax.swing.JFormattedTextField peso12jft) {
+		peso12JFT = peso12jft;
+	}
+
+	public void setPeso13JFT(javax.swing.JFormattedTextField peso13jft) {
+		peso13JFT = peso13jft;
+	}
+
+	public void setPeso14JFT(javax.swing.JFormattedTextField peso14jft) {
+		peso14JFT = peso14jft;
+	}
+
+	public void setPeso15JFT(javax.swing.JFormattedTextField peso15jft) {
+		peso15JFT = peso15jft;
+	}
+
+	public void setPeso1Hist1Label(javax.swing.JLabel peso1Hist1Label) {
+		this.peso1Hist1Label = peso1Hist1Label;
+	}
+
+	public void setPeso1Hist2Label(javax.swing.JLabel peso1Hist2Label) {
+		this.peso1Hist2Label = peso1Hist2Label;
+	}
+
+	public void setPeso1Hist3Label(javax.swing.JLabel peso1Hist3Label) {
+		this.peso1Hist3Label = peso1Hist3Label;
+	}
+
+	public void setPeso1Hist4Label(javax.swing.JLabel peso1Hist4Label) {
+		this.peso1Hist4Label = peso1Hist4Label;
+	}
+
+	public void setPeso1Hist5Label(javax.swing.JLabel peso1Hist5Label) {
+		this.peso1Hist5Label = peso1Hist5Label;
+	}
+
+	public void setPeso21JFT(javax.swing.JFormattedTextField peso21jft) {
+		peso21JFT = peso21jft;
+	}
+
+	public void setPeso22JFT(javax.swing.JFormattedTextField peso22jft) {
+		peso22JFT = peso22jft;
+	}
+
+	public void setPeso23JFT(javax.swing.JFormattedTextField peso23jft) {
+		peso23JFT = peso23jft;
+	}
+
+	public void setPeso24JFT(javax.swing.JFormattedTextField peso24jft) {
+		peso24JFT = peso24jft;
+	}
+
+	public void setPeso25JFT(javax.swing.JFormattedTextField peso25jft) {
+		peso25JFT = peso25jft;
+	}
+
+	public void setPeso2Hist1Label(javax.swing.JLabel peso2Hist1Label) {
+		this.peso2Hist1Label = peso2Hist1Label;
+	}
+
+	public void setPeso2Hist2Label(javax.swing.JLabel peso2Hist2Label) {
+		this.peso2Hist2Label = peso2Hist2Label;
+	}
+
+	public void setPeso2Hist3Label(javax.swing.JLabel peso2Hist3Label) {
+		this.peso2Hist3Label = peso2Hist3Label;
+	}
+
+	public void setPeso2Hist4Label(javax.swing.JLabel peso2Hist4Label) {
+		this.peso2Hist4Label = peso2Hist4Label;
+	}
+
+	public void setPeso2Hist5Label(javax.swing.JLabel peso2Hist5Label) {
+		this.peso2Hist5Label = peso2Hist5Label;
+	}
+
+	public void setRegistrosLabel(javax.swing.JLabel registrosLabel) {
+		this.registrosLabel = registrosLabel;
+	}
 }

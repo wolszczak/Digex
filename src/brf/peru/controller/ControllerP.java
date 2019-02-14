@@ -38,9 +38,9 @@ public class ControllerP {
         ctrlEscolhaDig.openWindow(idadesFases);
     }
     
-    public void startEscolhaDigRend(Integer aviario, String dataAbate) {
+    public void startEscolhaDigRend(Integer abate, Integer idadeAbate, String dataAbate) {
         ctrlEscolhaDigRend = new ControllerEscolhaDigRendP(this);
-        ctrlEscolhaDigRend.openWindow(modelP.getExperimentoVO().getInfoExp().getAviario(), aviario, dataAbate);
+        ctrlEscolhaDigRend.openWindow(modelP.getExperimentoVO().getInfoExp().getAviario(), abate, idadeAbate, dataAbate);
     }
     
     public void resumeEscolhaDig() {
@@ -61,9 +61,9 @@ public class ControllerP {
         ctrlEscolhaAbate.resumeWindow();
     }
     
-    public void startBaiaAmostrados(Integer aviario, String dataAbate) {
+    public void startBaiaAmostrados(Integer aviario, Integer abate,Integer idadeAbate,String dataAbate) {
     	ctrlBaiaAmostrados = new ControllerBaiaAmostradosP(this);
-    	ctrlBaiaAmostrados.openWindow(modelP.getExperimentoVO().getInfoExp().getAviario(), aviario, dataAbate);
+    	ctrlBaiaAmostrados.openWindow(modelP.getExperimentoVO().getInfoExp().getAviario(), abate, idadeAbate, dataAbate);
     }
     
     public void startCamaras() {

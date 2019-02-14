@@ -6,6 +6,7 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.GroupLayout;
 import javax.swing.SwingConstants;
+import java.awt.Color;
 
 public class ViewEscolhaDigRendP extends javax.swing.JFrame {
 	
@@ -27,8 +28,9 @@ public class ViewEscolhaDigRendP extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField opcaoJFT;
     private javax.swing.JLabel qtdeDesLabel;
     private javax.swing.JLabel visualizarArquivoLabel;
+    private JLabel qtdCamarasLabel;
+    private JLabel qtdConesLabel;
     private javax.swing.JFormattedTextField idadeJFT;
-	
 
     public ViewEscolhaDigRendP() {
         initComponents();
@@ -56,6 +58,7 @@ public class ViewEscolhaDigRendP extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         qtdeDesLabel = new javax.swing.JLabel();
         idadeJFT = new javax.swing.JFormattedTextField();
+        idadeJFT.setEditable(false);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -114,12 +117,15 @@ public class ViewEscolhaDigRendP extends javax.swing.JFrame {
 
         jLabel4.setText("Idade");
 
+        idadeJFT.setForeground(new java.awt.Color(0, 153, 255));
         try {
-        	idadeJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+            idadeJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
         idadeJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        
+        
         
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -137,8 +143,8 @@ public class ViewEscolhaDigRendP extends javax.swing.JFrame {
         			.addGap(20)
         			.addComponent(jLabel4)
         			.addPreferredGap(ComponentPlacement.UNRELATED)
-        			.addComponent(idadeJFT, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
-        			.addGap(19)
+        			.addComponent(idadeJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(20, 20, 20)
         			.addComponent(jLabel12)
         			.addPreferredGap(ComponentPlacement.UNRELATED)
         			.addComponent(dataAbateJFT, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
@@ -156,7 +162,7 @@ public class ViewEscolhaDigRendP extends javax.swing.JFrame {
         				.addComponent(jLabel12)
         				.addComponent(dataAbateJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
         				.addComponent(jLabel4)
-        				.addComponent(idadeJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        				.addComponent(idadeJFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         			.addContainerGap())
         );
         jPanel2.setLayout(jPanel2Layout);
@@ -167,57 +173,72 @@ public class ViewEscolhaDigRendP extends javax.swing.JFrame {
 
         qtdeDesLabel.setForeground(new java.awt.Color(0, 153, 255));
         qtdeDesLabel.setText("999 amostrados digitados");
+        
+        qtdCamarasLabel = new JLabel();
+        qtdCamarasLabel.setText("999 amostrados digitados");
+        qtdCamarasLabel.setForeground(new Color(0, 153, 255));
+        
+        qtdConesLabel = new JLabel();
+        qtdConesLabel.setText("999 amostrados digitados");
+        qtdConesLabel.setForeground(new Color(0, 153, 255));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(digitarRendimentoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(visualizarArquivoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(qtdeDesLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jLabel39)
-                    .addComponent(jLabel40)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(opcaoJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+        	jPanel1Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(jPanel1Layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+        				.addComponent(jLabel2)
+        				.addGroup(jPanel1Layout.createSequentialGroup()
+        					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING, false)
+        						.addComponent(jLabel1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        						.addComponent(digitarRendimentoLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        						.addComponent(visualizarArquivoLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        					.addPreferredGap(ComponentPlacement.UNRELATED)
+        					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+        						.addComponent(qtdConesLabel, GroupLayout.PREFERRED_SIZE, 168, GroupLayout.PREFERRED_SIZE)
+        						.addComponent(qtdCamarasLabel, GroupLayout.PREFERRED_SIZE, 168, GroupLayout.PREFERRED_SIZE)
+        						.addComponent(qtdeDesLabel, GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)))
+        				.addComponent(jLabel39)
+        				.addComponent(jLabel40)
+        				.addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING, false)
+        					.addGroup(jPanel1Layout.createSequentialGroup()
+        						.addComponent(jLabel41, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        						.addPreferredGap(ComponentPlacement.UNRELATED)
+        						.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
+        					.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+        			.addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(visualizarArquivoLabel)
-                    .addComponent(qtdeDesLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(digitarRendimentoLabel)
-                .addGap(30, 30, 30)
-                .addComponent(jLabel39)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel40)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel41)
-                    .addComponent(opcaoJFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+        	jPanel1Layout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(jPanel1Layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        			.addGap(18)
+        			.addComponent(jLabel2)
+        			.addGap(18)
+        			.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(visualizarArquivoLabel)
+        				.addComponent(qtdeDesLabel))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(qtdCamarasLabel))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(digitarRendimentoLabel)
+        				.addComponent(qtdConesLabel))
+        			.addGap(30)
+        			.addComponent(jLabel39)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(jLabel40)
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
+        			.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(jLabel41)
+        				.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        			.addContainerGap())
         );
+        jPanel1.setLayout(jPanel1Layout);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -295,5 +316,145 @@ public class ViewEscolhaDigRendP extends javax.swing.JFrame {
 
 	public void setIdadeJFT(javax.swing.JFormattedTextField idadeJFT) {
 		this.idadeJFT = idadeJFT;
+	}
+
+	public javax.swing.JLabel getjLabel1() {
+		return jLabel1;
+	}
+
+	public void setjLabel1(javax.swing.JLabel jLabel1) {
+		this.jLabel1 = jLabel1;
+	}
+
+	public javax.swing.JLabel getjLabel10() {
+		return jLabel10;
+	}
+
+	public void setjLabel10(javax.swing.JLabel jLabel10) {
+		this.jLabel10 = jLabel10;
+	}
+
+	public javax.swing.JLabel getjLabel11() {
+		return jLabel11;
+	}
+
+	public void setjLabel11(javax.swing.JLabel jLabel11) {
+		this.jLabel11 = jLabel11;
+	}
+
+	public javax.swing.JLabel getjLabel12() {
+		return jLabel12;
+	}
+
+	public void setjLabel12(javax.swing.JLabel jLabel12) {
+		this.jLabel12 = jLabel12;
+	}
+
+	public javax.swing.JLabel getjLabel2() {
+		return jLabel2;
+	}
+
+	public void setjLabel2(javax.swing.JLabel jLabel2) {
+		this.jLabel2 = jLabel2;
+	}
+
+	public javax.swing.JLabel getjLabel39() {
+		return jLabel39;
+	}
+
+	public void setjLabel39(javax.swing.JLabel jLabel39) {
+		this.jLabel39 = jLabel39;
+	}
+
+	public javax.swing.JLabel getjLabel4() {
+		return jLabel4;
+	}
+
+	public void setjLabel4(javax.swing.JLabel jLabel4) {
+		this.jLabel4 = jLabel4;
+	}
+
+	public javax.swing.JLabel getjLabel40() {
+		return jLabel40;
+	}
+
+	public void setjLabel40(javax.swing.JLabel jLabel40) {
+		this.jLabel40 = jLabel40;
+	}
+
+	public javax.swing.JLabel getjLabel41() {
+		return jLabel41;
+	}
+
+	public void setjLabel41(javax.swing.JLabel jLabel41) {
+		this.jLabel41 = jLabel41;
+	}
+
+	public javax.swing.JPanel getjPanel1() {
+		return jPanel1;
+	}
+
+	public void setjPanel1(javax.swing.JPanel jPanel1) {
+		this.jPanel1 = jPanel1;
+	}
+
+	public javax.swing.JPanel getjPanel2() {
+		return jPanel2;
+	}
+
+	public void setjPanel2(javax.swing.JPanel jPanel2) {
+		this.jPanel2 = jPanel2;
+	}
+
+	public void setAbateJFT(javax.swing.JFormattedTextField abateJFT) {
+		this.abateJFT = abateJFT;
+	}
+
+	public void setAviarioJFT(javax.swing.JFormattedTextField aviarioJFT) {
+		this.aviarioJFT = aviarioJFT;
+	}
+
+	public void setDataAbateJFT(javax.swing.JFormattedTextField dataAbateJFT) {
+		this.dataAbateJFT = dataAbateJFT;
+	}
+
+	public void setDigitarRendimentoLabel(javax.swing.JLabel digitarRendimentoLabel) {
+		this.digitarRendimentoLabel = digitarRendimentoLabel;
+	}
+
+	public void setOpcaoJFT(javax.swing.JFormattedTextField opcaoJFT) {
+		this.opcaoJFT = opcaoJFT;
+	}
+
+	public void setQtdeDesLabel(javax.swing.JLabel qtdeDesLabel) {
+		this.qtdeDesLabel = qtdeDesLabel;
+	}
+
+	public void setVisualizarArquivoLabel(javax.swing.JLabel visualizarArquivoLabel) {
+		this.visualizarArquivoLabel = visualizarArquivoLabel;
+	}
+
+	public JLabel getQtdCamarasLabel() {
+		return qtdCamarasLabel;
+	}
+
+	public void setQtdCamarasLabel(JLabel qtdCamarasLabel) {
+		this.qtdCamarasLabel = qtdCamarasLabel;
+	}
+
+	public JLabel getQtdConesLabel() {
+		return qtdConesLabel;
+	}
+
+	public void setQtdConesLabel(JLabel qtdConesLabel) {
+		this.qtdConesLabel = qtdConesLabel;
+	}
+
+	public javax.swing.JFormattedTextField getIdadeLabelJFT() {
+		return idadeJFT;
+	}
+
+	public void setIdadeLabelJFT(javax.swing.JFormattedTextField idadeLabelJFT) {
+		this.idadeJFT = idadeLabelJFT;
 	}
 }

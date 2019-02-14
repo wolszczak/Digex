@@ -23,7 +23,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -40,10 +40,12 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jPanel2" max="32767" attributes="0"/>
-                      <Component id="baiaAmostradosJP" alignment="0" max="32767" attributes="0"/>
-                      <Component id="registrosLabel" alignment="0" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jPanel2" max="32767" attributes="0"/>
+                          <Component id="registrosLabel" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Component id="baiaAmostradosJP" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -244,17 +246,17 @@
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="peso14JFT" alignment="0" pref="50" max="32767" attributes="0"/>
-                          <Component id="peso13JFT" alignment="0" pref="50" max="32767" attributes="0"/>
-                          <Component id="peso11JFT" alignment="0" pref="50" max="32767" attributes="0"/>
-                          <Component id="peso1Hist2Label" alignment="0" pref="50" max="32767" attributes="0"/>
-                          <Component id="peso1Hist1Label" alignment="0" pref="50" max="32767" attributes="0"/>
+                          <Component id="peso14JFT" alignment="0" max="32767" attributes="0"/>
+                          <Component id="peso13JFT" alignment="0" max="32767" attributes="0"/>
+                          <Component id="peso11JFT" alignment="0" max="32767" attributes="0"/>
+                          <Component id="peso1Hist2Label" alignment="0" max="32767" attributes="0"/>
+                          <Component id="peso1Hist1Label" alignment="0" max="32767" attributes="0"/>
                           <Component id="jLabel4" alignment="0" pref="50" max="32767" attributes="0"/>
-                          <Component id="peso1Hist3Label" alignment="0" pref="50" max="32767" attributes="0"/>
-                          <Component id="peso1Hist4Label" alignment="0" pref="50" max="32767" attributes="0"/>
-                          <Component id="peso1Hist5Label" alignment="0" pref="50" max="32767" attributes="0"/>
-                          <Component id="peso12JFT" alignment="0" pref="50" max="32767" attributes="0"/>
-                          <Component id="peso15JFT" alignment="1" pref="50" max="32767" attributes="0"/>
+                          <Component id="peso1Hist3Label" alignment="0" max="32767" attributes="0"/>
+                          <Component id="peso1Hist4Label" alignment="0" max="32767" attributes="0"/>
+                          <Component id="peso1Hist5Label" alignment="0" max="32767" attributes="0"/>
+                          <Component id="peso12JFT" alignment="0" max="32767" attributes="0"/>
+                          <Component id="peso15JFT" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -273,23 +275,51 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jLabel12" alignment="0" pref="50" max="32767" attributes="0"/>
-                          <Component id="peso21JFT" alignment="1" pref="50" max="32767" attributes="0"/>
-                          <Component id="peso2Hist1Label" alignment="0" pref="50" max="32767" attributes="0"/>
-                          <Component id="peso2Hist2Label" alignment="0" pref="50" max="32767" attributes="0"/>
-                          <Component id="peso2Hist3Label" alignment="0" pref="50" max="32767" attributes="0"/>
-                          <Component id="peso2Hist4Label" alignment="0" pref="50" max="32767" attributes="0"/>
-                          <Component id="peso2Hist5Label" alignment="0" pref="50" max="32767" attributes="0"/>
-                          <Component id="peso22JFT" pref="50" max="32767" attributes="0"/>
-                          <Component id="peso23JFT" alignment="0" pref="50" max="32767" attributes="0"/>
-                          <Component id="peso24JFT" alignment="0" pref="50" max="32767" attributes="0"/>
-                          <Component id="peso25JFT" alignment="0" pref="50" max="32767" attributes="0"/>
+                          <Component id="peso21JFT" alignment="1" max="32767" attributes="0"/>
+                          <Component id="peso2Hist1Label" alignment="0" max="32767" attributes="0"/>
+                          <Component id="peso2Hist2Label" alignment="0" max="32767" attributes="0"/>
+                          <Component id="peso2Hist3Label" alignment="0" max="32767" attributes="0"/>
+                          <Component id="peso2Hist4Label" alignment="0" max="32767" attributes="0"/>
+                          <Component id="peso2Hist5Label" alignment="0" max="32767" attributes="0"/>
+                          <Component id="peso22JFT" max="32767" attributes="0"/>
+                          <Component id="peso23JFT" alignment="0" max="32767" attributes="0"/>
+                          <Component id="peso24JFT" alignment="0" max="32767" attributes="0"/>
+                          <Component id="peso25JFT" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="nasa31JFT" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jLabel17" alignment="0" max="32767" attributes="0"/>
+                          <Component id="nasa3Hist1Label" alignment="0" max="32767" attributes="0"/>
+                          <Component id="nasa3Hist2Label" alignment="0" max="32767" attributes="0"/>
+                          <Component id="nasa3Hist3Label" alignment="0" max="32767" attributes="0"/>
+                          <Component id="nasa3Hist4Label" alignment="0" max="32767" attributes="0"/>
+                          <Component id="nasa3Hist5Label" alignment="0" max="32767" attributes="0"/>
+                          <Component id="nasa32JFT" alignment="0" max="32767" attributes="0"/>
+                          <Component id="nasa33JFT" alignment="0" max="32767" attributes="0"/>
+                          <Component id="nasa34JFT" alignment="0" max="32767" attributes="0"/>
+                          <Component id="nasa35JFT" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jLabel13" alignment="0" max="32767" attributes="0"/>
-                          <Component id="controleJFT" alignment="0" pref="50" max="32767" attributes="0"/>
+                          <Component id="jLabel14" alignment="0" max="32767" attributes="0"/>
+                          <Component id="peso31JFT" alignment="1" max="32767" attributes="0"/>
+                          <Component id="peso3Hist1Label" alignment="0" max="32767" attributes="0"/>
+                          <Component id="peso3Hist2Label" alignment="0" max="32767" attributes="0"/>
+                          <Component id="peso3Hist3Label" alignment="0" max="32767" attributes="0"/>
+                          <Component id="peso3Hist4Label" alignment="0" max="32767" attributes="0"/>
+                          <Component id="peso3Hist5Label" alignment="0" max="32767" attributes="0"/>
+                          <Component id="peso32JFT" alignment="0" max="32767" attributes="0"/>
+                          <Component id="peso33JFT" alignment="0" max="32767" attributes="0"/>
+                          <Component id="peso34JFT" alignment="0" max="32767" attributes="0"/>
+                          <Component id="peso35JFT" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="controleJFT" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="jLabel13" min="-2" pref="50" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -297,127 +327,187 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="ordemHist1Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                              <Component id="baiaHist1Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                              <Component id="nasa1Hist1Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                              <Component id="peso1Hist1Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="nasa2Hist1Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                              <Component id="peso2Hist1Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="ordemHist2Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                              <Component id="baiaHist2Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                              <Component id="nasa1Hist2Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                              <Component id="peso1Hist2Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="nasa2Hist2Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                              <Component id="peso2Hist2Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                              <Component id="ordemHist3Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
-                              <Component id="baiaHist3Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
-                              <Component id="nasa1Hist3Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
-                              <Component id="peso1Hist3Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="nasa3Hist1Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                                  <Component id="peso3Hist1Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="nasa3Hist2Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                                  <Component id="peso3Hist2Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="nasa3Hist3Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                                  <Component id="peso3Hist3Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="nasa3Hist4Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                                  <Component id="peso3Hist4Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="nasa3Hist5Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                                  <Component id="peso3Hist5Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="nasa31JFT" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="peso31JFT" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="nasa32JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="peso32JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="nasa33JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="peso33JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="nasa34JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="peso34JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="nasa35JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="peso35JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="controleJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="nasa2Hist3Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                              <Component id="peso2Hist3Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="ordemHist1Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                                      <Component id="baiaHist1Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                                      <Component id="nasa1Hist1Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                                      <Component id="peso1Hist1Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="nasa2Hist1Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                                      <Component id="peso2Hist1Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="ordemHist2Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                                      <Component id="baiaHist2Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                                      <Component id="nasa1Hist2Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                                      <Component id="peso1Hist2Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="nasa2Hist2Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                                      <Component id="peso2Hist2Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                      <Component id="ordemHist3Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
+                                      <Component id="baiaHist3Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
+                                      <Component id="nasa1Hist3Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
+                                      <Component id="peso1Hist3Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="nasa2Hist3Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                                      <Component id="peso2Hist3Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="ordemHist4Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
+                                  <Component id="baiaHist4Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
+                                  <Component id="nasa1Hist4Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
+                                  <Component id="peso1Hist4Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                                      <Component id="nasa2Hist4Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                                      <Component id="peso2Hist4Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="ordemHist5Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
+                                  <Component id="baiaHist5Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
+                                  <Component id="nasa1Hist5Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
+                                  <Component id="peso1Hist5Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                                      <Component id="nasa2Hist5Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                                      <Component id="peso2Hist5Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="nasa21JFT" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="peso21JFT" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="ordem1JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <Component id="baia1JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <Component id="nasa11JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <Component id="peso11JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="ordem2JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="baia2JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nasa12JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="peso12JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nasa22JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="peso22JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="ordem3JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="baia3JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nasa13JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="peso13JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nasa23JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="peso23JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="ordem4JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="baia4JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nasa14JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="peso14JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nasa24JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="peso24JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="ordem5JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="baia5JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nasa15JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="peso15JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nasa25JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="peso25JFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="ordemHist4Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
-                          <Component id="baiaHist4Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
-                          <Component id="nasa1Hist4Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
-                          <Component id="peso1Hist4Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
-                          <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                              <Component id="nasa2Hist4Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                              <Component id="peso2Hist4Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="ordemHist5Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
-                          <Component id="baiaHist5Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
-                          <Component id="nasa1Hist5Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
-                          <Component id="peso1Hist5Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
-                          <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                              <Component id="nasa2Hist5Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                              <Component id="peso2Hist5Label" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="nasa21JFT" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="peso21JFT" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="ordem1JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                              <Component id="baia1JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                              <Component id="nasa11JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                              <Component id="peso11JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="ordem2JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="baia2JFT" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="nasa12JFT" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="peso12JFT" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="nasa22JFT" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="peso22JFT" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="ordem3JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="baia3JFT" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="nasa13JFT" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="peso13JFT" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="nasa23JFT" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="peso23JFT" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="ordem4JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="baia4JFT" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="nasa14JFT" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="peso14JFT" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="nasa24JFT" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="peso24JFT" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="ordem5JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="baia5JFT" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="nasa15JFT" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="peso15JFT" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="nasa25JFT" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="peso25JFT" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="controleJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -1043,6 +1133,208 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="peso35JFT">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                  <Format format="#####" subtype="-1" type="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="nasa35JFT">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                  <Format format="###" subtype="-1" type="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="peso34JFT">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                  <Format format="#####" subtype="-1" type="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="nasa34JFT">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                  <Format format="###" subtype="-1" type="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="peso33JFT">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                  <Format format="#####" subtype="-1" type="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="nasa33JFT">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                  <Format format="###" subtype="-1" type="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="peso32JFT">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                  <Format format="#####" subtype="-1" type="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="nasa32JFT">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                  <Format format="###" subtype="-1" type="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="peso31JFT">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                  <Format format="#####" subtype="-1" type="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="nasa31JFT">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                  <Format format="###" subtype="-1" type="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel14">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Peso 3"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel17">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Ident. 3"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="peso3Hist5Label">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                    <BevelBorder bevelType="1"/>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="nasa3Hist5Label">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                    <BevelBorder bevelType="1"/>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="peso3Hist4Label">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                    <BevelBorder bevelType="1"/>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="nasa3Hist4Label">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                    <BevelBorder bevelType="1"/>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="peso3Hist3Label">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                    <BevelBorder bevelType="1"/>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="nasa3Hist3Label">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                    <BevelBorder bevelType="1"/>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="peso3Hist2Label">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                    <BevelBorder bevelType="1"/>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="nasa3Hist2Label">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                    <BevelBorder bevelType="1"/>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="peso3Hist1Label">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                    <BevelBorder bevelType="1"/>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="nasa3Hist1Label">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                    <BevelBorder bevelType="1"/>
+                  </Border>
+                </Property>
               </Properties>
             </Component>
           </SubComponents>

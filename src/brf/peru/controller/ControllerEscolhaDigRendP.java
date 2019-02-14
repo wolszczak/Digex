@@ -5,65 +5,129 @@ import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
+import org.joda.time.Days;
+
 import brf.peru.model.vo.AbateVOP;
 import brf.peru.view.ViewEscolhaDigRendP;
 import brf.util.FocusOrderPolicy;
 import brf.util.TextFormatter;
+import org.joda.time.DateTime;
+import org.joda.time.Days;
 
 public class ControllerEscolhaDigRendP extends KeyAdapter implements FocusListener {
 	private final ControllerP controller;
 	private ViewEscolhaDigRendP viewEscolhaDigRend;
 	private boolean temAbate;
-	private String aviario;
+	private String aviario, dataAbate;
 	private int abate, idadeAbate;
-	private String dataAbate;
+	private DateFormat dateFormat;
+	long dias;
+	Date dataInicioExperimento;
+	Date dateAbate;
 
 	public ControllerEscolhaDigRendP(ControllerP c) {
 		controller = c;
 	}
 
-	public void openWindow(String aviario, int abate, String dataAbate) {
+	public void openWindow(String aviario, Integer abate, Integer idadeAbate, String dataAbate) {
 		viewEscolhaDigRend = new ViewEscolhaDigRendP();
 		viewEscolhaDigRend.setTitle("DIGEX - Peru");
 		viewEscolhaDigRend.setResizable(false);
 		viewEscolhaDigRend.setLocationRelativeTo(null);
 		viewEscolhaDigRend.setVisible(true);
-		viewEscolhaDigRend.getIdadeJFT().grabFocus();
 
+		dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 		this.aviario = aviario;
 		this.abate = abate;
 		this.dataAbate = dataAbate;
+		if(idadeAbate != null && idadeAbate != 0) {
+			this.idadeAbate = idadeAbate;	
+		}
 
 		viewEscolhaDigRend.getAviarioJFT().setText(aviario);
 		viewEscolhaDigRend.getAbateJFT().setText("" + abate);
 		viewEscolhaDigRend.getDataAbateJFT().setText(dataAbate);
+		if (idadeAbate != null && idadeAbate != 0) {
+			// CASO A IDADE JÁ TENHA VINDO DA TELA ANTERIOR, SETAR DIRETO NA LABEL
+			viewEscolhaDigRend.getIdadeJFT().setText(String.valueOf(idadeAbate));
+			TextFormatter.formatStringJFT(viewEscolhaDigRend.getIdadeJFT(), viewEscolhaDigRend.getIdadeJFT().getText(),
+					3);
+		} else {
+			// CALCULAR IDADE DE ABATE
+			try {
+				dataInicioExperimento = dateFormat.parse(
+						controller.getModel().getExperimentoVO().getInfoExp().getInicioExp().replaceAll("/", "-"));
+				dateAbate = dateFormat.parse(dataAbate.replaceAll("/", "-"));
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
+			long diff = dateAbate.getTime() - dataInicioExperimento.getTime();
+			dias = TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+			this.idadeAbate = (int) dias;
+			viewEscolhaDigRend.getIdadeJFT().setText("1");
+			TextFormatter.formatStringJFT(viewEscolhaDigRend.getIdadeJFT(), viewEscolhaDigRend.getIdadeJFT().getText(), 3);
+			System.out.println(this.idadeAbate);
+		}
+		
 		List<Component> order = new ArrayList<>();
 		order.add(viewEscolhaDigRend.getIdadeJFT());
 		order.add(viewEscolhaDigRend.getOpcaoJFT());
 		FocusOrderPolicy newPolicy = new FocusOrderPolicy(order);
+		
 		viewEscolhaDigRend.setFocusTraversalPolicy(newPolicy);
 		listenerSetup(order);
-		viewEscolhaDigRend.getIdadeJFT().setEnabled(true);
-		viewEscolhaDigRend.getIdadeJFT().grabFocus();
+		viewEscolhaDigRend.getOpcaoJFT().setEnabled(true);
+		viewEscolhaDigRend.getOpcaoJFT().grabFocus();
 		histSetup();
 	}
 
 	public void histSetup() {
 		int obsAmostrados = 0;
+		int obsCamaras = 0;
+		int obsCones = 0;
 		for (AbateVOP a : controller.getModel().getExperimentoVO().getAbates()) {
-			if(a.getAbate() == abate) {
-				obsAmostrados++;
+			if (a.getAbate() == abate) {
+				for (int i = 0; i < a.getBaiaAmostrados().size(); i++) {
+					obsAmostrados++;
+				}
 			}
 		}
+		for (AbateVOP a : controller.getModel().getExperimentoVO().getAbates()) {
+			if (a.getAbate() == abate) {
+				for (int i = 0; i < a.getCamaras().size(); i++) {
+					obsCamaras++;
+				}
+			}
+		}
+		for (AbateVOP a : controller.getModel().getExperimentoVO().getAbates()) {
+			if (a.getAbate() == abate) {
+				for (int i = 0; i < a.getCones().size(); i++) {
+					obsCones++;
+				}
+			}
+		}
+		if (idadeAbate != 0) {
+			viewEscolhaDigRend.getIdadeJFT().setText(String.valueOf(idadeAbate));
+		}
 		viewEscolhaDigRend.getQtdeDesLabel().setText(obsAmostrados + " amostrados digitados");
+		viewEscolhaDigRend.getQtdCamarasLabel().setText(obsAmostrados + " câmaras digitadas");
+		viewEscolhaDigRend.getQtdConesLabel().setText(obsAmostrados + " cones digitados");
 	}
 
 	public void listenerSetup(List<Component> textFields) {
@@ -98,10 +162,10 @@ public class ControllerEscolhaDigRendP extends KeyAdapter implements FocusListen
 	@Override
 	public void keyPressed(KeyEvent e) {
 		Object src = e.getSource();
-		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(viewEscolhaDigRend.getIdadeJFT())) {
+		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(viewEscolhaDigRend.getOpcaoJFT())) {
 			System.out.println("left");
 			Component prev = viewEscolhaDigRend.getFocusTraversalPolicy().getComponentBefore(viewEscolhaDigRend,
-					(JFormattedTextField) src);			
+					(JFormattedTextField) src);
 			prev.setEnabled(true);
 			((JFormattedTextField) prev).grabFocus();
 		}
@@ -121,7 +185,7 @@ public class ControllerEscolhaDigRendP extends KeyAdapter implements FocusListen
 				break;
 			case KeyEvent.VK_1:
 				viewEscolhaDigRend.setVisible(false);
-				controller.startBaiaAmostrados(Integer.parseInt(aviario),dataAbate);
+				controller.startBaiaAmostrados(Integer.parseInt(aviario), abate, idadeAbate, dataAbate);
 				System.out.print("Amostrados");
 				break;
 			case KeyEvent.VK_2:
@@ -168,12 +232,13 @@ public class ControllerEscolhaDigRendP extends KeyAdapter implements FocusListen
 			String text = src.getText();
 			if ((JFormattedTextField) e.getSource() == viewEscolhaDigRend.getIdadeJFT()) {
 				TextFormatter.formatStringJFT(src, text, 3);
+				idadeAbate = Integer.parseInt(viewEscolhaDigRend.getIdadeJFT().getText());
 				viewEscolhaDigRend.getOpcaoJFT().setEnabled(true);
 				((JFormattedTextField) e.getSource()).transferFocus();
 				viewEscolhaDigRend.getOpcaoJFT().requestFocus();
 				viewEscolhaDigRend.getIdadeJFT().setEnabled(false);
 			}
-			
+
 		}
 
 	}
@@ -191,5 +256,13 @@ public class ControllerEscolhaDigRendP extends KeyAdapter implements FocusListen
 
 	@Override
 	public void focusLost(FocusEvent e) {
+	}
+
+	public long getDias() {
+		return dias;
+	}
+
+	public void setDias(long dias) {
+		this.dias = dias;
 	}
 }
