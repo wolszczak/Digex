@@ -6,27 +6,21 @@ import java.awt.event.FocusListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
-import org.joda.time.Days;
-
 import brf.peru.model.vo.AbateVOP;
 import brf.peru.view.ViewEscolhaDigRendP;
 import brf.util.FocusOrderPolicy;
 import brf.util.TextFormatter;
-import org.joda.time.DateTime;
-import org.joda.time.Days;
 
 public class ControllerEscolhaDigRendP extends KeyAdapter implements FocusListener {
 	private final ControllerP controller;
@@ -68,19 +62,25 @@ public class ControllerEscolhaDigRendP extends KeyAdapter implements FocusListen
 					3);
 		} else {
 			// CALCULAR IDADE DE ABATE
-			try {
-				dataInicioExperimento = dateFormat.parse(
-						controller.getModel().getExperimentoVO().getInfoExp().getInicioExp().replaceAll("/", "-"));
-				dateAbate = dateFormat.parse(dataAbate.replaceAll("/", "-"));
-			} catch (ParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			String[] dataIni = controller.getModel().getExperimentoVO().getInfoExp().getInicioExp().split("/");
+			String[] dataFim = dataAbate.split("/");
+			String data1 = "";
+			String data2 = "";
+			for(int i = 2;i >= 0; i--) {
+				data1 = data1.concat(dataIni[i]);
+				data2 = data2.concat(dataFim[i]);
+				if(i > 0 ) {
+					data1 = data1.concat("-");
+					data2 = data2.concat("-");
+				}
 			}
+			
+			LocalDate dataInicioExperimento = LocalDate.parse(data1);
+			LocalDate dateAbate = LocalDate.parse(data2);
 
-			long diff = dateAbate.getTime() - dataInicioExperimento.getTime();
-			dias = TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
-			this.idadeAbate = (int) dias;
-			viewEscolhaDigRend.getIdadeJFT().setText("1");
+			long diff = ChronoUnit.DAYS.between(dataInicioExperimento, dateAbate);
+			this.idadeAbate = (int) diff;
+			viewEscolhaDigRend.getIdadeJFT().setText(String.valueOf(diff));
 			TextFormatter.formatStringJFT(viewEscolhaDigRend.getIdadeJFT(), viewEscolhaDigRend.getIdadeJFT().getText(), 3);
 			System.out.println(this.idadeAbate);
 		}

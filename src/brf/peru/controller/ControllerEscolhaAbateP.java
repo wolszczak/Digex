@@ -87,10 +87,14 @@ public class ControllerEscolhaAbateP extends KeyAdapter {
 			break;
 		case KeyEvent.VK_2:
 			viewEscolhaAbate.setVisible(false);
+			controller.startEscolhaDigRend(2,0,
+					controller.getModel().getExperimentoVO().getInfoExp().getDataAbate().get(1));
 			System.out.println("Abate 2");
 			break;
 		case KeyEvent.VK_3:
 			viewEscolhaAbate.setVisible(false);
+			controller.startEscolhaDigRend(3,0,
+					controller.getModel().getExperimentoVO().getInfoExp().getDataAbate().get(2));
 			System.out.println("Abate 3");
 			break;
 		case KeyEvent.VK_9:

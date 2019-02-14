@@ -328,7 +328,7 @@ public class ControllerDesempenhoF extends KeyAdapter
                 case KeyEvent.VK_2:
                     int option = JOptionPane.showConfirmDialog(viewDesempenho,
                                                       "Deseja realmente voltar para tela principal?",
-                                                      "SDDGE - Finalizar Desempenho",
+                                                      "DIGEX - Finalizar Desempenho",
                                                       JOptionPane.YES_NO_OPTION,
                                                       JOptionPane.WARNING_MESSAGE);
                     if(option == 0) {
@@ -347,7 +347,7 @@ public class ControllerDesempenhoF extends KeyAdapter
         if (e.getKeyChar() == KeyEvent.VK_ESCAPE) {
             int option = JOptionPane.showConfirmDialog(viewDesempenho,
                                                       "Deseja realmente voltar para tela anterior?",
-                                                      "SDDGE - Voltar",
+                                                      "DIGEX - Voltar",
                                                       JOptionPane.YES_NO_OPTION,
                                                       JOptionPane.WARNING_MESSAGE);
             if(option == 0) {

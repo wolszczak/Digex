@@ -379,7 +379,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 				break;
 			case KeyEvent.VK_2:
 				int option = JOptionPane.showConfirmDialog(viewDesempenho,
-						"Deseja realmente voltar para tela principal?", "SDDGE - Finalizar Desempenho",
+						"Deseja realmente voltar para tela principal?", "DIGEX - Finalizar Desempenho",
 						JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 				if (option == 0) {
 					viewDesempenho.setVisible(false);
@@ -396,7 +396,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		}
 		if (e.getKeyChar() == KeyEvent.VK_ESCAPE) {
 			int option = JOptionPane.showConfirmDialog(viewDesempenho, "Deseja realmente voltar para tela anterior?",
-					"SDDGE - Voltar", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+					"DIGEX - Voltar", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 			if (option == 0) {
 				viewDesempenho.setVisible(false);
 				controller.resumeEscolhaDig();
