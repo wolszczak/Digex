@@ -7,6 +7,8 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.Font;
+import java.text.ParseException;
+
 import javax.swing.JCheckBox;
 
 public class ViewBaiaAmostradosP extends javax.swing.JFrame {
@@ -113,7 +115,7 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
 	private javax.swing.JLabel peso3Hist4Label;
 	private javax.swing.JLabel peso3Hist5Label;
 	private javax.swing.JLabel registrosLabel;
-	private JCheckBox checkColuna3;
+	private JCheckBox checkColunaExtra;
 
 	public ViewBaiaAmostradosP() {
 		initComponents();
@@ -287,7 +289,7 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
 		}
 		idadeJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-		checkColuna3 = new JCheckBox("3ª Coluna");
+		checkColunaExtra = new JCheckBox("3ª Coluna");
 
 		javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
 		jPanel2Layout.setHorizontalGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
@@ -300,7 +302,7 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
 						.addComponent(idadeJFT, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE).addGap(20)
 						.addComponent(jLabel22).addPreferredGap(ComponentPlacement.UNRELATED)
 						.addComponent(dataAbateJFT, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
-						.addGap(8).addComponent(checkColuna3).addContainerGap()));
+						.addGap(8).addComponent(checkColunaExtra).addContainerGap()));
 		jPanel2Layout
 				.setVerticalGroup(
 						jPanel2Layout.createParallelGroup(Alignment.LEADING)
@@ -318,7 +320,7 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
 												.addComponent(jLabel23)
 												.addComponent(idadeJFT, GroupLayout.PREFERRED_SIZE,
 														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addComponent(checkColuna3))
+												.addComponent(checkColunaExtra))
 										.addContainerGap()));
 		jPanel2.setLayout(jPanel2Layout);
 
@@ -326,13 +328,6 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
 
 		jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		jLabel1.setText("Ordem");
-		try {
-			ordem1JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
-		} catch (java.text.ParseException ex) {
-			ex.printStackTrace();
-		}
-		ordem1JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
 		jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		jLabel2.setText("Baia");
@@ -369,18 +364,33 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
 		nasa11JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		nasa11JFT.setEnabled(false);
 
-		peso11JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#####"))));
+		try {
+			peso11JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		peso11JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		peso11JFT.setEnabled(false);
 
-		nasa21JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
+		try {
+			nasa21JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		nasa21JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		nasa21JFT.setEnabled(false);
 
-		peso21JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#####"))));
+		try {
+			peso21JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		peso21JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		peso21JFT.setEnabled(false);
 
@@ -483,6 +493,10 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
 		peso2Hist5Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		peso2Hist5Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
+		ordem1JFT.setFormatterFactory(
+				new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+		ordem1JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
 		ordem2JFT.setFormatterFactory(
 				new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
 		ordem2JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -535,133 +549,239 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
 		baia5JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		baia5JFT.setEnabled(false);
 
-		nasa12JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
+		try {
+			nasa12JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		nasa12JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		nasa12JFT.setEnabled(false);
 
-		nasa13JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
+		try {
+			nasa13JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		nasa13JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		nasa13JFT.setEnabled(false);
 
-		nasa14JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
+		try {
+			nasa14JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		nasa14JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		nasa14JFT.setEnabled(false);
 
-		nasa15JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
+		try {
+			nasa15JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		nasa15JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		nasa15JFT.setEnabled(false);
 
-		peso12JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("####"))));
+		try {
+			peso12JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		peso12JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		peso12JFT.setEnabled(false);
 
-		peso13JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("####"))));
+		try {
+			peso13JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		peso13JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		peso13JFT.setEnabled(false);
 
-		peso14JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("####"))));
+		try {
+			peso14JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		peso14JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		peso14JFT.setEnabled(false);
 
-		peso15JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("####"))));
+		try {
+			peso15JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		peso15JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		peso15JFT.setEnabled(false);
 
-		nasa22JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
+		try {
+			nasa22JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		nasa22JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		nasa22JFT.setEnabled(false);
 
-		nasa23JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
+		try {
+			nasa23JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		nasa23JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		nasa23JFT.setEnabled(false);
 
-		nasa24JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
+		try {
+			nasa24JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		nasa24JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		nasa24JFT.setEnabled(false);
 
-		nasa25JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
+		try {
+			nasa25JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		nasa25JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		nasa25JFT.setEnabled(false);
 
-		peso22JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("####"))));
+		try {
+			peso22JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		peso22JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		peso22JFT.setEnabled(false);
 
-		peso23JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("####"))));
+		try {
+			peso23JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		peso23JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		peso23JFT.setEnabled(false);
 
-		peso24JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("####"))));
+		try {
+			peso24JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		peso24JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		peso24JFT.setEnabled(false);
 
-		peso25JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("####"))));
+		try {
+			peso25JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		peso25JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		peso25JFT.setEnabled(false);
 
-		peso35JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("####"))));
+		try {
+			peso35JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		peso35JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		peso35JFT.setEnabled(false);
 
-		nasa35JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
+		try {
+			nasa35JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		nasa35JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		nasa35JFT.setEnabled(false);
 
-		peso34JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("####"))));
+		try {
+			peso34JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		peso34JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		peso34JFT.setEnabled(false);
 
-		nasa34JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
+		try {
+			nasa34JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		nasa34JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		nasa34JFT.setEnabled(false);
 
-		peso33JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("####"))));
+		try {
+			peso33JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		peso33JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		peso33JFT.setEnabled(false);
 
-		nasa33JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
+		try {
+			nasa33JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		nasa33JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		nasa33JFT.setEnabled(false);
 
-		peso32JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("####"))));
+		try {
+			peso32JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		peso32JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		peso32JFT.setEnabled(false);
 
-		nasa32JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
+		try {
+			nasa32JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		nasa32JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		nasa32JFT.setEnabled(false);
 
-		peso31JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("####"))));
+		try {
+			peso31JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		peso31JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		peso31JFT.setEnabled(false);
 
-		nasa31JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
+		try {
+			nasa31JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		nasa31JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		nasa31JFT.setEnabled(false);
 
@@ -702,467 +822,348 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
 		nasa3Hist1Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
 		javax.swing.GroupLayout baiaAmostradosJPLayout = new javax.swing.GroupLayout(baiaAmostradosJP);
-		baiaAmostradosJP.setLayout(baiaAmostradosJPLayout);
-		baiaAmostradosJPLayout.setHorizontalGroup(baiaAmostradosJPLayout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+		baiaAmostradosJPLayout.setHorizontalGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(baiaAmostradosJPLayout.createSequentialGroup().addContainerGap()
-						.addGroup(baiaAmostradosJPLayout
-								.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-								.addComponent(ordem5JFT, javax.swing.GroupLayout.Alignment.TRAILING)
+						.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.LEADING, false)
+								.addComponent(ordem1JFT).addComponent(ordem5JFT, Alignment.TRAILING)
 								.addComponent(ordem4JFT).addComponent(ordem3JFT)
-								.addComponent(ordem2JFT, javax.swing.GroupLayout.Alignment.TRAILING)
-								.addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(ordemHist1Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(ordemHist2Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(ordemHist3Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(ordemHist4Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(ordemHist5Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(ordem1JFT))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-						.addGroup(baiaAmostradosJPLayout
-								.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+								.addComponent(ordem2JFT, Alignment.TRAILING)
+								.addComponent(jLabel1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(ordemHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(ordemHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(ordemHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(ordemHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(ordemHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE))
+						.addPreferredGap(ComponentPlacement.UNRELATED)
+						.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.LEADING, false)
 								.addComponent(baia1JFT)
-								.addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-								.addComponent(baiaHist2Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(baiaHist1Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(baiaHist3Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(baiaHist4Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(baiaHist5Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(jLabel2, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+								.addComponent(baiaHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(baiaHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(baiaHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(baiaHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(baiaHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
 								.addComponent(baia2JFT).addComponent(baia3JFT).addComponent(baia4JFT)
 								.addComponent(baia5JFT))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-						.addGroup(baiaAmostradosJPLayout
-								.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+						.addPreferredGap(ComponentPlacement.UNRELATED)
+						.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.LEADING, false)
 								.addComponent(nasa11JFT)
-								.addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(nasa1Hist1Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(nasa1Hist2Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(nasa1Hist3Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(nasa1Hist4Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(nasa1Hist5Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(jLabel3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(nasa1Hist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(nasa1Hist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(nasa1Hist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(nasa1Hist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(nasa1Hist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
 								.addComponent(nasa12JFT).addComponent(nasa13JFT).addComponent(nasa14JFT)
 								.addComponent(nasa15JFT))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-						.addGroup(baiaAmostradosJPLayout
-								.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+						.addPreferredGap(ComponentPlacement.UNRELATED)
+						.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.LEADING, false)
 								.addComponent(peso14JFT).addComponent(peso13JFT).addComponent(peso11JFT)
-								.addComponent(peso1Hist2Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(peso1Hist1Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-								.addComponent(peso1Hist3Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(peso1Hist4Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(peso1Hist5Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(peso12JFT)
-								.addComponent(peso15JFT, javax.swing.GroupLayout.Alignment.TRAILING))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-						.addGroup(baiaAmostradosJPLayout
-								.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-								.addComponent(nasa21JFT)
-								.addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(nasa2Hist1Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(nasa2Hist2Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(nasa2Hist3Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(nasa2Hist4Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(nasa2Hist5Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(nasa22JFT).addComponent(nasa23JFT).addComponent(nasa24JFT)
-								.addComponent(nasa25JFT))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-						.addGroup(baiaAmostradosJPLayout
-								.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-								.addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-								.addComponent(peso21JFT, javax.swing.GroupLayout.Alignment.TRAILING)
-								.addComponent(peso2Hist1Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(peso2Hist2Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(peso2Hist3Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(peso2Hist4Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(peso2Hist5Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(peso22JFT).addComponent(peso23JFT).addComponent(peso24JFT)
-								.addComponent(peso25JFT))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addGroup(baiaAmostradosJPLayout
-								.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-								.addComponent(nasa31JFT)
-								.addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(nasa3Hist1Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(nasa3Hist2Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(nasa3Hist3Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(nasa3Hist4Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(nasa3Hist5Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(nasa32JFT).addComponent(nasa33JFT).addComponent(nasa34JFT)
-								.addComponent(nasa35JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 40,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-						.addGroup(baiaAmostradosJPLayout
-								.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-								.addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(peso31JFT, javax.swing.GroupLayout.Alignment.TRAILING)
-								.addComponent(peso3Hist1Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(peso3Hist2Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(peso3Hist3Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(peso3Hist4Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(peso3Hist5Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(peso32JFT).addComponent(peso33JFT).addComponent(peso34JFT)
-								.addComponent(peso35JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 50,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(controleJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 50,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 50,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
-		baiaAmostradosJPLayout.setVerticalGroup(baiaAmostradosJPLayout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(baiaAmostradosJPLayout.createSequentialGroup().addContainerGap()
-						.addGroup(baiaAmostradosJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+								.addComponent(peso1Hist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(peso1Hist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(jLabel4, GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+								.addComponent(peso1Hist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(peso1Hist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(peso1Hist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(peso12JFT).addComponent(peso15JFT, Alignment.TRAILING))
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(nasa2Hist1Label, GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+								.addComponent(nasa2Hist2Label, GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+								.addComponent(nasa2Hist3Label, GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+								.addComponent(nasa2Hist4Label, GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+								.addComponent(nasa2Hist5Label, GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+								.addComponent(nasa22JFT, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 39,
+										Short.MAX_VALUE)
+								.addComponent(nasa21JFT, 39, 39, Short.MAX_VALUE)
+								.addComponent(jLabel16, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(nasa23JFT, GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+								.addComponent(nasa24JFT, GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+								.addComponent(nasa25JFT, GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE))
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(peso2Hist1Label, GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+								.addComponent(peso2Hist2Label, GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+								.addComponent(peso2Hist3Label, GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+								.addComponent(peso2Hist4Label, GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+								.addComponent(peso2Hist5Label, GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+								.addComponent(peso23JFT, 50, 50, 50).addComponent(peso24JFT, 50, 50, 50)
+								.addComponent(peso25JFT, 50, 50, 50)
+								.addComponent(peso22JFT, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 50,
+										Short.MAX_VALUE)
+								.addComponent(peso21JFT, Alignment.TRAILING, 50, 50, 50)
+								.addComponent(jLabel12, GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(nasa3Hist1Label, GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+								.addComponent(nasa3Hist2Label, GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+								.addComponent(nasa3Hist3Label, GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+								.addComponent(nasa3Hist4Label, GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+								.addComponent(nasa3Hist5Label, GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+								.addComponent(nasa34JFT, 40, 40, 40).addComponent(nasa33JFT, 40, 40, 40)
+								.addComponent(nasa32JFT, 40, 40, 40).addComponent(nasa31JFT, 40, 40, 40)
 								.addGroup(baiaAmostradosJPLayout.createSequentialGroup()
-										.addGroup(baiaAmostradosJPLayout
-												.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-												.addComponent(nasa3Hist1Label, javax.swing.GroupLayout.PREFERRED_SIZE,
-														14, javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(peso3Hist1Label, javax.swing.GroupLayout.PREFERRED_SIZE,
-														14, javax.swing.GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addGroup(baiaAmostradosJPLayout
-												.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-												.addComponent(nasa3Hist2Label, javax.swing.GroupLayout.PREFERRED_SIZE,
-														14, javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(peso3Hist2Label, javax.swing.GroupLayout.PREFERRED_SIZE,
-														14, javax.swing.GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addGroup(baiaAmostradosJPLayout
-												.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-												.addComponent(nasa3Hist3Label, javax.swing.GroupLayout.PREFERRED_SIZE,
-														14, javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(peso3Hist3Label, javax.swing.GroupLayout.PREFERRED_SIZE,
-														14, javax.swing.GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addGroup(baiaAmostradosJPLayout
-												.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-												.addComponent(nasa3Hist4Label, javax.swing.GroupLayout.PREFERRED_SIZE,
-														14, javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(peso3Hist4Label, javax.swing.GroupLayout.PREFERRED_SIZE,
-														14, javax.swing.GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addGroup(baiaAmostradosJPLayout
-												.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-												.addComponent(nasa3Hist5Label, javax.swing.GroupLayout.PREFERRED_SIZE,
-														14, javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(peso3Hist5Label, javax.swing.GroupLayout.PREFERRED_SIZE,
-														14, javax.swing.GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addGroup(baiaAmostradosJPLayout
-												.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-												.addComponent(jLabel14).addComponent(jLabel17))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addGroup(baiaAmostradosJPLayout
-												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-												.addComponent(nasa31JFT, javax.swing.GroupLayout.Alignment.TRAILING,
-														javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(peso31JFT, javax.swing.GroupLayout.Alignment.TRAILING,
-														javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-														javax.swing.GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addGroup(baiaAmostradosJPLayout
-												.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-												.addComponent(nasa32JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(peso32JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addGroup(baiaAmostradosJPLayout
-												.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-												.addComponent(nasa33JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(peso33JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addGroup(baiaAmostradosJPLayout
-												.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-												.addComponent(nasa34JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(peso34JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(jLabel13))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addGroup(baiaAmostradosJPLayout
-												.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-												.addComponent(nasa35JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(peso35JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(controleJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-														javax.swing.GroupLayout.PREFERRED_SIZE)))
-								.addGroup(baiaAmostradosJPLayout.createSequentialGroup().addGroup(baiaAmostradosJPLayout
-										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-										.addGroup(baiaAmostradosJPLayout
-												.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-												.addComponent(ordemHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE,
-														14, javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(baiaHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE,
-														14, javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(nasa1Hist1Label, javax.swing.GroupLayout.PREFERRED_SIZE,
-														14, javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(peso1Hist1Label, javax.swing.GroupLayout.PREFERRED_SIZE,
-														14, javax.swing.GroupLayout.PREFERRED_SIZE))
-										.addGroup(baiaAmostradosJPLayout
-												.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-												.addComponent(nasa2Hist1Label, javax.swing.GroupLayout.PREFERRED_SIZE,
-														14, javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(peso2Hist1Label, javax.swing.GroupLayout.PREFERRED_SIZE,
-														14, javax.swing.GroupLayout.PREFERRED_SIZE)))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addGroup(baiaAmostradosJPLayout
-												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-												.addGroup(baiaAmostradosJPLayout
-														.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-														.addComponent(ordemHist2Label,
-																javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(baiaHist2Label,
-																javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(nasa1Hist2Label,
-																javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(peso1Hist2Label,
-																javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE))
-												.addGroup(baiaAmostradosJPLayout
-														.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-														.addComponent(nasa2Hist2Label,
-																javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(peso2Hist2Label,
-																javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addGroup(baiaAmostradosJPLayout
-												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addGroup(baiaAmostradosJPLayout
-														.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-														.addComponent(ordemHist3Label,
-																javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(baiaHist3Label,
-																javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(nasa1Hist3Label,
-																javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(peso1Hist3Label,
-																javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE))
-												.addGroup(baiaAmostradosJPLayout
-														.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-														.addComponent(nasa2Hist3Label,
-																javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(peso2Hist3Label,
-																javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addGroup(baiaAmostradosJPLayout
-												.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-												.addComponent(ordemHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE,
-														14, javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(baiaHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE,
-														14, javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(nasa1Hist4Label, javax.swing.GroupLayout.PREFERRED_SIZE,
-														14, javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(peso1Hist4Label, javax.swing.GroupLayout.PREFERRED_SIZE,
-														14, javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addGroup(baiaAmostradosJPLayout
-														.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-														.addComponent(nasa2Hist4Label,
-																javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(peso2Hist4Label,
-																javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addGroup(baiaAmostradosJPLayout
-												.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-												.addComponent(ordemHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE,
-														14, javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(baiaHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE,
-														14, javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(nasa1Hist5Label, javax.swing.GroupLayout.PREFERRED_SIZE,
-														14, javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(peso1Hist5Label, javax.swing.GroupLayout.PREFERRED_SIZE,
-														14, javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addGroup(baiaAmostradosJPLayout
-														.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-														.addComponent(nasa2Hist5Label,
-																javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(peso2Hist5Label,
-																javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addGroup(baiaAmostradosJPLayout
-												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addGroup(baiaAmostradosJPLayout
-														.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-														.addComponent(jLabel1).addComponent(jLabel2)
-														.addComponent(jLabel3).addComponent(jLabel4))
-												.addGroup(baiaAmostradosJPLayout
-														.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-														.addComponent(jLabel12).addComponent(jLabel16)))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addGroup(baiaAmostradosJPLayout
-												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-												.addComponent(nasa21JFT, javax.swing.GroupLayout.Alignment.TRAILING,
-														javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(peso21JFT, javax.swing.GroupLayout.Alignment.TRAILING,
-														javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addGroup(baiaAmostradosJPLayout
-														.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-														.addComponent(ordem1JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-																20, javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(baia1JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-																20, javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(nasa11JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-																20, javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(peso11JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-																20, javax.swing.GroupLayout.PREFERRED_SIZE)))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addGroup(baiaAmostradosJPLayout
-												.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-												.addComponent(ordem2JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(baia2JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(nasa12JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(peso12JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(nasa22JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(peso22JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addGroup(baiaAmostradosJPLayout
-												.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-												.addComponent(ordem3JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(baia3JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(nasa13JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(peso13JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(nasa23JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(peso23JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addGroup(baiaAmostradosJPLayout
-												.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-												.addComponent(ordem4JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(baia4JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(nasa14JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(peso14JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(nasa24JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(peso24JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addGroup(baiaAmostradosJPLayout
-												.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-												.addComponent(ordem5JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(baia5JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(nasa15JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(peso15JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(nasa25JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(peso25JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE))))
+										.addComponent(jLabel17, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+												Short.MAX_VALUE)
+										.addGap(1))
+								.addComponent(nasa35JFT, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE))
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.LEADING)
+								.addGroup(baiaAmostradosJPLayout.createSequentialGroup()
+										.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.TRAILING)
+												.addComponent(peso3Hist4Label, Alignment.LEADING,
+														GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+												.addComponent(peso3Hist2Label, Alignment.LEADING,
+														GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+												.addComponent(peso3Hist1Label, Alignment.LEADING,
+														GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+												.addComponent(peso3Hist5Label, Alignment.LEADING,
+														GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+												.addComponent(peso3Hist3Label, Alignment.LEADING,
+														GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+												.addComponent(peso35JFT, GroupLayout.PREFERRED_SIZE, 50,
+														GroupLayout.PREFERRED_SIZE)
+												.addComponent(peso34JFT, GroupLayout.PREFERRED_SIZE, 50,
+														GroupLayout.PREFERRED_SIZE))
+										.addPreferredGap(ComponentPlacement.RELATED)
+										.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.LEADING)
+												.addComponent(controleJFT, GroupLayout.PREFERRED_SIZE, 50,
+														GroupLayout.PREFERRED_SIZE)
+												.addComponent(jLabel13, GroupLayout.PREFERRED_SIZE, 50,
+														GroupLayout.PREFERRED_SIZE)))
+								.addComponent(peso33JFT, 50, 50, 50).addComponent(peso32JFT, 50, 50, 50)
+								.addComponent(peso31JFT, 50, 50, 50)
+								.addGroup(baiaAmostradosJPLayout.createSequentialGroup()
+										.addComponent(jLabel14, GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+										.addGap(56)))
 						.addContainerGap()));
+		baiaAmostradosJPLayout.setVerticalGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.LEADING).addGroup(
+				baiaAmostradosJPLayout.createSequentialGroup().addContainerGap().addGroup(baiaAmostradosJPLayout
+						.createParallelGroup(Alignment.TRAILING)
+						.addGroup(baiaAmostradosJPLayout.createSequentialGroup().addGroup(baiaAmostradosJPLayout
+								.createParallelGroup(Alignment.LEADING, false)
+								.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.BASELINE)
+										.addComponent(ordemHist1Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(baiaHist1Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(nasa1Hist1Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(peso1Hist1Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE))
+								.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.BASELINE)
+										.addComponent(nasa2Hist1Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(peso2Hist1Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)))
+								.addPreferredGap(ComponentPlacement.UNRELATED)
+								.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.LEADING, false)
+										.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.BASELINE)
+												.addComponent(ordemHist2Label, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE)
+												.addComponent(baiaHist2Label, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE)
+												.addComponent(nasa1Hist2Label, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE)
+												.addComponent(peso1Hist2Label, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE))
+										.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.BASELINE)
+												.addComponent(nasa2Hist2Label, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE)
+												.addComponent(peso2Hist2Label, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE)))
+								.addPreferredGap(ComponentPlacement.UNRELATED)
+								.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.LEADING)
+										.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.TRAILING)
+												.addComponent(ordemHist3Label, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE)
+												.addComponent(baiaHist3Label, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE)
+												.addComponent(nasa1Hist3Label, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE)
+												.addComponent(peso1Hist3Label, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE))
+										.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.BASELINE)
+												.addComponent(nasa2Hist3Label, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE)
+												.addComponent(peso2Hist3Label, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE)))
+								.addPreferredGap(ComponentPlacement.UNRELATED)
+								.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.TRAILING)
+										.addComponent(ordemHist4Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(baiaHist4Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(nasa1Hist4Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(peso1Hist4Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)
+										.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.BASELINE)
+												.addComponent(nasa2Hist4Label, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE)
+												.addComponent(peso2Hist4Label, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE)))
+								.addPreferredGap(ComponentPlacement.UNRELATED)
+								.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.TRAILING)
+										.addComponent(ordemHist5Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(baiaHist5Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(nasa1Hist5Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(peso1Hist5Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)
+										.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.BASELINE)
+												.addComponent(nasa2Hist5Label, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE)
+												.addComponent(peso2Hist5Label, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE))))
+						.addGroup(baiaAmostradosJPLayout.createSequentialGroup()
+								.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.TRAILING)
+										.addComponent(peso3Hist1Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(nasa3Hist1Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE))
+								.addPreferredGap(ComponentPlacement.UNRELATED)
+								.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.TRAILING, false)
+										.addGroup(baiaAmostradosJPLayout.createSequentialGroup()
+												.addComponent(nasa3Hist2Label, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.UNRELATED)
+												.addComponent(nasa3Hist3Label, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE))
+										.addGroup(baiaAmostradosJPLayout.createSequentialGroup()
+												.addComponent(peso3Hist2Label, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE,
+														Short.MAX_VALUE)
+												.addComponent(peso3Hist3Label, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE)))
+								.addPreferredGap(ComponentPlacement.UNRELATED)
+								.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.TRAILING, false)
+										.addGroup(baiaAmostradosJPLayout.createSequentialGroup()
+												.addComponent(nasa3Hist4Label, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.UNRELATED)
+												.addComponent(nasa3Hist5Label, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE))
+										.addGroup(baiaAmostradosJPLayout.createSequentialGroup()
+												.addComponent(peso3Hist4Label, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE,
+														Short.MAX_VALUE)
+												.addComponent(peso3Hist5Label, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE)))))
+						.addPreferredGap(ComponentPlacement.UNRELATED)
+						.addGroup(baiaAmostradosJPLayout
+								.createParallelGroup(Alignment.BASELINE).addComponent(jLabel1).addComponent(jLabel2)
+								.addComponent(jLabel3).addComponent(jLabel4).addComponent(jLabel16)
+								.addComponent(jLabel12).addComponent(jLabel17).addComponent(jLabel14))
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(ordem1JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+								.addComponent(baia1JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+								.addComponent(nasa11JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+								.addComponent(peso11JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+								.addComponent(nasa21JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+								.addComponent(peso21JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+								.addComponent(nasa31JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+								.addComponent(peso31JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(ordem2JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+								.addComponent(baia2JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(nasa12JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(peso12JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(nasa22JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(peso22JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(nasa32JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(peso32JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE))
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(ordem3JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+								.addComponent(baia3JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(nasa13JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(peso13JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(nasa23JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(peso23JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(nasa33JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(peso33JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE))
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(ordem4JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+								.addComponent(baia4JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(nasa14JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(peso14JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(nasa24JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(peso24JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(nasa34JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(peso34JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(jLabel13))
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addGroup(baiaAmostradosJPLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(ordem5JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+								.addComponent(baia5JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(nasa15JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(peso15JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(peso25JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(peso35JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(controleJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+								.addComponent(nasa35JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(nasa25JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE))
+						.addContainerGap()));
+		baiaAmostradosJP.setLayout(baiaAmostradosJPLayout);
 
 		registrosLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
 		registrosLabel.setForeground(new java.awt.Color(0, 153, 255));
@@ -2060,11 +2061,12 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
 		return registrosLabel;
 	}
 
-	public JCheckBox getCheckColuna3() {
-		return checkColuna3;
+	public JCheckBox getCheckColunaExtra() {
+		return checkColunaExtra;
 	}
 
-	public void setCheckColuna3(JCheckBox checkColuna3) {
-		this.checkColuna3 = checkColuna3;
+	public void setCheckColunaExtra(JCheckBox checkColunaExtra) {
+		this.checkColunaExtra = checkColunaExtra;
 	}
+
 }

@@ -45,9 +45,9 @@ public class ControllerEscolhaAbateP extends KeyAdapter {
 		int obsAbate[] = { 0, 0, 0 };
 		for (AbateVOP abate : controller.getModel().getExperimentoVO().getAbates()) {
 			for (BaiaAmostradosVOP baiaAmostrado : abate.getBaiaAmostrados()) {
-				if (baiaAmostrado.getOrdem() != 0 && abate.getAbate() == 1) {
+				if (abate.getAbate() == 1) {
 					obsAbate[0]++;
-				} else if (baiaAmostrado.getOrdem() != 0 && abate.getAbate() == 2) {
+				} else if (abate.getAbate() == 2) {
 					obsAbate[1]++;
 				} else {
 					obsAbate[2]++;

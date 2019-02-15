@@ -8,13 +8,16 @@ import java.awt.event.ItemListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.swing.JCheckBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
+import brf.peru.model.vo.BaiaAmostradosVOP;
 import brf.peru.view.ViewBaiaAmostradosP;
 import brf.util.FocusOrderPolicy;
 import brf.util.TextFormatter;
@@ -22,9 +25,12 @@ import brf.util.TextFormatter;
 public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListener, ItemListener {
 	private final ControllerP controller;
 	private ViewBaiaAmostradosP viewBaiaAmostrados;
+	private BaiaAmostradosVOP amostrado, amostradoTemp, amostradoErro;
+	private List<BaiaAmostradosVOP> amostrados, amostradosTemp, amostradosErros;
+	private List<Component> order, orderAux;
 	private String aviario, dataAbate;
-	private int abate, idadeAbate;
-	private int ordem;
+	private int abate, idadeAbate, ordem, controle;
+	private boolean usarColunaExtra;
 
 	public ControllerBaiaAmostradosP(ControllerP c) {
 		controller = c;
@@ -37,14 +43,23 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 		viewBaiaAmostrados.setLocationRelativeTo(null);
 		viewBaiaAmostrados.setVisible(true);
 		viewBaiaAmostrados.getRegistrosLabel().setVisible(false);
+		viewBaiaAmostrados.getCheckColunaExtra().addItemListener(this);
+		viewBaiaAmostrados.getCheckColunaExtra().addKeyListener(this);
 
 		this.dataAbate = dataAbate;
 		this.idadeAbate = idadeAbate;
 		this.aviario = aviario;
 		this.abate = abate;
 		ordem = 1;
+		usarColunaExtra = false;
+		amostrado = new BaiaAmostradosVOP();
+		amostradoTemp = new BaiaAmostradosVOP();
+		amostradoErro = new BaiaAmostradosVOP();
+		amostrados = new ArrayList<>();
+		amostradosTemp = new ArrayList<>();
+		amostradosErros = new ArrayList<>();
 
-		List<Component> order = new ArrayList<>();
+		order = new ArrayList<>();
 		order.add(viewBaiaAmostrados.getBaia1JFT());
 		order.add(viewBaiaAmostrados.getBaia2JFT());
 		order.add(viewBaiaAmostrados.getBaia3JFT());
@@ -85,15 +100,14 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 		FocusOrderPolicy newPolicy = new FocusOrderPolicy(order);
 		viewBaiaAmostrados.setFocusTraversalPolicy(newPolicy);
 		listenerSetup(order);
-
 		atualizaOrdemBaiaAmostrados();
 
 		viewBaiaAmostrados.getAviarioJFT().setText(aviario);
 		viewBaiaAmostrados.getAbateJFT().setText(String.valueOf(abate));
 		viewBaiaAmostrados.getIdadeJFT().setText(String.valueOf(idadeAbate));
 		viewBaiaAmostrados.getDataAbateJFT().setText(dataAbate);
-		viewBaiaAmostrados.getCheckColuna3().setEnabled(true);
-		viewBaiaAmostrados.getCheckColuna3().grabFocus();
+		viewBaiaAmostrados.getCheckColunaExtra().setEnabled(true);
+		viewBaiaAmostrados.getCheckColunaExtra().grabFocus();
 	}
 
 	public void listenerSetup(List<Component> textFields) {
@@ -132,138 +146,208 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 			}
 		}
 		if (e.getKeyChar() == KeyEvent.VK_ENTER) {
-			JFormattedTextField src = (JFormattedTextField) e.getSource();
-			String text = src.getText();
-			if ((JCheckBox) e.getSource() == viewBaiaAmostrados.getCheckColuna3()) {
-				viewBaiaAmostrados.getCheckColuna3().setEnabled(false);
+			JFormattedTextField src = null;
+			JCheckBox chk = null;
+			String text = "";
+
+			if (e.getSource() == viewBaiaAmostrados.getCheckColunaExtra()) {
+				viewBaiaAmostrados.getCheckColunaExtra().setEnabled(false);
 				viewBaiaAmostrados.getBaia1JFT().setEnabled(true);
 				viewBaiaAmostrados.getBaia1JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getBaia1JFT()) {
-				TextFormatter.formatStringJFT(src, text, 2);
-				viewBaiaAmostrados.getBaia1JFT().setEnabled(false);
-				viewBaiaAmostrados.getBaia2JFT().setEnabled(true);
-				viewBaiaAmostrados.getBaia2JFT().requestFocus();
-			} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getBaia2JFT()) {
-				TextFormatter.formatStringJFT(src, text, 2);
-				viewBaiaAmostrados.getBaia2JFT().setEnabled(false);
-				viewBaiaAmostrados.getBaia3JFT().setEnabled(true);
-				viewBaiaAmostrados.getBaia3JFT().requestFocus();
-			} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getBaia3JFT()) {
-				TextFormatter.formatStringJFT(src, text, 2);
-				viewBaiaAmostrados.getBaia3JFT().setEnabled(false);
-				viewBaiaAmostrados.getBaia4JFT().setEnabled(true);
-				viewBaiaAmostrados.getBaia4JFT().requestFocus();
-			} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getBaia4JFT()) {
-				TextFormatter.formatStringJFT(src, text, 2);
-				viewBaiaAmostrados.getBaia4JFT().setEnabled(false);
-				viewBaiaAmostrados.getBaia5JFT().setEnabled(true);
-				viewBaiaAmostrados.getBaia5JFT().requestFocus();
-			} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getBaia5JFT()) {
-				TextFormatter.formatStringJFT(src, text, 2);
-				viewBaiaAmostrados.getBaia5JFT().setEnabled(false);
-				viewBaiaAmostrados.getNasa11JFT().setEnabled(true);
-				viewBaiaAmostrados.getNasa11JFT().requestFocus();
-			} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getNasa11JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				viewBaiaAmostrados.getNasa11JFT().setEnabled(false);
-				viewBaiaAmostrados.getNasa12JFT().setEnabled(true);
-				viewBaiaAmostrados.getNasa12JFT().requestFocus();
-			} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getNasa12JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				viewBaiaAmostrados.getNasa12JFT().setEnabled(false);
-				viewBaiaAmostrados.getNasa13JFT().setEnabled(true);
-				viewBaiaAmostrados.getNasa13JFT().requestFocus();
-			} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getNasa13JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				viewBaiaAmostrados.getNasa13JFT().setEnabled(false);
-				viewBaiaAmostrados.getNasa14JFT().setEnabled(true);
-				viewBaiaAmostrados.getNasa14JFT().requestFocus();
-			} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getNasa14JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				viewBaiaAmostrados.getNasa14JFT().setEnabled(false);
-				viewBaiaAmostrados.getNasa15JFT().setEnabled(true);
-				viewBaiaAmostrados.getNasa15JFT().requestFocus();
-			} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getNasa15JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				viewBaiaAmostrados.getNasa15JFT().setEnabled(false);
-				viewBaiaAmostrados.getPeso11JFT().setEnabled(true);
-				viewBaiaAmostrados.getPeso11JFT().requestFocus();
-			} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso11JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				viewBaiaAmostrados.getPeso11JFT().setEnabled(false);
-				viewBaiaAmostrados.getPeso12JFT().setEnabled(true);
-				viewBaiaAmostrados.getPeso12JFT().requestFocus();
-			} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso12JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				viewBaiaAmostrados.getPeso12JFT().setEnabled(false);
-				viewBaiaAmostrados.getPeso13JFT().setEnabled(true);
-				viewBaiaAmostrados.getPeso13JFT().requestFocus();
-			} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso13JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				viewBaiaAmostrados.getPeso13JFT().setEnabled(false);
-				viewBaiaAmostrados.getPeso14JFT().setEnabled(true);
-				viewBaiaAmostrados.getPeso14JFT().requestFocus();
-			} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso14JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				viewBaiaAmostrados.getPeso14JFT().setEnabled(false);
-				viewBaiaAmostrados.getPeso15JFT().setEnabled(true);
-				viewBaiaAmostrados.getPeso15JFT().requestFocus();
-			} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso15JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				viewBaiaAmostrados.getPeso15JFT().setEnabled(false);
-				viewBaiaAmostrados.getNasa21JFT().setEnabled(true);
-				viewBaiaAmostrados.getNasa21JFT().requestFocus();
-			} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getNasa21JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				viewBaiaAmostrados.getNasa21JFT().setEnabled(false);
-				viewBaiaAmostrados.getNasa22JFT().setEnabled(true);
-				viewBaiaAmostrados.getNasa22JFT().requestFocus();
-			} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getNasa22JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				viewBaiaAmostrados.getNasa22JFT().setEnabled(false);
-				viewBaiaAmostrados.getNasa23JFT().setEnabled(true);
-				viewBaiaAmostrados.getNasa23JFT().requestFocus();
-			} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getNasa23JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				viewBaiaAmostrados.getNasa23JFT().setEnabled(false);
-				viewBaiaAmostrados.getNasa24JFT().setEnabled(true);
-				viewBaiaAmostrados.getNasa24JFT().requestFocus();
-			} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getNasa24JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				viewBaiaAmostrados.getNasa24JFT().setEnabled(false);
-				viewBaiaAmostrados.getNasa25JFT().setEnabled(true);
-				viewBaiaAmostrados.getNasa25JFT().requestFocus();
-			} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getNasa25JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				viewBaiaAmostrados.getNasa25JFT().setEnabled(false);
-				viewBaiaAmostrados.getPeso21JFT().setEnabled(true);
-				viewBaiaAmostrados.getPeso21JFT().requestFocus();
-			} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso21JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				viewBaiaAmostrados.getPeso21JFT().setEnabled(false);
-				viewBaiaAmostrados.getPeso22JFT().setEnabled(true);
-				viewBaiaAmostrados.getPeso22JFT().requestFocus();
-			} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso22JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				viewBaiaAmostrados.getPeso22JFT().setEnabled(false);
-				viewBaiaAmostrados.getPeso23JFT().setEnabled(true);
-				viewBaiaAmostrados.getPeso23JFT().requestFocus();
-			} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso23JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				viewBaiaAmostrados.getPeso23JFT().setEnabled(false);
-				viewBaiaAmostrados.getPeso24JFT().setEnabled(true);
-				viewBaiaAmostrados.getPeso24JFT().requestFocus();
-			} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso24JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				viewBaiaAmostrados.getPeso24JFT().setEnabled(false);
-				viewBaiaAmostrados.getPeso25JFT().setEnabled(true);
-				viewBaiaAmostrados.getPeso25JFT().requestFocus();
-			} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso25JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				viewBaiaAmostrados.getPeso25JFT().setEnabled(false);
-				viewBaiaAmostrados.getPeso12JFT().setEnabled(true);
-				viewBaiaAmostrados.getPeso12JFT().requestFocus();
+				criaListaOrdemAux();
+			} else {
+				src = (JFormattedTextField) e.getSource();
+				text = src.getText();
+
+				if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getBaia1JFT()) {
+					TextFormatter.formatStringJFT(src, text, 2);
+					viewBaiaAmostrados.getBaia1JFT().setEnabled(false);
+					viewBaiaAmostrados.getBaia2JFT().setEnabled(true);
+					viewBaiaAmostrados.getBaia2JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getBaia2JFT()) {
+					TextFormatter.formatStringJFT(src, text, 2);
+					viewBaiaAmostrados.getBaia2JFT().setEnabled(false);
+					viewBaiaAmostrados.getBaia3JFT().setEnabled(true);
+					viewBaiaAmostrados.getBaia3JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getBaia3JFT()) {
+					TextFormatter.formatStringJFT(src, text, 2);
+					viewBaiaAmostrados.getBaia3JFT().setEnabled(false);
+					viewBaiaAmostrados.getBaia4JFT().setEnabled(true);
+					viewBaiaAmostrados.getBaia4JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getBaia4JFT()) {
+					TextFormatter.formatStringJFT(src, text, 2);
+					viewBaiaAmostrados.getBaia4JFT().setEnabled(false);
+					viewBaiaAmostrados.getBaia5JFT().setEnabled(true);
+					viewBaiaAmostrados.getBaia5JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getBaia5JFT()) {
+					TextFormatter.formatStringJFT(src, text, 2);
+					viewBaiaAmostrados.getBaia5JFT().setEnabled(false);
+					viewBaiaAmostrados.getNasa11JFT().setEnabled(true);
+					viewBaiaAmostrados.getNasa11JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getNasa11JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getNasa11JFT().setEnabled(false);
+					viewBaiaAmostrados.getNasa12JFT().setEnabled(true);
+					viewBaiaAmostrados.getNasa12JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getNasa12JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getNasa12JFT().setEnabled(false);
+					viewBaiaAmostrados.getNasa13JFT().setEnabled(true);
+					viewBaiaAmostrados.getNasa13JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getNasa13JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getNasa13JFT().setEnabled(false);
+					viewBaiaAmostrados.getNasa14JFT().setEnabled(true);
+					viewBaiaAmostrados.getNasa14JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getNasa14JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getNasa14JFT().setEnabled(false);
+					viewBaiaAmostrados.getNasa15JFT().setEnabled(true);
+					viewBaiaAmostrados.getNasa15JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getNasa15JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getNasa15JFT().setEnabled(false);
+					viewBaiaAmostrados.getPeso11JFT().setEnabled(true);
+					viewBaiaAmostrados.getPeso11JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso11JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getPeso11JFT().setEnabled(false);
+					viewBaiaAmostrados.getPeso12JFT().setEnabled(true);
+					viewBaiaAmostrados.getPeso12JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso12JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getPeso12JFT().setEnabled(false);
+					viewBaiaAmostrados.getPeso13JFT().setEnabled(true);
+					viewBaiaAmostrados.getPeso13JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso13JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getPeso13JFT().setEnabled(false);
+					viewBaiaAmostrados.getPeso14JFT().setEnabled(true);
+					viewBaiaAmostrados.getPeso14JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso14JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getPeso14JFT().setEnabled(false);
+					viewBaiaAmostrados.getPeso15JFT().setEnabled(true);
+					viewBaiaAmostrados.getPeso15JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso15JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getPeso15JFT().setEnabled(false);
+					viewBaiaAmostrados.getNasa21JFT().setEnabled(true);
+					viewBaiaAmostrados.getNasa21JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getNasa21JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getNasa21JFT().setEnabled(false);
+					viewBaiaAmostrados.getNasa22JFT().setEnabled(true);
+					viewBaiaAmostrados.getNasa22JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getNasa22JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getNasa22JFT().setEnabled(false);
+					viewBaiaAmostrados.getNasa23JFT().setEnabled(true);
+					viewBaiaAmostrados.getNasa23JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getNasa23JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getNasa23JFT().setEnabled(false);
+					viewBaiaAmostrados.getNasa24JFT().setEnabled(true);
+					viewBaiaAmostrados.getNasa24JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getNasa24JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getNasa24JFT().setEnabled(false);
+					viewBaiaAmostrados.getNasa25JFT().setEnabled(true);
+					viewBaiaAmostrados.getNasa25JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getNasa25JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getNasa25JFT().setEnabled(false);
+					viewBaiaAmostrados.getPeso21JFT().setEnabled(true);
+					viewBaiaAmostrados.getPeso21JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso21JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getPeso21JFT().setEnabled(false);
+					viewBaiaAmostrados.getPeso22JFT().setEnabled(true);
+					viewBaiaAmostrados.getPeso22JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso22JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getPeso22JFT().setEnabled(false);
+					viewBaiaAmostrados.getPeso23JFT().setEnabled(true);
+					viewBaiaAmostrados.getPeso23JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso23JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getPeso23JFT().setEnabled(false);
+					viewBaiaAmostrados.getPeso24JFT().setEnabled(true);
+					viewBaiaAmostrados.getPeso24JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso24JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getPeso24JFT().setEnabled(false);
+					viewBaiaAmostrados.getPeso25JFT().setEnabled(true);
+					viewBaiaAmostrados.getPeso25JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso25JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getPeso25JFT().setEnabled(false);
+
+					if (usarColunaExtra) {
+						viewBaiaAmostrados.getNasa31JFT().setEnabled(true);
+						viewBaiaAmostrados.getNasa31JFT().requestFocus();
+					} else {
+						viewBaiaAmostrados.getControleJFT().setEnabled(true);
+						viewBaiaAmostrados.getControleJFT().grabFocus();
+					}
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getNasa31JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getNasa31JFT().setEnabled(false);
+					viewBaiaAmostrados.getNasa32JFT().setEnabled(true);
+					viewBaiaAmostrados.getNasa32JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getNasa32JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getNasa32JFT().setEnabled(false);
+					viewBaiaAmostrados.getNasa33JFT().setEnabled(true);
+					viewBaiaAmostrados.getNasa33JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getNasa33JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getNasa33JFT().setEnabled(false);
+					viewBaiaAmostrados.getNasa34JFT().setEnabled(true);
+					viewBaiaAmostrados.getNasa34JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getNasa34JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getNasa34JFT().setEnabled(false);
+					viewBaiaAmostrados.getNasa35JFT().setEnabled(true);
+					viewBaiaAmostrados.getNasa35JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getNasa35JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getNasa35JFT().setEnabled(false);
+					viewBaiaAmostrados.getPeso31JFT().setEnabled(true);
+					viewBaiaAmostrados.getPeso31JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso31JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getPeso31JFT().setEnabled(false);
+					viewBaiaAmostrados.getPeso32JFT().setEnabled(true);
+					viewBaiaAmostrados.getPeso32JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso32JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getPeso32JFT().setEnabled(false);
+					viewBaiaAmostrados.getPeso33JFT().setEnabled(true);
+					viewBaiaAmostrados.getPeso33JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso33JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getPeso33JFT().setEnabled(false);
+					viewBaiaAmostrados.getPeso34JFT().setEnabled(true);
+					viewBaiaAmostrados.getPeso34JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso34JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getPeso34JFT().setEnabled(false);
+					viewBaiaAmostrados.getPeso35JFT().setEnabled(true);
+					viewBaiaAmostrados.getPeso35JFT().requestFocus();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso35JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					viewBaiaAmostrados.getPeso35JFT().setEnabled(false);
+					viewBaiaAmostrados.getControleJFT().setEnabled(true);
+					viewBaiaAmostrados.getControleJFT().grabFocus();
+					popularListaAmostrados();
+				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getControleJFT()) {
+					TextFormatter.formatStringJFT(src, text, 6);
+					viewBaiaAmostrados.getBaia1JFT().setEnabled(true);
+					viewBaiaAmostrados.getBaia1JFT().grabFocus();
+				}
 			}
+
 		}
 
 	}
@@ -272,7 +356,6 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 	public void keyPressed(KeyEvent e) {
 		Object src = e.getSource();
 		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-			System.out.println("left");
 			Component prev = viewBaiaAmostrados.getFocusTraversalPolicy().getComponentBefore(viewBaiaAmostrados,
 					(JFormattedTextField) src);
 			((JFormattedTextField) src).setEnabled(false);
@@ -297,29 +380,149 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 
 	@Override
 	public void itemStateChanged(ItemEvent e) {
-		if (e.getStateChange() == ItemEvent.SELECTED && e.getSource() == viewBaiaAmostrados.getCheckColuna3()) {
-			viewBaiaAmostrados.getNasa31JFT().setEnabled(true);
-			viewBaiaAmostrados.getNasa32JFT().setEnabled(true);
-			viewBaiaAmostrados.getNasa33JFT().setEnabled(true);
-			viewBaiaAmostrados.getNasa34JFT().setEnabled(true);
-			viewBaiaAmostrados.getNasa35JFT().setEnabled(true);
-			viewBaiaAmostrados.getPeso31JFT().setEnabled(true);
-			viewBaiaAmostrados.getPeso32JFT().setEnabled(true);
-			viewBaiaAmostrados.getPeso33JFT().setEnabled(true);
-			viewBaiaAmostrados.getPeso34JFT().setEnabled(true);
-			viewBaiaAmostrados.getPeso35JFT().setEnabled(true);
+		if (e.getStateChange() == ItemEvent.SELECTED && e.getSource() == viewBaiaAmostrados.getCheckColunaExtra()) {
+//			viewBaiaAmostrados.getNasa31JFT().setEnabled(true);
+//			viewBaiaAmostrados.getNasa32JFT().setEnabled(true);
+//			viewBaiaAmostrados.getNasa33JFT().setEnabled(true);
+//			viewBaiaAmostrados.getNasa34JFT().setEnabled(true);
+//			viewBaiaAmostrados.getNasa35JFT().setEnabled(true);
+//			viewBaiaAmostrados.getPeso31JFT().setEnabled(true);
+//			viewBaiaAmostrados.getPeso32JFT().setEnabled(true);
+//			viewBaiaAmostrados.getPeso33JFT().setEnabled(true);
+//			viewBaiaAmostrados.getPeso34JFT().setEnabled(true);
+//			viewBaiaAmostrados.getPeso35JFT().setEnabled(true);
+			usarColunaExtra = true;
 		} else {
-			viewBaiaAmostrados.getNasa31JFT().setEnabled(false);
-			viewBaiaAmostrados.getNasa32JFT().setEnabled(false);
-			viewBaiaAmostrados.getNasa33JFT().setEnabled(false);
-			viewBaiaAmostrados.getNasa34JFT().setEnabled(false);
-			viewBaiaAmostrados.getNasa35JFT().setEnabled(false);
-			viewBaiaAmostrados.getPeso31JFT().setEnabled(false);
-			viewBaiaAmostrados.getPeso32JFT().setEnabled(false);
-			viewBaiaAmostrados.getPeso33JFT().setEnabled(false);
-			viewBaiaAmostrados.getPeso34JFT().setEnabled(false);
-			viewBaiaAmostrados.getPeso35JFT().setEnabled(false);
+			usarColunaExtra = false;
+//			viewBaiaAmostrados.getNasa31JFT().setEnabled(false);
+//			viewBaiaAmostrados.getNasa32JFT().setEnabled(false);
+//			viewBaiaAmostrados.getNasa33JFT().setEnabled(false);
+//			viewBaiaAmostrados.getNasa34JFT().setEnabled(false);
+//			viewBaiaAmostrados.getNasa35JFT().setEnabled(false);
+//			viewBaiaAmostrados.getPeso31JFT().setEnabled(false);
+//			viewBaiaAmostrados.getPeso32JFT().setEnabled(false);
+//			viewBaiaAmostrados.getPeso33JFT().setEnabled(false);
+//			viewBaiaAmostrados.getPeso34JFT().setEnabled(false);
+//			viewBaiaAmostrados.getPeso35JFT().setEnabled(false);
 		}
+	}
+
+	private void popularListaAmostrados() {
+		int count = 0;
+		int size = orderAux.size();
+		for (int i = 0; i < size; i++) {
+			if (count == 0) {
+				JFormattedTextField baia = (JFormattedTextField) orderAux.get(0);
+				amostradoTemp.setNrBaia(Integer.parseInt(baia.getText()));
+				orderAux.remove(0);
+				count++;
+			} else if (count == 1) {
+				JFormattedTextField nasa = (JFormattedTextField) orderAux.get(0);
+				amostradoTemp.setNasa(Integer.parseInt(nasa.getText()));
+				orderAux.remove(0);
+				count++;
+			} else {
+				JFormattedTextField peso = (JFormattedTextField) orderAux.get(0);
+				amostradoTemp.setPeso(Integer.parseInt(peso.getText()));
+				orderAux.remove(0);
+				amostradosTemp.add(amostradoTemp);
+				amostradoTemp =  new BaiaAmostradosVOP();
+				count = 0;
+			}
+		}
+		criaListaOrdemAux();
+	}
+
+	private void criaListaOrdemAux() {
+		orderAux = new ArrayList<Component>();
+		if (!usarColunaExtra) {
+			orderAux.add(viewBaiaAmostrados.getBaia1JFT());
+			orderAux.add(viewBaiaAmostrados.getNasa11JFT());
+			orderAux.add(viewBaiaAmostrados.getPeso11JFT());
+			orderAux.add(viewBaiaAmostrados.getBaia1JFT());
+			orderAux.add(viewBaiaAmostrados.getNasa21JFT());
+			orderAux.add(viewBaiaAmostrados.getPeso21JFT());
+
+			orderAux.add(viewBaiaAmostrados.getBaia2JFT());
+			orderAux.add(viewBaiaAmostrados.getNasa12JFT());
+			orderAux.add(viewBaiaAmostrados.getPeso12JFT());
+			orderAux.add(viewBaiaAmostrados.getBaia2JFT());
+			orderAux.add(viewBaiaAmostrados.getNasa22JFT());
+			orderAux.add(viewBaiaAmostrados.getPeso22JFT());
+
+			orderAux.add(viewBaiaAmostrados.getBaia3JFT());
+			orderAux.add(viewBaiaAmostrados.getNasa13JFT());
+			orderAux.add(viewBaiaAmostrados.getPeso13JFT());
+			orderAux.add(viewBaiaAmostrados.getBaia3JFT());
+			orderAux.add(viewBaiaAmostrados.getNasa23JFT());
+			orderAux.add(viewBaiaAmostrados.getPeso23JFT());
+
+			orderAux.add(viewBaiaAmostrados.getBaia4JFT());
+			orderAux.add(viewBaiaAmostrados.getNasa14JFT());
+			orderAux.add(viewBaiaAmostrados.getPeso14JFT());
+			orderAux.add(viewBaiaAmostrados.getBaia4JFT());
+			orderAux.add(viewBaiaAmostrados.getNasa24JFT());
+			orderAux.add(viewBaiaAmostrados.getPeso24JFT());
+
+			orderAux.add(viewBaiaAmostrados.getBaia5JFT());
+			orderAux.add(viewBaiaAmostrados.getNasa15JFT());
+			orderAux.add(viewBaiaAmostrados.getPeso15JFT());
+			orderAux.add(viewBaiaAmostrados.getBaia5JFT());
+			orderAux.add(viewBaiaAmostrados.getNasa25JFT());
+			orderAux.add(viewBaiaAmostrados.getPeso25JFT());
+		} else {
+			orderAux.add(viewBaiaAmostrados.getBaia1JFT());
+			orderAux.add(viewBaiaAmostrados.getNasa11JFT());
+			orderAux.add(viewBaiaAmostrados.getPeso11JFT());
+			orderAux.add(viewBaiaAmostrados.getBaia1JFT());
+			orderAux.add(viewBaiaAmostrados.getNasa21JFT());
+			orderAux.add(viewBaiaAmostrados.getPeso21JFT());
+			orderAux.add(viewBaiaAmostrados.getBaia1JFT());
+			orderAux.add(viewBaiaAmostrados.getNasa31JFT());
+			orderAux.add(viewBaiaAmostrados.getPeso31JFT());
+
+			orderAux.add(viewBaiaAmostrados.getBaia2JFT());
+			orderAux.add(viewBaiaAmostrados.getNasa12JFT());
+			orderAux.add(viewBaiaAmostrados.getPeso12JFT());
+			orderAux.add(viewBaiaAmostrados.getBaia2JFT());
+			orderAux.add(viewBaiaAmostrados.getNasa22JFT());
+			orderAux.add(viewBaiaAmostrados.getPeso22JFT());
+			orderAux.add(viewBaiaAmostrados.getBaia2JFT());
+			orderAux.add(viewBaiaAmostrados.getNasa32JFT());
+			orderAux.add(viewBaiaAmostrados.getPeso32JFT());
+
+			orderAux.add(viewBaiaAmostrados.getBaia3JFT());
+			orderAux.add(viewBaiaAmostrados.getNasa13JFT());
+			orderAux.add(viewBaiaAmostrados.getPeso13JFT());
+			orderAux.add(viewBaiaAmostrados.getBaia3JFT());
+			orderAux.add(viewBaiaAmostrados.getNasa23JFT());
+			orderAux.add(viewBaiaAmostrados.getPeso23JFT());
+			orderAux.add(viewBaiaAmostrados.getBaia3JFT());
+			orderAux.add(viewBaiaAmostrados.getNasa33JFT());
+			orderAux.add(viewBaiaAmostrados.getPeso33JFT());
+
+			orderAux.add(viewBaiaAmostrados.getBaia4JFT());
+			orderAux.add(viewBaiaAmostrados.getNasa14JFT());
+			orderAux.add(viewBaiaAmostrados.getPeso14JFT());
+			orderAux.add(viewBaiaAmostrados.getBaia4JFT());
+			orderAux.add(viewBaiaAmostrados.getNasa24JFT());
+			orderAux.add(viewBaiaAmostrados.getPeso24JFT());
+			orderAux.add(viewBaiaAmostrados.getBaia4JFT());
+			orderAux.add(viewBaiaAmostrados.getNasa34JFT());
+			orderAux.add(viewBaiaAmostrados.getPeso34JFT());
+
+			orderAux.add(viewBaiaAmostrados.getBaia5JFT());
+			orderAux.add(viewBaiaAmostrados.getNasa15JFT());
+			orderAux.add(viewBaiaAmostrados.getPeso15JFT());
+			orderAux.add(viewBaiaAmostrados.getBaia5JFT());
+			orderAux.add(viewBaiaAmostrados.getNasa25JFT());
+			orderAux.add(viewBaiaAmostrados.getPeso25JFT());
+			orderAux.add(viewBaiaAmostrados.getBaia5JFT());
+			orderAux.add(viewBaiaAmostrados.getNasa35JFT());
+			orderAux.add(viewBaiaAmostrados.getPeso35JFT());
+
+		}
+
 	}
 
 }

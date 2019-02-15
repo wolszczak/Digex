@@ -67,9 +67,7 @@ public class ControllerEscolhaDigP extends KeyAdapter {
 		int obsRend = 0;
 		for (AbateVOP abate : controller.getModel().getExperimentoVO().getAbates()) {
 			for (BaiaAmostradosVOP baiaAmostrado : abate.getBaiaAmostrados()) {
-				if (baiaAmostrado.getOrdem() != 0) {
 					obsRend++;
-				}
 			}
 		}
 		viewEscolhaDig.getQtdeDesLabel().setText(
