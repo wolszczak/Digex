@@ -17,20 +17,23 @@ import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
+import brf.peru.model.bo.AbateBOP;
 import brf.peru.model.vo.BaiaAmostradosVOP;
 import brf.peru.view.ViewBaiaAmostradosP;
+import brf.peru.view.ViewDesempenhoP;
 import brf.util.FocusOrderPolicy;
 import brf.util.TextFormatter;
 
 public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListener, ItemListener {
 	private final ControllerP controller;
+	private int abate, idadeAbate, ordem;
+	private boolean usarColunaExtra, finalDigitacao;
 	private ViewBaiaAmostradosP viewBaiaAmostrados;
-	private BaiaAmostradosVOP amostrado, amostradoTemp, amostradoErro;
-	private List<BaiaAmostradosVOP> amostrados, amostradosTemp, amostradosErros;
+	private BaiaAmostradosVOP amostradoTemp;
+	private List<BaiaAmostradosVOP> amostrados, amostradosTemp;
 	private List<Component> order, orderAux;
 	private String aviario, dataAbate;
-	private int abate, idadeAbate, ordem, controle;
-	private boolean usarColunaExtra;
+	private AbateBOP bo;
 
 	public ControllerBaiaAmostradosP(ControllerP c) {
 		controller = c;
@@ -52,54 +55,12 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 		this.abate = abate;
 		ordem = 1;
 		usarColunaExtra = false;
-		amostrado = new BaiaAmostradosVOP();
+		finalDigitacao = false;
 		amostradoTemp = new BaiaAmostradosVOP();
-		amostradoErro = new BaiaAmostradosVOP();
 		amostrados = new ArrayList<>();
 		amostradosTemp = new ArrayList<>();
-		amostradosErros = new ArrayList<>();
-
-		order = new ArrayList<>();
-		order.add(viewBaiaAmostrados.getBaia1JFT());
-		order.add(viewBaiaAmostrados.getBaia2JFT());
-		order.add(viewBaiaAmostrados.getBaia3JFT());
-		order.add(viewBaiaAmostrados.getBaia4JFT());
-		order.add(viewBaiaAmostrados.getBaia5JFT());
-		order.add(viewBaiaAmostrados.getNasa11JFT());
-		order.add(viewBaiaAmostrados.getNasa12JFT());
-		order.add(viewBaiaAmostrados.getNasa13JFT());
-		order.add(viewBaiaAmostrados.getNasa14JFT());
-		order.add(viewBaiaAmostrados.getNasa15JFT());
-		order.add(viewBaiaAmostrados.getPeso11JFT());
-		order.add(viewBaiaAmostrados.getPeso12JFT());
-		order.add(viewBaiaAmostrados.getPeso13JFT());
-		order.add(viewBaiaAmostrados.getPeso14JFT());
-		order.add(viewBaiaAmostrados.getPeso15JFT());
-		order.add(viewBaiaAmostrados.getNasa21JFT());
-		order.add(viewBaiaAmostrados.getNasa22JFT());
-		order.add(viewBaiaAmostrados.getNasa23JFT());
-		order.add(viewBaiaAmostrados.getNasa24JFT());
-		order.add(viewBaiaAmostrados.getNasa25JFT());
-		order.add(viewBaiaAmostrados.getPeso21JFT());
-		order.add(viewBaiaAmostrados.getPeso22JFT());
-		order.add(viewBaiaAmostrados.getPeso23JFT());
-		order.add(viewBaiaAmostrados.getPeso24JFT());
-		order.add(viewBaiaAmostrados.getPeso25JFT());
-		order.add(viewBaiaAmostrados.getNasa31JFT());
-		order.add(viewBaiaAmostrados.getNasa32JFT());
-		order.add(viewBaiaAmostrados.getNasa33JFT());
-		order.add(viewBaiaAmostrados.getNasa34JFT());
-		order.add(viewBaiaAmostrados.getNasa35JFT());
-		order.add(viewBaiaAmostrados.getPeso31JFT());
-		order.add(viewBaiaAmostrados.getPeso32JFT());
-		order.add(viewBaiaAmostrados.getPeso33JFT());
-		order.add(viewBaiaAmostrados.getPeso34JFT());
-		order.add(viewBaiaAmostrados.getPeso35JFT());
-		order.add(viewBaiaAmostrados.getControleJFT());
-
-		FocusOrderPolicy newPolicy = new FocusOrderPolicy(order);
-		viewBaiaAmostrados.setFocusTraversalPolicy(newPolicy);
-		listenerSetup(order);
+		bo = new AbateBOP(controller);
+		
 		atualizaOrdemBaiaAmostrados();
 
 		viewBaiaAmostrados.getAviarioJFT().setText(aviario);
@@ -154,6 +115,7 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 				viewBaiaAmostrados.getCheckColunaExtra().setEnabled(false);
 				viewBaiaAmostrados.getBaia1JFT().setEnabled(true);
 				viewBaiaAmostrados.getBaia1JFT().grabFocus();
+				criarOrdemComponentes();
 				criaListaOrdemAux();
 			} else {
 				src = (JFormattedTextField) e.getSource();
@@ -282,13 +244,24 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso25JFT()) {
 					TextFormatter.formatStringJFT(src, text, 3);
 					viewBaiaAmostrados.getPeso25JFT().setEnabled(false);
-
 					if (usarColunaExtra) {
 						viewBaiaAmostrados.getNasa31JFT().setEnabled(true);
 						viewBaiaAmostrados.getNasa31JFT().requestFocus();
 					} else {
-						viewBaiaAmostrados.getControleJFT().setEnabled(true);
-						viewBaiaAmostrados.getControleJFT().grabFocus();
+						popularListaAmostrados();
+						String msg = bo.verificaAmostrados(amostradosTemp);
+						if (msg != null && msg.length() != 0) {
+							JOptionPane.showMessageDialog(viewBaiaAmostrados, "Problema(s):\n" + msg, "DIGEX - Erro",
+									JOptionPane.ERROR_MESSAGE);
+							amostradosTemp = new ArrayList<>();
+							fluxoProblemaDigitacao();
+						} else {
+							finalDigitacao = bo.validaFinalDigitacao(amostradosTemp, usarColunaExtra);
+							amostrados = amostradosTemp;
+							amostradosTemp = new ArrayList<>();
+							viewBaiaAmostrados.getControleJFT().setEnabled(true);
+							viewBaiaAmostrados.getControleJFT().grabFocus();
+						}
 					}
 				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getNasa31JFT()) {
 					TextFormatter.formatStringJFT(src, text, 3);
@@ -338,13 +311,32 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso35JFT()) {
 					TextFormatter.formatStringJFT(src, text, 3);
 					viewBaiaAmostrados.getPeso35JFT().setEnabled(false);
-					viewBaiaAmostrados.getControleJFT().setEnabled(true);
-					viewBaiaAmostrados.getControleJFT().grabFocus();
-					popularListaAmostrados();
+					if (usarColunaExtra) {
+						viewBaiaAmostrados.getNasa31JFT().setEnabled(true);
+						viewBaiaAmostrados.getNasa31JFT().requestFocus();
+					} else {
+						popularListaAmostrados();
+						String msg = bo.verificaAmostrados(amostradosTemp);
+						if (msg != null && msg.length() != 0) {
+							JOptionPane.showMessageDialog(viewBaiaAmostrados, "Problema(s):\n" + msg, "DIGEX - Erro",
+									JOptionPane.ERROR_MESSAGE);
+							amostradosTemp = new ArrayList<>();
+							fluxoProblemaDigitacao();
+						} else {
+							finalDigitacao = bo.validaFinalDigitacao(amostrados, usarColunaExtra);
+							amostrados = amostradosTemp;
+							amostradosTemp = new ArrayList<>();
+							viewBaiaAmostrados.getControleJFT().setEnabled(true);
+							viewBaiaAmostrados.getControleJFT().grabFocus();
+						}
+					}
 				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getControleJFT()) {
 					TextFormatter.formatStringJFT(src, text, 6);
 					viewBaiaAmostrados.getBaia1JFT().setEnabled(true);
 					viewBaiaAmostrados.getBaia1JFT().grabFocus();
+					calculaTotalControle();
+
+//					updateHist();
 				}
 			}
 
@@ -364,6 +356,146 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 		}
 	}
 
+	private void criarOrdemComponentes() {
+		if (usarColunaExtra) {
+			order = new ArrayList<>();
+			order.add(viewBaiaAmostrados.getBaia1JFT());
+			order.add(viewBaiaAmostrados.getBaia2JFT());
+			order.add(viewBaiaAmostrados.getBaia3JFT());
+			order.add(viewBaiaAmostrados.getBaia4JFT());
+			order.add(viewBaiaAmostrados.getBaia5JFT());
+			order.add(viewBaiaAmostrados.getNasa11JFT());
+			order.add(viewBaiaAmostrados.getNasa12JFT());
+			order.add(viewBaiaAmostrados.getNasa13JFT());
+			order.add(viewBaiaAmostrados.getNasa14JFT());
+			order.add(viewBaiaAmostrados.getNasa15JFT());
+			order.add(viewBaiaAmostrados.getPeso11JFT());
+			order.add(viewBaiaAmostrados.getPeso12JFT());
+			order.add(viewBaiaAmostrados.getPeso13JFT());
+			order.add(viewBaiaAmostrados.getPeso14JFT());
+			order.add(viewBaiaAmostrados.getPeso15JFT());
+			order.add(viewBaiaAmostrados.getNasa21JFT());
+			order.add(viewBaiaAmostrados.getNasa22JFT());
+			order.add(viewBaiaAmostrados.getNasa23JFT());
+			order.add(viewBaiaAmostrados.getNasa24JFT());
+			order.add(viewBaiaAmostrados.getNasa25JFT());
+			order.add(viewBaiaAmostrados.getPeso21JFT());
+			order.add(viewBaiaAmostrados.getPeso22JFT());
+			order.add(viewBaiaAmostrados.getPeso23JFT());
+			order.add(viewBaiaAmostrados.getPeso24JFT());
+			order.add(viewBaiaAmostrados.getPeso25JFT());
+			order.add(viewBaiaAmostrados.getNasa31JFT());
+			order.add(viewBaiaAmostrados.getNasa32JFT());
+			order.add(viewBaiaAmostrados.getNasa33JFT());
+			order.add(viewBaiaAmostrados.getNasa34JFT());
+			order.add(viewBaiaAmostrados.getNasa35JFT());
+			order.add(viewBaiaAmostrados.getPeso31JFT());
+			order.add(viewBaiaAmostrados.getPeso32JFT());
+			order.add(viewBaiaAmostrados.getPeso33JFT());
+			order.add(viewBaiaAmostrados.getPeso34JFT());
+			order.add(viewBaiaAmostrados.getPeso35JFT());
+			order.add(viewBaiaAmostrados.getControleJFT());
+			
+			FocusOrderPolicy newPolicy = new FocusOrderPolicy(order);
+			viewBaiaAmostrados.setFocusTraversalPolicy(newPolicy);
+			listenerSetup(order);
+		} else {
+			order = new ArrayList<>();
+			order.add(viewBaiaAmostrados.getBaia1JFT());
+			order.add(viewBaiaAmostrados.getBaia2JFT());
+			order.add(viewBaiaAmostrados.getBaia3JFT());
+			order.add(viewBaiaAmostrados.getBaia4JFT());
+			order.add(viewBaiaAmostrados.getBaia5JFT());
+			order.add(viewBaiaAmostrados.getNasa11JFT());
+			order.add(viewBaiaAmostrados.getNasa12JFT());
+			order.add(viewBaiaAmostrados.getNasa13JFT());
+			order.add(viewBaiaAmostrados.getNasa14JFT());
+			order.add(viewBaiaAmostrados.getNasa15JFT());
+			order.add(viewBaiaAmostrados.getPeso11JFT());
+			order.add(viewBaiaAmostrados.getPeso12JFT());
+			order.add(viewBaiaAmostrados.getPeso13JFT());
+			order.add(viewBaiaAmostrados.getPeso14JFT());
+			order.add(viewBaiaAmostrados.getPeso15JFT());
+			order.add(viewBaiaAmostrados.getNasa21JFT());
+			order.add(viewBaiaAmostrados.getNasa22JFT());
+			order.add(viewBaiaAmostrados.getNasa23JFT());
+			order.add(viewBaiaAmostrados.getNasa24JFT());
+			order.add(viewBaiaAmostrados.getNasa25JFT());
+			order.add(viewBaiaAmostrados.getPeso21JFT());
+			order.add(viewBaiaAmostrados.getPeso22JFT());
+			order.add(viewBaiaAmostrados.getPeso23JFT());
+			order.add(viewBaiaAmostrados.getPeso24JFT());
+			order.add(viewBaiaAmostrados.getPeso25JFT());
+			order.add(viewBaiaAmostrados.getControleJFT());
+			
+			FocusOrderPolicy newPolicy = new FocusOrderPolicy(order);
+			viewBaiaAmostrados.setFocusTraversalPolicy(newPolicy);
+			listenerSetup(order);
+		}
+	}
+
+	private Integer calculaTotalControle() {
+		int controle = 0;
+		for (BaiaAmostradosVOP a : amostrados) {
+			if (a.getNasa() != 0) {
+				controle += a.getNasa();
+			}
+			if (a.getNrBaia() != 0) {
+				controle += a.getNasa();
+			}
+			if (a.getPeso() != 0) {
+				controle += a.getNasa();
+			}
+		}
+		return controle;
+	}
+
+	private void fluxoProblemaDigitacao() {
+		viewBaiaAmostrados.getBaia1JFT().setEnabled(true);
+		viewBaiaAmostrados.getBaia1JFT().grabFocus();
+	}
+
+	private void updateHist() {
+		viewBaiaAmostrados.getBaiaHist1Label().setText(viewBaiaAmostrados.getBaia1JFT().getText());
+		viewBaiaAmostrados.getBaiaHist2Label().setText(viewBaiaAmostrados.getBaia2JFT().getText());
+		viewBaiaAmostrados.getBaiaHist3Label().setText(viewBaiaAmostrados.getBaia3JFT().getText());
+		viewBaiaAmostrados.getBaiaHist4Label().setText(viewBaiaAmostrados.getBaia4JFT().getText());
+		viewBaiaAmostrados.getBaiaHist5Label().setText(viewBaiaAmostrados.getBaia5JFT().getText());
+		viewBaiaAmostrados.getNasa1Hist1Label().setText(viewBaiaAmostrados.getNasa11JFT().getText());
+		viewBaiaAmostrados.getNasa1Hist2Label().setText(viewBaiaAmostrados.getNasa12JFT().getText());
+		viewBaiaAmostrados.getNasa1Hist3Label().setText(viewBaiaAmostrados.getNasa13JFT().getText());
+		viewBaiaAmostrados.getNasa1Hist4Label().setText(viewBaiaAmostrados.getNasa14JFT().getText());
+		viewBaiaAmostrados.getNasa1Hist5Label().setText(viewBaiaAmostrados.getNasa15JFT().getText());
+		viewBaiaAmostrados.getPeso1Hist1Label().setText(viewBaiaAmostrados.getPeso11JFT().getText());
+		viewBaiaAmostrados.getPeso1Hist2Label().setText(viewBaiaAmostrados.getPeso12JFT().getText());
+		viewBaiaAmostrados.getPeso1Hist3Label().setText(viewBaiaAmostrados.getPeso13JFT().getText());
+		viewBaiaAmostrados.getPeso1Hist4Label().setText(viewBaiaAmostrados.getPeso14JFT().getText());
+		viewBaiaAmostrados.getPeso1Hist5Label().setText(viewBaiaAmostrados.getPeso15JFT().getText());
+		viewBaiaAmostrados.getNasa2Hist1Label().setText(viewBaiaAmostrados.getNasa21JFT().getText());
+		viewBaiaAmostrados.getNasa2Hist2Label().setText(viewBaiaAmostrados.getNasa22JFT().getText());
+		viewBaiaAmostrados.getNasa2Hist3Label().setText(viewBaiaAmostrados.getNasa23JFT().getText());
+		viewBaiaAmostrados.getNasa2Hist4Label().setText(viewBaiaAmostrados.getNasa24JFT().getText());
+		viewBaiaAmostrados.getNasa2Hist5Label().setText(viewBaiaAmostrados.getNasa25JFT().getText());
+		viewBaiaAmostrados.getPeso2Hist1Label().setText(viewBaiaAmostrados.getPeso21JFT().getText());
+		viewBaiaAmostrados.getPeso2Hist2Label().setText(viewBaiaAmostrados.getPeso22JFT().getText());
+		viewBaiaAmostrados.getPeso2Hist3Label().setText(viewBaiaAmostrados.getPeso23JFT().getText());
+		viewBaiaAmostrados.getPeso2Hist4Label().setText(viewBaiaAmostrados.getPeso24JFT().getText());
+		viewBaiaAmostrados.getPeso2Hist5Label().setText(viewBaiaAmostrados.getPeso25JFT().getText());
+		if (usarColunaExtra) {
+			viewBaiaAmostrados.getNasa3Hist1Label().setText(viewBaiaAmostrados.getNasa31JFT().getText());
+			viewBaiaAmostrados.getNasa3Hist2Label().setText(viewBaiaAmostrados.getNasa32JFT().getText());
+			viewBaiaAmostrados.getNasa3Hist3Label().setText(viewBaiaAmostrados.getNasa33JFT().getText());
+			viewBaiaAmostrados.getNasa3Hist4Label().setText(viewBaiaAmostrados.getNasa34JFT().getText());
+			viewBaiaAmostrados.getNasa3Hist5Label().setText(viewBaiaAmostrados.getNasa35JFT().getText());
+			viewBaiaAmostrados.getPeso3Hist1Label().setText(viewBaiaAmostrados.getPeso31JFT().getText());
+			viewBaiaAmostrados.getPeso3Hist2Label().setText(viewBaiaAmostrados.getPeso32JFT().getText());
+			viewBaiaAmostrados.getPeso3Hist3Label().setText(viewBaiaAmostrados.getPeso33JFT().getText());
+			viewBaiaAmostrados.getPeso3Hist4Label().setText(viewBaiaAmostrados.getPeso34JFT().getText());
+			viewBaiaAmostrados.getPeso3Hist5Label().setText(viewBaiaAmostrados.getPeso35JFT().getText());
+		}
+
+	}
+
 	private void atualizaOrdemBaiaAmostrados() {
 		List<JFormattedTextField> ordens = new ArrayList<>();
 		ordens.add(viewBaiaAmostrados.getOrdem1JFT());
@@ -381,33 +513,14 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 	@Override
 	public void itemStateChanged(ItemEvent e) {
 		if (e.getStateChange() == ItemEvent.SELECTED && e.getSource() == viewBaiaAmostrados.getCheckColunaExtra()) {
-//			viewBaiaAmostrados.getNasa31JFT().setEnabled(true);
-//			viewBaiaAmostrados.getNasa32JFT().setEnabled(true);
-//			viewBaiaAmostrados.getNasa33JFT().setEnabled(true);
-//			viewBaiaAmostrados.getNasa34JFT().setEnabled(true);
-//			viewBaiaAmostrados.getNasa35JFT().setEnabled(true);
-//			viewBaiaAmostrados.getPeso31JFT().setEnabled(true);
-//			viewBaiaAmostrados.getPeso32JFT().setEnabled(true);
-//			viewBaiaAmostrados.getPeso33JFT().setEnabled(true);
-//			viewBaiaAmostrados.getPeso34JFT().setEnabled(true);
-//			viewBaiaAmostrados.getPeso35JFT().setEnabled(true);
 			usarColunaExtra = true;
 		} else {
 			usarColunaExtra = false;
-//			viewBaiaAmostrados.getNasa31JFT().setEnabled(false);
-//			viewBaiaAmostrados.getNasa32JFT().setEnabled(false);
-//			viewBaiaAmostrados.getNasa33JFT().setEnabled(false);
-//			viewBaiaAmostrados.getNasa34JFT().setEnabled(false);
-//			viewBaiaAmostrados.getNasa35JFT().setEnabled(false);
-//			viewBaiaAmostrados.getPeso31JFT().setEnabled(false);
-//			viewBaiaAmostrados.getPeso32JFT().setEnabled(false);
-//			viewBaiaAmostrados.getPeso33JFT().setEnabled(false);
-//			viewBaiaAmostrados.getPeso34JFT().setEnabled(false);
-//			viewBaiaAmostrados.getPeso35JFT().setEnabled(false);
 		}
 	}
 
 	private void popularListaAmostrados() {
+		// POPULA A LISTA DE OBJETOS COM DADOS DE CADA BLOCO DIGITADO.
 		int count = 0;
 		int size = orderAux.size();
 		for (int i = 0; i < size; i++) {
@@ -426,7 +539,7 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 				amostradoTemp.setPeso(Integer.parseInt(peso.getText()));
 				orderAux.remove(0);
 				amostradosTemp.add(amostradoTemp);
-				amostradoTemp =  new BaiaAmostradosVOP();
+				amostradoTemp = new BaiaAmostradosVOP();
 				count = 0;
 			}
 		}
@@ -434,6 +547,8 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 	}
 
 	private void criaListaOrdemAux() {
+		// CRIA LISTA DE COMPONENTES ORDENADOS PARA SALVAR OS OBJETOS AO FINAL DE CADA
+		// BLOCO DIGITADO.
 		orderAux = new ArrayList<Component>();
 		if (!usarColunaExtra) {
 			orderAux.add(viewBaiaAmostrados.getBaia1JFT());
