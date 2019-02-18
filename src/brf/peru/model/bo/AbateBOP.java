@@ -41,8 +41,8 @@ public class AbateBOP {
 						break;
 					}
 				}else {
-					amostrados.remove(0);
 					amostrados.remove(1);
+					amostrados.remove(0);
 				}
 			}
 		} else {
@@ -55,9 +55,9 @@ public class AbateBOP {
 						}
 					}
 				}else {
-					amostrados.remove(0);
-					amostrados.remove(1);
 					amostrados.remove(2);
+					amostrados.remove(1);
+					amostrados.remove(0);
 				}
 			}
 		}

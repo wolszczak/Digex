@@ -1,5 +1,6 @@
 package brf.peru.controller;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
@@ -8,19 +9,20 @@ import java.awt.event.ItemListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
+import javax.swing.BorderFactory;
 import javax.swing.JCheckBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
+import javax.swing.border.Border;
 
+import brf.frango.model.bo.EscolhaBalBOF;
 import brf.peru.model.bo.AbateBOP;
+import brf.peru.model.dao.ModelStateDAOP;
 import brf.peru.model.vo.BaiaAmostradosVOP;
 import brf.peru.view.ViewBaiaAmostradosP;
-import brf.peru.view.ViewDesempenhoP;
 import brf.util.FocusOrderPolicy;
 import brf.util.TextFormatter;
 
@@ -28,12 +30,15 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 	private final ControllerP controller;
 	private int abate, idadeAbate, ordem;
 	private boolean usarColunaExtra, finalDigitacao;
+	private ModelStateDAOP dao;
+	private ControllerEscolhaDigRendP controllerEscolhaDigRendP;
 	private ViewBaiaAmostradosP viewBaiaAmostrados;
 	private BaiaAmostradosVOP amostradoTemp;
 	private List<BaiaAmostradosVOP> amostrados, amostradosTemp;
 	private List<Component> order, orderAux;
 	private String aviario, dataAbate;
 	private AbateBOP bo;
+	private Border defaultBorder;
 
 	public ControllerBaiaAmostradosP(ControllerP c) {
 		controller = c;
@@ -53,6 +58,8 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 		this.idadeAbate = idadeAbate;
 		this.aviario = aviario;
 		this.abate = abate;
+		controllerEscolhaDigRendP = new ControllerEscolhaDigRendP(controller);
+		dao = new ModelStateDAOP(controller.getModel());
 		ordem = 1;
 		usarColunaExtra = false;
 		finalDigitacao = false;
@@ -60,7 +67,8 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 		amostrados = new ArrayList<>();
 		amostradosTemp = new ArrayList<>();
 		bo = new AbateBOP(controller);
-		
+		defaultBorder = viewBaiaAmostrados.getBaiaAmostradosJP().getBorder();
+
 		atualizaOrdemBaiaAmostrados();
 
 		viewBaiaAmostrados.getAviarioJFT().setText(aviario);
@@ -123,6 +131,7 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 
 				if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getBaia1JFT()) {
 					TextFormatter.formatStringJFT(src, text, 2);
+					viewBaiaAmostrados.getRegistrosLabel().setEnabled(true);
 					viewBaiaAmostrados.getBaia1JFT().setEnabled(false);
 					viewBaiaAmostrados.getBaia2JFT().setEnabled(true);
 					viewBaiaAmostrados.getBaia2JFT().requestFocus();
@@ -256,9 +265,8 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 							amostradosTemp = new ArrayList<>();
 							fluxoProblemaDigitacao();
 						} else {
-							finalDigitacao = bo.validaFinalDigitacao(amostradosTemp, usarColunaExtra);
+//							finalDigitacao = bo.validaFinalDigitacao(amostradosTemp, usarColunaExtra);
 							amostrados = amostradosTemp;
-							amostradosTemp = new ArrayList<>();
 							viewBaiaAmostrados.getControleJFT().setEnabled(true);
 							viewBaiaAmostrados.getControleJFT().grabFocus();
 						}
@@ -318,12 +326,9 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 						popularListaAmostrados();
 						String msg = bo.verificaAmostrados(amostradosTemp);
 						if (msg != null && msg.length() != 0) {
-							JOptionPane.showMessageDialog(viewBaiaAmostrados, "Problema(s):\n" + msg, "DIGEX - Erro",
-									JOptionPane.ERROR_MESSAGE);
 							amostradosTemp = new ArrayList<>();
 							fluxoProblemaDigitacao();
 						} else {
-							finalDigitacao = bo.validaFinalDigitacao(amostrados, usarColunaExtra);
 							amostrados = amostradosTemp;
 							amostradosTemp = new ArrayList<>();
 							viewBaiaAmostrados.getControleJFT().setEnabled(true);
@@ -332,11 +337,34 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 					}
 				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getControleJFT()) {
 					TextFormatter.formatStringJFT(src, text, 6);
-					viewBaiaAmostrados.getBaia1JFT().setEnabled(true);
-					viewBaiaAmostrados.getBaia1JFT().grabFocus();
-					calculaTotalControle();
-
-//					updateHist();
+					if (Integer.parseInt(viewBaiaAmostrados.getControleJFT().getText()) == calculaTotalControle()) {
+						finalDigitacao = bo.validaFinalDigitacao(amostradosTemp, usarColunaExtra);
+						if (finalDigitacao) {
+							viewBaiaAmostrados.getControleJFT().setEnabled(false);
+							amostrados.addAll(amostradosTemp);
+							updateHist();
+							int n = JOptionPane.showConfirmDialog(viewBaiaAmostrados, "Digitação Finalizada.",
+									"DIGEX - Finalizar", JOptionPane.OK_OPTION, JOptionPane.WARNING_MESSAGE);
+							if (n == 0) {
+								controllerEscolhaDigRendP.openWindow(
+										controller.getModel().getExperimentoVO().getInfoExp().getAviario(), abate,
+										idadeAbate, dataAbate);
+							}
+							controller.getModel().getExperimentoVO().getAbates().get(abate).setAbate(abate);
+							dao.saveModelState(true);
+						} else {
+							viewBaiaAmostrados.getControleJFT().setEnabled(false);
+							amostrados.addAll(amostradosTemp);
+							amostradosTemp = new ArrayList<>();
+							updateHist();
+							fluxoContinuarDigitacao();
+							viewBaiaAmostrados.getRegistrosLabel().setEnabled(true);
+							viewBaiaAmostrados.getRegistrosLabel().setText("Registros salvos com sucesso!!");
+							dao.saveModelState(true);
+						}
+					} else {
+						fluxoProblemaDigitacao();
+					}
 				}
 			}
 
@@ -395,7 +423,7 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 			order.add(viewBaiaAmostrados.getPeso34JFT());
 			order.add(viewBaiaAmostrados.getPeso35JFT());
 			order.add(viewBaiaAmostrados.getControleJFT());
-			
+
 			FocusOrderPolicy newPolicy = new FocusOrderPolicy(order);
 			viewBaiaAmostrados.setFocusTraversalPolicy(newPolicy);
 			listenerSetup(order);
@@ -427,7 +455,7 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 			order.add(viewBaiaAmostrados.getPeso24JFT());
 			order.add(viewBaiaAmostrados.getPeso25JFT());
 			order.add(viewBaiaAmostrados.getControleJFT());
-			
+
 			FocusOrderPolicy newPolicy = new FocusOrderPolicy(order);
 			viewBaiaAmostrados.setFocusTraversalPolicy(newPolicy);
 			listenerSetup(order);
@@ -441,21 +469,33 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 				controle += a.getNasa();
 			}
 			if (a.getNrBaia() != 0) {
-				controle += a.getNasa();
+				controle += a.getNrBaia();
 			}
 			if (a.getPeso() != 0) {
-				controle += a.getNasa();
+				controle += a.getPeso();
 			}
 		}
 		return controle;
 	}
 
 	private void fluxoProblemaDigitacao() {
+		viewBaiaAmostrados.getBaiaAmostradosJP().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
+		viewBaiaAmostrados.getBaia1JFT().setEnabled(true);
+		viewBaiaAmostrados.getBaia1JFT().grabFocus();
+	}
+
+	private void fluxoContinuarDigitacao() {
+		viewBaiaAmostrados.getBaiaAmostradosJP().setBorder(defaultBorder);
 		viewBaiaAmostrados.getBaia1JFT().setEnabled(true);
 		viewBaiaAmostrados.getBaia1JFT().grabFocus();
 	}
 
 	private void updateHist() {
+		viewBaiaAmostrados.getOrdemHist1Label().setText(viewBaiaAmostrados.getOrdem1JFT().getText());
+		viewBaiaAmostrados.getOrdemHist2Label().setText(viewBaiaAmostrados.getOrdem2JFT().getText());
+		viewBaiaAmostrados.getOrdemHist3Label().setText(viewBaiaAmostrados.getOrdem3JFT().getText());
+		viewBaiaAmostrados.getOrdemHist4Label().setText(viewBaiaAmostrados.getOrdem4JFT().getText());
+		viewBaiaAmostrados.getOrdemHist5Label().setText(viewBaiaAmostrados.getOrdem5JFT().getText());
 		viewBaiaAmostrados.getBaiaHist1Label().setText(viewBaiaAmostrados.getBaia1JFT().getText());
 		viewBaiaAmostrados.getBaiaHist2Label().setText(viewBaiaAmostrados.getBaia2JFT().getText());
 		viewBaiaAmostrados.getBaiaHist3Label().setText(viewBaiaAmostrados.getBaia3JFT().getText());
@@ -481,6 +521,31 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 		viewBaiaAmostrados.getPeso2Hist3Label().setText(viewBaiaAmostrados.getPeso23JFT().getText());
 		viewBaiaAmostrados.getPeso2Hist4Label().setText(viewBaiaAmostrados.getPeso24JFT().getText());
 		viewBaiaAmostrados.getPeso2Hist5Label().setText(viewBaiaAmostrados.getPeso25JFT().getText());
+		viewBaiaAmostrados.getBaia1JFT().setText("");
+		viewBaiaAmostrados.getBaia2JFT().setText("");
+		viewBaiaAmostrados.getBaia3JFT().setText("");
+		viewBaiaAmostrados.getBaia4JFT().setText("");
+		viewBaiaAmostrados.getBaia5JFT().setText("");
+		viewBaiaAmostrados.getNasa11JFT().setText("");
+		viewBaiaAmostrados.getNasa12JFT().setText("");
+		viewBaiaAmostrados.getNasa13JFT().setText("");
+		viewBaiaAmostrados.getNasa14JFT().setText("");
+		viewBaiaAmostrados.getNasa15JFT().setText("");
+		viewBaiaAmostrados.getPeso11JFT().setText("");
+		viewBaiaAmostrados.getPeso12JFT().setText("");
+		viewBaiaAmostrados.getPeso13JFT().setText("");
+		viewBaiaAmostrados.getPeso14JFT().setText("");
+		viewBaiaAmostrados.getPeso15JFT().setText("");
+		viewBaiaAmostrados.getNasa21JFT().setText("");
+		viewBaiaAmostrados.getNasa22JFT().setText("");
+		viewBaiaAmostrados.getNasa23JFT().setText("");
+		viewBaiaAmostrados.getNasa24JFT().setText("");
+		viewBaiaAmostrados.getNasa25JFT().setText("");
+		viewBaiaAmostrados.getPeso21JFT().setText("");
+		viewBaiaAmostrados.getPeso22JFT().setText("");
+		viewBaiaAmostrados.getPeso23JFT().setText("");
+		viewBaiaAmostrados.getPeso24JFT().setText("");
+		viewBaiaAmostrados.getPeso25JFT().setText("");
 		if (usarColunaExtra) {
 			viewBaiaAmostrados.getNasa3Hist1Label().setText(viewBaiaAmostrados.getNasa31JFT().getText());
 			viewBaiaAmostrados.getNasa3Hist2Label().setText(viewBaiaAmostrados.getNasa32JFT().getText());
@@ -492,8 +557,19 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 			viewBaiaAmostrados.getPeso3Hist3Label().setText(viewBaiaAmostrados.getPeso33JFT().getText());
 			viewBaiaAmostrados.getPeso3Hist4Label().setText(viewBaiaAmostrados.getPeso34JFT().getText());
 			viewBaiaAmostrados.getPeso3Hist5Label().setText(viewBaiaAmostrados.getPeso35JFT().getText());
+			viewBaiaAmostrados.getNasa31JFT().setText("");
+			viewBaiaAmostrados.getNasa32JFT().setText("");
+			viewBaiaAmostrados.getNasa33JFT().setText("");
+			viewBaiaAmostrados.getNasa34JFT().setText("");
+			viewBaiaAmostrados.getNasa35JFT().setText("");
+			viewBaiaAmostrados.getPeso31JFT().setText("");
+			viewBaiaAmostrados.getPeso32JFT().setText("");
+			viewBaiaAmostrados.getPeso33JFT().setText("");
+			viewBaiaAmostrados.getPeso34JFT().setText("");
+			viewBaiaAmostrados.getPeso35JFT().setText("");
 		}
-
+		viewBaiaAmostrados.getControleJFT().setText("000000");
+		atualizaOrdemBaiaAmostrados();
 	}
 
 	private void atualizaOrdemBaiaAmostrados() {
@@ -635,7 +711,6 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 			orderAux.add(viewBaiaAmostrados.getBaia5JFT());
 			orderAux.add(viewBaiaAmostrados.getNasa35JFT());
 			orderAux.add(viewBaiaAmostrados.getPeso35JFT());
-
 		}
 
 	}
