@@ -126,8 +126,8 @@ public class ControllerEscolhaDigRendP extends KeyAdapter implements FocusListen
 			viewEscolhaDigRend.getIdadeJFT().setText(String.valueOf(idadeAbate));
 		}
 		viewEscolhaDigRend.getQtdeDesLabel().setText(obsAmostrados + " amostrados digitados");
-		viewEscolhaDigRend.getQtdCamarasLabel().setText(obsAmostrados + " câmaras digitadas");
-		viewEscolhaDigRend.getQtdConesLabel().setText(obsAmostrados + " cones digitados");
+		viewEscolhaDigRend.getQtdCamarasLabel().setText(obsCamaras + " câmaras digitadas");
+		viewEscolhaDigRend.getQtdConesLabel().setText(obsCones + " cones digitados");
 	}
 
 	public void listenerSetup(List<Component> textFields) {

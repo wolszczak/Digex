@@ -84,17 +84,35 @@ public class ControllerEscolhaAbateP extends KeyAdapter {
 			controller.startEscolhaDigRend(1,0,
 					controller.getModel().getExperimentoVO().getInfoExp().getDataAbate().get(0));
 			System.out.println("Abate 1");
+			if(controller.getModel().getExperimentoVO().getAbates() == null) {
+				controller.getModel().getExperimentoVO().getAbates().add(new AbateVOP());
+				controller.getModel().getExperimentoVO().getAbates().get(0).setAbate(1);
+			}else {
+				controller.getModel().getExperimentoVO().getAbates().get(0).setAbate(1);
+			}
 			break;
 		case KeyEvent.VK_2:
 			viewEscolhaAbate.setVisible(false);
 			controller.startEscolhaDigRend(2,0,
 					controller.getModel().getExperimentoVO().getInfoExp().getDataAbate().get(1));
+			if(controller.getModel().getExperimentoVO().getAbates() == null) {
+				controller.getModel().getExperimentoVO().getAbates().add(new AbateVOP());
+				controller.getModel().getExperimentoVO().getAbates().get(0).setAbate(2);
+			}else {
+				controller.getModel().getExperimentoVO().getAbates().get(0).setAbate(2);
+			}
 			System.out.println("Abate 2");
 			break;
 		case KeyEvent.VK_3:
 			viewEscolhaAbate.setVisible(false);
 			controller.startEscolhaDigRend(3,0,
 					controller.getModel().getExperimentoVO().getInfoExp().getDataAbate().get(2));
+			if(controller.getModel().getExperimentoVO().getAbates() == null) {
+				controller.getModel().getExperimentoVO().getAbates().add(new AbateVOP());
+				controller.getModel().getExperimentoVO().getAbates().get(0).setAbate(3);
+			}else {
+				controller.getModel().getExperimentoVO().getAbates().get(0).setAbate(3);
+			}
 			System.out.println("Abate 3");
 			break;
 		case KeyEvent.VK_9:

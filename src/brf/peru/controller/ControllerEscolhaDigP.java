@@ -72,7 +72,7 @@ public class ControllerEscolhaDigP extends KeyAdapter {
 		}
 		viewEscolhaDig.getQtdeDesLabel().setText(
 				obsDese + "/" + controller.getModel().getExperimentoVO().getInfoExp().getNrBaias() + " registro(s)");
-		viewEscolhaDig.getQtdeRendLabel().setText(obsRend + " registros(s)");
+		viewEscolhaDig.getQtdeRendLabel().setText(obsRend + " registro(s)");
 	}
 
 	public void resumeWindow() {

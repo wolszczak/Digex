@@ -14,9 +14,13 @@ import java.util.List;
 import javax.swing.BorderFactory;
 import javax.swing.JCheckBox;
 import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.border.Border;
+
+import com.sun.crypto.provider.CipherWithWrappingSpi;
+import com.sun.org.apache.bcel.internal.generic.NEWARRAY;
 
 import brf.frango.model.bo.EscolhaBalBOF;
 import brf.peru.model.bo.AbateBOP;
@@ -34,7 +38,8 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 	private ControllerEscolhaDigRendP controllerEscolhaDigRendP;
 	private ViewBaiaAmostradosP viewBaiaAmostrados;
 	private BaiaAmostradosVOP amostradoTemp;
-	private List<BaiaAmostradosVOP> amostrados, amostradosTemp;
+	private List<JLabel> labels, labelsOrdem;
+	private List<BaiaAmostradosVOP> amostrados;
 	private List<Component> order, orderAux;
 	private String aviario, dataAbate;
 	private AbateBOP bo;
@@ -60,23 +65,23 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 		this.abate = abate;
 		controllerEscolhaDigRendP = new ControllerEscolhaDigRendP(controller);
 		dao = new ModelStateDAOP(controller.getModel());
-		ordem = 1;
+		ordem = 0;
 		usarColunaExtra = false;
 		finalDigitacao = false;
 		amostradoTemp = new BaiaAmostradosVOP();
 		amostrados = new ArrayList<>();
-		amostradosTemp = new ArrayList<>();
 		bo = new AbateBOP(controller);
 		defaultBorder = viewBaiaAmostrados.getBaiaAmostradosJP().getBorder();
 
-		atualizaOrdemBaiaAmostrados();
-
+		viewBaiaAmostrados.getControleJFT().setText("000000");
 		viewBaiaAmostrados.getAviarioJFT().setText(aviario);
 		viewBaiaAmostrados.getAbateJFT().setText(String.valueOf(abate));
 		viewBaiaAmostrados.getIdadeJFT().setText(String.valueOf(idadeAbate));
 		viewBaiaAmostrados.getDataAbateJFT().setText(dataAbate);
 		viewBaiaAmostrados.getCheckColunaExtra().setEnabled(true);
 		viewBaiaAmostrados.getCheckColunaExtra().grabFocus();
+		loadHist();
+		atualizaOrdemBaiaAmostrados();
 	}
 
 	public void listenerSetup(List<Component> textFields) {
@@ -130,8 +135,9 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 				text = src.getText();
 
 				if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getBaia1JFT()) {
+					viewBaiaAmostrados.getOrdemHist1Label().setText(String.valueOf(1));
 					TextFormatter.formatStringJFT(src, text, 2);
-					viewBaiaAmostrados.getRegistrosLabel().setEnabled(true);
+					viewBaiaAmostrados.getRegistrosLabel().setVisible(false);
 					viewBaiaAmostrados.getBaia1JFT().setEnabled(false);
 					viewBaiaAmostrados.getBaia2JFT().setEnabled(true);
 					viewBaiaAmostrados.getBaia2JFT().requestFocus();
@@ -258,15 +264,14 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 						viewBaiaAmostrados.getNasa31JFT().requestFocus();
 					} else {
 						popularListaAmostrados();
-						String msg = bo.verificaAmostrados(amostradosTemp);
+						String msg = bo.verificaAmostrados(amostrados);
 						if (msg != null && msg.length() != 0) {
 							JOptionPane.showMessageDialog(viewBaiaAmostrados, "Problema(s):\n" + msg, "DIGEX - Erro",
 									JOptionPane.ERROR_MESSAGE);
-							amostradosTemp = new ArrayList<>();
+							amostrados = new ArrayList<>();
 							fluxoProblemaDigitacao();
 						} else {
 //							finalDigitacao = bo.validaFinalDigitacao(amostradosTemp, usarColunaExtra);
-							amostrados = amostradosTemp;
 							viewBaiaAmostrados.getControleJFT().setEnabled(true);
 							viewBaiaAmostrados.getControleJFT().grabFocus();
 						}
@@ -324,13 +329,11 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 						viewBaiaAmostrados.getNasa31JFT().requestFocus();
 					} else {
 						popularListaAmostrados();
-						String msg = bo.verificaAmostrados(amostradosTemp);
+						String msg = bo.verificaAmostrados(amostrados);
 						if (msg != null && msg.length() != 0) {
-							amostradosTemp = new ArrayList<>();
+							amostrados = new ArrayList<>();
 							fluxoProblemaDigitacao();
 						} else {
-							amostrados = amostradosTemp;
-							amostradosTemp = new ArrayList<>();
 							viewBaiaAmostrados.getControleJFT().setEnabled(true);
 							viewBaiaAmostrados.getControleJFT().grabFocus();
 						}
@@ -338,10 +341,9 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getControleJFT()) {
 					TextFormatter.formatStringJFT(src, text, 6);
 					if (Integer.parseInt(viewBaiaAmostrados.getControleJFT().getText()) == calculaTotalControle()) {
-						finalDigitacao = bo.validaFinalDigitacao(amostradosTemp, usarColunaExtra);
+						finalDigitacao = bo.validaFinalDigitacao(amostrados, usarColunaExtra);
 						if (finalDigitacao) {
 							viewBaiaAmostrados.getControleJFT().setEnabled(false);
-							amostrados.addAll(amostradosTemp);
 							updateHist();
 							int n = JOptionPane.showConfirmDialog(viewBaiaAmostrados, "Digitação Finalizada.",
 									"DIGEX - Finalizar", JOptionPane.OK_OPTION, JOptionPane.WARNING_MESSAGE);
@@ -350,20 +352,22 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 										controller.getModel().getExperimentoVO().getInfoExp().getAviario(), abate,
 										idadeAbate, dataAbate);
 							}
-							controller.getModel().getExperimentoVO().getAbates().get(abate).setAbate(abate);
+							addAmostradosExperimento();
+							amostrados = new ArrayList<>();
 							dao.saveModelState(true);
+							viewBaiaAmostrados.getRegistrosLabel().setVisible(true);
 						} else {
 							viewBaiaAmostrados.getControleJFT().setEnabled(false);
-							amostrados.addAll(amostradosTemp);
-							amostradosTemp = new ArrayList<>();
+							addAmostradosExperimento();
 							updateHist();
 							fluxoContinuarDigitacao();
-							viewBaiaAmostrados.getRegistrosLabel().setEnabled(true);
-							viewBaiaAmostrados.getRegistrosLabel().setText("Registros salvos com sucesso!!");
+							amostrados = new ArrayList<>();
+							viewBaiaAmostrados.getRegistrosLabel().setVisible(true);
 							dao.saveModelState(true);
 						}
 					} else {
 						fluxoProblemaDigitacao();
+						amostrados = new ArrayList<>();
 					}
 				}
 			}
@@ -375,12 +379,21 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 	@Override
 	public void keyPressed(KeyEvent e) {
 		Object src = e.getSource();
-		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(viewBaiaAmostrados.getBaia1JFT())) {
 			Component prev = viewBaiaAmostrados.getFocusTraversalPolicy().getComponentBefore(viewBaiaAmostrados,
 					(JFormattedTextField) src);
 			((JFormattedTextField) src).setEnabled(false);
 			prev.setEnabled(true);
 			((JFormattedTextField) prev).grabFocus();
+		}
+	}
+
+	private void addAmostradosExperimento() {
+		if (controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getBaiaAmostrados() == null) {
+			controller.getModel().getExperimentoVO().getAbates().get(abate - 1).setBaiaAmostrados(new ArrayList<>());
+			controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getBaiaAmostrados().addAll(amostrados);
+		} else {
+			controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getBaiaAmostrados().addAll(amostrados);
 		}
 	}
 
@@ -581,8 +594,8 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 		ordens.add(viewBaiaAmostrados.getOrdem5JFT());
 
 		for (JFormattedTextField o : ordens) {
-			o.setText("" + String.valueOf(ordem));
 			ordem++;
+			o.setText("" + String.valueOf(ordem));
 		}
 	}
 
@@ -614,7 +627,7 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 				JFormattedTextField peso = (JFormattedTextField) orderAux.get(0);
 				amostradoTemp.setPeso(Integer.parseInt(peso.getText()));
 				orderAux.remove(0);
-				amostradosTemp.add(amostradoTemp);
+				amostrados.add(amostradoTemp);
 				amostradoTemp = new BaiaAmostradosVOP();
 				count = 0;
 			}
@@ -711,6 +724,175 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 			orderAux.add(viewBaiaAmostrados.getBaia5JFT());
 			orderAux.add(viewBaiaAmostrados.getNasa35JFT());
 			orderAux.add(viewBaiaAmostrados.getPeso35JFT());
+		}
+	}
+
+	private void loadHist() {
+		if (!controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getBaiaAmostrados().isEmpty()) {
+			List<BaiaAmostradosVOP> amostradosHist = new ArrayList<>();
+			amostradosHist
+					.addAll(controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getBaiaAmostrados());
+			if (controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getBaiaAmostrados().get(2)
+					.getNrBaia() == controller.getModel().getExperimentoVO().getAbates().get(abate - 1)
+							.getBaiaAmostrados().get(0).getNrBaia()) {
+				// UTILIZA 3 COLUNAS
+				int countHist = 0;
+				listarOrdemHist(3);
+				ordem = (amostradosHist.size() / 2) - 4;
+				for (int i = 0; i < 5; i++) {
+					labelsOrdem.get(i).setText(String.valueOf(ordem));
+					if (i < 4) {
+						ordem++;
+					}
+				}
+				for (JLabel label : labels) {
+					if (countHist == 0) {
+						label.setText(String.valueOf(amostradosHist.get(amostradosHist.size() - 1).getPeso()));
+						countHist++;
+					} else if (countHist == 1) {
+						label.setText(String.valueOf(amostradosHist.get(amostradosHist.size() - 1).getNasa()));
+						countHist++;
+					} else if (countHist == 2) {
+						label.setText(String.valueOf(amostradosHist.get(amostradosHist.size() - 2).getPeso()));
+						countHist++;
+					} else if (countHist == 3) {
+						label.setText(String.valueOf(amostradosHist.get(amostradosHist.size() - 2).getNasa()));
+						countHist++;
+					} else if (countHist == 4) {
+						label.setText(String.valueOf(amostradosHist.get(amostradosHist.size() - 3).getPeso()));
+						countHist++;
+					} else if (countHist == 5) {
+						label.setText(String.valueOf(amostradosHist.get(amostradosHist.size() - 3).getNasa()));
+						countHist++;
+					} else {
+						label.setText(String.valueOf(amostradosHist.get(amostradosHist.size() - 3).getNrBaia()));
+						countHist = 0;
+						amostradosHist.remove(amostradosHist.size() - 3);
+						amostradosHist.remove(amostradosHist.size() - 2);
+						amostradosHist.remove(amostradosHist.size() - 1);
+					}
+				}
+			} else {
+				// UTILIZA 2 COLUNAS
+				int countHist = 0;
+				listarOrdemHist(2);
+				ordem = (amostradosHist.size() / 2) - 4;
+				for (int i = 0; i < 5; i++) {
+					labelsOrdem.get(i).setText(String.valueOf(ordem));
+					if (i < 4) {
+						ordem++;
+					}
+				}
+				for (JLabel label : labels) {
+					if (countHist == 0) {
+						label.setText(String.valueOf(amostradosHist.get(amostradosHist.size() - 1).getPeso()));
+						countHist++;
+					} else if (countHist == 1) {
+						label.setText(String.valueOf(amostradosHist.get(amostradosHist.size() - 1).getNasa()));
+						countHist++;
+					} else if (countHist == 2) {
+						label.setText(String.valueOf(amostradosHist.get(amostradosHist.size() - 2).getPeso()));
+						countHist++;
+					} else if (countHist == 3) {
+						label.setText(String.valueOf(amostradosHist.get(amostradosHist.size() - 2).getNasa()));
+						countHist++;
+					} else {
+						label.setText(String.valueOf(amostradosHist.get(amostradosHist.size() - 2).getNrBaia()));
+						countHist = 0;
+						amostradosHist.remove(amostradosHist.size() - 2);
+						amostradosHist.remove(amostradosHist.size() - 1);
+					}
+				}
+			}
+		}
+	}
+
+	private void listarOrdemHist(int size) {
+		labels = new ArrayList<>();
+		labelsOrdem = new ArrayList<>();
+
+		labelsOrdem.add(viewBaiaAmostrados.getOrdemHist1Label());
+		labelsOrdem.add(viewBaiaAmostrados.getOrdemHist2Label());
+		labelsOrdem.add(viewBaiaAmostrados.getOrdemHist3Label());
+		labelsOrdem.add(viewBaiaAmostrados.getOrdemHist4Label());
+		labelsOrdem.add(viewBaiaAmostrados.getOrdemHist5Label());
+
+		if (size == 2) {
+			labels.add(viewBaiaAmostrados.getPeso2Hist5Label());
+			labels.add(viewBaiaAmostrados.getNasa2Hist5Label());
+			labels.add(viewBaiaAmostrados.getPeso1Hist5Label());
+			labels.add(viewBaiaAmostrados.getNasa1Hist5Label());
+			labels.add(viewBaiaAmostrados.getBaiaHist5Label());
+
+			labels.add(viewBaiaAmostrados.getPeso2Hist4Label());
+			labels.add(viewBaiaAmostrados.getNasa2Hist4Label());
+			labels.add(viewBaiaAmostrados.getPeso1Hist4Label());
+			labels.add(viewBaiaAmostrados.getNasa1Hist4Label());
+			labels.add(viewBaiaAmostrados.getBaiaHist4Label());
+
+			labels.add(viewBaiaAmostrados.getPeso2Hist3Label());
+			labels.add(viewBaiaAmostrados.getNasa2Hist3Label());
+			labels.add(viewBaiaAmostrados.getPeso1Hist3Label());
+			labels.add(viewBaiaAmostrados.getNasa1Hist3Label());
+			labels.add(viewBaiaAmostrados.getBaiaHist3Label());
+			
+			labels.add(viewBaiaAmostrados.getPeso2Hist2Label());
+			labels.add(viewBaiaAmostrados.getNasa2Hist2Label());
+			labels.add(viewBaiaAmostrados.getPeso1Hist2Label());
+			labels.add(viewBaiaAmostrados.getNasa1Hist2Label());
+			labels.add(viewBaiaAmostrados.getBaiaHist2Label());
+
+			labels.add(viewBaiaAmostrados.getPeso2Hist1Label());
+			labels.add(viewBaiaAmostrados.getNasa2Hist1Label());
+			labels.add(viewBaiaAmostrados.getPeso1Hist1Label());
+			labels.add(viewBaiaAmostrados.getNasa1Hist1Label());
+			labels.add(viewBaiaAmostrados.getBaiaHist1Label());
+		} else {
+			labels.add(viewBaiaAmostrados.getPeso3Hist5Label());
+			labels.add(viewBaiaAmostrados.getNasa3Hist5Label());
+			labels.add(viewBaiaAmostrados.getPeso2Hist5Label());
+			labels.add(viewBaiaAmostrados.getNasa2Hist5Label());
+			labels.add(viewBaiaAmostrados.getPeso1Hist5Label());
+			labels.add(viewBaiaAmostrados.getNasa1Hist5Label());
+			labels.add(viewBaiaAmostrados.getBaiaHist5Label());
+
+			labels.add(viewBaiaAmostrados.getPeso3Hist4Label());
+			labels.add(viewBaiaAmostrados.getNasa3Hist4Label());
+			labels.add(viewBaiaAmostrados.getPeso2Hist4Label());
+			labels.add(viewBaiaAmostrados.getNasa2Hist4Label());
+			labels.add(viewBaiaAmostrados.getPeso1Hist4Label());
+			labels.add(viewBaiaAmostrados.getNasa1Hist4Label());
+			labels.add(viewBaiaAmostrados.getBaiaHist4Label());
+
+			labels.add(viewBaiaAmostrados.getPeso3Hist3Label());
+			labels.add(viewBaiaAmostrados.getNasa3Hist3Label());
+			labels.add(viewBaiaAmostrados.getPeso2Hist3Label());
+			labels.add(viewBaiaAmostrados.getNasa2Hist3Label());
+			labels.add(viewBaiaAmostrados.getPeso1Hist3Label());
+			labels.add(viewBaiaAmostrados.getNasa1Hist3Label());
+			labels.add(viewBaiaAmostrados.getBaiaHist3Label());
+
+			labels.add(viewBaiaAmostrados.getPeso3Hist2Label());
+			labels.add(viewBaiaAmostrados.getNasa3Hist2Label());
+			labels.add(viewBaiaAmostrados.getPeso2Hist2Label());
+			labels.add(viewBaiaAmostrados.getNasa2Hist2Label());
+			labels.add(viewBaiaAmostrados.getPeso1Hist2Label());
+			labels.add(viewBaiaAmostrados.getNasa1Hist2Label());
+			labels.add(viewBaiaAmostrados.getBaiaHist2Label());
+
+			labels.add(viewBaiaAmostrados.getPeso3Hist1Label());
+			labels.add(viewBaiaAmostrados.getNasa3Hist1Label());
+			labels.add(viewBaiaAmostrados.getPeso2Hist1Label());
+			labels.add(viewBaiaAmostrados.getNasa2Hist1Label());
+			labels.add(viewBaiaAmostrados.getPeso1Hist1Label());
+			labels.add(viewBaiaAmostrados.getNasa1Hist1Label());
+			labels.add(viewBaiaAmostrados.getBaiaHist1Label());
+
+			labels.add(viewBaiaAmostrados.getBaiaHist5Label());
+			labels.add(viewBaiaAmostrados.getBaiaHist4Label());
+			labels.add(viewBaiaAmostrados.getBaiaHist3Label());
+			labels.add(viewBaiaAmostrados.getBaiaHist2Label());
+			labels.add(viewBaiaAmostrados.getBaiaHist1Label());
 		}
 
 	}
