@@ -190,7 +190,7 @@ public class ControllerEscolhaDigRendP extends KeyAdapter implements FocusListen
 				break;
 			case KeyEvent.VK_2:
 				viewEscolhaDigRend.setVisible(false);
-				controller.startCamaras();
+				controller.startCamaras(Integer.parseInt(aviario), abate, idadeAbate, dataAbate);
 				System.out.println("Camaras");
 				break;
 			case KeyEvent.VK_3:
@@ -218,12 +218,12 @@ public class ControllerEscolhaDigRendP extends KeyAdapter implements FocusListen
 		}
 		if (e.getKeyChar() == KeyEvent.VK_ESCAPE) {
 			int option = JOptionPane.showConfirmDialog(viewEscolhaDigRend,
-					"Deseja realmente voltar para tela de escolha de experimento?", "DIGEX - Voltar",
+					"Deseja realmente voltar para tela de escolha de abates?", "DIGEX - Voltar",
 					JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 			if (option == 0) {
 				viewEscolhaDigRend.setVisible(false);
-				ControllerEscolhaDigP ce = new ControllerEscolhaDigP(controller);
-				ce.openWindow(null);
+				ControllerEscolhaAbateP ceab = new ControllerEscolhaAbateP(controller);
+				ceab.openWindow();
 				System.out.println("Voltar");
 			}
 		}

@@ -13,6 +13,7 @@ public class ControllerP {
     private ControllerEscolhaDigRendP ctrlEscolhaDigRend;
     private ControllerEscolhaAbateP ctrlEscolhaAbate;
     private ControllerBaiaAmostradosP ctrlBaiaAmostrados;
+    private ControllerCamaraP ctrlCamara;
     private final String idDigitador;
     
     public ControllerP(ModelP mp, String idDigitador) {
@@ -54,7 +55,7 @@ public class ControllerP {
     
     public void startEscolhaAbate(List<Integer> idades) {
         ctrlEscolhaAbate = new ControllerEscolhaAbateP(this);
-        ctrlEscolhaAbate.openWindow(idades);
+        ctrlEscolhaAbate.openWindow();
     }
     
     public void resumeEscolhaAbate() {
@@ -66,8 +67,9 @@ public class ControllerP {
     	ctrlBaiaAmostrados.openWindow(modelP.getExperimentoVO().getInfoExp().getAviario(), abate, idadeAbate, dataAbate);
     }
     
-    public void startCamaras() {
-    	
+    public void startCamaras(Integer aviario, Integer abate,Integer idadeAbate,String dataAbate) {
+    	ctrlCamara = new ControllerCamaraP(this);
+    	ctrlCamara.openWindow(modelP.getExperimentoVO().getInfoExp().getAviario(), abate, idadeAbate, dataAbate);
     }
     
     public void startCones() {

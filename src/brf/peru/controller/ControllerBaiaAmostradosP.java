@@ -19,10 +19,6 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.border.Border;
 
-import com.sun.crypto.provider.CipherWithWrappingSpi;
-import com.sun.org.apache.bcel.internal.generic.NEWARRAY;
-
-import brf.frango.model.bo.EscolhaBalBOF;
 import brf.peru.model.bo.AbateBOP;
 import brf.peru.model.dao.ModelStateDAOP;
 import brf.peru.model.vo.BaiaAmostradosVOP;
@@ -78,10 +74,18 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 		viewBaiaAmostrados.getAbateJFT().setText(String.valueOf(abate));
 		viewBaiaAmostrados.getIdadeJFT().setText(String.valueOf(idadeAbate));
 		viewBaiaAmostrados.getDataAbateJFT().setText(dataAbate);
-		viewBaiaAmostrados.getCheckColunaExtra().setEnabled(true);
-		viewBaiaAmostrados.getCheckColunaExtra().grabFocus();
 		loadHist();
 		atualizaOrdemBaiaAmostrados();
+		if (ordem > 5) {
+			viewBaiaAmostrados.getCheckColunaExtra().setEnabled(false);
+			viewBaiaAmostrados.getBaia1JFT().setEnabled(true);
+			viewBaiaAmostrados.getBaia1JFT().grabFocus();
+			criarOrdemComponentes();
+			criaListaOrdemAux();
+		} else {
+			viewBaiaAmostrados.getCheckColunaExtra().setEnabled(true);
+			viewBaiaAmostrados.getCheckColunaExtra().grabFocus();
+		}
 	}
 
 	public void listenerSetup(List<Component> textFields) {
@@ -345,17 +349,16 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 						if (finalDigitacao) {
 							viewBaiaAmostrados.getControleJFT().setEnabled(false);
 							updateHist();
-							int n = JOptionPane.showConfirmDialog(viewBaiaAmostrados, "Digitação Finalizada.",
-									"DIGEX - Finalizar", JOptionPane.OK_OPTION, JOptionPane.WARNING_MESSAGE);
-							if (n == 0) {
-								controllerEscolhaDigRendP.openWindow(
-										controller.getModel().getExperimentoVO().getInfoExp().getAviario(), abate,
-										idadeAbate, dataAbate);
-							}
 							addAmostradosExperimento();
 							amostrados = new ArrayList<>();
-							dao.saveModelState(true);
+							dao.saveModelState(false);
 							viewBaiaAmostrados.getRegistrosLabel().setVisible(true);
+							JOptionPane.showMessageDialog(viewBaiaAmostrados, "Digitação Finalizada.",
+									"DIGEX - Finalizar", JOptionPane.INFORMATION_MESSAGE);
+							controllerEscolhaDigRendP.openWindow(
+									controller.getModel().getExperimentoVO().getInfoExp().getAviario(), abate,
+									idadeAbate, dataAbate);
+							viewBaiaAmostrados.setVisible(false);
 						} else {
 							viewBaiaAmostrados.getControleJFT().setEnabled(false);
 							addAmostradosExperimento();
@@ -363,7 +366,7 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 							fluxoContinuarDigitacao();
 							amostrados = new ArrayList<>();
 							viewBaiaAmostrados.getRegistrosLabel().setVisible(true);
-							dao.saveModelState(true);
+							dao.saveModelState(false);
 						}
 					} else {
 						fluxoProblemaDigitacao();
@@ -391,9 +394,17 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 	private void addAmostradosExperimento() {
 		if (controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getBaiaAmostrados() == null) {
 			controller.getModel().getExperimentoVO().getAbates().get(abate - 1).setBaiaAmostrados(new ArrayList<>());
-			controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getBaiaAmostrados().addAll(amostrados);
+			for (BaiaAmostradosVOP a : amostrados) {
+				if (a.getNasa() != 0 && a.getNrBaia() != 0 && a.getPeso() != 0) {
+					controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getBaiaAmostrados().add(a);
+				}
+			}
 		} else {
-			controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getBaiaAmostrados().addAll(amostrados);
+			for (BaiaAmostradosVOP a : amostrados) {
+				if (a.getNasa() != 0 && a.getNrBaia() != 0 && a.getPeso() != 0) {
+					controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getBaiaAmostrados().add(a);
+				}
+			}
 		}
 	}
 
@@ -478,13 +489,12 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 	private Integer calculaTotalControle() {
 		int controle = 0;
 		for (BaiaAmostradosVOP a : amostrados) {
-			if (a.getNasa() != 0) {
-				controle += a.getNasa();
-			}
-			if (a.getNrBaia() != 0) {
+			if (a.getNasa() % 2 != 0) {
 				controle += a.getNrBaia();
-			}
-			if (a.getPeso() != 0) {
+				controle += a.getNasa();
+				controle += a.getPeso();
+			} else {
+				controle += a.getNasa();
 				controle += a.getPeso();
 			}
 		}
@@ -835,7 +845,7 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 			labels.add(viewBaiaAmostrados.getPeso1Hist3Label());
 			labels.add(viewBaiaAmostrados.getNasa1Hist3Label());
 			labels.add(viewBaiaAmostrados.getBaiaHist3Label());
-			
+
 			labels.add(viewBaiaAmostrados.getPeso2Hist2Label());
 			labels.add(viewBaiaAmostrados.getNasa2Hist2Label());
 			labels.add(viewBaiaAmostrados.getPeso1Hist2Label());
