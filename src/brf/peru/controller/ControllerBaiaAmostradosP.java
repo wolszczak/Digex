@@ -139,7 +139,6 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 				text = src.getText();
 
 				if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getBaia1JFT()) {
-					viewBaiaAmostrados.getOrdemHist1Label().setText(String.valueOf(1));
 					TextFormatter.formatStringJFT(src, text, 2);
 					viewBaiaAmostrados.getRegistrosLabel().setVisible(false);
 					viewBaiaAmostrados.getBaia1JFT().setEnabled(false);
@@ -191,27 +190,27 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 					viewBaiaAmostrados.getPeso11JFT().setEnabled(true);
 					viewBaiaAmostrados.getPeso11JFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso11JFT()) {
-					TextFormatter.formatStringJFT(src, text, 3);
+					TextFormatter.formatStringJFT(src, text, 5);
 					viewBaiaAmostrados.getPeso11JFT().setEnabled(false);
 					viewBaiaAmostrados.getPeso12JFT().setEnabled(true);
 					viewBaiaAmostrados.getPeso12JFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso12JFT()) {
-					TextFormatter.formatStringJFT(src, text, 3);
+					TextFormatter.formatStringJFT(src, text, 5);
 					viewBaiaAmostrados.getPeso12JFT().setEnabled(false);
 					viewBaiaAmostrados.getPeso13JFT().setEnabled(true);
 					viewBaiaAmostrados.getPeso13JFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso13JFT()) {
-					TextFormatter.formatStringJFT(src, text, 3);
+					TextFormatter.formatStringJFT(src, text, 5);
 					viewBaiaAmostrados.getPeso13JFT().setEnabled(false);
 					viewBaiaAmostrados.getPeso14JFT().setEnabled(true);
 					viewBaiaAmostrados.getPeso14JFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso14JFT()) {
-					TextFormatter.formatStringJFT(src, text, 3);
+					TextFormatter.formatStringJFT(src, text, 5);
 					viewBaiaAmostrados.getPeso14JFT().setEnabled(false);
 					viewBaiaAmostrados.getPeso15JFT().setEnabled(true);
 					viewBaiaAmostrados.getPeso15JFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso15JFT()) {
-					TextFormatter.formatStringJFT(src, text, 3);
+					TextFormatter.formatStringJFT(src, text, 5);
 					viewBaiaAmostrados.getPeso15JFT().setEnabled(false);
 					viewBaiaAmostrados.getNasa21JFT().setEnabled(true);
 					viewBaiaAmostrados.getNasa21JFT().requestFocus();
@@ -241,27 +240,27 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 					viewBaiaAmostrados.getPeso21JFT().setEnabled(true);
 					viewBaiaAmostrados.getPeso21JFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso21JFT()) {
-					TextFormatter.formatStringJFT(src, text, 3);
+					TextFormatter.formatStringJFT(src, text, 5);
 					viewBaiaAmostrados.getPeso21JFT().setEnabled(false);
 					viewBaiaAmostrados.getPeso22JFT().setEnabled(true);
 					viewBaiaAmostrados.getPeso22JFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso22JFT()) {
-					TextFormatter.formatStringJFT(src, text, 3);
+					TextFormatter.formatStringJFT(src, text, 5);
 					viewBaiaAmostrados.getPeso22JFT().setEnabled(false);
 					viewBaiaAmostrados.getPeso23JFT().setEnabled(true);
 					viewBaiaAmostrados.getPeso23JFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso23JFT()) {
-					TextFormatter.formatStringJFT(src, text, 3);
+					TextFormatter.formatStringJFT(src, text, 5);
 					viewBaiaAmostrados.getPeso23JFT().setEnabled(false);
 					viewBaiaAmostrados.getPeso24JFT().setEnabled(true);
 					viewBaiaAmostrados.getPeso24JFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso24JFT()) {
-					TextFormatter.formatStringJFT(src, text, 3);
+					TextFormatter.formatStringJFT(src, text, 5);
 					viewBaiaAmostrados.getPeso24JFT().setEnabled(false);
 					viewBaiaAmostrados.getPeso25JFT().setEnabled(true);
 					viewBaiaAmostrados.getPeso25JFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso25JFT()) {
-					TextFormatter.formatStringJFT(src, text, 3);
+					TextFormatter.formatStringJFT(src, text, 5);
 					viewBaiaAmostrados.getPeso25JFT().setEnabled(false);
 					if (usarColunaExtra) {
 						viewBaiaAmostrados.getNasa31JFT().setEnabled(true);
@@ -306,27 +305,27 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 					viewBaiaAmostrados.getPeso31JFT().setEnabled(true);
 					viewBaiaAmostrados.getPeso31JFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso31JFT()) {
-					TextFormatter.formatStringJFT(src, text, 3);
+					TextFormatter.formatStringJFT(src, text, 5);
 					viewBaiaAmostrados.getPeso31JFT().setEnabled(false);
 					viewBaiaAmostrados.getPeso32JFT().setEnabled(true);
 					viewBaiaAmostrados.getPeso32JFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso32JFT()) {
-					TextFormatter.formatStringJFT(src, text, 3);
+					TextFormatter.formatStringJFT(src, text, 5);
 					viewBaiaAmostrados.getPeso32JFT().setEnabled(false);
 					viewBaiaAmostrados.getPeso33JFT().setEnabled(true);
 					viewBaiaAmostrados.getPeso33JFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso33JFT()) {
-					TextFormatter.formatStringJFT(src, text, 3);
+					TextFormatter.formatStringJFT(src, text, 5);
 					viewBaiaAmostrados.getPeso33JFT().setEnabled(false);
 					viewBaiaAmostrados.getPeso34JFT().setEnabled(true);
 					viewBaiaAmostrados.getPeso34JFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso34JFT()) {
-					TextFormatter.formatStringJFT(src, text, 3);
+					TextFormatter.formatStringJFT(src, text, 5);
 					viewBaiaAmostrados.getPeso34JFT().setEnabled(false);
 					viewBaiaAmostrados.getPeso35JFT().setEnabled(true);
 					viewBaiaAmostrados.getPeso35JFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso35JFT()) {
-					TextFormatter.formatStringJFT(src, text, 3);
+					TextFormatter.formatStringJFT(src, text, 5);
 					viewBaiaAmostrados.getPeso35JFT().setEnabled(false);
 					if (usarColunaExtra) {
 						viewBaiaAmostrados.getNasa31JFT().setEnabled(true);

@@ -366,7 +366,7 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
 
 		try {
 			peso11JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (ParseException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -386,7 +386,7 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
 
 		try {
 			peso21JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (ParseException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -587,7 +587,7 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
 
 		try {
 			peso12JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
@@ -596,7 +596,7 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
 
 		try {
 			peso13JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
@@ -605,7 +605,7 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
 
 		try {
 			peso14JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
@@ -614,7 +614,7 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
 
 		try {
 			peso15JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
@@ -659,7 +659,7 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
 
 		try {
 			peso22JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
@@ -668,7 +668,7 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
 
 		try {
 			peso23JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
@@ -677,7 +677,7 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
 
 		try {
 			peso24JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
@@ -686,7 +686,7 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
 
 		try {
 			peso25JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
@@ -695,7 +695,7 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
 
 		try {
 			peso35JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
@@ -713,7 +713,7 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
 
 		try {
 			peso34JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
@@ -731,7 +731,7 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
 
 		try {
 			peso33JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
@@ -749,7 +749,7 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
 
 		try {
 			peso32JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
@@ -767,7 +767,7 @@ public class ViewBaiaAmostradosP extends javax.swing.JFrame {
 
 		try {
 			peso31JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
