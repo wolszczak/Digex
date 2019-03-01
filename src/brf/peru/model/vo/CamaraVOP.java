@@ -19,6 +19,10 @@ public class CamaraVOP implements Serializable {
 		this.escCarcaca = escCarcaca;
 	}
 
+	public CamaraVOP() {
+		
+	}
+	
 	public int getNasa() {
 		return nasa;
 	}
