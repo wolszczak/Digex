@@ -59,6 +59,11 @@ public class ControllerCamaraP extends KeyAdapter implements FocusListener {
 		atualizaOrdem();
 		criarOrdemComponentes();
 		if (ordem > 5) {
+			viewCamara.getCamaraJFT()
+					.setText(String.valueOf(controller
+							.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().get(controller
+									.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().size() - 1)
+							.getCamara()));
 			viewCamara.getCamaraJFT().setEnabled(false);
 			viewCamara.getNumero1JFT().setEnabled(true);
 			viewCamara.getNumero1JFT().grabFocus();
@@ -206,7 +211,7 @@ public class ControllerCamaraP extends KeyAdapter implements FocusListener {
 				if (Integer.parseInt(viewCamara.getControleJFT().getText()) == calculaTotalControle()) {
 					viewCamara.getCamaraJP().setBorder(defaultBorder);
 					camaras.addAll(camarasTemp);
-					controller.getModel().getExperimentoVO().getAbates().get(abate-1).getCamaras().addAll(camaras);
+					controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().addAll(camaras);
 					dao.saveModelState(false);
 					camarasTemp = new ArrayList<>();
 					atualizaHist();
@@ -396,36 +401,36 @@ public class ControllerCamaraP extends KeyAdapter implements FocusListener {
 		if (controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().get(abate - 1) == null) {
 			controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().add(new CamaraVOP());
 		} else {
-			viewCamara.getNumHist1Label().setText(String.valueOf(controller.getModel().getExperimentoVO().getAbates()
+			viewCamara.getNumHist5Label().setText(String.valueOf(controller.getModel().getExperimentoVO().getAbates()
 					.get(abate - 1).getCamaras()
 					.get(controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().size() - 1)
 					.getNasa()));
-			viewCamara.getpCarcacaHist1Label().setText(String.valueOf(controller.getModel().getExperimentoVO()
+			viewCamara.getpCarcacaHist5Label().setText(String.valueOf(controller.getModel().getExperimentoVO()
 					.getAbates().get(abate - 1).getCamaras()
 					.get(controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().size() - 1)
 					.getpCarcaca()));
-			viewCamara.getEscGorduraHist1Label().setText(String.valueOf(controller.getModel().getExperimentoVO()
+			viewCamara.getEscGorduraHist5Label().setText(String.valueOf(controller.getModel().getExperimentoVO()
 					.getAbates().get(abate - 1).getCamaras()
 					.get(controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().size() - 1)
 					.getEscGordura()));
-			viewCamara.getEscCarcacaHist1Label().setText(String.valueOf(controller.getModel().getExperimentoVO()
+			viewCamara.getEscCarcacaHist5Label().setText(String.valueOf(controller.getModel().getExperimentoVO()
 					.getAbates().get(abate - 1).getCamaras()
 					.get(controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().size() - 1)
 					.getEscCarcaca()));
 
-			viewCamara.getNumHist2Label().setText(String.valueOf(controller.getModel().getExperimentoVO().getAbates()
+			viewCamara.getNumHist4Label().setText(String.valueOf(controller.getModel().getExperimentoVO().getAbates()
 					.get(abate - 1).getCamaras()
 					.get(controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().size() - 2)
 					.getNasa()));
-			viewCamara.getpCarcacaHist2Label().setText(String.valueOf(controller.getModel().getExperimentoVO()
+			viewCamara.getpCarcacaHist4Label().setText(String.valueOf(controller.getModel().getExperimentoVO()
 					.getAbates().get(abate - 1).getCamaras()
 					.get(controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().size() - 2)
 					.getpCarcaca()));
-			viewCamara.getEscGorduraHist2Label().setText(String.valueOf(controller.getModel().getExperimentoVO()
+			viewCamara.getEscGorduraHist4Label().setText(String.valueOf(controller.getModel().getExperimentoVO()
 					.getAbates().get(abate - 1).getCamaras()
 					.get(controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().size() - 2)
 					.getEscGordura()));
-			viewCamara.getEscCarcacaHist2Label().setText(String.valueOf(controller.getModel().getExperimentoVO()
+			viewCamara.getEscCarcacaHist4Label().setText(String.valueOf(controller.getModel().getExperimentoVO()
 					.getAbates().get(abate - 1).getCamaras()
 					.get(controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().size() - 2)
 					.getEscCarcaca()));
@@ -447,22 +452,51 @@ public class ControllerCamaraP extends KeyAdapter implements FocusListener {
 					.get(controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().size() - 3)
 					.getEscCarcaca()));
 
-			viewCamara.getNumHist4Label().setText(String.valueOf(controller.getModel().getExperimentoVO().getAbates()
+			viewCamara.getNumHist2Label().setText(String.valueOf(controller.getModel().getExperimentoVO().getAbates()
 					.get(abate - 1).getCamaras()
 					.get(controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().size() - 4)
 					.getNasa()));
-			viewCamara.getpCarcacaHist4Label().setText(String.valueOf(controller.getModel().getExperimentoVO()
+			viewCamara.getpCarcacaHist2Label().setText(String.valueOf(controller.getModel().getExperimentoVO()
 					.getAbates().get(abate - 1).getCamaras()
 					.get(controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().size() - 4)
 					.getpCarcaca()));
-			viewCamara.getEscGorduraHist4Label().setText(String.valueOf(controller.getModel().getExperimentoVO()
+			viewCamara.getEscGorduraHist2Label().setText(String.valueOf(controller.getModel().getExperimentoVO()
 					.getAbates().get(abate - 1).getCamaras()
 					.get(controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().size() - 4)
 					.getEscGordura()));
-			viewCamara.getEscCarcacaHist4Label().setText(String.valueOf(controller.getModel().getExperimentoVO()
+			viewCamara.getEscCarcacaHist2Label().setText(String.valueOf(controller.getModel().getExperimentoVO()
 					.getAbates().get(abate - 1).getCamaras()
 					.get(controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().size() - 4)
 					.getEscCarcaca()));
+
+			viewCamara.getNumHist1Label().setText(String.valueOf(controller.getModel().getExperimentoVO().getAbates()
+					.get(abate - 1).getCamaras()
+					.get(controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().size() - 5)
+					.getNasa()));
+			viewCamara.getpCarcacaHist1Label().setText(String.valueOf(controller.getModel().getExperimentoVO()
+					.getAbates().get(abate - 1).getCamaras()
+					.get(controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().size() - 5)
+					.getpCarcaca()));
+			viewCamara.getEscGorduraHist1Label().setText(String.valueOf(controller.getModel().getExperimentoVO()
+					.getAbates().get(abate - 1).getCamaras()
+					.get(controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().size() - 5)
+					.getEscGordura()));
+			viewCamara.getEscCarcacaHist1Label().setText(String.valueOf(controller.getModel().getExperimentoVO()
+					.getAbates().get(abate - 1).getCamaras()
+					.get(controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().size() - 5)
+					.getEscCarcaca()));
+
+			ordem = controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().size();
+			int aux = ordem;
+			viewCamara.getOrdemHist5Label().setText(String.valueOf(aux));
+			aux--;
+			viewCamara.getOrdemHist4Label().setText(String.valueOf(aux));
+			aux--;
+			viewCamara.getOrdemHist3Label().setText(String.valueOf(aux));
+			aux--;
+			viewCamara.getOrdemHist2Label().setText(String.valueOf(aux));
+			aux--;
+			viewCamara.getOrdemHist1Label().setText(String.valueOf(aux));
 		}
 	}
 
