@@ -42,11 +42,11 @@ public class ControllerEscolhaCamaraP extends KeyAdapter {
 	public void histSetup() {
 		int obsCamara[] = { 0, 0 };
 
-		if (controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().get(0).getCamara() != 0) {
+		if(!controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().isEmpty()) {
 			for (CamaraVOP c : controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras()) {
-				if (c.getCamara() == 1) {
+				if (c.getCamara() == 1 && c.getNasa() != 0) {
 					obsCamara[0]++;
-				} else {
+				} else if (c.getCamara() == 2 && c.getNasa() != 0) {
 					obsCamara[1]++;
 				}
 			}
@@ -79,12 +79,11 @@ public class ControllerEscolhaCamaraP extends KeyAdapter {
 			}
 			break;
 		case KeyEvent.VK_1:
+			viewEscolhaCamara.setVisible(false);
 			controller.startCamaras(Integer.parseInt(aviario), abate, idadeAbate, dataAbate, 1);
-			if (controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().size() == 0) {
-
-			}
 			break;
 		case KeyEvent.VK_2:
+			viewEscolhaCamara.setVisible(false);
 			controller.startCamaras(Integer.parseInt(aviario), abate, idadeAbate, dataAbate, 2);
 			break;
 		case KeyEvent.VK_9:
@@ -93,7 +92,7 @@ public class ControllerEscolhaCamaraP extends KeyAdapter {
 					"DIGEX - Voltar", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 			if (option == 0) {
 				viewEscolhaCamara.setVisible(false);
-				controller.resumeEscolhaDig();
+				controller.startEscolhaDigRend(abate, idadeAbate, dataAbate);
 				System.out.println("Voltar");
 			}
 			break;

@@ -377,6 +377,10 @@ public class ControllerCamaraP extends KeyAdapter implements FocusListener {
 	}
 
 	private void loadHist() {
+		if(!controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().isEmpty()) {
+			
+		}
+		
 		if (controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().get(camara - 1).getNasa() != 0) {
 			viewCamara.getNumHist5Label().setText(String.valueOf(controller.getModel().getExperimentoVO().getAbates()
 					.get(abate - 1).getCamaras()

@@ -172,7 +172,7 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		jLabel24 = new javax.swing.JLabel();
 		camaraJFT = new JFormattedTextField();
 		camaraJFT.setEditable(false);
-		camaraJFT.setFont(new Font("Times New Roman", Font.PLAIN, 11));
+		camaraJFT.setFont(new Font("Tahoma", Font.BOLD, 11));
 		camaraJFT.setForeground(new java.awt.Color(0, 153, 255));
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);

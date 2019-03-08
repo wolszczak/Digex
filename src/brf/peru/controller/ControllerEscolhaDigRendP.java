@@ -18,6 +18,7 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 import brf.peru.model.vo.AbateVOP;
+import brf.peru.model.vo.CamaraVOP;
 import brf.peru.view.ViewEscolhaDigRendP;
 import brf.util.FocusOrderPolicy;
 import brf.util.TextFormatter;
@@ -48,8 +49,8 @@ public class ControllerEscolhaDigRendP extends KeyAdapter implements FocusListen
 		this.aviario = aviario;
 		this.abate = abate;
 		this.dataAbate = dataAbate;
-		if(idadeAbate != null && idadeAbate != 0) {
-			this.idadeAbate = idadeAbate;	
+		if (idadeAbate != null && idadeAbate != 0) {
+			this.idadeAbate = idadeAbate;
 		}
 
 		viewEscolhaDigRend.getAviarioJFT().setText(aviario);
@@ -66,30 +67,31 @@ public class ControllerEscolhaDigRendP extends KeyAdapter implements FocusListen
 			String[] dataFim = dataAbate.split("/");
 			String data1 = "";
 			String data2 = "";
-			for(int i = 2;i >= 0; i--) {
+			for (int i = 2; i >= 0; i--) {
 				data1 = data1.concat(dataIni[i]);
 				data2 = data2.concat(dataFim[i]);
-				if(i > 0 ) {
+				if (i > 0) {
 					data1 = data1.concat("-");
 					data2 = data2.concat("-");
 				}
 			}
-			
+
 			LocalDate dataInicioExperimento = LocalDate.parse(data1);
 			LocalDate dateAbate = LocalDate.parse(data2);
 
 			long diff = ChronoUnit.DAYS.between(dataInicioExperimento, dateAbate);
 			this.idadeAbate = (int) diff;
 			viewEscolhaDigRend.getIdadeJFT().setText(String.valueOf(diff));
-			TextFormatter.formatStringJFT(viewEscolhaDigRend.getIdadeJFT(), viewEscolhaDigRend.getIdadeJFT().getText(), 3);
+			TextFormatter.formatStringJFT(viewEscolhaDigRend.getIdadeJFT(), viewEscolhaDigRend.getIdadeJFT().getText(),
+					3);
 			System.out.println(this.idadeAbate);
 		}
-		
+
 		List<Component> order = new ArrayList<>();
 		order.add(viewEscolhaDigRend.getIdadeJFT());
 		order.add(viewEscolhaDigRend.getOpcaoJFT());
 		FocusOrderPolicy newPolicy = new FocusOrderPolicy(order);
-		
+
 		viewEscolhaDigRend.setFocusTraversalPolicy(newPolicy);
 		listenerSetup(order);
 		viewEscolhaDigRend.getOpcaoJFT().setEnabled(true);
@@ -110,8 +112,10 @@ public class ControllerEscolhaDigRendP extends KeyAdapter implements FocusListen
 		}
 		for (AbateVOP a : controller.getModel().getExperimentoVO().getAbates()) {
 			if (a.getAbate() == abate) {
-				for (int i = 0; i < a.getCamaras().size(); i++) {
-					obsCamaras++;
+				for (CamaraVOP c : a.getCamaras()) {
+					if (c.getNasa() != 0) {
+						obsCamaras++;
+					}
 				}
 			}
 		}
