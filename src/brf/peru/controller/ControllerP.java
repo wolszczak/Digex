@@ -13,6 +13,7 @@ public class ControllerP {
     private ControllerEscolhaDigRendP ctrlEscolhaDigRend;
     private ControllerEscolhaAbateP ctrlEscolhaAbate;
     private ControllerBaiaAmostradosP ctrlBaiaAmostrados;
+    private ControllerEscolhaCamaraP ctrlEscolhaCamaraP;
     private ControllerCamaraP ctrlCamara;
     private final String idDigitador;
     
@@ -67,9 +68,14 @@ public class ControllerP {
     	ctrlBaiaAmostrados.openWindow(modelP.getExperimentoVO().getInfoExp().getAviario(), abate, idadeAbate, dataAbate);
     }
     
-    public void startCamaras(Integer aviario, Integer abate,Integer idadeAbate,String dataAbate) {
+    public void startEscolhaCamaras(Integer aviario, Integer abate,Integer idadeAbate,String dataAbate) {
+    	ctrlEscolhaCamaraP = new ControllerEscolhaCamaraP(this);
+    	ctrlEscolhaCamaraP.openWindow(modelP.getExperimentoVO().getInfoExp().getAviario(), abate, idadeAbate, dataAbate);
+    }
+    
+    public void startCamaras(Integer aviario, Integer abate,Integer idadeAbate,String dataAbate, Integer camara) {
     	ctrlCamara = new ControllerCamaraP(this);
-    	ctrlCamara.openWindow(modelP.getExperimentoVO().getInfoExp().getAviario(), abate, idadeAbate, dataAbate);
+    	ctrlCamara.openWindow(modelP.getExperimentoVO().getInfoExp().getAviario(), abate, idadeAbate, dataAbate, camara);
     }
     
     public void startCones() {

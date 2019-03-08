@@ -1,25 +1,20 @@
 
 package brf.peru.model.dao;
 
-import brf.peru.model.ModelP;
-
-import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.sound.midi.Patch;
+
 import javax.swing.JFileChooser;
+
+import brf.peru.model.ModelP;
 
 public class ModelStateDAOP {
 	private final ModelP model;

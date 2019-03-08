@@ -88,8 +88,6 @@ public class ViewCamaraP extends javax.swing.JFrame {
 	}
 
 	@SuppressWarnings("unchecked")
-	// <editor-fold defaultstate="collapsed" desc="Generated
-	// Code">//GEN-BEGIN:initComponents
 	private void initComponents() {
 
 		jPanel1 = new javax.swing.JPanel();
@@ -162,6 +160,7 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		jPanel2 = new javax.swing.JPanel();
 		jLabel10 = new javax.swing.JLabel();
 		aviarioJFT = new javax.swing.JFormattedTextField();
+		aviarioJFT.setEditable(false);
 		jLabel21 = new javax.swing.JLabel();
 		abateJFT = new javax.swing.JFormattedTextField();
 		jLabel22 = new javax.swing.JLabel();
@@ -172,7 +171,9 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		jPanel3 = new javax.swing.JPanel();
 		jLabel24 = new javax.swing.JLabel();
 		camaraJFT = new JFormattedTextField();
-		camaraJFT.setFont(new Font("Times New Roman", Font.BOLD, 11));
+		camaraJFT.setEditable(false);
+		camaraJFT.setFont(new Font("Times New Roman", Font.PLAIN, 11));
+		camaraJFT.setForeground(new java.awt.Color(0, 153, 255));
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -690,8 +691,6 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
 		jLabel10.setText("Aviário");
-
-		aviarioJFT.setEditable(false);
 		aviarioJFT.setForeground(new java.awt.Color(0, 153, 255));
 		try {
 			aviarioJFT.setFormatterFactory(

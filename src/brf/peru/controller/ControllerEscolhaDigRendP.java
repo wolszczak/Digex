@@ -190,7 +190,7 @@ public class ControllerEscolhaDigRendP extends KeyAdapter implements FocusListen
 				break;
 			case KeyEvent.VK_2:
 				viewEscolhaDigRend.setVisible(false);
-				controller.startCamaras(Integer.parseInt(aviario), abate, idadeAbate, dataAbate);
+				controller.startEscolhaCamaras(Integer.parseInt(aviario), abate, idadeAbate, dataAbate);
 				System.out.println("Camaras");
 				break;
 			case KeyEvent.VK_3:
