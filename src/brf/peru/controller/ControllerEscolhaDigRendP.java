@@ -102,7 +102,6 @@ public class ControllerEscolhaDigRendP extends KeyAdapter implements FocusListen
 	public void histSetup() {
 		int obsAmostrados = 0;
 		int obsCamaras = 0;
-		int obsCones = 0;
 		for (AbateVOP a : controller.getModel().getExperimentoVO().getAbates()) {
 			if (a.getAbate() == abate) {
 				for (int i = 0; i < a.getBaiaAmostrados().size(); i++) {
@@ -119,19 +118,11 @@ public class ControllerEscolhaDigRendP extends KeyAdapter implements FocusListen
 				}
 			}
 		}
-		for (AbateVOP a : controller.getModel().getExperimentoVO().getAbates()) {
-			if (a.getAbate() == abate) {
-				for (int i = 0; i < a.getCones().size(); i++) {
-					obsCones++;
-				}
-			}
-		}
 		if (idadeAbate != 0) {
 			viewEscolhaDigRend.getIdadeJFT().setText(String.valueOf(idadeAbate));
 		}
 		viewEscolhaDigRend.getQtdeDesLabel().setText(obsAmostrados + " amostrados digitados");
 		viewEscolhaDigRend.getQtdCamarasLabel().setText(obsCamaras + " câmaras digitadas");
-		viewEscolhaDigRend.getQtdConesLabel().setText(obsCones + " cones digitados");
 	}
 
 	public void listenerSetup(List<Component> textFields) {
@@ -196,11 +187,6 @@ public class ControllerEscolhaDigRendP extends KeyAdapter implements FocusListen
 				viewEscolhaDigRend.setVisible(false);
 				controller.startEscolhaCamaras(Integer.parseInt(aviario), abate, idadeAbate, dataAbate);
 				System.out.println("Camaras");
-				break;
-			case KeyEvent.VK_3:
-				viewEscolhaDigRend.setVisible(false);
-				controller.startCones();
-				System.out.println("Cones");
 				break;
 			case KeyEvent.VK_9:
 				int option = JOptionPane.showConfirmDialog(viewEscolhaDigRend,

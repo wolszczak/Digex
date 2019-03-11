@@ -8,6 +8,7 @@ import java.awt.Font;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.SwingConstants;
 import javax.swing.GroupLayout;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class ViewCamaraP extends javax.swing.JFrame {
 	private javax.swing.JFormattedTextField abateJFT;
@@ -82,6 +83,10 @@ public class ViewCamaraP extends javax.swing.JFrame {
 	private javax.swing.JLabel pCarcacaHist5Label;
 	private javax.swing.JLabel registrosLabel;
 	private JFormattedTextField camaraJFT;
+	private JLabel lblfAbrir;
+	private JLabel qtdeAbate1Label;
+	private JLabel lblfAbrir_1;
+	private JLabel qtdeAbate2Label;
 
 	public ViewCamaraP() {
 		initComponents();
@@ -794,35 +799,77 @@ public class ViewCamaraP extends javax.swing.JFrame {
 						camaraJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 				.addContainerGap()));
 		jPanel3.setLayout(jPanel3Layout);
+		
+		lblfAbrir = new JLabel();
+		lblfAbrir.setText("[F1] - Abrir Cone 1");
+		lblfAbrir.setHorizontalAlignment(SwingConstants.CENTER);
+		lblfAbrir.setForeground(Color.BLACK);
+		lblfAbrir.setFont(new Font("Tahoma", Font.BOLD, 11));
+		
+		qtdeAbate1Label = new JLabel();
+		qtdeAbate1Label.setText("99 registro(s)");
+		qtdeAbate1Label.setHorizontalAlignment(SwingConstants.CENTER);
+		qtdeAbate1Label.setForeground(new Color(0, 153, 255));
+		qtdeAbate1Label.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		
+		lblfAbrir_1 = new JLabel();
+		lblfAbrir_1.setText("[F2] - Abrir Cone 2");
+		lblfAbrir_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblfAbrir_1.setForeground(Color.BLACK);
+		lblfAbrir_1.setFont(new Font("Tahoma", Font.BOLD, 11));
+		
+		qtdeAbate2Label = new JLabel();
+		qtdeAbate2Label.setText("99 registro(s)");
+		qtdeAbate2Label.setHorizontalAlignment(SwingConstants.CENTER);
+		qtdeAbate2Label.setForeground(new Color(0, 153, 255));
+		qtdeAbate2Label.setFont(new Font("Tahoma", Font.PLAIN, 11));
 
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-		jPanel1.setLayout(jPanel1Layout);
-		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel1Layout.createSequentialGroup().addContainerGap().addGroup(jPanel1Layout
-						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+		jPanel1Layout.setHorizontalGroup(
+			jPanel1Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel1Layout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+						.addComponent(jPanel2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 						.addGroup(jPanel1Layout.createSequentialGroup()
-								.addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addGap(0, 0, Short.MAX_VALUE))
-						.addComponent(camaraJP, javax.swing.GroupLayout.DEFAULT_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(registrosLabel, javax.swing.GroupLayout.DEFAULT_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-						.addContainerGap()));
-		jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel1Layout.createSequentialGroup().addContainerGap()
-						.addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addGap(18, 18, 18)
-						.addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-						.addComponent(camaraJP, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(registrosLabel).addContainerGap()));
+							.addComponent(jPanel3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+							.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING, false)
+								.addGroup(Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+									.addComponent(lblfAbrir, GroupLayout.PREFERRED_SIZE, 114, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(qtdeAbate1Label, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE))
+								.addGroup(Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+									.addComponent(lblfAbrir_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(qtdeAbate2Label, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE))))
+						.addComponent(camaraJP, GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
+						.addComponent(registrosLabel, GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE))
+					.addContainerGap())
+		);
+		jPanel1Layout.setVerticalGroup(
+			jPanel1Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel1Layout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+						.addComponent(jPanel3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addGroup(jPanel1Layout.createSequentialGroup()
+							.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(qtdeAbate1Label, GroupLayout.PREFERRED_SIZE, 15, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblfAbrir))
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(qtdeAbate2Label, GroupLayout.PREFERRED_SIZE, 15, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblfAbrir_1))))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(camaraJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(registrosLabel)
+					.addContainerGap())
+		);
+		jPanel1.setLayout(jPanel1Layout);
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
 		getContentPane().setLayout(layout);
@@ -1457,6 +1504,38 @@ public class ViewCamaraP extends javax.swing.JFrame {
 
 	public void setCamaraJFT(JFormattedTextField camaraJFT) {
 		this.camaraJFT = camaraJFT;
+	}
+
+	public JLabel getLblfAbrir() {
+		return lblfAbrir;
+	}
+
+	public void setLblfAbrir(JLabel lblfAbrir) {
+		this.lblfAbrir = lblfAbrir;
+	}
+
+	public JLabel getQtdeAbate1Label() {
+		return qtdeAbate1Label;
+	}
+
+	public void setQtdeAbate1Label(JLabel qtdeAbate1Label) {
+		this.qtdeAbate1Label = qtdeAbate1Label;
+	}
+
+	public JLabel getLblfAbrir_1() {
+		return lblfAbrir_1;
+	}
+
+	public void setLblfAbrir_1(JLabel lblfAbrir_1) {
+		this.lblfAbrir_1 = lblfAbrir_1;
+	}
+
+	public JLabel getQtdeAbate2Label() {
+		return qtdeAbate2Label;
+	}
+
+	public void setQtdeAbate2Label(JLabel qtdeAbate2Label) {
+		this.qtdeAbate2Label = qtdeAbate2Label;
 	}
 
 }

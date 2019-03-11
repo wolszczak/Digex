@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class ConeVOP implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
+	private int abate;
 	private int camara;
 	private int ncone;
     private int nasa;
@@ -13,7 +14,8 @@ public class ConeVOP implements Serializable {
     private int pPeito2;
     private int pesoSobreCoxa;
 
-    public ConeVOP(int camara,int ncone, int nasa, int pGordura, int pPeito1, int pPeito2, int pesoSobreCoxa) {
+    public ConeVOP(int abate, int camara,int ncone, int nasa, int pGordura, int pPeito1, int pPeito2, int pesoSobreCoxa) {
+    	this.abate = abate;
     	this.camara = camara;
     	this.ncone = ncone;
         this.nasa = nasa;
@@ -77,5 +79,13 @@ public class ConeVOP implements Serializable {
 
 	public void setNcone(int ncone) {
 		this.ncone = ncone;
+	}
+
+	public int getAbate() {
+		return abate;
+	}
+
+	public void setAbate(int abate) {
+		this.abate = abate;
 	}
 }

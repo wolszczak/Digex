@@ -18,6 +18,7 @@ import javax.swing.border.Border;
 
 import brf.peru.model.dao.ModelStateDAOP;
 import brf.peru.model.vo.CamaraVOP;
+import brf.peru.model.vo.ConeVOP;
 import brf.peru.view.ViewCamaraP;
 import brf.util.FocusOrderPolicy;
 import brf.util.TextFormatter;
@@ -198,6 +199,7 @@ public class ControllerCamaraP extends KeyAdapter implements FocusListener {
 					viewCamara.getControleJFT().setEnabled(false);
 					viewCamara.getNumero1JFT().setEnabled(true);
 					viewCamara.getNumero1JFT().grabFocus();
+					viewCamara.getRegistrosLabel().setVisible(true);
 				} else {
 					viewCamara.getCamaraJP().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
 					camarasTemp = new ArrayList<>();
@@ -218,6 +220,10 @@ public class ControllerCamaraP extends KeyAdapter implements FocusListener {
 			((JFormattedTextField) src).setEnabled(false);
 			prev.setEnabled(true);
 			((JFormattedTextField) prev).grabFocus();
+		}
+		if(e.getKeyCode() == KeyEvent.VK_F1) {
+			viewCamara.setVisible(false);
+			controller.startEscolhaCones(Integer.parseInt(aviario), abate, idadeAbate, dataAbate, camara);
 		}
 	}
 
@@ -442,6 +448,23 @@ public class ControllerCamaraP extends KeyAdapter implements FocusListener {
 			aux--;
 			viewCamara.getOrdemHist1Label().setText(String.valueOf(aux));
 			criarOrdemComponentesAux();
+			
+			int obsCone[] = { 0, 0 };
+			if (!controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones().isEmpty()) {
+				for (ConeVOP c : controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones()) {
+					if (c.getAbate() == abate && c.getCamara() == 1) {
+						obsCone[0]++;
+					} else {
+						obsCone[1]++;
+					}
+				}
+				viewCamara.getQtdeAbate1Label().setText(obsCone[0] + " registro(s)");
+				viewCamara.getQtdeAbate2Label().setText(obsCone[1] + " registro(s)");
+			} else {
+				viewCamara.getQtdeAbate1Label().setText(obsCone[0] + " registro(s)");
+				viewCamara.getQtdeAbate2Label().setText(obsCone[1] + " registro(s)");
+			}
+
 		} else {
 			viewCamara.getNumHist1Label().setText("");
 			viewCamara.getNumHist2Label().setText("");

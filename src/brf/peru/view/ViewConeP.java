@@ -3,6 +3,7 @@ package brf.peru.view;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import java.awt.Font;
 
 public class ViewConeP extends javax.swing.JFrame {
     
@@ -381,8 +382,12 @@ public class ViewConeP extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         camaraJFT = new javax.swing.JFormattedTextField();
+        camaraJFT.setFont(new Font("Tahoma", Font.BOLD, 11));
+        camaraJFT.setEditable(false);
         jLabel6 = new javax.swing.JLabel();
         coneJFT = new javax.swing.JFormattedTextField();
+        coneJFT.setFont(new Font("Tahoma", Font.BOLD, 11));
+        coneJFT.setEditable(false);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1037,7 +1042,6 @@ public class ViewConeP extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         camaraJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        camaraJFT.setEnabled(false);
 
         jLabel6.setText("Cone");
 
@@ -1048,7 +1052,6 @@ public class ViewConeP extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         coneJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        coneJFT.setEnabled(false);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
