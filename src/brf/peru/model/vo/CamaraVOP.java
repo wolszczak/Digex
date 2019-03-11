@@ -5,13 +5,15 @@ import java.util.List;
 
 public class CamaraVOP implements Serializable {
 	private static final long serialVersionUID = 1L;
+	private int abate;
 	private int camara;
 	private int nasa;
 	private int pCarcaca;
 	private int escGordura;
 	private int escCarcaca;
 
-	public CamaraVOP(int camara, int nasa, int pCarcaca, int escGordura, int escCarcaca) {
+	public CamaraVOP(int abate, int camara, int nasa, int pCarcaca, int escGordura, int escCarcaca) {
+		this.abate = abate;
 		this.camara = camara;
 		this.nasa = nasa;
 		this.pCarcaca = pCarcaca;
@@ -61,5 +63,13 @@ public class CamaraVOP implements Serializable {
 
 	public void setCamara(int camara) {
 		this.camara = camara;
+	}
+
+	public int getAbate() {
+		return abate;
+	}
+
+	public void setAbate(int abate) {
+		this.abate = abate;
 	}
 }
