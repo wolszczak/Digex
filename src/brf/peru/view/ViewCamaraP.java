@@ -807,7 +807,7 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		lblfAbrir.setFont(new Font("Tahoma", Font.BOLD, 11));
 		
 		qtdeAbate1Label = new JLabel();
-		qtdeAbate1Label.setText("99 registro(s)");
+		qtdeAbate1Label.setText("0 registro(s)");
 		qtdeAbate1Label.setHorizontalAlignment(SwingConstants.CENTER);
 		qtdeAbate1Label.setForeground(new Color(0, 153, 255));
 		qtdeAbate1Label.setFont(new Font("Tahoma", Font.PLAIN, 11));
@@ -819,7 +819,7 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		lblfAbrir_1.setFont(new Font("Tahoma", Font.BOLD, 11));
 		
 		qtdeAbate2Label = new JLabel();
-		qtdeAbate2Label.setText("99 registro(s)");
+		qtdeAbate2Label.setText("0 registro(s)");
 		qtdeAbate2Label.setHorizontalAlignment(SwingConstants.CENTER);
 		qtdeAbate2Label.setForeground(new Color(0, 153, 255));
 		qtdeAbate2Label.setFont(new Font("Tahoma", Font.PLAIN, 11));

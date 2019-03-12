@@ -137,84 +137,79 @@ public class ControllerConeP extends KeyAdapter implements FocusListener {
 				viewCone.getpPeito11JFT().setEnabled(true);
 				viewCone.getpPeito11JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewCone.getpPeito11JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
+				TextFormatter.formatStringJFT(src, text, 4);
 				viewCone.getpPeito11JFT().setEnabled(false);
 				viewCone.getpPeito12JFT().setEnabled(true);
 				viewCone.getpPeito12JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewCone.getpPeito12JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
+				TextFormatter.formatStringJFT(src, text, 4);
 				viewCone.getpPeito12JFT().setEnabled(false);
 				viewCone.getpPeito13JFT().setEnabled(true);
 				viewCone.getpPeito13JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewCone.getpPeito13JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
+				TextFormatter.formatStringJFT(src, text, 4);
 				viewCone.getpPeito13JFT().setEnabled(false);
 				viewCone.getpPeito14JFT().setEnabled(true);
 				viewCone.getpPeito14JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewCone.getpPeito14JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
+				TextFormatter.formatStringJFT(src, text, 4);
 				viewCone.getpPeito14JFT().setEnabled(false);
 				viewCone.getpPeito15JFT().setEnabled(true);
 				viewCone.getpPeito15JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewCone.getpPeito15JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
+				TextFormatter.formatStringJFT(src, text, 4);
 				viewCone.getpPeito15JFT().setEnabled(false);
 				viewCone.getpPeito21JFT().setEnabled(true);
 				viewCone.getpPeito21JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewCone.getpPeito21JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
+				TextFormatter.formatStringJFT(src, text, 4);
 				viewCone.getpPeito21JFT().setEnabled(false);
 				viewCone.getpPeito22JFT().setEnabled(true);
 				viewCone.getpPeito22JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewCone.getpPeito22JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
+				TextFormatter.formatStringJFT(src, text, 4);
 				viewCone.getpPeito22JFT().setEnabled(false);
 				viewCone.getpPeito23JFT().setEnabled(true);
 				viewCone.getpPeito23JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewCone.getpPeito23JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
+				TextFormatter.formatStringJFT(src, text, 4);
 				viewCone.getpPeito23JFT().setEnabled(false);
 				viewCone.getpPeito24JFT().setEnabled(true);
 				viewCone.getpPeito24JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewCone.getpPeito24JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
+				TextFormatter.formatStringJFT(src, text, 4);
 				viewCone.getpPeito24JFT().setEnabled(false);
 				viewCone.getpPeito25JFT().setEnabled(true);
 				viewCone.getpPeito25JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewCone.getpPeito25JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
+				TextFormatter.formatStringJFT(src, text, 4);
 				viewCone.getpPeito25JFT().setEnabled(false);
 				viewCone.getpCoxa1JFT().setEnabled(true);
 				viewCone.getpCoxa1JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewCone.getpCoxa1JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
+				TextFormatter.formatStringJFT(src, text, 4);
 				viewCone.getpCoxa1JFT().setEnabled(false);
 				viewCone.getpCoxa2JFT().setEnabled(true);
 				viewCone.getpCoxa2JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewCone.getpCoxa2JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
+				TextFormatter.formatStringJFT(src, text, 4);
 				viewCone.getpCoxa2JFT().setEnabled(false);
 				viewCone.getpCoxa3JFT().setEnabled(true);
 				viewCone.getpCoxa3JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewCone.getpCoxa3JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
+				TextFormatter.formatStringJFT(src, text, 4);
 				viewCone.getpCoxa3JFT().setEnabled(false);
 				viewCone.getpCoxa4JFT().setEnabled(true);
 				viewCone.getpCoxa4JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewCone.getpCoxa4JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
+				TextFormatter.formatStringJFT(src, text, 4);
 				viewCone.getpCoxa4JFT().setEnabled(false);
 				viewCone.getpCoxa5JFT().setEnabled(true);
 				viewCone.getpCoxa5JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewCone.getpCoxa5JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				viewCone.getpCoxa5JFT().setEnabled(false);
-				viewCone.getControleJFT().setEnabled(true);
-				viewCone.getControleJFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == viewCone.getpCoxa5JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
+				TextFormatter.formatStringJFT(src, text, 4);
 				// Adicionar valores nos objetos e popular lista
-				popularListaCamaras();
+				popularListaCones();
 				viewCone.getpCoxa5JFT().setEnabled(false);
 				viewCone.getControleJFT().setEnabled(true);
 				viewCone.getControleJFT().grabFocus();
@@ -314,30 +309,30 @@ public class ControllerConeP extends KeyAdapter implements FocusListener {
 	private void criarOrdemComponentesAux() {
 		orderAux = new ArrayList<>();
 		orderAux.add(viewCone.getNumHist5Label());
-		orderAux.add(viewCone.getpGord5JFT());
-		orderAux.add(viewCone.getpPeito15JFT());
-		orderAux.add(viewCone.getpPeito25JFT());
-		orderAux.add(viewCone.getpCoxa5JFT());
+		orderAux.add(viewCone.getpGordHist5Label());
+		orderAux.add(viewCone.getpPeito1Hist5Label());
+		orderAux.add(viewCone.getpPeito2Hist5Label());
+		orderAux.add(viewCone.getpCoxaHist5Label());
 		orderAux.add(viewCone.getNumHist4Label());
-		orderAux.add(viewCone.getpGord4JFT());
-		orderAux.add(viewCone.getpPeito14JFT());
-		orderAux.add(viewCone.getpPeito24JFT());
-		orderAux.add(viewCone.getpCoxa4JFT());
+		orderAux.add(viewCone.getpGordHist4Label());
+		orderAux.add(viewCone.getpPeito1Hist4Label());
+		orderAux.add(viewCone.getpPeito2Hist4Label());
+		orderAux.add(viewCone.getpCoxaHist4Label());
 		orderAux.add(viewCone.getNumHist3Label());
-		orderAux.add(viewCone.getpGord3JFT());
-		orderAux.add(viewCone.getpPeito13JFT());
-		orderAux.add(viewCone.getpPeito23JFT());
-		orderAux.add(viewCone.getpCoxa3JFT());
+		orderAux.add(viewCone.getpGordHist3Label());
+		orderAux.add(viewCone.getpPeito1Hist3Label());
+		orderAux.add(viewCone.getpPeito2Hist3Label());
+		orderAux.add(viewCone.getpCoxaHist3Label());
 		orderAux.add(viewCone.getNumHist2Label());
-		orderAux.add(viewCone.getpGord2JFT());
-		orderAux.add(viewCone.getpPeito12JFT());
-		orderAux.add(viewCone.getpPeito22JFT());
-		orderAux.add(viewCone.getpCoxa2JFT());
+		orderAux.add(viewCone.getpGordHist2Label());
+		orderAux.add(viewCone.getpPeito1Hist2Label());
+		orderAux.add(viewCone.getpPeito2Hist2Label());
+		orderAux.add(viewCone.getpCoxaHist2Label());
 		orderAux.add(viewCone.getNumHist1Label());
-		orderAux.add(viewCone.getpGord1JFT());
-		orderAux.add(viewCone.getpPeito11JFT());
-		orderAux.add(viewCone.getpPeito21JFT());
-		orderAux.add(viewCone.getpCoxa1JFT());
+		orderAux.add(viewCone.getpGordHist1Label());
+		orderAux.add(viewCone.getpPeito1Hist1Label());
+		orderAux.add(viewCone.getpPeito2Hist1Label());
+		orderAux.add(viewCone.getpCoxaHist1Label());
 	}
 
 	private void atualizaOrdem() {
@@ -366,6 +361,7 @@ public class ControllerConeP extends KeyAdapter implements FocusListener {
 						&& controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones().get(i - 1)
 								.getNcone() == cone) {
 					key = true;
+					ordem++;
 					JLabel lbl1 = (JLabel) orderAux.get(0);
 					lbl1.setText(String.valueOf(controller.getModel().getExperimentoVO().getAbates().get(abate - 1)
 							.getCones().get(i - 1).getNasa()));
@@ -380,7 +376,7 @@ public class ControllerConeP extends KeyAdapter implements FocusListener {
 					lbl3.setText(String.valueOf(controller.getModel().getExperimentoVO().getAbates().get(abate - 1)
 							.getCones().get(i - 1).getpPeito1()));
 					orderAux.remove(0);
-					
+
 					JLabel lbl4 = (JLabel) orderAux.get(0);
 					lbl4.setText(String.valueOf(controller.getModel().getExperimentoVO().getAbates().get(abate - 1)
 							.getCones().get(i - 1).getpPeito2()));
@@ -395,8 +391,7 @@ public class ControllerConeP extends KeyAdapter implements FocusListener {
 					}
 				}
 			}
-			if(key) {
-				ordem = controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones().size();
+			if (key) {
 				int aux = ordem;
 				viewCone.getOrdemHist5Label().setText(String.valueOf(aux));
 				aux--;
@@ -509,7 +504,7 @@ public class ControllerConeP extends KeyAdapter implements FocusListener {
 		atualizaOrdem();
 	}
 
-	private void popularListaCamaras() {
+	private void popularListaCones() {
 		conesTemp.add(new ConeVOP(abate, camara, cone, Integer.parseInt(viewCone.getNumero1JFT().getText()),
 				Integer.parseInt(viewCone.getpGord1JFT().getText()),
 				Integer.parseInt(viewCone.getpPeito11JFT().getText()),

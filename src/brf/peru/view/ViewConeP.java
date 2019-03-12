@@ -474,7 +474,7 @@ public class ViewConeP extends javax.swing.JFrame {
         pCoxa1JFT.setEnabled(false);
 
         try {
-            controleJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+            controleJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }

@@ -420,6 +420,7 @@ public class ControllerCamaraP extends KeyAdapter implements FocusListener {
 						&& controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().get(i - 1)
 								.getCamara() == camara) {
 					key = true;					
+					ordem++;
 					JLabel lbl1 = (JLabel) orderAux.get(0);
 					lbl1.setText(String.valueOf(controller.getModel().getExperimentoVO().getAbates().get(abate - 1)
 							.getCamaras().get(i - 1).getNasa()));
@@ -445,7 +446,6 @@ public class ControllerCamaraP extends KeyAdapter implements FocusListener {
 				}
 			}
 			if(key) {
-				ordem = controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().size();
 				int aux = ordem;
 				viewCamara.getOrdemHist5Label().setText(String.valueOf(aux));
 				aux--;
@@ -461,9 +461,9 @@ public class ControllerCamaraP extends KeyAdapter implements FocusListener {
 			int obsCone[] = { 0, 0 };
 			if (!controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones().isEmpty()) {
 				for (ConeVOP c : controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones()) {
-					if (c.getAbate() == abate && c.getCamara() == 1) {
+					if (c.getAbate() == abate && c.getCamara() == camara && c.getNcone() == 1) {
 						obsCone[0]++;
-					} else {
+					} else if(c.getAbate() == abate && c.getCamara() == camara && c.getNcone() == 2){
 						obsCone[1]++;
 					}
 				}
