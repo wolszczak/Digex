@@ -221,9 +221,13 @@ public class ControllerCamaraP extends KeyAdapter implements FocusListener {
 			prev.setEnabled(true);
 			((JFormattedTextField) prev).grabFocus();
 		}
-		if(e.getKeyCode() == KeyEvent.VK_F1) {
+		if (e.getKeyCode() == KeyEvent.VK_F1) {
 			viewCamara.setVisible(false);
-			controller.startEscolhaCones(Integer.parseInt(aviario), abate, idadeAbate, dataAbate, camara);
+			controller.startCones(Integer.parseInt(aviario), abate, idadeAbate, dataAbate, camara, 1);
+		}
+		if (e.getKeyCode() == KeyEvent.VK_F2) {
+			viewCamara.setVisible(false);
+			controller.startCones(Integer.parseInt(aviario), abate, idadeAbate, dataAbate, camara, 2);
 		}
 	}
 
@@ -407,11 +411,15 @@ public class ControllerCamaraP extends KeyAdapter implements FocusListener {
 	}
 
 	private void loadHist() {
+		boolean key =  false;
 		if (!controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().isEmpty()) {
 			for (int i = controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras()
 					.size(); i > 0; i--) {
 				if (controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().get(i - 1)
-						.getAbate() == abate) {
+						.getAbate() == abate
+						&& controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().get(i - 1)
+								.getCamara() == camara) {
+					key = true;					
 					JLabel lbl1 = (JLabel) orderAux.get(0);
 					lbl1.setText(String.valueOf(controller.getModel().getExperimentoVO().getAbates().get(abate - 1)
 							.getCamaras().get(i - 1).getNasa()));
@@ -436,19 +444,20 @@ public class ControllerCamaraP extends KeyAdapter implements FocusListener {
 					}
 				}
 			}
-			ordem = controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().size();
-			int aux = ordem;
-			viewCamara.getOrdemHist5Label().setText(String.valueOf(aux));
-			aux--;
-			viewCamara.getOrdemHist4Label().setText(String.valueOf(aux));
-			aux--;
-			viewCamara.getOrdemHist3Label().setText(String.valueOf(aux));
-			aux--;
-			viewCamara.getOrdemHist2Label().setText(String.valueOf(aux));
-			aux--;
-			viewCamara.getOrdemHist1Label().setText(String.valueOf(aux));
-			criarOrdemComponentesAux();
-			
+			if(key) {
+				ordem = controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().size();
+				int aux = ordem;
+				viewCamara.getOrdemHist5Label().setText(String.valueOf(aux));
+				aux--;
+				viewCamara.getOrdemHist4Label().setText(String.valueOf(aux));
+				aux--;
+				viewCamara.getOrdemHist3Label().setText(String.valueOf(aux));
+				aux--;
+				viewCamara.getOrdemHist2Label().setText(String.valueOf(aux));
+				aux--;
+				viewCamara.getOrdemHist1Label().setText(String.valueOf(aux));
+				criarOrdemComponentesAux();
+			}
 			int obsCone[] = { 0, 0 };
 			if (!controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones().isEmpty()) {
 				for (ConeVOP c : controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones()) {

@@ -1,10 +1,10 @@
 package brf.peru.controller;
 
-import brf.peru.model.vo.CamaraVOP;
-import brf.peru.model.vo.ConeVOP;
-import brf.peru.view.ViewEscolhaConeP;
 import java.awt.Color;
 import java.awt.event.KeyAdapter;
+
+import brf.peru.model.vo.ConeVOP;
+import brf.peru.view.ViewEscolhaConeP;
 
 public class ControllerEscolhaConeP extends KeyAdapter {
 	private final ControllerP controller;

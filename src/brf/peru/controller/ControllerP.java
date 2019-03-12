@@ -85,7 +85,8 @@ public class ControllerP {
     	ctrlEscolhaConeP.openWindow(modelP.getExperimentoVO().getInfoExp().getAviario(), abate, idadeAbate, dataAbate, camara);
     }
     
-    public void startCones() {
-    	
+    public void startCones(Integer aviario, Integer abate, Integer idadeAbate,String dataAbate, Integer camara, Integer cone) {
+    	ctrlCone = new ControllerConeP(this);
+    	ctrlCone.openWindow(modelP.getExperimentoVO().getInfoExp().getAviario(), abate, idadeAbate, dataAbate, camara, cone);
     }
 }
