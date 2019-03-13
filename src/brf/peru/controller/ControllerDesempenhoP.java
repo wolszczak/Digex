@@ -1395,42 +1395,50 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		int idadeFaseAnterior = 0;
 		int idadeFase = idades.get(countIdade);
 
-		for (int i = 0; i < mortos.size(); i++) {
-			if (mortos.get(i).getIdade() <= idadeFase) {
-				for (RmeVOP rme : rme) {
-					if (rme.getIdadeRacao() <= idadeFase && rme.getMortos().getIdade() == 0) {
-						if (idadeFaseAnterior == 0) {
-							rme.setMortos(mortos.get(i));
-							break;
-						} else if (rme.getIdadeRacao() >= idadeFaseAnterior) {
-							rme.setMortos(mortos.get(i));
-							break;
-						}
-					}
-				}
-			} else {
-				countIdade++;
-				idadeFaseAnterior = idadeFase;
-				if (countIdade <= idades.size()) {
-					idadeFase = idades.get(countIdade);
-					if (mortos.get(i).getIdade() <= idadeFase) {
-						for (RmeVOP rme : rme) {
-							if (rme.getIdadeRacao() <= idadeFase && rme.getIdadeRacao() >= idadeFaseAnterior
-									&& rme.getMortos().getIdade() == 0) {
-								rme.setMortos(mortos.get(i));
-								break;
-							}
-						}
-					}
-				}
-			}
-		}
+//		for (int i = 0; i < mortos.size(); i++) {
+//			if (mortos.get(i).getIdade() <= idadeFase) {
+//				for (RmeVOP rme : rme) {
+//					if (rme.getIdadeRacao() <= idadeFase && rme.getMortos().getIdade() == 0) {
+//						if (idadeFaseAnterior == 0) {
+//							rme.setMortos(mortos.get(i));
+//							break;
+//						} else if (rme.getIdadeRacao() >= idadeFaseAnterior) {
+//							rme.setMortos(mortos.get(i));
+//							break;
+//						}
+//					}
+//				}
+//			} else {
+//				countIdade++;
+//				idadeFaseAnterior = idadeFase;
+//				if (countIdade <= idades.size()) {
+//					idadeFase = idades.get(countIdade);
+//					if (mortos.get(i).getIdade() <= idadeFase) {
+//						for (RmeVOP rme : rme) {
+//							if (rme.getIdadeRacao() <= idadeFase && rme.getIdadeRacao() >= idadeFaseAnterior
+//									&& rme.getMortos().getIdade() == 0) {
+//								rme.setMortos(mortos.get(i));
+//								break;
+//							}
+//						}
+//					}
+//				}
+//			}
+//		}
 
 		for (int i = 0; i < getMaiorLista(); i++) {
 			rme.add(new RmeVOP(0, 0, 0, 0, new MortalidadeVOP(0, 0, 0), new EliminadosVOP(0, 0, 0),
 					new ErrosVOP(0, 0, 0), new AmostradosVOP(0, 0, 0), new PesadosVOP(0, 0, 0)));
 		}
 
+		for (MortalidadeVOP morto : mortos) {
+			for (int i = 0; i < rme.size(); i++) {
+				if (rme.get(i).getIdadeRacao() == 0 && rme.get(i).getMortos().getIdade() == 0) {
+					rme.get(i).setMortos(morto);
+					break;
+				}
+			}
+		}
 		for (EliminadosVOP eliminado : eliminados) {
 			for (int i = 0; i < rme.size(); i++) {
 				if (rme.get(i).getIdadeRacao() == 0 && rme.get(i).getEliminados().getIdade() == 0) {
