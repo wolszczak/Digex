@@ -89,13 +89,13 @@ public class ViewEscolhaAbateP extends javax.swing.JFrame {
         abate3Label.setText("[3] - Terceiro Abate");
 
         qtdeAbate1Label.setForeground(new java.awt.Color(0, 153, 255));
-        qtdeAbate1Label.setText("999 registro(s)");
+        qtdeAbate1Label.setText("0 registro(s)");
 
         qtdeAbate2Label.setForeground(new java.awt.Color(0, 153, 255));
-        qtdeAbate2Label.setText("999 registro(s)");
+        qtdeAbate2Label.setText("0 registro(s)");
 
         qtdeAbate3Label.setForeground(new java.awt.Color(0, 153, 255));
-        qtdeAbate3Label.setText("999 registro(s)");
+        qtdeAbate3Label.setText("0 registro(s)");
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);

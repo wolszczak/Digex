@@ -8,13 +8,19 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.sql.Array;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.swing.JFileChooser;
 
 import brf.peru.model.ModelP;
+import brf.peru.model.vo.ExperimentoVOP;
 
 public class ModelStateDAOP {
 	private final ModelP model;
@@ -77,6 +83,7 @@ public class ModelStateDAOP {
 			return false;
 		}
 		model.setExperimentoVO(obj);
+		
 		return true;
 	}
 
