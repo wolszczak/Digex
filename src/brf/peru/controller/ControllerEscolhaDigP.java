@@ -63,16 +63,16 @@ public class ControllerEscolhaDigP extends KeyAdapter {
 	}
 
 	public void histSetup() {
-		int obsDese = controller.getModel().getExperimentoVO().getDesempenho().size();
-		int obsRend = 0;
+		int obsDesempenho = controller.getModel().getExperimentoVO().getDesempenho().size();
+		int obsRendimento = 0;
 		for (AbateVOP abate : controller.getModel().getExperimentoVO().getAbates()) {
-			for (BaiaAmostradosVOP baiaAmostrado : abate.getBaiaAmostrados()) {
-					obsRend++;
-			}
+			obsRendimento += abate.getBaiaAmostrados().size();
+			obsRendimento += abate.getCamaras().size();
+			obsRendimento += abate.getCones().size();
 		}
-		viewEscolhaDig.getQtdeDesLabel().setText(
-				obsDese + "/" + controller.getModel().getExperimentoVO().getInfoExp().getNrBaias() + " registro(s)");
-		viewEscolhaDig.getQtdeRendLabel().setText(obsRend + " registro(s)");
+		viewEscolhaDig.getQtdeDesLabel().setText(obsDesempenho + "/"
+				+ controller.getModel().getExperimentoVO().getInfoExp().getNrBaias() + " registro(s)");
+		viewEscolhaDig.getQtdeRendLabel().setText(obsRendimento + " registro(s)");
 	}
 
 	public void resumeWindow() {

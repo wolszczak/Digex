@@ -624,6 +624,7 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 		for (int i = 0; i < size; i++) {
 			if (count == 0) {
 				JFormattedTextField baia = (JFormattedTextField) orderAux.get(0);
+				amostradoTemp.setIdade(idadeAbate);
 				amostradoTemp.setNrBaia(Integer.parseInt(baia.getText()));
 				orderAux.remove(0);
 				count++;

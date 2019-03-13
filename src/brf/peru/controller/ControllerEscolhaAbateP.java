@@ -54,17 +54,17 @@ public class ControllerEscolhaAbateP extends KeyAdapter {
 
 	public void histSetup() {
 		int obsAbate[] = { 0, 0, 0 };
-		for (AbateVOP abate : controller.getModel().getExperimentoVO().getAbates()) {
-			for (BaiaAmostradosVOP baiaAmostrado : abate.getBaiaAmostrados()) {
-				if (abate.getAbate() == 1) {
-					obsAbate[0]++;
-				} else if (abate.getAbate() == 2) {
-					obsAbate[1]++;
-				} else {
-					obsAbate[2]++;
-				}
-			}
-		}
+		obsAbate[0] += controller.getModel().getExperimentoVO().getAbates().get(0).getBaiaAmostrados().size();
+		obsAbate[0] += controller.getModel().getExperimentoVO().getAbates().get(0).getCamaras().size();
+		obsAbate[0] += controller.getModel().getExperimentoVO().getAbates().get(0).getCones().size();
+
+		obsAbate[1] += controller.getModel().getExperimentoVO().getAbates().get(1).getBaiaAmostrados().size();
+		obsAbate[1] += controller.getModel().getExperimentoVO().getAbates().get(1).getCamaras().size();
+		obsAbate[1] += controller.getModel().getExperimentoVO().getAbates().get(1).getCones().size();
+
+		obsAbate[2] += controller.getModel().getExperimentoVO().getAbates().get(2).getBaiaAmostrados().size();
+		obsAbate[2] += controller.getModel().getExperimentoVO().getAbates().get(2).getCamaras().size();
+		obsAbate[2] += controller.getModel().getExperimentoVO().getAbates().get(2).getCones().size();
 
 		viewEscolhaAbate.getQtdeAbate1Label().setText(obsAbate[0] + " registro(s)");
 		viewEscolhaAbate.getQtdeAbate2Label().setText(obsAbate[1] + " registro(s)");

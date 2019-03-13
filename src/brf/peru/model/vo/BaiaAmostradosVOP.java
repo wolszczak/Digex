@@ -7,11 +7,13 @@ public class BaiaAmostradosVOP implements Serializable {
     private int nrBaia;
     private int nasa;
     private int peso;
+    private int idade;
     
-    public BaiaAmostradosVOP(int nrBaia, int nasa, int peso) {
+    public BaiaAmostradosVOP(int nrBaia, int nasa, int peso, int idade) {
         this.nrBaia = nrBaia;
         this.nasa = nasa;
         this.peso = peso;
+        this.idade = idade;
     }
     
     public BaiaAmostradosVOP() {
@@ -39,6 +41,14 @@ public class BaiaAmostradosVOP implements Serializable {
 
 	public void setPeso(int peso) {
 		this.peso = peso;
+	}
+
+	public int getIdade() {
+		return idade;
+	}
+
+	public void setIdade(int idade) {
+		this.idade = idade;
 	}
 
 
