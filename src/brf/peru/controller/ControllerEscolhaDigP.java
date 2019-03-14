@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
 
 import brf.main.controller.ControllerEscolhaExp;
 import brf.main.view.ViewEscolhaExp;
+import brf.peru.model.dao.AbateDAOP;
 import brf.peru.model.dao.DesempenhoDAOP;
 import brf.peru.model.vo.AbateVOP;
 import brf.peru.model.vo.BaiaAmostradosVOP;
@@ -176,6 +177,8 @@ public class ControllerEscolhaDigP extends KeyAdapter {
 					File file = fileChooser.getSelectedFile();
 					String localExportar = file.getAbsolutePath();
 					try {
+						AbateDAOP.exportarArquivo(controller.getModel().getExperimentoVO().getInfoExp(),
+								controller.getModel().getExperimentoVO().getAbates(), localExportar);
 						JOptionPane.showMessageDialog(viewEscolhaDig, "Arquivo de Rendimento salvo com sucesso!");
 					} catch (Exception ex) {
 						String msg = "Falha ao tentar salvar o arquivo!\n"

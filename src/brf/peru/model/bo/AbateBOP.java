@@ -5,6 +5,8 @@ import java.util.List;
 
 import brf.peru.controller.ControllerP;
 import brf.peru.model.vo.BaiaAmostradosVOP;
+import brf.peru.model.vo.CamaraVOP;
+import brf.peru.model.vo.ConeVOP;
 
 public class AbateBOP {
 	private final ControllerP controller;
@@ -32,39 +34,59 @@ public class AbateBOP {
 		return null;
 	}
 
-	public boolean validaFinalDigitacao(List<BaiaAmostradosVOP> amostrados, boolean usaColunaExtra) {
-		List<BaiaAmostradosVOP> amostradosAux = new ArrayList<>();
-		amostradosAux.addAll(amostrados);
-		boolean retorno =  false;
-		if(!usaColunaExtra) {
-			for(int i = 0; i < 5; i++) {
-				if(amostradosAux.get(0).getNrBaia() == 0 && amostradosAux.get(0).getNasa() == 0 && amostradosAux.get(0).getPeso() == 0) {
-					if(amostradosAux.get(1).getNrBaia() == 0 && amostradosAux.get(1).getNasa() == 0 && amostradosAux.get(1).getPeso() == 0) {
-						retorno =  true;
-						break;
-					}
-				}else {
-					amostradosAux.remove(1);
-					amostradosAux.remove(0);
-				}
-			}
-		} else {
-			for(int i = 0; i < 5; i++) {
-				if(amostradosAux.get(0).getNrBaia() == 0 && amostradosAux.get(0).getNasa() == 0 && amostradosAux.get(0).getPeso() == 0) {
-					if(amostradosAux.get(1).getNrBaia() == 0 && amostradosAux.get(1).getNasa() == 0 && amostradosAux.get(1).getPeso() == 0) {
-						if(amostradosAux.get(2).getNrBaia() == 0 && amostradosAux.get(2).getNasa() == 0 && amostradosAux.get(2).getPeso() == 0) {
-							retorno =  true;
-							break;
-						}
-					}
-				}else {
-					amostradosAux.remove(2);
-					amostradosAux.remove(1);
-					amostradosAux.remove(0);
-				}
+	public String verificaCamaras(List<CamaraVOP> camaras) {
+		for (CamaraVOP c : camaras) {
+			if (c.getNasa() == 0 && (c.getAbate() == 0 && c.getEscCarcaca() == 0 && c.getEscGordura() == 0
+					&& c.getpCarcaca() == 0)) {
+				return "Existe(m) registros com \"Nr. Ident.\" zerado.";
 			}
 		}
-		return retorno;
+		return null;
 	}
+
+	public String verificaCones(List<ConeVOP> cones) {
+		for (ConeVOP c : cones) {
+			if (c.getNasa() == 0 && (c.getAbate() == 0 && c.getCamara() == 0 && c.getNcone() == 0
+					&& c.getPesoSobreCoxa() == 0 && c.getpGordura() == 0 && c.getpPeito1() == 0)) {
+				return "Existe(m) registros com \"Nr. Ident.\" zerado.";
+			}
+		}
+		return null;
+	}
+
+//	public boolean validaFinalDigitacao(List<BaiaAmostradosVOP> amostrados, boolean usaColunaExtra) {
+//		List<BaiaAmostradosVOP> amostradosAux = new ArrayList<>();
+//		amostradosAux.addAll(amostrados);
+//		boolean retorno =  false;
+//		if(!usaColunaExtra) {
+//			for(int i = 0; i < 5; i++) {
+//				if(amostradosAux.get(0).getNrBaia() == 0 && amostradosAux.get(0).getNasa() == 0 && amostradosAux.get(0).getPeso() == 0) {
+//					if(amostradosAux.get(1).getNrBaia() == 0 && amostradosAux.get(1).getNasa() == 0 && amostradosAux.get(1).getPeso() == 0) {
+//						retorno =  true;
+//						break;
+//					}
+//				}else {
+//					amostradosAux.remove(1);
+//					amostradosAux.remove(0);
+//				}
+//			}
+//		} else {
+//			for(int i = 0; i < 5; i++) {
+//				if(amostradosAux.get(0).getNrBaia() == 0 && amostradosAux.get(0).getNasa() == 0 && amostradosAux.get(0).getPeso() == 0) {
+//					if(amostradosAux.get(1).getNrBaia() == 0 && amostradosAux.get(1).getNasa() == 0 && amostradosAux.get(1).getPeso() == 0) {
+//						if(amostradosAux.get(2).getNrBaia() == 0 && amostradosAux.get(2).getNasa() == 0 && amostradosAux.get(2).getPeso() == 0) {
+//							retorno =  true;
+//							break;
+//						}
+//					}
+//				}else {
+//					amostradosAux.remove(2);
+//					amostradosAux.remove(1);
+//					amostradosAux.remove(0);
+//				}
+//			}
+//		}
+//		return retorno;
+//	}
 
 }

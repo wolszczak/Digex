@@ -344,21 +344,6 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getControleJFT()) {
 					TextFormatter.formatStringJFT(src, text, 6);
 					if (Integer.parseInt(viewBaiaAmostrados.getControleJFT().getText()) == calculaTotalControle()) {
-						finalDigitacao = bo.validaFinalDigitacao(amostrados, usarColunaExtra);
-						if (finalDigitacao) {
-							viewBaiaAmostrados.getControleJFT().setEnabled(false);
-							updateHist();
-							addAmostradosExperimento();
-							amostrados = new ArrayList<>();
-							dao.saveModelState(false);
-							viewBaiaAmostrados.getRegistrosLabel().setVisible(true);
-							JOptionPane.showMessageDialog(viewBaiaAmostrados, "Digitação Finalizada.",
-									"DIGEX - Finalizar", JOptionPane.INFORMATION_MESSAGE);
-							controllerEscolhaDigRendP.openWindow(
-									controller.getModel().getExperimentoVO().getInfoExp().getAviario(), abate,
-									idadeAbate, dataAbate);
-							viewBaiaAmostrados.setVisible(false);
-						} else {
 							viewBaiaAmostrados.getControleJFT().setEnabled(false);
 							addAmostradosExperimento();
 							updateHist();
@@ -366,7 +351,6 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 							amostrados = new ArrayList<>();
 							viewBaiaAmostrados.getRegistrosLabel().setVisible(true);
 							dao.saveModelState(false);
-						}
 					} else {
 						fluxoProblemaDigitacao();
 						amostrados = new ArrayList<>();

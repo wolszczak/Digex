@@ -54,21 +54,34 @@ public class ControllerEscolhaAbateP extends KeyAdapter {
 
 	public void histSetup() {
 		int obsAbate[] = { 0, 0, 0 };
-		obsAbate[0] += controller.getModel().getExperimentoVO().getAbates().get(0).getBaiaAmostrados().size();
-		obsAbate[0] += controller.getModel().getExperimentoVO().getAbates().get(0).getCamaras().size();
-		obsAbate[0] += controller.getModel().getExperimentoVO().getAbates().get(0).getCones().size();
-
-		obsAbate[1] += controller.getModel().getExperimentoVO().getAbates().get(1).getBaiaAmostrados().size();
-		obsAbate[1] += controller.getModel().getExperimentoVO().getAbates().get(1).getCamaras().size();
-		obsAbate[1] += controller.getModel().getExperimentoVO().getAbates().get(1).getCones().size();
-
-		obsAbate[2] += controller.getModel().getExperimentoVO().getAbates().get(2).getBaiaAmostrados().size();
-		obsAbate[2] += controller.getModel().getExperimentoVO().getAbates().get(2).getCamaras().size();
-		obsAbate[2] += controller.getModel().getExperimentoVO().getAbates().get(2).getCones().size();
-
-		viewEscolhaAbate.getQtdeAbate1Label().setText(obsAbate[0] + " registro(s)");
-		viewEscolhaAbate.getQtdeAbate2Label().setText(obsAbate[1] + " registro(s)");
-		viewEscolhaAbate.getQtdeAbate3Label().setText(obsAbate[2] + " registro(s)");
+		if(controller.getModel().getExperimentoVO().getAbates().size() == 1) {
+			obsAbate[0] += controller.getModel().getExperimentoVO().getAbates().get(0).getBaiaAmostrados().size();
+			obsAbate[0] += controller.getModel().getExperimentoVO().getAbates().get(0).getCamaras().size();
+			obsAbate[0] += controller.getModel().getExperimentoVO().getAbates().get(0).getCones().size();
+			viewEscolhaAbate.getQtdeAbate1Label().setText(obsAbate[0] + " registro(s)");
+		}else if(controller.getModel().getExperimentoVO().getAbates().size() == 2) {
+			obsAbate[0] += controller.getModel().getExperimentoVO().getAbates().get(0).getBaiaAmostrados().size();
+			obsAbate[0] += controller.getModel().getExperimentoVO().getAbates().get(0).getCamaras().size();
+			obsAbate[0] += controller.getModel().getExperimentoVO().getAbates().get(0).getCones().size();
+			obsAbate[1] += controller.getModel().getExperimentoVO().getAbates().get(1).getBaiaAmostrados().size();
+			obsAbate[1] += controller.getModel().getExperimentoVO().getAbates().get(1).getCamaras().size();
+			obsAbate[1] += controller.getModel().getExperimentoVO().getAbates().get(1).getCones().size();
+			viewEscolhaAbate.getQtdeAbate1Label().setText(obsAbate[0] + " registro(s)");
+			viewEscolhaAbate.getQtdeAbate2Label().setText(obsAbate[1] + " registro(s)");
+		}else if(controller.getModel().getExperimentoVO().getAbates().size() == 3) {
+			obsAbate[0] += controller.getModel().getExperimentoVO().getAbates().get(0).getBaiaAmostrados().size();
+			obsAbate[0] += controller.getModel().getExperimentoVO().getAbates().get(0).getCamaras().size();
+			obsAbate[0] += controller.getModel().getExperimentoVO().getAbates().get(0).getCones().size();
+			obsAbate[1] += controller.getModel().getExperimentoVO().getAbates().get(1).getBaiaAmostrados().size();
+			obsAbate[1] += controller.getModel().getExperimentoVO().getAbates().get(1).getCamaras().size();
+			obsAbate[1] += controller.getModel().getExperimentoVO().getAbates().get(1).getCones().size();
+			obsAbate[2] += controller.getModel().getExperimentoVO().getAbates().get(2).getBaiaAmostrados().size();
+			obsAbate[2] += controller.getModel().getExperimentoVO().getAbates().get(2).getCamaras().size();
+			obsAbate[2] += controller.getModel().getExperimentoVO().getAbates().get(2).getCones().size();
+			viewEscolhaAbate.getQtdeAbate1Label().setText(obsAbate[0] + " registro(s)");
+			viewEscolhaAbate.getQtdeAbate2Label().setText(obsAbate[1] + " registro(s)");
+			viewEscolhaAbate.getQtdeAbate3Label().setText(obsAbate[2] + " registro(s)");
+		}
 	}
 
 	public void resumeWindow() {

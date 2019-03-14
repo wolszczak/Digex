@@ -20,9 +20,18 @@ public class AbateDAOP {
 	private static List<BaiaAmostradosVOP> amostrados;
 	private static List<CamaraVOP> camaras;
 	private static List<ConeVOP> cones;
+	private static BaiaAmostradosVOP amostrado;
+	private static CamaraVOP camara;
+	private static ConeVOP cone;
 
 	public static void exportarArquivo(InfoExpVOP infoExpVOP, List<AbateVOP> abates, String localArquivo) {
 		try {
+			amostrados =  new ArrayList<>();
+			camaras =  new ArrayList<>();
+			cones =  new ArrayList<>();
+			amostrado = new BaiaAmostradosVOP();
+			camara = new CamaraVOP();
+			cone = new ConeVOP();
 			List<String> header = new ArrayList<>();
 			header.addAll(Arrays.asList(HEADER_ABATE));
 
@@ -55,7 +64,7 @@ public class AbateDAOP {
 			});
 
 			BufferedWriter buffer;
-			buffer = new BufferedWriter(new FileWriter(localArquivo + "BAIA.csv"));
+			buffer = new BufferedWriter(new FileWriter(localArquivo + "FRIGO.csv"));
 			for (String h : header) {
 				buffer.write(h);
 				if (!h.equals("PESSOAL")) {
@@ -65,8 +74,6 @@ public class AbateDAOP {
 			buffer.newLine();
 			boolean keyCamara = false;
 			boolean keyCone = false;
-			int camaraIndex = 0;
-			int coneIndex = 0;
 			for (int i = 0; i < amostrados.size(); i++) {
 				buffer.write("" + amostrados.get(i).getIdade());
 				buffer.write(";");
@@ -76,10 +83,10 @@ public class AbateDAOP {
 				buffer.write(";");
 
 				//VERIFICA SE O ANIMAL FOI AVALIADO NO FRIGORÍFICO E PEGA O NUMERO DO INDICE DELE NA LISTA DE CAMARAS
-				for (int j = 0; j < camaras.size(); i++) {
+				for (int j = 0; j < camaras.size(); j++) {
 					if (camaras.get(j).getNasa() == amostrados.get(i).getNasa()) {
 						keyCamara = true;
-						camaraIndex = j;
+						camara = camaras.get(j);
 						break;
 					}
 				}
@@ -88,7 +95,7 @@ public class AbateDAOP {
 				for (int k = 0; k < cones.size(); k++) {
 					if (cones.get(k).getNasa() == amostrados.get(i).getNasa()) {
 						keyCone = true;
-						coneIndex = k;
+						cone = cones.get(k);
 						break;
 					}
 				}
@@ -97,34 +104,34 @@ public class AbateDAOP {
 				if (keyCamara && keyCone) {
 					buffer.write("" + camaras.get(i).getCamara());
 					buffer.write(";");
-					buffer.write("" + cones.get(i).getNcone());
+					buffer.write("" + cone.getNcone());
 					buffer.write(";");
 					buffer.write("" + amostrados.get(i).getPeso());
 					buffer.write(";");
-					buffer.write("" + camaras.get(i).getpCarcaca());
+					buffer.write("" + camara.getpCarcaca());
 					buffer.write(";");
-					buffer.write("" + camaras.get(i).getEscGordura());
+					buffer.write("" + camara.getEscGordura());
 					buffer.write(";");
-					buffer.write("" + camaras.get(i).getEscCarcaca());
+					buffer.write("" + camara.getEscCarcaca());
 					buffer.write(";");
-					buffer.write("" + cones.get(i).getpGordura());
+					buffer.write("" + cone.getpGordura());
 					buffer.write(";");
-					buffer.write("" + cones.get(i).getpPeito1());
+					buffer.write("" + cone.getpPeito1());
 					buffer.write(";");
-					buffer.write("" + cones.get(i).getPesoSobreCoxa());
+					buffer.write("" + cone.getPesoSobreCoxa());
 					buffer.write(";");
 				} else if (keyCamara && !keyCone) {
-					buffer.write("" + camaras.get(camaraIndex).getCamara());
+					buffer.write("" + camara.getCamara());
 					buffer.write(";");
 					buffer.write("");
 					buffer.write(";");
 					buffer.write("" + amostrados.get(i).getPeso());
 					buffer.write(";");
-					buffer.write("" + camaras.get(camaraIndex).getpCarcaca());
+					buffer.write("" + camara.getpCarcaca());
 					buffer.write(";");
-					buffer.write("" + camaras.get(camaraIndex).getEscGordura());
+					buffer.write("" + camara.getEscGordura());
 					buffer.write(";");
-					buffer.write("" + camaras.get(camaraIndex).getEscCarcaca());
+					buffer.write("" + camara.getEscCarcaca());
 					buffer.write(";");
 					buffer.write("");
 					buffer.write(";");
@@ -135,7 +142,7 @@ public class AbateDAOP {
 				} else if (!keyCamara && keyCone) {
 					buffer.write("");
 					buffer.write(";");
-					buffer.write("" + cones.get(coneIndex).getNcone());
+					buffer.write("" + cone.getNcone());
 					buffer.write(";");
 					buffer.write("" + amostrados.get(i).getPeso());
 					buffer.write(";");
@@ -145,14 +152,14 @@ public class AbateDAOP {
 					buffer.write(";");
 					buffer.write("");
 					buffer.write(";");
-					buffer.write("" + cones.get(coneIndex).getpGordura());
+					buffer.write("" + cone.getpGordura());
 					buffer.write(";");
-					buffer.write("" + cones.get(coneIndex).getpPeito1());
+					buffer.write("" + cone.getpPeito1());
 					buffer.write(";");
-					buffer.write("" + cones.get(coneIndex).getPesoSobreCoxa());
+					buffer.write("" + cone.getPesoSobreCoxa());
 					buffer.write(";");
 				}
-
+				buffer.newLine();
 			}
 
 			buffer.close();

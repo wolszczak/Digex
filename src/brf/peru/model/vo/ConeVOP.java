@@ -13,6 +13,10 @@ public class ConeVOP implements Serializable {
 	private int pPeito1;
 	private int pesoSobreCoxa;
 
+	public ConeVOP() {
+		
+	}
+	
 	public ConeVOP(int abate, int camara, int ncone, int nasa, int pGordura, int pPeito1, int pesoSobreCoxa) {
 		this.abate = abate;
 		this.camara = camara;

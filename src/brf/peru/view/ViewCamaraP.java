@@ -5,6 +5,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Font;
+import java.text.ParseException;
+
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.SwingConstants;
 import javax.swing.GroupLayout;
@@ -213,8 +215,12 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		}
 		numero1JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-		pCarcaca1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#####"))));
+		try {
+			pCarcaca1JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		pCarcaca1JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		pCarcaca1JFT.setEnabled(false);
 
@@ -330,8 +336,12 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		numero2JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		numero2JFT.setEnabled(false);
 
-		pCarcaca2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#####"))));
+		try {
+			pCarcaca2JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		pCarcaca2JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		pCarcaca2JFT.setEnabled(false);
 
@@ -363,8 +373,12 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		numero3JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		numero3JFT.setEnabled(false);
 
-		pCarcaca3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#####"))));
+		try {
+			pCarcaca3JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		pCarcaca3JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		pCarcaca3JFT.setEnabled(false);
 
@@ -396,8 +410,12 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		numero4JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		numero4JFT.setEnabled(false);
 
-		pCarcaca4JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#####"))));
+		try {
+			pCarcaca4JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		pCarcaca4JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		pCarcaca4JFT.setEnabled(false);
 
@@ -429,8 +447,12 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		numero5JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		numero5JFT.setEnabled(false);
 
-		pCarcaca5JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#####"))));
+		try {
+			pCarcaca5JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		pCarcaca5JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		pCarcaca5JFT.setEnabled(false);
 
@@ -453,175 +475,229 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		escCarcaca5JFT.setEnabled(false);
 
 		javax.swing.GroupLayout camaraJPLayout = new javax.swing.GroupLayout(camaraJP);
-		camaraJPLayout.setHorizontalGroup(
-			camaraJPLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(camaraJPLayout.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false)
-						.addComponent(ordem5JFT)
-						.addComponent(ordem4JFT)
-						.addComponent(ordem3JFT)
-						.addComponent(ordem2JFT, Alignment.TRAILING)
+		camaraJPLayout.setHorizontalGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING).addGroup(camaraJPLayout
+				.createSequentialGroup().addContainerGap()
+				.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false).addComponent(ordem5JFT)
+						.addComponent(ordem4JFT).addComponent(ordem3JFT).addComponent(ordem2JFT, Alignment.TRAILING)
 						.addComponent(jLabel1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(ordemHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(ordemHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(ordemHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(ordemHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(ordemHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(ordemHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
+						.addComponent(ordemHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
+						.addComponent(ordemHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
+						.addComponent(
+								ordemHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(
+								ordemHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 						.addComponent(ordem1JFT))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false)
-						.addComponent(numero5JFT)
-						.addComponent(numero4JFT)
-						.addComponent(numero3JFT)
-						.addComponent(numero1JFT)
+				.addPreferredGap(ComponentPlacement.UNRELATED)
+				.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false).addComponent(numero5JFT)
+						.addComponent(numero4JFT).addComponent(numero3JFT).addComponent(numero1JFT)
 						.addComponent(jLabel2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(numHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(numHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(numHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(numHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(numHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(numHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
+						.addComponent(numHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
+						.addComponent(numHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
+						.addComponent(numHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
+						.addComponent(numHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
 						.addComponent(numero2JFT))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false)
-						.addComponent(pCarcaca5JFT)
-						.addComponent(pCarcaca4JFT)
-						.addComponent(pCarcaca3JFT)
-						.addComponent(pCarcacaHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(pCarcacaHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(pCarcacaHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(pCarcacaHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(pCarcacaHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+				.addPreferredGap(ComponentPlacement.UNRELATED)
+				.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false).addComponent(pCarcaca5JFT)
+						.addComponent(pCarcaca4JFT).addComponent(pCarcaca3JFT)
+						.addComponent(pCarcacaHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
+						.addComponent(pCarcacaHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
+						.addComponent(pCarcacaHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
+						.addComponent(pCarcacaHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
+						.addComponent(pCarcacaHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
 						.addComponent(pCarcaca1JFT)
 						.addComponent(jLabel14, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 						.addComponent(pCarcaca2JFT))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false)
-						.addComponent(escGordura5JFT)
-						.addComponent(escGordura4JFT)
-						.addComponent(escGordura3JFT)
-						.addComponent(escGordura1JFT)
+				.addPreferredGap(ComponentPlacement.UNRELATED)
+				.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false).addComponent(escGordura5JFT)
+						.addComponent(escGordura4JFT).addComponent(escGordura3JFT).addComponent(escGordura1JFT)
 						.addComponent(jLabel15, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(escGorduraHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(escGorduraHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(escGorduraHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(escGorduraHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(escGorduraHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(escGorduraHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
+						.addComponent(escGorduraHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
+						.addComponent(escGorduraHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
+						.addComponent(escGorduraHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
+						.addComponent(escGorduraHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
 						.addComponent(escGordura2JFT))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false)
+				.addPreferredGap(ComponentPlacement.UNRELATED)
+				.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false)
 						.addComponent(jLabel11, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 						.addComponent(escCarcaca1JFT, Alignment.TRAILING)
-						.addComponent(escCarcacaHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(escCarcacaHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(escCarcacaHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(escCarcacaHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(escCarcacaHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(escCarcaca2JFT)
-						.addComponent(escCarcaca3JFT)
-						.addComponent(escCarcaca4JFT)
+						.addComponent(escCarcacaHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
+						.addComponent(escCarcacaHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
+						.addComponent(escCarcacaHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
+						.addComponent(escCarcacaHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
+						.addComponent(escCarcacaHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
+						.addComponent(escCarcaca2JFT).addComponent(escCarcaca3JFT).addComponent(escCarcaca4JFT)
 						.addComponent(escCarcaca5JFT))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false)
+				.addPreferredGap(ComponentPlacement.RELATED)
+				.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false)
 						.addComponent(jLabel12, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 						.addComponent(controleJFT, GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE))
-					.addContainerGap(23, Short.MAX_VALUE))
-		);
-		camaraJPLayout.setVerticalGroup(
-			camaraJPLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(camaraJPLayout.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false)
-						.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-							.addComponent(ordemHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-							.addComponent(numHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
-						.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-							.addComponent(pCarcacaHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-							.addComponent(escGorduraHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-							.addComponent(escCarcacaHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false)
-						.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-							.addComponent(ordemHist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-							.addComponent(numHist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
-						.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-							.addComponent(pCarcacaHist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-							.addComponent(escGorduraHist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-							.addComponent(escCarcacaHist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING)
+				.addContainerGap(23, Short.MAX_VALUE)));
+		camaraJPLayout.setVerticalGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(camaraJPLayout.createSequentialGroup().addContainerGap()
+						.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false)
+								.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
+										.addComponent(ordemHist1Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(numHist1Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE))
+								.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
+										.addComponent(pCarcacaHist1Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(escGorduraHist1Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(escCarcacaHist1Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)))
+						.addPreferredGap(ComponentPlacement.UNRELATED)
+						.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false)
+								.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
+										.addComponent(ordemHist2Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(numHist2Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE))
+								.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
+										.addComponent(pCarcacaHist2Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(escGorduraHist2Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(escCarcacaHist2Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)))
+						.addPreferredGap(ComponentPlacement.UNRELATED)
+						.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING)
+								.addGroup(camaraJPLayout.createParallelGroup(Alignment.TRAILING)
+										.addComponent(ordemHist3Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(numHist3Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE))
+								.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
+										.addComponent(pCarcacaHist3Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(escGorduraHist3Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(escCarcacaHist3Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)))
+						.addPreferredGap(ComponentPlacement.UNRELATED)
 						.addGroup(camaraJPLayout.createParallelGroup(Alignment.TRAILING)
-							.addComponent(ordemHist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-							.addComponent(numHist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
+								.addComponent(ordemHist4Label, GroupLayout.PREFERRED_SIZE, 14,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(numHist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+								.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
+										.addComponent(pCarcacaHist4Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(escGorduraHist4Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(escCarcacaHist4Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)))
+						.addPreferredGap(ComponentPlacement.UNRELATED)
+						.addGroup(camaraJPLayout.createParallelGroup(Alignment.TRAILING)
+								.addComponent(ordemHist5Label, GroupLayout.PREFERRED_SIZE, 14,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(numHist5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+								.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
+										.addComponent(pCarcacaHist5Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(escGorduraHist5Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(escCarcacaHist5Label, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)))
+						.addPreferredGap(ComponentPlacement.UNRELATED)
+						.addGroup(
+								camaraJPLayout.createParallelGroup(Alignment.LEADING)
+										.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
+												.addComponent(jLabel1).addComponent(jLabel2))
+										.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
+												.addComponent(jLabel11).addComponent(jLabel14).addComponent(jLabel15)))
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false)
+								.addComponent(
+										escGordura1JFT, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 20,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(
+										escCarcaca1JFT, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 20,
+										GroupLayout.PREFERRED_SIZE)
+								.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
+										.addComponent(ordem1JFT, GroupLayout.PREFERRED_SIZE, 20,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(numero1JFT, GroupLayout.PREFERRED_SIZE, 20,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(pCarcaca1JFT, GroupLayout.PREFERRED_SIZE, 20,
+												GroupLayout.PREFERRED_SIZE)))
+						.addPreferredGap(ComponentPlacement.RELATED)
 						.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-							.addComponent(pCarcacaHist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-							.addComponent(escGorduraHist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-							.addComponent(escCarcacaHist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(camaraJPLayout.createParallelGroup(Alignment.TRAILING)
-						.addComponent(ordemHist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-						.addComponent(numHist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+								.addComponent(ordem2JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(numero2JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(pCarcaca2JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(escGordura2JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(escCarcaca2JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE))
+						.addPreferredGap(ComponentPlacement.RELATED)
 						.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-							.addComponent(pCarcacaHist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-							.addComponent(escGorduraHist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-							.addComponent(escCarcacaHist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(camaraJPLayout.createParallelGroup(Alignment.TRAILING)
-						.addComponent(ordemHist5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-						.addComponent(numHist5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+								.addComponent(ordem3JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(numero3JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(pCarcaca3JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(escGordura3JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(escCarcaca3JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE))
+						.addPreferredGap(ComponentPlacement.RELATED)
 						.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-							.addComponent(pCarcacaHist5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-							.addComponent(escGorduraHist5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-							.addComponent(escCarcacaHist5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(ordem4JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(numero4JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(pCarcaca4JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(escGordura4JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(escCarcaca4JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(jLabel12))
+						.addPreferredGap(ComponentPlacement.RELATED)
 						.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-							.addComponent(jLabel1)
-							.addComponent(jLabel2))
-						.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-							.addComponent(jLabel11)
-							.addComponent(jLabel14)
-							.addComponent(jLabel15)))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false)
-						.addComponent(escGordura1JFT, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
-						.addComponent(escCarcaca1JFT, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
-						.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-							.addComponent(ordem1JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
-							.addComponent(numero1JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
-							.addComponent(pCarcaca1JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(ordem2JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(numero2JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(pCarcaca2JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(escGordura2JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(escCarcaca2JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(ordem3JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(numero3JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(pCarcaca3JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(escGordura3JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(escCarcaca3JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(ordem4JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(numero4JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(pCarcaca4JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(escGordura4JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(escCarcaca4JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(jLabel12))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(ordem5JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(numero5JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(pCarcaca5JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(escGordura5JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(escCarcaca5JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(controleJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap())
-		);
+								.addComponent(ordem5JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(numero5JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(pCarcaca5JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(escGordura5JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(escCarcaca5JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(controleJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
+						.addContainerGap()));
 		camaraJP.setLayout(camaraJPLayout);
 
 		registrosLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -735,25 +811,25 @@ public class ViewCamaraP extends javax.swing.JFrame {
 						camaraJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 				.addContainerGap()));
 		jPanel3.setLayout(jPanel3Layout);
-		
+
 		lblfAbrir = new JLabel();
 		lblfAbrir.setText("[F1] - Abrir Cone 1");
 		lblfAbrir.setHorizontalAlignment(SwingConstants.CENTER);
 		lblfAbrir.setForeground(Color.BLACK);
 		lblfAbrir.setFont(new Font("Tahoma", Font.BOLD, 11));
-		
+
 		qtdeAbate1Label = new JLabel();
 		qtdeAbate1Label.setText("0 registro(s)");
 		qtdeAbate1Label.setHorizontalAlignment(SwingConstants.CENTER);
 		qtdeAbate1Label.setForeground(new Color(0, 153, 255));
 		qtdeAbate1Label.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		
+
 		lblfAbrir_1 = new JLabel();
 		lblfAbrir_1.setText("[F2] - Abrir Cone 2");
 		lblfAbrir_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblfAbrir_1.setForeground(Color.BLACK);
 		lblfAbrir_1.setFont(new Font("Tahoma", Font.BOLD, 11));
-		
+
 		qtdeAbate2Label = new JLabel();
 		qtdeAbate2Label.setText("0 registro(s)");
 		qtdeAbate2Label.setHorizontalAlignment(SwingConstants.CENTER);
@@ -761,50 +837,52 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		qtdeAbate2Label.setFont(new Font("Tahoma", Font.PLAIN, 11));
 
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-		jPanel1Layout.setHorizontalGroup(
-			jPanel1Layout.createParallelGroup(Alignment.LEADING)
-				.addGroup(jPanel1Layout.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel1Layout
+				.createSequentialGroup().addContainerGap()
+				.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
 						.addComponent(jPanel2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addGroup(jPanel1Layout.createSequentialGroup()
-							.addComponent(jPanel3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
-							.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING, false)
-								.addGroup(Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-									.addComponent(lblfAbrir, GroupLayout.PREFERRED_SIZE, 114, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(qtdeAbate1Label, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE))
-								.addGroup(Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-									.addComponent(lblfAbrir_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(qtdeAbate2Label, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE))))
+						.addGroup(
+								jPanel1Layout.createSequentialGroup()
+										.addComponent(jPanel3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+												GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+										.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING, false)
+												.addGroup(Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+														.addComponent(lblfAbrir, GroupLayout.PREFERRED_SIZE, 114,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.UNRELATED).addComponent(
+																qtdeAbate1Label, GroupLayout.PREFERRED_SIZE, 84,
+																GroupLayout.PREFERRED_SIZE))
+												.addGroup(Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+														.addComponent(lblfAbrir_1, GroupLayout.DEFAULT_SIZE,
+																GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+														.addPreferredGap(ComponentPlacement.UNRELATED)
+														.addComponent(qtdeAbate2Label, GroupLayout.PREFERRED_SIZE, 84,
+																GroupLayout.PREFERRED_SIZE))))
 						.addComponent(camaraJP, GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
 						.addComponent(registrosLabel, GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE))
-					.addContainerGap())
-		);
-		jPanel1Layout.setVerticalGroup(
-			jPanel1Layout.createParallelGroup(Alignment.LEADING)
-				.addGroup(jPanel1Layout.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-						.addComponent(jPanel3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+				.addContainerGap()));
+		jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel1Layout
+				.createSequentialGroup().addContainerGap()
+				.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+				.addGap(18)
+				.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+						.addComponent(jPanel3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+								GroupLayout.PREFERRED_SIZE)
 						.addGroup(jPanel1Layout.createSequentialGroup()
-							.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(qtdeAbate1Label, GroupLayout.PREFERRED_SIZE, 15, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblfAbrir))
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(qtdeAbate2Label, GroupLayout.PREFERRED_SIZE, 15, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblfAbrir_1))))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(camaraJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(registrosLabel)
-					.addContainerGap())
-		);
+								.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+										.addComponent(qtdeAbate1Label, GroupLayout.PREFERRED_SIZE, 15,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(lblfAbrir))
+								.addPreferredGap(ComponentPlacement.UNRELATED)
+								.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+										.addComponent(qtdeAbate2Label, GroupLayout.PREFERRED_SIZE, 15,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(lblfAbrir_1))))
+				.addPreferredGap(ComponentPlacement.UNRELATED)
+				.addComponent(camaraJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+						GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED).addComponent(registrosLabel).addContainerGap()));
 		jPanel1.setLayout(jPanel1Layout);
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

@@ -32,10 +32,6 @@ public class ControllerEscolhaCamaraP extends KeyAdapter {
 		this.aviario = aviario;
 		this.abate = abate;
 
-		if (controller.getModel().getExperimentoVO().getInfoExp().getNrAbate() == 1) {
-			viewEscolhaCamara.getAbate2Label().setForeground(Color.GRAY);
-			viewEscolhaCamara.getQtdeAbate2Label().setVisible(false);
-		}
 		histSetup();
 	}
 

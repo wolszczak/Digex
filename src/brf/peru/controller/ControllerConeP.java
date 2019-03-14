@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.border.Border;
 
+import brf.peru.model.bo.AbateBOP;
 import brf.peru.model.dao.ModelStateDAOP;
 import brf.peru.model.vo.CamaraVOP;
 import brf.peru.model.vo.ConeVOP;
@@ -32,6 +33,7 @@ public class ControllerConeP extends KeyAdapter implements FocusListener {
 	private int abate, idadeAbate, camara, cone, ordem;
 	private Border defaultBorder;
 	private List<Component> order, orderAux;
+	private AbateBOP abateBO;
 
 	public ControllerConeP(ControllerP c) {
 		controller = c;
@@ -47,6 +49,7 @@ public class ControllerConeP extends KeyAdapter implements FocusListener {
 		this.dataAbate = dataAbate;
 		this.cone = cone;
 		conesTemp = new ArrayList<>();
+		abateBO =  new AbateBOP(controller);
 
 		viewCone = new ViewConeP();
 		viewCone.setTitle("DIGEX - Peru");
@@ -78,7 +81,7 @@ public class ControllerConeP extends KeyAdapter implements FocusListener {
 					"Digex - Voltar", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 			if (option == 0) {
 				viewCone.setVisible(false);
-				controller.startCamaras(Integer.valueOf(aviario), abate, idadeAbate, dataAbate, camara);
+				controller.startEscolhaCamaras(Integer.parseInt(aviario), abate, idadeAbate, dataAbate);
 				System.out.println("Voltar");
 			}
 		}
@@ -112,27 +115,27 @@ public class ControllerConeP extends KeyAdapter implements FocusListener {
 				viewCone.getpGord1JFT().setEnabled(true);
 				viewCone.getpGord1JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewCone.getpGord1JFT()) {
-				TextFormatter.formatStringJFT(src, text, 2);
+				TextFormatter.formatStringJFT(src, text, 3);
 				viewCone.getpGord1JFT().setEnabled(false);
 				viewCone.getpGord2JFT().setEnabled(true);
 				viewCone.getpGord2JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewCone.getpGord2JFT()) {
-				TextFormatter.formatStringJFT(src, text, 2);
+				TextFormatter.formatStringJFT(src, text, 3);
 				viewCone.getpGord2JFT().setEnabled(false);
 				viewCone.getpGord3JFT().setEnabled(true);
 				viewCone.getpGord3JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewCone.getpGord3JFT()) {
-				TextFormatter.formatStringJFT(src, text, 2);
+				TextFormatter.formatStringJFT(src, text, 3);
 				viewCone.getpGord3JFT().setEnabled(false);
 				viewCone.getpGord4JFT().setEnabled(true);
 				viewCone.getpGord4JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewCone.getpGord4JFT()) {
-				TextFormatter.formatStringJFT(src, text, 2);
+				TextFormatter.formatStringJFT(src, text, 3);
 				viewCone.getpGord4JFT().setEnabled(false);
 				viewCone.getpGord5JFT().setEnabled(true);
 				viewCone.getpGord5JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewCone.getpGord5JFT()) {
-				TextFormatter.formatStringJFT(src, text, 2);
+				TextFormatter.formatStringJFT(src, text, 3);
 				viewCone.getpGord5JFT().setEnabled(false);
 				viewCone.getpPeito11JFT().setEnabled(true);
 				viewCone.getpPeito11JFT().grabFocus();
@@ -190,23 +193,35 @@ public class ControllerConeP extends KeyAdapter implements FocusListener {
 				viewCone.getControleJFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewCone.getControleJFT()) {
 				TextFormatter.formatStringJFT(src, text, 6);
-				if (Integer.parseInt(viewCone.getControleJFT().getText()) == calculaTotalControle()) {
-					viewCone.getConeJP().setBorder(defaultBorder);
-					controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones().addAll(conesTemp);
-					dao.saveModelState(false);
-					conesTemp = new ArrayList<>();
-					atualizaHist();
-					viewCone.getControleJFT().setText("000000");
-					viewCone.getControleJFT().setEnabled(false);
-					viewCone.getNumero1JFT().setEnabled(true);
-					viewCone.getNumero1JFT().grabFocus();
-					viewCone.getRegistrosLabel().setVisible(true);
-				} else {
+				String msg = abateBO.verificaCones(conesTemp);
+				if (msg != null) {
+					JOptionPane.showMessageDialog(viewCone, "Problema(s):\n" + msg, "DIGEX - Erro",
+							JOptionPane.ERROR_MESSAGE);
 					viewCone.getConeJP().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
 					conesTemp = new ArrayList<>();
 					viewCone.getControleJFT().setEnabled(false);
 					viewCone.getNumero1JFT().setEnabled(true);
 					viewCone.getNumero1JFT().grabFocus();
+				} else {
+					if (Integer.parseInt(viewCone.getControleJFT().getText()) == calculaTotalControle()) {
+						viewCone.getConeJP().setBorder(defaultBorder);
+						controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones()
+								.addAll(conesTemp);
+						dao.saveModelState(false);
+						conesTemp = new ArrayList<>();
+						atualizaHist();
+						viewCone.getControleJFT().setText("000000");
+						viewCone.getControleJFT().setEnabled(false);
+						viewCone.getNumero1JFT().setEnabled(true);
+						viewCone.getNumero1JFT().grabFocus();
+						viewCone.getRegistrosLabel().setVisible(true);
+					} else {
+						viewCone.getConeJP().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
+						conesTemp = new ArrayList<>();
+						viewCone.getControleJFT().setEnabled(false);
+						viewCone.getNumero1JFT().setEnabled(true);
+						viewCone.getNumero1JFT().grabFocus();
+					}
 				}
 			}
 		}
@@ -326,7 +341,6 @@ public class ControllerConeP extends KeyAdapter implements FocusListener {
 						&& controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones().get(i - 1)
 								.getNcone() == cone) {
 					key = true;
-					ordem++;
 					JLabel lbl1 = (JLabel) orderAux.get(0);
 					lbl1.setText(String.valueOf(controller.getModel().getExperimentoVO().getAbates().get(abate - 1)
 							.getCones().get(i - 1).getNasa()));
@@ -352,6 +366,15 @@ public class ControllerConeP extends KeyAdapter implements FocusListener {
 				}
 			}
 			if (key) {
+				for (int i = 0; i < controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones()
+						.size(); i++) {
+					if (controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones().get(i)
+							.getAbate() == abate
+							&& controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones().get(i)
+									.getNcone() == cone) {
+						ordem++;
+					}
+				}
 				int aux = ordem;
 				viewCone.getOrdemHist5Label().setText(String.valueOf(aux));
 				aux--;
