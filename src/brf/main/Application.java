@@ -25,5 +25,4 @@ public class Application {
         c.openWindow();
    }
     
-    
 }
