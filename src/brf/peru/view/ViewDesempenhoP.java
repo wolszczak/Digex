@@ -238,6 +238,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 	private JLabel sobraHist5Label;
 	private javax.swing.JFormattedTextField trataJFT;
 	private JFormattedTextField controleBaiaJFT;
+	private JFormattedTextField controleBaiaJFT_1;
 	private JFormattedTextField idadeJFT;
 	private JFormattedTextField idadeJFT_2;
 	private JFormattedTextField sobraJFT;
@@ -571,62 +572,87 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		ladoJFT.setHorizontalAlignment(0);
 		ladoJFT.setEnabled(false);
 
-		controleBaiaJFT = new JFormattedTextField();
-		controleBaiaJFT.setHorizontalAlignment(SwingConstants.CENTER);
-		controleBaiaJFT.setEnabled(false);
+		controleBaiaJFT_1 = new JFormattedTextField();
+		controleBaiaJFT_1.setHorizontalAlignment(SwingConstants.CENTER);
+		controleBaiaJFT_1.setEnabled(false);
 
 		javax.swing.GroupLayout baiaJPLayout = new javax.swing.GroupLayout(baiaJP);
-		baiaJPLayout.setHorizontalGroup(baiaJPLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(baiaJPLayout.createSequentialGroup().addContainerGap().addComponent(jLabel44)
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addComponent(aviarioJFT, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.UNRELATED).addComponent(jLabel31)
-						.addPreferredGap(ComponentPlacement.UNRELATED)
-						.addComponent(baiaJFT, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE).addGap(18)
-						.addComponent(jLabel33).addPreferredGap(ComponentPlacement.RELATED)
-						.addComponent(ladoJFT, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE).addGap(18)
-						.addComponent(jLabel32).addPreferredGap(ComponentPlacement.RELATED)
-						.addComponent(sexoJFT, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.UNRELATED).addComponent(jLabel34)
-						.addPreferredGap(ComponentPlacement.UNRELATED)
-						.addComponent(linhagemJFT, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
-						.addGap(10).addComponent(jLabel45).addPreferredGap(ComponentPlacement.UNRELATED)
-						.addComponent(trataJFT, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE).addGap(10)
-						.addComponent(jLabel35).addPreferredGap(ComponentPlacement.UNRELATED)
-						.addComponent(avesAlojadasJFT, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.UNRELATED).addComponent(jLabel36)
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addComponent(controleBaiaJFT, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
-						.addGap(22)));
-		baiaJPLayout
-				.setVerticalGroup(
-						baiaJPLayout.createParallelGroup(Alignment.LEADING)
-								.addGroup(baiaJPLayout.createSequentialGroup().addContainerGap()
-										.addGroup(baiaJPLayout.createParallelGroup(Alignment.BASELINE)
-												.addComponent(jLabel31)
-												.addComponent(baiaJFT, GroupLayout.PREFERRED_SIZE,
-														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addComponent(jLabel32)
-												.addComponent(sexoJFT, GroupLayout.PREFERRED_SIZE,
-														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addComponent(jLabel34)
-												.addComponent(linhagemJFT, GroupLayout.PREFERRED_SIZE,
-														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addComponent(jLabel35)
-												.addComponent(avesAlojadasJFT, GroupLayout.PREFERRED_SIZE,
-														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addComponent(jLabel36).addComponent(jLabel44)
-												.addComponent(aviarioJFT, GroupLayout.PREFERRED_SIZE,
-														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addComponent(jLabel45)
-												.addComponent(trataJFT, GroupLayout.PREFERRED_SIZE,
-														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addComponent(jLabel33)
-												.addComponent(ladoJFT, GroupLayout.PREFERRED_SIZE,
-														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addComponent(controleBaiaJFT, GroupLayout.PREFERRED_SIZE,
-														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-										.addContainerGap()));
+		baiaJPLayout.setHorizontalGroup(
+			baiaJPLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(baiaJPLayout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(jLabel44, GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(aviarioJFT, GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(jLabel31, GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(baiaJFT, GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
+					.addGap(18)
+					.addComponent(jLabel33, GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(ladoJFT, GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
+					.addGap(18)
+					.addComponent(jLabel32, GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(sexoJFT, GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(jLabel34, GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(linhagemJFT, GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
+					.addGap(10)
+					.addComponent(jLabel45, GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(trataJFT, GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
+					.addGap(10)
+					.addComponent(jLabel35, GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(avesAlojadasJFT, GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(jLabel36, GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(controleBaiaJFT_1, GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+					.addGap(22))
+		);
+		baiaJPLayout.setVerticalGroup(
+			baiaJPLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(baiaJPLayout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(baiaJPLayout.createParallelGroup(Alignment.BASELINE)
+						.addGroup(baiaJPLayout.createSequentialGroup()
+							.addGap(6)
+							.addComponent(jLabel31, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+						.addComponent(baiaJFT)
+						.addGroup(baiaJPLayout.createSequentialGroup()
+							.addGap(6)
+							.addComponent(jLabel32, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+						.addComponent(sexoJFT)
+						.addGroup(baiaJPLayout.createSequentialGroup()
+							.addGap(6)
+							.addComponent(jLabel34, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+						.addComponent(linhagemJFT)
+						.addGroup(baiaJPLayout.createSequentialGroup()
+							.addGap(6)
+							.addComponent(jLabel35, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+						.addComponent(avesAlojadasJFT)
+						.addGroup(baiaJPLayout.createSequentialGroup()
+							.addGap(6)
+							.addComponent(jLabel36, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+						.addGroup(baiaJPLayout.createSequentialGroup()
+							.addGap(6)
+							.addComponent(jLabel44, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+						.addComponent(aviarioJFT)
+						.addGroup(baiaJPLayout.createSequentialGroup()
+							.addGap(6)
+							.addComponent(jLabel45, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+						.addComponent(trataJFT)
+						.addGroup(baiaJPLayout.createSequentialGroup()
+							.addGap(6)
+							.addComponent(jLabel33, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+						.addComponent(ladoJFT)
+						.addComponent(controleBaiaJFT_1))
+					.addContainerGap())
+		);
 		baiaJP.setLayout(baiaJPLayout);
 
 		consumoJP.setBorder(new javax.swing.border.SoftBevelBorder(0));
@@ -796,34 +822,37 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		jLabel47.setText("Sobra");
 
 		javax.swing.GroupLayout controleRMEJP1Layout = new javax.swing.GroupLayout(controleRMEJP1);
-		controleRMEJP1Layout.setHorizontalGroup(controleRMEJP1Layout.createParallelGroup(Alignment.LEADING)
-				.addGroup(controleRMEJP1Layout.createSequentialGroup().addContainerGap().addGroup(controleRMEJP1Layout
-						.createParallelGroup(Alignment.LEADING, false)
+		controleRMEJP1Layout.setHorizontalGroup(
+			controleRMEJP1Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(controleRMEJP1Layout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(controleRMEJP1Layout.createParallelGroup(Alignment.LEADING)
 						.addComponent(jLabel42, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 						.addGroup(controleRMEJP1Layout.createSequentialGroup()
-								.addGroup(controleRMEJP1Layout.createParallelGroup(Alignment.LEADING, false)
-										.addComponent(jLabel46, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-												Short.MAX_VALUE)
-										.addComponent(controleFornecidaJFT, GroupLayout.DEFAULT_SIZE, 88,
-												Short.MAX_VALUE))
-								.addPreferredGap(ComponentPlacement.RELATED)
-								.addGroup(controleRMEJP1Layout.createParallelGroup(Alignment.LEADING)
-										.addComponent(jLabel47, GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
-										.addComponent(controleSobraJFT, GroupLayout.DEFAULT_SIZE, 92,
-												Short.MAX_VALUE))))
-						.addContainerGap()));
-		controleRMEJP1Layout.setVerticalGroup(controleRMEJP1Layout.createParallelGroup(Alignment.TRAILING)
-				.addGroup(controleRMEJP1Layout.createSequentialGroup().addContainerGap().addComponent(jLabel42)
-						.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addGroup(controleRMEJP1Layout
-								.createParallelGroup(Alignment.BASELINE).addComponent(jLabel46).addComponent(jLabel47))
-						.addGap(4)
-						.addGroup(controleRMEJP1Layout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(controleFornecidaJFT, GroupLayout.PREFERRED_SIZE, 20,
-										GroupLayout.PREFERRED_SIZE)
-								.addComponent(controleSobraJFT, GroupLayout.PREFERRED_SIZE, 20,
-										GroupLayout.PREFERRED_SIZE))
-						.addGap(14)));
+							.addGroup(controleRMEJP1Layout.createParallelGroup(Alignment.LEADING)
+								.addComponent(jLabel46, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(controleFornecidaJFT, GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(controleRMEJP1Layout.createParallelGroup(Alignment.LEADING)
+								.addComponent(jLabel47, GroupLayout.PREFERRED_SIZE, 92, GroupLayout.PREFERRED_SIZE)
+								.addComponent(controleSobraJFT, GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE))))
+					.addGap(24))
+		);
+		controleRMEJP1Layout.setVerticalGroup(
+			controleRMEJP1Layout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(controleRMEJP1Layout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(jLabel42, GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(controleRMEJP1Layout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(jLabel46, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(jLabel47, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+					.addGap(4)
+					.addGroup(controleRMEJP1Layout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(controleFornecidaJFT, GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+						.addComponent(controleSobraJFT, GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE))
+					.addGap(7))
+		);
 
 		controleRMEJP1.setLayout(controleRMEJP1Layout);
 
@@ -832,167 +861,150 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		idadeJFT_2.setEnabled(false);
 
 		javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-		jPanel2Layout.setHorizontalGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel2Layout
-				.createSequentialGroup()
-				.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel2Layout
-						.createSequentialGroup().addContainerGap()
+		jPanel2Layout.setHorizontalGroup(
+			jPanel2Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel2Layout.createSequentialGroup()
+					.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+						.addGroup(jPanel2Layout.createSequentialGroup()
+							.addContainerGap()
+							.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+								.addGroup(jPanel2Layout.createSequentialGroup()
+									.addGroup(jPanel2Layout.createParallelGroup(Alignment.TRAILING)
+										.addComponent(ordemHist5Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addComponent(ordemHist4Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addComponent(ordemHist3Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addComponent(ordemHist2Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addComponent(ordemHist1Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addComponent(jLabel14, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+									.addGap(3))
+								.addComponent(ordemJFT_1, GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
+							.addGap(9)
+							.addGroup(jPanel2Layout.createParallelGroup(Alignment.TRAILING)
+								.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+									.addComponent(idadeHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(idadeHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(idadeHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(idadeHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(idadeHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(jLabel13, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
+								.addComponent(idadeJFT_2, GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+								.addComponent(fornecidaJFT, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE)
+								.addComponent(fornecidaHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(fornecidaHist2Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(jLabel9, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(fornecidaHist5Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(fornecidaHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(fornecidaHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+								.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+									.addComponent(sobraHist5Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(sobraHist4Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(sobraHist3Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(sobraHist2Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(sobraHist1Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(jLabel10, GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE))
+								.addGroup(jPanel2Layout.createSequentialGroup()
+									.addComponent(sobraJFT, GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+									.addGap(1)))
+							.addGap(32))
 						.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
-								.addGroup(jPanel2Layout.createParallelGroup(Alignment.TRAILING, false)
-										.addComponent(ordemHist5Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(ordemHist4Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(ordemHist3Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(ordemHist2Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(ordemHist1Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(jLabel14, Alignment.LEADING, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-								.addComponent(ordemJFT_1, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE))
-						.addGap(9)
-						.addGroup(jPanel2Layout.createParallelGroup(Alignment.TRAILING, false)
-								.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING, false)
-										.addComponent(idadeHist5Label, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(idadeHist4Label, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(idadeHist3Label, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(idadeHist2Label, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(idadeHist1Label, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(jLabel13, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 35,
-												Short.MAX_VALUE))
-								.addComponent(idadeJFT_2, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING, false).addComponent(fornecidaJFT)
-								.addComponent(fornecidaHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(fornecidaHist2Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(jLabel9, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(fornecidaHist5Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(fornecidaHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(fornecidaHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE))
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
-								.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING, false)
-										.addComponent(sobraHist5Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(sobraHist4Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(sobraHist3Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(sobraHist2Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(sobraHist1Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(jLabel10, GroupLayout.PREFERRED_SIZE, 56,
-												GroupLayout.PREFERRED_SIZE))
-								.addComponent(sobraJFT, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE))
-						.addGap(192))
-						.addGroup(jPanel2Layout.createParallelGroup(Alignment.TRAILING, false).addGroup(
-								Alignment.LEADING,
-								jPanel2Layout.createSequentialGroup().addContainerGap().addComponent(controleRMEJP1,
-										GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-								.addComponent(jLabel6, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 236,
-										GroupLayout.PREFERRED_SIZE)))
-				.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
-		jPanel2Layout.setVerticalGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel2Layout
-				.createSequentialGroup().addContainerGap().addComponent(jLabel6)
-				.addPreferredGap(ComponentPlacement.UNRELATED)
-				.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel2Layout
-						.createSequentialGroup().addComponent(jLabel13).addPreferredGap(ComponentPlacement.RELATED)
-						.addComponent(idadeHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.UNRELATED)
-						.addComponent(idadeHist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.UNRELATED)
-						.addComponent(idadeHist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.UNRELATED)
-						.addComponent(idadeHist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.UNRELATED)
-						.addComponent(idadeHist5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
-						.addGroup(
-								jPanel2Layout.createSequentialGroup().addComponent(jLabel14)
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addComponent(ordemHist1Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addComponent(ordemHist2Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addComponent(ordemHist3Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addComponent(ordemHist4Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addComponent(ordemHist5Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
-												.addComponent(fornecidaJFT, GroupLayout.PREFERRED_SIZE, 20,
-														GroupLayout.PREFERRED_SIZE)
-												.addComponent(idadeJFT_2, GroupLayout.PREFERRED_SIZE,
-														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addComponent(sobraJFT, GroupLayout.PREFERRED_SIZE,
-														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addComponent(ordemJFT_1, GroupLayout.PREFERRED_SIZE,
-														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-						.addGroup(
-								jPanel2Layout.createSequentialGroup().addComponent(jLabel9)
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addComponent(fornecidaHist1Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addComponent(fornecidaHist2Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addComponent(fornecidaHist3Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addComponent(fornecidaHist4Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.UNRELATED).addComponent(fornecidaHist5Label,
-												GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
-						.addGroup(
-								jPanel2Layout.createSequentialGroup().addComponent(jLabel10)
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addComponent(sobraHist1Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addComponent(sobraHist2Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addComponent(sobraHist3Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addComponent(sobraHist4Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.UNRELATED).addComponent(sobraHist5Label,
-												GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)))
-				.addGap(18).addComponent(controleRMEJP1, GroupLayout.PREFERRED_SIZE, 84, Short.MAX_VALUE)
-				.addContainerGap()));
+							.addGroup(jPanel2Layout.createSequentialGroup()
+								.addContainerGap()
+								.addComponent(controleRMEJP1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+							.addComponent(jLabel6, GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)))
+					.addGap(17))
+		);
+		jPanel2Layout.setVerticalGroup(
+			jPanel2Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel2Layout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(jLabel6, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+						.addGroup(jPanel2Layout.createSequentialGroup()
+							.addComponent(jLabel13, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(idadeHist1Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(idadeHist2Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(idadeHist3Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(idadeHist4Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(idadeHist5Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addGap(31))
+						.addGroup(jPanel2Layout.createSequentialGroup()
+							.addComponent(jLabel14, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(ordemHist1Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(ordemHist2Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(ordemHist3Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(ordemHist4Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(ordemHist5Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(fornecidaJFT, GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+								.addComponent(idadeJFT_2)
+								.addComponent(sobraJFT)
+								.addComponent(ordemJFT_1)))
+						.addGroup(jPanel2Layout.createSequentialGroup()
+							.addComponent(jLabel9, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(fornecidaHist1Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(fornecidaHist2Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(fornecidaHist3Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(fornecidaHist4Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(fornecidaHist5Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addGap(31))
+						.addGroup(jPanel2Layout.createSequentialGroup()
+							.addComponent(jLabel10, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(sobraHist1Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(sobraHist2Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(sobraHist3Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(sobraHist4Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(sobraHist5Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addGap(31)))
+					.addGap(18)
+					.addComponent(controleRMEJP1, GroupLayout.PREFERRED_SIZE, 84, Short.MAX_VALUE)
+					.addContainerGap())
+		);
 		jPanel2.setLayout(jPanel2Layout);
 
 		javax.swing.GroupLayout consumoJPLayout = new javax.swing.GroupLayout(consumoJP);
-		consumoJPLayout.setHorizontalGroup(consumoJPLayout.createParallelGroup(Alignment.LEADING)
-				.addComponent(faseConsumoLabel, GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
-				.addGroup(consumoJPLayout.createSequentialGroup().addGap(10)
-						.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, 259, Short.MAX_VALUE).addContainerGap()));
-		consumoJPLayout
-				.setVerticalGroup(consumoJPLayout.createParallelGroup(Alignment.LEADING).addGroup(
-						consumoJPLayout.createSequentialGroup().addContainerGap().addComponent(faseConsumoLabel)
-								.addPreferredGap(ComponentPlacement.RELATED).addComponent(jPanel2,
-										GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addContainerGap()));
+		consumoJPLayout.setHorizontalGroup(
+			consumoJPLayout.createParallelGroup(Alignment.LEADING)
+				.addComponent(faseConsumoLabel, GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+				.addGroup(consumoJPLayout.createSequentialGroup()
+					.addGap(10)
+					.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, 259, Short.MAX_VALUE)
+					.addContainerGap())
+		);
+		consumoJPLayout.setVerticalGroup(
+			consumoJPLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(consumoJPLayout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(faseConsumoLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(jPanel2, GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE)
+					.addContainerGap())
+		);
 
 		consumoJP.setLayout(consumoJPLayout);
 
@@ -2068,220 +2080,140 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 //		}
 
 		javax.swing.GroupLayout jPanel43Layout = new javax.swing.GroupLayout(jPanel43);
-		jPanel43Layout.setHorizontalGroup(jPanel43Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel43Layout
-				.createSequentialGroup().addContainerGap()
-				.addGroup(jPanel43Layout.createParallelGroup(Alignment.LEADING)
+		jPanel43Layout.setHorizontalGroup(
+			jPanel43Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel43Layout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(jPanel43Layout.createParallelGroup(Alignment.LEADING)
 						.addComponent(jLabel5, GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
-						.addGroup(jPanel43Layout.createSequentialGroup().addGroup(jPanel43Layout
-								.createParallelGroup(Alignment.TRAILING)
+						.addGroup(jPanel43Layout.createSequentialGroup()
+							.addGroup(jPanel43Layout.createParallelGroup(Alignment.TRAILING)
 								.addComponent(jLabel41, GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
 								.addComponent(ordemMortalidadeHist3Label, GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-								.addComponent(ordemMortalidadeHist4Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE,
-										41, Short.MAX_VALUE)
-								.addComponent(ordemMortalidadeHist1Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE,
-										41, Short.MAX_VALUE)
-								.addComponent(ordemMortalidadeHist2Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE,
-										41, Short.MAX_VALUE)
+								.addComponent(ordemMortalidadeHist4Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+								.addComponent(ordemMortalidadeHist1Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+								.addComponent(ordemMortalidadeHist2Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
 								.addComponent(ordemMortalidadeHist5Label, GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-								.addComponent(ordemMortalidadeJFT, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 41,
-										Short.MAX_VALUE))
-								.addPreferredGap(ComponentPlacement.RELATED)
-								.addGroup(jPanel43Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel43Layout
-										.createSequentialGroup()
-										.addGroup(jPanel43Layout.createParallelGroup(Alignment.LEADING)
-												.addComponent(idadeMortalidadeJFT, 35, 35, 35)
-												.addGroup(jPanel43Layout.createParallelGroup(Alignment.TRAILING, false)
-														.addComponent(idadeMHist3Label, Alignment.LEADING,
-																GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-														.addComponent(idadeMHist5Label, Alignment.LEADING,
-																GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-																Short.MAX_VALUE)
-														.addComponent(idadeMHist4Label, Alignment.LEADING,
-																GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-																Short.MAX_VALUE))
-												.addComponent(idadeMHist2Label, GroupLayout.PREFERRED_SIZE, 35,
-														GroupLayout.PREFERRED_SIZE)
-												.addComponent(idadeMHist1Label, GroupLayout.PREFERRED_SIZE, 35,
-														GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addGroup(jPanel43Layout.createParallelGroup(Alignment.LEADING)
-												.addComponent(nrMortalidadeJFT, GroupLayout.PREFERRED_SIZE, 23,
-														GroupLayout.PREFERRED_SIZE)
-												.addGroup(jPanel43Layout.createParallelGroup(Alignment.TRAILING, false)
-														.addComponent(nrMHist1Label, Alignment.LEADING,
-																GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-																Short.MAX_VALUE)
-														.addComponent(nrMHist2Label, GroupLayout.DEFAULT_SIZE,
-																GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-														.addComponent(nrMHist3Label, GroupLayout.DEFAULT_SIZE,
-																GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-														.addComponent(nrMHist4Label, Alignment.LEADING,
-																GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-																Short.MAX_VALUE)
-														.addComponent(nrMHist5Label, GroupLayout.PREFERRED_SIZE, 23,
-																GroupLayout.PREFERRED_SIZE))))
+								.addComponent(ordemMortalidadeJFT, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(jPanel43Layout.createParallelGroup(Alignment.LEADING)
+								.addGroup(jPanel43Layout.createSequentialGroup()
+									.addGroup(jPanel43Layout.createParallelGroup(Alignment.LEADING)
+										.addComponent(idadeMortalidadeJFT, GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+										.addGroup(jPanel43Layout.createParallelGroup(Alignment.TRAILING, false)
+											.addComponent(idadeMHist3Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+											.addComponent(idadeMHist5Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+											.addComponent(idadeMHist4Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+										.addComponent(idadeMHist2Label, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
+										.addComponent(idadeMHist1Label, GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addGroup(jPanel43Layout.createParallelGroup(Alignment.LEADING)
+										.addComponent(nrMortalidadeJFT, GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
+										.addGroup(jPanel43Layout.createParallelGroup(Alignment.TRAILING)
+											.addComponent(nrMHist1Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+											.addComponent(nrMHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+											.addComponent(nrMHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+											.addComponent(nrMHist4Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+											.addComponent(nrMHist5Label, GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)))
+									.addGap(2))
+								.addGroup(jPanel43Layout.createSequentialGroup()
+									.addComponent(jLabel16, GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(jLabel7, GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(jPanel43Layout.createParallelGroup(Alignment.LEADING)
+								.addComponent(pesoMHist4Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(pesoMHist3Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(pesoMHist2Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(pesoMHist1Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(jLabel8, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+								.addComponent(pesoMortalidadeJFT)
+								.addComponent(pesoMHist5Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+							.addGroup(jPanel43Layout.createParallelGroup(Alignment.LEADING)
+								.addGroup(jPanel43Layout.createSequentialGroup()
+									.addGap(7)
+									.addComponent(jLabel48, GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE))
+								.addGroup(jPanel43Layout.createSequentialGroup()
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(controleMortalidadeJFT)))
+							.addGap(29))))
+		);
+		jPanel43Layout.setVerticalGroup(
+			jPanel43Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel43Layout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(jLabel5, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(jPanel43Layout.createParallelGroup(Alignment.LEADING)
+						.addGroup(jPanel43Layout.createSequentialGroup()
+							.addComponent(jLabel8, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(pesoMHist1Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(pesoMHist2Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(pesoMHist3Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(pesoMHist4Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(pesoMHist5Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addGap(32))
+						.addGroup(jPanel43Layout.createSequentialGroup()
+							.addGroup(jPanel43Layout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(jLabel41, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(jLabel16, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(jLabel7, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(jPanel43Layout.createParallelGroup(Alignment.LEADING)
+								.addGroup(jPanel43Layout.createSequentialGroup()
+									.addGap(1)
+									.addGroup(jPanel43Layout.createParallelGroup(Alignment.TRAILING)
 										.addGroup(jPanel43Layout.createSequentialGroup()
-												.addComponent(jLabel16, GroupLayout.PREFERRED_SIZE, 37,
-														GroupLayout.PREFERRED_SIZE)
-												.addPreferredGap(ComponentPlacement.RELATED).addComponent(jLabel7,
-														GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)))
-								.addPreferredGap(ComponentPlacement.RELATED)
-								.addGroup(jPanel43Layout.createParallelGroup(Alignment.LEADING, false)
-										.addComponent(pesoMHist4Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(pesoMHist3Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(pesoMHist2Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(pesoMHist1Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(jLabel8, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-										.addComponent(pesoMortalidadeJFT).addComponent(pesoMHist5Label,
-												Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-												Short.MAX_VALUE))
-								.addGroup(jPanel43Layout.createParallelGroup(Alignment.LEADING, false)
-										.addGroup(jPanel43Layout.createSequentialGroup().addGap(7).addComponent(
-												jLabel48, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE))
+											.addComponent(nrMHist1Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+											.addPreferredGap(ComponentPlacement.UNRELATED)
+											.addComponent(nrMHist2Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+											.addPreferredGap(ComponentPlacement.UNRELATED)
+											.addComponent(nrMHist3Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+											.addPreferredGap(ComponentPlacement.UNRELATED)
+											.addComponent(nrMHist4Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+											.addPreferredGap(ComponentPlacement.UNRELATED)
+											.addComponent(nrMHist5Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+											.addPreferredGap(ComponentPlacement.UNRELATED)
+											.addComponent(nrMortalidadeJFT, GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE))
 										.addGroup(jPanel43Layout.createSequentialGroup()
-												.addPreferredGap(ComponentPlacement.RELATED)
-												.addComponent(controleMortalidadeJFT)))
-								.addGap(29)))));
-		jPanel43Layout
-				.setVerticalGroup(jPanel43Layout.createParallelGroup(Alignment.LEADING)
-						.addGroup(jPanel43Layout.createSequentialGroup().addContainerGap().addComponent(jLabel5)
-								.addPreferredGap(ComponentPlacement.UNRELATED)
-								.addGroup(jPanel43Layout
-										.createParallelGroup(Alignment.LEADING).addGroup(jPanel43Layout
-												.createSequentialGroup().addComponent(jLabel8).addPreferredGap(
-														ComponentPlacement.RELATED)
-												.addComponent(pesoMHist1Label, GroupLayout.PREFERRED_SIZE, 14,
-														GroupLayout.PREFERRED_SIZE)
-												.addPreferredGap(ComponentPlacement.UNRELATED)
-												.addComponent(
-														pesoMHist2Label, GroupLayout.PREFERRED_SIZE, 14,
-														GroupLayout.PREFERRED_SIZE)
-												.addPreferredGap(ComponentPlacement.UNRELATED)
-												.addComponent(
-														pesoMHist3Label, GroupLayout.PREFERRED_SIZE, 14,
-														GroupLayout.PREFERRED_SIZE)
-												.addPreferredGap(ComponentPlacement.UNRELATED)
-												.addComponent(pesoMHist4Label, GroupLayout.PREFERRED_SIZE, 14,
-														GroupLayout.PREFERRED_SIZE)
-												.addPreferredGap(ComponentPlacement.UNRELATED)
-												.addComponent(
-														pesoMHist5Label, GroupLayout.PREFERRED_SIZE, 14,
-														GroupLayout.PREFERRED_SIZE))
+											.addComponent(idadeMHist1Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+											.addPreferredGap(ComponentPlacement.UNRELATED)
+											.addComponent(idadeMHist2Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+											.addPreferredGap(ComponentPlacement.UNRELATED)
+											.addComponent(idadeMHist3Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+											.addPreferredGap(ComponentPlacement.UNRELATED)
+											.addComponent(idadeMHist4Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+											.addPreferredGap(ComponentPlacement.UNRELATED)
+											.addComponent(idadeMHist5Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+											.addPreferredGap(ComponentPlacement.UNRELATED)
+											.addComponent(idadeMortalidadeJFT, GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE))
 										.addGroup(jPanel43Layout.createSequentialGroup()
-												.addGroup(jPanel43Layout.createParallelGroup(Alignment.BASELINE)
-														.addComponent(jLabel41).addComponent(jLabel16)
-														.addComponent(jLabel7))
-												.addPreferredGap(ComponentPlacement.RELATED)
-												.addGroup(jPanel43Layout.createParallelGroup(Alignment.LEADING)
-														.addGroup(jPanel43Layout.createSequentialGroup().addGap(1)
-																.addGroup(jPanel43Layout
-																		.createParallelGroup(Alignment.TRAILING)
-																		.addGroup(jPanel43Layout.createSequentialGroup()
-																				.addComponent(nrMHist1Label,
-																						GroupLayout.PREFERRED_SIZE, 14,
-																						GroupLayout.PREFERRED_SIZE)
-																				.addPreferredGap(
-																						ComponentPlacement.UNRELATED)
-																				.addComponent(nrMHist2Label,
-																						GroupLayout.PREFERRED_SIZE, 14,
-																						GroupLayout.PREFERRED_SIZE)
-																				.addPreferredGap(
-																						ComponentPlacement.UNRELATED)
-																				.addComponent(nrMHist3Label,
-																						GroupLayout.PREFERRED_SIZE, 14,
-																						GroupLayout.PREFERRED_SIZE)
-																				.addPreferredGap(
-																						ComponentPlacement.UNRELATED)
-																				.addComponent(nrMHist4Label,
-																						GroupLayout.PREFERRED_SIZE, 14,
-																						GroupLayout.PREFERRED_SIZE)
-																				.addPreferredGap(
-																						ComponentPlacement.UNRELATED)
-																				.addComponent(nrMHist5Label,
-																						GroupLayout.PREFERRED_SIZE, 14,
-																						GroupLayout.PREFERRED_SIZE)
-																				.addPreferredGap(
-																						ComponentPlacement.UNRELATED)
-																				.addComponent(nrMortalidadeJFT,
-																						GroupLayout.PREFERRED_SIZE, 20,
-																						GroupLayout.PREFERRED_SIZE))
-																		.addGroup(jPanel43Layout.createSequentialGroup()
-																				.addComponent(idadeMHist1Label,
-																						GroupLayout.PREFERRED_SIZE, 14,
-																						GroupLayout.PREFERRED_SIZE)
-																				.addPreferredGap(
-																						ComponentPlacement.UNRELATED)
-																				.addComponent(idadeMHist2Label,
-																						GroupLayout.PREFERRED_SIZE, 14,
-																						GroupLayout.PREFERRED_SIZE)
-																				.addPreferredGap(
-																						ComponentPlacement.UNRELATED)
-																				.addComponent(idadeMHist3Label,
-																						GroupLayout.PREFERRED_SIZE, 14,
-																						GroupLayout.PREFERRED_SIZE)
-																				.addPreferredGap(
-																						ComponentPlacement.UNRELATED)
-																				.addComponent(idadeMHist4Label,
-																						GroupLayout.PREFERRED_SIZE, 14,
-																						GroupLayout.PREFERRED_SIZE)
-																				.addPreferredGap(
-																						ComponentPlacement.UNRELATED)
-																				.addComponent(idadeMHist5Label,
-																						GroupLayout.PREFERRED_SIZE, 14,
-																						GroupLayout.PREFERRED_SIZE)
-																				.addPreferredGap(
-																						ComponentPlacement.UNRELATED)
-																				.addComponent(idadeMortalidadeJFT,
-																						GroupLayout.PREFERRED_SIZE, 20,
-																						GroupLayout.PREFERRED_SIZE))
-																		.addGroup(jPanel43Layout.createSequentialGroup()
-																				.addComponent(jLabel48,
-																						GroupLayout.PREFERRED_SIZE, 14,
-																						GroupLayout.PREFERRED_SIZE)
-																				.addPreferredGap(
-																						ComponentPlacement.RELATED)
-																				.addGroup(jPanel43Layout
-																						.createParallelGroup(
-																								Alignment.BASELINE)
-																						.addComponent(
-																								pesoMortalidadeJFT,
-																								GroupLayout.PREFERRED_SIZE,
-																								GroupLayout.DEFAULT_SIZE,
-																								GroupLayout.PREFERRED_SIZE)
-																						.addComponent(
-																								controleMortalidadeJFT,
-																								GroupLayout.PREFERRED_SIZE,
-																								GroupLayout.DEFAULT_SIZE,
-																								GroupLayout.PREFERRED_SIZE)))))
-														.addGroup(jPanel43Layout.createSequentialGroup()
-																.addComponent(ordemMortalidadeHist1Label,
-																		GroupLayout.PREFERRED_SIZE, 14,
-																		GroupLayout.PREFERRED_SIZE)
-																.addPreferredGap(ComponentPlacement.UNRELATED)
-																.addComponent(ordemMortalidadeHist2Label,
-																		GroupLayout.PREFERRED_SIZE, 14,
-																		GroupLayout.PREFERRED_SIZE)
-																.addPreferredGap(ComponentPlacement.UNRELATED)
-																.addComponent(ordemMortalidadeHist3Label,
-																		GroupLayout.PREFERRED_SIZE, 14,
-																		GroupLayout.PREFERRED_SIZE)
-																.addPreferredGap(ComponentPlacement.UNRELATED)
-																.addComponent(ordemMortalidadeHist4Label,
-																		GroupLayout.PREFERRED_SIZE, 14,
-																		GroupLayout.PREFERRED_SIZE)
-																.addPreferredGap(ComponentPlacement.UNRELATED)
-																.addComponent(ordemMortalidadeHist5Label,
-																		GroupLayout.PREFERRED_SIZE, 14,
-																		GroupLayout.PREFERRED_SIZE)
-																.addPreferredGap(ComponentPlacement.UNRELATED)
-																.addComponent(ordemMortalidadeJFT,
-																		GroupLayout.PREFERRED_SIZE, 20,
-																		GroupLayout.PREFERRED_SIZE)))))
-								.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+											.addGap(105)
+											.addComponent(jLabel48, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+											.addPreferredGap(ComponentPlacement.RELATED)
+											.addGroup(jPanel43Layout.createParallelGroup(Alignment.BASELINE)
+												.addComponent(pesoMortalidadeJFT)
+												.addComponent(controleMortalidadeJFT)))))
+								.addGroup(jPanel43Layout.createSequentialGroup()
+									.addComponent(ordemMortalidadeHist1Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(ordemMortalidadeHist2Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(ordemMortalidadeHist3Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(ordemMortalidadeHist4Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(ordemMortalidadeHist5Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(ordemMortalidadeJFT, GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+									.addGap(1)))))
+					.addContainerGap())
+		);
 
 		jPanel43.setLayout(jPanel43Layout);
 
@@ -2290,18 +2222,26 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		faseMortalidadeLabel.setText("Fase 1 (Idade 28)");
 
 		javax.swing.GroupLayout gl_pnlMortalidade = new javax.swing.GroupLayout(pnlMortalidade);
-		gl_pnlMortalidade.setHorizontalGroup(gl_pnlMortalidade.createParallelGroup(Alignment.TRAILING)
-				.addGroup(Alignment.LEADING, gl_pnlMortalidade.createSequentialGroup().addContainerGap()
-						.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.LEADING)
-								.addComponent(jPanel43, GroupLayout.PREFERRED_SIZE, 281, GroupLayout.PREFERRED_SIZE)
-								.addComponent(faseMortalidadeLabel, GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE))
-						.addContainerGap()));
-		gl_pnlMortalidade.setVerticalGroup(gl_pnlMortalidade.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_pnlMortalidade.createSequentialGroup().addContainerGap().addComponent(faseMortalidadeLabel)
-						.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(jPanel43, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-								GroupLayout.PREFERRED_SIZE)
-						.addContainerGap()));
+		gl_pnlMortalidade.setHorizontalGroup(
+			gl_pnlMortalidade.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_pnlMortalidade.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_pnlMortalidade.createSequentialGroup()
+							.addComponent(jPanel43, GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
+							.addGap(10))
+						.addComponent(faseMortalidadeLabel, GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE))
+					.addContainerGap())
+		);
+		gl_pnlMortalidade.setVerticalGroup(
+			gl_pnlMortalidade.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_pnlMortalidade.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(faseMortalidadeLabel, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(jPanel43, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addContainerGap())
+		);
 
 		pnlMortalidade.setLayout(gl_pnlMortalidade);
 
@@ -2429,179 +2369,172 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		ordemEliminadosJFT.setEnabled(false);
 
 		javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+		jPanel13Layout.setHorizontalGroup(
+			jPanel13Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel13Layout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(jPanel13Layout.createParallelGroup(Alignment.TRAILING)
+						.addComponent(eliminadosJP1, GroupLayout.PREFERRED_SIZE, 230, GroupLayout.PREFERRED_SIZE)
+						.addGroup(jPanel13Layout.createSequentialGroup()
+							.addGroup(jPanel13Layout.createParallelGroup(Alignment.TRAILING)
+								.addGroup(jPanel13Layout.createSequentialGroup()
+									.addGap(2)
+									.addComponent(jLabel60, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+								.addComponent(ordemElHist3Label, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+								.addComponent(ordemElHist4Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+								.addComponent(ordemElHist1Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+								.addComponent(ordemElHist2Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+								.addComponent(ordemElHist5Label, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+								.addGroup(Alignment.LEADING, jPanel13Layout.createSequentialGroup()
+									.addComponent(ordemEliminadosJFT, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+									.addGap(3)))
+							.addGroup(jPanel13Layout.createParallelGroup(Alignment.LEADING)
+								.addGroup(jPanel13Layout.createSequentialGroup()
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addGroup(jPanel13Layout.createParallelGroup(Alignment.TRAILING)
+										.addComponent(idadeElHist5Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+										.addComponent(idadeElHist2Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+										.addComponent(idadeElHist3Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+										.addComponent(idadeElHist4Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+										.addGroup(Alignment.LEADING, jPanel13Layout.createSequentialGroup()
+											.addComponent(idadeEliminadosJFT, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+											.addGap(1))))
+								.addGroup(jPanel13Layout.createSequentialGroup()
+									.addGap(10)
+									.addComponent(jLabel58, GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
+								.addGroup(jPanel13Layout.createSequentialGroup()
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(idadeElHist1Label, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(jPanel13Layout.createParallelGroup(Alignment.LEADING)
+								.addComponent(jLabel29, GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
+								.addComponent(nrElHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(nrElHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(nrElHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(nrElHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(nrElHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addGroup(jPanel13Layout.createSequentialGroup()
+									.addComponent(nrEliminadosJFT, GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
+									.addGap(3)))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(jPanel13Layout.createParallelGroup(Alignment.LEADING)
+								.addGroup(jPanel13Layout.createSequentialGroup()
+									.addComponent(jLabel57, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+									.addGap(67))
+								.addGroup(jPanel13Layout.createSequentialGroup()
+									.addGroup(jPanel13Layout.createParallelGroup(Alignment.LEADING)
+										.addComponent(pesoElHist1Label, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+										.addGroup(jPanel13Layout.createSequentialGroup()
+											.addGroup(jPanel13Layout.createParallelGroup(Alignment.LEADING)
+												.addComponent(pesoElHist3Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+												.addComponent(pesoElHist4Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+												.addComponent(pesoElHist5Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+												.addComponent(pesoEliminadosJFT, Alignment.TRAILING)
+												.addComponent(pesoElHist2Label, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE))
+											.addGap(1)))
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addGroup(jPanel13Layout.createParallelGroup(Alignment.LEADING)
+										.addComponent(controleEliminadosJFT)
+										.addComponent(jLabel59, GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE))
+									.addGap(2)))
+							.addGap(0))))
+		);
+		jPanel13Layout.setVerticalGroup(
+			jPanel13Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel13Layout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(eliminadosJP1, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+					.addGap(12)
+					.addGroup(jPanel13Layout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(jLabel60, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(jLabel58, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(jLabel29, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(jLabel57, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+					.addGap(0)
+					.addGroup(jPanel13Layout.createParallelGroup(Alignment.TRAILING)
+						.addGroup(jPanel13Layout.createSequentialGroup()
+							.addGroup(jPanel13Layout.createParallelGroup(Alignment.LEADING)
+								.addComponent(pesoElHist1Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+								.addComponent(nrElHist1Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE))
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addGroup(jPanel13Layout.createParallelGroup(Alignment.LEADING)
+								.addComponent(pesoElHist2Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+								.addComponent(nrElHist2Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE))
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addGroup(jPanel13Layout.createParallelGroup(Alignment.LEADING)
+								.addComponent(nrElHist3Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+								.addComponent(pesoElHist3Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE))
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addGroup(jPanel13Layout.createParallelGroup(Alignment.LEADING)
+								.addComponent(pesoElHist4Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+								.addComponent(nrElHist4Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE))
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addGroup(jPanel13Layout.createParallelGroup(Alignment.LEADING)
+								.addComponent(nrElHist5Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+								.addComponent(pesoElHist5Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE))
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addGroup(jPanel13Layout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(nrEliminadosJFT, GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+								.addComponent(pesoEliminadosJFT, GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)))
+						.addGroup(jPanel13Layout.createSequentialGroup()
+							.addComponent(idadeElHist1Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(idadeElHist2Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(idadeElHist3Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(idadeElHist4Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(idadeElHist5Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(idadeEliminadosJFT, GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE))
+						.addGroup(jPanel13Layout.createSequentialGroup()
+							.addGap(105)
+							.addComponent(jLabel59, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(controleEliminadosJFT, GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE))
+						.addGroup(jPanel13Layout.createSequentialGroup()
+							.addComponent(ordemElHist1Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(ordemElHist2Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(ordemElHist3Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(ordemElHist4Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(ordemElHist5Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(ordemEliminadosJFT, GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)))
+					.addContainerGap())
+		);
 		jPanel13.setLayout(jPanel13Layout);
-		jPanel13Layout.setHorizontalGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel13Layout.createSequentialGroup().addContainerGap().addGroup(jPanel13Layout
-						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addComponent(eliminadosJP1, -1, -1, 32767)
-						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-								.addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-										.addComponent(jLabel60, -1, -1, 32767)
-										.addComponent(ordemElHist3Label, -1, -1, 32767)
-										.addComponent(ordemElHist4Label, javax.swing.GroupLayout.Alignment.LEADING, -1,
-												-1, 32767)
-										.addComponent(ordemElHist1Label, javax.swing.GroupLayout.Alignment.LEADING, -1,
-												-1, 32767)
-										.addComponent(ordemElHist2Label, javax.swing.GroupLayout.Alignment.LEADING, -1,
-												-1, 32767)
-										.addComponent(ordemElHist5Label, -1, -1, 32767)
-										.addComponent(ordemEliminadosJFT, javax.swing.GroupLayout.Alignment.LEADING))
-								.addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addGroup(jPanel13Layout.createSequentialGroup()
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addGroup(jPanel13Layout
-														.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-														.addComponent(idadeElHist5Label,
-																javax.swing.GroupLayout.Alignment.LEADING, -1, -1,
-																32767)
-														.addComponent(idadeElHist2Label,
-																javax.swing.GroupLayout.Alignment.LEADING, -1, -1,
-																32767)
-														.addComponent(idadeElHist3Label,
-																javax.swing.GroupLayout.Alignment.LEADING, -1, -1,
-																32767)
-														.addComponent(idadeElHist4Label,
-																javax.swing.GroupLayout.Alignment.LEADING, -1, -1,
-																32767)
-														.addComponent(idadeEliminadosJFT,
-																javax.swing.GroupLayout.Alignment.LEADING)))
-										.addGroup(jPanel13Layout.createSequentialGroup().addGap(10, 10, 10)
-												.addComponent(jLabel58, -1, -1, 32767))
-										.addGroup(jPanel13Layout.createSequentialGroup()
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addComponent(idadeElHist1Label, -1, -1, 32767)))
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-								.addGroup(jPanel13Layout
-										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-										.addComponent(jLabel29, -1, 23, 32767)
-										.addComponent(nrElHist5Label, -1, -1, 32767)
-										.addComponent(nrElHist2Label, -1, -1, 32767)
-										.addComponent(nrElHist1Label, -1, -1, 32767)
-										.addComponent(nrElHist3Label, -1, -1, 32767)
-										.addComponent(nrElHist4Label, -1, -1, 32767).addComponent(nrEliminadosJFT,
-												GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE))
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-								.addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addComponent(jLabel57, -2, 48, -2)
-										.addGroup(jPanel13Layout.createSequentialGroup().addGroup(jPanel13Layout
-												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addComponent(pesoElHist1Label, -2, 48, -2)
-												.addGroup(jPanel13Layout
-														.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING,
-																false)
-														.addComponent(pesoElHist3Label,
-																javax.swing.GroupLayout.Alignment.TRAILING, -1, -1,
-																32767)
-														.addComponent(pesoElHist4Label,
-																javax.swing.GroupLayout.Alignment.TRAILING, -1, -1,
-																32767)
-														.addComponent(pesoElHist5Label,
-																javax.swing.GroupLayout.Alignment.TRAILING, -1, -1,
-																32767)
-														.addComponent(pesoEliminadosJFT,
-																javax.swing.GroupLayout.Alignment.TRAILING)
-														.addComponent(pesoElHist2Label, -2, 48, -2)))
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addGroup(jPanel13Layout
-														.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING,
-																false)
-														.addComponent(controleEliminadosJFT)
-														.addComponent(jLabel59, -1, 61, 32767))))
-								.addContainerGap()))));
-
-		jPanel13Layout.setVerticalGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel13Layout.createSequentialGroup().addContainerGap().addComponent(eliminadosJP1)
-						.addGap(12, 12, 12)
-						.addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-								.addComponent(jLabel60).addComponent(jLabel58).addComponent(jLabel29)
-								.addComponent(jLabel57))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-										.addGroup(jPanel13Layout.createSequentialGroup()
-												.addGroup(jPanel13Layout
-														.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-														.addComponent(pesoElHist1Label, -2, 14, -2)
-														.addComponent(nrElHist1Label, -2, 14, -2))
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-												.addGroup(jPanel13Layout
-														.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-														.addComponent(pesoElHist2Label, -2, 14, -2)
-														.addComponent(nrElHist2Label, -2, 14, -2))
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-												.addGroup(jPanel13Layout
-														.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-														.addComponent(nrElHist3Label, -2, 14, -2)
-														.addComponent(pesoElHist3Label, -2, 14, -2))
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-												.addGroup(jPanel13Layout
-														.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-														.addComponent(pesoElHist4Label, -2, 14, -2)
-														.addComponent(nrElHist4Label, -2, 14, -2))
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-												.addGroup(jPanel13Layout
-														.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-														.addComponent(nrElHist5Label,
-																javax.swing.GroupLayout.Alignment.TRAILING, -2, 14, -2)
-														.addComponent(pesoElHist5Label, -2, 14, -2))
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-												.addGroup(jPanel13Layout
-														.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-														.addComponent(nrEliminadosJFT, GroupLayout.PREFERRED_SIZE, 20,
-																GroupLayout.PREFERRED_SIZE)
-														.addComponent(pesoEliminadosJFT, -2, 20, -2)))
-										.addGroup(jPanel13Layout.createSequentialGroup()
-												.addComponent(idadeElHist1Label, -2, 14, -2)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-												.addComponent(idadeElHist2Label, -2, 14, -2)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-												.addComponent(idadeElHist3Label, -2, 14, -2)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-												.addComponent(idadeElHist4Label, -2, 14, -2)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-												.addComponent(idadeElHist5Label, -2, 14, -2)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-												.addComponent(idadeEliminadosJFT, -2, 20, -2))
-										.addGroup(jPanel13Layout.createSequentialGroup()
-												.addComponent(jLabel59, -2, 14, -2)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addComponent(controleEliminadosJFT, -2, 20, -2)))
-								.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-										jPanel13Layout.createSequentialGroup()
-												.addComponent(ordemElHist1Label, -2, 14, -2)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-												.addComponent(ordemElHist2Label, -2, 14, -2)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-												.addComponent(ordemElHist3Label, -2, 14, -2)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-												.addComponent(ordemElHist4Label, -2, 14, -2)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-												.addComponent(ordemElHist5Label, -2, 14, -2)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-												.addComponent(ordemEliminadosJFT, -2, 20, -2)))
-						.addContainerGap(-1, 32767)));
 
 		faseEliminadosLabel.setFont(new java.awt.Font("Tahoma", 1, 11));
 		faseEliminadosLabel.setHorizontalAlignment(0);
 		faseEliminadosLabel.setText("Fase 1 (Idade 28)");
 
 		javax.swing.GroupLayout gl_pnlEliminados = new javax.swing.GroupLayout(pnlEliminados);
-		pnlEliminados.setLayout(gl_pnlEliminados);
-		gl_pnlEliminados.setHorizontalGroup(gl_pnlEliminados
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(gl_pnlEliminados.createSequentialGroup().addContainerGap()
-						.addGroup(gl_pnlEliminados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addGroup(gl_pnlEliminados.createSequentialGroup().addGap(0, 0, 32767)
-										.addComponent(jPanel13, -2, -1, -2))
-								.addComponent(faseEliminadosLabel, -1, -1, 32767))
-						.addContainerGap()));
-
+		gl_pnlEliminados.setHorizontalGroup(
+			gl_pnlEliminados.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_pnlEliminados.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(gl_pnlEliminados.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_pnlEliminados.createSequentialGroup()
+							.addGap(0)
+							.addComponent(jPanel13, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+						.addComponent(faseEliminadosLabel, GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE))
+					.addContainerGap())
+		);
 		gl_pnlEliminados.setVerticalGroup(
-				gl_pnlEliminados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(
-						javax.swing.GroupLayout.Alignment.TRAILING,
-						gl_pnlEliminados.createSequentialGroup().addContainerGap().addComponent(faseEliminadosLabel)
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, -1, 32767)
-								.addComponent(jPanel13, -2, -1, -2).addContainerGap()));
+			gl_pnlEliminados.createParallelGroup(Alignment.TRAILING)
+				.addGroup(gl_pnlEliminados.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(faseEliminadosLabel, GroupLayout.PREFERRED_SIZE, 11, Short.MAX_VALUE)
+					.addGap(12)
+					.addComponent(jPanel13, GroupLayout.PREFERRED_SIZE, 210, Short.MAX_VALUE)
+					.addContainerGap())
+		);
+		pnlEliminados.setLayout(gl_pnlEliminados);
 
 		registroLabel.setFont(new java.awt.Font("Tahoma", 1, 11));
 		registroLabel.setForeground(new java.awt.Color(0, 153, 255));
@@ -2609,55 +2542,62 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 		registroLabel.setText("Registro salvo com sucesso!!");
 
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-		jPanel1Layout
-				.setHorizontalGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-						.addGroup(jPanel1Layout.createSequentialGroup().addContainerGap()
-								.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-										.addComponent(baiaJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.PREFERRED_SIZE)
-										.addGroup(jPanel1Layout.createSequentialGroup()
-												.addComponent(consumoJP, GroupLayout.PREFERRED_SIZE,
-														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addPreferredGap(ComponentPlacement.RELATED)
-												.addComponent(pnlMortalidade, GroupLayout.PREFERRED_SIZE, 317,
-														GroupLayout.PREFERRED_SIZE)
-												.addPreferredGap(ComponentPlacement.RELATED).addComponent(pnlEliminados,
-														GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-														GroupLayout.PREFERRED_SIZE)))
-								.addContainerGap(229, Short.MAX_VALUE))
+		jPanel1Layout.setHorizontalGroup(
+			jPanel1Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel1Layout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
 						.addGroup(jPanel1Layout.createSequentialGroup()
-								.addComponent(registroLabel, GroupLayout.PREFERRED_SIZE, 1000,
-										GroupLayout.PREFERRED_SIZE)
-								.addGap(0, 125, Short.MAX_VALUE))
-						.addGroup(jPanel1Layout.createSequentialGroup().addContainerGap()
-								.addComponent(pesagemJP, GroupLayout.DEFAULT_SIZE, 1105, Short.MAX_VALUE)
-								.addContainerGap()));
-		jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING).addGroup(jPanel1Layout
-				.createSequentialGroup().addContainerGap()
-				.addComponent(baiaJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-				.addPreferredGap(ComponentPlacement.RELATED)
-				.addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING)
-						.addComponent(consumoJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-								GroupLayout.PREFERRED_SIZE)
-						.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING, false)
-								.addComponent(pnlMortalidade, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(pnlEliminados, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-				.addPreferredGap(ComponentPlacement.RELATED)
-				.addComponent(pesagemJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-						GroupLayout.PREFERRED_SIZE)
-				.addPreferredGap(ComponentPlacement.RELATED).addComponent(registroLabel)
-				.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+							.addComponent(baiaJP, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addGap(239))
+						.addGroup(jPanel1Layout.createSequentialGroup()
+							.addComponent(consumoJP, GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(pnlMortalidade, GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(pnlEliminados, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+					.addGap(229))
+				.addGroup(jPanel1Layout.createSequentialGroup()
+					.addComponent(registroLabel, GroupLayout.PREFERRED_SIZE, 1000, GroupLayout.PREFERRED_SIZE)
+					.addGap(0, 125, Short.MAX_VALUE))
+				.addGroup(jPanel1Layout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(pesagemJP, GroupLayout.DEFAULT_SIZE, 1105, Short.MAX_VALUE)
+					.addContainerGap())
+		);
+		jPanel1Layout.setVerticalGroup(
+			jPanel1Layout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(jPanel1Layout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(baiaJP, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING)
+						.addComponent(consumoJP, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addGroup(jPanel1Layout.createSequentialGroup()
+							.addGap(101)
+							.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+								.addComponent(pnlMortalidade, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(pnlEliminados, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(pesagemJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(registroLabel)
+					.addContainerGap())
+		);
 
 		jPanel1.setLayout(jPanel1Layout);
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-		layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addComponent(jPanel1, -1, 1125, 32767));
-
-		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(layout.createSequentialGroup().addComponent(jPanel1, -1, -1, 32767).addContainerGap()));
+		layout.setHorizontalGroup(
+			layout.createParallelGroup(Alignment.LEADING)
+				.addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 1125, Short.MAX_VALUE)
+		);
+		layout.setVerticalGroup(
+			layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(layout.createSequentialGroup()
+					.addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addContainerGap())
+		);
 
 		getContentPane().setLayout(layout);
 
@@ -3898,7 +3838,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 	}
 
 	public void setControleBaiaJFT(javax.swing.JFormattedTextField controleBaiaJFT) {
-		this.controleBaiaJFT = controleBaiaJFT;
+		this.controleBaiaJFT_1 = controleBaiaJFT;
 	}
 
 	public void setFaseConsumoLabel(JLabel faseConsumoLabel) {
@@ -4286,7 +4226,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 	}
 
 	public javax.swing.JFormattedTextField getControleBaiaJFT() {
-		return controleBaiaJFT;
+		return controleBaiaJFT_1;
 	}
 
 	public JLabel getFaseConsumoLabel() {
