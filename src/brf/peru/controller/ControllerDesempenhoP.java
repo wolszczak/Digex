@@ -336,6 +336,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 				viewDesempenho.getFornecidaJFT().setEnabled(true);
 				((JFormattedTextField) e.getSource()).transferFocus();
 				viewDesempenho.getFornecidaJFT().grabFocus();
+				viewDesempenho.getRegistroLabel().setVisible(false);
 			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getFornecidaJFT()) {
 				TextFormatter.formatStringJFT(src, text, 5);
 				viewDesempenho.getSobraJFT().setEnabled(true);

@@ -11,115 +11,67 @@ import java.awt.Color;
 import javax.swing.SwingConstants;
 
 public class ViewDesempenhoP extends javax.swing.JFrame {
-
-    /**
-     * Creates new form ViewDesempenhoP
-     */
-    public ViewDesempenhoP() {
-        initComponents();
-    }
-
-    public JFormattedTextField getAvesAlojadasJFT() {
-        return avesAlojadasJFT;
-    }
-
-    public JFormattedTextField getAviarioJFT() {
-        return aviarioJFT;
-    }
-
-    public JFormattedTextField getBaiaJFT() {
-        return baiaJFT;
-    }
-
-    public JPanel getBaiaJP() {
-        return baiaJP;
-    }
-
-    public JPanel getConsumoJP() {
-        return consumoJP;
-    }
-
-    public JFormattedTextField getControleBaiaJFT() {
-        return controleBaiaJFT;
-    }
+	private static final long serialVersionUID = 1L;
+	private javax.swing.JFormattedTextField avesAlojadasJFT;
+    private javax.swing.JFormattedTextField aviarioJFT;
+    private javax.swing.JFormattedTextField baiaJFT;
+    private javax.swing.JPanel baiaJP;
+    private javax.swing.JPanel consumoJP;
+    private javax.swing.JFormattedTextField controleFornecidaJFT;
+    private javax.swing.JPanel controleRMEJP1;
+    private javax.swing.JFormattedTextField controleSobraJFT;
+    private javax.swing.JLabel faseConsumoLabel;
+    private javax.swing.JLabel fornecidaHist1Label;
+    private javax.swing.JLabel fornecidaHist2Label;
+    private javax.swing.JLabel fornecidaHist3Label;
+    private javax.swing.JLabel fornecidaHist4Label;
+    private javax.swing.JLabel fornecidaHist5Label;
+    private javax.swing.JFormattedTextField fornecidaJFT;
+    private javax.swing.JLabel idadeHist1Label;
+    private javax.swing.JLabel idadeHist2Label;
+    private javax.swing.JLabel idadeHist3Label;
+    private javax.swing.JLabel idadeHist4Label;
+    private javax.swing.JLabel idadeHist5Label;
+    private javax.swing.JFormattedTextField idadeJFT;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JFormattedTextField ladoJFT;
+    private javax.swing.JFormattedTextField linhagemJFT;
+    private javax.swing.JLabel ordemHist1Label;
+    private javax.swing.JLabel ordemHist2Label;
+    private javax.swing.JLabel ordemHist3Label;
+    private javax.swing.JLabel ordemHist4Label;
+    private javax.swing.JLabel ordemHist5Label;
+    private javax.swing.JFormattedTextField ordemJFT;
+    private javax.swing.JLabel registroLabel;
+    private javax.swing.JFormattedTextField sexoJFT;
+    private javax.swing.JLabel sobraHist1Label;
+    private javax.swing.JLabel sobraHist2Label;
+    private javax.swing.JLabel sobraHist3Label;
+    private javax.swing.JLabel sobraHist4Label;
+    private javax.swing.JLabel sobraHist5Label;
+    private javax.swing.JFormattedTextField sobraJFT;
+    private javax.swing.JFormattedTextField trataJFT;
+    private JLabel label;
+    private JFormattedTextField controleBaiaJFT;
     
-    public JLabel getFaseConsumoLabel() {
-        return faseConsumoLabel;
-    }
-
-    public JLabel getFornecidaHist1Label() {
-        return fornecidaHist1Label;
-    }
-
-    public JLabel getFornecidaHist2Label() {
-        return fornecidaHist2Label;
-    }
-
-    public JLabel getFornecidaHist3Label() {
-        return fornecidaHist3Label;
-    }
-
-    public JLabel getFornecidaHist4Label() {
-        return fornecidaHist4Label;
-    }
-
-    public JLabel getFornecidaHist5Label() {
-        return fornecidaHist5Label;
-    }
-
-    public JFormattedTextField getFornecidaJFT() {
-        return fornecidaJFT;
-    }
-
-    public JFormattedTextField getLadoJFT() {
-        return ladoJFT;
-    }
-
-    public JFormattedTextField getLinhagemJFT() {
-        return linhagemJFT;
-    }
-
-        public JLabel getRegistroLabel() {
-        return registroLabel;
-    }
-
-    public JFormattedTextField getSexoJFT() {
-        return sexoJFT;
-    }
-
-    public JLabel getSobraHist1Label() {
-        return sobraHist1Label;
-    }
-
-    public JLabel getSobraHist2Label() {
-        return sobraHist2Label;
-    }
-
-    public JLabel getSobraHist3Label() {
-        return sobraHist3Label;
-    }
-
-    public JLabel getSobraHist4Label() {
-        return sobraHist4Label;
-    }
-
-    public JLabel getSobraHist5Label() {
-        return sobraHist5Label;
-    }
-
-    public JFormattedTextField getSobraJFT() {
-        return sobraJFT;
-    }
-
-    public JFormattedTextField getTrataJFT() {
-        return trataJFT;
-    }
-
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
-     */
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -129,7 +81,6 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
         avesAlojadasJFT = new javax.swing.JFormattedTextField();
         jLabel36 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        controleBaiaJFT = new javax.swing.JFormattedTextField();
         baiaJFT = new javax.swing.JFormattedTextField();
         jLabel32 = new javax.swing.JLabel();
         sexoJFT = new javax.swing.JFormattedTextField();
@@ -199,14 +150,6 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
         jLabel31.setText("Baia");
 
         try {
-            controleBaiaJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        controleBaiaJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        controleBaiaJFT.setEnabled(false);
-
-        try {
             baiaJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
@@ -248,7 +191,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
         jLabel45.setText("Trat.");
 
         try {
-            trataJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            trataJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -264,79 +207,87 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
         }
         ladoJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         ladoJFT.setEnabled(false);
+        
+        controleBaiaJFT = new JFormattedTextField();
+        try {
+        	controleBaiaJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        controleBaiaJFT.setHorizontalAlignment(SwingConstants.CENTER);
+        controleBaiaJFT.setEnabled(false);
 
         javax.swing.GroupLayout baiaJPLayout = new javax.swing.GroupLayout(baiaJP);
-        baiaJP.setLayout(baiaJPLayout);
         baiaJPLayout.setHorizontalGroup(
-            baiaJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(baiaJPLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(baiaJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(baiaJPLayout.createSequentialGroup()
-                        .addComponent(jLabel44)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(aviarioJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel31)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(baiaJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel33)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ladoJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel32)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(sexoJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel34)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(linhagemJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(baiaJPLayout.createSequentialGroup()
-                        .addComponent(jLabel45)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(trataJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel35)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(avesAlojadasJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel36)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(controleBaiaJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(19, Short.MAX_VALUE))
+        	baiaJPLayout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(baiaJPLayout.createSequentialGroup()
+        			.addContainerGap()
+        			.addGroup(baiaJPLayout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(baiaJPLayout.createSequentialGroup()
+        					.addComponent(jLabel44)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(aviarioJFT, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
+        					.addPreferredGap(ComponentPlacement.UNRELATED)
+        					.addComponent(jLabel31)
+        					.addPreferredGap(ComponentPlacement.UNRELATED)
+        					.addComponent(baiaJFT, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+        					.addGap(18)
+        					.addComponent(jLabel33)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(ladoJFT, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
+        					.addGap(18)
+        					.addComponent(jLabel32)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(sexoJFT, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
+        					.addPreferredGap(ComponentPlacement.UNRELATED)
+        					.addComponent(jLabel34)
+        					.addPreferredGap(ComponentPlacement.UNRELATED)
+        					.addComponent(linhagemJFT, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE))
+        				.addGroup(baiaJPLayout.createSequentialGroup()
+        					.addComponent(jLabel45)
+        					.addPreferredGap(ComponentPlacement.UNRELATED)
+        					.addComponent(trataJFT, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+        					.addGap(10)
+        					.addComponent(jLabel35)
+        					.addPreferredGap(ComponentPlacement.UNRELATED)
+        					.addComponent(avesAlojadasJFT, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
+        					.addPreferredGap(ComponentPlacement.UNRELATED)
+        					.addComponent(jLabel36)
+        					.addPreferredGap(ComponentPlacement.UNRELATED)
+        					.addComponent(controleBaiaJFT, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)))
+        			.addContainerGap(104, Short.MAX_VALUE))
         );
         baiaJPLayout.setVerticalGroup(
-            baiaJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(baiaJPLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(baiaJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel31)
-                    .addComponent(baiaJFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel32)
-                    .addComponent(sexoJFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel34)
-                    .addComponent(linhagemJFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel44)
-                    .addComponent(aviarioJFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel33)
-                    .addComponent(ladoJFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(baiaJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel35)
-                    .addComponent(avesAlojadasJFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel36)
-                    .addComponent(controleBaiaJFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel45)
-                    .addComponent(trataJFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        	baiaJPLayout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(baiaJPLayout.createSequentialGroup()
+        			.addContainerGap()
+        			.addGroup(baiaJPLayout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(jLabel31)
+        				.addComponent(baiaJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(jLabel32)
+        				.addComponent(sexoJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(jLabel34)
+        				.addComponent(linhagemJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(jLabel44)
+        				.addComponent(aviarioJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(jLabel33)
+        				.addComponent(ladoJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
+        			.addGroup(baiaJPLayout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(jLabel35)
+        				.addComponent(avesAlojadasJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(jLabel36)
+        				.addComponent(jLabel45)
+        				.addComponent(trataJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(controleBaiaJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+        baiaJP.setLayout(baiaJPLayout);
 
         consumoJP.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         faseConsumoLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         faseConsumoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        faseConsumoLabel.setText("Fase 1 (Idade 28)");
 
         jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -355,7 +306,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
         sobraHist4Label.setEnabled(false);
 
         try {
-            fornecidaJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            fornecidaJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -426,7 +377,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
         idadeHist5Label.setEnabled(false);
 
         try {
-            idadeJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            idadeJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -470,7 +421,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
         controleRMEJP1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         try {
-            controleFornecidaJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            controleFornecidaJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -483,7 +434,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
         });
 
         try {
-            controleSobraJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+            controleSobraJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -770,70 +721,6 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ViewDesempenhoP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -843,65 +730,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JFormattedTextField avesAlojadasJFT;
-    private javax.swing.JFormattedTextField aviarioJFT;
-    private javax.swing.JFormattedTextField baiaJFT;
-    private javax.swing.JPanel baiaJP;
-    private javax.swing.JPanel consumoJP;
-    private javax.swing.JFormattedTextField controleBaiaJFT;
-    private javax.swing.JFormattedTextField controleFornecidaJFT;
-    private javax.swing.JPanel controleRMEJP1;
-    private javax.swing.JFormattedTextField controleSobraJFT;
-    private javax.swing.JLabel faseConsumoLabel;
-    private javax.swing.JLabel fornecidaHist1Label;
-    private javax.swing.JLabel fornecidaHist2Label;
-    private javax.swing.JLabel fornecidaHist3Label;
-    private javax.swing.JLabel fornecidaHist4Label;
-    private javax.swing.JLabel fornecidaHist5Label;
-    private javax.swing.JFormattedTextField fornecidaJFT;
-    private javax.swing.JLabel idadeHist1Label;
-    private javax.swing.JLabel idadeHist2Label;
-    private javax.swing.JLabel idadeHist3Label;
-    private javax.swing.JLabel idadeHist4Label;
-    private javax.swing.JLabel idadeHist5Label;
-    private javax.swing.JFormattedTextField idadeJFT;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JFormattedTextField ladoJFT;
-    private javax.swing.JFormattedTextField linhagemJFT;
-    private javax.swing.JLabel ordemHist1Label;
-    private javax.swing.JLabel ordemHist2Label;
-    private javax.swing.JLabel ordemHist3Label;
-    private javax.swing.JLabel ordemHist4Label;
-    private javax.swing.JLabel ordemHist5Label;
-    private javax.swing.JFormattedTextField ordemJFT;
-    private javax.swing.JLabel registroLabel;
-    private javax.swing.JFormattedTextField sexoJFT;
-    private javax.swing.JLabel sobraHist1Label;
-    private javax.swing.JLabel sobraHist2Label;
-    private javax.swing.JLabel sobraHist3Label;
-    private javax.swing.JLabel sobraHist4Label;
-    private javax.swing.JLabel sobraHist5Label;
-    private javax.swing.JFormattedTextField sobraJFT;
-    private javax.swing.JFormattedTextField trataJFT;
-    private JLabel label;
+    
     // End of variables declaration//GEN-END:variables
 	public javax.swing.JFormattedTextField getControleFornecidaJFT() {
 		return controleFornecidaJFT;
@@ -1261,5 +1090,117 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
 
 	public void setTrataJFT(javax.swing.JFormattedTextField trataJFT) {
 		this.trataJFT = trataJFT;
+	}
+	
+	public ViewDesempenhoP() {
+        initComponents();
+    }
+
+    public JFormattedTextField getAvesAlojadasJFT() {
+        return avesAlojadasJFT;
+    }
+
+    public JFormattedTextField getAviarioJFT() {
+        return aviarioJFT;
+    }
+
+    public JFormattedTextField getBaiaJFT() {
+        return baiaJFT;
+    }
+
+    public JPanel getBaiaJP() {
+        return baiaJP;
+    }
+
+    public JPanel getConsumoJP() {
+        return consumoJP;
+    }
+
+    public JFormattedTextField getControleBaiaJFT() {
+        return controleBaiaJFT;
+    }
+    
+    public JLabel getFaseConsumoLabel() {
+        return faseConsumoLabel;
+    }
+
+    public JLabel getFornecidaHist1Label() {
+        return fornecidaHist1Label;
+    }
+
+    public JLabel getFornecidaHist2Label() {
+        return fornecidaHist2Label;
+    }
+
+    public JLabel getFornecidaHist3Label() {
+        return fornecidaHist3Label;
+    }
+
+    public JLabel getFornecidaHist4Label() {
+        return fornecidaHist4Label;
+    }
+
+    public JLabel getFornecidaHist5Label() {
+        return fornecidaHist5Label;
+    }
+
+    public JFormattedTextField getFornecidaJFT() {
+        return fornecidaJFT;
+    }
+
+    public JFormattedTextField getLadoJFT() {
+        return ladoJFT;
+    }
+
+    public JFormattedTextField getLinhagemJFT() {
+        return linhagemJFT;
+    }
+
+        public JLabel getRegistroLabel() {
+        return registroLabel;
+    }
+
+    public JFormattedTextField getSexoJFT() {
+        return sexoJFT;
+    }
+
+    public JLabel getSobraHist1Label() {
+        return sobraHist1Label;
+    }
+
+    public JLabel getSobraHist2Label() {
+        return sobraHist2Label;
+    }
+
+    public JLabel getSobraHist3Label() {
+        return sobraHist3Label;
+    }
+
+    public JLabel getSobraHist4Label() {
+        return sobraHist4Label;
+    }
+
+    public JLabel getSobraHist5Label() {
+        return sobraHist5Label;
+    }
+
+    public JFormattedTextField getSobraJFT() {
+        return sobraJFT;
+    }
+
+    public JFormattedTextField getTrataJFT() {
+        return trataJFT;
+    }
+
+	public JLabel getLabel() {
+		return label;
+	}
+
+	public void setLabel(JLabel label) {
+		this.label = label;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 }
