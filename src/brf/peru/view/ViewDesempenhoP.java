@@ -6,6 +6,9 @@ import javax.swing.JPanel;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.SwingConstants;
 
 public class ViewDesempenhoP extends javax.swing.JFrame {
 
@@ -659,40 +662,47 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
         );
 
         javax.swing.GroupLayout consumoJPLayout = new javax.swing.GroupLayout(consumoJP);
-        consumoJP.setLayout(consumoJPLayout);
         consumoJPLayout.setHorizontalGroup(
-            consumoJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(faseConsumoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(consumoJPLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        	consumoJPLayout.createParallelGroup(Alignment.LEADING)
+        		.addComponent(faseConsumoLabel, GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
+        		.addGroup(consumoJPLayout.createSequentialGroup()
+        			.addGap(10)
+        			.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, 247, Short.MAX_VALUE)
+        			.addContainerGap())
         );
         consumoJPLayout.setVerticalGroup(
-            consumoJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(consumoJPLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(faseConsumoLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+        	consumoJPLayout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(consumoJPLayout.createSequentialGroup()
+        			.addContainerGap()
+        			.addComponent(faseConsumoLabel)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(jPanel2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        			.addContainerGap())
         );
+        consumoJP.setLayout(consumoJPLayout);
 
         registroLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         registroLabel.setForeground(new java.awt.Color(0, 153, 255));
         registroLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         registroLabel.setText("Registro salvo com sucesso!!");
+        
+        label = new JLabel();
+        label.setText("Registro salvo com sucesso!!");
+        label.setHorizontalAlignment(SwingConstants.CENTER);
+        label.setForeground(new Color(0, 153, 255));
+        label.setFont(new Font("Tahoma", Font.BOLD, 11));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1Layout.setHorizontalGroup(
         	jPanel1Layout.createParallelGroup(Alignment.LEADING)
         		.addComponent(registroLabel, GroupLayout.PREFERRED_SIZE, 1009, GroupLayout.PREFERRED_SIZE)
         		.addGroup(jPanel1Layout.createSequentialGroup()
-        			.addGap(74)
-        			.addComponent(consumoJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-        		.addGroup(jPanel1Layout.createSequentialGroup()
         			.addContainerGap()
-        			.addComponent(baiaJP, GroupLayout.PREFERRED_SIZE, 396, GroupLayout.PREFERRED_SIZE))
+        			.addComponent(baiaJP, GroupLayout.PREFERRED_SIZE, 456, GroupLayout.PREFERRED_SIZE))
+        		.addGroup(jPanel1Layout.createSequentialGroup()
+        			.addGap(105)
+        			.addComponent(consumoJP, GroupLayout.PREFERRED_SIZE, 273, GroupLayout.PREFERRED_SIZE))
+        		.addComponent(label, GroupLayout.PREFERRED_SIZE, 474, GroupLayout.PREFERRED_SIZE)
         );
         jPanel1Layout.setVerticalGroup(
         	jPanel1Layout.createParallelGroup(Alignment.TRAILING)
@@ -701,7 +711,9 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
         			.addComponent(baiaJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
         			.addPreferredGap(ComponentPlacement.RELATED)
         			.addComponent(consumoJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-        			.addGap(260)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(label)
+        			.addGap(240)
         			.addComponent(registroLabel)
         			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -712,13 +724,13 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
         	layout.createParallelGroup(Alignment.LEADING)
         		.addGroup(layout.createSequentialGroup()
         			.addContainerGap()
-        			.addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 434, Short.MAX_VALUE))
+        			.addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 484, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
         		.addGroup(layout.createSequentialGroup()
-        			.addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 474, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        			.addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 511, Short.MAX_VALUE)
+        			.addContainerGap())
         );
         getContentPane().setLayout(layout);
 
@@ -889,6 +901,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
     private javax.swing.JLabel sobraHist5Label;
     private javax.swing.JFormattedTextField sobraJFT;
     private javax.swing.JFormattedTextField trataJFT;
+    private JLabel label;
     // End of variables declaration//GEN-END:variables
 	public javax.swing.JFormattedTextField getControleFornecidaJFT() {
 		return controleFornecidaJFT;
