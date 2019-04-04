@@ -60,16 +60,6 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 	private List<PesadosVOP> pesadosErros;
 	private List<Integer> idades;
 	private Integer idadeFaseAtual, faseAnterior, countFase, countIdades, somaValoresRacao, somaControleRacoes;
-	private Integer somaControleMortalidade, somaValoresMortalidade, idadeFaseAtualMortalidade, faseAnteriorMortalidade,
-			countFaseMortalidade, countIdadesMortalidade;
-	private Integer somaControleEliminados, somaValoresEliminados, idadeFaseAtualEliminados, faseAnteriorEliminados,
-			countFaseEliminados, countIdadesEliminados;
-	private Integer somaControleErros, somaValoresErros, idadeFaseAtualErros, faseAnteriorErros, countFaseErros,
-			countIdadesErros;
-	private Integer somaControleAmostrados, somaValoresAmostrados, idadeFaseAtualAmostrados, faseAnteriorAmostrados,
-			countFaseAmostrados, countIdadesAmostrados;
-	private Integer somaControlePesados, somaValoresPesados, idadeFaseAtualPesados, faseAnteriorPesados,
-			countFasePesados, countIdadesPesados;
 
 	public ControllerDesempenhoP(ControllerP c, DesempenhoBOP desempenhoBO) {
 		controller = c;
@@ -88,41 +78,11 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		defaultRmeJP = viewDesempenho.getConsumoJP().getBorder();
 		idades = idadesFases;
 		countIdades = 0;
-		countIdadesMortalidade = 0;
-		countIdadesEliminados = 0;
-		countIdadesErros = 0;
-		countIdadesAmostrados = 0;
-		countIdadesPesados = 0;
 		faseAnterior = 0;
-		faseAnteriorMortalidade = 0;
-		faseAnteriorEliminados = 0;
-		faseAnteriorErros = 0;
-		faseAnteriorAmostrados = 0;
-		faseAnteriorPesados = 0;
 		countFase = 1;
-		countFaseMortalidade = 1;
-		countFaseEliminados = 1;
-		countFaseErros = 1;
-		countFaseAmostrados = 1;
-		countFasePesados = 1;
 		somaValoresRacao = 0;
-		somaValoresMortalidade = 0;
-		somaValoresEliminados = 0;
-		somaValoresErros = 0;
-		somaValoresAmostrados = 0;
-		somaValoresPesados = 0;
 		idadeFaseAtual = idades.get(countIdades);
-		idadeFaseAtualMortalidade = idades.get(countIdades);
-		idadeFaseAtualEliminados = idades.get(countIdades);
-		idadeFaseAtualErros = idades.get(countIdades);
-		idadeFaseAtualAmostrados = idades.get(countIdades);
-		idadeFaseAtualPesados = idades.get(countIdades);
 		somaControleRacoes = 0;
-		somaControleMortalidade = 0;
-		somaControleEliminados = 0;
-		somaControleErros = 0;
-		somaControleAmostrados = 0;
-		somaControlePesados = 0;
 		viewDesempenho.getFaseConsumoLabel().setText("Fase " + countFase + " (Idade " + idadeFaseAtual + ")");
 		// viewDesempenho.getFasePesagemLabel().setText("Fase " + countFase + " (Idade "
 		// + idadeFaseAtual + ")");
@@ -423,6 +383,14 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 						viewDesempenho.getControleSobraJFT().setText("000000");
 						((JFormattedTextField) e.getSource()).transferFocus();
 						viewDesempenho.getConsumoJP().setBorder(defaultRmeJP);
+						controller.startDesempenhoVerso(rme, idades,
+								Integer.parseInt(viewDesempenho.getBaiaJFT().getText()),
+								Integer.parseInt(viewDesempenho.getLadoJFT().getText()),
+								Integer.parseInt(viewDesempenho.getSexoJFT().getText()),
+								Integer.parseInt(viewDesempenho.getLinhagemJFT().getText()),
+								Integer.parseInt(viewDesempenho.getTrataJFT().getText()),
+								Integer.parseInt(viewDesempenho.getAvesAlojadasJFT().getText()));
+						viewDesempenho.setVisible(false);
 					} else {
 						rme.addAll(rmeTemp);
 						rmeTemp = new ArrayList<>();
@@ -483,7 +451,6 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		viewDesempenho.getFornecidaJFT().setEnabled(false);
 		viewDesempenho.getSobraJFT().setEnabled(false);
 	}
-
 
 	public Integer calculaControleRacaoFornecida() {
 		Integer soma = 0;
@@ -570,7 +537,6 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		pesadosErros = new ArrayList<>();
 	}
 
-
 	public Integer getMaiorLista() {
 		int countMortos = 0;
 		int countElim = 0;
@@ -603,7 +569,6 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		return lista.get(lista.size() - 1);
 	}
 
-
 //	public void fluxoContRME() {
 //		viewDesempenho.getConsumoJP().setBorder(defaultRmeJP);
 //		viewDesempenho.getIdadeMortalidadeJFT().setEnabled(true);
@@ -614,8 +579,6 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 //		// viewDesempenho.getControleRacaoJFT().setEnabled(false);
 //
 //	}
-
-
 
 	public void updateHistRME() {
 		viewDesempenho.getOrdemHist1Label().setText(viewDesempenho.getOrdemHist2Label().getText());
@@ -684,7 +647,6 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		}
 
 	}
-
 
 	public void clearHistRME() {
 		viewDesempenho.getIdadeJFT().setText("");
@@ -770,7 +732,6 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		viewDesempenho.getSobraHist4Label().setText("");
 		ordemRME = 1;
 	}
-
 
 	public void fluxoOkRME() {
 		viewDesempenho.getConsumoJP().setBorder(defaultRmeJP);
@@ -1073,246 +1034,6 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 
 	public void setSomaControleRacoes(Integer somaControleRacoes) {
 		this.somaControleRacoes = somaControleRacoes;
-	}
-
-	public Integer getSomaControleMortalidade() {
-		return somaControleMortalidade;
-	}
-
-	public void setSomaControleMortalidade(Integer somaControleMortalidade) {
-		this.somaControleMortalidade = somaControleMortalidade;
-	}
-
-	public Integer getSomaValoresMortalidade() {
-		return somaValoresMortalidade;
-	}
-
-	public void setSomaValoresMortalidade(Integer somaValoresMortalidade) {
-		this.somaValoresMortalidade = somaValoresMortalidade;
-	}
-
-	public Integer getIdadeFaseAtualMortalidade() {
-		return idadeFaseAtualMortalidade;
-	}
-
-	public void setIdadeFaseAtualMortalidade(Integer idadeFaseAtualMortalidade) {
-		this.idadeFaseAtualMortalidade = idadeFaseAtualMortalidade;
-	}
-
-	public Integer getFaseAnteriorMortalidade() {
-		return faseAnteriorMortalidade;
-	}
-
-	public void setFaseAnteriorMortalidade(Integer faseAnteriorMortalidade) {
-		this.faseAnteriorMortalidade = faseAnteriorMortalidade;
-	}
-
-	public Integer getCountFaseMortalidade() {
-		return countFaseMortalidade;
-	}
-
-	public void setCountFaseMortalidade(Integer countFaseMortalidade) {
-		this.countFaseMortalidade = countFaseMortalidade;
-	}
-
-	public Integer getCountIdadesMortalidade() {
-		return countIdadesMortalidade;
-	}
-
-	public void setCountIdadesMortalidade(Integer countIdadesMortalidade) {
-		this.countIdadesMortalidade = countIdadesMortalidade;
-	}
-
-	public Integer getSomaControleEliminados() {
-		return somaControleEliminados;
-	}
-
-	public void setSomaControleEliminados(Integer somaControleEliminados) {
-		this.somaControleEliminados = somaControleEliminados;
-	}
-
-	public Integer getSomaValoresEliminados() {
-		return somaValoresEliminados;
-	}
-
-	public void setSomaValoresEliminados(Integer somaValoresEliminados) {
-		this.somaValoresEliminados = somaValoresEliminados;
-	}
-
-	public Integer getIdadeFaseAtualEliminados() {
-		return idadeFaseAtualEliminados;
-	}
-
-	public void setIdadeFaseAtualEliminados(Integer idadeFaseAtualEliminados) {
-		this.idadeFaseAtualEliminados = idadeFaseAtualEliminados;
-	}
-
-	public Integer getFaseAnteriorEliminados() {
-		return faseAnteriorEliminados;
-	}
-
-	public void setFaseAnteriorEliminados(Integer faseAnteriorEliminados) {
-		this.faseAnteriorEliminados = faseAnteriorEliminados;
-	}
-
-	public Integer getCountFaseEliminados() {
-		return countFaseEliminados;
-	}
-
-	public void setCountFaseEliminados(Integer countFaseEliminados) {
-		this.countFaseEliminados = countFaseEliminados;
-	}
-
-	public Integer getCountIdadesEliminados() {
-		return countIdadesEliminados;
-	}
-
-	public void setCountIdadesEliminados(Integer countIdadesEliminados) {
-		this.countIdadesEliminados = countIdadesEliminados;
-	}
-
-	public Integer getSomaControleErros() {
-		return somaControleErros;
-	}
-
-	public void setSomaControleErros(Integer somaControleErros) {
-		this.somaControleErros = somaControleErros;
-	}
-
-	public Integer getSomaValoresErros() {
-		return somaValoresErros;
-	}
-
-	public void setSomaValoresErros(Integer somaValoresErros) {
-		this.somaValoresErros = somaValoresErros;
-	}
-
-	public Integer getIdadeFaseAtualErros() {
-		return idadeFaseAtualErros;
-	}
-
-	public void setIdadeFaseAtualErros(Integer idadeFaseAtualErros) {
-		this.idadeFaseAtualErros = idadeFaseAtualErros;
-	}
-
-	public Integer getFaseAnteriorErros() {
-		return faseAnteriorErros;
-	}
-
-	public void setFaseAnteriorErros(Integer faseAnteriorErros) {
-		this.faseAnteriorErros = faseAnteriorErros;
-	}
-
-	public Integer getCountFaseErros() {
-		return countFaseErros;
-	}
-
-	public void setCountFaseErros(Integer countFaseErros) {
-		this.countFaseErros = countFaseErros;
-	}
-
-	public Integer getCountIdadesErros() {
-		return countIdadesErros;
-	}
-
-	public void setCountIdadesErros(Integer countIdadesErros) {
-		this.countIdadesErros = countIdadesErros;
-	}
-
-	public Integer getSomaControleAmostrados() {
-		return somaControleAmostrados;
-	}
-
-	public void setSomaControleAmostrados(Integer somaControleAmostrados) {
-		this.somaControleAmostrados = somaControleAmostrados;
-	}
-
-	public Integer getSomaValoresAmostrados() {
-		return somaValoresAmostrados;
-	}
-
-	public void setSomaValoresAmostrados(Integer somaValoresAmostrados) {
-		this.somaValoresAmostrados = somaValoresAmostrados;
-	}
-
-	public Integer getIdadeFaseAtualAmostrados() {
-		return idadeFaseAtualAmostrados;
-	}
-
-	public void setIdadeFaseAtualAmostrados(Integer idadeFaseAtualAmostrados) {
-		this.idadeFaseAtualAmostrados = idadeFaseAtualAmostrados;
-	}
-
-	public Integer getFaseAnteriorAmostrados() {
-		return faseAnteriorAmostrados;
-	}
-
-	public void setFaseAnteriorAmostrados(Integer faseAnteriorAmostrados) {
-		this.faseAnteriorAmostrados = faseAnteriorAmostrados;
-	}
-
-	public Integer getCountFaseAmostrados() {
-		return countFaseAmostrados;
-	}
-
-	public void setCountFaseAmostrados(Integer countFaseAmostrados) {
-		this.countFaseAmostrados = countFaseAmostrados;
-	}
-
-	public Integer getCountIdadesAmostrados() {
-		return countIdadesAmostrados;
-	}
-
-	public void setCountIdadesAmostrados(Integer countIdadesAmostrados) {
-		this.countIdadesAmostrados = countIdadesAmostrados;
-	}
-
-	public Integer getSomaControlePesados() {
-		return somaControlePesados;
-	}
-
-	public void setSomaControlePesados(Integer somaControlePesados) {
-		this.somaControlePesados = somaControlePesados;
-	}
-
-	public Integer getSomaValoresPesados() {
-		return somaValoresPesados;
-	}
-
-	public void setSomaValoresPesados(Integer somaValoresPesados) {
-		this.somaValoresPesados = somaValoresPesados;
-	}
-
-	public Integer getIdadeFaseAtualPesados() {
-		return idadeFaseAtualPesados;
-	}
-
-	public void setIdadeFaseAtualPesados(Integer idadeFaseAtualPesados) {
-		this.idadeFaseAtualPesados = idadeFaseAtualPesados;
-	}
-
-	public Integer getFaseAnteriorPesados() {
-		return faseAnteriorPesados;
-	}
-
-	public void setFaseAnteriorPesados(Integer faseAnteriorPesados) {
-		this.faseAnteriorPesados = faseAnteriorPesados;
-	}
-
-	public Integer getCountFasePesados() {
-		return countFasePesados;
-	}
-
-	public void setCountFasePesados(Integer countFasePesados) {
-		this.countFasePesados = countFasePesados;
-	}
-
-	public Integer getCountIdadesPesados() {
-		return countIdadesPesados;
-	}
-
-	public void setCountIdadesPesados(Integer countIdadesPesados) {
-		this.countIdadesPesados = countIdadesPesados;
 	}
 
 	public ControllerP getController() {
