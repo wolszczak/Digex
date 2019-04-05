@@ -72,7 +72,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		viewDesempenho.setResizable(false);
 		viewDesempenho.setLocationRelativeTo(null);
 		viewDesempenho.setVisible(true);
-		viewDesempenho.getRegistroLabel().setVisible(false);
+		viewDesempenho.getLabel().setVisible(false);
 		viewDesempenho.getAviarioJFT().setText(controller.getModel().getExperimentoVO().getInfoExp().getAviario());
 		defaultBaiaJP = viewDesempenho.getBaiaJP().getBorder();
 		defaultRmeJP = viewDesempenho.getConsumoJP().getBorder();
@@ -225,7 +225,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 			JFormattedTextField src = (JFormattedTextField) e.getSource();
 			String text = src.getText();
 			if ((JFormattedTextField) e.getSource() == viewDesempenho.getBaiaJFT()) {
-				viewDesempenho.getRegistroLabel().setEnabled(false);
+				viewDesempenho.getLabel().setEnabled(false);
 				TextFormatter.formatStringJFT(src, text, 3);
 				viewDesempenho.getLadoJFT().setEnabled(true);
 				((JFormattedTextField) e.getSource()).transferFocus();
@@ -299,7 +299,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 				viewDesempenho.getFornecidaJFT().setEnabled(true);
 				((JFormattedTextField) e.getSource()).transferFocus();
 				viewDesempenho.getFornecidaJFT().grabFocus();
-				viewDesempenho.getRegistroLabel().setVisible(false);
+				viewDesempenho.getLabel().setVisible(false);
 			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getFornecidaJFT()) {
 				TextFormatter.formatStringJFT(src, text, 5);
 				viewDesempenho.getSobraJFT().setEnabled(true);

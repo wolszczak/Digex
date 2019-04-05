@@ -210,6 +210,7 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 	private JFormattedTextField controleEliminadosJFT;
 	private JFormattedTextField controleErrosJFT;
 	private JFormattedTextField controleAmostradosJFT;
+	private JFormattedTextField controleAmostradosJFT_1;
 	private JFormattedTextField controlePesagemJFT;
 
 	/**
@@ -720,9 +721,9 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 		jLabel54.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		jLabel54.setText("Controle");
 		
-		controleAmostradosJFT = new JFormattedTextField();
-		controleAmostradosJFT.setHorizontalAlignment(SwingConstants.CENTER);
-		controleAmostradosJFT.setEnabled(false);
+		controleAmostradosJFT_1 = new JFormattedTextField();
+		controleAmostradosJFT_1.setHorizontalAlignment(SwingConstants.CENTER);
+		controleAmostradosJFT_1.setEnabled(false);
 
 		javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
 		jPanel8Layout.setHorizontalGroup(
@@ -765,11 +766,11 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 								.addComponent(pesoAmHist3Label, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
 								.addComponent(pesoAmHist4Label, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
 								.addComponent(pesoAmHist5Label, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-								.addComponent(pesoAmostradosJFT, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE))
+								.addComponent(pesoAmostradosJFT, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE))
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(jPanel8Layout.createParallelGroup(Alignment.LEADING)
 								.addComponent(jLabel54, GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
-								.addComponent(controleAmostradosJFT, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE))
+								.addComponent(controleAmostradosJFT_1, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE))
 							.addContainerGap())
 						.addComponent(jLabel21, GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)))
 		);
@@ -826,12 +827,11 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 								.addComponent(nrAmHist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
 								.addComponent(pesoAmHist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
 							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addGroup(jPanel8Layout.createParallelGroup(Alignment.LEADING)
-								.addGroup(Alignment.TRAILING, jPanel8Layout.createParallelGroup(Alignment.TRAILING)
-									.addGroup(jPanel8Layout.createSequentialGroup()
-										.addComponent(jLabel54, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-										.addGap(26))
-									.addComponent(controleAmostradosJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addGroup(jPanel8Layout.createParallelGroup(Alignment.TRAILING)
+								.addGroup(jPanel8Layout.createSequentialGroup()
+									.addComponent(jLabel54, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+									.addGap(26))
+								.addComponent(controleAmostradosJFT_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 								.addGroup(jPanel8Layout.createSequentialGroup()
 									.addGroup(jPanel8Layout.createParallelGroup(Alignment.LEADING)
 										.addComponent(nrAmHist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
@@ -3770,11 +3770,11 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 	}
 
 	public javax.swing.JFormattedTextField getControleAmostradosJFT() {
-		return controleAmostradosJFT;
+		return controleAmostradosJFT_1;
 	}
 
 	public void setControleAmostradosJFT(javax.swing.JFormattedTextField controleAmostradosJFT) {
-		this.controleAmostradosJFT = controleAmostradosJFT;
+		this.controleAmostradosJFT_1 = controleAmostradosJFT;
 	}
 
 	public javax.swing.JFormattedTextField getControlePesagemJFT() {
