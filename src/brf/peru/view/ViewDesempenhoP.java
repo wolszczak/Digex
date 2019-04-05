@@ -59,7 +59,6 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
     private javax.swing.JLabel ordemHist4Label;
     private javax.swing.JLabel ordemHist5Label;
     private javax.swing.JFormattedTextField ordemJFT;
-    private javax.swing.JLabel registroLabel;
     private javax.swing.JFormattedTextField sexoJFT;
     private javax.swing.JLabel sobraHist1Label;
     private javax.swing.JLabel sobraHist2Label;
@@ -68,7 +67,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
     private javax.swing.JLabel sobraHist5Label;
     private javax.swing.JFormattedTextField sobraJFT;
     private javax.swing.JFormattedTextField trataJFT;
-    private JLabel label;
+    private JLabel registroLabel;
     private JFormattedTextField controleBaiaJFT;
     
     
@@ -457,42 +456,40 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
         jLabel47.setText("Sobra");
 
         javax.swing.GroupLayout controleRMEJP1Layout = new javax.swing.GroupLayout(controleRMEJP1);
-        controleRMEJP1.setLayout(controleRMEJP1Layout);
         controleRMEJP1Layout.setHorizontalGroup(
-            controleRMEJP1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(controleRMEJP1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(controleRMEJP1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controleRMEJP1Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(25, 25, 25))
-                    .addGroup(controleRMEJP1Layout.createSequentialGroup()
-                        .addGroup(controleRMEJP1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(controleRMEJP1Layout.createSequentialGroup()
-                                .addComponent(controleFornecidaJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(controleSobraJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+        	controleRMEJP1Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(controleRMEJP1Layout.createSequentialGroup()
+        			.addContainerGap(12, Short.MAX_VALUE)
+        			.addGroup(controleRMEJP1Layout.createParallelGroup(Alignment.LEADING)
+        				.addComponent(jLabel42, GroupLayout.PREFERRED_SIZE, 183, GroupLayout.PREFERRED_SIZE)
+        				.addGroup(controleRMEJP1Layout.createSequentialGroup()
+        					.addGroup(controleRMEJP1Layout.createParallelGroup(Alignment.LEADING)
+        						.addComponent(controleFornecidaJFT, GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE)
+        						.addGroup(controleRMEJP1Layout.createSequentialGroup()
+        							.addGap(6)
+        							.addComponent(jLabel46, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)))
+        					.addGap(18)
+        					.addGroup(controleRMEJP1Layout.createParallelGroup(Alignment.LEADING)
+        						.addComponent(jLabel47, GroupLayout.PREFERRED_SIZE, 57, GroupLayout.PREFERRED_SIZE)
+        						.addComponent(controleSobraJFT, GroupLayout.PREFERRED_SIZE, 74, GroupLayout.PREFERRED_SIZE))))
+        			.addGap(0, 1, Short.MAX_VALUE))
         );
         controleRMEJP1Layout.setVerticalGroup(
-            controleRMEJP1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(controleRMEJP1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel42)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(controleRMEJP1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel46)
-                    .addComponent(jLabel47))
-                .addGap(4, 4, 4)
-                .addGroup(controleRMEJP1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(controleFornecidaJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(controleSobraJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14))
+        	controleRMEJP1Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(controleRMEJP1Layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addComponent(jLabel42)
+        			.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        			.addGroup(controleRMEJP1Layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(jLabel46)
+        				.addComponent(jLabel47))
+        			.addGap(4)
+        			.addGroup(controleRMEJP1Layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(controleFornecidaJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(controleSobraJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
+        			.addGap(14))
         );
+        controleRMEJP1.setLayout(controleRMEJP1Layout);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -637,11 +634,11 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
         registroLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         registroLabel.setText("Registro salvo com sucesso!!");
         
-        label = new JLabel();
-        label.setText("Registro salvo com sucesso!!");
-        label.setHorizontalAlignment(SwingConstants.CENTER);
-        label.setForeground(new Color(0, 153, 255));
-        label.setFont(new Font("Tahoma", Font.BOLD, 11));
+        registroLabel = new JLabel();
+        registroLabel.setText("Registro salvo com sucesso!!");
+        registroLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        registroLabel.setForeground(new Color(0, 153, 255));
+        registroLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1Layout.setHorizontalGroup(
@@ -653,7 +650,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
         		.addGroup(jPanel1Layout.createSequentialGroup()
         			.addGap(105)
         			.addComponent(consumoJP, GroupLayout.PREFERRED_SIZE, 273, GroupLayout.PREFERRED_SIZE))
-        		.addComponent(label, GroupLayout.PREFERRED_SIZE, 474, GroupLayout.PREFERRED_SIZE)
+        		.addComponent(registroLabel, GroupLayout.PREFERRED_SIZE, 474, GroupLayout.PREFERRED_SIZE)
         );
         jPanel1Layout.setVerticalGroup(
         	jPanel1Layout.createParallelGroup(Alignment.TRAILING)
@@ -663,7 +660,7 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
         			.addPreferredGap(ComponentPlacement.RELATED)
         			.addComponent(consumoJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
         			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(label)
+        			.addComponent(registroLabel)
         			.addGap(240)
         			.addComponent(registroLabel)
         			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -1192,12 +1189,12 @@ public class ViewDesempenhoP extends javax.swing.JFrame {
         return trataJFT;
     }
 
-	public JLabel getLabel() {
-		return label;
+	public JLabel getregistroLabel() {
+		return registroLabel;
 	}
 
-	public void setLabel(JLabel label) {
-		this.label = label;
+	public void setregistroLabel(JLabel registroLabel) {
+		this.registroLabel = registroLabel;
 	}
 
 	public static long getSerialversionuid() {

@@ -39,7 +39,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 	private final DesempenhoBOP desempenhoBO;
 	private int controleBaia, ordemRME, ordemP;
 	private ViewDesempenhoVersoP viewDesempenho;
-	private Border defaultBaiaJP, defaultRmeJP, defaultPesagemJP;
+	private Border defaultBaiaJP, defaultPesagemJP;
 	private List<DesempenhoVOP> desempenho;
 	private List<RmeVOP> rme;
 	private List<RmeVOP> rmeTemp;
@@ -77,8 +77,8 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		this.desempenhoBO = desempenhoBO;
 	}
 
-	public void openWindow(List<Integer> idadesFases,List<RmeVOP> rme,
-			Integer baia, Integer lado, Integer sexo, Integer linhagem, Integer tratamento, Integer avesAlojadas) {
+	public void openWindow(List<Integer> idadesFases, List<RmeVOP> rme, Integer baia, Integer lado, Integer sexo,
+			Integer linhagem, Integer tratamento, Integer avesAlojadas) {
 		viewDesempenho = new ViewDesempenhoVersoP();
 		viewDesempenho.setTitle("DIGEX - Peru");
 		viewDesempenho.setResizable(false);
@@ -86,12 +86,26 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		viewDesempenho.setVisible(true);
 		viewDesempenho.getRegistroLabel().setVisible(false);
 		viewDesempenho.getAviarioJFT().setText(controller.getModel().getExperimentoVO().getInfoExp().getAviario());
-		viewDesempenho.getBaiaJFT().setText(String.valueOf(baia));
-		viewDesempenho.getLadoJFT().setText(String.valueOf(lado));
-		viewDesempenho.getSexoJFT().setText(String.valueOf(sexo));
-		viewDesempenho.getLinhagemJFT().setText(String.valueOf(linhagem));
-		viewDesempenho.getTrataJFT().setText(String.valueOf(tratamento));
-		viewDesempenho.getAvesAlojadasJFT().setText(String.valueOf(avesAlojadas));
+		viewDesempenho.getBaiaJFT().setText(String.valueOf(baia).trim());
+		TextFormatter.formatStringJFT(viewDesempenho.getBaiaJFT(), viewDesempenho.getBaiaJFT().getText(), 3);
+		viewDesempenho.getLadoJFT().setText(String.valueOf(lado).trim());
+		TextFormatter.formatStringJFT(viewDesempenho.getLadoJFT(), viewDesempenho.getLadoJFT().getText(), 1);
+		viewDesempenho.getSexoJFT().setText(String.valueOf(sexo).trim());
+		TextFormatter.formatStringJFT(viewDesempenho.getSexoJFT(), viewDesempenho.getSexoJFT().getText(), 1);
+		viewDesempenho.getLinhagemJFT().setText(String.valueOf(linhagem).trim());
+		TextFormatter.formatStringJFT(viewDesempenho.getLinhagemJFT(), viewDesempenho.getLinhagemJFT().getText(), 2);
+		viewDesempenho.getTrataJFT().setText(String.valueOf(tratamento).trim());
+		TextFormatter.formatStringJFT(viewDesempenho.getTrataJFT(), viewDesempenho.getTrataJFT().getText(), 1);
+		viewDesempenho.getAvesAlojadasJFT().setText(String.valueOf(avesAlojadas).trim());
+		TextFormatter.formatStringJFT(viewDesempenho.getAvesAlojadasJFT(),
+				viewDesempenho.getAvesAlojadasJFT().getText(), 3);
+		viewDesempenho.getIdadeMortalidadeJFT().setEnabled(true);
+		viewDesempenho.getIdadeMortalidadeJFT().grabFocus();
+		viewDesempenho.getOrdemMortalidadeJFT().setText("1");
+		viewDesempenho.getOrdemEliminadosJFT().setText("1");
+		viewDesempenho.getOrdemErrosJFT().setText("1");
+		viewDesempenho.getOrdemAmostradosJFT().setText("1");
+		viewDesempenho.getOrdemPesagemJFT().setText("1");
 		defaultBaiaJP = viewDesempenho.getBaiaJP().getBorder();
 		idades = idadesFases;
 		countIdades = 0;
@@ -133,7 +147,8 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		// viewDesempenho.getFasePesagemLabel().setText("Fase " + countFase + " (Idade "
 		// + idadeFaseAtual + ")");
 
-		rme = new ArrayList<>();
+		this.rme = new ArrayList<>();
+		this.rme = rme;
 		rmeTemp = new ArrayList<>();
 		rmeErros = new ArrayList<>();
 		mortos = new ArrayList<>();
@@ -295,7 +310,6 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 			viewDesempenho.getTrataJFT().setText("" + desempenho.get(desempenho.size() - 1).getTrata());
 			viewDesempenho.getAvesAlojadasJFT().setText("" + desempenho.get(desempenho.size() - 1).getNrAlojados());
 			viewDesempenho.getBaiaJFT().setEnabled(false);
-
 		}
 		ordemRME++;
 		ordemP++;
@@ -305,11 +319,6 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 	public void keyPressed(KeyEvent e) {
 		Object src = e.getSource();
 		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(viewDesempenho.getOpcaoJFT())
-				&& !e.getSource().equals(viewDesempenho.getIdadeMortalidadeJFT())
-				&& !e.getSource().equals(viewDesempenho.getIdadeEliminadosJFT())
-				&& !e.getSource().equals(viewDesempenho.getIdadeErrosJFT())
-				&& !e.getSource().equals(viewDesempenho.getIdadeAmostradosJFT())
-				&& !e.getSource().equals(viewDesempenho.getIdadePesadosJFT())
 				&& !e.getSource().equals(viewDesempenho.getIdadeMortalidadeJFT())) {
 			System.out.println("left");
 			Component prev = viewDesempenho.getFocusTraversalPolicy().getComponentBefore(viewDesempenho,
@@ -396,7 +405,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 				} else if (Integer.parseInt(viewDesempenho.getIdadeMortalidadeJFT().getText()) == 0
 						&& Integer.parseInt(viewDesempenho.getNrMortalidadeJFT().getText()) == 0
 						&& Integer.parseInt(viewDesempenho.getPesoMortalidadeJFT().getText()) == 0) {
-					viewDesempenho.getPnlMortalidade().setBorder(defaultRmeJP);
+					viewDesempenho.getPnlMortalidade().setBorder(defaultBaiaJP);
 					viewDesempenho.getControleMortalidadeJFT().setEnabled(true);
 					viewDesempenho.getControleMortalidadeJFT().grabFocus();
 				} else {
@@ -431,10 +440,10 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 				} else {
 					mortos.addAll(mortosTemp);
 					mortosTemp = new ArrayList<>();
-					clearHistMortalidade();
-					atualizaFaseMortalidade();
+//					clearHistMortalidade();
+//					atualizaFaseMortalidade();
 					seguirDigitacaoEliminados(e);
-					viewDesempenho.getPnlMortalidade().setBorder(defaultRmeJP);
+					viewDesempenho.getPnlMortalidade().setBorder(defaultBaiaJP);
 					ordemRME = 1;
 					System.out.println("continua digitação dos eliminados");
 				}
@@ -463,7 +472,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 				} else if (Integer.parseInt(viewDesempenho.getIdadeEliminadosJFT().getText()) == 0
 						&& Integer.parseInt(viewDesempenho.getNrEliminadosJFT().getText()) == 0
 						&& Integer.parseInt(viewDesempenho.getPesoEliminadosJFT().getText()) == 0) {
-					viewDesempenho.getPnlEliminados().setBorder(defaultRmeJP);
+					viewDesempenho.getPnlEliminados().setBorder(defaultBaiaJP);
 					viewDesempenho.getControleEliminadosJFT().setEnabled(true);
 					viewDesempenho.getControleEliminadosJFT().grabFocus();
 				} else {
@@ -498,8 +507,8 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 				} else {
 					eliminados.addAll(eliminadosTemp);
 					eliminadosTemp = new ArrayList<>();
-					clearHistEliminados();
-					atualizaFaseEliminados();
+//					clearHistEliminados();
+//					atualizaFaseEliminados();
 					seguirDigitacaoErros(e);
 					ordemRME = 1;
 					System.out.println("continua digitação dos erros");
@@ -527,7 +536,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 				} else if (Integer.parseInt(viewDesempenho.getIdadeErrosJFT().getText()) == 0
 						&& Integer.parseInt(viewDesempenho.getNrErrosJFT().getText()) == 0
 						&& Integer.parseInt(viewDesempenho.getPesoErrosJFT().getText()) == 0) {
-					viewDesempenho.getPnlErros().setBorder(defaultRmeJP);
+					viewDesempenho.getPnlErros().setBorder(defaultBaiaJP);
 					viewDesempenho.getControleErrosJFT().setEnabled(true);
 					viewDesempenho.getControleErrosJFT().grabFocus();
 				} else {
@@ -561,8 +570,8 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 				} else {
 					erros.addAll(errosTemp);
 					errosTemp = new ArrayList<>();
-					clearHistErros();
-					atualizaFaseErros();
+//					clearHistErros();
+//					atualizaFaseErros();
 					seguirDigitacaoAmostrados(e);
 					ordemRME = 1;
 					System.out.println("continua digitação das pesagens");
@@ -591,7 +600,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 				} else if (Integer.parseInt(viewDesempenho.getIdadeAmostradosJFT().getText()) == 0
 						&& Integer.parseInt(viewDesempenho.getNrAmostradosJFT().getText()) == 0
 						&& Integer.parseInt(viewDesempenho.getPesoAmostradosJFT().getText()) == 0) {
-					viewDesempenho.getPnlAmostrados().setBorder(defaultRmeJP);
+					viewDesempenho.getPnlAmostrados().setBorder(defaultBaiaJP);
 					viewDesempenho.getControleAmostradosJFT().setEnabled(true);
 					viewDesempenho.getControleAmostradosJFT().grabFocus();
 				} else {
@@ -626,8 +635,8 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 				} else {
 					amostrados.addAll(amostradosTemp);
 					amostradosTemp = new ArrayList<>();
-					clearHistAmostrados();
-					atualizaFaseAmostrados();
+//					clearHistAmostrados();
+//					atualizaFaseAmostrados();
 					seguirDigitacaoPesagens(e);
 					ordemRME = 1;
 					System.out.println("continua digitação dos Pesagens");
@@ -669,7 +678,6 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 				}
 			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getControlePesagemJFT()) {
 				TextFormatter.formatStringJFT(src, text, 6);
-//				if (calculaControlePesados() != 0) {
 				if (Integer.parseInt(viewDesempenho.getControlePesagemJFT().getText()) == calculaControlePesados()) {
 					if (idadeFaseAtualPesados == idades.get(idades.size() - 1)) {
 //							fluxo para finalizar a digitacao da baia
@@ -686,6 +694,14 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 						seguirDigitacaoMortalidade(e);
 						ordemRME = 1;
 						System.out.println("continua digitação das Mortalidades");
+						clearHistMortalidade();
+						atualizaFaseMortalidade();
+						clearHistEliminados();
+						atualizaFaseEliminados();
+						clearHistErros();
+						atualizaFaseErros();
+						clearHistAmostrados();
+						atualizaFaseAmostrados();
 					}
 				} else {
 //						fluxo para redigitar as pesagens da fase
@@ -697,16 +713,6 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 					viewDesempenho.getOrdemPesagemJFT().setText("1");
 					viewDesempenho.getPnlPesagem().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
 				}
-//				} else {
-////					fluxo para voltar pras mortalidades e digitar a proxima fase
-//					pesados.addAll(pesadosTemp);
-//					pesadosTemp = new ArrayList<>();
-//					clearHistPesados();
-//					atualizaFasePesados();
-//					seguirDigitacaoMortalidade(e);
-//					ordemRME = 1;
-//					System.out.println("continua digitação das Mortalidades");
-//				}
 			}
 		}
 
@@ -866,11 +872,11 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		viewDesempenho.getPesoMortalidadeJFT().setEnabled(false);
 		viewDesempenho.getPesoMortalidadeJFT().setText("000000");
 		viewDesempenho.getControleMortalidadeJFT().setEnabled(false);
-		viewDesempenho.getControleMortalidadeJFT().setText("000000");
+//		viewDesempenho.getControleMortalidadeJFT().setText("000000");
 		viewDesempenho.getIdadeEliminadosJFT().setEnabled(true);
 		((JFormattedTextField) e.getSource()).transferFocus();
 		viewDesempenho.getIdadeEliminadosJFT().grabFocus();
-		viewDesempenho.getPnlMortalidade().setBorder(defaultRmeJP);
+		viewDesempenho.getPnlMortalidade().setBorder(defaultBaiaJP);
 	}
 
 	public void seguirDigitacaoErros(KeyEvent e) {
@@ -886,7 +892,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		viewDesempenho.getIdadeErrosJFT().setEnabled(true);
 		((JFormattedTextField) e.getSource()).transferFocus();
 		viewDesempenho.getIdadeErrosJFT().grabFocus();
-		viewDesempenho.getPnlEliminados().setBorder(defaultRmeJP);
+		viewDesempenho.getPnlEliminados().setBorder(defaultBaiaJP);
 	}
 
 	public void seguirDigitacaoAmostrados(KeyEvent e) {
@@ -902,7 +908,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		viewDesempenho.getIdadeAmostradosJFT().setEnabled(true);
 		((JFormattedTextField) e.getSource()).transferFocus();
 		viewDesempenho.getIdadeAmostradosJFT().grabFocus();
-		viewDesempenho.getPnlErros().setBorder(defaultRmeJP);
+		viewDesempenho.getPnlErros().setBorder(defaultBaiaJP);
 	}
 
 	public void seguirDigitacaoPesagens(KeyEvent e) {
@@ -918,7 +924,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		viewDesempenho.getIdadePesadosJFT().setEnabled(true);
 		((JFormattedTextField) e.getSource()).transferFocus();
 		viewDesempenho.getIdadePesadosJFT().grabFocus();
-		viewDesempenho.getPnlAmostrados().setBorder(defaultRmeJP);
+		viewDesempenho.getPnlAmostrados().setBorder(defaultBaiaJP);
 	}
 
 	public void seguirDigitacaoMortalidade(KeyEvent e) {
@@ -934,7 +940,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		viewDesempenho.getIdadeMortalidadeJFT().setEnabled(true);
 		((JFormattedTextField) e.getSource()).transferFocus();
 		viewDesempenho.getIdadeMortalidadeJFT().grabFocus();
-		viewDesempenho.getPnlPesagem().setBorder(defaultRmeJP);
+		viewDesempenho.getPnlPesagem().setBorder(defaultBaiaJP);
 	}
 
 	public Integer calculaControleMortalidade() {
@@ -2153,14 +2159,6 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 
 	public void setDefaultBaiaJP(Border defaultBaiaJP) {
 		this.defaultBaiaJP = defaultBaiaJP;
-	}
-
-	public Border getDefaultRmeJP() {
-		return defaultRmeJP;
-	}
-
-	public void setDefaultRmeJP(Border defaultRmeJP) {
-		this.defaultRmeJP = defaultRmeJP;
 	}
 
 	public Border getDefaultPesagemJP() {

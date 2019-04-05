@@ -201,16 +201,16 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 	private javax.swing.JLabel registroLabel;
 	private javax.swing.JFormattedTextField sexoJFT;
 	private javax.swing.JFormattedTextField trataJFT;
-	private javax.swing.JFormattedTextField controleMortalidadeJFT;
-	private javax.swing.JFormattedTextField controleEliminadosJFT;
-	private javax.swing.JFormattedTextField controleErrosJFT;
-	private javax.swing.JFormattedTextField controleAmostradosJFT;
-	private javax.swing.JFormattedTextField controlePesagemJFT;
-	private JFormattedTextField formattedTextField;
-	private JFormattedTextField formattedTextField_1;
-	private JFormattedTextField formattedTextField_2;
-	private JFormattedTextField formattedTextField_3;
-	private JFormattedTextField formattedTextField_4;
+//	private javax.swing.JFormattedTextField controleMortalidadeJFT;
+//	private javax.swing.JFormattedTextField controleEliminadosJFT;
+//	private javax.swing.JFormattedTextField controleErrosJFT;
+//	private javax.swing.JFormattedTextField controleAmostradosJFT;
+//	private javax.swing.JFormattedTextField controlePesagemJFT;
+	private JFormattedTextField controleMortalidadeJFT;
+	private JFormattedTextField controleEliminadosJFT;
+	private JFormattedTextField controleErrosJFT;
+	private JFormattedTextField controleAmostradosJFT;
+	private JFormattedTextField controlePesagemJFT;
 
 	/**
 	 * Creates new form ViewDesempenhoP
@@ -234,6 +234,7 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 		avesAlojadasJFT = new javax.swing.JFormattedTextField();
 		jLabel31 = new javax.swing.JLabel();
 		baiaJFT = new javax.swing.JFormattedTextField();
+		baiaJFT.setEnabled(false);
 		jLabel32 = new javax.swing.JLabel();
 		sexoJFT = new javax.swing.JFormattedTextField();
 		jLabel34 = new javax.swing.JLabel();
@@ -569,8 +570,7 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 						.addGap(10).addComponent(jLabel45).addPreferredGap(ComponentPlacement.UNRELATED)
 						.addComponent(trataJFT, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE).addGap(10)
 						.addComponent(jLabel35).addPreferredGap(ComponentPlacement.UNRELATED)
-						.addComponent(avesAlojadasJFT, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
-						.addGap(151)));
+						.addComponent(avesAlojadasJFT, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)));
 		baiaJPLayout
 				.setVerticalGroup(
 						baiaJPLayout.createParallelGroup(Alignment.LEADING)
@@ -665,7 +665,7 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 
 		try {
 			idadeAmostradosJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -720,9 +720,9 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 		jLabel54.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		jLabel54.setText("Controle");
 		
-		formattedTextField_3 = new JFormattedTextField();
-		formattedTextField_3.setHorizontalAlignment(SwingConstants.CENTER);
-		formattedTextField_3.setEnabled(false);
+		controleAmostradosJFT = new JFormattedTextField();
+		controleAmostradosJFT.setHorizontalAlignment(SwingConstants.CENTER);
+		controleAmostradosJFT.setEnabled(false);
 
 		javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
 		jPanel8Layout.setHorizontalGroup(
@@ -731,23 +731,23 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 					.addContainerGap()
 					.addGroup(jPanel8Layout.createParallelGroup(Alignment.LEADING)
 						.addGroup(jPanel8Layout.createSequentialGroup()
-							.addGroup(jPanel8Layout.createParallelGroup(Alignment.TRAILING)
-								.addComponent(jLabel53, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-								.addComponent(ordemAmHist3Label, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-								.addComponent(ordemAmHist4Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-								.addComponent(ordemAmHist1Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-								.addComponent(ordemAmHist2Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-								.addComponent(ordemAmHist5Label, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-								.addComponent(ordemAmostradosJFT, Alignment.LEADING, 43, 43, 43))
+							.addGroup(jPanel8Layout.createParallelGroup(Alignment.LEADING, false)
+								.addComponent(jLabel53, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(ordemAmHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(ordemAmHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(ordemAmHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(ordemAmHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(ordemAmHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(ordemAmostradosJFT, GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addGroup(jPanel8Layout.createParallelGroup(Alignment.LEADING)
-								.addComponent(jLabel37, GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-								.addComponent(idadeAmHist1Label, GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-								.addComponent(idadeAmHist2Label, GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-								.addComponent(idadeAmHist3Label, GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-								.addComponent(idadeAmHist4Label, GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-								.addComponent(idadeAmHist5Label, GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-								.addComponent(idadeAmostradosJFT, 36, 36, 36))
+							.addGroup(jPanel8Layout.createParallelGroup(Alignment.LEADING, false)
+								.addComponent(jLabel37, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(idadeAmHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(idadeAmHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(idadeAmHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(idadeAmHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(idadeAmHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(idadeAmostradosJFT, 36, 36, Short.MAX_VALUE))
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(jPanel8Layout.createParallelGroup(Alignment.LEADING, false)
 								.addComponent(jLabel24, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -759,22 +759,19 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 								.addComponent(nrAmostradosJFT, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE))
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(jPanel8Layout.createParallelGroup(Alignment.LEADING)
-								.addComponent(jLabel25, GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-								.addComponent(pesoAmHist2Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-								.addComponent(pesoAmHist3Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-								.addComponent(pesoAmHist5Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-								.addComponent(pesoAmHist4Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-								.addComponent(pesoAmostradosJFT, Alignment.TRAILING, 36, 36, 36)
-								.addComponent(pesoAmHist1Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
+								.addComponent(jLabel25, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+								.addComponent(pesoAmHist1Label, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+								.addComponent(pesoAmHist2Label, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+								.addComponent(pesoAmHist3Label, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+								.addComponent(pesoAmHist4Label, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+								.addComponent(pesoAmHist5Label, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+								.addComponent(pesoAmostradosJFT, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE))
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(jPanel8Layout.createParallelGroup(Alignment.LEADING)
-								.addGroup(jPanel8Layout.createSequentialGroup()
-									.addComponent(jLabel54, GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
-									.addGap(13))
-								.addGroup(jPanel8Layout.createSequentialGroup()
-									.addComponent(formattedTextField_3, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
-									.addContainerGap())))
-						.addComponent(jLabel21, GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)))
+								.addComponent(jLabel54, GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+								.addComponent(controleAmostradosJFT, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE))
+							.addContainerGap())
+						.addComponent(jLabel21, GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)))
 		);
 		jPanel8Layout.setVerticalGroup(
 			jPanel8Layout.createParallelGroup(Alignment.LEADING)
@@ -783,69 +780,71 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 					.addComponent(jLabel21)
 					.addGap(12)
 					.addGroup(jPanel8Layout.createParallelGroup(Alignment.TRAILING)
+						.addGroup(jPanel8Layout.createParallelGroup(Alignment.LEADING)
+							.addGroup(jPanel8Layout.createSequentialGroup()
+								.addComponent(jLabel53)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(ordemAmHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.UNRELATED)
+								.addComponent(ordemAmHist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.UNRELATED)
+								.addComponent(ordemAmHist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.UNRELATED)
+								.addComponent(ordemAmHist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.UNRELATED)
+								.addComponent(ordemAmHist5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.UNRELATED)
+								.addComponent(ordemAmostradosJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
+							.addGroup(jPanel8Layout.createSequentialGroup()
+								.addComponent(jLabel37)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(idadeAmHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.UNRELATED)
+								.addComponent(idadeAmHist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.UNRELATED)
+								.addComponent(idadeAmHist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.UNRELATED)
+								.addComponent(idadeAmHist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.UNRELATED)
+								.addComponent(idadeAmHist5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.UNRELATED)
+								.addComponent(idadeAmostradosJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)))
 						.addGroup(jPanel8Layout.createSequentialGroup()
-							.addComponent(jLabel54, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-							.addGap(26))
-						.addGroup(jPanel8Layout.createSequentialGroup()
-							.addGroup(jPanel8Layout.createParallelGroup(Alignment.LEADING, false)
-								.addGroup(jPanel8Layout.createParallelGroup(Alignment.TRAILING)
-									.addGroup(jPanel8Layout.createParallelGroup(Alignment.BASELINE)
-										.addComponent(jLabel24)
-										.addComponent(jLabel25))
-									.addComponent(jLabel37))
-								.addComponent(jLabel53))
+							.addGroup(jPanel8Layout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(jLabel24)
+								.addComponent(jLabel25))
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addGroup(jPanel8Layout.createParallelGroup(Alignment.TRAILING)
+							.addGroup(jPanel8Layout.createParallelGroup(Alignment.LEADING)
+								.addComponent(nrAmHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+								.addComponent(pesoAmHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addGroup(jPanel8Layout.createParallelGroup(Alignment.LEADING)
+								.addComponent(nrAmHist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+								.addComponent(pesoAmHist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addGroup(jPanel8Layout.createParallelGroup(Alignment.LEADING)
+								.addComponent(nrAmHist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+								.addComponent(pesoAmHist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addGroup(jPanel8Layout.createParallelGroup(Alignment.LEADING)
+								.addGroup(Alignment.TRAILING, jPanel8Layout.createParallelGroup(Alignment.TRAILING)
+									.addGroup(jPanel8Layout.createSequentialGroup()
+										.addComponent(jLabel54, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addGap(26))
+									.addComponent(controleAmostradosJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 								.addGroup(jPanel8Layout.createSequentialGroup()
 									.addGroup(jPanel8Layout.createParallelGroup(Alignment.LEADING)
-										.addComponent(nrAmHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-										.addComponent(pesoAmHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
+										.addComponent(nrAmHist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addComponent(pesoAmHist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
 									.addPreferredGap(ComponentPlacement.UNRELATED)
 									.addGroup(jPanel8Layout.createParallelGroup(Alignment.LEADING)
-										.addComponent(nrAmHist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-										.addComponent(pesoAmHist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addGroup(jPanel8Layout.createParallelGroup(Alignment.LEADING)
-										.addComponent(nrAmHist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-										.addComponent(pesoAmHist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addGroup(jPanel8Layout.createParallelGroup(Alignment.LEADING, false)
-										.addComponent(pesoAmHist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-										.addComponent(nrAmHist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addGroup(jPanel8Layout.createParallelGroup(Alignment.LEADING)
-										.addComponent(nrAmHist5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-										.addComponent(pesoAmHist5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addGroup(jPanel8Layout.createParallelGroup(Alignment.LEADING)
-										.addGroup(jPanel8Layout.createParallelGroup(Alignment.BASELINE)
-											.addComponent(pesoAmostradosJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
-											.addComponent(formattedTextField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-										.addComponent(nrAmostradosJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)))
-								.addGroup(jPanel8Layout.createSequentialGroup()
-									.addComponent(idadeAmHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(idadeAmHist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(idadeAmHist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(idadeAmHist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(idadeAmHist5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(idadeAmostradosJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
-								.addGroup(jPanel8Layout.createSequentialGroup()
-									.addComponent(ordemAmHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(ordemAmHist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(ordemAmHist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(ordemAmHist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(ordemAmHist5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(ordemAmostradosJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)))))
+										.addComponent(pesoAmHist5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addGroup(jPanel8Layout.createSequentialGroup()
+											.addComponent(nrAmHist5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+											.addPreferredGap(ComponentPlacement.UNRELATED)
+											.addGroup(jPanel8Layout.createParallelGroup(Alignment.BASELINE)
+												.addComponent(nrAmostradosJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+												.addComponent(pesoAmostradosJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))))))))
 					.addContainerGap())
 		);
 		jPanel8.setLayout(jPanel8Layout);
@@ -855,26 +854,26 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 		faseAmostradosLabel.setText("Fase 1 (Idade 28)");
 
 		javax.swing.GroupLayout gl_pnlAmostrados = new javax.swing.GroupLayout(pnlAmostrados);
+		gl_pnlAmostrados.setHorizontalGroup(
+			gl_pnlAmostrados.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_pnlAmostrados.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(gl_pnlAmostrados.createParallelGroup(Alignment.LEADING)
+						.addComponent(faseAmostradosLabel, GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+						.addGroup(gl_pnlAmostrados.createSequentialGroup()
+							.addComponent(jPanel8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+		);
+		gl_pnlAmostrados.setVerticalGroup(
+			gl_pnlAmostrados.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_pnlAmostrados.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(faseAmostradosLabel)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(jPanel8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(22, Short.MAX_VALUE))
+		);
 		pnlAmostrados.setLayout(gl_pnlAmostrados);
-		gl_pnlAmostrados.setHorizontalGroup(gl_pnlAmostrados
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(gl_pnlAmostrados.createSequentialGroup().addContainerGap().addComponent(faseAmostradosLabel,
-						javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE))
-				.addGroup(gl_pnlAmostrados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(gl_pnlAmostrados.createSequentialGroup().addContainerGap()
-								.addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))));
-		gl_pnlAmostrados.setVerticalGroup(gl_pnlAmostrados
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(gl_pnlAmostrados.createSequentialGroup().addContainerGap().addComponent(faseAmostradosLabel)
-						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-				.addGroup(gl_pnlAmostrados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(
-						javax.swing.GroupLayout.Alignment.TRAILING,
-						gl_pnlAmostrados.createSequentialGroup().addContainerGap(26, Short.MAX_VALUE)
-								.addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addContainerGap())));
 
 		pnlPesagem.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -900,7 +899,7 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 
 		try {
 			pesadosJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -955,7 +954,7 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 
 		try {
 			idadePesadosJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1004,9 +1003,9 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 		jLabel56.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		jLabel56.setText("Controle");
 		
-		formattedTextField_4 = new JFormattedTextField();
-		formattedTextField_4.setHorizontalAlignment(SwingConstants.CENTER);
-		formattedTextField_4.setEnabled(false);
+		controlePesagemJFT = new JFormattedTextField();
+		controlePesagemJFT.setHorizontalAlignment(SwingConstants.CENTER);
+		controlePesagemJFT.setEnabled(false);
 
 		javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
 		jPanel7Layout.setHorizontalGroup(
@@ -1052,7 +1051,7 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 								.addComponent(pesadosHist1Label, GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE))
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(jPanel7Layout.createParallelGroup(Alignment.LEADING)
-								.addComponent(formattedTextField_4, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
+								.addComponent(controlePesagemJFT, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
 								.addComponent(jLabel56, GroupLayout.PREFERRED_SIZE, 61, GroupLayout.PREFERRED_SIZE)))
 						.addComponent(jLabel20, GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE))
 					.addContainerGap())
@@ -1101,7 +1100,7 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 									.addPreferredGap(ComponentPlacement.UNRELATED)
 									.addGroup(jPanel7Layout.createParallelGroup(Alignment.BASELINE)
 										.addComponent(pesadosJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
-										.addComponent(formattedTextField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+										.addComponent(controlePesagemJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
 								.addGroup(jPanel7Layout.createSequentialGroup()
 									.addComponent(nrPesadosHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
 									.addPreferredGap(ComponentPlacement.UNRELATED)
@@ -1135,27 +1134,25 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 		fasePesagemLabel.setText("Fase 1 (Idade 28)");
 
 		javax.swing.GroupLayout gl_pnlPesagem = new javax.swing.GroupLayout(pnlPesagem);
+		gl_pnlPesagem.setHorizontalGroup(
+			gl_pnlPesagem.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_pnlPesagem.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(gl_pnlPesagem.createParallelGroup(Alignment.LEADING)
+						.addComponent(fasePesagemLabel, GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+						.addComponent(jPanel7, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+					.addContainerGap())
+		);
+		gl_pnlPesagem.setVerticalGroup(
+			gl_pnlPesagem.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_pnlPesagem.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(fasePesagemLabel)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(jPanel7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(22, Short.MAX_VALUE))
+		);
 		pnlPesagem.setLayout(gl_pnlPesagem);
-		gl_pnlPesagem
-				.setHorizontalGroup(gl_pnlPesagem.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(gl_pnlPesagem.createSequentialGroup().addContainerGap()
-								.addComponent(fasePesagemLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 246,
-										Short.MAX_VALUE)
-								.addContainerGap())
-						.addGroup(gl_pnlPesagem.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addGroup(gl_pnlPesagem.createSequentialGroup().addContainerGap()
-										.addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addContainerGap())));
-		gl_pnlPesagem.setVerticalGroup(gl_pnlPesagem.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(gl_pnlPesagem.createSequentialGroup().addContainerGap().addComponent(fasePesagemLabel)
-						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-				.addGroup(gl_pnlPesagem.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(
-						javax.swing.GroupLayout.Alignment.TRAILING,
-						gl_pnlPesagem.createSequentialGroup().addContainerGap(26, Short.MAX_VALUE)
-								.addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addContainerGap())));
 
 		jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -1230,7 +1227,7 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 
 		try {
 			pesoErrosJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1269,7 +1266,7 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 
 		try {
 			idadeErrosJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1324,9 +1321,9 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 		jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		jLabel52.setText("Controle");
 		
-		formattedTextField_2 = new JFormattedTextField();
-		formattedTextField_2.setHorizontalAlignment(SwingConstants.CENTER);
-		formattedTextField_2.setEnabled(false);
+		controleErrosJFT = new JFormattedTextField();
+		controleErrosJFT.setHorizontalAlignment(SwingConstants.CENTER);
+		controleErrosJFT.setEnabled(false);
 
 		javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
 		jPanel9Layout.setHorizontalGroup(
@@ -1334,7 +1331,7 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 				.addGroup(jPanel9Layout.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(jPanel9Layout.createParallelGroup(Alignment.LEADING)
-						.addComponent(jLabel26, GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
+						.addComponent(jLabel26, GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
 						.addGroup(jPanel9Layout.createSequentialGroup()
 							.addGroup(jPanel9Layout.createParallelGroup(Alignment.TRAILING)
 								.addComponent(jLabel51, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1342,17 +1339,18 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 								.addComponent(ordemErHist4Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
 								.addComponent(ordemErHist1Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
 								.addComponent(ordemErHist2Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-								.addComponent(ordemErHist5Label, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-								.addComponent(ordemErrosJFT, Alignment.LEADING, 32, 32, 32))
+								.addComponent(ordemErrosJFT, Alignment.LEADING, 32, 32, Short.MAX_VALUE)
+								.addComponent(ordemErHist5Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addGroup(jPanel9Layout.createParallelGroup(Alignment.LEADING, false)
-								.addComponent(jLabel38, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(idadeErrosJFT, Alignment.TRAILING)
-								.addComponent(idadeErHist4Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(idadeErHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(idadeErHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(idadeErHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(idadeErHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+							.addGroup(jPanel9Layout.createParallelGroup(Alignment.LEADING)
+								.addGroup(jPanel9Layout.createParallelGroup(Alignment.LEADING)
+									.addComponent(idadeErHist4Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(idadeErHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(idadeErHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(idadeErHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(idadeErHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(idadeErrosJFT, GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
+								.addComponent(jLabel38, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(jPanel9Layout.createParallelGroup(Alignment.LEADING, false)
 								.addComponent(jLabel27, GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
@@ -1374,10 +1372,10 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(jPanel9Layout.createParallelGroup(Alignment.LEADING)
 								.addGroup(jPanel9Layout.createSequentialGroup()
-									.addComponent(jLabel52, GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
+									.addComponent(jLabel52, GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
 									.addGap(13))
 								.addGroup(jPanel9Layout.createSequentialGroup()
-									.addComponent(formattedTextField_2, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
+									.addComponent(controleErrosJFT, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
 									.addContainerGap())))))
 		);
 		jPanel9Layout.setVerticalGroup(
@@ -1388,10 +1386,11 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 					.addGap(12)
 					.addGroup(jPanel9Layout.createParallelGroup(Alignment.TRAILING)
 						.addGroup(jPanel9Layout.createParallelGroup(Alignment.BASELINE)
-							.addComponent(jLabel38)
 							.addComponent(jLabel27)
 							.addComponent(jLabel28))
-						.addComponent(jLabel51))
+						.addGroup(jPanel9Layout.createParallelGroup(Alignment.BASELINE)
+							.addComponent(jLabel51)
+							.addComponent(jLabel38)))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(jPanel9Layout.createParallelGroup(Alignment.TRAILING)
 						.addGroup(jPanel9Layout.createSequentialGroup()
@@ -1430,7 +1429,7 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 							.addGroup(jPanel9Layout.createParallelGroup(Alignment.BASELINE)
 								.addComponent(nrErrosJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
 								.addComponent(pesoErrosJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
-								.addComponent(formattedTextField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+								.addComponent(controleErrosJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
 						.addGroup(jPanel9Layout.createSequentialGroup()
 							.addComponent(idadeErHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.UNRELATED)
@@ -1455,56 +1454,65 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 		faseErrosLabel.setText("Fase 1 (Idade 28)");
 
 		javax.swing.GroupLayout gl_pnlErros = new javax.swing.GroupLayout(pnlErros);
-		gl_pnlErros.setHorizontalGroup(gl_pnlErros.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_pnlErros.createSequentialGroup().addContainerGap()
-						.addGroup(gl_pnlErros.createParallelGroup(Alignment.LEADING)
-								.addComponent(faseErrosLabel, GroupLayout.PREFERRED_SIZE, 256,
-										GroupLayout.PREFERRED_SIZE)
-								.addComponent(jPanel9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE))
-						.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
-		gl_pnlErros.setVerticalGroup(gl_pnlErros.createParallelGroup(Alignment.LEADING).addGroup(gl_pnlErros
-				.createSequentialGroup().addContainerGap().addComponent(faseErrosLabel)
-				.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-				.addComponent(jPanel9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-				.addContainerGap()));
+		gl_pnlErros.setHorizontalGroup(
+			gl_pnlErros.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_pnlErros.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(gl_pnlErros.createParallelGroup(Alignment.LEADING)
+						.addComponent(faseErrosLabel, GroupLayout.PREFERRED_SIZE, 256, GroupLayout.PREFERRED_SIZE)
+						.addComponent(jPanel9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+		);
+		gl_pnlErros.setVerticalGroup(
+			gl_pnlErros.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_pnlErros.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(faseErrosLabel)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(jPanel9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(22, Short.MAX_VALUE))
+		);
 		pnlErros.setLayout(gl_pnlErros);
 
 		javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
 		jPanel10Layout.setHorizontalGroup(
 			jPanel10Layout.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+				.addGroup(jPanel10Layout.createSequentialGroup()
 					.addComponent(pnlErros, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(pnlAmostrados, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(pnlPesagem, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(jPanel5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addGap(82))
+					.addComponent(jPanel5, GroupLayout.PREFERRED_SIZE, 229, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(92, Short.MAX_VALUE))
 		);
 		jPanel10Layout.setVerticalGroup(
-			jPanel10Layout.createParallelGroup(Alignment.TRAILING)
-				.addComponent(pnlAmostrados, GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
-				.addComponent(pnlPesagem, GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+			jPanel10Layout.createParallelGroup(Alignment.LEADING)
 				.addGroup(jPanel10Layout.createSequentialGroup()
-					.addGap(48, 59, Short.MAX_VALUE)
-					.addComponent(jPanel5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-				.addComponent(pnlErros, GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+					.addGroup(jPanel10Layout.createParallelGroup(Alignment.TRAILING, false)
+						.addGroup(jPanel10Layout.createSequentialGroup()
+							.addGap(11)
+							.addComponent(jPanel5, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+						.addComponent(pnlPesagem, Alignment.LEADING, 0, 0, Short.MAX_VALUE)
+						.addComponent(pnlAmostrados, Alignment.LEADING, 0, 0, Short.MAX_VALUE)
+						.addComponent(pnlErros, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE))
+					.addContainerGap())
 		);
 		jPanel10.setLayout(jPanel10Layout);
 
 		javax.swing.GroupLayout pesagemJPLayout = new javax.swing.GroupLayout(pesagemJP);
 		pesagemJPLayout.setHorizontalGroup(
 			pesagemJPLayout.createParallelGroup(Alignment.LEADING)
-				.addComponent(jPanel10, GroupLayout.PREFERRED_SIZE, 1081, Short.MAX_VALUE)
+				.addGroup(pesagemJPLayout.createSequentialGroup()
+					.addComponent(jPanel10, GroupLayout.DEFAULT_SIZE, 1198, Short.MAX_VALUE)
+					.addContainerGap())
 		);
 		pesagemJPLayout.setVerticalGroup(
-			pesagemJPLayout.createParallelGroup(Alignment.TRAILING)
-				.addGroup(Alignment.LEADING, pesagemJPLayout.createSequentialGroup()
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(jPanel10, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+			pesagemJPLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(pesagemJPLayout.createSequentialGroup()
+					.addComponent(jPanel10, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(13, Short.MAX_VALUE))
 		);
 		pesagemJP.setLayout(pesagemJPLayout);
 
@@ -1532,7 +1540,7 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 
 		try {
 			pesoMortalidadeJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1589,7 +1597,7 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 
 		try {
 			idadeMortalidadeJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1631,9 +1639,9 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 		jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		jLabel48.setText("Controle");
 		
-		formattedTextField = new JFormattedTextField();
-		formattedTextField.setHorizontalAlignment(SwingConstants.CENTER);
-		formattedTextField.setEnabled(false);
+		controleMortalidadeJFT = new JFormattedTextField();
+		controleMortalidadeJFT.setHorizontalAlignment(SwingConstants.CENTER);
+		controleMortalidadeJFT.setEnabled(false);
 
 		javax.swing.GroupLayout jPanel43Layout = new javax.swing.GroupLayout(jPanel43);
 		jPanel43Layout.setHorizontalGroup(
@@ -1641,18 +1649,23 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 				.addGroup(jPanel43Layout.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(jPanel43Layout.createParallelGroup(Alignment.LEADING)
-						.addComponent(jLabel5, GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
+						.addComponent(jLabel5, GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
 						.addGroup(jPanel43Layout.createSequentialGroup()
-							.addGroup(jPanel43Layout.createParallelGroup(Alignment.TRAILING)
-								.addComponent(jLabel41, GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-								.addComponent(ordemMortalidadeHist3Label, GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-								.addComponent(ordemMortalidadeHist4Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-								.addComponent(ordemMortalidadeHist1Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-								.addComponent(ordemMortalidadeHist2Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-								.addComponent(ordemMortalidadeHist5Label, GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-								.addComponent(ordemMortalidadeJFT, Alignment.LEADING, 32, 32, 32))
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addGroup(jPanel43Layout.createParallelGroup(Alignment.TRAILING)
+							.addGroup(jPanel43Layout.createParallelGroup(Alignment.LEADING)
+								.addGroup(jPanel43Layout.createParallelGroup(Alignment.TRAILING, false)
+									.addComponent(ordemMortalidadeHist5Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(ordemMortalidadeJFT, Alignment.LEADING, 32, 32, Short.MAX_VALUE))
+								.addGroup(jPanel43Layout.createSequentialGroup()
+									.addGroup(jPanel43Layout.createParallelGroup(Alignment.TRAILING, false)
+										.addComponent(jLabel41, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addGroup(Alignment.LEADING, jPanel43Layout.createParallelGroup(Alignment.TRAILING, false)
+											.addComponent(ordemMortalidadeHist1Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+											.addComponent(ordemMortalidadeHist2Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+											.addComponent(ordemMortalidadeHist4Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+											.addComponent(ordemMortalidadeHist3Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)))
+									.addPreferredGap(ComponentPlacement.UNRELATED)))
+							.addGap(6)
+							.addGroup(jPanel43Layout.createParallelGroup(Alignment.LEADING)
 								.addGroup(jPanel43Layout.createSequentialGroup()
 									.addGroup(jPanel43Layout.createParallelGroup(Alignment.LEADING)
 										.addComponent(idadeMortalidadeJFT, 35, 35, 35)
@@ -1682,15 +1695,14 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 									.addPreferredGap(ComponentPlacement.RELATED)
 									.addGroup(jPanel43Layout.createParallelGroup(Alignment.LEADING, false)
 										.addComponent(jLabel48, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(formattedTextField, GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE))
-									.addContainerGap(19, Short.MAX_VALUE))
+										.addComponent(controleMortalidadeJFT, GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)))
 								.addGroup(jPanel43Layout.createSequentialGroup()
 									.addComponent(jLabel16, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
 									.addPreferredGap(ComponentPlacement.RELATED)
 									.addComponent(jLabel7, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
 									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(jLabel8, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
-									.addGap(79))))))
+									.addComponent(jLabel8, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)))
+							.addContainerGap(24, Short.MAX_VALUE))))
 		);
 		jPanel43Layout.setVerticalGroup(
 			jPanel43Layout.createParallelGroup(Alignment.TRAILING)
@@ -1733,25 +1745,27 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 							.addGroup(jPanel43Layout.createSequentialGroup()
 								.addGroup(jPanel43Layout.createParallelGroup(Alignment.TRAILING)
 									.addGroup(jPanel43Layout.createSequentialGroup()
-										.addComponent(pesoMHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addComponent(pesoMHist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addComponent(pesoMHist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addComponent(pesoMHist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addComponent(pesoMHist5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-										.addGap(12))
-									.addGroup(jPanel43Layout.createSequentialGroup()
 										.addComponent(jLabel48, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.RELATED)))
+										.addPreferredGap(ComponentPlacement.RELATED))
+									.addGroup(jPanel43Layout.createSequentialGroup()
+										.addGroup(jPanel43Layout.createParallelGroup(Alignment.LEADING)
+											.addComponent(ordemMortalidadeHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+											.addGroup(jPanel43Layout.createSequentialGroup()
+												.addComponent(pesoMHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.UNRELATED)
+												.addComponent(pesoMHist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.UNRELATED)
+												.addComponent(pesoMHist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.UNRELATED)
+												.addComponent(pesoMHist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.UNRELATED)
+												.addComponent(pesoMHist5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)))
+										.addGap(12)))
 								.addGroup(jPanel43Layout.createParallelGroup(Alignment.BASELINE)
 									.addComponent(pesoMortalidadeJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
-									.addComponent(formattedTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
+									.addComponent(controleMortalidadeJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
 						.addGroup(jPanel43Layout.createSequentialGroup()
-							.addComponent(ordemMortalidadeHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addGap(25)
 							.addComponent(ordemMortalidadeHist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.UNRELATED)
 							.addComponent(ordemMortalidadeHist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
@@ -1771,12 +1785,12 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 
 		javax.swing.GroupLayout gl_pnlMortalidade = new javax.swing.GroupLayout(pnlMortalidade);
 		gl_pnlMortalidade.setHorizontalGroup(
-			gl_pnlMortalidade.createParallelGroup(Alignment.TRAILING)
-				.addGroup(Alignment.LEADING, gl_pnlMortalidade.createSequentialGroup()
+			gl_pnlMortalidade.createParallelGroup(Alignment.LEADING)
+				.addGroup(Alignment.TRAILING, gl_pnlMortalidade.createSequentialGroup()
 					.addContainerGap()
-					.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.LEADING)
-						.addComponent(jPanel43, GroupLayout.PREFERRED_SIZE, 254, GroupLayout.PREFERRED_SIZE)
-						.addComponent(faseMortalidadeLabel, GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE))
+					.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.TRAILING)
+						.addComponent(jPanel43, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
+						.addComponent(faseMortalidadeLabel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE))
 					.addContainerGap())
 		);
 		gl_pnlMortalidade.setVerticalGroup(
@@ -1814,7 +1828,7 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 
 		try {
 			pesoEliminadosJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1871,7 +1885,7 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 
 		try {
 			idadeEliminadosJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1908,9 +1922,9 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 		ordemEliminadosJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		ordemEliminadosJFT.setEnabled(false);
 		
-		formattedTextField_1 = new JFormattedTextField();
-		formattedTextField_1.setHorizontalAlignment(SwingConstants.CENTER);
-		formattedTextField_1.setEnabled(false);
+		controleEliminadosJFT = new JFormattedTextField();
+		controleEliminadosJFT.setHorizontalAlignment(SwingConstants.CENTER);
+		controleEliminadosJFT.setEnabled(false);
 
 		javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
 		jPanel13Layout.setHorizontalGroup(
@@ -1964,7 +1978,7 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 										.addComponent(pesoEliminadosJFT, 48, 48, Short.MAX_VALUE))
 									.addPreferredGap(ComponentPlacement.RELATED)
 									.addGroup(jPanel13Layout.createParallelGroup(Alignment.LEADING)
-										.addComponent(formattedTextField_1, GroupLayout.PREFERRED_SIZE, 69, GroupLayout.PREFERRED_SIZE)
+										.addComponent(controleEliminadosJFT, GroupLayout.PREFERRED_SIZE, 69, GroupLayout.PREFERRED_SIZE)
 										.addComponent(jLabel59, GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)))
 								.addGroup(jPanel13Layout.createParallelGroup(Alignment.TRAILING, false)
 									.addComponent(pesoElHist1Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -2027,7 +2041,7 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 										.addComponent(pesoEliminadosJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
 										.addComponent(idadeEliminadosJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
 										.addComponent(ordemEliminadosJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
-										.addComponent(formattedTextField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))))
+										.addComponent(controleEliminadosJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))))
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		jPanel13.setLayout(jPanel13Layout);
@@ -2065,48 +2079,45 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
 		jPanel1Layout.setHorizontalGroup(
-			jPanel1Layout.createParallelGroup(Alignment.LEADING)
+			jPanel1Layout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(jPanel1Layout.createSequentialGroup()
-					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-						.addComponent(registroLabel, GroupLayout.PREFERRED_SIZE, 1009, GroupLayout.PREFERRED_SIZE)
-						.addComponent(pesagemJP, GroupLayout.DEFAULT_SIZE, 1123, Short.MAX_VALUE)
-						.addGroup(jPanel1Layout.createSequentialGroup()
-							.addContainerGap()
-							.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-								.addComponent(baiaJP, GroupLayout.PREFERRED_SIZE, 670, GroupLayout.PREFERRED_SIZE)
-								.addGroup(jPanel1Layout.createSequentialGroup()
-									.addComponent(pnlMortalidade, GroupLayout.PREFERRED_SIZE, 285, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(pnlEliminados, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-							.addGap(407)))
+					.addContainerGap()
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING)
+						.addComponent(pesagemJP, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 1214, Short.MAX_VALUE)
+						.addGroup(Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+							.addComponent(pnlMortalidade, GroupLayout.PREFERRED_SIZE, 314, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(pnlEliminados, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(baiaJP, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 670, GroupLayout.PREFERRED_SIZE)
+						.addComponent(registroLabel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 1214, Short.MAX_VALUE))
 					.addContainerGap())
 		);
 		jPanel1Layout.setVerticalGroup(
 			jPanel1Layout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(jPanel1Layout.createSequentialGroup()
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addComponent(baiaJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-						.addComponent(pnlMortalidade, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(pnlEliminados, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(pnlEliminados, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(pnlMortalidade, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(pesagemJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addComponent(pesagemJP, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(registroLabel))
+					.addComponent(registroLabel)
+					.addGap(35))
 		);
 		jPanel1.setLayout(jPanel1Layout);
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
 		layout.setHorizontalGroup(
 			layout.createParallelGroup(Alignment.LEADING)
-				.addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 1133, Short.MAX_VALUE)
+				.addGroup(layout.createSequentialGroup()
+					.addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addGap(20))
 		);
 		layout.setVerticalGroup(
 			layout.createParallelGroup(Alignment.LEADING)
-				.addGroup(layout.createSequentialGroup()
-					.addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+				.addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 651, Short.MAX_VALUE)
 		);
 		getContentPane().setLayout(layout);
 
