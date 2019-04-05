@@ -26,6 +26,7 @@ import brf.util.TextFormatter;
 
 public class ControllerCamaraP extends KeyAdapter implements FocusListener {
 	private int abate, idadeAbate, ordem, camara;
+	private boolean key;
 	private ControllerP controller;
 	private ModelStateDAOP dao;
 	private AbateBOP abateBO;
@@ -88,30 +89,95 @@ public class ControllerCamaraP extends KeyAdapter implements FocusListener {
 			String text = src.getText();
 			if ((JFormattedTextField) e.getSource() == viewCamara.getNumero1JFT()) {
 				TextFormatter.formatStringJFT(src, text, 3);
-				viewCamara.getRegistrosLabel().setVisible(false);
-				viewCamara.getNumero1JFT().setEnabled(false);
-				viewCamara.getNumero2JFT().setEnabled(true);
-				viewCamara.getNumero2JFT().grabFocus();
+				for (CamaraVOP c : camarasTemp) {
+					if (c.getNasa() == Integer.parseInt(viewCamara.getNumero1JFT().getText())) {
+						key = true;
+						break;
+					}
+				}
+				if (key) {
+					JOptionPane.showMessageDialog(viewCamara,
+							"Problema(s):\nAnilha nº" + viewCamara.getNumero1JFT().getText() + " duplicada!",
+							"DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+					key = false;
+				} else {
+					viewCamara.getRegistrosLabel().setVisible(false);
+					viewCamara.getNumero1JFT().setEnabled(false);
+					viewCamara.getNumero2JFT().setEnabled(true);
+					viewCamara.getNumero2JFT().grabFocus();
+				}
 			} else if ((JFormattedTextField) e.getSource() == viewCamara.getNumero2JFT()) {
 				TextFormatter.formatStringJFT(src, text, 3);
-				viewCamara.getNumero2JFT().setEnabled(false);
-				viewCamara.getNumero3JFT().setEnabled(true);
-				viewCamara.getNumero3JFT().grabFocus();
+				for (CamaraVOP c : camarasTemp) {
+					if (c.getNasa() == Integer.parseInt(viewCamara.getNumero2JFT().getText())) {
+						key = true;
+						break;
+					}
+				}
+				if (key) {
+					JOptionPane.showMessageDialog(viewCamara,
+							"Problema(s):\nAnilha nº" + viewCamara.getNumero1JFT().getText() + " duplicada!",
+							"DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+					key = false;
+				} else {
+					viewCamara.getNumero2JFT().setEnabled(false);
+					viewCamara.getNumero3JFT().setEnabled(true);
+					viewCamara.getNumero3JFT().grabFocus();
+				}
 			} else if ((JFormattedTextField) e.getSource() == viewCamara.getNumero3JFT()) {
 				TextFormatter.formatStringJFT(src, text, 3);
-				viewCamara.getNumero3JFT().setEnabled(false);
-				viewCamara.getNumero4JFT().setEnabled(true);
-				viewCamara.getNumero4JFT().grabFocus();
+				for (CamaraVOP c : camarasTemp) {
+					if (c.getNasa() == Integer.parseInt(viewCamara.getNumero3JFT().getText())) {
+						key = true;
+						break;
+					}
+				}
+				if (key) {
+					JOptionPane.showMessageDialog(viewCamara,
+							"Problema(s):\nAnilha nº" + viewCamara.getNumero1JFT().getText() + " duplicada!",
+							"DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+					key = false;
+				} else {
+					viewCamara.getNumero3JFT().setEnabled(false);
+					viewCamara.getNumero4JFT().setEnabled(true);
+					viewCamara.getNumero4JFT().grabFocus();
+				}
 			} else if ((JFormattedTextField) e.getSource() == viewCamara.getNumero4JFT()) {
 				TextFormatter.formatStringJFT(src, text, 3);
-				viewCamara.getNumero4JFT().setEnabled(false);
-				viewCamara.getNumero5JFT().setEnabled(true);
-				viewCamara.getNumero5JFT().grabFocus();
+				for (CamaraVOP c : camarasTemp) {
+					if (c.getNasa() == Integer.parseInt(viewCamara.getNumero4JFT().getText())) {
+						key = true;
+						break;
+					}
+				}
+				if (key) {
+					JOptionPane.showMessageDialog(viewCamara,
+							"Problema(s):\nAnilha nº" + viewCamara.getNumero1JFT().getText() + " duplicada!",
+							"DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+					key = false;
+				} else {
+					viewCamara.getNumero4JFT().setEnabled(false);
+					viewCamara.getNumero5JFT().setEnabled(true);
+					viewCamara.getNumero5JFT().grabFocus();
+				}
 			} else if ((JFormattedTextField) e.getSource() == viewCamara.getNumero5JFT()) {
 				TextFormatter.formatStringJFT(src, text, 3);
-				viewCamara.getNumero5JFT().setEnabled(false);
-				viewCamara.getpCarcaca1JFT().setEnabled(true);
-				viewCamara.getpCarcaca1JFT().grabFocus();
+				for (CamaraVOP c : camarasTemp) {
+					if (c.getNasa() == Integer.parseInt(viewCamara.getNumero5JFT().getText())) {
+						key = true;
+						break;
+					}
+				}
+				if (key) {
+					JOptionPane.showMessageDialog(viewCamara,
+							"Problema(s):\nAnilha nº" + viewCamara.getNumero1JFT().getText() + " duplicada!",
+							"DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+					key = false;
+				} else {
+					viewCamara.getNumero5JFT().setEnabled(false);
+					viewCamara.getpCarcaca1JFT().setEnabled(true);
+					viewCamara.getpCarcaca1JFT().grabFocus();
+				}
 			} else if ((JFormattedTextField) e.getSource() == viewCamara.getpCarcaca1JFT()) {
 				TextFormatter.formatStringJFT(src, text, 5);
 				viewCamara.getpCarcaca1JFT().setEnabled(false);
@@ -192,7 +258,7 @@ public class ControllerCamaraP extends KeyAdapter implements FocusListener {
 			} else if ((JFormattedTextField) e.getSource() == viewCamara.getControleJFT()) {
 				TextFormatter.formatStringJFT(src, text, 6);
 				String msg = abateBO.verificaCamaras(camarasTemp);
-				if( msg != null) {
+				if (msg != null) {
 					JOptionPane.showMessageDialog(viewCamara, "Problema(s):\n" + msg, "DIGEX - Erro",
 							JOptionPane.ERROR_MESSAGE);
 					viewCamara.getCamaraJP().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
@@ -200,7 +266,7 @@ public class ControllerCamaraP extends KeyAdapter implements FocusListener {
 					viewCamara.getControleJFT().setEnabled(false);
 					viewCamara.getNumero1JFT().setEnabled(true);
 					viewCamara.getNumero1JFT().grabFocus();
-				}else {
+				} else {
 					if (Integer.parseInt(viewCamara.getControleJFT().getText()) == calculaTotalControle()) {
 						viewCamara.getCamaraJP().setBorder(defaultBorder);
 						controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras()
@@ -221,7 +287,7 @@ public class ControllerCamaraP extends KeyAdapter implements FocusListener {
 						viewCamara.getNumero1JFT().grabFocus();
 					}
 				}
-				
+
 			}
 		}
 	}
@@ -426,7 +492,7 @@ public class ControllerCamaraP extends KeyAdapter implements FocusListener {
 	}
 
 	private void loadHist() {
-		boolean key =  false;
+		boolean key = false;
 		if (!controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().isEmpty()) {
 			for (int i = controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras()
 					.size(); i > 0; i--) {
@@ -434,7 +500,7 @@ public class ControllerCamaraP extends KeyAdapter implements FocusListener {
 						.getAbate() == abate
 						&& controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().get(i - 1)
 								.getCamara() == camara) {
-					key = true;					
+					key = true;
 					JLabel lbl1 = (JLabel) orderAux.get(0);
 					lbl1.setText(String.valueOf(controller.getModel().getExperimentoVO().getAbates().get(abate - 1)
 							.getCamaras().get(i - 1).getNasa()));
@@ -459,7 +525,7 @@ public class ControllerCamaraP extends KeyAdapter implements FocusListener {
 					}
 				}
 			}
-			if(key) {
+			if (key) {
 				for (int i = 0; i < controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras()
 						.size(); i++) {
 					if (controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras().get(i)
@@ -486,7 +552,7 @@ public class ControllerCamaraP extends KeyAdapter implements FocusListener {
 				for (ConeVOP c : controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones()) {
 					if (c.getAbate() == abate && c.getCamara() == camara && c.getNcone() == 1) {
 						obsCone[0]++;
-					} else if(c.getAbate() == abate && c.getCamara() == camara && c.getNcone() == 2){
+					} else if (c.getAbate() == abate && c.getCamara() == camara && c.getNcone() == 2) {
 						obsCone[1]++;
 					}
 				}
