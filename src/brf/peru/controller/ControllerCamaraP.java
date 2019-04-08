@@ -89,7 +89,7 @@ public class ControllerCamaraP extends KeyAdapter implements FocusListener {
 			String text = src.getText();
 			if ((JFormattedTextField) e.getSource() == viewCamara.getNumero1JFT()) {
 				TextFormatter.formatStringJFT(src, text, 3);
-				for (CamaraVOP c : camarasTemp) {
+				for (CamaraVOP c : controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCamaras()) {
 					if (c.getNasa() == Integer.parseInt(viewCamara.getNumero1JFT().getText())) {
 						key = true;
 						break;
@@ -108,75 +108,109 @@ public class ControllerCamaraP extends KeyAdapter implements FocusListener {
 				}
 			} else if ((JFormattedTextField) e.getSource() == viewCamara.getNumero2JFT()) {
 				TextFormatter.formatStringJFT(src, text, 3);
-				for (CamaraVOP c : camarasTemp) {
-					if (c.getNasa() == Integer.parseInt(viewCamara.getNumero2JFT().getText())) {
-						key = true;
-						break;
+				if (!(viewCamara.getNumero2JFT().getText().equals(viewCamara.getNumero1JFT().getText()))) {
+					for (CamaraVOP c : controller.getModel().getExperimentoVO().getAbates().get(abate - 1)
+							.getCamaras()) {
+						if (c.getNasa() == Integer.parseInt(viewCamara.getNumero2JFT().getText())) {
+							key = true;
+							break;
+						}
 					}
-				}
-				if (key) {
-					JOptionPane.showMessageDialog(viewCamara,
-							"Problema(s):\nAnilha nº" + viewCamara.getNumero1JFT().getText() + " duplicada!",
-							"DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
-					key = false;
+					if (key) {
+						JOptionPane.showMessageDialog(viewCamara,
+								"Problema(s):\nAnilha nº" + viewCamara.getNumero2JFT().getText() + " duplicada!",
+								"DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+						key = false;
+					} else {
+						viewCamara.getNumero2JFT().setEnabled(false);
+						viewCamara.getNumero3JFT().setEnabled(true);
+						viewCamara.getNumero3JFT().grabFocus();
+					}
 				} else {
-					viewCamara.getNumero2JFT().setEnabled(false);
-					viewCamara.getNumero3JFT().setEnabled(true);
-					viewCamara.getNumero3JFT().grabFocus();
+					JOptionPane.showMessageDialog(viewCamara,
+							"Problema(s):\nAnilha nº" + viewCamara.getNumero2JFT().getText() + " duplicada!",
+							"DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
 				}
 			} else if ((JFormattedTextField) e.getSource() == viewCamara.getNumero3JFT()) {
 				TextFormatter.formatStringJFT(src, text, 3);
-				for (CamaraVOP c : camarasTemp) {
-					if (c.getNasa() == Integer.parseInt(viewCamara.getNumero3JFT().getText())) {
-						key = true;
-						break;
+				if (!(viewCamara.getNumero3JFT().getText().equals(viewCamara.getNumero2JFT().getText())
+						&& viewCamara.getNumero3JFT().getText().equals(viewCamara.getNumero1JFT().getText()))) {
+					for (CamaraVOP c : controller.getModel().getExperimentoVO().getAbates().get(abate - 1)
+							.getCamaras()) {
+						if (c.getNasa() == Integer.parseInt(viewCamara.getNumero3JFT().getText())) {
+							key = true;
+							break;
+						}
 					}
-				}
-				if (key) {
-					JOptionPane.showMessageDialog(viewCamara,
-							"Problema(s):\nAnilha nº" + viewCamara.getNumero1JFT().getText() + " duplicada!",
-							"DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
-					key = false;
+					if (key) {
+						JOptionPane.showMessageDialog(viewCamara,
+								"Problema(s):\nAnilha nº" + viewCamara.getNumero3JFT().getText() + " duplicada!",
+								"DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+						key = false;
+					} else {
+						viewCamara.getNumero3JFT().setEnabled(false);
+						viewCamara.getNumero4JFT().setEnabled(true);
+						viewCamara.getNumero4JFT().grabFocus();
+					}
 				} else {
-					viewCamara.getNumero3JFT().setEnabled(false);
-					viewCamara.getNumero4JFT().setEnabled(true);
-					viewCamara.getNumero4JFT().grabFocus();
+					JOptionPane.showMessageDialog(viewCamara,
+							"Problema(s):\nAnilha nº" + viewCamara.getNumero3JFT().getText() + " duplicada!",
+							"DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
 				}
 			} else if ((JFormattedTextField) e.getSource() == viewCamara.getNumero4JFT()) {
 				TextFormatter.formatStringJFT(src, text, 3);
-				for (CamaraVOP c : camarasTemp) {
-					if (c.getNasa() == Integer.parseInt(viewCamara.getNumero4JFT().getText())) {
-						key = true;
-						break;
+				if (!(viewCamara.getNumero4JFT().getText().equals(viewCamara.getNumero3JFT().getText())
+						&& viewCamara.getNumero4JFT().getText().equals(viewCamara.getNumero2JFT().getText())
+						&& viewCamara.getNumero4JFT().getText().equals(viewCamara.getNumero1JFT().getText()))) {
+					for (CamaraVOP c : controller.getModel().getExperimentoVO().getAbates().get(abate - 1)
+							.getCamaras()) {
+						if (c.getNasa() == Integer.parseInt(viewCamara.getNumero4JFT().getText())) {
+							key = true;
+							break;
+						}
 					}
-				}
-				if (key) {
-					JOptionPane.showMessageDialog(viewCamara,
-							"Problema(s):\nAnilha nº" + viewCamara.getNumero1JFT().getText() + " duplicada!",
-							"DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
-					key = false;
+					if (key) {
+						JOptionPane.showMessageDialog(viewCamara,
+								"Problema(s):\nAnilha nº" + viewCamara.getNumero4JFT().getText() + " duplicada!",
+								"DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+						key = false;
+					} else {
+						viewCamara.getNumero4JFT().setEnabled(false);
+						viewCamara.getNumero5JFT().setEnabled(true);
+						viewCamara.getNumero5JFT().grabFocus();
+					}
 				} else {
-					viewCamara.getNumero4JFT().setEnabled(false);
-					viewCamara.getNumero5JFT().setEnabled(true);
-					viewCamara.getNumero5JFT().grabFocus();
+					JOptionPane.showMessageDialog(viewCamara,
+							"Problema(s):\nAnilha nº" + viewCamara.getNumero4JFT().getText() + " duplicada!",
+							"DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
 				}
 			} else if ((JFormattedTextField) e.getSource() == viewCamara.getNumero5JFT()) {
 				TextFormatter.formatStringJFT(src, text, 3);
-				for (CamaraVOP c : camarasTemp) {
-					if (c.getNasa() == Integer.parseInt(viewCamara.getNumero5JFT().getText())) {
-						key = true;
-						break;
+				if (!(viewCamara.getNumero5JFT().getText().equals(viewCamara.getNumero4JFT().getText())
+						&& viewCamara.getNumero5JFT().getText().equals(viewCamara.getNumero3JFT().getText())
+						&& viewCamara.getNumero5JFT().getText().equals(viewCamara.getNumero2JFT().getText())
+						&& viewCamara.getNumero5JFT().getText().equals(viewCamara.getNumero1JFT().getText()))) {
+					for (CamaraVOP c : controller.getModel().getExperimentoVO().getAbates().get(abate - 1)
+							.getCamaras()) {
+						if (c.getNasa() == Integer.parseInt(viewCamara.getNumero5JFT().getText())) {
+							key = true;
+							break;
+						}
 					}
-				}
-				if (key) {
-					JOptionPane.showMessageDialog(viewCamara,
-							"Problema(s):\nAnilha nº" + viewCamara.getNumero1JFT().getText() + " duplicada!",
-							"DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
-					key = false;
+					if (key) {
+						JOptionPane.showMessageDialog(viewCamara,
+								"Problema(s):\nAnilha nº" + viewCamara.getNumero5JFT().getText() + " duplicada!",
+								"DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+						key = false;
+					} else {
+						viewCamara.getNumero5JFT().setEnabled(false);
+						viewCamara.getpCarcaca1JFT().setEnabled(true);
+						viewCamara.getpCarcaca1JFT().grabFocus();
+					}
 				} else {
-					viewCamara.getNumero5JFT().setEnabled(false);
-					viewCamara.getpCarcaca1JFT().setEnabled(true);
-					viewCamara.getpCarcaca1JFT().grabFocus();
+					JOptionPane.showMessageDialog(viewCamara,
+							"Problema(s):\nAnilha nº" + viewCamara.getNumero5JFT().getText() + " duplicada!",
+							"DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
 				}
 			} else if ((JFormattedTextField) e.getSource() == viewCamara.getpCarcaca1JFT()) {
 				TextFormatter.formatStringJFT(src, text, 5);

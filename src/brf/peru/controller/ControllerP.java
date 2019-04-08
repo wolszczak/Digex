@@ -59,11 +59,9 @@ public class ControllerP {
 		ctrlDesempenho.openWindow(idadesFases);
 	}
 
-	public void startDesempenhoVerso(List<RmeVOP> rme, List<Integer> idadesFases, Integer baia, Integer lado, Integer sexo,
-			Integer linhagem, Integer tratamento, Integer avesAlojadas) {
+	public void startDesempenhoVerso(List<Integer> idadesFases) {
 		ctrlDesempenhoVerso = new ControllerDesempenhoVersoP(this, new DesempenhoBOP(this));
-		ctrlDesempenhoVerso.openWindow(idadesFases, rme, baia, lado,
-				sexo, linhagem, tratamento, avesAlojadas);
+		ctrlDesempenhoVerso.openWindow(idadesFases);
 	}
 
 	public void startEscolhaAbate(List<Integer> idades) {

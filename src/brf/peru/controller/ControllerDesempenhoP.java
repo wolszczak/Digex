@@ -283,14 +283,16 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 						if (option == 0) {
 							desempenhoBO.excluirBaia(Integer.parseInt(viewDesempenho.getBaiaJFT().getText()));
 							viewDesempenho.getOrdemJFT().setText("1");
-							TextFormatter.formatStringJFT(viewDesempenho.getOrdemJFT(), viewDesempenho.getOrdemJFT().getText(), 2);
+							TextFormatter.formatStringJFT(viewDesempenho.getOrdemJFT(),
+									viewDesempenho.getOrdemJFT().getText(), 2);
 							fluxoOkCabecalho();
 						} else {
 							fluxoProblemaCabecalho();
 						}
 					} else {
 						viewDesempenho.getOrdemJFT().setText("1");
-						TextFormatter.formatStringJFT(viewDesempenho.getOrdemJFT(), viewDesempenho.getOrdemJFT().getText(), 2);
+						TextFormatter.formatStringJFT(viewDesempenho.getOrdemJFT(),
+								viewDesempenho.getOrdemJFT().getText(), 2);
 						fluxoOkCabecalho();
 					}
 				}
@@ -330,7 +332,11 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 							Integer.parseInt(viewDesempenho.getSobraJFT().getText().trim()), new MortalidadeVOP(),
 							new EliminadosVOP(), new ErrosVOP(), new AmostradosVOP(), new PesadosVOP()));
 					updateHistRME();
-					viewDesempenho.getOrdemJFT().setText("" + (++ordemRME));
+					if (Integer.parseInt(viewDesempenho.getIdadeJFT().getText()) == 0) {
+						viewDesempenho.getOrdemJFT().setText("" + (++ordemRME));
+					} else {
+						ordemRME = Integer.parseInt(viewDesempenho.getOrdemJFT().getText().trim());
+					}
 					TextFormatter.formatStringJFT(viewDesempenho.getOrdemJFT(), viewDesempenho.getOrdemJFT().getText(),
 							2);
 					viewDesempenho.getIdadeJFT().setEnabled(true);
@@ -353,10 +359,11 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 					rmeErros.addAll(rmeTemp);
 					rmeTemp = new ArrayList<>();
 					fluxoErroControleFornecida();
+					ordemRME = rmeErros.get(0).getOrdem();
 					recuperaHistRME(true, false);
-					ordemRME = 1;
-					viewDesempenho.getOrdemJFT().setText("1");
-					TextFormatter.formatStringJFT(viewDesempenho.getOrdemJFT(), viewDesempenho.getOrdemJFT().getText(), 2);
+//					viewDesempenho.getOrdemJFT().setText("1");
+					TextFormatter.formatStringJFT(viewDesempenho.getOrdemJFT(), viewDesempenho.getOrdemJFT().getText(),
+							2);
 				}
 			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getControleSobraJFT()) {
 				if (Integer.parseInt(viewDesempenho.getControleSobraJFT().getText().trim()) == calculaControleSobra()) {
@@ -374,7 +381,8 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 						faseAnterior = 0;
 						idadeFaseAtual = idades.get(countIdades);
 						viewDesempenho.getOrdemJFT().setText("1");
-						TextFormatter.formatStringJFT(viewDesempenho.getOrdemJFT(), viewDesempenho.getOrdemJFT().getText(), 2);
+						TextFormatter.formatStringJFT(viewDesempenho.getOrdemJFT(),
+								viewDesempenho.getOrdemJFT().getText(), 2);
 						viewDesempenho.getIdadeJFT().setEnabled(false);
 						viewDesempenho.getIdadeJFT().setText("000");
 						viewDesempenho.getFornecidaJFT().setEnabled(false);
@@ -387,23 +395,26 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 						viewDesempenho.getControleSobraJFT().setText("000000");
 						((JFormattedTextField) e.getSource()).transferFocus();
 						viewDesempenho.getConsumoJP().setBorder(defaultRmeJP);
-						controller.startDesempenhoVerso(rme, idades,
-								Integer.parseInt(viewDesempenho.getBaiaJFT().getText()),
-								Integer.parseInt(viewDesempenho.getLadoJFT().getText()),
-								Integer.parseInt(viewDesempenho.getSexoJFT().getText()),
-								Integer.parseInt(viewDesempenho.getLinhagemJFT().getText()),
-								Integer.parseInt(viewDesempenho.getTrataJFT().getText()),
-								Integer.parseInt(viewDesempenho.getAvesAlojadasJFT().getText()));
+						controller.getModel().getExperimentoVO().getDesempenho()
+								.add(new DesempenhoVOP(Integer.parseInt(viewDesempenho.getBaiaJFT().getText()),
+										Integer.parseInt(viewDesempenho.getSexoJFT().getText()),
+										Integer.parseInt(viewDesempenho.getLadoJFT().getText()),
+										Integer.parseInt(viewDesempenho.getLinhagemJFT().getText()),
+										Integer.parseInt(viewDesempenho.getTrataJFT().getText()),
+										Integer.parseInt(viewDesempenho.getAvesAlojadasJFT().getText()), rme));
+						controller.startDesempenhoVerso(idades);
 						viewDesempenho.setVisible(false);
 					} else {
 						rme.addAll(rmeTemp);
 						rmeTemp = new ArrayList<>();
-						clearHistRME();
+//						clearHistRME();
 						atualizaFaseRacao();
 						continuarDigitacaoRacoes();
-						ordemRME = 1;
-						viewDesempenho.getOrdemJFT().setText("1");
-						TextFormatter.formatStringJFT(viewDesempenho.getOrdemJFT(), viewDesempenho.getOrdemJFT().getText(), 2);
+
+//						ordemRME = 1;
+//						viewDesempenho.getOrdemJFT().setText("1");
+						TextFormatter.formatStringJFT(viewDesempenho.getOrdemJFT(),
+								viewDesempenho.getOrdemJFT().getText(), 2);
 						viewDesempenho.getConsumoJP().setBorder(defaultRmeJP);
 						System.out.println("continua digitação dos consumos");
 					}
@@ -411,10 +422,11 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 					rmeErros.addAll(rmeTemp);
 					rmeTemp = new ArrayList<>();
 					fluxoErroControleSobra();
+					ordemRME = rmeErros.get(0).getOrdem();
 					recuperaHistRME(false, true);
-					ordemRME = 1;
-					viewDesempenho.getOrdemJFT().setText("1");
-					TextFormatter.formatStringJFT(viewDesempenho.getOrdemJFT(), viewDesempenho.getOrdemJFT().getText(), 2);
+//					viewDesempenho.getOrdemJFT().setText("1");
+					TextFormatter.formatStringJFT(viewDesempenho.getOrdemJFT(), viewDesempenho.getOrdemJFT().getText(),
+							2);
 					viewDesempenho.getConsumoJP().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
 				}
 			}
@@ -618,6 +630,8 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 	}
 
 	public void recuperaHistRME(boolean zeraControleFornecida, boolean zeraControleSobra) {
+		viewDesempenho.getOrdemJFT().setText("" + rmeErros.get(0).getOrdem());
+		TextFormatter.formatStringJFT(viewDesempenho.getIdadeJFT(), viewDesempenho.getIdadeJFT().getText(), 2);
 		viewDesempenho.getIdadeJFT().setText("" + rmeErros.get(0).getIdadeRacao());
 		TextFormatter.formatStringJFT(viewDesempenho.getIdadeJFT(), viewDesempenho.getIdadeJFT().getText(), 3);
 		viewDesempenho.getFornecidaJFT().setText("" + rmeErros.get(0).getFornecida());
@@ -708,7 +722,6 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		viewDesempenho.getSobraHist2Label().setText("");
 		viewDesempenho.getSobraHist3Label().setText("");
 		viewDesempenho.getSobraHist4Label().setText("");
-		ordemRME = 1;
 	}
 
 	public void fluxoErroControleSobra() {
@@ -736,7 +749,6 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		viewDesempenho.getSobraHist2Label().setText("");
 		viewDesempenho.getSobraHist3Label().setText("");
 		viewDesempenho.getSobraHist4Label().setText("");
-		ordemRME = 1;
 	}
 
 	public void fluxoOkRME() {

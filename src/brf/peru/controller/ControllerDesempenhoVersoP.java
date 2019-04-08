@@ -40,7 +40,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 	private int controleBaia, ordemRME, ordemP;
 	private ViewDesempenhoVersoP viewDesempenho;
 	private Border defaultBaiaJP, defaultPesagemJP;
-	private List<DesempenhoVOP> desempenho;
+	private DesempenhoVOP desempenho;
 	private List<RmeVOP> rme;
 	private List<RmeVOP> rmeTemp;
 	private List<RmeVOP> rmeErros;
@@ -71,14 +71,15 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 			countFaseAmostrados, countIdadesAmostrados;
 	private Integer somaControlePesados, somaValoresPesados, idadeFaseAtualPesados, faseAnteriorPesados,
 			countFasePesados, countIdadesPesados;
+	private List<Component> componentesMort, componentesEl, componentesEr, componentesAm;
 
 	public ControllerDesempenhoVersoP(ControllerP c, DesempenhoBOP desempenhoBO) {
 		controller = c;
 		this.desempenhoBO = desempenhoBO;
+		this.desempenho = c.getModel().getExperimentoVO().getDesempenho().get(c.getModel().getExperimentoVO().getDesempenho().size() - 1);
 	}
 
-	public void openWindow(List<Integer> idadesFases, List<RmeVOP> rme, Integer baia, Integer lado, Integer sexo,
-			Integer linhagem, Integer tratamento, Integer avesAlojadas) {
+	public void openWindow(List<Integer> idadesFases) {
 		viewDesempenho = new ViewDesempenhoVersoP();
 		viewDesempenho.setTitle("DIGEX - Peru");
 		viewDesempenho.setResizable(false);
@@ -86,17 +87,17 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		viewDesempenho.setVisible(true);
 		viewDesempenho.getRegistroLabel().setVisible(false);
 		viewDesempenho.getAviarioJFT().setText(controller.getModel().getExperimentoVO().getInfoExp().getAviario());
-		viewDesempenho.getBaiaJFT().setText(String.valueOf(baia).trim());
+		viewDesempenho.getBaiaJFT().setText(String.valueOf(desempenho.getBaia()).trim());
 		TextFormatter.formatStringJFT(viewDesempenho.getBaiaJFT(), viewDesempenho.getBaiaJFT().getText(), 3);
-		viewDesempenho.getLadoJFT().setText(String.valueOf(lado).trim());
+		viewDesempenho.getLadoJFT().setText(String.valueOf(desempenho.getLado()).trim());
 		TextFormatter.formatStringJFT(viewDesempenho.getLadoJFT(), viewDesempenho.getLadoJFT().getText(), 1);
-		viewDesempenho.getSexoJFT().setText(String.valueOf(sexo).trim());
+		viewDesempenho.getSexoJFT().setText(String.valueOf(desempenho.getSexo()).trim());
 		TextFormatter.formatStringJFT(viewDesempenho.getSexoJFT(), viewDesempenho.getSexoJFT().getText(), 1);
-		viewDesempenho.getLinhagemJFT().setText(String.valueOf(linhagem).trim());
+		viewDesempenho.getLinhagemJFT().setText(String.valueOf(desempenho.getLinhagem()).trim());
 		TextFormatter.formatStringJFT(viewDesempenho.getLinhagemJFT(), viewDesempenho.getLinhagemJFT().getText(), 2);
-		viewDesempenho.getTrataJFT().setText(String.valueOf(tratamento).trim());
+		viewDesempenho.getTrataJFT().setText(String.valueOf(desempenho.getTrata()).trim());
 		TextFormatter.formatStringJFT(viewDesempenho.getTrataJFT(), viewDesempenho.getTrataJFT().getText(), 1);
-		viewDesempenho.getAvesAlojadasJFT().setText(String.valueOf(avesAlojadas).trim());
+		viewDesempenho.getAvesAlojadasJFT().setText(String.valueOf(desempenho.getNrAlojados()).trim());
 		TextFormatter.formatStringJFT(viewDesempenho.getAvesAlojadasJFT(),
 				viewDesempenho.getAvesAlojadasJFT().getText(), 3);
 		viewDesempenho.getIdadeMortalidadeJFT().setEnabled(true);
@@ -148,7 +149,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		// + idadeFaseAtual + ")");
 
 		this.rme = new ArrayList<>();
-		this.rme = rme;
+		this.rme = desempenho.getConsumo();
 		rmeTemp = new ArrayList<>();
 		rmeErros = new ArrayList<>();
 		mortos = new ArrayList<>();
@@ -221,8 +222,11 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		FocusOrderPolicy newPolicy = new FocusOrderPolicy(order);
 		viewDesempenho.setFocusTraversalPolicy(newPolicy);
 		listenerSetup(order);
-		desempenho = controller.getModel().getExperimentoVO().getDesempenho();
-
+//		desempenho = controller.getModel().getExperimentoVO().getDesempenho();
+		popularListaComponentesMortalidade();
+		popularListaComponentesEliminados();
+		popularListaComponentesErros();
+		popularListaComponentesAmostrados();
 	}
 
 	public void listenerSetup(List<Component> textFields) {
@@ -299,16 +303,14 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		histNrPesados.add(viewDesempenho.getNrPesadosHist5Label());
 		histPesoPesados.add(viewDesempenho.getPesadosHist5Label());
 
-		desempenho = controller.getModel().getExperimentoVO().getDesempenho();
-
-		if (!desempenho.isEmpty()) {
+		if (desempenho != null) {
 			System.out.println("Nao Vazio");
-			viewDesempenho.getBaiaJFT().setText("" + desempenho.get(desempenho.size() - 1).getBaia());
-			viewDesempenho.getSexoJFT().setText("" + desempenho.get(desempenho.size() - 1).getSexo());
-			viewDesempenho.getLadoJFT().setText("" + desempenho.get(desempenho.size() - 1).getLado());
-			viewDesempenho.getLinhagemJFT().setText("" + desempenho.get(desempenho.size() - 1).getLinhagem());
-			viewDesempenho.getTrataJFT().setText("" + desempenho.get(desempenho.size() - 1).getTrata());
-			viewDesempenho.getAvesAlojadasJFT().setText("" + desempenho.get(desempenho.size() - 1).getNrAlojados());
+			viewDesempenho.getBaiaJFT().setText("" + desempenho.getBaia());
+			viewDesempenho.getSexoJFT().setText("" + desempenho.getSexo());
+			viewDesempenho.getLadoJFT().setText("" + desempenho.getLado());
+			viewDesempenho.getLinhagemJFT().setText("" + desempenho.getLinhagem());
+			viewDesempenho.getTrataJFT().setText("" + desempenho.getTrata());
+			viewDesempenho.getAvesAlojadasJFT().setText("" + desempenho.getNrAlojados());
 			viewDesempenho.getBaiaJFT().setEnabled(false);
 		}
 		ordemRME++;
@@ -318,8 +320,11 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 	@Override
 	public void keyPressed(KeyEvent e) {
 		Object src = e.getSource();
-		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(viewDesempenho.getOpcaoJFT())
-				&& !e.getSource().equals(viewDesempenho.getIdadeMortalidadeJFT())) {
+		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(viewDesempenho.getIdadeEliminadosJFT())) {
+			
+		
+		}
+		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(viewDesempenho.getOpcaoJFT())) {
 			System.out.println("left");
 			Component prev = viewDesempenho.getFocusTraversalPolicy().getComponentBefore(viewDesempenho,
 					(JFormattedTextField) src);
@@ -334,6 +339,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 			((JFormattedTextField) prev).grabFocus();
 		}
 	}
+	
 
 	@Override
 	public void keyTyped(KeyEvent e) {
@@ -2082,6 +2088,78 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		viewDesempenho.getPesoMHist5Label().setText("");
 	}
 
+	private void popularListaComponentesMortalidade() {
+		componentesMort.add(viewDesempenho.getIdadeMHist5Label());
+		componentesMort.add(viewDesempenho.getNrMHist5Label());
+		componentesMort.add(viewDesempenho.getPesoMHist5Label());
+		componentesMort.add(viewDesempenho.getIdadeMHist4Label());
+		componentesMort.add(viewDesempenho.getNrMHist4Label());
+		componentesMort.add(viewDesempenho.getPesoMHist4Label());
+		componentesMort.add(viewDesempenho.getIdadeMHist3Label());
+		componentesMort.add(viewDesempenho.getNrMHist3Label());
+		componentesMort.add(viewDesempenho.getPesoMHist3Label());
+		componentesMort.add(viewDesempenho.getIdadeMHist2Label());
+		componentesMort.add(viewDesempenho.getNrMHist2Label());
+		componentesMort.add(viewDesempenho.getPesoMHist2Label());
+		componentesMort.add(viewDesempenho.getIdadeMHist1Label());
+		componentesMort.add(viewDesempenho.getNrMHist1Label());
+		componentesMort.add(viewDesempenho.getPesoMHist1Label());
+	}
+
+	private void popularListaComponentesEliminados() {
+		componentesEl.add(viewDesempenho.getIdadeElHist5Label());
+		componentesEl.add(viewDesempenho.getNrElHist5Label());
+		componentesEl.add(viewDesempenho.getPesoElHist5Label());
+		componentesEl.add(viewDesempenho.getIdadeElHist4Label());
+		componentesEl.add(viewDesempenho.getNrElHist4Label());
+		componentesEl.add(viewDesempenho.getPesoElHist4Label());
+		componentesEl.add(viewDesempenho.getIdadeElHist3Label());
+		componentesEl.add(viewDesempenho.getNrElHist3Label());
+		componentesEl.add(viewDesempenho.getPesoElHist3Label());
+		componentesEl.add(viewDesempenho.getIdadeElHist2Label());
+		componentesEl.add(viewDesempenho.getNrElHist2Label());
+		componentesEl.add(viewDesempenho.getPesoElHist2Label());
+		componentesEl.add(viewDesempenho.getIdadeElHist1Label());
+		componentesEl.add(viewDesempenho.getNrElHist1Label());
+		componentesEl.add(viewDesempenho.getPesoElHist1Label());
+	}
+
+	private void popularListaComponentesErros() {
+		componentesEr.add(viewDesempenho.getIdadeErHist5Label());
+		componentesEr.add(viewDesempenho.getNrErHist5Label());
+		componentesEr.add(viewDesempenho.getPesoErHist5Label());
+		componentesEr.add(viewDesempenho.getIdadeErHist4Label());
+		componentesEr.add(viewDesempenho.getNrErHist4Label());
+		componentesEr.add(viewDesempenho.getPesoErHist4Label());
+		componentesEr.add(viewDesempenho.getIdadeErHist3Label());
+		componentesEr.add(viewDesempenho.getNrErHist3Label());
+		componentesEr.add(viewDesempenho.getPesoErHist3Label());
+		componentesEr.add(viewDesempenho.getIdadeErHist2Label());
+		componentesEr.add(viewDesempenho.getNrErHist2Label());
+		componentesEr.add(viewDesempenho.getPesoErHist2Label());
+		componentesEr.add(viewDesempenho.getIdadeErHist1Label());
+		componentesEr.add(viewDesempenho.getNrErHist1Label());
+		componentesEr.add(viewDesempenho.getPesoErHist1Label());
+	}
+
+	private void popularListaComponentesAmostrados() {
+		componentesAm.add(viewDesempenho.getIdadeAmHist5Label());
+		componentesAm.add(viewDesempenho.getNrAmHist5Label());
+		componentesAm.add(viewDesempenho.getPesoAmHist5Label());
+		componentesAm.add(viewDesempenho.getIdadeAmHist4Label());
+		componentesAm.add(viewDesempenho.getNrAmHist4Label());
+		componentesAm.add(viewDesempenho.getPesoAmHist4Label());
+		componentesAm.add(viewDesempenho.getIdadeAmHist3Label());
+		componentesAm.add(viewDesempenho.getNrAmHist3Label());
+		componentesAm.add(viewDesempenho.getPesoAmHist3Label());
+		componentesAm.add(viewDesempenho.getIdadeAmHist2Label());
+		componentesAm.add(viewDesempenho.getNrAmHist2Label());
+		componentesAm.add(viewDesempenho.getPesoAmHist2Label());
+		componentesAm.add(viewDesempenho.getIdadeAmHist1Label());
+		componentesAm.add(viewDesempenho.getNrAmHist1Label());
+		componentesAm.add(viewDesempenho.getPesoAmHist1Label());
+	}
+
 	@Override
 	public void focusGained(FocusEvent e) {
 		SwingUtilities.invokeLater(new Runnable() {
@@ -2169,13 +2247,6 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		this.defaultPesagemJP = defaultPesagemJP;
 	}
 
-	public List<DesempenhoVOP> getDesempenho() {
-		return desempenho;
-	}
-
-	public void setDesempenho(List<DesempenhoVOP> desempenho) {
-		this.desempenho = desempenho;
-	}
 
 	public List<RmeVOP> getRme() {
 		return rme;
@@ -2595,6 +2666,54 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 
 	public List<AmostradosVOP> getAmostrados() {
 		return amostrados;
+	}
+
+	public ViewDesempenhoVersoP getViewDesempenho() {
+		return viewDesempenho;
+	}
+
+	public void setViewDesempenho(ViewDesempenhoVersoP viewDesempenho) {
+		this.viewDesempenho = viewDesempenho;
+	}
+
+	public DesempenhoVOP getDesempenho() {
+		return desempenho;
+	}
+
+	public void setDesempenho(DesempenhoVOP desempenho) {
+		this.desempenho = desempenho;
+	}
+
+	public List<Component> getComponentesMort() {
+		return componentesMort;
+	}
+
+	public void setComponentesMort(List<Component> componentesMort) {
+		this.componentesMort = componentesMort;
+	}
+
+	public List<Component> getComponentesEl() {
+		return componentesEl;
+	}
+
+	public void setComponentesEl(List<Component> componentesEl) {
+		this.componentesEl = componentesEl;
+	}
+
+	public List<Component> getComponentesEr() {
+		return componentesEr;
+	}
+
+	public void setComponentesEr(List<Component> componentesEr) {
+		this.componentesEr = componentesEr;
+	}
+
+	public List<Component> getComponentesAm() {
+		return componentesAm;
+	}
+
+	public void setComponentesAm(List<Component> componentesAm) {
+		this.componentesAm = componentesAm;
 	}
 
 }
