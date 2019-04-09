@@ -201,11 +201,6 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 	private javax.swing.JLabel registroLabel;
 	private javax.swing.JFormattedTextField sexoJFT;
 	private javax.swing.JFormattedTextField trataJFT;
-//	private javax.swing.JFormattedTextField controleMortalidadeJFT;
-//	private javax.swing.JFormattedTextField controleEliminadosJFT;
-//	private javax.swing.JFormattedTextField controleErrosJFT;
-//	private javax.swing.JFormattedTextField controleAmostradosJFT;
-//	private javax.swing.JFormattedTextField controlePesagemJFT;
 	private JFormattedTextField controleMortalidadeJFT;
 	private JFormattedTextField controleEliminadosJFT;
 	private JFormattedTextField controleErrosJFT;
@@ -1640,6 +1635,12 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 		jLabel48.setText("Controle");
 		
 		controleMortalidadeJFT = new JFormattedTextField();
+		try {
+			controleMortalidadeJFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
+		} catch (java.text.ParseException ex) {
+			ex.printStackTrace();
+		}
 		controleMortalidadeJFT.setHorizontalAlignment(SwingConstants.CENTER);
 		controleMortalidadeJFT.setEnabled(false);
 
@@ -1923,6 +1924,12 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 		ordemEliminadosJFT.setEnabled(false);
 		
 		controleEliminadosJFT = new JFormattedTextField();
+		try {
+			controleMortalidadeJFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
+		} catch (java.text.ParseException ex) {
+			ex.printStackTrace();
+		}
 		controleEliminadosJFT.setHorizontalAlignment(SwingConstants.CENTER);
 		controleEliminadosJFT.setEnabled(false);
 

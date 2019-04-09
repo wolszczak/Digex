@@ -76,7 +76,8 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 	public ControllerDesempenhoVersoP(ControllerP c, DesempenhoBOP desempenhoBO) {
 		controller = c;
 		this.desempenhoBO = desempenhoBO;
-		this.desempenho = c.getModel().getExperimentoVO().getDesempenho().get(c.getModel().getExperimentoVO().getDesempenho().size() - 1);
+		this.desempenho = c.getModel().getExperimentoVO().getDesempenho()
+				.get(c.getModel().getExperimentoVO().getDesempenho().size() - 1);
 	}
 
 	public void openWindow(List<Integer> idadesFases) {
@@ -192,12 +193,6 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		viewDesempenho.getControlePesagemJFT().setText("000000");
 
 		List<Component> order = new ArrayList<>();
-		order.add(viewDesempenho.getBaiaJFT());
-		order.add(viewDesempenho.getLadoJFT());
-		order.add(viewDesempenho.getSexoJFT());
-		order.add(viewDesempenho.getLinhagemJFT());
-		order.add(viewDesempenho.getTrataJFT());
-		order.add(viewDesempenho.getAvesAlojadasJFT());
 		order.add(viewDesempenho.getIdadeMortalidadeJFT());
 		order.add(viewDesempenho.getNrMortalidadeJFT());
 		order.add(viewDesempenho.getPesoMortalidadeJFT());
@@ -222,7 +217,6 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		FocusOrderPolicy newPolicy = new FocusOrderPolicy(order);
 		viewDesempenho.setFocusTraversalPolicy(newPolicy);
 		listenerSetup(order);
-//		desempenho = controller.getModel().getExperimentoVO().getDesempenho();
 		popularListaComponentesMortalidade();
 		popularListaComponentesEliminados();
 		popularListaComponentesErros();
@@ -321,8 +315,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 	public void keyPressed(KeyEvent e) {
 		Object src = e.getSource();
 		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(viewDesempenho.getIdadeEliminadosJFT())) {
-			
-		
+
 		}
 		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(viewDesempenho.getOpcaoJFT())) {
 			System.out.println("left");
@@ -339,7 +332,6 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 			((JFormattedTextField) prev).grabFocus();
 		}
 	}
-	
 
 	@Override
 	public void keyTyped(KeyEvent e) {
@@ -419,7 +411,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 							.add(new MortalidadeVOP(Integer.parseInt(viewDesempenho.getIdadeMortalidadeJFT().getText()),
 									Integer.parseInt(viewDesempenho.getNrMortalidadeJFT().getText()),
 									Integer.parseInt(viewDesempenho.getPesoMortalidadeJFT().getText())));
-					updateHistMortalidade();
+//					updateHistMortalidade();
 					viewDesempenho.getOrdemMortalidadeJFT().setText("" + (++ordemRME));
 					continuarDigitacaoMortalidade();
 				}
@@ -453,7 +445,6 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 					ordemRME = 1;
 					System.out.println("continua digitação dos eliminados");
 				}
-
 			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getIdadeEliminadosJFT()) {
 				TextFormatter.formatStringJFT(src, text, 3);
 				viewDesempenho.getNrEliminadosJFT().setEnabled(true);
@@ -878,7 +869,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		viewDesempenho.getPesoMortalidadeJFT().setEnabled(false);
 		viewDesempenho.getPesoMortalidadeJFT().setText("000000");
 		viewDesempenho.getControleMortalidadeJFT().setEnabled(false);
-//		viewDesempenho.getControleMortalidadeJFT().setText("000000");
+		viewDesempenho.getControleMortalidadeJFT().setText("000000");
 		viewDesempenho.getIdadeEliminadosJFT().setEnabled(true);
 		((JFormattedTextField) e.getSource()).transferFocus();
 		viewDesempenho.getIdadeEliminadosJFT().grabFocus();
@@ -1211,12 +1202,8 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 			}
 		}
 
-		desempenho.add(new DesempenhoVOP(Integer.parseInt(viewDesempenho.getBaiaJFT().getText()),
-				Integer.parseInt(viewDesempenho.getSexoJFT().getText()),
-				Integer.parseInt(viewDesempenho.getLadoJFT().getText()),
-				Integer.parseInt(viewDesempenho.getLinhagemJFT().getText()),
-				Integer.parseInt(viewDesempenho.getTrataJFT().getText()),
-				Integer.parseInt(viewDesempenho.getAvesAlojadasJFT().getText()), rme));
+		controller.getModel().getExperimentoVO().getDesempenho()
+				.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getConsumo().addAll(rme);
 		controller.getModel().getModelStateDAO().saveModelState(false);
 		fluxoTerminaPesagem();
 	}
@@ -2246,7 +2233,6 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 	public void setDefaultPesagemJP(Border defaultPesagemJP) {
 		this.defaultPesagemJP = defaultPesagemJP;
 	}
-
 
 	public List<RmeVOP> getRme() {
 		return rme;
