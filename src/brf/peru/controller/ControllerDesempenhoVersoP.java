@@ -422,9 +422,9 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 							.trim()) == calculaControleMortalidade()) {
 						mortos.addAll(mortosTemp);
 						mortosTemp = new ArrayList<>();
-						fluxoErroControleMortalidade();
 						ordemRME = 1;
-						atualizaFaseMortalidade();
+//						clearHistMortalidade();
+//						atualizaFaseMortalidade();
 						seguirDigitacaoEliminados(e);
 					} else {
 						mortosErros.addAll(mortosTemp);
@@ -488,9 +488,9 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 							.trim()) == calculaControleEliminados()) {
 						eliminados.addAll(eliminadosTemp);
 						eliminadosTemp = new ArrayList<>();
-						clearHistEliminados();
 						ordemRME = 1;
-						atualizaFaseEliminados();
+//						clearHistEliminados();
+//						atualizaFaseEliminados();
 						seguirDigitacaoErros(e);
 					} else {
 						eliminadosErros.addAll(eliminadosTemp);
@@ -551,9 +551,9 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 							viewDesempenho.getControleErrosJFT().getText().trim()) == calculaControleErros()) {
 						erros.addAll(errosTemp);
 						errosTemp = new ArrayList<>();
-						clearHistErros();
 						ordemRME = 1;
-						atualizaFaseErros();
+//						clearHistErros();
+//						atualizaFaseErros();
 						seguirDigitacaoAmostrados(e);
 					} else {
 						errosErros.addAll(errosTemp);
@@ -616,9 +616,9 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 							.trim()) == calculaControleAmostrados()) {
 						amostrados.addAll(amostradosTemp);
 						amostradosTemp = new ArrayList<>();
-						clearHistAmostrados();
 						ordemRME = 1;
-						atualizaFaseAmostrados();
+//						clearHistAmostrados();
+//						atualizaFaseAmostrados();
 						seguirDigitacaoPesagens(e);
 					} else {
 						amostradosErros.addAll(amostradosTemp);
@@ -2076,6 +2076,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 	}
 
 	private void popularListaComponentesMortalidade() {
+		componentesMort = new ArrayList<>();
 		componentesMort.add(viewDesempenho.getIdadeMHist5Label());
 		componentesMort.add(viewDesempenho.getNrMHist5Label());
 		componentesMort.add(viewDesempenho.getPesoMHist5Label());
@@ -2094,6 +2095,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 	}
 
 	private void popularListaComponentesEliminados() {
+		componentesEl = new ArrayList<>();
 		componentesEl.add(viewDesempenho.getIdadeElHist5Label());
 		componentesEl.add(viewDesempenho.getNrElHist5Label());
 		componentesEl.add(viewDesempenho.getPesoElHist5Label());
@@ -2112,6 +2114,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 	}
 
 	private void popularListaComponentesErros() {
+		componentesEr = new ArrayList<>();
 		componentesEr.add(viewDesempenho.getIdadeErHist5Label());
 		componentesEr.add(viewDesempenho.getNrErHist5Label());
 		componentesEr.add(viewDesempenho.getPesoErHist5Label());
@@ -2130,6 +2133,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 	}
 
 	private void popularListaComponentesAmostrados() {
+		componentesAm = new ArrayList<>();
 		componentesAm.add(viewDesempenho.getIdadeAmHist5Label());
 		componentesAm.add(viewDesempenho.getNrAmHist5Label());
 		componentesAm.add(viewDesempenho.getPesoAmHist5Label());
