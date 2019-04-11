@@ -40,7 +40,6 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 	private int controleBaia, ordemRME, ordemP;
 	private ViewDesempenhoVersoP viewDesempenho;
 	private Border defaultBaiaJP, defaultPesagemJP;
-	private DesempenhoVOP desempenho;
 	private List<RmeVOP> rme;
 	private List<RmeVOP> rmeTemp;
 	private List<RmeVOP> rmeErros;
@@ -76,8 +75,8 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 	public ControllerDesempenhoVersoP(ControllerP c, DesempenhoBOP desempenhoBO) {
 		controller = c;
 		this.desempenhoBO = desempenhoBO;
-		this.desempenho = c.getModel().getExperimentoVO().getDesempenho()
-				.get(c.getModel().getExperimentoVO().getDesempenho().size() - 1);
+//		this.desempenho = c.getModel().getExperimentoVO().getDesempenho()
+//				.get(c.getModel().getExperimentoVO().getDesempenho().size() - 1);
 	}
 
 	public void openWindow(List<Integer> idadesFases) {
@@ -88,17 +87,40 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		viewDesempenho.setVisible(true);
 		viewDesempenho.getRegistroLabel().setVisible(false);
 		viewDesempenho.getAviarioJFT().setText(controller.getModel().getExperimentoVO().getInfoExp().getAviario());
-		viewDesempenho.getBaiaJFT().setText(String.valueOf(desempenho.getBaia()).trim());
+		viewDesempenho.getBaiaJFT()
+				.setText(String
+						.valueOf(controller.getModel().getExperimentoVO().getDesempenho()
+								.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getBaia())
+						.trim());
 		TextFormatter.formatStringJFT(viewDesempenho.getBaiaJFT(), viewDesempenho.getBaiaJFT().getText(), 3);
-		viewDesempenho.getLadoJFT().setText(String.valueOf(desempenho.getLado()).trim());
+		viewDesempenho.getLadoJFT()
+				.setText(String
+						.valueOf(controller.getModel().getExperimentoVO().getDesempenho()
+								.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getLado())
+						.trim());
 		TextFormatter.formatStringJFT(viewDesempenho.getLadoJFT(), viewDesempenho.getLadoJFT().getText(), 1);
-		viewDesempenho.getSexoJFT().setText(String.valueOf(desempenho.getSexo()).trim());
+		viewDesempenho.getSexoJFT()
+				.setText(String
+						.valueOf(controller.getModel().getExperimentoVO().getDesempenho()
+								.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getSexo())
+						.trim());
 		TextFormatter.formatStringJFT(viewDesempenho.getSexoJFT(), viewDesempenho.getSexoJFT().getText(), 1);
-		viewDesempenho.getLinhagemJFT().setText(String.valueOf(desempenho.getLinhagem()).trim());
+		viewDesempenho.getLinhagemJFT()
+				.setText(String
+						.valueOf(controller.getModel().getExperimentoVO().getDesempenho()
+								.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getLinhagem())
+						.trim());
 		TextFormatter.formatStringJFT(viewDesempenho.getLinhagemJFT(), viewDesempenho.getLinhagemJFT().getText(), 2);
-		viewDesempenho.getTrataJFT().setText(String.valueOf(desempenho.getTrata()).trim());
+		viewDesempenho.getTrataJFT()
+				.setText(String
+						.valueOf(controller.getModel().getExperimentoVO().getDesempenho()
+								.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getTrata())
+						.trim());
 		TextFormatter.formatStringJFT(viewDesempenho.getTrataJFT(), viewDesempenho.getTrataJFT().getText(), 1);
-		viewDesempenho.getAvesAlojadasJFT().setText(String.valueOf(desempenho.getNrAlojados()).trim());
+		viewDesempenho.getAvesAlojadasJFT()
+				.setText(String.valueOf(controller.getModel().getExperimentoVO().getDesempenho()
+						.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getNrAlojados())
+						.trim());
 		TextFormatter.formatStringJFT(viewDesempenho.getAvesAlojadasJFT(),
 				viewDesempenho.getAvesAlojadasJFT().getText(), 3);
 		viewDesempenho.getIdadeMortalidadeJFT().setEnabled(true);
@@ -150,7 +172,6 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		// + idadeFaseAtual + ")");
 
 		this.rme = new ArrayList<>();
-		this.rme = desempenho.getConsumo();
 		rmeTemp = new ArrayList<>();
 		rmeErros = new ArrayList<>();
 		mortos = new ArrayList<>();
@@ -297,14 +318,20 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		histNrPesados.add(viewDesempenho.getNrPesadosHist5Label());
 		histPesoPesados.add(viewDesempenho.getPesadosHist5Label());
 
-		if (desempenho != null) {
+		if (controller.getModel().getExperimentoVO().getDesempenho() != null) {
 			System.out.println("Nao Vazio");
-			viewDesempenho.getBaiaJFT().setText("" + desempenho.getBaia());
-			viewDesempenho.getSexoJFT().setText("" + desempenho.getSexo());
-			viewDesempenho.getLadoJFT().setText("" + desempenho.getLado());
-			viewDesempenho.getLinhagemJFT().setText("" + desempenho.getLinhagem());
-			viewDesempenho.getTrataJFT().setText("" + desempenho.getTrata());
-			viewDesempenho.getAvesAlojadasJFT().setText("" + desempenho.getNrAlojados());
+			viewDesempenho.getBaiaJFT().setText("" + controller.getModel().getExperimentoVO().getDesempenho()
+					.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getBaia());
+			viewDesempenho.getSexoJFT().setText("" + controller.getModel().getExperimentoVO().getDesempenho()
+					.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getSexo());
+			viewDesempenho.getLadoJFT().setText("" + controller.getModel().getExperimentoVO().getDesempenho()
+					.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getLado());
+			viewDesempenho.getLinhagemJFT().setText("" + controller.getModel().getExperimentoVO().getDesempenho()
+					.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getLinhagem());
+			viewDesempenho.getTrataJFT().setText("" + controller.getModel().getExperimentoVO().getDesempenho()
+					.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getTrata());
+			viewDesempenho.getAvesAlojadasJFT().setText("" + controller.getModel().getExperimentoVO().getDesempenho()
+					.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getNrAlojados());
 			viewDesempenho.getBaiaJFT().setEnabled(false);
 		}
 		ordemRME++;
@@ -315,7 +342,21 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 	public void keyPressed(KeyEvent e) {
 		Object src = e.getSource();
 		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(viewDesempenho.getIdadeEliminadosJFT())) {
-
+			if(mortos !=  null && mortos.size() != 0) {
+				for (int i = 0; i < mortos.size();i++) {
+					if(mortos.get(i).getIdade() > faseAnteriorMortalidade && mortos.get(i).getIdade() < idadeFaseAtualMortalidade) {
+						JLabel idade = (JLabel) componentesMort.get(i);
+						idade.setText(String.valueOf(mortos.get(i).getIdade()));
+						componentesMort.remove(0);
+						JLabel qtd = (JLabel) componentesMort.get(i);
+						qtd.setText(String.valueOf(mortos.get(i).getQuantidade()));
+						componentesMort.remove(0);
+						JLabel peso = (JLabel) componentesMort.get(i);
+						peso.setText(String.valueOf(mortos.get(i).getPeso()));
+						componentesMort.remove(0);
+					}
+				}
+			}
 		}
 		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(viewDesempenho.getOpcaoJFT())) {
 			System.out.println("left");
@@ -727,6 +768,9 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 			viewDesempenho.getFaseMortalidadeLabel()
 					.setText("Fase " + countFaseMortalidade + " (Idade " + idadeFaseAtualMortalidade + ")");
 		}
+		viewDesempenho.getIdadeMortalidadeJFT().setText("000");
+		viewDesempenho.getNrMortalidadeJFT().setText("00");
+		viewDesempenho.getPesoMortalidadeJFT().setText("000000");
 	}
 
 	public void atualizaFaseEliminados() {
@@ -741,6 +785,9 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 			viewDesempenho.getFaseEliminadosLabel()
 					.setText("Fase " + countFaseEliminados + " (Idade " + idadeFaseAtualEliminados + ")");
 		}
+		viewDesempenho.getIdadeEliminadosJFT().setText("000");
+		viewDesempenho.getNrEliminadosJFT().setText("00");
+		viewDesempenho.getPesoEliminadosJFT().setText("000000");
 	}
 
 	public void atualizaFaseErros() {
@@ -755,6 +802,9 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 			viewDesempenho.getFaseErrosLabel()
 					.setText("Fase " + countFaseErros + " (Idade " + idadeFaseAtualErros + ")");
 		}
+		viewDesempenho.getIdadeErrosJFT().setText("000");
+		viewDesempenho.getNrErrosJFT().setText("00");
+		viewDesempenho.getPesoErrosJFT().setText("000000");
 	}
 
 	public void atualizaFaseAmostrados() {
@@ -769,6 +819,9 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 			viewDesempenho.getFaseAmostradosLabel()
 					.setText("Fase " + countFaseAmostrados + " (Idade " + idadeFaseAtualAmostrados + ")");
 		}
+		viewDesempenho.getIdadeAmostradosJFT().setText("000");
+		viewDesempenho.getNrAmostradosJFT().setText("00");
+		viewDesempenho.getPesoAmostradosJFT().setText("000000");
 	}
 
 	public void atualizaFasePesados() {
@@ -2664,14 +2717,6 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 
 	public void setViewDesempenho(ViewDesempenhoVersoP viewDesempenho) {
 		this.viewDesempenho = viewDesempenho;
-	}
-
-	public DesempenhoVOP getDesempenho() {
-		return desempenho;
-	}
-
-	public void setDesempenho(DesempenhoVOP desempenho) {
-		this.desempenho = desempenho;
 	}
 
 	public List<Component> getComponentesMort() {
