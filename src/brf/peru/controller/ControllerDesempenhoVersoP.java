@@ -341,24 +341,22 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 	@Override
 	public void keyPressed(KeyEvent e) {
 		Object src = e.getSource();
-		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(viewDesempenho.getIdadeEliminadosJFT())) {
-			if(mortos !=  null && mortos.size() != 0) {
-				for (int i = 0; i < mortos.size();i++) {
-					if(mortos.get(i).getIdade() > faseAnteriorMortalidade && mortos.get(i).getIdade() < idadeFaseAtualMortalidade) {
-						JLabel idade = (JLabel) componentesMort.get(i);
-						idade.setText(String.valueOf(mortos.get(i).getIdade()));
-						componentesMort.remove(0);
-						JLabel qtd = (JLabel) componentesMort.get(i);
-						qtd.setText(String.valueOf(mortos.get(i).getQuantidade()));
-						componentesMort.remove(0);
-						JLabel peso = (JLabel) componentesMort.get(i);
-						peso.setText(String.valueOf(mortos.get(i).getPeso()));
-						componentesMort.remove(0);
+		if (e.getKeyCode() == KeyEvent.VK_LEFT && e.getSource().equals(viewDesempenho.getIdadeEliminadosJFT())) {
+			ordemRME = 1;
+			if (mortos != null && mortos.size() != 0) {
+				for (MortalidadeVOP m : mortos) {
+					if (m.getIdade() > faseAnteriorMortalidade
+							&& m.getIdade() < idadeFaseAtualMortalidade) {
+						mortosErros.add(m);
 					}
 				}
+				mortos.removeAll(mortosErros);
 			}
+			clearHistMortalidade();
+			recuperaHistMortalidade();
 		}
-		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(viewDesempenho.getOpcaoJFT())) {
+		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(viewDesempenho.getOpcaoJFT())
+				&& !e.getSource().equals(viewDesempenho.getIdadeEliminadosJFT())) {
 			System.out.println("left");
 			Component prev = viewDesempenho.getFocusTraversalPolicy().getComponentBefore(viewDesempenho,
 					(JFormattedTextField) src);
@@ -452,7 +450,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 							.add(new MortalidadeVOP(Integer.parseInt(viewDesempenho.getIdadeMortalidadeJFT().getText()),
 									Integer.parseInt(viewDesempenho.getNrMortalidadeJFT().getText()),
 									Integer.parseInt(viewDesempenho.getPesoMortalidadeJFT().getText())));
-//					updateHistMortalidade();
+					updateHistMortalidade();
 					viewDesempenho.getOrdemMortalidadeJFT().setText("" + (++ordemRME));
 					continuarDigitacaoMortalidade();
 				}
