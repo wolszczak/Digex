@@ -530,7 +530,7 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 
 		try {
 			trataJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}

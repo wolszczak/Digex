@@ -2,8 +2,6 @@ package brf.peru.controller;
 
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.KeyAdapter;
@@ -21,13 +19,11 @@ import javax.swing.border.Border;
 
 import brf.peru.model.bo.DesempenhoBOP;
 import brf.peru.model.vo.AmostradosVOP;
-import brf.peru.model.vo.DesempenhoVOP;
 import brf.peru.model.vo.EliminadosVOP;
 import brf.peru.model.vo.ErrosVOP;
 import brf.peru.model.vo.MortalidadeVOP;
 import brf.peru.model.vo.PesadosVOP;
 import brf.peru.model.vo.RmeVOP;
-import brf.peru.view.ViewDesempenhoP;
 import brf.peru.view.ViewDesempenhoVersoP;
 import brf.util.FocusOrderPolicy;
 import brf.util.SaveUpdater;
@@ -343,6 +339,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		Object src = e.getSource();
 		if (e.getKeyCode() == KeyEvent.VK_LEFT && e.getSource().equals(viewDesempenho.getIdadeEliminadosJFT())) {
 			ordemRME = 1;
+			viewDesempenho.getOrdemMortalidadeJFT().setText(String.valueOf(ordemRME));
 			if (mortos != null && mortos.size() != 0) {
 				for (MortalidadeVOP m : mortos) {
 					if (m.getIdade() > faseAnteriorMortalidade
@@ -352,21 +349,63 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 				}
 				mortos.removeAll(mortosErros);
 			}
-			clearHistMortalidade();
+			clearHistMortalidade(false);
 			recuperaHistMortalidade();
 		}
+		if (e.getKeyCode() == KeyEvent.VK_LEFT && e.getSource().equals(viewDesempenho.getIdadeErrosJFT())) {
+			ordemRME = 1;
+			viewDesempenho.getOrdemEliminadosJFT().setText(String.valueOf(ordemRME));
+			if (eliminados != null && eliminados.size() != 0) {
+				for (EliminadosVOP m : eliminados) {
+					if (m.getIdade() > faseAnteriorEliminados
+							&& m.getIdade() < idadeFaseAtualEliminados) {
+						eliminadosErros.add(m);
+					}
+				}
+				eliminados.removeAll(eliminadosErros);
+			}
+			clearHistEliminados(false);
+			recuperaHistEliminados();
+		}
+		if (e.getKeyCode() == KeyEvent.VK_LEFT && e.getSource().equals(viewDesempenho.getIdadeAmostradosJFT())) {
+			ordemRME = 1;
+			viewDesempenho.getOrdemErrosJFT().setText(String.valueOf(ordemRME));
+			if (erros != null && erros.size() != 0) {
+				for (ErrosVOP m : erros) {
+					if (m.getIdade() > faseAnteriorErros
+							&& m.getIdade() < idadeFaseAtualErros) {
+						errosErros.add(m);
+					}
+				}
+				erros.removeAll(errosErros);
+			}
+			clearHistErros(false);
+			recuperaHistErros();
+		}
+		if (e.getKeyCode() == KeyEvent.VK_LEFT && e.getSource().equals(viewDesempenho.getIdadePesadosJFT())) {
+			ordemRME = 1;
+			viewDesempenho.getOrdemAmostradosJFT().setText(String.valueOf(ordemRME));
+			if (amostrados != null && amostrados.size() != 0) {
+				for (AmostradosVOP m : amostrados) {
+					if (m.getIdade() > faseAnteriorAmostrados
+							&& m.getIdade() < idadeFaseAtualAmostrados) {
+						amostradosErros.add(m);
+					}
+				}
+				amostrados.removeAll(amostradosErros);
+			}
+			clearHistAmostrados(false);
+			recuperaHistAmostrados();
+		}
 		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(viewDesempenho.getOpcaoJFT())
-				&& !e.getSource().equals(viewDesempenho.getIdadeEliminadosJFT())) {
+				&& !e.getSource().equals(viewDesempenho.getIdadeEliminadosJFT())
+				&& !e.getSource().equals(viewDesempenho.getIdadeErrosJFT())
+				&& !e.getSource().equals(viewDesempenho.getIdadeAmostradosJFT())
+				&& !e.getSource().equals(viewDesempenho.getIdadePesadosJFT())) {
 			System.out.println("left");
 			Component prev = viewDesempenho.getFocusTraversalPolicy().getComponentBefore(viewDesempenho,
 					(JFormattedTextField) src);
 			((JFormattedTextField) src).setEnabled(false);
-//			if (!e.getSource().equals(viewDesempenho.getOpcaoJFT())) {
-//				prev = viewDesempenho.getFocusTraversalPolicy().getComponentBefore(viewDesempenho,
-//						(JFormattedTextField) src);
-//			} else {
-//				prev = viewDesempenho.getIdadeJFT();
-//			}
 			prev.setEnabled(true);
 			((JFormattedTextField) prev).grabFocus();
 		}
@@ -468,7 +507,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 					} else {
 						mortosErros.addAll(mortosTemp);
 						mortosTemp = new ArrayList<>();
-						clearHistMortalidade();
+						clearHistMortalidade(false);
 						recuperaHistMortalidade();
 						ordemRME = 1;
 						viewDesempenho.getOrdemMortalidadeJFT().setText("1");
@@ -534,7 +573,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 					} else {
 						eliminadosErros.addAll(eliminadosTemp);
 						eliminadosTemp = new ArrayList<>();
-						clearHistEliminados();
+						clearHistEliminados(false);
 						recuperaHistEliminados();
 						ordemRME = 1;
 						viewDesempenho.getOrdemEliminadosJFT().setText("1");
@@ -597,7 +636,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 					} else {
 						errosErros.addAll(errosTemp);
 						errosTemp = new ArrayList<>();
-						clearHistErros();
+						clearHistErros(false);
 						recuperaHistErros();
 						ordemRME = 1;
 						viewDesempenho.getOrdemErrosJFT().setText("1");
@@ -662,7 +701,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 					} else {
 						amostradosErros.addAll(amostradosTemp);
 						amostradosTemp = new ArrayList<>();
-						clearHistAmostrados();
+						clearHistAmostrados(false);
 						recuperaHistAmostrados();
 						ordemRME = 1;
 						viewDesempenho.getOrdemAmostradosJFT().setText("1");
@@ -730,13 +769,13 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 						seguirDigitacaoMortalidade(e);
 						ordemRME = 1;
 						System.out.println("continua digitação das Mortalidades");
-						clearHistMortalidade();
+						clearHistMortalidade(true);
 						atualizaFaseMortalidade();
-						clearHistEliminados();
+						clearHistEliminados(true);
 						atualizaFaseEliminados();
-						clearHistErros();
+						clearHistErros(true);
 						atualizaFaseErros();
-						clearHistAmostrados();
+						clearHistAmostrados(true);
 						atualizaFaseAmostrados();
 					}
 				} else {
@@ -920,7 +959,6 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		viewDesempenho.getPesoMortalidadeJFT().setEnabled(false);
 		viewDesempenho.getPesoMortalidadeJFT().setText("000000");
 		viewDesempenho.getControleMortalidadeJFT().setEnabled(false);
-		viewDesempenho.getControleMortalidadeJFT().setText("000000");
 		viewDesempenho.getIdadeEliminadosJFT().setEnabled(true);
 		((JFormattedTextField) e.getSource()).transferFocus();
 		viewDesempenho.getIdadeEliminadosJFT().grabFocus();
@@ -936,7 +974,6 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		viewDesempenho.getPesoEliminadosJFT().setEnabled(false);
 		viewDesempenho.getPesoEliminadosJFT().setText("000000");
 		viewDesempenho.getControleEliminadosJFT().setEnabled(false);
-		viewDesempenho.getControleEliminadosJFT().setText("000000");
 		viewDesempenho.getIdadeErrosJFT().setEnabled(true);
 		((JFormattedTextField) e.getSource()).transferFocus();
 		viewDesempenho.getIdadeErrosJFT().grabFocus();
@@ -952,7 +989,6 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		viewDesempenho.getPesoErrosJFT().setEnabled(false);
 		viewDesempenho.getPesoErrosJFT().setText("000000");
 		viewDesempenho.getControleErrosJFT().setEnabled(false);
-		viewDesempenho.getControleErrosJFT().setText("000000");
 		viewDesempenho.getIdadeAmostradosJFT().setEnabled(true);
 		((JFormattedTextField) e.getSource()).transferFocus();
 		viewDesempenho.getIdadeAmostradosJFT().grabFocus();
@@ -968,7 +1004,6 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		viewDesempenho.getPesoAmostradosJFT().setEnabled(false);
 		viewDesempenho.getPesoAmostradosJFT().setText("000000");
 		viewDesempenho.getControleAmostradosJFT().setEnabled(false);
-		viewDesempenho.getControleAmostradosJFT().setText("000000");
 		viewDesempenho.getIdadePesadosJFT().setEnabled(true);
 		((JFormattedTextField) e.getSource()).transferFocus();
 		viewDesempenho.getIdadePesadosJFT().grabFocus();
@@ -1923,12 +1958,14 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		viewDesempenho.getControlePesagemJFT().setText("000000");
 	}
 
-	public void clearHistMortalidade() {
+	public void clearHistMortalidade(boolean key) {
 		viewDesempenho.getOrdemMortalidadeJFT().setText("");
 		viewDesempenho.getIdadeMortalidadeJFT().setText("");
 		viewDesempenho.getNrMortalidadeJFT().setText("");
 		viewDesempenho.getPesoMortalidadeJFT().setText("");
-		viewDesempenho.getControleMortalidadeJFT().setText("");
+		if(key) {
+			viewDesempenho.getControleMortalidadeJFT().setText("");	
+		}
 		viewDesempenho.getOrdemMortalidadeHist1Label().setText("");
 		viewDesempenho.getOrdemMortalidadeHist2Label().setText("");
 		viewDesempenho.getOrdemMortalidadeHist3Label().setText("");
@@ -1951,12 +1988,14 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		viewDesempenho.getPesoMHist5Label().setText("");
 	}
 
-	public void clearHistEliminados() {
+	public void clearHistEliminados(boolean key) {
 		viewDesempenho.getOrdemEliminadosJFT().setText("");
 		viewDesempenho.getIdadeEliminadosJFT().setText("");
 		viewDesempenho.getNrEliminadosJFT().setText("");
 		viewDesempenho.getPesoEliminadosJFT().setText("");
-		viewDesempenho.getControleEliminadosJFT().setText("");
+		if(key) {
+			viewDesempenho.getControleEliminadosJFT().setText("");	
+		}
 		viewDesempenho.getOrdemElHist1Label().setText("");
 		viewDesempenho.getOrdemElHist2Label().setText("");
 		viewDesempenho.getOrdemElHist3Label().setText("");
@@ -1979,12 +2018,14 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		viewDesempenho.getPesoElHist5Label().setText("");
 	}
 
-	public void clearHistErros() {
+	public void clearHistErros(boolean key) {
 		viewDesempenho.getOrdemErrosJFT().setText("");
 		viewDesempenho.getIdadeErrosJFT().setText("");
 		viewDesempenho.getNrErrosJFT().setText("");
 		viewDesempenho.getPesoErrosJFT().setText("");
-		viewDesempenho.getControleErrosJFT().setText("");
+		if(key) {
+			viewDesempenho.getControleErrosJFT().setText("");	
+		}
 		viewDesempenho.getOrdemErHist1Label().setText("");
 		viewDesempenho.getOrdemErHist2Label().setText("");
 		viewDesempenho.getOrdemErHist3Label().setText("");
@@ -2007,12 +2048,14 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		viewDesempenho.getPesoErHist5Label().setText("");
 	}
 
-	public void clearHistAmostrados() {
+	public void clearHistAmostrados(boolean key) {
 		viewDesempenho.getOrdemAmostradosJFT().setText("");
 		viewDesempenho.getIdadeAmostradosJFT().setText("");
 		viewDesempenho.getNrAmostradosJFT().setText("");
 		viewDesempenho.getPesoAmostradosJFT().setText("");
-		viewDesempenho.getControleAmostradosJFT().setText("");
+		if(key) {
+			viewDesempenho.getControleAmostradosJFT().setText("");	
+		}
 		viewDesempenho.getOrdemAmHist1Label().setText("");
 		viewDesempenho.getOrdemAmHist2Label().setText("");
 		viewDesempenho.getOrdemAmHist3Label().setText("");

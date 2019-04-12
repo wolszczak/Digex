@@ -7,8 +7,9 @@ public class DesempenhoVOP implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int baia, sexo, lado, linhagem, trata, nrAlojados;
 	private List<RmeVOP> consumo;
+	private boolean finalizado;
 
-	public DesempenhoVOP(int baia, int sexo, int lado, int linhagem, int trata, int nrAlojados, List<RmeVOP> consumo) {
+	public DesempenhoVOP(int baia, int sexo, int lado, int linhagem, int trata, int nrAlojados, List<RmeVOP> consumo, boolean finalizado) {
 		this.baia = baia;
 		this.sexo = sexo;
 		this.lado = lado;
@@ -16,6 +17,7 @@ public class DesempenhoVOP implements Serializable {
 		this.trata = trata;
 		this.nrAlojados = nrAlojados;
 		this.consumo = consumo;
+		this.finalizado =  finalizado;
 	}
 
 	public DesempenhoVOP() {
@@ -76,6 +78,14 @@ public class DesempenhoVOP implements Serializable {
 
 	public void setConsumo(List<RmeVOP> consumo) {
 		this.consumo = consumo;
+	}
+
+	public boolean isFinalizado() {
+		return finalizado;
+	}
+
+	public void setFinalizado(boolean finalizado) {
+		this.finalizado = finalizado;
 	}
 
 }

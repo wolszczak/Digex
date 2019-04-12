@@ -122,17 +122,17 @@ public class ControllerEscolhaDigP extends KeyAdapter {
 			viewEscolhaDig.setVisible(false);
 			if(controller.getModel().getExperimentoVO().getDesempenho() != null && controller.getModel().getExperimentoVO().getDesempenho().size() != 0) {
 				if (controller.getModel().getExperimentoVO().getDesempenho()
-						.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getConsumo()
-						.get(controller.getModel().getExperimentoVO().getDesempenho()
-								.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getConsumo()
-								.size() - 1)
-						.getIdadeRacao() == idades.get(idades.size() - 1)) {
-
-				}				
+						.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).isFinalizado()) {
+					controller.startDesempenhoVerso(idades);
+					System.out.println("Mortalidades/Eliminados/Erros/Amostrados/Pesados");
+					break;		
+				}else {
+					controller.startDesempenho(idades);
+					System.out.println("Desempenho");
+					break;
+				}
 			}
-			controller.startDesempenho(idades);
-			System.out.println("Desempenho");
-			break;
+			
 		case KeyEvent.VK_2:
 			if (temAbate) {
 				viewEscolhaDig.setVisible(false);
