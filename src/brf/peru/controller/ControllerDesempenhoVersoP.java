@@ -1959,12 +1959,12 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 	}
 
 	public void clearHistMortalidade(boolean key) {
-		viewDesempenho.getOrdemMortalidadeJFT().setText("");
+		viewDesempenho.getOrdemMortalidadeJFT().setText(String.valueOf(ordemRME));
 		viewDesempenho.getIdadeMortalidadeJFT().setText("");
 		viewDesempenho.getNrMortalidadeJFT().setText("");
 		viewDesempenho.getPesoMortalidadeJFT().setText("");
 		if(key) {
-			viewDesempenho.getControleMortalidadeJFT().setText("");	
+			viewDesempenho.getControleMortalidadeJFT().setText("000000");	
 		}
 		viewDesempenho.getOrdemMortalidadeHist1Label().setText("");
 		viewDesempenho.getOrdemMortalidadeHist2Label().setText("");
@@ -1989,12 +1989,12 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 	}
 
 	public void clearHistEliminados(boolean key) {
-		viewDesempenho.getOrdemEliminadosJFT().setText("");
+		viewDesempenho.getOrdemEliminadosJFT().setText(String.valueOf(ordemRME));
 		viewDesempenho.getIdadeEliminadosJFT().setText("");
 		viewDesempenho.getNrEliminadosJFT().setText("");
 		viewDesempenho.getPesoEliminadosJFT().setText("");
 		if(key) {
-			viewDesempenho.getControleEliminadosJFT().setText("");	
+			viewDesempenho.getControleEliminadosJFT().setText("000000");	
 		}
 		viewDesempenho.getOrdemElHist1Label().setText("");
 		viewDesempenho.getOrdemElHist2Label().setText("");
@@ -2019,12 +2019,12 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 	}
 
 	public void clearHistErros(boolean key) {
-		viewDesempenho.getOrdemErrosJFT().setText("");
+		viewDesempenho.getOrdemErrosJFT().setText(String.valueOf(ordemRME));
 		viewDesempenho.getIdadeErrosJFT().setText("");
 		viewDesempenho.getNrErrosJFT().setText("");
 		viewDesempenho.getPesoErrosJFT().setText("");
 		if(key) {
-			viewDesempenho.getControleErrosJFT().setText("");	
+			viewDesempenho.getControleErrosJFT().setText("000000");	
 		}
 		viewDesempenho.getOrdemErHist1Label().setText("");
 		viewDesempenho.getOrdemErHist2Label().setText("");
@@ -2049,12 +2049,12 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 	}
 
 	public void clearHistAmostrados(boolean key) {
-		viewDesempenho.getOrdemAmostradosJFT().setText("");
+		viewDesempenho.getOrdemAmostradosJFT().setText(String.valueOf(ordemRME));
 		viewDesempenho.getIdadeAmostradosJFT().setText("");
 		viewDesempenho.getNrAmostradosJFT().setText("");
 		viewDesempenho.getPesoAmostradosJFT().setText("");
 		if(key) {
-			viewDesempenho.getControleAmostradosJFT().setText("");	
+			viewDesempenho.getControleAmostradosJFT().setText("000000");	
 		}
 		viewDesempenho.getOrdemAmHist1Label().setText("");
 		viewDesempenho.getOrdemAmHist2Label().setText("");
@@ -2079,7 +2079,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 	}
 
 	public void clearHistPesados() {
-		viewDesempenho.getOrdemPesagemJFT().setText("");
+		viewDesempenho.getOrdemPesagemJFT().setText(String.valueOf(ordemRME));
 		viewDesempenho.getIdadePesadosJFT().setText("");
 		viewDesempenho.getNrPesadosJFT().setText("");
 		viewDesempenho.getPesadosJFT().setText("");

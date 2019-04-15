@@ -71,8 +71,8 @@ public class ControllerEscolhaDigP extends KeyAdapter {
 			obsRendimento += abate.getCamaras().size();
 			obsRendimento += abate.getCones().size();
 		}
-		viewEscolhaDig.getQtdeDesLabel().setText(obsDesempenho + "/"
-				+ controller.getModel().getExperimentoVO().getInfoExp().getNrBaias() + " registro(s)");
+		viewEscolhaDig.getQtdeDesLabel()
+				.setText(obsDesempenho + "/" + controller.getModel().getExperimentoVO().getInfoExp().getNrBaias() + " registro(s)");
 		viewEscolhaDig.getQtdeRendLabel().setText(obsRendimento + " registro(s)");
 	}
 
@@ -108,9 +108,8 @@ public class ControllerEscolhaDigP extends KeyAdapter {
 			break;
 		case KeyEvent.VK_9:
 		case KeyEvent.VK_ESCAPE:
-			int option = JOptionPane.showConfirmDialog(viewEscolhaDig,
-					"Deseja realmente voltar para tela de escolha de experimento?", "DIGEX - Voltar",
-					JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+			int option = JOptionPane.showConfirmDialog(viewEscolhaDig, "Deseja realmente voltar para tela de escolha de experimento?",
+					"DIGEX - Voltar", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 			if (option == 0) {
 				viewEscolhaDig.setVisible(false);
 				ControllerEscolhaExp ce = new ControllerEscolhaExp();
@@ -120,33 +119,35 @@ public class ControllerEscolhaDigP extends KeyAdapter {
 			break;
 		case KeyEvent.VK_1:
 			viewEscolhaDig.setVisible(false);
-			if(controller.getModel().getExperimentoVO().getDesempenho() != null && controller.getModel().getExperimentoVO().getDesempenho().size() != 0) {
+			if (controller.getModel().getExperimentoVO().getDesempenho() != null
+					&& controller.getModel().getExperimentoVO().getDesempenho().size() != 0) {
 				if (controller.getModel().getExperimentoVO().getDesempenho()
 						.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).isFinalizado()) {
 					controller.startDesempenhoVerso(idades);
 					System.out.println("Mortalidades/Eliminados/Erros/Amostrados/Pesados");
-					break;		
-				}else {
+					break;
+				} else {
 					controller.startDesempenho(idades);
 					System.out.println("Desempenho");
 					break;
 				}
+			} else {
+				controller.startDesempenho(idades);
+				System.out.println("Desempenho");
+				break;
 			}
-			
 		case KeyEvent.VK_2:
 			if (temAbate) {
 				viewEscolhaDig.setVisible(false);
 				controller.startEscolhaAbate(idades);
 				System.out.println("Escolha");
 			} else {
-				JOptionPane.showMessageDialog(viewEscolhaDig, "Experimento não teve abate!", "DIGEX - Aviso",
-						JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(viewEscolhaDig, "Experimento não teve abate!", "DIGEX - Aviso", JOptionPane.WARNING_MESSAGE);
 			}
 			break;
 		case KeyEvent.VK_3:
 			if (controller.getModel().getExperimentoVO().getDesempenho().isEmpty()) {
-				JOptionPane.showMessageDialog(viewEscolhaDig, "Não há registros de Granja!", "DIGEX - Aviso",
-						JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(viewEscolhaDig, "Não há registros de Granja!", "DIGEX - Aviso", JOptionPane.WARNING_MESSAGE);
 			} else {
 				JFileChooser fileChooser = new JFileChooser();
 				fileChooser.addChoosableFileFilter(new ExpFileFilter());
@@ -162,8 +163,7 @@ public class ControllerEscolhaDigP extends KeyAdapter {
 								controller.getModel().getExperimentoVO().getDesempenho(), localExportar);
 						JOptionPane.showMessageDialog(viewEscolhaDig, "Arquivo de Granja salvo com sucesso!");
 					} catch (IOException ex) {
-						String msg = "Falha ao tentar salvar o arquivo! \n"
-								+ "Verifique se ele está aberto e tente novamente.";
+						String msg = "Falha ao tentar salvar o arquivo! \n" + "Verifique se ele está aberto e tente novamente.";
 						JOptionPane.showMessageDialog(viewEscolhaDig, msg);
 						Logger.getLogger(ControllerEscolhaDigP.class.getName()).log(Level.SEVERE, null, ex);
 					}
@@ -191,8 +191,7 @@ public class ControllerEscolhaDigP extends KeyAdapter {
 								controller.getModel().getExperimentoVO().getAbates(), localExportar);
 						JOptionPane.showMessageDialog(viewEscolhaDig, "Arquivo de Rendimento salvo com sucesso!");
 					} catch (Exception ex) {
-						String msg = "Falha ao tentar salvar o arquivo!\n"
-								+ "Verifique se ele está aberto e tente novamente.";
+						String msg = "Falha ao tentar salvar o arquivo!\n" + "Verifique se ele está aberto e tente novamente.";
 						JOptionPane.showMessageDialog(viewEscolhaDig, msg);
 						Logger.getLogger(ControllerEscolhaDigP.class.getName()).log(Level.SEVERE, null, ex);
 					}

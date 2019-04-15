@@ -2124,7 +2124,7 @@ public class ViewDesempenhoVersoP extends javax.swing.JFrame {
 		);
 		layout.setVerticalGroup(
 			layout.createParallelGroup(Alignment.LEADING)
-				.addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 651, Short.MAX_VALUE)
+				.addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 660, Short.MAX_VALUE)
 		);
 		getContentPane().setLayout(layout);
 

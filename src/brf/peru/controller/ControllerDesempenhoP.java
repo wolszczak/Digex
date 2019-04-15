@@ -2,8 +2,6 @@ package brf.peru.controller;
 
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.KeyAdapter;
@@ -29,7 +27,6 @@ import brf.peru.model.vo.PesadosVOP;
 import brf.peru.model.vo.RmeVOP;
 import brf.peru.view.ViewDesempenhoP;
 import brf.util.FocusOrderPolicy;
-import brf.util.SaveUpdater;
 import brf.util.TextFormatter;
 
 public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
@@ -170,7 +167,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 		ordemHist.add(viewDesempenho.getSobraHist1Label());
 
 		if (controller.getModel().getExperimentoVO().getDesempenho() != null
-				&& controller.getModel().getExperimentoVO().getDesempenho().size() >= 0) {
+				&& controller.getModel().getExperimentoVO().getDesempenho().size() > 0) {
 			if (!controller.getModel().getExperimentoVO().getDesempenho()
 					.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).isFinalizado()) {
 				viewDesempenho.getBaiaJFT().setText(String.valueOf(controller.getModel().getExperimentoVO().getDesempenho()
@@ -217,36 +214,37 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 						break;
 					}
 				}
+
+				ordemRME = controller.getModel().getExperimentoVO().getDesempenho()
+						.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getConsumo()
+						.get(controller.getModel().getExperimentoVO().getDesempenho()
+								.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getConsumo().size() - 1)
+						.getOrdem() + 1;
+				faseAnterior = controller.getModel().getExperimentoVO().getDesempenho()
+						.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getConsumo()
+						.get(controller.getModel().getExperimentoVO().getDesempenho()
+								.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getConsumo().size() - 1)
+						.getIdadeRacao();
+				for (int j = 0; j < idades.size(); j++) {
+					if (faseAnterior == (int) idades.get(j)) {
+						idadeFaseAtual = idades.get(j + 1);
+						countFase = j + 2;
+						break;
+					}
+				}
+				viewDesempenho.getFaseConsumoLabel().setText("Fase " + countFase + " (Idade " + idadeFaseAtual + ")");
+				viewDesempenho.getOrdemJFT().setText(String.valueOf(ordemRME));
+				viewDesempenho.getjLabel36().setVisible(false);
+				viewDesempenho.getControleBaiaJFT().setVisible(false);
+				viewDesempenho.getBaiaJFT().setEnabled(false);
+				viewDesempenho.getIdadeJFT().setEnabled(true);
+				viewDesempenho.getIdadeJFT().grabFocus();
 			}
 		}
 
 //		System.out.println("O tamanho da Racao: " + histFornecida.size());
 //		System.out.println("O tamanho da Sobra: " + histSobra.size());
 
-		ordemRME = controller.getModel().getExperimentoVO().getDesempenho()
-				.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getConsumo()
-				.get(controller.getModel().getExperimentoVO().getDesempenho()
-						.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getConsumo().size() -1)
-				.getOrdem() + 1;
-		faseAnterior = controller.getModel().getExperimentoVO().getDesempenho()
-				.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getConsumo()
-				.get(controller.getModel().getExperimentoVO().getDesempenho()
-						.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getConsumo().size() -1)
-				.getIdadeRacao();
-		for (int j = 0; j < idades.size(); j++) {
-			if(faseAnterior == (int)idades.get(j)) {
-				idadeFaseAtual = idades.get(j+1);
-				countFase =  j + 2;
-				break;
-			}
-		}
-		viewDesempenho.getFaseConsumoLabel().setText("Fase " + countFase + " (Idade " + idadeFaseAtual + ")");
-		viewDesempenho.getOrdemJFT().setText(String.valueOf(ordemRME));
-		viewDesempenho.getjLabel36().setVisible(false);
-		viewDesempenho.getControleBaiaJFT().setVisible(false);
-		viewDesempenho.getBaiaJFT().setEnabled(false);
-		viewDesempenho.getIdadeJFT().setEnabled(true);
-		viewDesempenho.getIdadeJFT().grabFocus();
 	}
 
 	@Override
