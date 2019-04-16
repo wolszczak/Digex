@@ -228,6 +228,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 				for (int j = 0; j < idades.size(); j++) {
 					if (faseAnterior == (int) idades.get(j)) {
 						idadeFaseAtual = idades.get(j + 1);
+						countIdades = j + 1;
 						countFase = j + 2;
 						break;
 					}
@@ -433,7 +434,7 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 						viewDesempenho.getControleSobraJFT().setText("000000");
 						((JFormattedTextField) e.getSource()).transferFocus();
 						viewDesempenho.getConsumoJP().setBorder(defaultRmeJP);
-//						SETA OS DADOS NO OBJETO EM MEMORIA, INDICA QUE ESSA PARTE ESTÁ FINALIZADA E SEQUE PARA DIGITAR O VERSO DA FOLHA 
+//						SETA OS DADOS NO OBJETO EM MEMORIA, INDICA QUE ESSA PARTE ESTÁ FINALIZADA E SEGUE PARA DIGITAR O VERSO DA FOLHA 
 //						NA PROXIMA TELA 
 						controller.getModel().getExperimentoVO().getDesempenho()
 								.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getConsumo().addAll(rme);

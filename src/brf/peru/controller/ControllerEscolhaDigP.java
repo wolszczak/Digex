@@ -19,6 +19,7 @@ import brf.peru.model.dao.AbateDAOP;
 import brf.peru.model.dao.DesempenhoDAOP;
 import brf.peru.model.vo.AbateVOP;
 import brf.peru.model.vo.BaiaAmostradosVOP;
+import brf.peru.model.vo.RmeVOP;
 import brf.peru.view.ViewEscolhaDigP;
 import brf.util.ExpFileFilter;
 import brf.util.SystemFileView;
@@ -123,9 +124,16 @@ public class ControllerEscolhaDigP extends KeyAdapter {
 					&& controller.getModel().getExperimentoVO().getDesempenho().size() != 0) {
 				if (controller.getModel().getExperimentoVO().getDesempenho()
 						.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).isFinalizado()) {
-					controller.startDesempenhoVerso(idades);
-					System.out.println("Mortalidades/Eliminados/Erros/Amostrados/Pesados");
-					break;
+					for (int i = controller.getModel().getExperimentoVO().getDesempenho()
+							.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getConsumo().size(); i > 0; i--) {
+						if (controller.getModel().getExperimentoVO().getDesempenho()
+								.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getConsumo().get(i - 1)
+								.getPesados().getIdade() == idades.get(idades.size() - 1)) {
+							controller.startDesempenhoVerso(idades);
+							System.out.println("Desempenho Verso");
+							break;
+						}
+					}
 				} else {
 					controller.startDesempenho(idades);
 					System.out.println("Desempenho");
