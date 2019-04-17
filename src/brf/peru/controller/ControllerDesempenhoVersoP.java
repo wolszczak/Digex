@@ -1249,6 +1249,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		controller.getModel().getExperimentoVO().getDesempenho().get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1)
 				.getConsumo().addAll(rme);
 		controller.getModel().getModelStateDAO().saveModelState(false);
+		rme = new ArrayList<>();
 		fluxoTerminaPesagem();
 	}
 
