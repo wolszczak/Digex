@@ -282,7 +282,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 		countFaseAmostrados = countFase;
 		countIdadesPesados = countIdades;
 		countFasePesados = countFase;
-		
+
 		faseAnteriorMortalidade = faseAnterior;
 		faseAnteriorEliminados = faseAnterior;
 		faseAnteriorErros = faseAnterior;
@@ -323,12 +323,12 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 				mortos.removeAll(mortosErros);
 				clearHistMortalidade(false);
 				recuperaHistMortalidade();
-			}else {
+			} else {
 				viewDesempenho.getIdadeEliminadosJFT().setEnabled(false);
 				viewDesempenho.getIdadeMortalidadeJFT().setEnabled(true);
 				viewDesempenho.getIdadeMortalidadeJFT().grabFocus();
 			}
-			
+
 		}
 		if (e.getKeyCode() == KeyEvent.VK_LEFT && e.getSource().equals(viewDesempenho.getIdadeErrosJFT())) {
 			ordemRME = 1;
@@ -342,7 +342,7 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 				eliminados.removeAll(eliminadosErros);
 				clearHistEliminados(false);
 				recuperaHistEliminados();
-			}else {
+			} else {
 				viewDesempenho.getIdadeErrosJFT().setEnabled(false);
 				viewDesempenho.getIdadeEliminadosJFT().setEnabled(true);
 				viewDesempenho.getIdadeEliminadosJFT().grabFocus();
@@ -360,12 +360,12 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 				erros.removeAll(errosErros);
 				clearHistErros(false);
 				recuperaHistErros();
-			}else {
+			} else {
 				viewDesempenho.getIdadeAmostradosJFT().setEnabled(false);
 				viewDesempenho.getIdadeErrosJFT().setEnabled(true);
 				viewDesempenho.getIdadeErrosJFT().grabFocus();
 			}
-			
+
 		}
 		if (e.getKeyCode() == KeyEvent.VK_LEFT && e.getSource().equals(viewDesempenho.getIdadePesadosJFT())) {
 			ordemRME = 1;
@@ -379,16 +379,17 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 				amostrados.removeAll(amostradosErros);
 				clearHistAmostrados(false);
 				recuperaHistAmostrados();
-			}else{
+			} else {
 				viewDesempenho.getIdadePesadosJFT().setEnabled(false);
 				viewDesempenho.getIdadeAmostradosJFT().setEnabled(true);
 				viewDesempenho.getIdadeAmostradosJFT().grabFocus();
 			}
-			
+
 		}
-		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(viewDesempenho.getOpcaoJFT()) 
+		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(viewDesempenho.getOpcaoJFT())
 				&& !e.getSource().equals(viewDesempenho.getIdadeEliminadosJFT()) && !e.getSource().equals(viewDesempenho.getIdadeErrosJFT())
-				&& !e.getSource().equals(viewDesempenho.getIdadeAmostradosJFT()) && !e.getSource().equals(viewDesempenho.getIdadeMortalidadeJFT())
+				&& !e.getSource().equals(viewDesempenho.getIdadeAmostradosJFT())
+				&& !e.getSource().equals(viewDesempenho.getIdadeMortalidadeJFT())
 				&& !e.getSource().equals(viewDesempenho.getIdadePesadosJFT())) {
 			System.out.println("left");
 			Component prev = viewDesempenho.getFocusTraversalPolicy().getComponentBefore(viewDesempenho, (JFormattedTextField) src);
@@ -700,26 +701,34 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 				viewDesempenho.getPesadosJFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getPesadosJFT()) {
 				TextFormatter.formatStringJFT(src, text, 6);
-				String msg = desempenhoBO.verificaPesagem(pesadosTemp, Integer.parseInt(viewDesempenho.getIdadePesadosJFT().getText()),
-						Integer.parseInt(viewDesempenho.getNrPesadosJFT().getText()),
-						Integer.parseInt(viewDesempenho.getPesadosJFT().getText()), faseAnteriorPesados, idadeFaseAtualPesados,
-						Integer.parseInt(viewDesempenho.getAvesAlojadasJFT().getText()));
-				if (msg.length() != 0) {
-					JOptionPane.showMessageDialog(viewDesempenho, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
-					fluxoProblemaDigitacaoPesados();
-				} else if (Integer.parseInt(viewDesempenho.getIdadePesadosJFT().getText()) != 0
-						&& Integer.parseInt(viewDesempenho.getNrPesadosJFT().getText()) != 0
-						&& Integer.parseInt(viewDesempenho.getPesadosJFT().getText()) != 0) {
-					pesadosTemp.add(new PesadosVOP(Integer.parseInt(viewDesempenho.getIdadePesadosJFT().getText()),
-							Integer.parseInt(viewDesempenho.getNrPesadosJFT().getText()),
-							Integer.parseInt(viewDesempenho.getPesadosJFT().getText())));
-					updateHistPesados();
-					viewDesempenho.getOrdemPesagemJFT().setText("" + (++ordemRME));
-					continuarDigitacaoPesados();
+				if ((Integer.parseInt(viewDesempenho.getIdadePesadosJFT().getText().trim()) != 0
+						&& Integer.parseInt(viewDesempenho.getNrPesadosJFT().getText().trim()) != 0
+						&& Integer.parseInt(viewDesempenho.getPesadosJFT().getText().trim()) != 0)
+						&& Integer.parseInt(viewDesempenho.getNrPesadosJFT().getText().trim()) != calculaQuantidadeAnimais()) {
+					String erro = "Número de animais incorreto.";
+					JOptionPane.showMessageDialog(viewDesempenho, "Problema(s):\n" + erro, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
 				} else {
-					viewDesempenho.getControlePesagemJFT().setEnabled(true);
-					((JFormattedTextField) e.getSource()).transferFocus();
-					viewDesempenho.getControlePesagemJFT().grabFocus();
+					String msg = desempenhoBO.verificaPesagem(pesadosTemp, Integer.parseInt(viewDesempenho.getIdadePesadosJFT().getText()),
+							Integer.parseInt(viewDesempenho.getNrPesadosJFT().getText()),
+							Integer.parseInt(viewDesempenho.getPesadosJFT().getText()), faseAnteriorPesados, idadeFaseAtualPesados,
+							Integer.parseInt(viewDesempenho.getAvesAlojadasJFT().getText()));
+					if (msg.length() != 0) {
+						JOptionPane.showMessageDialog(viewDesempenho, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+						fluxoProblemaDigitacaoPesados();
+					} else if (Integer.parseInt(viewDesempenho.getIdadePesadosJFT().getText()) != 0
+							&& Integer.parseInt(viewDesempenho.getNrPesadosJFT().getText()) != 0
+							&& Integer.parseInt(viewDesempenho.getPesadosJFT().getText()) != 0) {
+						pesadosTemp.add(new PesadosVOP(Integer.parseInt(viewDesempenho.getIdadePesadosJFT().getText()),
+								Integer.parseInt(viewDesempenho.getNrPesadosJFT().getText()),
+								Integer.parseInt(viewDesempenho.getPesadosJFT().getText())));
+						updateHistPesados();
+						viewDesempenho.getOrdemPesagemJFT().setText("" + (++ordemRME));
+						continuarDigitacaoPesados();
+					} else {
+						viewDesempenho.getControlePesagemJFT().setEnabled(true);
+						((JFormattedTextField) e.getSource()).transferFocus();
+						viewDesempenho.getControlePesagemJFT().grabFocus();
+					}
 				}
 			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getControlePesagemJFT()) {
 				TextFormatter.formatStringJFT(src, text, 6);
@@ -1038,6 +1047,33 @@ public class ControllerDesempenhoVersoP extends KeyAdapter implements FocusListe
 			soma += pesado.getIdade();
 			soma += pesado.getPeso();
 			soma += pesado.getQuantidade();
+		}
+		return soma;
+	}
+
+	public Integer calculaQuantidadeAnimais() {
+		Integer soma = Integer.parseInt(viewDesempenho.getAvesAlojadasJFT().getText().trim());
+		if (controller.getModel().getExperimentoVO().getDesempenho()
+				.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getConsumo().size() > 0) {
+			for (RmeVOP consumo : controller.getModel().getExperimentoVO().getDesempenho()
+					.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getConsumo()) {
+				soma -= consumo.getMortos().getQuantidade();
+				soma -= consumo.getEliminados().getQuantidade();
+				soma -= consumo.getErros().getQuantidade();
+				soma -= consumo.getAmostrados().getQuantidade();
+			}
+		}
+		for (MortalidadeVOP m : mortos) {
+			soma -= m.getQuantidade();
+		}
+		for (EliminadosVOP el : eliminados) {
+			soma -= el.getQuantidade();
+		}
+		for (ErrosVOP er : erros) {
+			soma -= er.getQuantidade();
+		}
+		for (AmostradosVOP a : amostrados) {
+			soma -= a.getQuantidade();
 		}
 		return soma;
 	}
