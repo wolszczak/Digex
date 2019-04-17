@@ -456,6 +456,15 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 								controller.getModel().getExperimentoVO().getDesempenho()
 										.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getConsumo().addAll(rme);
 								rme = new ArrayList<>();
+							}else {
+								controller.getModel().getExperimentoVO().getDesempenho()
+								.add(new DesempenhoVOP(Integer.parseInt(viewDesempenho.getBaiaJFT().getText()),
+										Integer.parseInt(viewDesempenho.getSexoJFT().getText()),
+										Integer.parseInt(viewDesempenho.getLadoJFT().getText()),
+										Integer.parseInt(viewDesempenho.getLinhagemJFT().getText()),
+										Integer.parseInt(viewDesempenho.getTrataJFT().getText()),
+										Integer.parseInt(viewDesempenho.getAvesAlojadasJFT().getText()), rme, false));
+						rme = new ArrayList<>();
 							}
 						} else {
 							controller.getModel().getExperimentoVO().getDesempenho()

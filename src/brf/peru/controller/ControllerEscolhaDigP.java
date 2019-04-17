@@ -120,6 +120,7 @@ public class ControllerEscolhaDigP extends KeyAdapter {
 			break;
 		case KeyEvent.VK_1:
 			viewEscolhaDig.setVisible(false);
+			boolean key =  false;
 			if (controller.getModel().getExperimentoVO().getDesempenho() != null
 					&& controller.getModel().getExperimentoVO().getDesempenho().size() != 0) {
 				if (controller.getModel().getExperimentoVO().getDesempenho()
@@ -129,10 +130,17 @@ public class ControllerEscolhaDigP extends KeyAdapter {
 						if (controller.getModel().getExperimentoVO().getDesempenho()
 								.get(controller.getModel().getExperimentoVO().getDesempenho().size() - 1).getConsumo().get(i - 1)
 								.getPesados().getIdade() == idades.get(idades.size() - 1)) {
-							controller.startDesempenhoVerso(idades);
-							System.out.println("Desempenho Verso");
-							break;
+							key = true;
 						}
+					}
+					if(key) {
+						controller.startDesempenho(idades);
+						System.out.println("Desempenho");
+						break;
+					} else {
+						controller.startDesempenhoVerso(idades);
+						System.out.println("Desempenho");
+						break;
 					}
 				} else {
 					controller.startDesempenho(idades);
