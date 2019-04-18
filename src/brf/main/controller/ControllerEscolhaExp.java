@@ -5,6 +5,8 @@ import brf.main.view.ViewEscolhaExp;
 import brf.frango.model.ModelF;
 import brf.peru.controller.ControllerP;
 import brf.peru.model.ModelP;
+import brf.suino.controller.ControllerSC;
+import brf.suino.model.ModelSC;
 import brf.util.SystemFileFilter;
 import brf.util.SystemFileView;
 import java.awt.event.KeyAdapter;
@@ -23,8 +25,8 @@ public class ControllerEscolhaExp extends KeyAdapter {
 	private ModelP mp;
 	private ControllerP cp;
 	boolean frango, peru;
-	// private ModelS ms;
-	// private ControllerS cs;
+	private ModelSC msc;
+	private ControllerSC csc;
 
 	public void openWindow(String idDigitador) {
 		viewEscolhaExp = new ViewEscolhaExp();
@@ -38,8 +40,8 @@ public class ControllerEscolhaExp extends KeyAdapter {
 		cf = new ControllerF(mf, idDigitador);
 		mp = new ModelP();
 		cp = new ControllerP(mp, idDigitador);
-		// ms = new ModelS();
-		// cs = new ControllerS(ms, idDigitador);
+		msc = new ModelSC();
+		csc = new ControllerSC(msc, idDigitador);
 	}
 
 	public void resumeWindow() {
@@ -57,7 +59,7 @@ public class ControllerEscolhaExp extends KeyAdapter {
 		} catch (Exception e) {
 			System.out.println("tentou carregar experimento de frango");
 		}
-		
+
 		try {
 			cp.getModel().getModelStateDAO().loadModelState(localArquivo);
 			peru = true;
@@ -101,8 +103,7 @@ public class ControllerEscolhaExp extends KeyAdapter {
 			// viewEscolhaExp.setVisible(false);
 			// cs.startModuloSuino();
 			// System.out.println("SUÍNO");
-			JOptionPane.showMessageDialog(viewEscolhaExp, "Em construção...", "DIGEX - Aviso",
-					JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(viewEscolhaExp, "Em construção...", "DIGEX - Aviso", JOptionPane.INFORMATION_MESSAGE);
 			System.out.println("Em construção...");
 			((JFormattedTextField) e.getComponent()).setCaretPosition(0);
 			((JFormattedTextField) e.getComponent()).selectAll();
@@ -122,11 +123,11 @@ public class ControllerEscolhaExp extends KeyAdapter {
 				boolean versaoOK = carregaModel(localArquivo);
 				if (versaoOK && frango) {
 					cf.startEscolhaDig();
-				} else if(versaoOK && peru){
+				} else if (versaoOK && peru) {
 					cp.startEscolhaDig(cp.getModel().getExperimentoVO().getInfoExp().getIdadeFase());
-				}else {
-					JOptionPane.showMessageDialog(viewEscolhaExp, "Arquivo criado em outra versão do Software!",
-							"DIGEX - Aviso", JOptionPane.WARNING_MESSAGE);
+				} else {
+					JOptionPane.showMessageDialog(viewEscolhaExp, "Arquivo criado em outra versão do Software!", "DIGEX - Aviso",
+							JOptionPane.WARNING_MESSAGE);
 					viewEscolhaExp.setVisible(true);
 				}
 			} else {
