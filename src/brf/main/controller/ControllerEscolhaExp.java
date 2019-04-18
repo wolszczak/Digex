@@ -24,7 +24,7 @@ public class ControllerEscolhaExp extends KeyAdapter {
 	private ControllerF cf;
 	private ModelP mp;
 	private ControllerP cp;
-	boolean frango, peru;
+	boolean frango, peru, suino;
 	private ModelSC msc;
 	private ControllerSC csc;
 
@@ -55,6 +55,7 @@ public class ControllerEscolhaExp extends KeyAdapter {
 			cf.getModel().getModelStateDAO().loadModelState(localArquivo);
 			frango = true;
 			peru = false;
+			suino = false;
 			return true;
 		} catch (Exception e) {
 			System.out.println("tentou carregar experimento de frango");
@@ -64,9 +65,20 @@ public class ControllerEscolhaExp extends KeyAdapter {
 			cp.getModel().getModelStateDAO().loadModelState(localArquivo);
 			peru = true;
 			frango = false;
+			suino = false;
 			return true;
 		} catch (Exception e) {
 			System.out.println("tentou carregar experimento de peru");
+		}
+
+		try {
+			csc.getModel().getModelStateDAO().loadModelState(localArquivo);
+			suino = true;
+			frango = false;
+			peru = false;
+			return true;
+		} catch (Exception e) {
+			System.out.println("tentou carregar experimento de suino");
 		}
 		return false;
 	}
@@ -92,17 +104,11 @@ public class ControllerEscolhaExp extends KeyAdapter {
 			viewEscolhaExp.setVisible(false);
 			cp.startModuloPeru();
 			System.out.println("PERU");
-			// JOptionPane.showMessageDialog(viewEscolhaExp,
-			// "Em construção...", "DIGEX - Aviso",
-			// JOptionPane.INFORMATION_MESSAGE);
-			// System.out.println("Em construção...");
-			// ((JFormattedTextField) e.getComponent()).setCaretPosition(0);
-			// ((JFormattedTextField) e.getComponent()).selectAll();
 			break;
 		case KeyEvent.VK_3:
-			// viewEscolhaExp.setVisible(false);
-			// cs.startModuloSuino();
-			// System.out.println("SUÍNO");
+			viewEscolhaExp.setVisible(false);
+			csc.startModuloSuino();
+			System.out.println("SUÍNO");
 			JOptionPane.showMessageDialog(viewEscolhaExp, "Em construção...", "DIGEX - Aviso", JOptionPane.INFORMATION_MESSAGE);
 			System.out.println("Em construção...");
 			((JFormattedTextField) e.getComponent()).setCaretPosition(0);

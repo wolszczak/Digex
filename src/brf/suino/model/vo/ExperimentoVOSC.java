@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ExperimentoVOSC implements Serializable {
-    private InfoExpVOSC infoExp;
+	private static final long serialVersionUID = 1L;
+	private InfoExpVOSC infoExp;
     private List<DesempenhoVOSC> desempenho;
 
     public ExperimentoVOSC() {
@@ -27,7 +28,5 @@ public class ExperimentoVOSC implements Serializable {
 	public void setDesempenho(List<DesempenhoVOSC> desempenho) {
 		this.desempenho = desempenho;
 	}   
-    
-    
     
 }

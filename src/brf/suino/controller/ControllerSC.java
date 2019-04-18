@@ -1,17 +1,11 @@
 package brf.suino.controller;
 
-import java.util.List;
-
-import brf.peru.controller.ControllerInfoExpP;
-import brf.peru.model.ModelP;
-import brf.peru.model.bo.DesempenhoBOP;
-import brf.peru.model.vo.RmeVOP;
 import brf.suino.model.ModelSC;
 
 public class ControllerSC {
 	private ModelSC modelSC;
 	private final String idDigitador;
-	private ControllerInfoExpP ctrlInfoExp;
+	private ControllerInfoExpSC ctrlInfoExp;
 
 	public ControllerSC(ModelSC msc, String idDigitador) {
 		this.modelSC = msc;
@@ -26,10 +20,9 @@ public class ControllerSC {
 		return idDigitador;
 	}
 
-//	public void startModuloSuino() {
-//		ctrlInfoExp = new ControllerInfoExpSC(this);
-//		ctrlInfoExp.openWindow(idDigitador);
-//	}
-
+	public void startModuloSuino() {
+		ctrlInfoExp = new ControllerInfoExpSC(this);
+		ctrlInfoExp.openWindow(idDigitador);
+	}
 
 }
