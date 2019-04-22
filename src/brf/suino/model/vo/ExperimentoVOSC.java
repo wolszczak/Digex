@@ -4,13 +4,19 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import brf.peru.model.vo.ConsumoVOP;
+
 public class ExperimentoVOSC implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private InfoExpVOSC infoExp;
-    private List<DesempenhoVOSC> desempenho;
+    private List<ConsumoVOSC> consumo;
+    private List<MortoVOSC> mortalidade;
+    private List<MedicadosVOSC> medicados ;
 
     public ExperimentoVOSC() {
-        desempenho = new ArrayList<>();
+        this.consumo = new ArrayList<>();
+        this.mortalidade = new ArrayList<>();
+        this.medicados = new ArrayList<>();
     }
 
 	public InfoExpVOSC getInfoExp() {
@@ -21,12 +27,30 @@ public class ExperimentoVOSC implements Serializable {
 		this.infoExp = infoExp;
 	}
 
-	public List<DesempenhoVOSC> getDesempenho() {
-		return desempenho;
+	public List<ConsumoVOSC> getConsumo() {
+		return consumo;
 	}
 
-	public void setDesempenho(List<DesempenhoVOSC> desempenho) {
-		this.desempenho = desempenho;
-	}   
+	public void setConsumo(List<ConsumoVOSC> consumo) {
+		this.consumo = consumo;
+	}
+
+	public List<MortoVOSC> getMortalidade() {
+		return mortalidade;
+	}
+
+	public void setMortalidade(List<MortoVOSC> mortalidade) {
+		this.mortalidade = mortalidade;
+	}
+
+	public List<MedicadosVOSC> getMedicados() {
+		return medicados;
+	}
+
+	public void setMedicados(List<MedicadosVOSC> medicados) {
+		this.medicados = medicados;
+	}
+
+
     
 }

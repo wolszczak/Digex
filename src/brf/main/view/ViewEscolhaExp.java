@@ -60,7 +60,7 @@ public class ViewEscolhaExp extends javax.swing.JFrame {
 
         jLabel2.setText("2 - Peru");
 
-        jLabel3.setText("3 - Suíno");
+        jLabel3.setText("3 - Suíno Creche");
 
         jLabel6.setText("Qual experimento deseja criar? ");
 

@@ -109,10 +109,6 @@ public class ControllerEscolhaExp extends KeyAdapter {
 			viewEscolhaExp.setVisible(false);
 			csc.startModuloSuino();
 			System.out.println("SUÍNO");
-			JOptionPane.showMessageDialog(viewEscolhaExp, "Em construção...", "DIGEX - Aviso", JOptionPane.INFORMATION_MESSAGE);
-			System.out.println("Em construção...");
-			((JFormattedTextField) e.getComponent()).setCaretPosition(0);
-			((JFormattedTextField) e.getComponent()).selectAll();
 			break;
 		case KeyEvent.VK_4:
 			viewEscolhaExp.setVisible(false);
