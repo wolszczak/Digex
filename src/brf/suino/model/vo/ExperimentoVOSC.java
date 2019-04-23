@@ -12,11 +12,13 @@ public class ExperimentoVOSC implements Serializable {
     private List<ConsumoVOSC> consumo;
     private List<MortoVOSC> mortalidade;
     private List<MedicadosVOSC> medicados ;
+    private List<PesagensVOSC> pesagens;
 
     public ExperimentoVOSC() {
         this.consumo = new ArrayList<>();
         this.mortalidade = new ArrayList<>();
         this.medicados = new ArrayList<>();
+        this.pesagens = new ArrayList<>();
     }
 
 	public InfoExpVOSC getInfoExp() {
@@ -49,6 +51,14 @@ public class ExperimentoVOSC implements Serializable {
 
 	public void setMedicados(List<MedicadosVOSC> medicados) {
 		this.medicados = medicados;
+	}
+
+	public List<PesagensVOSC> getPesagens() {
+		return pesagens;
+	}
+
+	public void setPesagens(List<PesagensVOSC> pesagens) {
+		this.pesagens = pesagens;
 	}
 
 

@@ -18,14 +18,14 @@ public class InfoExpVOSC implements Serializable {
 	private String fimExp;
 	private int idadeAloj;
 	private int nrFases;
-	private List<String> dataFase;
+	private List<String> datasFases;
 	private String msg;
 	private boolean[] problemas = { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false,
 			false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false };
 
 	public InfoExpVOSC(String idDigitador, String protocolo, int local, String local1, int galpao, String teste, int tipo,
 			String tipo1, int nrBaias, String inicioExp, String fimExp, int idadeAloj,  int nrFases,
-			List<String> dataFase) {
+			List<String> datasFases) {
 		this.idDigitador = idDigitador;
 		this.protocolo = protocolo;
 		this.local = local;
@@ -39,7 +39,7 @@ public class InfoExpVOSC implements Serializable {
 		this.fimExp = fimExp;
 		this.idadeAloj = idadeAloj;
 		this.nrFases = nrFases;
-		this.dataFase = dataFase;
+		this.datasFases = datasFases;
 		msg = "";
 	}
 
@@ -222,7 +222,7 @@ public class InfoExpVOSC implements Serializable {
 			problemas[13] = true;
 		}
 
-		if (!this.dataFase.equals(other.dataFase)) {
+		if (!this.datasFases.equals(other.datasFases)) {
 			msg = msg.concat("- Idade(s) não confere(m)\n");
 			problemas[14] = true;
 		}
@@ -251,5 +251,13 @@ public class InfoExpVOSC implements Serializable {
 
 	public void setMsg(String msg) {
 		this.msg = msg;
+	}
+
+	public List<String> getDatasFases() {
+		return datasFases;
+	}
+
+	public void setDatasFases(List<String> datasFases) {
+		this.datasFases = datasFases;
 	}
 }

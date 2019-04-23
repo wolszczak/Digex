@@ -9,7 +9,8 @@ public class ControllerSC {
 	private ModelSC modelSC;
 	private final String idDigitador;
 	private ControllerInfoExpSC ctrlInfoExp;
-//	private ControllerEscolhaDigSC ctrlEscolhaDigSC;
+	private ControllerEscolhaDigSC ctrlEscolhaDig;
+	private ControllerConsumoSC ctrlConsumo;
 
 	public ControllerSC(ModelSC msc, String idDigitador) {
 		this.modelSC = msc;
@@ -30,8 +31,13 @@ public class ControllerSC {
 	}
 
 	public void startEscolhaDig(List<String> datasFase) {
-//		ctrlEscolhaDig = new ControllerEscolhaDigSC(this);
-//		ctrlEscolhaDig.openWindow(idadesFases);
+		ctrlEscolhaDig = new ControllerEscolhaDigSC(this);
+		ctrlEscolhaDig.openWindow(datasFase);
+	}
+	
+	public void startConsumoSC(List<String> datasFase) {
+		ctrlEscolhaDig = new ControllerEscolhaDigSC(this);
+		ctrlEscolhaDig.openWindow(datasFase);
 	}
 	
 }

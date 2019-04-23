@@ -50,35 +50,37 @@ public class ControllerEscolhaExp extends KeyAdapter {
 		viewEscolhaExp.getOpcaoJFT().grabFocus();
 	}
 
-	public boolean carregaModel(String localArquivo) {
-		try {
-			cf.getModel().getModelStateDAO().loadModelState(localArquivo);
-			frango = true;
-			peru = false;
-			suino = false;
-			return true;
-		} catch (Exception e) {
-			System.out.println("tentou carregar experimento de frango");
-		}
-
-		try {
-			cp.getModel().getModelStateDAO().loadModelState(localArquivo);
-			peru = true;
-			frango = false;
-			suino = false;
-			return true;
-		} catch (Exception e) {
-			System.out.println("tentou carregar experimento de peru");
-		}
-
-		try {
-			csc.getModel().getModelStateDAO().loadModelState(localArquivo);
-			suino = true;
-			frango = false;
-			peru = false;
-			return true;
-		} catch (Exception e) {
-			System.out.println("tentou carregar experimento de suino");
+	public boolean carregaModel(String localArquivo, String tipoExp) {
+		if (tipoExp.equals("F")) {
+			try {
+				cf.getModel().getModelStateDAO().loadModelState(localArquivo);
+				frango = true;
+				peru = false;
+				suino = false;
+				return true;
+			} catch (Exception e) {
+				System.out.println("tentou carregar experimento de frango");
+			}
+		} else if (tipoExp.equals("P")) {
+			try {
+				cp.getModel().getModelStateDAO().loadModelState(localArquivo);
+				peru = true;
+				frango = false;
+				suino = false;
+				return true;
+			} catch (Exception e) {
+				System.out.println("tentou carregar experimento de peru");
+			}
+		} else if (tipoExp.equals("SC")) {
+			try {
+				csc.getModel().getModelStateDAO().loadModelState(localArquivo);
+				suino = true;
+				frango = false;
+				peru = false;
+				return true;
+			} catch (Exception e) {
+				System.out.println("tentou carregar experimento de suino");
+			}
 		}
 		return false;
 	}
@@ -122,11 +124,21 @@ public class ControllerEscolhaExp extends KeyAdapter {
 				String localArquivo = file.getAbsolutePath();
 				String[] split = localArquivo.split(Pattern.quote("\\"));
 				String nomeArquivo = split[split.length - 1];
-				boolean versaoOK = carregaModel(localArquivo);
+				String tipoExp = "";
+				boolean versaoOK =  false;
+				if(split[6].equals("frango")) {
+					versaoOK = carregaModel(localArquivo,"F");	
+				}else if (split[6].equals("peru")) {
+					versaoOK = carregaModel(localArquivo,"P");	
+				}else if (split[6].equals("suinos_creche")) {
+					versaoOK = carregaModel(localArquivo,"SC");	
+				}
 				if (versaoOK && frango) {
 					cf.startEscolhaDig();
 				} else if (versaoOK && peru) {
 					cp.startEscolhaDig(cp.getModel().getExperimentoVO().getInfoExp().getIdadeFase());
+				} else if (versaoOK && suino) {
+					csc.startEscolhaDig(csc.getModel().getExperimentoVO().getInfoExp().getDatasFases());
 				} else {
 					JOptionPane.showMessageDialog(viewEscolhaExp, "Arquivo criado em outra versão do Software!", "DIGEX - Aviso",
 							JOptionPane.WARNING_MESSAGE);
