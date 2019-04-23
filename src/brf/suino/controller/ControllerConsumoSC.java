@@ -48,7 +48,7 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 		order.add(viewConsumo.getGalpaoJFT());
 		order.add(viewConsumo.getBaiaJFT());
 		order.add(viewConsumo.getSexoJFT());
-		order.add(viewConsumo.getTrataJFT());
+		order.add(viewConsumo.getTrataJFT()); 
 		order.add(viewConsumo.getTrata2JFT());
 		order.add(viewConsumo.getControleBaiaJFT());
 		order.add(viewConsumo.getChkUsarColunaExtra());
