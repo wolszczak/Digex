@@ -36,8 +36,8 @@ public class ControllerSC {
 	}
 	
 	public void startConsumoSC(List<String> datasFase) {
-		ctrlEscolhaDig = new ControllerEscolhaDigSC(this);
-		ctrlEscolhaDig.openWindow(datasFase);
+		ctrlConsumo = new ControllerConsumoSC(this);
+		ctrlConsumo.openWindow(datasFase);
 	}
 	
 }

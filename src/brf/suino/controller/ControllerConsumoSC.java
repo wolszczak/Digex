@@ -13,18 +13,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.border.Border;
 
-import brf.suino.view.ViewInfoExpSC;
+import brf.suino.view.ViewConsumoSC;
 import brf.util.FocusOrderPolicy;
 
 public class ControllerConsumoSC extends KeyAdapter implements ActionListener, FocusListener, ItemListener {
 	private final ControllerSC controller;
-	private ViewInfoExpSC viewInfoExp;
+	private ViewConsumoSC viewConsumo;
 	private String inicioExp, fimExp;
 	private int faseCounter;
 	private List<String> datasFase;
@@ -34,36 +33,34 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 		this.controller = c;
 	}
 
-	public void openWindow(String idDigitador) {
-		viewInfoExp = new ViewInfoExpSC();
-		viewInfoExp.setTitle("DIGEX - Suínos Creche");
-		viewInfoExp.setResizable(false);
-		viewInfoExp.setLocationRelativeTo(null);
-		viewInfoExp.setVisible(true);
-		viewInfoExp.getIdDigitadorJFT().setText(idDigitador);
-
+	public void openWindow(List<String> datasFases) {
+		viewConsumo = new ViewConsumoSC();
+		viewConsumo.setTitle("DIGEX - Suínos Creche");
+		viewConsumo.setResizable(false);
+		viewConsumo.setLocationRelativeTo(null);
+		viewConsumo.setVisible(true);
+		viewConsumo.getGalpaoJFT().setText(String.valueOf(controller.getModel().getExperimentoVO().getInfoExp().getGalpao()).trim());
 		datasFase = new ArrayList<>();
-
-		defaultJP = viewInfoExp.getFasesJP().getBorder();
-
-		viewInfoExp.getFaseJFT().setText("1");
-
+		defaultJP = viewConsumo.getConsumoJP().getBorder();
 		faseCounter = 1;
 
 		List<Component> order = new ArrayList<>();
-		order.add(viewInfoExp.getProtocoloJFT());
-		order.add(viewInfoExp.getLocalJCB());
-		order.add(viewInfoExp.getGalpaoJFT());
-		order.add(viewInfoExp.getAreaJCB());
-		order.add(viewInfoExp.getNrBaiaJFT());
-		order.add(viewInfoExp.getInicioExpJFT());
-		order.add(viewInfoExp.getFimExpJFT());
-		order.add(viewInfoExp.getIdadeAlojJFT());
-		order.add(viewInfoExp.getNrFasesJFT());
-		order.add(viewInfoExp.getIdadeFaseJFT());
-		order.add(viewInfoExp.getOpcaoJFT());
+		order.add(viewConsumo.getGalpaoJFT());
+		order.add(viewConsumo.getBaiaJFT());
+		order.add(viewConsumo.getSexoJFT());
+		order.add(viewConsumo.getTrataJFT());
+		order.add(viewConsumo.getTrata2JFT());
+		order.add(viewConsumo.getControleBaiaJFT());
+		order.add(viewConsumo.getChkUsarColunaExtra());
+		order.add(viewConsumo.getIdadeJFT());
+		order.add(viewConsumo.getFornecidaJFT());
+		order.add(viewConsumo.getSobraJFT());
+		order.add(viewConsumo.getPesoJFT());
+		order.add(viewConsumo.getnAnimaisJFT());
+		order.add(viewConsumo.getControleFornecidaJFT());
+		order.add(viewConsumo.getControleSobraJFT());
 		FocusOrderPolicy newPolicy = new FocusOrderPolicy(order);
-		viewInfoExp.setFocusTraversalPolicy(newPolicy);
+		viewConsumo.setFocusTraversalPolicy(newPolicy);
 		listenerSetup(order);
 	}
 
@@ -71,8 +68,6 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 		components.stream().forEach((it) -> {
 			if (it instanceof JFormattedTextField) {
 				((JFormattedTextField) it).addFocusListener(this);
-			} else if (it instanceof JComboBox) {
-				((JComboBox) it).addActionListener(this);
 			} else if (it instanceof JCheckBox) {
 				((JCheckBox) it).addItemListener(this);
 			}
@@ -114,77 +109,18 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 	@Override
 	public void keyPressed(KeyEvent e) {
 		Object src = e.getSource();
-		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(viewInfoExp.getProtocoloJFT())) {
+		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(viewConsumo.getIdadeJFT())) {
 			System.out.println("left");
-			if (src instanceof JFormattedTextField) {
-				((JFormattedTextField) src).setEnabled(false);
-				Component prev = viewInfoExp.getFocusTraversalPolicy().getComponentBefore(viewInfoExp, (JFormattedTextField) src);
-				if (prev instanceof JFormattedTextField) {
-					if (prev.equals(viewInfoExp.getIdadeFaseJFT()) || prev.equals(viewInfoExp.getNrFasesJFT())) {
-						viewInfoExp.getNrFasesJFT().setEnabled(true);
-						viewInfoExp.getNrFasesJFT().grabFocus();
-						viewInfoExp.getFaseJFT().setText("1");
-						viewInfoExp.getFaseHist1Label().setText("");
-						viewInfoExp.getFaseHist2Label().setText("");
-						viewInfoExp.getIdadeHist1Label().setText("");
-						viewInfoExp.getIdadeHist2Label().setText("");
-						viewInfoExp.getIdadeFaseJFT().setText("");
-						datasFase.removeAll(datasFase);
-						faseCounter = 1;
-					} else {
-						prev.setEnabled(true);
-						((JFormattedTextField) prev).grabFocus();
-					}
-				} else if (prev instanceof JComboBox) {
-					prev.setEnabled(true);
-					((JComboBox) prev).grabFocus();
-				}
-			} else if (src instanceof JComboBox) {
-				((JComboBox) src).setEnabled(false);
-				Component prev = viewInfoExp.getFocusTraversalPolicy().getComponentBefore(viewInfoExp, (JComboBox) src);
-				prev.setEnabled(true);
-				if (prev instanceof JFormattedTextField) {
-					((JFormattedTextField) prev).grabFocus();
-				} else if (prev instanceof JComboBox) {
-					((JComboBox) prev).grabFocus();
-				}
-			}
+		}
+		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+			System.out.println("enter");
 		}
 	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-		if (e.getSource() == viewInfoExp.getOpcaoJFT()) {
-			switch (e.getKeyChar()) {
-			case KeyEvent.VK_0:
-				int n = JOptionPane.showConfirmDialog(viewInfoExp, "Deseja realmente sair do programa?", "DIGEX - Sair",
-						JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
-				if (n == 0) {
-					System.out.println("Fim...");
-					System.exit(0);
-				}
-				break;
-			case KeyEvent.VK_1:
-				break;
-			case KeyEvent.VK_9:
-				int option = JOptionPane.showConfirmDialog(viewInfoExp, "Deseja realmente voltar para tela anterior?", "DIGEX - Voltar",
-						JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
-				if (option == 0) {
-//					viewInfoExp.setVisible(false);
-//					ControllerEscolhaExp ce = new ControllerEscolhaExp();
-//					ce.openWindow(idDigitador);
-//					System.out.println("Voltar");
-				}
-				break;
-			default:
-				System.out.println("Opção inválida!");
-				((JFormattedTextField) e.getComponent()).setCaretPosition(0);
-				((JFormattedTextField) e.getComponent()).selectAll();
-				break;
-			}
-		}
 		if (e.getKeyChar() == KeyEvent.VK_ESCAPE) {
-			int option = JOptionPane.showConfirmDialog(viewInfoExp, "Deseja realmente voltar para tela anterior?", "DIGEX - Voltar",
+			int option = JOptionPane.showConfirmDialog(viewConsumo, "Deseja realmente voltar para tela anterior?", "DIGEX - Voltar",
 					JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 			if (option == 0) {
 //				viewInfoExp.setVisible(false);
@@ -197,7 +133,6 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 			String text = "";
 		}
 	}
-
 
 //	public void resetaFasesAbates() {
 //		viewInfoExp.getFaseJFT().setText("1");

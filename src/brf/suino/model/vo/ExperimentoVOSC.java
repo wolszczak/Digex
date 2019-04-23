@@ -10,7 +10,7 @@ public class ExperimentoVOSC implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private InfoExpVOSC infoExp;
     private List<ConsumoVOSC> consumo;
-    private List<MortoVOSC> mortalidade;
+    private List<MortalidadeVOSC> mortalidade;
     private List<MedicadosVOSC> medicados ;
     private List<PesagensVOSC> pesagens;
 
@@ -37,13 +37,6 @@ public class ExperimentoVOSC implements Serializable {
 		this.consumo = consumo;
 	}
 
-	public List<MortoVOSC> getMortalidade() {
-		return mortalidade;
-	}
-
-	public void setMortalidade(List<MortoVOSC> mortalidade) {
-		this.mortalidade = mortalidade;
-	}
 
 	public List<MedicadosVOSC> getMedicados() {
 		return medicados;
@@ -59,6 +52,14 @@ public class ExperimentoVOSC implements Serializable {
 
 	public void setPesagens(List<PesagensVOSC> pesagens) {
 		this.pesagens = pesagens;
+	}
+
+	public List<MortalidadeVOSC> getMortalidade() {
+		return mortalidade;
+	}
+
+	public void setMortalidade(List<MortalidadeVOSC> mortalidade) {
+		this.mortalidade = mortalidade;
 	}
 
 

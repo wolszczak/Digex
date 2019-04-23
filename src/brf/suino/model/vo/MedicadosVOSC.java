@@ -10,17 +10,19 @@ public class MedicadosVOSC implements Serializable{
 	private int sexo;
 	private int trat1;
 	private int trat2;
+	private boolean finalizado; 
 	private List<MediVOSC> medicados;
 	
 	public MedicadosVOSC() {
 		this.medicados = new ArrayList<>();
 	}
 	
-	private void MedicadosVOSC(int baia, int sexo, int trat1, int trat2, List<MediVOSC> medicados) {
+	private void MedicadosVOSC(int baia, int sexo, int trat1, int trat2, boolean finalizado, List<MediVOSC> medicados) {
 		this.baia = baia;
 		this.sexo = sexo;
 		this.trat1 = trat1;
 		this.trat2 = trat2;
+		this.finalizado = finalizado;
 		this.medicados =  medicados;
 	}
 
@@ -62,6 +64,14 @@ public class MedicadosVOSC implements Serializable{
 
 	public void setMedicados(List<MediVOSC> medicados) {
 		this.medicados = medicados;
+	}
+
+	public boolean isFinalizado() {
+		return finalizado;
+	}
+
+	public void setFinalizado(boolean finalizado) {
+		this.finalizado = finalizado;
 	}
 	
 	

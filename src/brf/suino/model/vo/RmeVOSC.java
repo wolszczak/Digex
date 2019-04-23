@@ -8,15 +8,19 @@ public class RmeVOSC implements Serializable {
 	private int idadeRacao;
 	private int fornecida;
 	private int sobra;
+	private int peso;
+	private int numAnimais;
 	
 	public RmeVOSC() {
 	}
 
-	public RmeVOSC(int ordem, int idadeRacao, int fornecida, int sobra) {
+	public RmeVOSC(int ordem, int idadeRacao, int fornecida, int sobra,int peso, int numAnimais) {
 		this.ordem = ordem;
 		this.idadeRacao = idadeRacao;
 		this.fornecida = fornecida;
 		this.sobra = sobra;
+		this.peso = peso;
+		this.numAnimais = numAnimais;
 	}
 
 	public int getOrdem() {
@@ -49,6 +53,22 @@ public class RmeVOSC implements Serializable {
 
 	public void setSobra(int sobra) {
 		this.sobra = sobra;
+	}
+
+	public int getPeso() {
+		return peso;
+	}
+
+	public void setPeso(int peso) {
+		this.peso = peso;
+	}
+
+	public int getNumAnimais() {
+		return numAnimais;
+	}
+
+	public void setNumAnimais(int numAnimais) {
+		this.numAnimais = numAnimais;
 	}
 
 }

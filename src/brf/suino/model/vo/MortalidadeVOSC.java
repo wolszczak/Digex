@@ -10,17 +10,19 @@ public class MortalidadeVOSC implements Serializable{
 	private int sexo;
 	private int trat1;
 	private int trat2;
+	private boolean finalizado;
 	private List<MortoVOSC> mortos;
 	
 	public MortalidadeVOSC() {
 		this.mortos = new ArrayList<>();
 	}
 	
-	private void MortalidadeVOSC(int baia, int sexo, int trat1, int trat2, List<MortoVOSC> mortos) {
+	private void MortalidadeVOSC(int baia, int sexo, int trat1, int trat2, boolean finalizado, List<MortoVOSC> mortos) {
 		this.baia = baia;
 		this.sexo = sexo;
 		this.trat1 = trat1;
 		this.trat2 = trat2;
+		this.finalizado = finalizado;
 		this.mortos = mortos;
 	}
 
@@ -62,6 +64,14 @@ public class MortalidadeVOSC implements Serializable{
 
 	public void setMortos(List<MortoVOSC> mortos) {
 		this.mortos = mortos;
+	}
+
+	public boolean isFinalizado() {
+		return finalizado;
+	}
+
+	public void setFinalizado(boolean finalizado) {
+		this.finalizado = finalizado;
 	}
 	
 	

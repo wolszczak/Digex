@@ -61,7 +61,7 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 				&& controller.getModel().getExperimentoVO().getPesagens().isEmpty()) {
 			viewEscolhaDig.getExportarPesagemLabel().setForeground(Color.GRAY);
 		}
-		
+
 		histSetup();
 	}
 
@@ -116,7 +116,26 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 			viewEscolhaDig.setVisible(false);
 			if (controller.getModel().getExperimentoVO().getConsumo() != null
 					&& controller.getModel().getExperimentoVO().getConsumo().size() != 0) {
-				
+				if (controller.getModel().getExperimentoVO().getConsumo()
+						.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).isFinalizado()) {
+					if (controller.getModel().getExperimentoVO().getMortalidade()
+							.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).isFinalizado()) {
+						if (!controller.getModel().getExperimentoVO().getMedicados()
+								.get(controller.getModel().getExperimentoVO().getMedicados().size() - 1).isFinalizado()) {
+//							controller.startMedicadosSC(datasFases);
+							System.out.println("Abrir tela de Mortalidade");
+							break;
+						}
+					} else {
+//						controller.startMortalidadeSC(datasFases);
+						System.out.println("Abrir tela de Mortalidade");
+						break;
+					}
+				} else {
+					controller.startConsumoSC(datasFases);
+					System.out.println("Abrir tela de CONSUMOS");
+					break;
+				}
 			} else {
 				controller.startConsumoSC(datasFases);
 				System.out.println("Abrir tela de CONSUMOS");
@@ -126,7 +145,7 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 			viewEscolhaDig.setVisible(false);
 			if (controller.getModel().getExperimentoVO().getMedicados() != null
 					&& controller.getModel().getExperimentoVO().getMedicados().size() != 0) {
-				
+
 			} else {
 //				controller.startMedicadosSC(idades);
 				System.out.println("Abrir tela de MEDICADOS");
@@ -137,7 +156,7 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 			viewEscolhaDig.setVisible(false);
 			if (controller.getModel().getExperimentoVO().getMortalidade() != null
 					&& controller.getModel().getExperimentoVO().getMortalidade().size() != 0) {
-				
+
 			} else {
 //				controller.startMortalidadeSC(idades);
 				System.out.println("Abrir tela de MORTALIDADE");
@@ -148,7 +167,7 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 			viewEscolhaDig.setVisible(false);
 			if (controller.getModel().getExperimentoVO().getPesagens() != null
 					&& controller.getModel().getExperimentoVO().getPesagens().size() != 0) {
-				
+
 			} else {
 //				controller.startPesagensSC(idades);
 				System.out.println("Abrir tela de IMPORTAÇÃO DE ARQUIVOS DA BALANÇA");
@@ -201,7 +220,7 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 //				}
 			}
 			fileChooser.setSelectedFile(null);
-			
+
 			break;
 		case KeyEvent.VK_7:
 			viewEscolhaDig.setVisible(false);
