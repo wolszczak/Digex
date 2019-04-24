@@ -10,18 +10,19 @@ public class ConsumoVOSC implements Serializable {
 	private int sexo;
 	private int trat1;
 	private int trat2;
-	private boolean finalizado;
+	private boolean colunaExtra,finalizado;
 	private List<RmeVOSC> rme;
 	
 	public ConsumoVOSC() {
 		this.rme = new ArrayList<>();
 	}
 	
-	private void ConsumoVOSC(int baia, int sexo, int trat1, int trat2, boolean finalizado, List<RmeVOSC> rme) {
+	private void ConsumoVOSC(int baia, int sexo, int trat1, int trat2, boolean colunaExtra, boolean finalizado, List<RmeVOSC> rme) {
 		this.baia = baia;
 		this.sexo = sexo;
 		this.trat1 = trat1;
 		this.trat2 = trat2;
+		this.colunaExtra = colunaExtra;
 		this.finalizado =  finalizado;
 		this.rme =  rme;
 	}
@@ -72,6 +73,14 @@ public class ConsumoVOSC implements Serializable {
 
 	public void setFinalizado(boolean finalizado) {
 		this.finalizado = finalizado;
+	}
+
+	public boolean isColunaExtra() {
+		return colunaExtra;
+	}
+
+	public void setColunaExtra(boolean colunaExtra) {
+		this.colunaExtra = colunaExtra;
 	}
 	
 	

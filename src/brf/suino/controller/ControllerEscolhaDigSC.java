@@ -61,7 +61,6 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 				&& controller.getModel().getExperimentoVO().getPesagens().isEmpty()) {
 			viewEscolhaDig.getExportarPesagemLabel().setForeground(Color.GRAY);
 		}
-
 		histSetup();
 	}
 
@@ -71,8 +70,6 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 		int obsMort = controller.getModel().getExperimentoVO().getMortalidade().size();
 		viewEscolhaDig.getQtdeConsLabel()
 				.setText(obsConsumo + "/" + controller.getModel().getExperimentoVO().getInfoExp().getNrBaias() + " registro(s)");
-		viewEscolhaDig.getQtdeMediLabel().setText(obsMedi + " registro(s)");
-		viewEscolhaDig.getQtdeMortLabel().setText(obsMort + " registro(s)");
 	}
 
 	public void resumeWindow() {
@@ -143,40 +140,72 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 			}
 		case KeyEvent.VK_2:
 			viewEscolhaDig.setVisible(false);
-			if (controller.getModel().getExperimentoVO().getMedicados() != null
-					&& controller.getModel().getExperimentoVO().getMedicados().size() != 0) {
-
-			} else {
-//				controller.startMedicadosSC(idades);
-				System.out.println("Abrir tela de MEDICADOS");
-				break;
-			}
-			break;
-		case KeyEvent.VK_3:
-			viewEscolhaDig.setVisible(false);
-			if (controller.getModel().getExperimentoVO().getMortalidade() != null
-					&& controller.getModel().getExperimentoVO().getMortalidade().size() != 0) {
-
-			} else {
-//				controller.startMortalidadeSC(idades);
-				System.out.println("Abrir tela de MORTALIDADE");
-				break;
-			}
-			break;
-		case KeyEvent.VK_4:
-			viewEscolhaDig.setVisible(false);
 			if (controller.getModel().getExperimentoVO().getPesagens() != null
 					&& controller.getModel().getExperimentoVO().getPesagens().size() != 0) {
 
 			} else {
-//				controller.startPesagensSC(idades);
+//				controller.startPesagensSC(controller.getModel().getExperimentoVO().getInfoExp().getDatasFases());
 				System.out.println("Abrir tela de IMPORTAÇÃO DE ARQUIVOS DA BALANÇA");
 				break;
 			}
 			break;
-		case KeyEvent.VK_5:
+		case KeyEvent.VK_3:
 			if (controller.getModel().getExperimentoVO().getConsumo().isEmpty()) {
 				JOptionPane.showMessageDialog(viewEscolhaDig, "Não há registros de Granja!", "DIGEX - Aviso", JOptionPane.WARNING_MESSAGE);
+			} else {
+				JFileChooser fileChooser = new JFileChooser();
+				fileChooser.addChoosableFileFilter(new ExpFileFilter());
+				fileChooser.setFileView(new SystemFileView());
+				fileChooser.setAcceptAllFileFilterUsed(false);
+				fileChooser.setSelectedFile(new File(viewEscolhaDig.getTesteJFT().getText()));
+				int returnVal = fileChooser.showDialog(viewEscolhaDig, "Salvar");
+				if (returnVal == JFileChooser.APPROVE_OPTION) {
+					File file = fileChooser.getSelectedFile();
+					String localExportar = file.getAbsolutePath();
+//					try {
+//						DesempenhoDAOP.exportarArquivo(controller.getModel().getExperimentoVO().getInfoExp(),
+//								controller.getModel().getExperimentoVO().getConsumo(), localExportar);
+//						JOptionPane.showMessageDialog(viewEscolhaDig, "Arquivo de Granja salvo com sucesso!");
+//					} catch (IOException ex) {
+//						String msg = "Falha ao tentar salvar o arquivo! \n" + "Verifique se ele está aberto e tente novamente.";
+//						JOptionPane.showMessageDialog(viewEscolhaDig, msg);
+//						Logger.getLogger(ControllerEscolhaDigSC.class.getName()).log(Level.SEVERE, null, ex);
+//					}
+				}
+				fileChooser.setSelectedFile(null);
+			}
+			break;
+		case KeyEvent.VK_4:
+			if (controller.getModel().getExperimentoVO().getMedicados().isEmpty()) {
+				JOptionPane.showMessageDialog(viewEscolhaDig, "Não há registros de Medicados!!", "DIGEX - Aviso",
+						JOptionPane.WARNING_MESSAGE);
+			} else {
+				JFileChooser fileChooser = new JFileChooser();
+				fileChooser.addChoosableFileFilter(new ExpFileFilter());
+				fileChooser.setFileView(new SystemFileView());
+				fileChooser.setAcceptAllFileFilterUsed(false);
+				fileChooser.setSelectedFile(new File(viewEscolhaDig.getTesteJFT().getText()));
+				int returnVal = fileChooser.showDialog(viewEscolhaDig, "Salvar");
+				if (returnVal == JFileChooser.APPROVE_OPTION) {
+					File file = fileChooser.getSelectedFile();
+					String localExportar = file.getAbsolutePath();
+//					try {
+//						DesempenhoDAOP.exportarArquivo(controller.getModel().getExperimentoVO().getInfoExp(),
+//								controller.getModel().getExperimentoVO().getConsumo(), localExportar);
+//						JOptionPane.showMessageDialog(viewEscolhaDig, "Arquivo de Granja salvo com sucesso!");
+//					} catch (IOException ex) {
+//						String msg = "Falha ao tentar salvar o arquivo! \n" + "Verifique se ele está aberto e tente novamente.";
+//						JOptionPane.showMessageDialog(viewEscolhaDig, msg);
+//						Logger.getLogger(ControllerEscolhaDigSC.class.getName()).log(Level.SEVERE, null, ex);
+//					}
+				}
+				fileChooser.setSelectedFile(null);
+			}
+			break;
+		case KeyEvent.VK_5:
+			if (controller.getModel().getExperimentoVO().getMortalidade().isEmpty()) {
+				JOptionPane.showMessageDialog(viewEscolhaDig, "Não há registros de Mortalidade!", "DIGEX - Aviso",
+						JOptionPane.WARNING_MESSAGE);
 			} else {
 				JFileChooser fileChooser = new JFileChooser();
 				fileChooser.addChoosableFileFilter(new ExpFileFilter());

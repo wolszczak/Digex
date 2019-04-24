@@ -41,7 +41,7 @@ public class ViewConsumoSC extends javax.swing.JFrame {
 	private javax.swing.JLabel jLabel31;
 	private javax.swing.JLabel jLabel32;
 	private javax.swing.JLabel jLabel34;
-	private javax.swing.JLabel jLabel36;
+	private javax.swing.JLabel controleBaiaLabel;
 	private javax.swing.JLabel jLabel42;
 	private javax.swing.JLabel jLabel44;
 	private javax.swing.JLabel jLabel45;
@@ -93,7 +93,7 @@ public class ViewConsumoSC extends javax.swing.JFrame {
 
 		jPanel1 = new javax.swing.JPanel();
 		baiaJP = new javax.swing.JPanel();
-		jLabel36 = new javax.swing.JLabel();
+		controleBaiaLabel = new javax.swing.JLabel();
 		jLabel31 = new javax.swing.JLabel();
 		baiaJFT = new javax.swing.JFormattedTextField();
 		jLabel32 = new javax.swing.JLabel();
@@ -148,7 +148,7 @@ public class ViewConsumoSC extends javax.swing.JFrame {
 
 		baiaJP.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-		jLabel36.setText("Controle");
+		controleBaiaLabel.setText("Controle");
 
 		jLabel31.setText("Baia");
 
@@ -223,7 +223,7 @@ public class ViewConsumoSC extends javax.swing.JFrame {
 						.addComponent(trataJFT, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
 						.addPreferredGap(ComponentPlacement.RELATED).addComponent(jLabel34).addPreferredGap(ComponentPlacement.RELATED)
 						.addComponent(trata2JFT, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.RELATED).addComponent(jLabel36).addPreferredGap(ComponentPlacement.RELATED)
+						.addPreferredGap(ComponentPlacement.RELATED).addComponent(controleBaiaLabel).addPreferredGap(ComponentPlacement.RELATED)
 						.addComponent(controleBaiaJFT, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE).addGap(18)
 						.addComponent(chkUsarColunaExtra).addContainerGap(107, Short.MAX_VALUE)));
 		baiaJPLayout.setVerticalGroup(baiaJPLayout.createParallelGroup(Alignment.LEADING)
@@ -238,7 +238,7 @@ public class ViewConsumoSC extends javax.swing.JFrame {
 								.addComponent(trataJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 								.addComponent(jLabel34)
 								.addComponent(trata2JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-								.addComponent(jLabel36)
+								.addComponent(controleBaiaLabel)
 								.addComponent(controleBaiaJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE)
 								.addComponent(chkUsarColunaExtra))
@@ -899,11 +899,11 @@ public class ViewConsumoSC extends javax.swing.JFrame {
 	}
 
 	public javax.swing.JLabel getjLabel36() {
-		return jLabel36;
+		return controleBaiaLabel;
 	}
 
 	public void setjLabel36(javax.swing.JLabel jLabel36) {
-		this.jLabel36 = jLabel36;
+		this.controleBaiaLabel = jLabel36;
 	}
 
 	public javax.swing.JLabel getjLabel42() {
@@ -1449,6 +1449,14 @@ public class ViewConsumoSC extends javax.swing.JFrame {
 
 	public void setChkUsarColunaExtra(JCheckBox chkUsarColunaExtra) {
 		this.chkUsarColunaExtra = chkUsarColunaExtra;
+	}
+
+	public javax.swing.JLabel getControleBaiaLabel() {
+		return controleBaiaLabel;
+	}
+
+	public void setControleBaiaLabel(javax.swing.JLabel controleBaiaLabel) {
+		this.controleBaiaLabel = controleBaiaLabel;
 	}
 
 
