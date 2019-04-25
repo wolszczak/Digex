@@ -17,7 +17,7 @@ public class ConsumoVOSC implements Serializable {
 		this.rme = new ArrayList<>();
 	}
 	
-	private void ConsumoVOSC(int baia, int sexo, int trat1, int trat2, boolean colunaExtra, boolean finalizado, List<RmeVOSC> rme) {
+	public ConsumoVOSC(int baia, int sexo, int trat1, int trat2, boolean colunaExtra, boolean finalizado, List<RmeVOSC> rme) {
 		this.baia = baia;
 		this.sexo = sexo;
 		this.trat1 = trat1;

@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class RmeVOSC implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int ordem;
-	private int idadeRacao;
+	private String dataRacao;
 	private int fornecida;
 	private int sobra;
 	private int peso;
@@ -14,9 +14,9 @@ public class RmeVOSC implements Serializable {
 	public RmeVOSC() {
 	}
 
-	public RmeVOSC(int ordem, int idadeRacao, int fornecida, int sobra,int peso, int numAnimais) {
+	public RmeVOSC(int ordem, String dataRacao, int fornecida, int sobra,int peso, int numAnimais) {
 		this.ordem = ordem;
-		this.idadeRacao = idadeRacao;
+		this.dataRacao = dataRacao;
 		this.fornecida = fornecida;
 		this.sobra = sobra;
 		this.peso = peso;
@@ -31,12 +31,12 @@ public class RmeVOSC implements Serializable {
 		this.ordem = ordem;
 	}
 
-	public int getIdadeRacao() {
-		return idadeRacao;
+	public String getIdadeRacao() {
+		return dataRacao;
 	}
 
-	public void setIdadeRacao(int idadeRacao) {
-		this.idadeRacao = idadeRacao;
+	public void setIdadeRacao(String idadeRacao) {
+		this.dataRacao = idadeRacao;
 	}
 
 	public int getFornecida() {
@@ -69,6 +69,14 @@ public class RmeVOSC implements Serializable {
 
 	public void setNumAnimais(int numAnimais) {
 		this.numAnimais = numAnimais;
+	}
+
+	public String getDataRacao() {
+		return dataRacao;
+	}
+
+	public void setDataRacao(String dataRacao) {
+		this.dataRacao = dataRacao;
 	}
 
 }
