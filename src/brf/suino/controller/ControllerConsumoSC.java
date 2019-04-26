@@ -47,7 +47,7 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 
 	public void openWindow(List<String> datasFases) {
 		viewConsumo = new ViewConsumoSC();
-		datasFase = new ArrayList<>();
+		this.datasFase = datasFases;
 		consumos = new ArrayList<>();
 		consumosErros = new ArrayList<>();
 		usarColunaExtra = false;
@@ -81,7 +81,7 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 		loadHist();
 
 		viewConsumo.getOrdemJFT().setText(String.valueOf(ordem).trim());
-		TextFormatter.formatStringJFT(viewConsumo.getOrdemJFT(), viewConsumo.getOrdemJFT().getText(), 3);
+		TextFormatter.formatStringJFT(viewConsumo.getOrdemJFT(), viewConsumo.getOrdemJFT().getText(), 2);
 		viewConsumo.getFornecidaJFT().setText("00000");
 		viewConsumo.getSobraJFT().setText("00000");
 		viewConsumo.getPesoJFT().setText("00000");
@@ -198,6 +198,7 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 				} else {
 					viewConsumo.getChkUsarColunaExtra().setSelected(false);
 				}
+				viewConsumo.getBaiaJFT().setEnabled(false);
 				viewConsumo.getControleBaiaLabel().setVisible(false);
 				viewConsumo.getControleBaiaJFT().setVisible(false);
 				viewConsumo.getChkUsarColunaExtra().setEnabled(false);
@@ -265,13 +266,18 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 
 	@Override
 	public void keyPressed(KeyEvent e) {
+		Object src = e.getSource();
 		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(viewConsumo.getDataJFT())) {
 			System.out.println("left");
+			Component prev = viewConsumo.getFocusTraversalPolicy().getComponentBefore(viewConsumo, (JFormattedTextField) src);
+			((JFormattedTextField) src).setEnabled(false);
+			prev.setEnabled(true);
+			((JFormattedTextField) prev).grabFocus();
 		}
 
 		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 			System.out.println("enter");
-			JFormattedTextField src = null;
+			JFormattedTextField jft = null;
 			JCheckBox chk = null;
 			String text = "";
 			if (e.getSource() == viewConsumo.getChkUsarColunaExtra()) {
@@ -280,32 +286,32 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 				viewConsumo.getDataJFT().grabFocus();
 				criarOrdemComponentes();
 			} else {
-				src = (JFormattedTextField) e.getSource();
-				text = src.getText();
+				jft = (JFormattedTextField) e.getSource();
+				text = jft.getText();
 
 				if ((JFormattedTextField) e.getSource() == viewConsumo.getBaiaJFT()) {
-					TextFormatter.formatStringJFT(src, text, 3);
+					TextFormatter.formatStringJFT(jft, text, 3);
 					viewConsumo.getRegistrosLabel().setVisible(false);
 					viewConsumo.getBaiaJFT().setEnabled(false);
 					viewConsumo.getSexoJFT().setEnabled(true);
 					viewConsumo.getSexoJFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewConsumo.getSexoJFT()) {
-					TextFormatter.formatStringJFT(src, text, 3);
+					TextFormatter.formatStringJFT(jft, text, 3);
 					viewConsumo.getSexoJFT().setEnabled(false);
 					viewConsumo.getTrataJFT().setEnabled(true);
 					viewConsumo.getTrataJFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewConsumo.getTrataJFT()) {
-					TextFormatter.formatStringJFT(src, text, 1);
+					TextFormatter.formatStringJFT(jft, text, 1);
 					viewConsumo.getTrataJFT().setEnabled(false);
 					viewConsumo.getTrata2JFT().setEnabled(true);
 					viewConsumo.getTrata2JFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewConsumo.getTrata2JFT()) {
-					TextFormatter.formatStringJFT(src, text, 1);
+					TextFormatter.formatStringJFT(jft, text, 1);
 					viewConsumo.getTrata2JFT().setEnabled(false);
 					viewConsumo.getControleBaiaJFT().setEnabled(true);
 					viewConsumo.getControleBaiaJFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewConsumo.getControleBaiaJFT()) {
-					TextFormatter.formatStringJFT(src, text, 4);
+					TextFormatter.formatStringJFT(jft, text, 4);
 					controleBaia = Integer.parseInt(viewConsumo.getControleBaiaJFT().getText());
 					int somaControle = Integer.parseInt(viewConsumo.getBaiaJFT().getText())
 							+ Integer.parseInt(viewConsumo.getSexoJFT().getText()) + Integer.parseInt(viewConsumo.getTrataJFT().getText())
@@ -353,38 +359,82 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 						}
 					}
 				} else if ((JFormattedTextField) e.getSource() == viewConsumo.getDataJFT()) {
-					TextFormatter.formatStringJFT(src, text, 10);
+					TextFormatter.formatStringJFT(jft, text, 10);
 					viewConsumo.getDataJFT().setEnabled(false);
 					viewConsumo.getFornecidaJFT().setEnabled(true);
 					viewConsumo.getFornecidaJFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewConsumo.getFornecidaJFT()) {
-					TextFormatter.formatStringJFT(src, text, 3);
+					TextFormatter.formatStringJFT(jft, text, 3);
 					viewConsumo.getFornecidaJFT().setEnabled(false);
 					viewConsumo.getSobraJFT().setEnabled(true);
 					viewConsumo.getSobraJFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewConsumo.getSobraJFT()) {
-					TextFormatter.formatStringJFT(src, text, 3);
-					viewConsumo.getSobraJFT().setEnabled(false);
-					if(usarColunaExtra) {
-						viewConsumo.getPesoJFT().setEnabled(true);
-						viewConsumo.getPesoJFT().requestFocus();
+					TextFormatter.formatStringJFT(jft, text, 3);
+
+					String msg = consumoBO.verificaRacao(viewConsumo.getDataJFT().getText(),
+							Integer.parseInt(viewConsumo.getFornecidaJFT().getText()),
+							Integer.parseInt(viewConsumo.getSobraJFT().getText()), datasFase);
+					if (msg.length() != 0) {
+						JOptionPane.showMessageDialog(viewConsumo, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+						fluxoProblemaDigitacaoRacoes();
+					} else if (consumos.size() == 0
+							&& (!viewConsumo.getDataJFT().getText().equals("^([0-2][0-9]|(3)[0-1])(\\/)(((0)[0-9])|((1)[0-2]))(\\/)\\d{4}$")
+									&& Integer.parseInt(viewConsumo.getFornecidaJFT().getText()) == 0
+									&& Integer.parseInt(viewConsumo.getSobraJFT().getText()) == 0)) {
+						viewConsumo.getSobraJFT().setEnabled(false);
+						if (usarColunaExtra) {
+							viewConsumo.getPesoJFT().setEnabled(true);
+							viewConsumo.getPesoJFT().requestFocus();
+						} else {
+							consumos.add(new RmeVOSC(ordem, viewConsumo.getData().getText(),
+									Integer.parseInt(viewConsumo.getFornecidaJFT().getText()),
+									Integer.parseInt(viewConsumo.getSobraJFT().getText()),
+									Integer.parseInt(viewConsumo.getPesoJFT().getText()),
+									Integer.parseInt(viewConsumo.getnAnimaisJFT().getText())));
+							updateHistRME();
+							ordem++;
+							viewConsumo.getOrdemJFT().setText(String.valueOf(ordem));
+							viewConsumo.getSobraJFT().setEnabled(false);
+							viewConsumo.getDataJFT().setEnabled(true);
+							((JFormattedTextField) e.getSource()).transferFocus();
+							viewConsumo.getDataJFT().grabFocus();
+							viewConsumo.getConsumoJP().setBorder(defaultBorder);
+							TextFormatter.formatStringJFT(viewConsumo.getOrdemJFT(), viewConsumo.getOrdemJFT().getText(), 2);
+						}
 					} else {
-						viewConsumo.getDataJFT().setEnabled(true);
-						viewConsumo.getDataJFT().requestFocus();
+						if (usarColunaExtra) {
+							viewConsumo.getPesoJFT().setEnabled(true);
+							viewConsumo.getPesoJFT().requestFocus();
+						} else {
+							consumos.add(new RmeVOSC(ordem, viewConsumo.getData().getText(),
+									Integer.parseInt(viewConsumo.getFornecidaJFT().getText()),
+									Integer.parseInt(viewConsumo.getSobraJFT().getText()),
+									Integer.parseInt(viewConsumo.getPesoJFT().getText()),
+									Integer.parseInt(viewConsumo.getnAnimaisJFT().getText())));
+							updateHistRME();
+							ordem++;
+							viewConsumo.getOrdemJFT().setText(String.valueOf(ordem));
+							viewConsumo.getSobraJFT().setEnabled(false);
+							viewConsumo.getDataJFT().setEnabled(true);
+							((JFormattedTextField) e.getSource()).transferFocus();
+							viewConsumo.getDataJFT().grabFocus();
+							viewConsumo.getConsumoJP().setBorder(defaultBorder);
+							TextFormatter.formatStringJFT(viewConsumo.getOrdemJFT(), viewConsumo.getOrdemJFT().getText(), 2);
+						}
 					}
 				} else if ((JFormattedTextField) e.getSource() == viewConsumo.getPesoJFT()) {
-					TextFormatter.formatStringJFT(src, text, 5);
+					TextFormatter.formatStringJFT(jft, text, 5);
 					viewConsumo.getPesoJFT().setEnabled(false);
 					viewConsumo.getnAnimaisJFT().setEnabled(true);
 					viewConsumo.getnAnimaisJFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewConsumo.getnAnimaisJFT()) {
-					TextFormatter.formatStringJFT(src, text, 3);
+					TextFormatter.formatStringJFT(jft, text, 3);
 					viewConsumo.getnAnimaisJFT().setEnabled(false);
 					viewConsumo.getControleFornecidaJFT().setEnabled(true);
 					viewConsumo.getControleFornecidaJFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewConsumo.getControleFornecidaJFT()) {
 					if (Integer.parseInt(viewConsumo.getControleFornecidaJFT().getText().trim()) == calculaControleRacaoFornecida()) {
-						TextFormatter.formatStringJFT(src, text, 6);
+						TextFormatter.formatStringJFT(jft, text, 6);
 						viewConsumo.getControleFornecidaJFT().setEnabled(false);
 						viewConsumo.getControleSobraJFT().setEnabled(true);
 						((JFormattedTextField) e.getSource()).transferFocus();
@@ -396,10 +446,10 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 						fluxoErroControleFornecida();
 						ordem = consumosErros.get(0).getOrdem();
 						recuperaHistConsumo(true, false);
-						TextFormatter.formatStringJFT(viewConsumo.getOrdemJFT(), viewConsumo.getOrdemJFT().getText(), 3);
+						TextFormatter.formatStringJFT(viewConsumo.getOrdemJFT(), viewConsumo.getOrdemJFT().getText(), 2);
 					}
 				} else if ((JFormattedTextField) e.getSource() == viewConsumo.getControleSobraJFT()) {
-					TextFormatter.formatStringJFT(src, text, 3);
+					TextFormatter.formatStringJFT(jft, text, 3);
 					viewConsumo.getControleSobraJFT().setEnabled(false);
 					viewConsumo.getTrataJFT().setEnabled(true);
 					viewConsumo.getTrataJFT().requestFocus();
@@ -425,7 +475,58 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 			String text = "";
 		}
 	}
-	
+
+	public void updateHistRME() {
+		viewConsumo.getOrdemHist1Label().setText(viewConsumo.getOrdemHist2Label().getText());
+		viewConsumo.getOrdemHist2Label().setText(viewConsumo.getOrdemHist3Label().getText());
+		viewConsumo.getOrdemHist3Label().setText(viewConsumo.getOrdemHist4Label().getText());
+		viewConsumo.getOrdemHist4Label().setText(viewConsumo.getOrdemHist5Label().getText());
+		viewConsumo.getOrdemHist5Label().setText(viewConsumo.getOrdemJFT().getText());
+		viewConsumo.getData1HistLabel().setText(viewConsumo.getData2HistLabel().getText());
+		viewConsumo.getData2HistLabel().setText(viewConsumo.getData3HistLabel().getText());
+		viewConsumo.getData3HistLabel().setText(viewConsumo.getData4HistLabel().getText());
+		viewConsumo.getData4HistLabel().setText(viewConsumo.getData5HistLabel().getText());
+		viewConsumo.getData5HistLabel().setText(viewConsumo.getDataJFT().getText());
+		viewConsumo.getFornecidaHist1Label().setText(viewConsumo.getFornecidaHist2Label().getText());
+		viewConsumo.getFornecidaHist2Label().setText(viewConsumo.getFornecidaHist3Label().getText());
+		viewConsumo.getFornecidaHist3Label().setText(viewConsumo.getFornecidaHist4Label().getText());
+		viewConsumo.getFornecidaHist4Label().setText(viewConsumo.getFornecidaHist5Label().getText());
+		viewConsumo.getFornecidaHist5Label().setText(viewConsumo.getFornecidaJFT().getText());
+		viewConsumo.getSobraHist1Label().setText(viewConsumo.getSobraHist2Label().getText());
+		viewConsumo.getSobraHist2Label().setText(viewConsumo.getSobraHist3Label().getText());
+		viewConsumo.getSobraHist3Label().setText(viewConsumo.getSobraHist4Label().getText());
+		viewConsumo.getSobraHist4Label().setText(viewConsumo.getSobraHist5Label().getText());
+		viewConsumo.getSobraHist5Label().setText(viewConsumo.getSobraJFT().getText());
+		if (usarColunaExtra) {
+			viewConsumo.getPesoHist1Label().setText(viewConsumo.getPesoHist2Label().getText());
+			viewConsumo.getPesoHist2Label().setText(viewConsumo.getPesoHist3Label().getText());
+			viewConsumo.getPesoHist3Label().setText(viewConsumo.getPesoHist4Label().getText());
+			viewConsumo.getPesoHist4Label().setText(viewConsumo.getPesoHist5Label().getText());
+			viewConsumo.getPesoHist5Label().setText(viewConsumo.getPesoJFT().getText());
+			viewConsumo.getnAnimHist1Label().setText(viewConsumo.getnAnimHist2Label().getText());
+			viewConsumo.getnAnimHist2Label().setText(viewConsumo.getnAnimHist3Label().getText());
+			viewConsumo.getnAnimHist3Label().setText(viewConsumo.getnAnimHist4Label().getText());
+			viewConsumo.getnAnimHist4Label().setText(viewConsumo.getnAnimHist5Label().getText());
+			viewConsumo.getnAnimHist5Label().setText(viewConsumo.getnAnimaisJFT().getText());
+		}
+		if (!consumosErros.isEmpty()) {
+			recuperaHistConsumo(false, false);
+		} else {
+			viewConsumo.getDataJFT().setText("00000000");
+			viewConsumo.getFornecidaJFT().setText("00000");
+			viewConsumo.getSobraJFT().setText("00000");
+			viewConsumo.pack();
+		}
+	}
+
+	public void fluxoProblemaDigitacaoRacoes() {
+		viewConsumo.getConsumoJP().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
+		viewConsumo.getDataJFT().setEnabled(true);
+		viewConsumo.getDataJFT().grabFocus();
+		viewConsumo.getFornecidaJFT().setEnabled(false);
+		viewConsumo.getSobraJFT().setEnabled(false);
+	}
+
 	public void recuperaHistConsumo(boolean zeraControleFornecida, boolean zeraControleSobra) {
 		viewConsumo.getOrdemJFT().setText("" + consumosErros.get(0).getOrdem());
 		TextFormatter.formatStringJFT(viewConsumo.getOrdemJFT(), viewConsumo.getOrdemJFT().getText(), 2);
@@ -435,15 +536,13 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 		TextFormatter.formatStringJFT(viewConsumo.getFornecidaJFT(), viewConsumo.getFornecidaJFT().getText(), 5);
 		viewConsumo.getSobraJFT().setText("" + consumosErros.get(0).getSobra());
 		TextFormatter.formatStringJFT(viewConsumo.getSobraJFT(), viewConsumo.getSobraJFT().getText(), 5);
-		if(usarColunaExtra) {
+		if (usarColunaExtra) {
 			viewConsumo.getPesoJFT().setText("" + consumosErros.get(0).getPeso());
 			TextFormatter.formatStringJFT(viewConsumo.getPesoJFT(), viewConsumo.getPesoJFT().getText(), 5);
 			viewConsumo.getnAnimaisJFT().setText("" + consumosErros.get(0).getNumAnimais());
 			TextFormatter.formatStringJFT(viewConsumo.getnAnimaisJFT(), viewConsumo.getnAnimaisJFT().getText(), 3);
 		}
-		
 		consumosErros.remove(0);
-
 		if (zeraControleFornecida && zeraControleSobra) {
 			// ZERA OS DOIS CONTROLES
 			viewConsumo.getDataJFT().setEnabled(true);
@@ -472,15 +571,14 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 
 	}
 
-	
 	private Integer calculaControleRacaoFornecida() {
 		int soma = 0;
-		for(RmeVOSC consumo : consumos) {
+		for (RmeVOSC consumo : consumos) {
 			soma += consumo.getFornecida();
 		}
 		return soma;
 	}
-	
+
 	public void fluxoErroControleFornecida() {
 		viewConsumo.getDataJFT().setText("");
 		viewConsumo.getFornecidaJFT().setText("");

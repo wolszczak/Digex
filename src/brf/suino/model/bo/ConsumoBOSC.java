@@ -1,6 +1,8 @@
 
 package brf.suino.model.bo;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import brf.frango.model.vo.RmeVOF;
@@ -54,22 +56,23 @@ public class ConsumoBOSC {
 		controller.getModel().getModelStateDAO().saveModelState(false);
 	}
 
-	public String verificaRacao(Integer idade, Integer racao, Integer sobra, Integer idadeInicioFase,
-			Integer idadeFinalFase) {
+	public String verificaRacao(String data, Integer racao, Integer sobra, List<String> datasFases) {
 		String msg = "";
-		int idadeFim = controller.getModel().getExperimentoVO().getInfoExp().getIdadeFase()
-				.get(controller.getModel().getExperimentoVO().getInfoExp().getIdadeFase().size() - 1);
-		if (idade > idadeFim || idade < 0) {
+		Date dataRacao = new Date();
+		Date dataIni = new Date();
+		Date dataFim = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		try {
+			dataIni = sdf.parse(datasFases.get(0));
+			dataFim = sdf.parse(datasFases.get(datasFases.size() - 1));
+			dataRacao = sdf.parse(data);
+		} catch (Exception e) {
+			return "- Formato de data incorreta\n";
+		}
+		if (dataRacao.after(dataFim) || dataRacao.before(dataIni)) {
 			msg = msg.concat("- Idade fora do período do experimento\n");
-		} else if ((idade != 0 && idade < idadeInicioFase) || (idade != 0 && idade > idadeFinalFase)) {
-			msg = msg.concat(
-					"- Idade fora do período da fase. Dos " + idadeInicioFase + " aos " + idadeFinalFase + " dias.");
-		} else if (idade != 0 && racao == 0 && sobra == 0) {
+		} else if (racao == 0 && sobra == 0) {
 			msg = msg.concat("- Entrada/Saída de ração igual à 0\n");
-		} else if (idade == 0) {
-			if (racao != 0 || sobra != 0) {
-				msg = msg.concat("- Idade não pode ser 0\n");
-			}
 		}
 		return msg;
 	}
