@@ -149,7 +149,7 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 						}
 					} else {
 						if (usarColunaExtra) {
-							for (int z = consumoHist.getRme().size(); z < 0; z--) {
+							for (int z = consumoHist.getRme().size(); z > 0; z--) {
 								JLabel lbl1 = (JLabel) orderLoadHist.get(0);
 								lbl1.setText(String.valueOf(consumoHist.getRme().get(z - 1).getNumAnimais()).trim());
 								orderLoadHist.remove(0);
@@ -171,7 +171,7 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 							}
 							criarOrdemComponentesHist();
 						} else {
-							for (int z = consumoHist.getRme().size(); z < 0; z--) {
+							for (int z = consumoHist.getRme().size(); z > 0; z--) {
 								JLabel lbl1 = (JLabel) orderLoadHist.get(0);
 								lbl1.setText(String.valueOf(consumoHist.getRme().get(z - 1).getSobra()).trim());
 								orderLoadHist.remove(0);
@@ -370,7 +370,6 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 					viewConsumo.getSobraJFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewConsumo.getSobraJFT()) {
 					TextFormatter.formatStringJFT(jft, text, 3);
-
 					String msg = consumoBO.verificaRacao(viewConsumo.getDataJFT().getText(),
 							Integer.parseInt(viewConsumo.getFornecidaJFT().getText()),
 							Integer.parseInt(viewConsumo.getSobraJFT().getText()), datasFase);
@@ -378,7 +377,7 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 						JOptionPane.showMessageDialog(viewConsumo, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
 						fluxoProblemaDigitacaoRacoes();
 					} else if (consumos.size() == 0
-							&& (!viewConsumo.getDataJFT().getText().equals("^([0-2][0-9]|(3)[0-1])(\\/)(((0)[0-9])|((1)[0-2]))(\\/)\\d{4}$")
+							&& (viewConsumo.getDataJFT().getText().trim().equals("00/00/0000")
 									&& Integer.parseInt(viewConsumo.getFornecidaJFT().getText()) == 0
 									&& Integer.parseInt(viewConsumo.getSobraJFT().getText()) == 0)) {
 						viewConsumo.getSobraJFT().setEnabled(false);
@@ -386,11 +385,9 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 							viewConsumo.getPesoJFT().setEnabled(true);
 							viewConsumo.getPesoJFT().requestFocus();
 						} else {
-							consumos.add(new RmeVOSC(ordem, viewConsumo.getData().getText(),
-									Integer.parseInt(viewConsumo.getFornecidaJFT().getText()),
-									Integer.parseInt(viewConsumo.getSobraJFT().getText()),
-									Integer.parseInt(viewConsumo.getPesoJFT().getText()),
-									Integer.parseInt(viewConsumo.getnAnimaisJFT().getText())));
+							controller.getModel().getExperimentoVO().getConsumo().get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getRme().addAll(consumos);
+							controller.getModel().getModelStateDAO().saveModelState(false);
+							consumos = new ArrayList<>();
 							updateHistRME();
 							ordem++;
 							viewConsumo.getOrdemJFT().setText(String.valueOf(ordem));
@@ -406,11 +403,14 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 							viewConsumo.getPesoJFT().setEnabled(true);
 							viewConsumo.getPesoJFT().requestFocus();
 						} else {
-							consumos.add(new RmeVOSC(ordem, viewConsumo.getData().getText(),
+							consumos.add(new RmeVOSC(ordem, viewConsumo.getDataJFT().getText(),
 									Integer.parseInt(viewConsumo.getFornecidaJFT().getText()),
 									Integer.parseInt(viewConsumo.getSobraJFT().getText()),
 									Integer.parseInt(viewConsumo.getPesoJFT().getText()),
 									Integer.parseInt(viewConsumo.getnAnimaisJFT().getText())));
+							controller.getModel().getExperimentoVO().getConsumo().get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getRme().addAll(consumos);
+							controller.getModel().getModelStateDAO().saveModelState(false);
+							consumos = new ArrayList<>();
 							updateHistRME();
 							ordem++;
 							viewConsumo.getOrdemJFT().setText(String.valueOf(ordem));
@@ -429,9 +429,22 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 					viewConsumo.getnAnimaisJFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewConsumo.getnAnimaisJFT()) {
 					TextFormatter.formatStringJFT(jft, text, 3);
-					viewConsumo.getnAnimaisJFT().setEnabled(false);
-					viewConsumo.getControleFornecidaJFT().setEnabled(true);
-					viewConsumo.getControleFornecidaJFT().requestFocus();
+					if(consumos.size() == 0
+							&& (viewConsumo.getDataJFT().getText().trim().equals("00/00/0000")
+									&& Integer.parseInt(viewConsumo.getFornecidaJFT().getText()) == 0
+									&& Integer.parseInt(viewConsumo.getSobraJFT().getText()) == 0 
+									&& Integer.parseInt(viewConsumo.getPesoJFT().getText()) == 0
+									&& Integer.parseInt(viewConsumo.getnAnimaisJFT().getText()) == 0)) {
+						String mensagem = "Nenhum registro de ração foi digitado para essa baia";
+						JOptionPane.showMessageDialog(viewConsumo, "Problema(s):\n" + mensagem, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+						viewConsumo.getnAnimaisJFT().setEnabled(false);
+						viewConsumo.getData().setEnabled(true);
+						viewConsumo.getData().grabFocus();
+					} else {
+						viewConsumo.getnAnimaisJFT().setEnabled(false);
+						viewConsumo.getControleFornecidaJFT().setEnabled(true);
+						viewConsumo.getControleFornecidaJFT().requestFocus();
+					}
 				} else if ((JFormattedTextField) e.getSource() == viewConsumo.getControleFornecidaJFT()) {
 					if (Integer.parseInt(viewConsumo.getControleFornecidaJFT().getText().trim()) == calculaControleRacaoFornecida()) {
 						TextFormatter.formatStringJFT(jft, text, 6);
@@ -515,7 +528,7 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 			viewConsumo.getDataJFT().setText("00000000");
 			viewConsumo.getFornecidaJFT().setText("00000");
 			viewConsumo.getSobraJFT().setText("00000");
-			viewConsumo.pack();
+//			viewConsumo.pack();
 		}
 	}
 

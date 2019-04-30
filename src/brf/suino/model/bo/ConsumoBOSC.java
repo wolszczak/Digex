@@ -16,6 +16,7 @@ import brf.peru.model.vo.PesadosVOP;
 import brf.peru.model.vo.RmeVOP;
 import brf.suino.controller.ControllerSC;
 import brf.suino.model.vo.ConsumoVOSC;
+import brf.suino.model.vo.RmeVOSC;
 
 public class ConsumoBOSC {
 	private final ControllerSC controller;
@@ -69,9 +70,11 @@ public class ConsumoBOSC {
 		} catch (Exception e) {
 			return "- Formato de data incorreta\n";
 		}
-		if (dataRacao.after(dataFim) || dataRacao.before(dataIni)) {
-			msg = msg.concat("- Idade fora do período do experimento\n");
-		} else if (racao == 0 && sobra == 0) {
+		if (!data.equals("00/00/0000")) {
+			if(dataRacao.after(dataFim) || dataRacao.before(dataIni)) {
+				msg = msg.concat("- Idade fora do período do experimento\n");	
+			}
+		} else if (!data.equals("00/00/0000") && racao == 0 && sobra == 0) {
 			msg = msg.concat("- Entrada/Saída de ração igual à 0\n");
 		}
 		return msg;
