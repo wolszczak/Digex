@@ -78,14 +78,30 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 		criarOrdemComponentesHist();
 		loadHist();
 
+		if (!usarColunaExtra) {
+			viewConsumo.getPesoHist1Label().setText("00");
+			viewConsumo.getPesoHist2Label().setText("00");
+			viewConsumo.getPesoHist3Label().setText("00");
+			viewConsumo.getPesoHist4Label().setText("00");
+			viewConsumo.getPesoHist5Label().setText("00");
+			viewConsumo.getnAnimaisHist1Label().setText("00");
+			viewConsumo.getnAnimaisHist2Label().setText("00");
+			viewConsumo.getnAnimaisHist3Label().setText("00");
+			viewConsumo.getnAnimaisHist4Label().setText("00");
+			viewConsumo.getnAnimaisHist5Label().setText("00");
+
+		}
+
 		viewConsumo.getOrdemJFT().setText(String.valueOf(ordem).trim());
 		TextFormatter.formatStringJFT(viewConsumo.getOrdemJFT(), viewConsumo.getOrdemJFT().getText(), 2);
 		viewConsumo.getFornecidaJFT().setText("00000");
 		viewConsumo.getSobraJFT().setText("00000");
-		viewConsumo.getPesoJFT().setText("00000");
+		viewConsumo.getPesoJFT().setText("000000");
 		viewConsumo.getnAnimaisJFT().setText("000");
 		viewConsumo.getControleFornecidaJFT().setText("000000");
 		viewConsumo.getControleSobraJFT().setText("000000");
+		viewConsumo.getControlePesoJFT().setText("000000");
+		viewConsumo.getControleAnimaisJFT().setText("000000");
 
 	}
 
@@ -449,7 +465,7 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 						consumos = new ArrayList<>();
 						fluxoErroControleFornecida();
 						ordem = consumosErros.get(0).getOrdem();
-						recuperaHistConsumo(true, false);
+//						recuperaHistConsumo(true, false);
 						TextFormatter.formatStringJFT(viewConsumo.getOrdemJFT(), viewConsumo.getOrdemJFT().getText(), 2);
 					}
 				} else if ((JFormattedTextField) e.getSource() == viewConsumo.getControleSobraJFT()) {
@@ -514,7 +530,7 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 			viewConsumo.getnAnimaisHist5Label().setText(viewConsumo.getnAnimaisJFT().getText());
 		}
 		if (!consumosErros.isEmpty()) {
-			recuperaHistConsumo(false, false);
+			recuperaHistConsumo(false, false, false, false);
 		} else {
 			viewConsumo.getDataJFT().setText("00000000");
 			viewConsumo.getFornecidaJFT().setText("00000");
@@ -531,7 +547,8 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 		viewConsumo.getSobraJFT().setEnabled(false);
 	}
 
-	public void recuperaHistConsumo(boolean zeraControleFornecida, boolean zeraControleSobra) {
+	public void recuperaHistConsumo(boolean zeraControleFornecida, boolean zeraControleSobra, boolean zeraControlePeso,
+			boolean zeraControleAnimais) {
 		viewConsumo.getOrdemJFT().setText("" + consumosErros.get(0).getOrdem());
 		TextFormatter.formatStringJFT(viewConsumo.getOrdemJFT(), viewConsumo.getOrdemJFT().getText(), 2);
 		viewConsumo.getDataJFT().setText("" + consumosErros.get(0).getDataRacao());
@@ -542,7 +559,7 @@ public class ControllerConsumoSC extends KeyAdapter implements ActionListener, F
 		TextFormatter.formatStringJFT(viewConsumo.getSobraJFT(), viewConsumo.getSobraJFT().getText(), 5);
 		if (usarColunaExtra) {
 			viewConsumo.getPesoJFT().setText("" + consumosErros.get(0).getPeso());
-			TextFormatter.formatStringJFT(viewConsumo.getPesoJFT(), viewConsumo.getPesoJFT().getText(), 5);
+			TextFormatter.formatStringJFT(viewConsumo.getPesoJFT(), viewConsumo.getPesoJFT().getText(), 6);
 			viewConsumo.getnAnimaisJFT().setText("" + consumosErros.get(0).getNumAnimais());
 			TextFormatter.formatStringJFT(viewConsumo.getnAnimaisJFT(), viewConsumo.getnAnimaisJFT().getText(), 3);
 		}
