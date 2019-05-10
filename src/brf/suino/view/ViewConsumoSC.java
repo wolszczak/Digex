@@ -1163,7 +1163,7 @@ public class ViewConsumoSC extends javax.swing.JFrame {
 		pesoHist1Label.setEnabled(false);
 
 		jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel30.setText("Nº Animais");
+		jLabel30.setText("Nº Anim.");
 
 		jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		jLabel32.setText("Peso");

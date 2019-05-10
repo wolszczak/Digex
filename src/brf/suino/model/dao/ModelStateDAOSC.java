@@ -76,7 +76,10 @@ public class ModelStateDAOSC {
 			c.printStackTrace();
 			return false;
 		}
+//		ExperimentoVOSC e = (ExperimentoVOSC) obj;
+//		e.setConsumo(new ArrayList<>());
 		model.setExperimentoVO((ExperimentoVOSC) obj);
+//		saveModelState(false);
 		return true;
 	}
 }

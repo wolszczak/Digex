@@ -57,7 +57,7 @@ public class ConsumoBOSC {
 		controller.getModel().getModelStateDAO().saveModelState(false);
 	}
 
-	public String verificaRacao(String data, Integer racao, Integer sobra, List<String> datasFases) {
+	public String verificaRacao(String data, Integer racao, Integer sobra, Integer peso, Integer nanimais, List<String> datasFases) {
 		String msg = "";
 		Date dataRacao = new Date();
 		Date dataIni = new Date();

@@ -135,4 +135,8 @@ public class TextFormatter {
         text = String.format("%03d", Integer.parseInt(text));
         src.setText(text);
     }
+    
+    public static void formatEmptySpace(JFormattedTextField src, String text) {
+    	text.replaceAll(" ", "");
+    }
 }
