@@ -108,7 +108,7 @@ public class ViewEscolhaDigSC extends javax.swing.JFrame {
 		lblImportar.setText("[2] - Importar arquivo da balança");
 
 		exportarPesagemLabel = new JLabel();
-		exportarPesagemLabel.setText("[6] - Arquivo de Pesagens");
+		exportarPesagemLabel.setText("[6] - Arquivo da Balança");
 
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
 		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel1Layout.createSequentialGroup()

@@ -852,34 +852,55 @@ public class ViewConsumoSC extends javax.swing.JFrame {
 		opcaoJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		opcaoJFT.setEnabled(false);
 
-		jLabel27.setText("[3] - Finalizar Desempenho / Voltar");
+		jLabel27.setText("[3] - Digitar Próxima Baia");
+		
+		JLabel lblFinalizar = new JLabel();
+		lblFinalizar.setText("[4] - Finalizar Desempenho / Voltar");
 
 		javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-		jPanel7.setLayout(jPanel7Layout);
-		jPanel7Layout.setHorizontalGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(jPanel7Layout
-				.createSequentialGroup().addContainerGap()
-				.addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(jPanel7Layout.createSequentialGroup().addGap(4, 4, 4)
-								.addComponent(jLabel51, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-								.addComponent(opcaoJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+		jPanel7Layout.setHorizontalGroup(
+			jPanel7Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel7Layout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(jPanel7Layout.createParallelGroup(Alignment.LEADING)
+						.addComponent(lblFinalizar, GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
 						.addGroup(jPanel7Layout.createSequentialGroup()
-								.addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addComponent(jLabel50).addComponent(jLabel26).addComponent(jLabel25).addComponent(jLabel24)
-										.addComponent(jLabel27))
-								.addGap(0, 10, Short.MAX_VALUE)))
-				.addContainerGap()));
-		jPanel7Layout.setVerticalGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel7Layout.createSequentialGroup().addContainerGap().addComponent(jLabel24).addGap(18, 18, 18)
-						.addComponent(jLabel25).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(jLabel26)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(jLabel27)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE).addComponent(jLabel50)
-						.addGap(36, 36, 36)
-						.addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel51)
-								.addComponent(opcaoJFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addContainerGap()));
+							.addGap(4)
+							.addComponent(jLabel51, GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
+						.addGroup(jPanel7Layout.createSequentialGroup()
+							.addGroup(jPanel7Layout.createParallelGroup(Alignment.LEADING)
+								.addComponent(jLabel50)
+								.addComponent(jLabel26)
+								.addComponent(jLabel25)
+								.addComponent(jLabel24)
+								.addComponent(jLabel27))
+							.addGap(0, 28, Short.MAX_VALUE)))
+					.addContainerGap())
+		);
+		jPanel7Layout.setVerticalGroup(
+			jPanel7Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel7Layout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(jLabel24)
+					.addGap(18)
+					.addComponent(jLabel25)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(jLabel26)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(jLabel27)
+					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addComponent(lblFinalizar)
+					.addGap(18)
+					.addComponent(jLabel50)
+					.addGap(36)
+					.addGroup(jPanel7Layout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(jLabel51)
+						.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap())
+		);
+		jPanel7.setLayout(jPanel7Layout);
 
 		consumoJP.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -1333,8 +1354,8 @@ public class ViewConsumoSC extends javax.swing.JFrame {
 					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
 						.addGroup(jPanel1Layout.createSequentialGroup()
 							.addComponent(consumoJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
-							.addComponent(jPanel7, GroupLayout.PREFERRED_SIZE, 218, GroupLayout.PREFERRED_SIZE))
+							.addPreferredGap(ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+							.addComponent(jPanel7, GroupLayout.PREFERRED_SIZE, 252, GroupLayout.PREFERRED_SIZE))
 						.addComponent(baiaJP, GroupLayout.DEFAULT_SIZE, 726, Short.MAX_VALUE)
 						.addGroup(jPanel1Layout.createSequentialGroup()
 							.addContainerGap()
