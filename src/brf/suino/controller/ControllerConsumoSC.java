@@ -484,15 +484,6 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 								viewConsumo.getPesoJFT().setEnabled(true);
 								viewConsumo.getPesoJFT().grabFocus();
 							} else {
-//								controller.getModel().getExperimentoVO().getConsumo()
-//										.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getRme()
-//										.add(new RmeVOSC(Integer.parseInt(viewConsumo.getOrdemJFT().getText().trim()),
-//												viewConsumo.getData().getText(),
-//												Integer.parseInt(viewConsumo.getFornecidaJFT().getText().trim()),
-//												Integer.parseInt(viewConsumo.getSobraJFT().getText().trim()),
-//												Integer.parseInt(viewConsumo.getPesoJFT().getText().trim()),
-//												Integer.parseInt(viewConsumo.getnAnimaisJFT().getText().trim())));
-//								controller.getModel().getModelStateDAO().saveModelState(false);
 								viewConsumo.getSobraJFT().setEnabled(false);
 								viewConsumo.getControleFornecidaJFT().setEnabled(true);
 								viewConsumo.getControleFornecidaJFT().grabFocus();
@@ -543,15 +534,6 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 							&& Integer.parseInt(viewConsumo.getnAnimaisJFT().getText().trim()) == 0) {
 						if (controller.getModel().getExperimentoVO().getConsumo()
 								.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getRme().size() > 0) {
-//							controller.getModel().getExperimentoVO().getConsumo()
-//									.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getRme()
-//									.add(new RmeVOSC(Integer.parseInt(viewConsumo.getOrdemJFT().getText().trim()),
-//											viewConsumo.getData().getText(),
-//											Integer.parseInt(viewConsumo.getFornecidaJFT().getText().trim()),
-//											Integer.parseInt(viewConsumo.getSobraJFT().getText().trim()),
-//											Integer.parseInt(viewConsumo.getPesoJFT().getText().trim()),
-//											Integer.parseInt(viewConsumo.getnAnimaisJFT().getText().trim())));
-//							controller.getModel().getModelStateDAO().saveModelState(false);0
 							viewConsumo.getnAnimaisJFT().setEnabled(false);
 							viewConsumo.getControleFornecidaJFT().setEnabled(true);
 							viewConsumo.getControleFornecidaJFT().grabFocus();

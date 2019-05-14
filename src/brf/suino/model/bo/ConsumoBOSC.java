@@ -71,12 +71,16 @@ public class ConsumoBOSC {
 			return "- Formato de data incorreta\n";
 		}
 		if (!data.equals("00/00/0000")) {
-			if(dataRacao.after(dataFim) || dataRacao.before(dataIni)) {
-				msg = msg.concat("- Idade fora do período do experimento\n");	
-			}else if (!data.equals("00/00/0000") && racao == 0 && sobra == 0) {
+			if (dataRacao.after(dataFim) || dataRacao.before(dataIni)) {
+				msg = msg.concat("- Idade fora do período do experimento\n");
+			} else if (!data.equals("00/00/0000") && racao == 0 && sobra == 0) {
 				msg = msg.concat("- Entrada/Saída de ração igual à 0\n");
 			}
-		} 
+		} else {
+			if (racao != 0 | sobra != 0) {
+				msg = msg.concat("- Data inválida!\n");
+			}
+		}
 		return msg;
 	}
 
