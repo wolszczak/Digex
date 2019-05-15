@@ -336,7 +336,8 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 				}
 				break;
 			case KeyEvent.VK_1:
-//				mortalidade
+				viewConsumo.setVisible(false);
+				controller.startMortalidadeSC();
 				break;
 			case KeyEvent.VK_2:
 //				medicados

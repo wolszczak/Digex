@@ -11,6 +11,7 @@ public class ControllerSC {
 	private ControllerInfoExpSC ctrlInfoExp;
 	private ControllerEscolhaDigSC ctrlEscolhaDig;
 	private ControllerConsumoSC ctrlConsumo;
+	private ControllerMortalidadeSC ctrlMortalidade;
 
 	public ControllerSC(ModelSC msc, String idDigitador) {
 		this.modelSC = msc;
@@ -38,6 +39,11 @@ public class ControllerSC {
 	public void startConsumoSC(List<String> datasFase) {
 		ctrlConsumo = new ControllerConsumoSC(this);
 		ctrlConsumo.openWindow(datasFase);
+	}
+	
+	public void startMortalidadeSC() {
+		ctrlMortalidade = new ControllerMortalidadeSC(this);
+		ctrlMortalidade.openWindow();
 	}
 	
 }
