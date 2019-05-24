@@ -35,15 +35,15 @@ public class ControllerSC {
 		ctrlEscolhaDig = new ControllerEscolhaDigSC(this);
 		ctrlEscolhaDig.openWindow(datasFase);
 	}
-	
+
 	public void startConsumoSC(List<String> datasFase) {
 		ctrlConsumo = new ControllerConsumoSC(this);
 		ctrlConsumo.openWindow(datasFase);
 	}
-	
-	public void startMortalidadeSC() {
+
+	public void startMortalidadeSC(Integer galpao, Integer baia, Integer sexo, Integer trata, Integer trata2) {
 		ctrlMortalidade = new ControllerMortalidadeSC(this);
-		ctrlMortalidade.openWindow();
+		ctrlMortalidade.openWindow(galpao, baia, sexo, trata, trata2);
 	}
-	
+
 }

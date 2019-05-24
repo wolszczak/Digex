@@ -337,7 +337,9 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 				break;
 			case KeyEvent.VK_1:
 				viewConsumo.setVisible(false);
-				controller.startMortalidadeSC();
+				controller.startMortalidadeSC(Integer.parseInt(viewConsumo.getGalpaoJFT().getText()),
+						Integer.parseInt(viewConsumo.getBaiaJFT().getText()), Integer.parseInt(viewConsumo.getSexoJFT().getText()),
+						Integer.parseInt(viewConsumo.getTrataJFT().getText()), Integer.parseInt(viewConsumo.getTrata2JFT().getText()));
 				break;
 			case KeyEvent.VK_2:
 //				medicados
