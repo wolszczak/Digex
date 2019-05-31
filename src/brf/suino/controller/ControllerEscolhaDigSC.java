@@ -4,22 +4,14 @@ import java.awt.Color;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 import brf.main.controller.ControllerEscolhaExp;
 import brf.main.view.ViewEscolhaExp;
-import brf.peru.model.dao.AbateDAOP;
-import brf.peru.model.dao.DesempenhoDAOP;
-import brf.peru.model.vo.AbateVOP;
-import brf.peru.model.vo.BaiaAmostradosVOP;
-import brf.peru.model.vo.RmeVOP;
 import brf.suino.view.ViewEscolhaDigSC;
 import brf.util.ExpFileFilter;
 import brf.util.SystemFileView;
@@ -113,26 +105,7 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 			viewEscolhaDig.setVisible(false);
 			if (controller.getModel().getExperimentoVO().getConsumo() != null
 					&& controller.getModel().getExperimentoVO().getConsumo().size() != 0) {
-				if (controller.getModel().getExperimentoVO().getConsumo()
-						.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).isFinalizado()) {
-					if (controller.getModel().getExperimentoVO().getMortalidade()
-							.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).isFinalizado()) {
-						if (!controller.getModel().getExperimentoVO().getMedicados()
-								.get(controller.getModel().getExperimentoVO().getMedicados().size() - 1).isFinalizado()) {
-//							controller.startMedicadosSC(datasFases);
-							System.out.println("Abrir tela de Mortalidade");
-							break;
-						}
-					} else {
-//						controller.startMortalidadeSC(datasFases);
-						System.out.println("Abrir tela de Mortalidade");
-						break;
-					}
-				} else {
-					controller.startConsumoSC(datasFases);
-					System.out.println("Abrir tela de CONSUMOS");
-					break;
-				}
+				
 			} else {
 				controller.startConsumoSC(datasFases);
 				System.out.println("Abrir tela de CONSUMOS");

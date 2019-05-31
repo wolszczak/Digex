@@ -310,21 +310,6 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 	@Override
 	public void keyPressed(KeyEvent e) {
 		Object src = e.getSource();
-		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(viewConsumo.getOpcaoJFT())
-				&& !e.getSource().equals(viewConsumo.getDataJFT()) && !e.getSource().equals(viewConsumo.getControleFornecidaJFT())
-				&& !e.getSource().equals(viewConsumo.getControleSobraJFT()) && !e.getSource().equals(viewConsumo.getControlePesoJFT())
-				&& !e.getSource().equals(viewConsumo.getControleAnimaisJFT())) {
-			System.out.println("left");
-			Component prev = viewConsumo.getFocusTraversalPolicy().getComponentBefore(viewConsumo, (JFormattedTextField) src);
-			((JFormattedTextField) src).setEnabled(false);
-			prev.setEnabled(true);
-			((JFormattedTextField) prev).grabFocus();
-		}
-
-	}
-
-	@Override
-	public void keyTyped(KeyEvent e) {
 		if ((JFormattedTextField) e.getSource() == viewConsumo.getOpcaoJFT()) {
 			switch (e.getKeyChar()) {
 			case KeyEvent.VK_0:
@@ -337,9 +322,11 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 				break;
 			case KeyEvent.VK_1:
 				viewConsumo.setVisible(false);
-				controller.startMortalidadeSC(Integer.parseInt(viewConsumo.getGalpaoJFT().getText()),
-						Integer.parseInt(viewConsumo.getBaiaJFT().getText()), Integer.parseInt(viewConsumo.getSexoJFT().getText()),
-						Integer.parseInt(viewConsumo.getTrataJFT().getText()), Integer.parseInt(viewConsumo.getTrata2JFT().getText()));
+				controller.startMortalidadeSC(Integer.parseInt(viewConsumo.getGalpaoJFT().getText().trim()),
+						Integer.parseInt(viewConsumo.getBaiaJFT().getText().trim()),
+						Integer.parseInt(viewConsumo.getSexoJFT().getText().trim()),
+						Integer.parseInt(viewConsumo.getTrataJFT().getText().trim()),
+						Integer.parseInt(viewConsumo.getTrata2JFT().getText().trim()));
 				break;
 			case KeyEvent.VK_2:
 //				medicados
@@ -355,6 +342,21 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 				break;
 			}
 		}
+		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(viewConsumo.getOpcaoJFT())
+				&& !e.getSource().equals(viewConsumo.getDataJFT()) && !e.getSource().equals(viewConsumo.getControleFornecidaJFT())
+				&& !e.getSource().equals(viewConsumo.getControleSobraJFT()) && !e.getSource().equals(viewConsumo.getControlePesoJFT())
+				&& !e.getSource().equals(viewConsumo.getControleAnimaisJFT())) {
+			System.out.println("left");
+			Component prev = viewConsumo.getFocusTraversalPolicy().getComponentBefore(viewConsumo, (JFormattedTextField) src);
+			((JFormattedTextField) src).setEnabled(false);
+			prev.setEnabled(true);
+			((JFormattedTextField) prev).grabFocus();
+		}
+
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
 		if (e.getKeyChar() == KeyEvent.VK_ESCAPE) {
 			int option = JOptionPane.showConfirmDialog(viewConsumo, "Deseja realmente voltar para tela anterior?", "DIGEX - Voltar",
 					JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
@@ -463,12 +465,12 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 					viewConsumo.getFornecidaJFT().setEnabled(true);
 					viewConsumo.getFornecidaJFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewConsumo.getFornecidaJFT()) {
-					TextFormatter.formatStringJFT(jft, text, 3);
+					TextFormatter.formatStringJFT(jft, text, 5);
 					viewConsumo.getFornecidaJFT().setEnabled(false);
 					viewConsumo.getSobraJFT().setEnabled(true);
 					viewConsumo.getSobraJFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewConsumo.getSobraJFT()) {
-					TextFormatter.formatStringJFT(jft, text, 3);
+					TextFormatter.formatStringJFT(jft, text, 5);
 					String msg = consumoBO.verificaRacao(viewConsumo.getDataJFT().getText(),
 							Integer.parseInt(viewConsumo.getFornecidaJFT().getText()),
 							Integer.parseInt(viewConsumo.getSobraJFT().getText()),
@@ -588,6 +590,9 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 							((JFormattedTextField) e.getSource()).transferFocus();
 							viewConsumo.getControlePesoJFT().grabFocus();
 						} else {
+							controller.getModel().getExperimentoVO().getConsumo()
+									.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).setFinalizado(true);
+							controller.getModel().getModelStateDAO().saveModelState(false);
 							viewConsumo.getControleSobraJFT().setEnabled(false);
 							viewConsumo.getOpcaoJFT().setEnabled(true);
 							((JFormattedTextField) e.getSource()).transferFocus();
@@ -628,6 +633,9 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 				} else if ((JFormattedTextField) e.getSource() == viewConsumo.getControleAnimaisJFT()) {
 					if (Integer.parseInt(viewConsumo.getControleAnimaisJFT().getText().trim()) == calculaControleAnimais()) {
 						TextFormatter.formatStringJFT(jft, text, 6);
+						controller.getModel().getExperimentoVO().getConsumo()
+								.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).setFinalizado(true);
+						controller.getModel().getModelStateDAO().saveModelState(false);
 						viewConsumo.getConsumoJP().setBorder(defaultBorder);
 						viewConsumo.getControleAnimaisJFT().setEnabled(false);
 						viewConsumo.getOpcaoJFT().setEnabled(true);
@@ -646,8 +654,10 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 						TextFormatter.formatStringJFT(viewConsumo.getOrdemJFT(), viewConsumo.getOrdemJFT().getText(), 2);
 					}
 				}
+
 			}
 		}
+
 	}
 
 	public void updateHistRME() {

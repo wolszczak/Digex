@@ -24,12 +24,15 @@ public class ControllerMortalidadeSC extends KeyAdapter implements FocusListener
 	public ControllerMortalidadeSC(ControllerSC c) {
 		this.controller = c;
 		mortosHist = new ArrayList<>();
-		if (controller.getModel().getExperimentoVO().getMortalidade()
-				.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).getMortos() != null
-				&& controller.getModel().getExperimentoVO().getMortalidade()
-						.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).getMortos().size() > 0) {
-			mortosHist = controller.getModel().getExperimentoVO().getMortalidade()
-					.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).getMortos();
+
+		if (controller.getModel().getExperimentoVO().getMortalidade() != null) {
+			if (controller.getModel().getExperimentoVO().getMortalidade()
+					.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).getMortos() != null
+					&& controller.getModel().getExperimentoVO().getMortalidade()
+							.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).getMortos().size() > 0) {
+				mortosHist = controller.getModel().getExperimentoVO().getMortalidade()
+						.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).getMortos();
+			}
 		}
 	}
 
@@ -107,15 +110,15 @@ public class ControllerMortalidadeSC extends KeyAdapter implements FocusListener
 				JLabel lbl2 = (JLabel) orderLoadHist.get(0);
 				lbl2.setText(String.valueOf(mortosHist.get(mortosHist.size() - k)));
 				orderLoadHist.remove(0);
-				
+
 				JLabel lbl3 = (JLabel) orderLoadHist.get(0);
 				lbl3.setText(String.valueOf(mortosHist.get(mortosHist.size() - k)));
 				orderLoadHist.remove(0);
-				
+
 				JLabel lbl4 = (JLabel) orderLoadHist.get(0);
 				lbl4.setText(String.valueOf(mortosHist.get(mortosHist.size() - k)));
 				orderLoadHist.remove(0);
-				
+
 				JLabel lbl5 = (JLabel) orderLoadHist.get(0);
 				lbl5.setText(String.valueOf(mortosHist.get(mortosHist.size() - k)));
 				orderLoadHist.remove(0);
