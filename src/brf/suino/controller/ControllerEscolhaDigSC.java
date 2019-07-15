@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 import brf.main.controller.ControllerEscolhaExp;
 import brf.main.view.ViewEscolhaExp;
 import brf.suino.view.ViewEscolhaDigSC;
+import brf.suino.view.ViewEscolhaTipoDigSC;
 import brf.util.ExpFileFilter;
 import brf.util.SystemFileView;
 
@@ -105,7 +106,56 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 			viewEscolhaDig.setVisible(false);
 			if (controller.getModel().getExperimentoVO().getConsumo() != null
 					&& controller.getModel().getExperimentoVO().getConsumo().size() != 0) {
-				
+				// VERIFICA SE O CONSUMO NA ULTIMA BAIA JÁ FOI FINALIZADO
+				if (controller.getModel().getExperimentoVO().getConsumo()
+						.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).isFinalizado()) {
+					// DIGITAÇÃO DO CONSUMO JÁ FOI FINALIZADA, VERIFICAR SE MORTALIDADE ESTÁ
+					// FINALIZADA E SE SÃO DA MESMA BAIA DO CONSUMO
+					if (controller.getModel().getExperimentoVO().getMortalidade() != null
+							&& controller.getModel().getExperimentoVO().getMortalidade().size() != 0) {
+						if (controller.getModel().getExperimentoVO().getConsumo()
+								.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getBaia() == controller.getModel()
+										.getExperimentoVO().getMortalidade()
+										.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).getBaia()
+								&& !controller.getModel().getExperimentoVO().getMortalidade()
+										.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).isFinalizado()) {
+							// ESCOLHA DIGITACAO MORTALIDADE PARA A ULTIMA BAIA DIGITADA
+							ControllerEscolhaTipoDigSC controllerEscolhaTipoDigSC = new ControllerEscolhaTipoDigSC(controller);
+							controllerEscolhaTipoDigSC.openWindow(datasFases);
+							viewEscolhaDig.setVisible(false);
+							break;
+						}
+					} else if (controller.getModel().getExperimentoVO().getMedicados() != null
+							&& controller.getModel().getExperimentoVO().getMedicados().size() != 0) {
+						if (controller.getModel().getExperimentoVO().getConsumo()
+								.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getBaia() == controller.getModel()
+										.getExperimentoVO().getMedicados()
+										.get(controller.getModel().getExperimentoVO().getMedicados().size() - 1).getBaia()
+								&& !controller.getModel().getExperimentoVO().getMedicados()
+										.get(controller.getModel().getExperimentoVO().getMedicados().size() - 1).isFinalizado()) {
+							// ESCOLHA DIGITACAO MEDICADOS PARA A ULTIMA BAIA DIGITADA
+							ControllerEscolhaTipoDigSC controllerEscolhaTipoDigSC = new ControllerEscolhaTipoDigSC(controller);
+							controllerEscolhaTipoDigSC.openWindow(datasFases);
+							viewEscolhaDig.setVisible(false);
+							break;
+						} else {
+							// ABRIR TELA CONSUMOS
+							controller.startConsumoSC(datasFases);
+							System.out.println("Abrir tela de CONSUMOS");
+							break;
+						}
+					} else {
+						ControllerEscolhaTipoDigSC controllerEscolhaTipoDigSC = new ControllerEscolhaTipoDigSC(controller);
+						controllerEscolhaTipoDigSC.openWindow(datasFases);
+						viewEscolhaDig.setVisible(false);
+						break;
+					}
+				} else {
+					// ABRIR TELA CONSUMOS
+					controller.startConsumoSC(datasFases);
+					System.out.println("Abrir tela de CONSUMOS");
+					break;
+				}
 			} else {
 				controller.startConsumoSC(datasFases);
 				System.out.println("Abrir tela de CONSUMOS");

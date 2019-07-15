@@ -11,7 +11,7 @@ public class ExperimentoVOSC implements Serializable {
 	private InfoExpVOSC infoExp;
     private List<ConsumoVOSC> consumo;
     private List<MortalidadeVOSC> mortalidade;
-    private List<MedicadosVOSC> medicados ;
+    private List<MedicadosVOSC> medicados;
     private List<PesagensVOSC> pesagens;
 
     public ExperimentoVOSC() {

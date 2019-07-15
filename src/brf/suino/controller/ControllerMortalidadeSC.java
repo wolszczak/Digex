@@ -4,6 +4,7 @@ import java.awt.Component;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,15 +21,14 @@ public class ControllerMortalidadeSC extends KeyAdapter implements FocusListener
 	private ViewMortalidadeSC view;
 	private List<MortoVOSC> mortosHist;
 	private List<Component> order, orderLoadHist;
+	private int ordem;
 
 	public ControllerMortalidadeSC(ControllerSC c) {
 		this.controller = c;
 		mortosHist = new ArrayList<>();
 
-		if (controller.getModel().getExperimentoVO().getMortalidade() != null) {
+		if (controller.getModel().getExperimentoVO().getMortalidade() != null && controller.getModel().getExperimentoVO().getMortalidade().size() > 0) {
 			if (controller.getModel().getExperimentoVO().getMortalidade()
-					.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).getMortos() != null
-					&& controller.getModel().getExperimentoVO().getMortalidade()
 							.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).getMortos().size() > 0) {
 				mortosHist = controller.getModel().getExperimentoVO().getMortalidade()
 						.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).getMortos();
@@ -47,13 +47,14 @@ public class ControllerMortalidadeSC extends KeyAdapter implements FocusListener
 		view.getSexoJFT().setText(String.valueOf(sexo));
 		view.getTrataJFT().setText(String.valueOf(trata));
 		view.getTrata2JFT().setText(String.valueOf(trata2));
-
+		view.getOrdemJFT().setText(String.valueOf(ordem));
 		criarOrdemComponentes();
 		criarOrdemComponentesHist();
 		loadHist();
 	}
 
 	private void criarOrdemComponentesHist() {
+		orderLoadHist = new ArrayList<>();
 		orderLoadHist.add(view.getCausaHist5Label());
 		orderLoadHist.add(view.getFaseHist5Label());
 		orderLoadHist.add(view.getPesoHist5Label());
@@ -82,6 +83,7 @@ public class ControllerMortalidadeSC extends KeyAdapter implements FocusListener
 	}
 
 	private void criarOrdemComponentes() {
+		order = new ArrayList<>();
 		order.add(view.getDataJFT());
 		order.add(view.getBrincoJFT());
 		order.add(view.getPesoJFT());
@@ -134,5 +136,18 @@ public class ControllerMortalidadeSC extends KeyAdapter implements FocusListener
 	@Override
 	public void focusLost(FocusEvent arg0) {
 	}
+	
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		super.keyPressed(e);
+	}
 
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		super.keyTyped(e);
+	}
+	
+	
 }

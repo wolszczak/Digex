@@ -60,7 +60,8 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 		viewConsumo.getChkUsarColunaExtra().addItemListener(this);
 		viewConsumo.getChkUsarColunaExtra().addKeyListener(this);
 		viewConsumo.getOpcaoJFT().addKeyListener(this);
-
+		
+		
 		if (controller.getModel().getExperimentoVO().getConsumo() != null
 				&& controller.getModel().getExperimentoVO().getConsumo().size() > 0) {
 			usarColunaExtra = controller.getModel().getExperimentoVO().getConsumo()
