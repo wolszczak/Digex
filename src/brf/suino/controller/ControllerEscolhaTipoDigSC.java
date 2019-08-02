@@ -14,18 +14,20 @@ import brf.peru.model.vo.BaiaAmostradosVOP;
 import brf.suino.model.vo.ConsumoVOSC;
 import brf.suino.model.vo.MedicadosVOSC;
 import brf.suino.model.vo.MortalidadeVOSC;
+import brf.suino.model.vo.RmeVOSC;
 import brf.suino.view.ViewEscolhaTipoDigSC;
 
 public class ControllerEscolhaTipoDigSC extends KeyAdapter {
 	private final ControllerSC controller;
 	private ViewEscolhaTipoDigSC view;
-	private List<Integer> idadesFases;
+	private List<String> datasFases;
 
 	public ControllerEscolhaTipoDigSC(ControllerSC c) {
 		controller = c;
 	}
 
 	public void openWindow(List<String> datasFases) {
+		this.datasFases = datasFases;
 		view = new ViewEscolhaTipoDigSC();
 		view.setTitle("DIGEX - Peru");
 		view.setResizable(false);
@@ -42,11 +44,8 @@ public class ControllerEscolhaTipoDigSC extends KeyAdapter {
 				.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getBaia();
 		List<ConsumoVOSC> lista = new ArrayList<>();
 
-		for (ConsumoVOSC c : controller.getModel().getExperimentoVO().getConsumo()) {
-			if (c.getBaia() == lastBaia) {
-				obsAbate[0]++;
-			}
-		}
+		obsAbate[0] = controller.getModel().getExperimentoVO().getConsumo()
+				.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getRme().size();
 
 		for (MortalidadeVOSC m : controller.getModel().getExperimentoVO().getMortalidade()) {
 			if (m.getBaia() == lastBaia) {
@@ -87,25 +86,24 @@ public class ControllerEscolhaTipoDigSC extends KeyAdapter {
 			break;
 		case KeyEvent.VK_1:
 			view.setVisible(false);
-//			controller.startEscolhaDigRend(1, 0,
-//					controller.getModel().getExperimentoVO().getInfoExp().getDataAbate().get(0));
-//			System.out.println("Abate 1");
-//			if (controller.getModel().getExperimentoVO().getAbates() == null) {
-//				controller.getModel().getExperimentoVO().getAbates().get(0).setAbate(1);
-//			} else {
-//				controller.getModel().getExperimentoVO().getAbates().get(0).setAbate(1);
-//			}
+			ControllerConsumoSC consumo = new ControllerConsumoSC(controller);
+			consumo.openWindow(datasFases);
 			break;
 		case KeyEvent.VK_2:
 			view.setVisible(false);
-//			controller.startEscolhaDigRend(2, 0,
-//					controller.getModel().getExperimentoVO().getInfoExp().getDataAbate().get(1));
-//			if (controller.getModel().getExperimentoVO().getAbates() == null) {
-//				controller.getModel().getExperimentoVO().getAbates().get(1).setAbate(2);
-//			} else {
-//				controller.getModel().getExperimentoVO().getAbates().get(1).setAbate(2);
-//			}
-			System.out.println("Abate 2");
+			ControllerMortalidadeSC mortalidade = new ControllerMortalidadeSC(controller);
+			mortalidade.openWindow(
+					controller.getModel().getExperimentoVO().getConsumo()
+							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getGalpao(),
+					controller.getModel().getExperimentoVO().getConsumo()
+							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getBaia(),
+					controller.getModel().getExperimentoVO().getConsumo()
+							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getSexo(),
+					controller.getModel().getExperimentoVO().getConsumo()
+							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getTrat1(),
+					controller.getModel().getExperimentoVO().getConsumo()
+							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getTrat2(),
+					datasFases);
 			break;
 		case KeyEvent.VK_3:
 			view.setVisible(false);

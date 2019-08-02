@@ -6,6 +6,7 @@ import java.util.List;
 
 public class MortalidadeVOSC implements Serializable{
 	private static final long serialVersionUID = 1L;
+	private int galpao;
 	private int baia;
 	private int sexo;
 	private int trat1;
@@ -17,7 +18,8 @@ public class MortalidadeVOSC implements Serializable{
 		this.mortos = new ArrayList<>();
 	}
 	
-	private void MortalidadeVOSC(int baia, int sexo, int trat1, int trat2, boolean finalizado, List<MortoVOSC> mortos) {
+	private void MortalidadeVOSC(int galpao, int baia, int sexo, int trat1, int trat2, boolean finalizado, List<MortoVOSC> mortos) {
+		this.galpao =  galpao;
 		this.baia = baia;
 		this.sexo = sexo;
 		this.trat1 = trat1;
@@ -26,6 +28,8 @@ public class MortalidadeVOSC implements Serializable{
 		this.mortos = mortos;
 	}
 
+	
+	
 	public int getBaia() {
 		return baia;
 	}
@@ -72,6 +76,14 @@ public class MortalidadeVOSC implements Serializable{
 
 	public void setFinalizado(boolean finalizado) {
 		this.finalizado = finalizado;
+	}
+
+	public int getGalpao() {
+		return galpao;
+	}
+
+	public void setGalpao(int galpao) {
+		this.galpao = galpao;
 	}
 	
 	

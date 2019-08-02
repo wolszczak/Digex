@@ -86,69 +86,85 @@ public class ViewEscolhaTipoDigSC extends javax.swing.JFrame {
 		labelBaiaRegistros.setForeground(new Color(0, 153, 255));
 
 		javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-		jPanel11Layout
-				.setHorizontalGroup(jPanel11Layout.createParallelGroup(Alignment.LEADING)
-						.addGroup(jPanel11Layout.createSequentialGroup().addContainerGap()
-								.addGroup(jPanel11Layout
-										.createParallelGroup(
-												Alignment.LEADING)
-										.addGroup(Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-												.addGroup(jPanel11Layout.createParallelGroup(Alignment.LEADING)
-														.addComponent(abate1Label, GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-														.addComponent(abate2Label))
-												.addPreferredGap(ComponentPlacement.RELATED)
-												.addGroup(jPanel11Layout.createParallelGroup(Alignment.TRAILING)
-														.addComponent(labelMortalidadeRegistros, GroupLayout.DEFAULT_SIZE,
-																GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-														.addComponent(labelMedicadosRegistros, GroupLayout.PREFERRED_SIZE, 82,
-																GroupLayout.PREFERRED_SIZE)))
-										.addComponent(jLabel39, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
-										.addComponent(jLabel40, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
-										.addGroup(Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-												.addComponent(jLabel37, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
-												.addPreferredGap(ComponentPlacement.RELATED)
-												.addComponent(labelBaia, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
-												.addPreferredGap(ComponentPlacement.RELATED, 29, Short.MAX_VALUE).addComponent(
-														labelBaiaRegistros, GroupLayout.PREFERRED_SIZE, 82, GroupLayout.PREFERRED_SIZE))
-										.addGroup(Alignment.TRAILING,
-												jPanel11Layout.createSequentialGroup()
-														.addComponent(jLabel41, GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
-														.addPreferredGap(ComponentPlacement.RELATED)
-														.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
-										.addComponent(lblDigitar, GroupLayout.PREFERRED_SIZE, 236, GroupLayout.PREFERRED_SIZE)
-										.addComponent(lblVoltar, GroupLayout.PREFERRED_SIZE, 236, GroupLayout.PREFERRED_SIZE)
-										.addComponent(lblSair, GroupLayout.PREFERRED_SIZE, 236, GroupLayout.PREFERRED_SIZE))
-								.addContainerGap()));
-		jPanel11Layout
-				.setVerticalGroup(
-						jPanel11Layout.createParallelGroup(Alignment.LEADING)
-								.addGroup(
-										jPanel11Layout.createSequentialGroup().addContainerGap()
-												.addGroup(jPanel11Layout.createParallelGroup(Alignment.BASELINE).addComponent(jLabel37)
-														.addComponent(labelBaia).addComponent(labelBaiaRegistros))
-												.addPreferredGap(ComponentPlacement.RELATED)
-												.addGroup(jPanel11Layout.createParallelGroup(Alignment.BASELINE).addComponent(abate1Label)
-														.addComponent(labelMortalidadeRegistros))
-												.addPreferredGap(ComponentPlacement.RELATED)
-												.addGroup(jPanel11Layout.createParallelGroup(Alignment.BASELINE).addComponent(abate2Label)
-														.addComponent(labelMedicadosRegistros))
-												.addGap(18).addComponent(lblDigitar).addPreferredGap(ComponentPlacement.RELATED)
-												.addComponent(jLabel39).addPreferredGap(ComponentPlacement.RELATED).addComponent(jLabel40)
-												.addPreferredGap(ComponentPlacement.RELATED, 37, Short.MAX_VALUE).addComponent(lblVoltar)
-												.addPreferredGap(ComponentPlacement.RELATED).addComponent(lblSair)
-												.addPreferredGap(ComponentPlacement.RELATED)
-												.addGroup(jPanel11Layout.createParallelGroup(Alignment.BASELINE).addComponent(jLabel41)
-														.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-																GroupLayout.PREFERRED_SIZE))
-												.addContainerGap()));
+		jPanel11Layout.setHorizontalGroup(
+			jPanel11Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel11Layout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(jPanel11Layout.createParallelGroup(Alignment.LEADING)
+						.addGroup(Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+							.addGroup(jPanel11Layout.createParallelGroup(Alignment.LEADING)
+								.addComponent(abate1Label, GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+								.addComponent(abate2Label))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(jPanel11Layout.createParallelGroup(Alignment.TRAILING, false)
+								.addComponent(labelMortalidadeRegistros, GroupLayout.PREFERRED_SIZE, 82, GroupLayout.PREFERRED_SIZE)
+								.addComponent(labelMedicadosRegistros, GroupLayout.PREFERRED_SIZE, 82, GroupLayout.PREFERRED_SIZE)))
+						.addComponent(jLabel39, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
+						.addComponent(jLabel40, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
+						.addGroup(Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+							.addComponent(jLabel37, GroupLayout.PREFERRED_SIZE, 114, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(labelBaia, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+							.addComponent(labelBaiaRegistros, GroupLayout.PREFERRED_SIZE, 82, GroupLayout.PREFERRED_SIZE))
+						.addGroup(Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+							.addComponent(jLabel41, GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+							.addGap(6))
+						.addGroup(jPanel11Layout.createSequentialGroup()
+							.addComponent(lblVoltar, GroupLayout.PREFERRED_SIZE, 236, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap(42, Short.MAX_VALUE))
+						.addGroup(jPanel11Layout.createSequentialGroup()
+							.addComponent(lblSair, GroupLayout.PREFERRED_SIZE, 236, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap(42, Short.MAX_VALUE))
+						.addGroup(jPanel11Layout.createSequentialGroup()
+							.addComponent(lblDigitar, GroupLayout.PREFERRED_SIZE, 236, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap(42, Short.MAX_VALUE))))
+		);
+		jPanel11Layout.setVerticalGroup(
+			jPanel11Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel11Layout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(jPanel11Layout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(jLabel37)
+						.addComponent(labelBaiaRegistros)
+						.addComponent(labelBaia))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(jPanel11Layout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(abate1Label)
+						.addComponent(labelMortalidadeRegistros))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(jPanel11Layout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(abate2Label)
+						.addComponent(labelMedicadosRegistros))
+					.addGap(18)
+					.addComponent(lblDigitar)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(jLabel39)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(jLabel40)
+					.addGap(29)
+					.addComponent(lblVoltar)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblSair)
+					.addPreferredGap(ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+					.addGroup(jPanel11Layout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(jLabel41)
+						.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap())
+		);
 		jPanel11.setLayout(jPanel11Layout);
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-		layout.setHorizontalGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(jPanel11, GroupLayout.DEFAULT_SIZE,
-				GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
-		layout.setVerticalGroup(layout.createParallelGroup(Alignment.LEADING)
-				.addGroup(layout.createSequentialGroup().addComponent(jPanel11, GroupLayout.PREFERRED_SIZE, 249, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+		layout.setHorizontalGroup(
+			layout.createParallelGroup(Alignment.LEADING)
+				.addComponent(jPanel11, GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
+		);
+		layout.setVerticalGroup(
+			layout.createParallelGroup(Alignment.LEADING)
+				.addComponent(jPanel11, GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
+		);
 		getContentPane().setLayout(layout);
 
 		pack();

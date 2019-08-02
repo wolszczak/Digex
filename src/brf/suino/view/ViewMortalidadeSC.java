@@ -13,7 +13,7 @@ public class ViewMortalidadeSC extends javax.swing.JFrame {
 	private static final long serialVersionUID = 1L;
 	private javax.swing.JFormattedTextField baiaJFT;
 	private javax.swing.JPanel baiaJP;
-	private javax.swing.JFormattedTextField controleFornecidaJFT;
+	private javax.swing.JFormattedTextField controleJFT;
 	private javax.swing.JPanel controleRMEJP1;
 	private javax.swing.JLabel fornecidaHist1Label;
 	private javax.swing.JLabel brincoHist1Label;
@@ -247,7 +247,7 @@ public class ViewMortalidadeSC extends javax.swing.JFrame {
 		faseHist1Label = new javax.swing.JLabel();
 		jLabel30 = new javax.swing.JLabel();
 		jLabel32 = new javax.swing.JLabel();
-		controleFornecidaJFT = new javax.swing.JFormattedTextField();
+		controleJFT = new javax.swing.JFormattedTextField();
 		jLabel35 = new javax.swing.JLabel();
 
 		jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -399,7 +399,7 @@ public class ViewMortalidadeSC extends javax.swing.JFrame {
 		sobraHist3Label.setEnabled(false);
 
 		try {
-			dataJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+			dataJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/##")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -499,14 +499,6 @@ public class ViewMortalidadeSC extends javax.swing.JFrame {
 						.addContainerGap()));
 
 		
-
-//		try {
-//			pesoJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-//		} catch (java.text.ParseException ex) {
-//			ex.printStackTrace();
-//		}
-//		pesoJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-//		pesoJFT.setEnabled(false);
 
 		
 		jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -809,7 +801,7 @@ public class ViewMortalidadeSC extends javax.swing.JFrame {
 		pesoHist4Label.setEnabled(false);
 
 		try {
-			brincoJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			brincoJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -828,7 +820,7 @@ public class ViewMortalidadeSC extends javax.swing.JFrame {
 		pesoHist5Label.setEnabled(false);
 
 		try {
-			pesoJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+			pesoJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -879,14 +871,6 @@ public class ViewMortalidadeSC extends javax.swing.JFrame {
 		dataHist5Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 		dataHist5Label.setEnabled(false);
 
-		try {
-			dataJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		dataJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-		dataJFT.setToolTipText("");
 
 		jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		jLabel28.setText("Data");
@@ -923,7 +907,7 @@ public class ViewMortalidadeSC extends javax.swing.JFrame {
 		jLabel29.setText("Ordem");
 
 		try {
-			causaJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+			causaJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -931,7 +915,7 @@ public class ViewMortalidadeSC extends javax.swing.JFrame {
 		causaJFT.setEnabled(false);
 
 		try {
-			faseJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			faseJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -985,14 +969,14 @@ public class ViewMortalidadeSC extends javax.swing.JFrame {
 		jLabel32.setText("Fase");
 
 		try {
-			controleFornecidaJFT
-					.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			controleJFT
+					.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
-		controleFornecidaJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-		controleFornecidaJFT.setEnabled(false);
-		controleFornecidaJFT.addActionListener(new java.awt.event.ActionListener() {
+		controleJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+		controleJFT.setEnabled(false);
+		controleJFT.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				controleFornecidaJFT1ActionPerformed(evt);
 			}
@@ -1065,7 +1049,7 @@ public class ViewMortalidadeSC extends javax.swing.JFrame {
 						.addComponent(jLabel30, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(jPanel3Layout.createParallelGroup(Alignment.LEADING)
-						.addComponent(controleFornecidaJFT, 75, 75, 75)
+						.addComponent(controleJFT, 75, 75, 75)
 						.addComponent(jLabel35, GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE))
 					.addGap(22))
 		);
@@ -1122,7 +1106,7 @@ public class ViewMortalidadeSC extends javax.swing.JFrame {
 								.addComponent(pesoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
 								.addComponent(faseJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
 								.addComponent(causaJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
-								.addComponent(controleFornecidaJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+								.addComponent(controleJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
 								.addComponent(ordemJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)))
 						.addGroup(jPanel3Layout.createSequentialGroup()
 							.addComponent(jLabel29)
@@ -1282,13 +1266,13 @@ public class ViewMortalidadeSC extends javax.swing.JFrame {
 
 
 	public javax.swing.JFormattedTextField getControleFornecidaJFT() {
-		return controleFornecidaJFT;
+		return controleJFT;
 	}
 
 
 
 	public void setControleFornecidaJFT(javax.swing.JFormattedTextField controleFornecidaJFT) {
-		this.controleFornecidaJFT = controleFornecidaJFT;
+		this.controleJFT = controleFornecidaJFT;
 	}
 
 
@@ -2531,6 +2515,18 @@ public class ViewMortalidadeSC extends javax.swing.JFrame {
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+
+
+	public javax.swing.JFormattedTextField getControleJFT() {
+		return controleJFT;
+	}
+
+
+
+	public void setControleJFT(javax.swing.JFormattedTextField controleJFT) {
+		this.controleJFT = controleJFT;
 	}
 	
 

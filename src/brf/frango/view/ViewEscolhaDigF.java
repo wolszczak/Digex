@@ -112,7 +112,7 @@ public class ViewEscolhaDigF extends javax.swing.JFrame {
 
         avaliacaoPeLabel.setText("3 - Avaliação de pé");
 
-        exportarDesempenhoLabel.setText("4 - Arquivo de Graja");
+        exportarDesempenhoLabel.setText("4 - Arquivo de Granja");
 
         jLabel9.setText("Opção");
 

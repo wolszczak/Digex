@@ -6,6 +6,7 @@ import java.util.List;
 
 public class MedicadosVOSC implements Serializable{
 	private static final long serialVersionUID = 1L;
+	private int galpao;
 	private int baia;
 	private int sexo;
 	private int trat1;
@@ -17,7 +18,8 @@ public class MedicadosVOSC implements Serializable{
 		this.medicados = new ArrayList<>();
 	}
 	
-	private void MedicadosVOSC(int baia, int sexo, int trat1, int trat2, boolean finalizado, List<MediVOSC> medicados) {
+	private void MedicadosVOSC(int galpao, int baia, int sexo, int trat1, int trat2, boolean finalizado, List<MediVOSC> medicados) {
+		this.galpao = galpao;
 		this.baia = baia;
 		this.sexo = sexo;
 		this.trat1 = trat1;
@@ -25,6 +27,8 @@ public class MedicadosVOSC implements Serializable{
 		this.finalizado = finalizado;
 		this.medicados =  medicados;
 	}
+	
+	
 
 	public int getBaia() {
 		return baia;
@@ -72,6 +76,14 @@ public class MedicadosVOSC implements Serializable{
 
 	public void setFinalizado(boolean finalizado) {
 		this.finalizado = finalizado;
+	}
+
+	public int getGalpao() {
+		return galpao;
+	}
+
+	public void setGalpao(int galpao) {
+		this.galpao = galpao;
 	}
 	
 	

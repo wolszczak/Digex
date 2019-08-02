@@ -128,7 +128,7 @@ public class RendimentoBOF {
         int ordem = 1;
         while (controller.getModel().getExperimentoVO().getAbates().get(abate-1).getRendimento().size() % 5 != 0) {
             controller.getModel().getExperimentoVO().getAbates().get(abate-1).getRendimento().add(new RendimentoVOF(
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
+                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
         }
         for(RendimentoVOF rendimento: controller.getModel().getExperimentoVO().getAbates().get(abate-1).getRendimento()) {
             rendimento.setOrdem(ordem++);

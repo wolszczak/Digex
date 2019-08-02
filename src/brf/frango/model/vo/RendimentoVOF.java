@@ -3,7 +3,8 @@ package brf.frango.model.vo;
 import java.io.Serializable;
 
 public class RendimentoVOF implements Serializable {
-    private int abate;
+	private static final long serialVersionUID = -3729039559657964183L;
+	private int abate;
     private int ordem;
     private int nasa;
     private int gDir;
@@ -18,9 +19,11 @@ public class RendimentoVOF implements Serializable {
     private Integer pae;
     private Integer estPDir;
     private Integer estPEsq;
+    private Integer largPeito;
+    private Integer compPeito;
     private int pCoxSob;
   
-    public RendimentoVOF(int abate, int ordem, int nasa, int gDir, int gEsq, int pAbate, int pGorDir, int pGorEsq, int pAsa, int gorPeito, int pPeito, Integer pad, Integer pae, Integer estPDir, Integer estPEsq, int pCoxSob) {
+    public RendimentoVOF(int abate, int ordem, int nasa, int gDir, int gEsq, int pAbate, int pGorDir, int pGorEsq, int pAsa, int gorPeito, Integer largPeito, Integer compPeito, int pPeito, Integer pad, Integer pae, Integer estPDir, Integer estPEsq, int pCoxSob) {
         this.abate = abate;
         this.ordem = ordem;
         this.nasa = nasa;
@@ -36,6 +39,8 @@ public class RendimentoVOF implements Serializable {
         this.pae = pae;
         this.estPDir = estPDir;
         this.estPEsq = estPEsq;
+        this.largPeito = largPeito;
+        this.compPeito = compPeito;
         this.pCoxSob = pCoxSob;
     }
 
@@ -166,4 +171,20 @@ public class RendimentoVOF implements Serializable {
     public void setpCoxSob(int pCoxSob) {
         this.pCoxSob = pCoxSob;
     }
+
+	public Integer getLargPeito() {
+		return largPeito;
+	}
+
+	public void setLargPeito(Integer largPeito) {
+		this.largPeito = largPeito;
+	}
+
+	public Integer getCompPeito() {
+		return compPeito;
+	}
+
+	public void setCompPeito(Integer compPeito) {
+		this.compPeito = compPeito;
+	}
 }

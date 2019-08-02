@@ -62,7 +62,7 @@ public class ConsumoBOSC {
 		Date dataRacao = new Date();
 		Date dataIni = new Date();
 		Date dataFim = new Date();
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yy");
 		try {
 			dataIni = sdf.parse(datasFases.get(0));
 			dataFim = sdf.parse(datasFases.get(datasFases.size() - 1));
@@ -70,10 +70,10 @@ public class ConsumoBOSC {
 		} catch (Exception e) {
 			return "- Formato de data incorreta\n";
 		}
-		if (!data.equals("00/00/0000")) {
+		if (!data.equals("00/00/00")) {
 			if (dataRacao.after(dataFim) || dataRacao.before(dataIni)) {
 				msg = msg.concat("- Idade fora do período do experimento\n");
-			} else if (!data.equals("00/00/0000") && racao == 0 && sobra == 0) {
+			} else if (!data.equals("00/00/00") && racao == 0 && sobra == 0) {
 				msg = msg.concat("- Entrada/Saída de ração igual à 0\n");
 			}
 		} else {

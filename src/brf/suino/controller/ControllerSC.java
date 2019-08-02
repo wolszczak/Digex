@@ -41,9 +41,9 @@ public class ControllerSC {
 		ctrlConsumo.openWindow(datasFase);
 	}
 
-	public void startMortalidadeSC(Integer galpao, Integer baia, Integer sexo, Integer trata, Integer trata2) {
+	public void startMortalidadeSC(Integer galpao, Integer baia, Integer sexo, Integer trata, Integer trata2,List<String> datasFases) {
 		ctrlMortalidade = new ControllerMortalidadeSC(this);
-		ctrlMortalidade.openWindow(galpao, baia, sexo, trata, trata2);
+		ctrlMortalidade.openWindow(galpao, baia, sexo, trata, trata2, datasFases);
 	}
 
 }

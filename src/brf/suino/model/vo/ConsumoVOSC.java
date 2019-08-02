@@ -6,6 +6,7 @@ import java.util.List;
 
 public class ConsumoVOSC implements Serializable {
 	private static final long serialVersionUID = 1L;
+	private int galpao;
 	private int baia;
 	private int sexo;
 	private int trat1;
@@ -17,7 +18,8 @@ public class ConsumoVOSC implements Serializable {
 		this.rme = new ArrayList<>();
 	}
 	
-	public ConsumoVOSC(int baia, int sexo, int trat1, int trat2, boolean colunaExtra, boolean finalizado, List<RmeVOSC> rme) {
+	public ConsumoVOSC(int galpao, int baia, int sexo, int trat1, int trat2, boolean colunaExtra, boolean finalizado, List<RmeVOSC> rme) {
+		this.galpao = galpao;
 		this.baia = baia;
 		this.sexo = sexo;
 		this.trat1 = trat1;
@@ -81,6 +83,14 @@ public class ConsumoVOSC implements Serializable {
 
 	public void setColunaExtra(boolean colunaExtra) {
 		this.colunaExtra = colunaExtra;
+	}
+
+	public int getGalpao() {
+		return galpao;
+	}
+
+	public void setGalpao(int galpao) {
+		this.galpao = galpao;
 	}
 	
 	

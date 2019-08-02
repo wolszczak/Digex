@@ -122,6 +122,16 @@ public class ControllerRendimentoF extends KeyAdapter
         order.add(viewRendimento.getEstPEsqJFT3());
         order.add(viewRendimento.getEstPEsqJFT4());
         order.add(viewRendimento.getEstPEsqJFT5());
+        order.add(viewRendimento.getLargPeitoJFT1());
+        order.add(viewRendimento.getLargPeitoJFT2());
+        order.add(viewRendimento.getLargPeitoJFT3());
+        order.add(viewRendimento.getLargPeitoJFT4());
+        order.add(viewRendimento.getLargPeitoJFT5());
+        order.add(viewRendimento.getCompPeitoJFT1());
+        order.add(viewRendimento.getCompPeitoJFT2());
+        order.add(viewRendimento.getCompPeitoJFT3());
+        order.add(viewRendimento.getCompPeitoJFT4());
+        order.add(viewRendimento.getCompPeitoJFT5());
         order.add(viewRendimento.getpCoxaJFT1());
         order.add(viewRendimento.getpCoxaJFT2());
         order.add(viewRendimento.getpCoxaJFT3());
@@ -158,6 +168,8 @@ public class ControllerRendimentoF extends KeyAdapter
         List<JLabel> histPae = new ArrayList<>();
         List<JLabel> histEstPDir = new ArrayList<>();
         List<JLabel> histEstPEsq = new ArrayList<>();
+        List<JLabel> histLargPeito = new ArrayList<>();
+        List<JLabel> histCompPeito = new ArrayList<>();
         List<JLabel> histPCoxa = new ArrayList<>();
 
         histOrdens.add(viewRendimento.getOrdemHistLabel());
@@ -174,6 +186,8 @@ public class ControllerRendimentoF extends KeyAdapter
         histPae.add(viewRendimento.getPaeHistLabel());
         histEstPDir.add(viewRendimento.getEstPDirHistLabel());
         histEstPEsq.add(viewRendimento.getEstPEsqHistLabel());
+        histLargPeito.add(viewRendimento.getLargPeitoHistLabel());
+        histCompPeito.add(viewRendimento.getCompPeitoHistLabel());
         histPCoxa.add(viewRendimento.getpCoxaHistLabel());
 
         System.out.println("size hist: " + histOrdens.size());
@@ -269,6 +283,12 @@ public class ControllerRendimentoF extends KeyAdapter
 
             text = "" + rendimento.get(rendimento.size() - 5 + i).getEstPEsq();
             histEstPEsq.get(i - 4).setText(text);
+            
+            text = "" + rendimento.get(rendimento.size() - 5 + i).getLargPeito();
+            histLargPeito.get(i - 4).setText(text);
+
+            text = "" + rendimento.get(rendimento.size() - 5 + i).getCompPeito();
+            histCompPeito.get(i - 4).setText(text);
 
             text = "" + rendimento.get(rendimento.size() - 5 + i).getpCoxSob();
             if (text.length() == 3) {
@@ -617,6 +637,46 @@ public class ControllerRendimentoF extends KeyAdapter
                 ((JFormattedTextField) e.getSource()).transferFocus();
             } else if ((JFormattedTextField) e.getSource() == viewRendimento.getEstPEsqJFT5()) {
                 TextFormatter.formatStringJFT(src, text, 1);
+                viewRendimento.getLargPeitoJFT1().setEnabled(true);
+                ((JFormattedTextField) e.getSource()).transferFocus();
+            }else if ((JFormattedTextField) e.getSource() == viewRendimento.getLargPeitoJFT1()) {
+                TextFormatter.formatStringJFT(src, text, 4);
+                viewRendimento.getLargPeitoJFT2().setEnabled(true);
+                ((JFormattedTextField) e.getSource()).transferFocus();
+            } else if ((JFormattedTextField) e.getSource() == viewRendimento.getLargPeitoJFT2()) {
+                TextFormatter.formatStringJFT(src, text, 4);
+                viewRendimento.getLargPeitoJFT3().setEnabled(true);
+                ((JFormattedTextField) e.getSource()).transferFocus();
+            } else if ((JFormattedTextField) e.getSource() == viewRendimento.getLargPeitoJFT3()) {
+                TextFormatter.formatStringJFT(src, text, 4);
+                viewRendimento.getLargPeitoJFT4().setEnabled(true);
+                ((JFormattedTextField) e.getSource()).transferFocus();
+            } else if ((JFormattedTextField) e.getSource() == viewRendimento.getLargPeitoJFT4()) {
+                TextFormatter.formatStringJFT(src, text, 4);
+                viewRendimento.getLargPeitoJFT5().setEnabled(true);
+                ((JFormattedTextField) e.getSource()).transferFocus();
+            } else if ((JFormattedTextField) e.getSource() == viewRendimento.getLargPeitoJFT5()) {
+                TextFormatter.formatStringJFT(src, text, 4);
+                viewRendimento.getCompPeitoJFT1().setEnabled(true);
+                ((JFormattedTextField) e.getSource()).transferFocus();
+            }else if ((JFormattedTextField) e.getSource() == viewRendimento.getCompPeitoJFT1()) {
+                TextFormatter.formatStringJFT(src, text, 4);
+                viewRendimento.getCompPeitoJFT2().setEnabled(true);
+                ((JFormattedTextField) e.getSource()).transferFocus();
+            } else if ((JFormattedTextField) e.getSource() == viewRendimento.getCompPeitoJFT2()) {
+                TextFormatter.formatStringJFT(src, text, 4);
+                viewRendimento.getCompPeitoJFT3().setEnabled(true);
+                ((JFormattedTextField) e.getSource()).transferFocus();
+            } else if ((JFormattedTextField) e.getSource() == viewRendimento.getCompPeitoJFT3()) {
+                TextFormatter.formatStringJFT(src, text, 4);
+                viewRendimento.getCompPeitoJFT4().setEnabled(true);
+                ((JFormattedTextField) e.getSource()).transferFocus();
+            } else if ((JFormattedTextField) e.getSource() == viewRendimento.getCompPeitoJFT4()) {
+                TextFormatter.formatStringJFT(src, text, 4);
+                viewRendimento.getCompPeitoJFT5().setEnabled(true);
+                ((JFormattedTextField) e.getSource()).transferFocus();
+            } else if ((JFormattedTextField) e.getSource() == viewRendimento.getCompPeitoJFT5()) {
+                TextFormatter.formatStringJFT(src, text, 4);
                 viewRendimento.getpCoxaJFT1().setEnabled(true);
                 ((JFormattedTextField) e.getSource()).transferFocus();
             } else if ((JFormattedTextField) e.getSource() == viewRendimento.getpCoxaJFT1()) {
@@ -707,6 +767,16 @@ public class ControllerRendimentoF extends KeyAdapter
                         + Integer.parseInt(viewRendimento.getEstPEsqJFT3().getText())
                         + Integer.parseInt(viewRendimento.getEstPEsqJFT4().getText())
                         + Integer.parseInt(viewRendimento.getEstPEsqJFT5().getText())
+                        + Integer.parseInt(viewRendimento.getLargPeitoJFT1().getText())
+                        + Integer.parseInt(viewRendimento.getLargPeitoJFT2().getText())
+                        + Integer.parseInt(viewRendimento.getLargPeitoJFT3().getText())
+                        + Integer.parseInt(viewRendimento.getLargPeitoJFT4().getText())
+                        + Integer.parseInt(viewRendimento.getLargPeitoJFT5().getText())
+                        + Integer.parseInt(viewRendimento.getCompPeitoJFT1().getText())
+                        + Integer.parseInt(viewRendimento.getCompPeitoJFT2().getText())
+                        + Integer.parseInt(viewRendimento.getCompPeitoJFT3().getText())
+                        + Integer.parseInt(viewRendimento.getCompPeitoJFT4().getText())
+                        + Integer.parseInt(viewRendimento.getCompPeitoJFT5().getText())
                         + Integer.parseInt(viewRendimento.getpCoxaJFT1().getText())
                         + Integer.parseInt(viewRendimento.getpCoxaJFT2().getText())
                         + Integer.parseInt(viewRendimento.getpCoxaJFT3().getText())
@@ -800,6 +870,8 @@ public class ControllerRendimentoF extends KeyAdapter
         viewRendimento.getPaeHistLabel().setText(viewRendimento.getPaeJFT5().getText());
         viewRendimento.getEstPDirHistLabel().setText(viewRendimento.getEstPDirJFT5().getText());
         viewRendimento.getEstPEsqHistLabel().setText(viewRendimento.getEstPEsqJFT5().getText());
+        viewRendimento.getLargPeitoHistLabel().setText(viewRendimento.getLargPeitoJFT5().getText());
+        viewRendimento.getCompPeitoHistLabel().setText(viewRendimento.getCompPeitoJFT5().getText());
         viewRendimento.getpCoxaHistLabel().setText(viewRendimento.getpCoxaJFT5().getText());
 
 //        viewRendimento.getNumeroJFT().setText("000");
@@ -899,6 +971,18 @@ public class ControllerRendimentoF extends KeyAdapter
         viewRendimento.getEstPEsqJFT3().setText("");
         viewRendimento.getEstPEsqJFT4().setText("");
         viewRendimento.getEstPEsqJFT5().setText("");
+        
+        viewRendimento.getLargPeitoJFT1().setText("");
+        viewRendimento.getLargPeitoJFT2().setText("");
+        viewRendimento.getLargPeitoJFT3().setText("");
+        viewRendimento.getLargPeitoJFT4().setText("");
+        viewRendimento.getLargPeitoJFT5().setText("");
+        
+        viewRendimento.getCompPeitoJFT1().setText("");
+        viewRendimento.getCompPeitoJFT2().setText("");
+        viewRendimento.getCompPeitoJFT3().setText("");
+        viewRendimento.getCompPeitoJFT4().setText("");
+        viewRendimento.getCompPeitoJFT5().setText("");
 
         viewRendimento.getpCoxaJFT1().setText("");
         viewRendimento.getpCoxaJFT2().setText("");
@@ -926,6 +1010,8 @@ public class ControllerRendimentoF extends KeyAdapter
                 Integer.parseInt(viewRendimento.getPaeJFT1().getText()),
                 Integer.parseInt(viewRendimento.getEstPDirJFT1().getText()),
                 Integer.parseInt(viewRendimento.getEstPEsqJFT1().getText()),
+                Integer.parseInt(viewRendimento.getLargPeitoJFT1().getText()),
+                Integer.parseInt(viewRendimento.getCompPeitoJFT1().getText()),                
                 Integer.parseInt(viewRendimento.getpCoxaJFT1().getText())));
 
         lastHist.add(new RendimentoVOF(abate,
@@ -943,6 +1029,8 @@ public class ControllerRendimentoF extends KeyAdapter
                 Integer.parseInt(viewRendimento.getPaeJFT2().getText()),
                 Integer.parseInt(viewRendimento.getEstPDirJFT2().getText()),
                 Integer.parseInt(viewRendimento.getEstPEsqJFT2().getText()),
+                Integer.parseInt(viewRendimento.getLargPeitoJFT2().getText()),
+                Integer.parseInt(viewRendimento.getCompPeitoJFT2().getText()),  
                 Integer.parseInt(viewRendimento.getpCoxaJFT2().getText())));
 
         lastHist.add(new RendimentoVOF(abate,
@@ -960,6 +1048,8 @@ public class ControllerRendimentoF extends KeyAdapter
                 Integer.parseInt(viewRendimento.getPaeJFT3().getText()),
                 Integer.parseInt(viewRendimento.getEstPDirJFT3().getText()),
                 Integer.parseInt(viewRendimento.getEstPEsqJFT3().getText()),
+                Integer.parseInt(viewRendimento.getLargPeitoJFT3().getText()),
+                Integer.parseInt(viewRendimento.getCompPeitoJFT3().getText()),  
                 Integer.parseInt(viewRendimento.getpCoxaJFT3().getText())));
 
         lastHist.add(new RendimentoVOF(abate,
@@ -977,6 +1067,8 @@ public class ControllerRendimentoF extends KeyAdapter
                 Integer.parseInt(viewRendimento.getPaeJFT4().getText()),
                 Integer.parseInt(viewRendimento.getEstPDirJFT4().getText()),
                 Integer.parseInt(viewRendimento.getEstPEsqJFT4().getText()),
+                Integer.parseInt(viewRendimento.getLargPeitoJFT4().getText()),
+                Integer.parseInt(viewRendimento.getCompPeitoJFT4().getText()),  
                 Integer.parseInt(viewRendimento.getpCoxaJFT4().getText())));
 
         lastHist.add(new RendimentoVOF(abate,
@@ -994,6 +1086,8 @@ public class ControllerRendimentoF extends KeyAdapter
                 Integer.parseInt(viewRendimento.getPaeJFT5().getText()),
                 Integer.parseInt(viewRendimento.getEstPDirJFT5().getText()),
                 Integer.parseInt(viewRendimento.getEstPEsqJFT5().getText()),
+                Integer.parseInt(viewRendimento.getLargPeitoJFT5().getText()),
+                Integer.parseInt(viewRendimento.getCompPeitoJFT5().getText()),  
                 Integer.parseInt(viewRendimento.getpCoxaJFT5().getText())));
 
     }
@@ -1014,6 +1108,8 @@ public class ControllerRendimentoF extends KeyAdapter
         viewRendimento.getPaeJFT1().setText(TextFormatter.formatString("" + lastHist.get(0).getPae(), 1));
         viewRendimento.getEstPDirJFT1().setText(TextFormatter.formatString("" + lastHist.get(0).getEstPDir(), 1));
         viewRendimento.getEstPEsqJFT1().setText(TextFormatter.formatString("" + lastHist.get(0).getEstPEsq(), 1));
+        viewRendimento.getLargPeitoJFT1().setText(TextFormatter.formatString("" + lastHist.get(0).getLargPeito(), 1));
+        viewRendimento.getCompPeitoJFT1().setText(TextFormatter.formatString("" + lastHist.get(0).getCompPeito(), 1));
         viewRendimento.getpCoxaJFT1().setText(TextFormatter.formatString("" + lastHist.get(0).getpCoxSob(), 4));
         viewRendimento.getNumJFT2().setText(TextFormatter.formatString("" + lastHist.get(1).getNasa(), 3));
         lastHist.remove(0);
@@ -1052,6 +1148,8 @@ public class ControllerRendimentoF extends KeyAdapter
                 Integer.parseInt(viewRendimento.getPaeJFT1().getText()),
                 Integer.parseInt(viewRendimento.getEstPDirJFT1().getText()),
                 Integer.parseInt(viewRendimento.getEstPEsqJFT1().getText()),
+                Integer.parseInt(viewRendimento.getLargPeitoJFT1().getText()),
+                Integer.parseInt(viewRendimento.getCompPeitoJFT1().getText()),
                 Integer.parseInt(viewRendimento.getpCoxaJFT1().getText())));
 
         rendimento.add(new RendimentoVOF(abate,
@@ -1069,6 +1167,8 @@ public class ControllerRendimentoF extends KeyAdapter
                 Integer.parseInt(viewRendimento.getPaeJFT2().getText()),
                 Integer.parseInt(viewRendimento.getEstPDirJFT2().getText()),
                 Integer.parseInt(viewRendimento.getEstPEsqJFT2().getText()),
+                Integer.parseInt(viewRendimento.getLargPeitoJFT2().getText()),
+                Integer.parseInt(viewRendimento.getCompPeitoJFT2().getText()),
                 Integer.parseInt(viewRendimento.getpCoxaJFT2().getText())));
 
         rendimento.add(new RendimentoVOF(abate,
@@ -1086,6 +1186,8 @@ public class ControllerRendimentoF extends KeyAdapter
                 Integer.parseInt(viewRendimento.getPaeJFT3().getText()),
                 Integer.parseInt(viewRendimento.getEstPDirJFT3().getText()),
                 Integer.parseInt(viewRendimento.getEstPEsqJFT3().getText()),
+                Integer.parseInt(viewRendimento.getLargPeitoJFT3().getText()),
+                Integer.parseInt(viewRendimento.getCompPeitoJFT3().getText()),
                 Integer.parseInt(viewRendimento.getpCoxaJFT3().getText())));
 
         rendimento.add(new RendimentoVOF(abate,
@@ -1103,6 +1205,8 @@ public class ControllerRendimentoF extends KeyAdapter
                 Integer.parseInt(viewRendimento.getPaeJFT4().getText()),
                 Integer.parseInt(viewRendimento.getEstPDirJFT4().getText()),
                 Integer.parseInt(viewRendimento.getEstPEsqJFT4().getText()),
+                Integer.parseInt(viewRendimento.getLargPeitoJFT4().getText()),
+                Integer.parseInt(viewRendimento.getCompPeitoJFT4().getText()),
                 Integer.parseInt(viewRendimento.getpCoxaJFT4().getText())));
 
         rendimento.add(new RendimentoVOF(abate,
@@ -1120,6 +1224,8 @@ public class ControllerRendimentoF extends KeyAdapter
                 Integer.parseInt(viewRendimento.getPaeJFT5().getText()),
                 Integer.parseInt(viewRendimento.getEstPDirJFT5().getText()),
                 Integer.parseInt(viewRendimento.getEstPEsqJFT5().getText()),
+                Integer.parseInt(viewRendimento.getLargPeitoJFT5().getText()),
+                Integer.parseInt(viewRendimento.getCompPeitoJFT5().getText()),
                 Integer.parseInt(viewRendimento.getpCoxaJFT5().getText())));
         controller.getModel().getModelStateDAO().saveModelState(false);
         System.out.println("próx 5 rendimentos");
@@ -1199,6 +1305,16 @@ public class ControllerRendimentoF extends KeyAdapter
         viewRendimento.getEstPEsqJFT3().setEnabled(false);
         viewRendimento.getEstPEsqJFT4().setEnabled(false);
         viewRendimento.getEstPEsqJFT5().setEnabled(false);
+        viewRendimento.getLargPeitoJFT1().setEnabled(false);
+        viewRendimento.getLargPeitoJFT2().setEnabled(false);
+        viewRendimento.getLargPeitoJFT3().setEnabled(false);
+        viewRendimento.getLargPeitoJFT4().setEnabled(false);
+        viewRendimento.getLargPeitoJFT5().setEnabled(false);
+        viewRendimento.getCompPeitoJFT1().setEnabled(false);
+        viewRendimento.getCompPeitoJFT2().setEnabled(false);
+        viewRendimento.getCompPeitoJFT3().setEnabled(false);
+        viewRendimento.getCompPeitoJFT4().setEnabled(false);
+        viewRendimento.getCompPeitoJFT5().setEnabled(false);
         viewRendimento.getpCoxaJFT1().setEnabled(false);
         viewRendimento.getpCoxaJFT2().setEnabled(false);
         viewRendimento.getpCoxaJFT3().setEnabled(false);

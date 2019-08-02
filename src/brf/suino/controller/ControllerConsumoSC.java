@@ -35,7 +35,7 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 	private List<RmeVOSC> consumos, consumosErros;
 	private int ordem, controleBaia;
 	private boolean usarColunaExtra;
-	private List<String> datasFase;
+	private List<String> datasFases;
 	private List<Component> order, orderLoadHist;
 	private Border defaultBorder;
 
@@ -50,7 +50,7 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 		viewConsumo.setResizable(false);
 		viewConsumo.setLocationRelativeTo(null);
 		viewConsumo.setVisible(true);
-		this.datasFase = datasFases;
+		this.datasFases = datasFases;
 		consumos = new ArrayList<>();
 		consumosErros = new ArrayList<>();
 		usarColunaExtra = false;
@@ -60,14 +60,15 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 		viewConsumo.getChkUsarColunaExtra().addItemListener(this);
 		viewConsumo.getChkUsarColunaExtra().addKeyListener(this);
 		viewConsumo.getOpcaoJFT().addKeyListener(this);
-		
-		
+
 		if (controller.getModel().getExperimentoVO().getConsumo() != null
 				&& controller.getModel().getExperimentoVO().getConsumo().size() > 0) {
 			usarColunaExtra = controller.getModel().getExperimentoVO().getConsumo()
 					.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).isColunaExtra();
 			if (controller.getModel().getExperimentoVO().getConsumo().get(controller.getModel().getExperimentoVO().getConsumo().size() - 1)
-					.getRme().size() > 0) {
+					.getRme().size() > 0
+					&& !controller.getModel().getExperimentoVO().getConsumo()
+							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).isFinalizado()) {
 				ordem = controller.getModel().getExperimentoVO().getConsumo()
 						.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getRme()
 						.get(controller.getModel().getExperimentoVO().getConsumo()
@@ -327,19 +328,19 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 						Integer.parseInt(viewConsumo.getBaiaJFT().getText().trim()),
 						Integer.parseInt(viewConsumo.getSexoJFT().getText().trim()),
 						Integer.parseInt(viewConsumo.getTrataJFT().getText().trim()),
-						Integer.parseInt(viewConsumo.getTrata2JFT().getText().trim()));
+						Integer.parseInt(viewConsumo.getTrata2JFT().getText().trim()), datasFases);
 				break;
 			case KeyEvent.VK_2:
 //				medicados
 				break;
 			case KeyEvent.VK_3:
 				viewConsumo.setVisible(false);
-				openWindow(datasFase);
+				openWindow(datasFases);
 				break;
 			case KeyEvent.VK_4:
 				viewConsumo.setVisible(false);
 				ControllerEscolhaDigSC escolhaDigSC = new ControllerEscolhaDigSC(controller);
-				escolhaDigSC.openWindow(datasFase);
+				escolhaDigSC.openWindow(datasFases);
 				break;
 			}
 		}
@@ -356,6 +357,7 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 
 	}
 
+	@SuppressWarnings("unlikely-arg-type")
 	@Override
 	public void keyTyped(KeyEvent e) {
 		if (e.getKeyChar() == KeyEvent.VK_ESCAPE) {
@@ -364,7 +366,7 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 			if (option == 0) {
 				viewConsumo.setVisible(false);
 				ControllerEscolhaDigSC ce = new ControllerEscolhaDigSC(controller);
-				ce.openWindow(datasFase);
+				ce.openWindow(datasFases);
 				System.out.println("Voltar");
 			}
 		}
@@ -385,7 +387,8 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 							consumoBO.excluirBaia(Integer.parseInt(viewConsumo.getBaiaJFT().getText()));
 							System.out.println("Baia antiga foi excluida");
 							controller.getModel().getExperimentoVO().getConsumo()
-									.add(new ConsumoVOSC(Integer.parseInt(viewConsumo.getBaiaJFT().getText()),
+									.add(new ConsumoVOSC(Integer.parseInt(viewConsumo.getGalpaoJFT().getText()),
+											Integer.parseInt(viewConsumo.getBaiaJFT().getText()),
 											Integer.parseInt(viewConsumo.getSexoJFT().getText()),
 											Integer.parseInt(viewConsumo.getTrataJFT().getText()),
 											Integer.parseInt(viewConsumo.getTrata2JFT().getText()), usarColunaExtra, false,
@@ -400,7 +403,8 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 						}
 					} else {
 						controller.getModel().getExperimentoVO().getConsumo()
-								.add(new ConsumoVOSC(Integer.parseInt(viewConsumo.getBaiaJFT().getText()),
+								.add(new ConsumoVOSC(Integer.parseInt(viewConsumo.getGalpaoJFT().getText()),
+										Integer.parseInt(viewConsumo.getBaiaJFT().getText()),
 										Integer.parseInt(viewConsumo.getSexoJFT().getText()),
 										Integer.parseInt(viewConsumo.getTrataJFT().getText()),
 										Integer.parseInt(viewConsumo.getTrata2JFT().getText()), usarColunaExtra, false, new ArrayList<>()));
@@ -461,7 +465,7 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 						}
 					}
 				} else if ((JFormattedTextField) e.getSource() == viewConsumo.getDataJFT()) {
-					TextFormatter.formatStringJFT(jft, text, 10);
+					TextFormatter.formatStringJFT(jft, text, 8);
 					viewConsumo.getDataJFT().setEnabled(false);
 					viewConsumo.getFornecidaJFT().setEnabled(true);
 					viewConsumo.getFornecidaJFT().requestFocus();
@@ -472,50 +476,25 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 					viewConsumo.getSobraJFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewConsumo.getSobraJFT()) {
 					TextFormatter.formatStringJFT(jft, text, 5);
-					String msg = consumoBO.verificaRacao(viewConsumo.getDataJFT().getText(),
-							Integer.parseInt(viewConsumo.getFornecidaJFT().getText()),
-							Integer.parseInt(viewConsumo.getSobraJFT().getText()),
-							Integer.parseInt(viewConsumo.getPesoJFT().getText().trim()),
-							Integer.parseInt(viewConsumo.getnAnimaisJFT().getText().trim()), datasFase);
-					if (msg.length() != 0) {
-						JOptionPane.showMessageDialog(viewConsumo, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
-						fluxoProblemaDigitacaoRacoes();
-					} else if (viewConsumo.getData().getText().equals("00/00/0000")
-							&& Integer.parseInt(viewConsumo.getFornecidaJFT().getText().trim()) == 0
-							&& Integer.parseInt(viewConsumo.getSobraJFT().getText().trim()) == 0) {
-						if (controller.getModel().getExperimentoVO().getConsumo()
-								.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getRme().size() > 0) {
-							if (usarColunaExtra) {
-								viewConsumo.getSobraJFT().setEnabled(false);
-								viewConsumo.getPesoJFT().setEnabled(true);
-								viewConsumo.getPesoJFT().grabFocus();
-							} else {
-								viewConsumo.getSobraJFT().setEnabled(false);
-								viewConsumo.getControleFornecidaJFT().setEnabled(true);
-								viewConsumo.getControleFornecidaJFT().grabFocus();
-							}
-						} else {
-							// mensagem de erro
-							JOptionPane.showMessageDialog(viewConsumo, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
-							fluxoProblemaDigitacaoRacoes();
-						}
-					} else {
-						if (usarColunaExtra) {
+					if (viewConsumo.getDataJFT().equals("00/00/00") && viewConsumo.getFornecidaJFT().equals("")
+							&& viewConsumo.getSobraJFT().equals("")) {
+						if(usarColunaExtra) {
+							TextFormatter.formatStringJFT(jft, text,6);
 							viewConsumo.getSobraJFT().setEnabled(false);
 							viewConsumo.getPesoJFT().setEnabled(true);
-							viewConsumo.getPesoJFT().grabFocus();
-						} else {
-							controller.getModel().getExperimentoVO().getConsumo()
-									.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getRme()
-									.add(new RmeVOSC(Integer.parseInt(viewConsumo.getOrdemJFT().getText()), viewConsumo.getData().getText(),
-											Integer.parseInt(viewConsumo.getFornecidaJFT().getText().trim()),
-											Integer.parseInt(viewConsumo.getSobraJFT().getText().trim()),
-											Integer.parseInt(viewConsumo.getPesoJFT().getText().trim()),
-											Integer.parseInt(viewConsumo.getnAnimaisJFT().getText().trim())));
-							controller.getModel().getModelStateDAO().saveModelState(false);
-							updateHistRME();
-							viewConsumo.getOrdemJFT().setText(String.valueOf(++ordem));
-							TextFormatter.formatStringJFT(viewConsumo.getOrdemJFT(), viewConsumo.getOrdemJFT().getText(), 2);
+							viewConsumo.getPesoJFT().requestFocus();
+						}else {
+							String msg = consumoBO.verificaRacao(viewConsumo.getDataJFT().getText(),
+									Integer.parseInt(viewConsumo.getFornecidaJFT().getText()),
+									Integer.parseInt(viewConsumo.getSobraJFT().getText()),
+									Integer.parseInt(viewConsumo.getPesoJFT().getText().trim()),
+									Integer.parseInt(viewConsumo.getnAnimaisJFT().getText().trim()), datasFases);
+							if (msg.length() != 0) {
+								JOptionPane.showMessageDialog(viewConsumo, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+								fluxoProblemaDigitacaoRacoes();
+							} else {
+								
+							}
 						}
 					}
 				} else if ((JFormattedTextField) e.getSource() == viewConsumo.getPesoJFT()) {
@@ -529,7 +508,7 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 							Integer.parseInt(viewConsumo.getFornecidaJFT().getText().trim()),
 							Integer.parseInt(viewConsumo.getSobraJFT().getText().trim()),
 							Integer.parseInt(viewConsumo.getPesoJFT().getText().trim()),
-							Integer.parseInt(viewConsumo.getnAnimaisJFT().getText().trim()), datasFase);
+							Integer.parseInt(viewConsumo.getnAnimaisJFT().getText().trim()), datasFases);
 					if (msg.length() != 0) {
 						JOptionPane.showMessageDialog(viewConsumo, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
 						fluxoProblemaDigitacaoRacoes();
