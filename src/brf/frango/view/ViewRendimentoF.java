@@ -722,7 +722,7 @@ public class ViewRendimentoF extends javax.swing.JFrame {
 		estPEsqJFT1.setEnabled(false);
 
 		try {
-			largPeitoJFT2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+			largPeitoJFT2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -730,7 +730,7 @@ public class ViewRendimentoF extends javax.swing.JFrame {
 		largPeitoJFT2.setEnabled(false);
 
 		try {
-			largPeitoJFT1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+			largPeitoJFT1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -765,7 +765,7 @@ public class ViewRendimentoF extends javax.swing.JFrame {
 		largPeitoHistLabel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
 		try {
-			largPeitoJFT3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+			largPeitoJFT3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -773,7 +773,7 @@ public class ViewRendimentoF extends javax.swing.JFrame {
 		largPeitoJFT3.setEnabled(false);
 
 		try {
-			largPeitoJFT4.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+			largPeitoJFT4.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -880,7 +880,7 @@ public class ViewRendimentoF extends javax.swing.JFrame {
 		estPEsqJFT2.setEnabled(false);
 
 		try {
-			largPeitoJFT5.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+			largPeitoJFT5.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -897,7 +897,7 @@ public class ViewRendimentoF extends javax.swing.JFrame {
 		compPeitoHistLabel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
 		try {
-			compPeitoJFT1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+			compPeitoJFT1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -905,7 +905,7 @@ public class ViewRendimentoF extends javax.swing.JFrame {
 		compPeitoJFT1.setEnabled(false);
 
 		try {
-			compPeitoJFT2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+			compPeitoJFT2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -913,7 +913,7 @@ public class ViewRendimentoF extends javax.swing.JFrame {
 		compPeitoJFT2.setEnabled(false);
 
 		try {
-			compPeitoJFT3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+			compPeitoJFT3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -921,7 +921,7 @@ public class ViewRendimentoF extends javax.swing.JFrame {
 		compPeitoJFT3.setEnabled(false);
 
 		try {
-			compPeitoJFT4.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+			compPeitoJFT4.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -929,7 +929,7 @@ public class ViewRendimentoF extends javax.swing.JFrame {
 		compPeitoJFT4.setEnabled(false);
 
 		try {
-			compPeitoJFT5.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+			compPeitoJFT5.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}

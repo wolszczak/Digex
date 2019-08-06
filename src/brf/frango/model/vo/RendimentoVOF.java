@@ -23,7 +23,7 @@ public class RendimentoVOF implements Serializable {
     private Integer compPeito;
     private int pCoxSob;
   
-    public RendimentoVOF(int abate, int ordem, int nasa, int gDir, int gEsq, int pAbate, int pGorDir, int pGorEsq, int pAsa, int gorPeito, Integer largPeito, Integer compPeito, int pPeito, Integer pad, Integer pae, Integer estPDir, Integer estPEsq, int pCoxSob) {
+    public RendimentoVOF(int abate, int ordem, int nasa, int gDir, int gEsq, int pAbate, int pGorDir, int pGorEsq, int pAsa, int gorPeito,  int pPeito, Integer pad, Integer pae, Integer estPDir, Integer estPEsq,Integer largPeito, Integer compPeito, int pCoxSob) {
         this.abate = abate;
         this.ordem = ordem;
         this.nasa = nasa;
