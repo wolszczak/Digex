@@ -476,27 +476,45 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 					viewConsumo.getSobraJFT().requestFocus();
 				} else if ((JFormattedTextField) e.getSource() == viewConsumo.getSobraJFT()) {
 					TextFormatter.formatStringJFT(jft, text, 5);
-					if (viewConsumo.getDataJFT().equals("00/00/00") && viewConsumo.getFornecidaJFT().equals("")
-							&& viewConsumo.getSobraJFT().equals("")) {
-						if(usarColunaExtra) {
-							TextFormatter.formatStringJFT(jft, text,6);
-							viewConsumo.getSobraJFT().setEnabled(false);
-							viewConsumo.getPesoJFT().setEnabled(true);
-							viewConsumo.getPesoJFT().requestFocus();
-						}else {
-							String msg = consumoBO.verificaRacao(viewConsumo.getDataJFT().getText(),
-									Integer.parseInt(viewConsumo.getFornecidaJFT().getText()),
-									Integer.parseInt(viewConsumo.getSobraJFT().getText()),
-									Integer.parseInt(viewConsumo.getPesoJFT().getText().trim()),
-									Integer.parseInt(viewConsumo.getnAnimaisJFT().getText().trim()), datasFases);
-							if (msg.length() != 0) {
-								JOptionPane.showMessageDialog(viewConsumo, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
-								fluxoProblemaDigitacaoRacoes();
+					if (viewConsumo.getDataJFT().getText().equals("00/00/00") && viewConsumo.getFornecidaJFT().getText().equals("00000")
+							&& viewConsumo.getSobraJFT().getText().equals("00000")) {
+						TextFormatter.formatStringJFT(jft, text, 5);
+						viewConsumo.getSobraJFT().setEnabled(false);
+						viewConsumo.getControleFornecidaJFT().setEnabled(true);
+						viewConsumo.getControleFornecidaJFT().requestFocus();
+					} else {
+						String msg = consumoBO.verificaRacao(viewConsumo.getDataJFT().getText(),
+								Integer.parseInt(viewConsumo.getFornecidaJFT().getText()),
+								Integer.parseInt(viewConsumo.getSobraJFT().getText()),
+								Integer.parseInt(viewConsumo.getPesoJFT().getText().trim()),
+								Integer.parseInt(viewConsumo.getnAnimaisJFT().getText().trim()), datasFases);
+						if (msg.length() != 0) {
+							JOptionPane.showMessageDialog(viewConsumo, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+							fluxoProblemaDigitacaoRacoes();
+						} else {
+							if (usarColunaExtra) {
+								TextFormatter.formatStringJFT(jft, text, 5);
+								viewConsumo.getSobraJFT().setEnabled(false);
+								viewConsumo.getPesoJFT().setEnabled(true);
+								viewConsumo.getPesoJFT().grabFocus();
 							} else {
-								
+								TextFormatter.formatStringJFT(jft, text, 5);
+								viewConsumo.getSobraJFT().setEnabled(false);
+								viewConsumo.getDataJFT().setEnabled(true);
+								viewConsumo.getDataJFT().grabFocus();
+								controller.getModel().getExperimentoVO().getConsumo()
+										.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getRme()
+										.add(new RmeVOSC(Integer.parseInt(viewConsumo.getOrdemJFT().getText().trim()),
+												viewConsumo.getDataJFT().getText().trim(),
+												Integer.parseInt(viewConsumo.getFornecidaJFT().getText().trim()),
+												Integer.parseInt(viewConsumo.getSobraJFT().getText().trim()), 0, 0));
+								updateHistRME();
+								ordem++;
+								viewConsumo.getOrdemJFT().setText(String.valueOf(ordem));
 							}
 						}
 					}
+
 				} else if ((JFormattedTextField) e.getSource() == viewConsumo.getPesoJFT()) {
 					TextFormatter.formatStringJFT(jft, text, 6);
 					viewConsumo.getPesoJFT().setEnabled(false);
