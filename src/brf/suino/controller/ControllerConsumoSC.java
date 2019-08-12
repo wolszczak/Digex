@@ -46,7 +46,7 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 
 	public void openWindow(List<String> datasFases) {
 		viewConsumo = new ViewConsumoSC();
-		viewConsumo.setTitle("DIGEX - Suínos Creche");
+		viewConsumo.setTitle("DIGEX - Consumo Suínos Creche");
 		viewConsumo.setResizable(false);
 		viewConsumo.setLocationRelativeTo(null);
 		viewConsumo.setVisible(true);
@@ -357,7 +357,6 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 
 	}
 
-	@SuppressWarnings("unlikely-arg-type")
 	@Override
 	public void keyTyped(KeyEvent e) {
 		if (e.getKeyChar() == KeyEvent.VK_ESCAPE) {
@@ -466,9 +465,14 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 					}
 				} else if ((JFormattedTextField) e.getSource() == viewConsumo.getDataJFT()) {
 					TextFormatter.formatStringJFT(jft, text, 8);
-					viewConsumo.getDataJFT().setEnabled(false);
-					viewConsumo.getFornecidaJFT().setEnabled(true);
-					viewConsumo.getFornecidaJFT().requestFocus();
+					String msg = consumoBO.verificaData(viewConsumo.getData().getText(), datasFases);
+					if (msg != null) {
+						JOptionPane.showMessageDialog(viewConsumo, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+					} else {
+						viewConsumo.getDataJFT().setEnabled(false);
+						viewConsumo.getFornecidaJFT().setEnabled(true);
+						viewConsumo.getFornecidaJFT().requestFocus();
+					}
 				} else if ((JFormattedTextField) e.getSource() == viewConsumo.getFornecidaJFT()) {
 					TextFormatter.formatStringJFT(jft, text, 5);
 					viewConsumo.getFornecidaJFT().setEnabled(false);
@@ -511,6 +515,8 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 								updateHistRME();
 								ordem++;
 								viewConsumo.getOrdemJFT().setText(String.valueOf(ordem));
+								TextFormatter.formatStringJFT(viewConsumo.getOrdemJFT(), viewConsumo.getOrdemJFT().getText(), 2);
+								viewConsumo.getConsumoJP().setBorder(defaultBorder);
 							}
 						}
 					}
@@ -574,6 +580,7 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 								.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).setRme(new ArrayList<>());
 						fluxoErroControle();
 						viewConsumo.getControleFornecidaJFT().setText("000000");
+						viewConsumo.getControleFornecidaJFT().setEnabled(false);
 						ordem = consumosErros.get(0).getOrdem();
 						recuperaHistConsumo();
 						TextFormatter.formatStringJFT(viewConsumo.getOrdemJFT(), viewConsumo.getOrdemJFT().getText(), 2);

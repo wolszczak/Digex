@@ -5,9 +5,17 @@ import java.io.Serializable;
 public class MortoVOSC implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int ordem;
+	private String data;
+	private int peso;
+	private int fase;
+	private int causa;
 
-	public MortoVOSC(int ordem) {
+	public MortoVOSC(int ordem, String data, Integer peso, Integer fase, Integer causa) {
 		this.ordem = ordem;
+		this.data = data;
+		this.peso = peso;
+		this.fase = fase;
+		this.causa = causa;
 	}
 
 	public int getOrdem() {
@@ -16,6 +24,38 @@ public class MortoVOSC implements Serializable {
 
 	public void setOrdem(int ordem) {
 		this.ordem = ordem;
+	}
+
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
+	public int getPeso() {
+		return peso;
+	}
+
+	public void setPeso(int peso) {
+		this.peso = peso;
+	}
+
+	public int getFase() {
+		return fase;
+	}
+
+	public void setFase(int fase) {
+		this.fase = fase;
+	}
+
+	public int getCausa() {
+		return causa;
+	}
+
+	public void setCausa(int causa) {
+		this.causa = causa;
 	}
 
 

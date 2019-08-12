@@ -5,7 +5,9 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import javax.swing.JFileChooser;
 
@@ -21,13 +23,12 @@ public class Utils {
 			Files.createDirectories(Paths.get(localArquivo));
 			FileOutputStream fileOut = new FileOutputStream(localArquivo + nomeArquivo);
 			ObjectOutputStream out = new ObjectOutputStream(fileOut);
-			out.writeBytes(
-					"#################################################################################################"
-							+ "#################################################################################################"
-							+ "############################# " + msg + "#############################"
-							+ "#################################################################################################"
-							+ "#################################################################################################\n"
-							+ e.getMessage());
+			out.writeBytes("#################################################################################################"
+					+ "#################################################################################################"
+					+ "############################# " + msg + "#############################"
+					+ "#################################################################################################"
+					+ "#################################################################################################\n"
+					+ e.getMessage());
 			out.close();
 			fileOut.close();
 		} catch (Exception e2) {
@@ -38,6 +39,16 @@ public class Utils {
 							+ "#################################################################################################"
 							+ "#################################################################################################");
 		}
+	}
+
+	public static Date dateFromString(String string) {
+		try {
+			Date data = new SimpleDateFormat("dd/MM/yyyy").parse(string);
+			return data;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 }

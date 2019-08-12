@@ -17,6 +17,7 @@ import brf.peru.model.vo.RmeVOP;
 import brf.suino.controller.ControllerSC;
 import brf.suino.model.vo.ConsumoVOSC;
 import brf.suino.model.vo.RmeVOSC;
+import brf.util.Utils;
 
 public class ConsumoBOSC {
 	private final ControllerSC controller;
@@ -55,6 +56,22 @@ public class ConsumoBOSC {
 		}
 		controller.getModel().getExperimentoVO().getConsumo().remove(consumoRemocao);
 		controller.getModel().getModelStateDAO().saveModelState(false);
+	}
+
+	public String verificaData(String dataString, List<String> fases) {
+		if (dataString.equals("00/00/00")) {
+			return null;
+		} else {
+			String[] split = dataString.split("/");
+			dataString = split[0] + "/" + split[1] + "/20" + split[2];
+			Date digitada = Utils.dateFromString(dataString);
+			Date inicioFase = Utils.dateFromString(fases.get(0));
+			Date finalFase = Utils.dateFromString(fases.get(fases.size() - 1));
+			if (digitada.before(inicioFase) || digitada.after(finalFase)) {
+				return "- Data fora do período do experimento.";
+			}
+		}
+		return null;
 	}
 
 	public String verificaRacao(String data, Integer racao, Integer sobra, Integer peso, Integer nanimais, List<String> datasFases) {

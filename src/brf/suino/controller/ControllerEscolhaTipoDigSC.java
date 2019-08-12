@@ -29,7 +29,7 @@ public class ControllerEscolhaTipoDigSC extends KeyAdapter {
 	public void openWindow(List<String> datasFases) {
 		this.datasFases = datasFases;
 		view = new ViewEscolhaTipoDigSC();
-		view.setTitle("DIGEX - Peru");
+		view.setTitle("DIGEX - Suínos Creche");
 		view.setResizable(false);
 		view.setLocationRelativeTo(null);
 		view.setVisible(true);

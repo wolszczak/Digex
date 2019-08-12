@@ -30,7 +30,7 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 
 	public void openWindow(List<String> datasFases) {
 		viewEscolhaDig = new ViewEscolhaDigSC();
-		viewEscolhaDig.setTitle("DIGEX - Peru");
+		viewEscolhaDig.setTitle("DIGEX - Suínos Creche");
 		viewEscolhaDig.setResizable(false);
 		viewEscolhaDig.setLocationRelativeTo(null);
 		viewEscolhaDig.setVisible(true);
