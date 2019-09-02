@@ -9,10 +9,6 @@ import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class ViewConeP extends javax.swing.JFrame {
-
-	/**
-	 * Creates new form ViewConeP
-	 */
 	public ViewConeP() {
 		initComponents();
 	}

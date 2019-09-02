@@ -77,7 +77,8 @@ public class ModelStateDAOSC {
 			return false;
 		}
 //		ExperimentoVOSC e = (ExperimentoVOSC) obj;
-//		e.setConsumo(new ArrayList<>());
+//		e.setMedicados(new ArrayList<>());
+//		e.setMortalidade(new ArrayList<>());
 		model.setExperimentoVO((ExperimentoVOSC) obj);
 //		saveModelState(false);
 		return true;

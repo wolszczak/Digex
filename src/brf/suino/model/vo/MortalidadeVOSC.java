@@ -18,7 +18,7 @@ public class MortalidadeVOSC implements Serializable{
 		this.mortos = new ArrayList<>();
 	}
 	
-	private void MortalidadeVOSC(int galpao, int baia, int sexo, int trat1, int trat2, boolean finalizado, List<MortoVOSC> mortos) {
+	public MortalidadeVOSC(int galpao, int baia, int sexo, int trat1, int trat2, boolean finalizado, List<MortoVOSC> mortos) {
 		this.galpao =  galpao;
 		this.baia = baia;
 		this.sexo = sexo;

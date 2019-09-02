@@ -49,13 +49,17 @@ public class ControllerEscolhaTipoDigSC extends KeyAdapter {
 
 		for (MortalidadeVOSC m : controller.getModel().getExperimentoVO().getMortalidade()) {
 			if (m.getBaia() == lastBaia) {
-				obsAbate[1]++;
+				if (m.getMortos().size() > 0) {
+					obsAbate[1] = m.getMortos().size();
+				}
 			}
 		}
 
 		for (MedicadosVOSC m : controller.getModel().getExperimentoVO().getMedicados()) {
 			if (m.getBaia() == lastBaia) {
-				obsAbate[2]++;
+				if (m.getMedicados().size() > 0) {
+					obsAbate[1] = m.getMedicados().size();
+				}
 			}
 		}
 
@@ -120,11 +124,12 @@ public class ControllerEscolhaTipoDigSC extends KeyAdapter {
 		case KeyEvent.VK_ESCAPE:
 			int option = JOptionPane.showConfirmDialog(view, "Deseja realmente voltar para tela anterior?", "DIGEX - Voltar",
 					JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
-//			if (option == 0) {
-//				viewEscolhaTipoDigSC.setVisible(false);
-//				controller.resumeEscolhaDig();
-//				System.out.println("Voltar");
-//			}
+			if (option == 0) {
+				view.setVisible(false);
+				ControllerEscolhaDigSC ce = new ControllerEscolhaDigSC(controller);
+				ce.openWindow(datasFases);
+				System.out.println("Voltar");
+			}
 			break;
 		default:
 			System.out.println("Opção inválida!");
@@ -132,5 +137,6 @@ public class ControllerEscolhaTipoDigSC extends KeyAdapter {
 			((JFormattedTextField) e.getComponent()).selectAll();
 			break;
 		}
+
 	}
 }

@@ -372,7 +372,6 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 		if (e.getKeyChar() == KeyEvent.VK_ENTER) {
 			System.out.println("enter");
 			JFormattedTextField jft = null;
-			JCheckBox chk = null;
 			String text = "";
 			if (e.getSource() == viewConsumo.getChkUsarColunaExtra()) {
 				if (viewConsumo.getBaiaJFT().getText().matches("^[0-9]{3}") && viewConsumo.getSexoJFT().getText().matches("^[0-9]{1}")
@@ -710,7 +709,7 @@ public class ControllerConsumoSC extends KeyAdapter implements FocusListener, It
 			viewConsumo.getDataJFT().setEnabled(true);
 			viewConsumo.getSobraJFT().transferFocus();
 			viewConsumo.getDataJFT().grabFocus();
-//			viewConsumo.pack();
+			viewConsumo.pack();
 		}
 	}
 

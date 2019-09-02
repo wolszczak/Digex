@@ -58,7 +58,6 @@ public class ViewCamaraP extends javax.swing.JFrame {
 	private javax.swing.JLabel numHist3Label;
 	private javax.swing.JLabel numHist4Label;
 	private javax.swing.JLabel numHist5Label;
-	private javax.swing.JFormattedTextField numero1JFT;
 	private javax.swing.JFormattedTextField numero2JFT;
 	private javax.swing.JFormattedTextField numero3JFT;
 	private javax.swing.JFormattedTextField numero4JFT;
@@ -89,6 +88,7 @@ public class ViewCamaraP extends javax.swing.JFrame {
 	private JLabel qtdeAbate1Label;
 	private JLabel lblfAbrir_1;
 	private JLabel qtdeAbate2Label;
+	private JFormattedTextField numero1JFT;
 
 	public ViewCamaraP() {
 		initComponents();
@@ -108,8 +108,6 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		jLabel12 = new javax.swing.JLabel();
 		jLabel14 = new javax.swing.JLabel();
 		jLabel15 = new javax.swing.JLabel();
-		numero1JFT = new javax.swing.JFormattedTextField();
-		numero1JFT.setEnabled(false);
 		pCarcaca1JFT = new javax.swing.JFormattedTextField();
 		escGordura1JFT = new javax.swing.JFormattedTextField();
 		escCarcaca1JFT = new javax.swing.JFormattedTextField();
@@ -181,6 +179,7 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		camaraJFT.setEditable(false);
 		camaraJFT.setFont(new Font("Tahoma", Font.BOLD, 11));
 		camaraJFT.setForeground(new java.awt.Color(0, 153, 255));
+		numero1JFT = new JFormattedTextField();
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -188,8 +187,13 @@ public class ViewCamaraP extends javax.swing.JFrame {
 
 		jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		jLabel1.setText("Ordem");
-		ordem1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
+		try {
+			ordem1JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		ordem1JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
 		jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -208,16 +212,7 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		jLabel15.setText("Esc. Gord.");
 
 		try {
-			numero1JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
-		} catch (java.text.ParseException ex) {
-			ex.printStackTrace();
-		}
-		numero1JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-		try {
-			pCarcaca1JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+			pCarcaca1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
@@ -225,8 +220,7 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		pCarcaca1JFT.setEnabled(false);
 
 		try {
-			escGordura1JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+			escGordura1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -234,8 +228,7 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		escGordura1JFT.setEnabled(false);
 
 		try {
-			escCarcaca1JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+			escCarcaca1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -243,8 +236,7 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		escCarcaca1JFT.setEnabled(false);
 
 		try {
-			controleJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
+			controleJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -326,19 +318,22 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		escCarcacaHist5Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		escCarcacaHist5Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		ordem2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
+		try {
+			ordem2JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+		} catch (ParseException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 		ordem2JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		ordem2JFT.setEnabled(false);
 
-		numero2JFT.setFormatterFactory(
-				new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+		numero2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
 		numero2JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		numero2JFT.setEnabled(false);
 
 		try {
-			pCarcaca2JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+			pCarcaca2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
@@ -346,8 +341,7 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		pCarcaca2JFT.setEnabled(false);
 
 		try {
-			escGordura2JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+			escGordura2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -355,27 +349,33 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		escGordura2JFT.setEnabled(false);
 
 		try {
-			escCarcaca2JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+			escCarcaca2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
 		escCarcaca2JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		escCarcaca2JFT.setEnabled(false);
 
-		ordem3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
+		try {
+			ordem3JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		ordem3JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		ordem3JFT.setEnabled(false);
 
-		numero3JFT.setFormatterFactory(
-				new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+		try {
+			numero3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+		} catch (ParseException e1) {
+			e1.printStackTrace();
+		}
 		numero3JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		numero3JFT.setEnabled(false);
 
 		try {
-			pCarcaca3JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+			pCarcaca3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
@@ -383,8 +383,7 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		pCarcaca3JFT.setEnabled(false);
 
 		try {
-			escGordura3JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+			escGordura3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -392,27 +391,34 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		escGordura3JFT.setEnabled(false);
 
 		try {
-			escCarcaca3JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+			escCarcaca3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
 		escCarcaca3JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		escCarcaca3JFT.setEnabled(false);
 
-		ordem4JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
+		try {
+			ordem4JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		ordem4JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		ordem4JFT.setEnabled(false);
 
-		numero4JFT.setFormatterFactory(
-				new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+		try {
+			numero4JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		numero4JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		numero4JFT.setEnabled(false);
 
 		try {
-			pCarcaca4JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+			pCarcaca4JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
@@ -420,8 +426,7 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		pCarcaca4JFT.setEnabled(false);
 
 		try {
-			escGordura4JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+			escGordura4JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -429,27 +434,34 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		escGordura4JFT.setEnabled(false);
 
 		try {
-			escCarcaca4JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+			escCarcaca4JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
 		escCarcaca4JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		escCarcaca4JFT.setEnabled(false);
 
-		ordem5JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-				new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
+		try {
+			ordem5JFT.setFormatterFactory(
+					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		ordem5JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		ordem5JFT.setEnabled(false);
 
-		numero5JFT.setFormatterFactory(
-				new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+		try {
+			numero5JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		numero5JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		numero5JFT.setEnabled(false);
 
 		try {
-			pCarcaca5JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+			pCarcaca5JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
@@ -457,8 +469,7 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		pCarcaca5JFT.setEnabled(false);
 
 		try {
-			escGordura5JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+			escGordura5JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -466,193 +477,150 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		escGordura5JFT.setEnabled(false);
 
 		try {
-			escCarcaca5JFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+			escCarcaca5JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
 		escCarcaca5JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		escCarcaca5JFT.setEnabled(false);
 
+		try {
+			numero1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		numero1JFT.setHorizontalAlignment(SwingConstants.CENTER);
+		numero1JFT.setEnabled(false);
+
 		javax.swing.GroupLayout camaraJPLayout = new javax.swing.GroupLayout(camaraJP);
-		camaraJPLayout.setHorizontalGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING).addGroup(camaraJPLayout
-				.createSequentialGroup().addContainerGap()
-				.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false).addComponent(ordem5JFT)
-						.addComponent(ordem4JFT).addComponent(ordem3JFT).addComponent(ordem2JFT, Alignment.TRAILING)
-						.addComponent(jLabel1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(ordemHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addComponent(ordemHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addComponent(ordemHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addComponent(
-								ordemHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(
-								ordemHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(ordem1JFT))
-				.addPreferredGap(ComponentPlacement.UNRELATED)
-				.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false).addComponent(numero5JFT)
-						.addComponent(numero4JFT).addComponent(numero3JFT).addComponent(numero1JFT)
-						.addComponent(jLabel2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(numHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addComponent(numHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addComponent(numHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addComponent(numHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addComponent(numHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addComponent(numero2JFT))
-				.addPreferredGap(ComponentPlacement.UNRELATED)
-				.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false).addComponent(pCarcaca5JFT)
-						.addComponent(pCarcaca4JFT).addComponent(pCarcaca3JFT)
-						.addComponent(pCarcacaHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addComponent(pCarcacaHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addComponent(pCarcacaHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addComponent(pCarcacaHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addComponent(pCarcacaHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addComponent(pCarcaca1JFT)
-						.addComponent(jLabel14, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(pCarcaca2JFT))
-				.addPreferredGap(ComponentPlacement.UNRELATED)
-				.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false).addComponent(escGordura5JFT)
-						.addComponent(escGordura4JFT).addComponent(escGordura3JFT).addComponent(escGordura1JFT)
-						.addComponent(jLabel15, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(escGorduraHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addComponent(escGorduraHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addComponent(escGorduraHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addComponent(escGorduraHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addComponent(escGorduraHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addComponent(escGordura2JFT))
-				.addPreferredGap(ComponentPlacement.UNRELATED)
-				.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false)
-						.addComponent(jLabel11, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(escCarcaca1JFT, Alignment.TRAILING)
-						.addComponent(escCarcacaHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addComponent(escCarcacaHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addComponent(escCarcacaHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addComponent(escCarcacaHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addComponent(escCarcacaHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addComponent(escCarcaca2JFT).addComponent(escCarcaca3JFT).addComponent(escCarcaca4JFT)
-						.addComponent(escCarcaca5JFT))
-				.addPreferredGap(ComponentPlacement.RELATED)
-				.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false)
-						.addComponent(jLabel12, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(controleJFT, GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE))
-				.addContainerGap(23, Short.MAX_VALUE)));
+		camaraJPLayout.setHorizontalGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(camaraJPLayout.createSequentialGroup().addContainerGap()
+						.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false).addComponent(ordem5JFT)
+								.addComponent(ordem4JFT).addComponent(ordem3JFT).addComponent(ordem2JFT, Alignment.TRAILING)
+								.addComponent(jLabel1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(ordemHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(ordemHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(ordemHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(ordemHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(ordemHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(ordem1JFT))
+						.addPreferredGap(ComponentPlacement.UNRELATED)
+						.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING)
+								.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false).addComponent(numero5JFT)
+										.addComponent(numero4JFT).addComponent(numero3JFT)
+										.addComponent(jLabel2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addComponent(numHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addComponent(numHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addComponent(numHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addComponent(numHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addComponent(
+												numHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addComponent(numero2JFT))
+								.addComponent(numero1JFT, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE))
+						.addPreferredGap(ComponentPlacement.UNRELATED)
+						.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false).addComponent(pCarcaca5JFT)
+								.addComponent(pCarcaca4JFT).addComponent(pCarcaca3JFT)
+								.addComponent(pCarcacaHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(pCarcacaHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(pCarcacaHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(pCarcacaHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(pCarcacaHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(pCarcaca1JFT)
+								.addComponent(jLabel14, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(pCarcaca2JFT))
+						.addPreferredGap(ComponentPlacement.UNRELATED)
+						.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false).addComponent(escGordura5JFT)
+								.addComponent(escGordura4JFT).addComponent(escGordura3JFT).addComponent(escGordura1JFT)
+								.addComponent(jLabel15, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(escGorduraHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(escGorduraHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(escGorduraHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(escGorduraHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(escGorduraHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(escGordura2JFT))
+						.addPreferredGap(ComponentPlacement.UNRELATED)
+						.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false)
+								.addComponent(jLabel11, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(escCarcaca1JFT, Alignment.TRAILING)
+								.addComponent(escCarcacaHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(escCarcacaHist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(escCarcacaHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(escCarcacaHist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(escCarcacaHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(escCarcaca2JFT).addComponent(escCarcaca3JFT).addComponent(escCarcaca4JFT)
+								.addComponent(escCarcaca5JFT))
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false)
+								.addComponent(jLabel12, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(controleJFT, GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE))
+						.addContainerGap(23, Short.MAX_VALUE)));
 		camaraJPLayout.setVerticalGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(camaraJPLayout.createSequentialGroup().addContainerGap()
 						.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false)
 								.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-										.addComponent(ordemHist1Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)
-										.addComponent(numHist1Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE))
+										.addComponent(ordemHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addComponent(numHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
 								.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-										.addComponent(pCarcacaHist1Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)
-										.addComponent(escGorduraHist1Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)
-										.addComponent(escCarcacaHist1Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)))
+										.addComponent(pCarcacaHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addComponent(escGorduraHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addComponent(escCarcacaHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)))
 						.addPreferredGap(ComponentPlacement.UNRELATED)
 						.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false)
 								.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-										.addComponent(ordemHist2Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)
-										.addComponent(numHist2Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE))
+										.addComponent(ordemHist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addComponent(numHist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
 								.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-										.addComponent(pCarcacaHist2Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)
-										.addComponent(escGorduraHist2Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)
-										.addComponent(escCarcacaHist2Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)))
+										.addComponent(pCarcacaHist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addComponent(escGorduraHist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addComponent(escCarcacaHist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)))
 						.addPreferredGap(ComponentPlacement.UNRELATED)
 						.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING)
 								.addGroup(camaraJPLayout.createParallelGroup(Alignment.TRAILING)
-										.addComponent(ordemHist3Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)
-										.addComponent(numHist3Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE))
+										.addComponent(ordemHist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addComponent(numHist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
 								.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-										.addComponent(pCarcacaHist3Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)
-										.addComponent(escGorduraHist3Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)
-										.addComponent(escCarcacaHist3Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)))
+										.addComponent(pCarcacaHist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addComponent(escGorduraHist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addComponent(escCarcacaHist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)))
 						.addPreferredGap(ComponentPlacement.UNRELATED)
 						.addGroup(camaraJPLayout.createParallelGroup(Alignment.TRAILING)
-								.addComponent(ordemHist4Label, GroupLayout.PREFERRED_SIZE, 14,
-										GroupLayout.PREFERRED_SIZE)
+								.addComponent(ordemHist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
 								.addComponent(numHist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
 								.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-										.addComponent(pCarcacaHist4Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)
-										.addComponent(escGorduraHist4Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)
-										.addComponent(escCarcacaHist4Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)))
+										.addComponent(pCarcacaHist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addComponent(escGorduraHist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addComponent(escCarcacaHist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)))
 						.addPreferredGap(ComponentPlacement.UNRELATED)
 						.addGroup(camaraJPLayout.createParallelGroup(Alignment.TRAILING)
-								.addComponent(ordemHist5Label, GroupLayout.PREFERRED_SIZE, 14,
-										GroupLayout.PREFERRED_SIZE)
+								.addComponent(ordemHist5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
 								.addComponent(numHist5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
 								.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-										.addComponent(pCarcacaHist5Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)
-										.addComponent(escGorduraHist5Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)
-										.addComponent(escCarcacaHist5Label, GroupLayout.PREFERRED_SIZE, 14,
-												GroupLayout.PREFERRED_SIZE)))
+										.addComponent(pCarcacaHist5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addComponent(escGorduraHist5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addComponent(escCarcacaHist5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)))
 						.addPreferredGap(ComponentPlacement.UNRELATED)
-						.addGroup(
-								camaraJPLayout.createParallelGroup(Alignment.LEADING)
-										.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-												.addComponent(jLabel1).addComponent(jLabel2))
-										.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-												.addComponent(jLabel11).addComponent(jLabel14).addComponent(jLabel15)))
+						.addGroup(camaraJPLayout
+								.createParallelGroup(Alignment.LEADING)
+								.addGroup(
+										camaraJPLayout.createParallelGroup(Alignment.BASELINE).addComponent(jLabel1).addComponent(jLabel2))
+								.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE).addComponent(jLabel11)
+										.addComponent(jLabel14).addComponent(jLabel15)))
 						.addPreferredGap(ComponentPlacement.RELATED)
 						.addGroup(camaraJPLayout.createParallelGroup(Alignment.LEADING, false)
-								.addComponent(
-										escGordura1JFT, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 20,
+								.addComponent(escGordura1JFT, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 20,
 										GroupLayout.PREFERRED_SIZE)
-								.addComponent(
-										escCarcaca1JFT, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 20,
+								.addComponent(escCarcaca1JFT, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 20,
 										GroupLayout.PREFERRED_SIZE)
 								.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-										.addComponent(ordem1JFT, GroupLayout.PREFERRED_SIZE, 20,
-												GroupLayout.PREFERRED_SIZE)
-										.addComponent(numero1JFT, GroupLayout.PREFERRED_SIZE, 20,
-												GroupLayout.PREFERRED_SIZE)
-										.addComponent(pCarcaca1JFT, GroupLayout.PREFERRED_SIZE, 20,
+										.addComponent(ordem1JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+										.addComponent(pCarcaca1JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+										.addComponent(numero1JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 												GroupLayout.PREFERRED_SIZE)))
 						.addPreferredGap(ComponentPlacement.RELATED)
 						.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(ordem2JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE)
-								.addComponent(numero2JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE)
+								.addComponent(ordem2JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(numero2JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 								.addComponent(pCarcaca2JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE)
 								.addComponent(escGordura2JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
@@ -660,36 +628,31 @@ public class ViewCamaraP extends javax.swing.JFrame {
 								.addComponent(escCarcaca2JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE))
 						.addPreferredGap(ComponentPlacement.RELATED)
-						.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(ordem3JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE)
-								.addComponent(numero3JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE)
+						.addGroup(camaraJPLayout
+								.createParallelGroup(Alignment.BASELINE)
+								.addComponent(ordem3JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(numero3JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 								.addComponent(pCarcaca3JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE)
-								.addComponent(escGordura3JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE)
+								.addComponent(
+										escGordura3JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 								.addComponent(escCarcaca3JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE))
 						.addPreferredGap(ComponentPlacement.RELATED)
 						.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(ordem4JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE)
-								.addComponent(numero4JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE)
+								.addComponent(ordem4JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(numero4JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 								.addComponent(pCarcaca4JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE)
 								.addComponent(escGordura4JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE)
-								.addComponent(escCarcaca4JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE)
+								.addComponent(
+										escCarcaca4JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 								.addComponent(jLabel12))
 						.addPreferredGap(ComponentPlacement.RELATED)
 						.addGroup(camaraJPLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(ordem5JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE)
-								.addComponent(numero5JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE)
+								.addComponent(ordem5JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(numero5JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 								.addComponent(pCarcaca5JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE)
 								.addComponent(escGordura5JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
@@ -710,8 +673,7 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		jLabel10.setText("Aviário");
 		aviarioJFT.setForeground(new java.awt.Color(0, 153, 255));
 		try {
-			aviarioJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+			aviarioJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -722,8 +684,7 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		abateJFT.setEditable(false);
 		abateJFT.setForeground(new java.awt.Color(0, 153, 255));
 		try {
-			abateJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+			abateJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -734,8 +695,8 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		dataAbateJFT.setEditable(false);
 		dataAbateJFT.setForeground(new java.awt.Color(0, 153, 255));
 		try {
-			dataAbateJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+			dataAbateJFT
+					.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -745,8 +706,7 @@ public class ViewCamaraP extends javax.swing.JFrame {
 
 		idadeJFT.setForeground(new java.awt.Color(0, 153, 255));
 		try {
-			idadeJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+			idadeJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -757,43 +717,37 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		jPanel2Layout.setHorizontalGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 				.addGroup(jPanel2Layout.createSequentialGroup().addContainerGap().addComponent(jLabel10)
 						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-						.addComponent(aviarioJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addGap(20, 20, 20).addComponent(jLabel21)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-						.addComponent(abateJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addGap(20, 20, 20).addComponent(jLabel4)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-						.addComponent(idadeJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 30,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addGap(20, 20, 20).addComponent(jLabel22)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-						.addComponent(dataAbateJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 70,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
+						.addComponent(aviarioJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+						.addGap(20, 20, 20).addComponent(jLabel21).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+						.addComponent(abateJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+						.addGap(20, 20, 20).addComponent(jLabel4).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+						.addComponent(idadeJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+						.addGap(20, 20, 20).addComponent(jLabel22).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+						.addComponent(dataAbateJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
 						.addContainerGap()));
 		jPanel2Layout
-				.setVerticalGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(jPanel2Layout.createSequentialGroup().addContainerGap().addGroup(jPanel2Layout
-								.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel10)
-								.addComponent(aviarioJFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addComponent(jLabel21)
-								.addComponent(abateJFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addComponent(jLabel22)
-								.addComponent(dataAbateJFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addComponent(jLabel4).addComponent(idadeJFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-								.addContainerGap()));
+				.setVerticalGroup(
+						jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+								.addGroup(jPanel2Layout.createSequentialGroup().addContainerGap()
+										.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+												.addComponent(jLabel10)
+												.addComponent(aviarioJFT, javax.swing.GroupLayout.PREFERRED_SIZE,
+														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(jLabel21)
+												.addComponent(abateJFT, javax.swing.GroupLayout.PREFERRED_SIZE,
+														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(jLabel22)
+												.addComponent(dataAbateJFT, javax.swing.GroupLayout.PREFERRED_SIZE,
+														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(jLabel4).addComponent(idadeJFT, javax.swing.GroupLayout.PREFERRED_SIZE,
+														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+										.addContainerGap()));
 
 		jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
 		jLabel24.setText("Câmara");
 		try {
-			camaraJFT.setFormatterFactory(
-					new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+			camaraJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -803,13 +757,13 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
 		jPanel3Layout.setHorizontalGroup(jPanel3Layout.createParallelGroup(Alignment.LEADING)
 				.addGroup(jPanel3Layout.createSequentialGroup().addContainerGap().addComponent(jLabel24).addGap(5)
-						.addComponent(camaraJFT, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap()));
-		jPanel3Layout.setVerticalGroup(jPanel3Layout.createParallelGroup(Alignment.TRAILING).addGroup(jPanel3Layout
-				.createSequentialGroup().addContainerGap()
-				.addGroup(jPanel3Layout.createParallelGroup(Alignment.BASELINE).addComponent(jLabel24).addComponent(
-						camaraJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-				.addContainerGap()));
+						.addComponent(camaraJFT, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE).addContainerGap()));
+		jPanel3Layout
+				.setVerticalGroup(jPanel3Layout.createParallelGroup(Alignment.TRAILING)
+						.addGroup(jPanel3Layout.createSequentialGroup().addContainerGap()
+								.addGroup(jPanel3Layout.createParallelGroup(Alignment.BASELINE).addComponent(jLabel24).addComponent(
+										camaraJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+								.addContainerGap()));
 		jPanel3.setLayout(jPanel3Layout);
 
 		lblfAbrir = new JLabel();
@@ -837,60 +791,56 @@ public class ViewCamaraP extends javax.swing.JFrame {
 		qtdeAbate2Label.setFont(new Font("Tahoma", Font.PLAIN, 11));
 
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel1Layout
-				.createSequentialGroup().addContainerGap()
+		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel1Layout.createSequentialGroup()
+				.addContainerGap()
 				.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
 						.addComponent(jPanel2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addGroup(
-								jPanel1Layout.createSequentialGroup()
-										.addComponent(jPanel3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
-										.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING, false)
-												.addGroup(Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-														.addComponent(lblfAbrir, GroupLayout.PREFERRED_SIZE, 114,
-																GroupLayout.PREFERRED_SIZE)
-														.addPreferredGap(ComponentPlacement.UNRELATED).addComponent(
-																qtdeAbate1Label, GroupLayout.PREFERRED_SIZE, 84,
-																GroupLayout.PREFERRED_SIZE))
-												.addGroup(Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-														.addComponent(lblfAbrir_1, GroupLayout.DEFAULT_SIZE,
-																GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-														.addPreferredGap(ComponentPlacement.UNRELATED)
-														.addComponent(qtdeAbate2Label, GroupLayout.PREFERRED_SIZE, 84,
-																GroupLayout.PREFERRED_SIZE))))
+						.addGroup(jPanel1Layout.createSequentialGroup()
+								.addComponent(jPanel3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+								.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING, false)
+										.addGroup(Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+												.addComponent(lblfAbrir, GroupLayout.PREFERRED_SIZE, 114, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.UNRELATED)
+												.addComponent(qtdeAbate1Label, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE))
+										.addGroup(Alignment.TRAILING,
+												jPanel1Layout.createSequentialGroup()
+														.addComponent(lblfAbrir_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+																Short.MAX_VALUE)
+														.addPreferredGap(ComponentPlacement.UNRELATED).addComponent(qtdeAbate2Label,
+																GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE))))
 						.addComponent(camaraJP, GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
 						.addComponent(registrosLabel, GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE))
 				.addContainerGap()));
-		jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel1Layout
-				.createSequentialGroup().addContainerGap()
-				.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-				.addGap(18)
-				.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-						.addComponent(jPanel3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-								GroupLayout.PREFERRED_SIZE)
-						.addGroup(jPanel1Layout.createSequentialGroup()
-								.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
-										.addComponent(qtdeAbate1Label, GroupLayout.PREFERRED_SIZE, 15,
+		jPanel1Layout
+				.setVerticalGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+						.addGroup(jPanel1Layout.createSequentialGroup().addContainerGap()
+								.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addGap(18)
+								.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+										.addComponent(jPanel3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 												GroupLayout.PREFERRED_SIZE)
-										.addComponent(lblfAbrir))
+										.addGroup(jPanel1Layout.createSequentialGroup()
+												.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+														.addComponent(qtdeAbate1Label, GroupLayout.PREFERRED_SIZE, 15,
+																GroupLayout.PREFERRED_SIZE)
+														.addComponent(lblfAbrir))
+												.addPreferredGap(ComponentPlacement.UNRELATED)
+												.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+														.addComponent(qtdeAbate2Label, GroupLayout.PREFERRED_SIZE, 15,
+																GroupLayout.PREFERRED_SIZE)
+														.addComponent(lblfAbrir_1))))
 								.addPreferredGap(ComponentPlacement.UNRELATED)
-								.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
-										.addComponent(qtdeAbate2Label, GroupLayout.PREFERRED_SIZE, 15,
-												GroupLayout.PREFERRED_SIZE)
-										.addComponent(lblfAbrir_1))))
-				.addPreferredGap(ComponentPlacement.UNRELATED)
-				.addComponent(camaraJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-						GroupLayout.PREFERRED_SIZE)
-				.addPreferredGap(ComponentPlacement.RELATED).addComponent(registrosLabel).addContainerGap()));
+								.addComponent(camaraJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.RELATED).addComponent(registrosLabel).addContainerGap()));
 		jPanel1.setLayout(jPanel1Layout);
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
 		getContentPane().setLayout(layout);
-		layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(
-				jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
-		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(
-				jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+		layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(jPanel1,
+				javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(jPanel1,
+				javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
 
 		pack();
 	}// </editor-fold>//GEN-END:initComponents
@@ -915,17 +865,13 @@ public class ViewCamaraP extends javax.swing.JFrame {
 				}
 			}
 		} catch (ClassNotFoundException ex) {
-			java.util.logging.Logger.getLogger(ViewCamaraP.class.getName()).log(java.util.logging.Level.SEVERE, null,
-					ex);
+			java.util.logging.Logger.getLogger(ViewCamaraP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (InstantiationException ex) {
-			java.util.logging.Logger.getLogger(ViewCamaraP.class.getName()).log(java.util.logging.Level.SEVERE, null,
-					ex);
+			java.util.logging.Logger.getLogger(ViewCamaraP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (IllegalAccessException ex) {
-			java.util.logging.Logger.getLogger(ViewCamaraP.class.getName()).log(java.util.logging.Level.SEVERE, null,
-					ex);
+			java.util.logging.Logger.getLogger(ViewCamaraP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
-			java.util.logging.Logger.getLogger(ViewCamaraP.class.getName()).log(java.util.logging.Level.SEVERE, null,
-					ex);
+			java.util.logging.Logger.getLogger(ViewCamaraP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		}
 		// </editor-fold>
 		// </editor-fold>
@@ -1551,5 +1497,4 @@ public class ViewCamaraP extends javax.swing.JFrame {
 	public void setQtdeAbate2Label(JLabel qtdeAbate2Label) {
 		this.qtdeAbate2Label = qtdeAbate2Label;
 	}
-
 }

@@ -15,8 +15,8 @@ import brf.peru.model.vo.ConeVOP;
 import brf.peru.model.vo.InfoExpVOP;
 
 public class AbateDAOP {
-	private static final String[] HEADER_ABATE = { "IDADE", "BOX", "NASA", "CAMARA", "CONE", "PVIVO", "PABATE",
-			"ESCGORD", "ESCCARC", "PGORDU", "PPEITO", "SOBCOX" };
+	private static final String[] HEADER_ABATE = { "IDADE", "BOX", "NASA", "CAMARA", "CONE", "PVIVO", "PABATE", "ESCGORD", "ESCCARC",
+			"PGORDU", "PPEITO", "SOBCOX" };
 	private static List<BaiaAmostradosVOP> amostrados;
 	private static List<CamaraVOP> camaras;
 	private static List<ConeVOP> cones;
@@ -26,9 +26,9 @@ public class AbateDAOP {
 
 	public static void exportarArquivo(InfoExpVOP infoExpVOP, List<AbateVOP> abates, String localArquivo) {
 		try {
-			amostrados =  new ArrayList<>();
-			camaras =  new ArrayList<>();
-			cones =  new ArrayList<>();
+			amostrados = new ArrayList<>();
+			camaras = new ArrayList<>();
+			cones = new ArrayList<>();
 			amostrado = new BaiaAmostradosVOP();
 			camara = new CamaraVOP();
 			cone = new ConeVOP();
@@ -82,27 +82,34 @@ public class AbateDAOP {
 				buffer.write("" + amostrados.get(i).getNasa());
 				buffer.write(";");
 
-				//VERIFICA SE O ANIMAL FOI AVALIADO NO FRIGORÍFICO E PEGA O NUMERO DO INDICE DELE NA LISTA DE CAMARAS
+				// VERIFICA SE O ANIMAL FOI AVALIADO NO FRIGORÍFICO E PEGA O NUMERO DO INDICE
+				// DELE NA LISTA DE CAMARAS
 				for (int j = 0; j < camaras.size(); j++) {
 					if (camaras.get(j).getNasa() == amostrados.get(i).getNasa()) {
 						keyCamara = true;
-						camara = camaras.get(j);
+						camara = new CamaraVOP(camaras.get(j).getAbate(), camaras.get(j).getCamara(), camaras.get(j).getNasa(),
+								camaras.get(j).getpCarcaca(), camaras.get(j).getEscGordura(), camaras.get(j).getEscCarcaca());
+						camaras.remove(j);
 						break;
 					}
 				}
 
-				//VERIFICA SE O ANIMAL FOI AVALIADO NO FRIGORÍFICO E PEGA O NUMERO DO INDICE DELE NA LISTA DE CONES
+				// VERIFICA SE O ANIMAL FOI AVALIADO NO FRIGORÍFICO E PEGA O NUMERO DO INDICE
+				// DELE NA LISTA DE CONES
 				for (int k = 0; k < cones.size(); k++) {
 					if (cones.get(k).getNasa() == amostrados.get(i).getNasa()) {
 						keyCone = true;
-						cone = cones.get(k);
+						cone = new ConeVOP(cones.get(k).getAbate(), cones.get(k).getCamara(), cones.get(k).getNcone(),
+								cones.get(k).getNasa(), cones.get(k).getpGordura(), cones.get(k).getpPeito1(),
+								cones.get(k).getPesoSobreCoxa());
+						cones.remove(k);
 						break;
 					}
 				}
 
-				//TERMINA DE MONTAR O ARQUIVO CONFORME AS AVALIACOES DO ANIMAL
+				// TERMINA DE MONTAR O ARQUIVO CONFORME AS AVALIACOES DO ANIMAL
 				if (keyCamara && keyCone) {
-					buffer.write("" + camaras.get(i).getCamara());
+					buffer.write("" + camara.getCamara());
 					buffer.write(";");
 					buffer.write("" + cone.getNcone());
 					buffer.write(";");
@@ -160,6 +167,9 @@ public class AbateDAOP {
 					buffer.write(";");
 				}
 				buffer.newLine();
+				
+				camara = new CamaraVOP();
+				cone = new ConeVOP();
 			}
 
 			buffer.close();

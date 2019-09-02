@@ -7,12 +7,14 @@ public class MortoVOSC implements Serializable {
 	private int ordem;
 	private String data;
 	private int peso;
+	private int brinco;
 	private int fase;
 	private int causa;
 
-	public MortoVOSC(int ordem, String data, Integer peso, Integer fase, Integer causa) {
+	public MortoVOSC(int ordem, String data, Integer brinco, Integer peso, Integer fase, Integer causa) {
 		this.ordem = ordem;
 		this.data = data;
+		this.brinco = brinco;
 		this.peso = peso;
 		this.fase = fase;
 		this.causa = causa;
@@ -58,5 +60,12 @@ public class MortoVOSC implements Serializable {
 		this.causa = causa;
 	}
 
+	public int getBrinco() {
+		return brinco;
+	}
+
+	public void setBrinco(int brinco) {
+		this.brinco = brinco;
+	}
 
 }

@@ -20,7 +20,7 @@ public class RendimentoDAOF {
                                                       "IDAPE4","IDAPE5","IDAPE6","IDAPE7","IDAPE8","DABATE1","DABATE2","DABATE3",
                                                       "BOX","SEXO","LADO","TRAT1","TRAT2","NASA","PVIVO","ABATE","GDIR","GESQ",
                                                       "PABATE","PGORDIR","PGORESQ","PASA","GORPEITO","PPEITO","PAD","PAE",
-                                                      "ESTPDIR","ESTPESQ","COXSOB"};
+                                                      "ESTPDIR","ESTPESQ","LARGPEITO","COMPPEITO","COXSOB"};
     
     public static void exportarArquivo(InfoExpVOF infoExp, List<AbateVOF> abates, String localArquivo) throws IOException {
         List<String> header = new ArrayList<>();
@@ -189,6 +189,10 @@ public class RendimentoDAOF {
                                     buffer.write(""+rend.getEstPEsq());
                                     buffer.write(";");
                                 }
+                                buffer.write(""+rend.getLargPeito());
+                                buffer.write(";");
+                                buffer.write(""+rend.getCompPeito());
+                                buffer.write(";");
                                 buffer.write(""+rend.getpCoxSob());
                                 break;
                             }

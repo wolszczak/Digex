@@ -40,8 +40,7 @@ public class ControllerConeP extends KeyAdapter implements FocusListener {
 		controller = c;
 	}
 
-	public void openWindow(String aviario, Integer abate, Integer idadeAbate, String dataAbate, Integer camara,
-			Integer cone) {
+	public void openWindow(String aviario, Integer abate, Integer idadeAbate, String dataAbate, Integer camara, Integer cone) {
 		this.dao = new ModelStateDAOP(controller.getModel());
 		this.aviario = aviario;
 		this.camara = camara;
@@ -66,6 +65,26 @@ public class ControllerConeP extends KeyAdapter implements FocusListener {
 		viewCone.getDataAbateJFT().setText(dataAbate);
 		viewCone.getCamaraJFT().setText(String.valueOf(camara));
 		viewCone.getConeJFT().setText(String.valueOf(cone));
+		viewCone.getNumero1JFT().setText("");
+		viewCone.getNumero2JFT().setText("");
+		viewCone.getNumero3JFT().setText("");
+		viewCone.getNumero4JFT().setText("");
+		viewCone.getNumero5JFT().setText("");
+		viewCone.getpGord1JFT().setText("");
+		viewCone.getpGord2JFT().setText("");
+		viewCone.getpGord3JFT().setText("");
+		viewCone.getpGord4JFT().setText("");
+		viewCone.getpGord5JFT().setText("");
+		viewCone.getpPeito11JFT().setText("");
+		viewCone.getpPeito12JFT().setText("");
+		viewCone.getpPeito13JFT().setText("");
+		viewCone.getpPeito14JFT().setText("");
+		viewCone.getpPeito15JFT().setText("");
+		viewCone.getpCoxa1JFT().setText("");
+		viewCone.getpCoxa2JFT().setText("");
+		viewCone.getpCoxa3JFT().setText("");
+		viewCone.getpCoxa4JFT().setText("");
+		viewCone.getpCoxa5JFT().setText("");
 		viewCone.getNumero1JFT().setEnabled(true);
 		viewCone.getNumero1JFT().grabFocus();
 
@@ -78,8 +97,8 @@ public class ControllerConeP extends KeyAdapter implements FocusListener {
 	@Override
 	public void keyTyped(KeyEvent e) {
 		if (e.getKeyChar() == KeyEvent.VK_ESCAPE) {
-			int option = JOptionPane.showConfirmDialog(viewCone, "Deseja realmente voltar para tela anterior?",
-					"Digex - Voltar", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+			int option = JOptionPane.showConfirmDialog(viewCone, "Deseja realmente voltar para tela anterior?", "Digex - Voltar",
+					JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 			if (option == 0) {
 				viewCone.setVisible(false);
 				controller.startEscolhaCamaras(Integer.parseInt(aviario), abate, idadeAbate, dataAbate);
@@ -90,125 +109,135 @@ public class ControllerConeP extends KeyAdapter implements FocusListener {
 			JFormattedTextField src = (JFormattedTextField) e.getSource();
 			String text = src.getText();
 			if ((JFormattedTextField) e.getSource() == viewCone.getNumero1JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				for (ConeVOP c : controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones()) {
-					if (c.getNasa() == Integer.parseInt(viewCone.getNumero1JFT().getText())) {
-						key = true;
-						break;
-					}
-				}
-				if (key) {
-					JOptionPane.showMessageDialog(viewCone,
-							"Problema(s):\nAnilha nº" + viewCone.getNumero1JFT().getText() + " duplicada!",
-							"DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
-					key = false;
-				} else {
+				if (viewCone.getNumero1JFT().getText().trim().equals("")) {
 					viewCone.getRegistrosLabel().setVisible(false);
+					viewCone.getNumero1JFT().setText("000");
 					viewCone.getNumero1JFT().setEnabled(false);
 					viewCone.getNumero2JFT().setEnabled(true);
 					viewCone.getNumero2JFT().grabFocus();
-				}
-			} else if ((JFormattedTextField) e.getSource() == viewCone.getNumero2JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				if (!(viewCone.getNumero2JFT().getText().equals(viewCone.getNumero1JFT().getText()))) {
+				} else {
 					for (ConeVOP c : controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones()) {
-						if (c.getNasa() == Integer.parseInt(viewCone.getNumero2JFT().getText())) {
+						if (c.getNasa() == Integer.parseInt(viewCone.getNumero1JFT().getText().trim())) {
 							key = true;
 							break;
 						}
 					}
 					if (key) {
 						JOptionPane.showMessageDialog(viewCone,
-								"Problema(s):\nAnilha nº" + viewCone.getNumero2JFT().getText() + " duplicada!",
-								"DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+								"Problema(s):\nAnilha nº" + viewCone.getNumero1JFT().getText() + " duplicada!", "DIGEX - Erro",
+								JOptionPane.ERROR_MESSAGE);
 						key = false;
 					} else {
+						TextFormatter.formatStringJFT(src, text, 3);
+						viewCone.getRegistrosLabel().setVisible(false);
+						viewCone.getNumero1JFT().setEnabled(false);
+						viewCone.getNumero2JFT().setEnabled(true);
+						viewCone.getNumero2JFT().grabFocus();
+					}
+				}
+			} else if ((JFormattedTextField) e.getSource() == viewCone.getNumero2JFT()) {
+				if (viewCone.getNumero2JFT().getText().trim().equals("")) {
+					viewCone.getRegistrosLabel().setVisible(false);
+					viewCone.getNumero2JFT().setText("000");
+					viewCone.getNumero2JFT().setEnabled(false);
+					viewCone.getNumero3JFT().setEnabled(true);
+					viewCone.getNumero3JFT().grabFocus();
+				} else {
+					for (ConeVOP c : controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones()) {
+						if (c.getNasa() == Integer.parseInt(viewCone.getNumero2JFT().getText().trim())) {
+							key = true;
+							break;
+						}
+					}
+					if (key) {
+						JOptionPane.showMessageDialog(viewCone,
+								"Problema(s):\nAnilha nº" + viewCone.getNumero2JFT().getText() + " duplicada!", "DIGEX - Erro",
+								JOptionPane.ERROR_MESSAGE);
+						key = false;
+					} else {
+						TextFormatter.formatStringJFT(src, text, 3);
 						viewCone.getNumero2JFT().setEnabled(false);
 						viewCone.getNumero3JFT().setEnabled(true);
 						viewCone.getNumero3JFT().grabFocus();
 					}
-				} else {
-					JOptionPane.showMessageDialog(viewCone,
-							"Problema(s):\nAnilha nº" + viewCone.getNumero2JFT().getText() + " duplicada!",
-							"DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
 				}
 			} else if ((JFormattedTextField) e.getSource() == viewCone.getNumero3JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				if (!(viewCone.getNumero3JFT().getText().equals(viewCone.getNumero2JFT().getText())
-						&& viewCone.getNumero3JFT().getText().equals(viewCone.getNumero1JFT().getText()))) {
+				if (viewCone.getNumero3JFT().getText().trim().equals("")) {
+					viewCone.getRegistrosLabel().setVisible(false);
+					viewCone.getNumero3JFT().setText("000");
+					viewCone.getNumero3JFT().setEnabled(false);
+					viewCone.getNumero4JFT().setEnabled(true);
+					viewCone.getNumero4JFT().grabFocus();
+				} else {
 					for (ConeVOP c : controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones()) {
-						if (c.getNasa() == Integer.parseInt(viewCone.getNumero3JFT().getText())) {
+						if (c.getNasa() == Integer.parseInt(viewCone.getNumero3JFT().getText().trim())) {
 							key = true;
 							break;
 						}
 					}
 					if (key) {
 						JOptionPane.showMessageDialog(viewCone,
-								"Problema(s):\nAnilha nº" + viewCone.getNumero3JFT().getText() + " duplicada!",
-								"DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+								"Problema(s):\nAnilha nº" + viewCone.getNumero3JFT().getText() + " duplicada!", "DIGEX - Erro",
+								JOptionPane.ERROR_MESSAGE);
 						key = false;
 					} else {
+						TextFormatter.formatStringJFT(src, text, 3);
 						viewCone.getNumero3JFT().setEnabled(false);
 						viewCone.getNumero4JFT().setEnabled(true);
 						viewCone.getNumero4JFT().grabFocus();
 					}
-				} else {
-					JOptionPane.showMessageDialog(viewCone,
-							"Problema(s):\nAnilha nº" + viewCone.getNumero3JFT().getText() + " duplicada!",
-							"DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
 				}
 			} else if ((JFormattedTextField) e.getSource() == viewCone.getNumero4JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				if (!(viewCone.getNumero4JFT().getText().equals(viewCone.getNumero3JFT().getText())
-						&& viewCone.getNumero4JFT().getText().equals(viewCone.getNumero2JFT().getText())
-						&& viewCone.getNumero4JFT().getText().equals(viewCone.getNumero1JFT().getText()))) {
+				if (viewCone.getNumero4JFT().getText().trim().equals("")) {
+					viewCone.getRegistrosLabel().setVisible(false);
+					viewCone.getNumero4JFT().setText("000");
+					viewCone.getNumero4JFT().setEnabled(false);
+					viewCone.getNumero5JFT().setEnabled(true);
+					viewCone.getNumero5JFT().grabFocus();
+				} else {
 					for (ConeVOP c : controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones()) {
-						if (c.getNasa() == Integer.parseInt(viewCone.getNumero4JFT().getText())) {
+						if (c.getNasa() == Integer.parseInt(viewCone.getNumero4JFT().getText().trim())) {
 							key = true;
 							break;
 						}
 					}
 					if (key) {
 						JOptionPane.showMessageDialog(viewCone,
-								"Problema(s):\nAnilha nº" + viewCone.getNumero4JFT().getText() + " duplicada!",
-								"DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+								"Problema(s):\nAnilha nº" + viewCone.getNumero4JFT().getText() + " duplicada!", "DIGEX - Erro",
+								JOptionPane.ERROR_MESSAGE);
 						key = false;
 					} else {
+						TextFormatter.formatStringJFT(src, text, 3);
 						viewCone.getNumero4JFT().setEnabled(false);
 						viewCone.getNumero5JFT().setEnabled(true);
 						viewCone.getNumero5JFT().grabFocus();
 					}
-				} else {
-					JOptionPane.showMessageDialog(viewCone,
-							"Problema(s):\nAnilha nº" + viewCone.getNumero4JFT().getText() + " duplicada!",
-							"DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
 				}
 			} else if ((JFormattedTextField) e.getSource() == viewCone.getNumero5JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				if (!(viewCone.getNumero5JFT().getText().equals(viewCone.getNumero4JFT().getText())
-						&& viewCone.getNumero5JFT().getText().equals(viewCone.getNumero3JFT().getText())
-						&& viewCone.getNumero5JFT().getText().equals(viewCone.getNumero2JFT().getText())
-						&& viewCone.getNumero5JFT().getText().equals(viewCone.getNumero1JFT().getText()))) {
+				if (viewCone.getNumero5JFT().getText().trim().equals("")) {
+					viewCone.getRegistrosLabel().setVisible(false);
+					viewCone.getNumero5JFT().setText("000");
+					viewCone.getNumero5JFT().setEnabled(false);
+					viewCone.getpGord1JFT().setEnabled(true);
+					viewCone.getpGord1JFT().grabFocus();
+				} else {
 					for (ConeVOP c : controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones()) {
-						if (c.getNasa() == Integer.parseInt(viewCone.getNumero5JFT().getText())) {
+						if (c.getNasa() == Integer.parseInt(viewCone.getNumero5JFT().getText().trim())) {
 							key = true;
 							break;
 						}
 					}
 					if (key) {
 						JOptionPane.showMessageDialog(viewCone,
-								"Problema(s):\nAnilha nº" + viewCone.getNumero5JFT().getText() + " duplicada!",
-								"DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+								"Problema(s):\nAnilha nº" + viewCone.getNumero5JFT().getText() + " duplicada!", "DIGEX - Erro",
+								JOptionPane.ERROR_MESSAGE);
 						key = false;
 					} else {
+						TextFormatter.formatStringJFT(src, text, 3);
 						viewCone.getNumero5JFT().setEnabled(false);
 						viewCone.getpGord1JFT().setEnabled(true);
 						viewCone.getpGord1JFT().grabFocus();
 					}
-				} else {
-					JOptionPane.showMessageDialog(viewCone,
-							"Problema(s):\nAnilha nº" + viewCone.getNumero5JFT().getText() + " duplicada!",
-							"DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
 				}
 			} else if ((JFormattedTextField) e.getSource() == viewCone.getpGord1JFT()) {
 				TextFormatter.formatStringJFT(src, text, 3);
@@ -291,8 +320,7 @@ public class ControllerConeP extends KeyAdapter implements FocusListener {
 				TextFormatter.formatStringJFT(src, text, 6);
 				String msg = abateBO.verificaCones(conesTemp);
 				if (msg != null) {
-					JOptionPane.showMessageDialog(viewCone, "Problema(s):\n" + msg, "DIGEX - Erro",
-							JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(viewCone, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
 					viewCone.getConeJP().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
 					conesTemp = new ArrayList<>();
 					viewCone.getControleJFT().setEnabled(false);
@@ -301,8 +329,7 @@ public class ControllerConeP extends KeyAdapter implements FocusListener {
 				} else {
 					if (Integer.parseInt(viewCone.getControleJFT().getText()) == calculaTotalControle()) {
 						viewCone.getConeJP().setBorder(defaultBorder);
-						controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones()
-								.addAll(conesTemp);
+						controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones().addAll(conesTemp);
 						dao.saveModelState(false);
 						conesTemp = new ArrayList<>();
 						atualizaHist();
@@ -428,33 +455,29 @@ public class ControllerConeP extends KeyAdapter implements FocusListener {
 	private void loadHist() {
 		boolean key = false;
 		if (!controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones().isEmpty()) {
-			for (int i = controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones()
-					.size(); i > 0; i--) {
-				if (controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones().get(i - 1)
-						.getAbate() == abate
-						&& controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones().get(i - 1)
-								.getCamara() == camara
-						&& controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones().get(i - 1)
-								.getNcone() == cone) {
+			for (int i = controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones().size(); i > 0; i--) {
+				if (controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones().get(i - 1).getAbate() == abate
+						&& controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones().get(i - 1).getCamara() == camara
+						&& controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones().get(i - 1).getNcone() == cone) {
 					key = true;
 					JLabel lbl1 = (JLabel) orderAux.get(0);
-					lbl1.setText(String.valueOf(controller.getModel().getExperimentoVO().getAbates().get(abate - 1)
-							.getCones().get(i - 1).getNasa()));
+					lbl1.setText(String
+							.valueOf(controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones().get(i - 1).getNasa()));
 					orderAux.remove(0);
 
 					JLabel lbl2 = (JLabel) orderAux.get(0);
-					lbl2.setText(String.valueOf(controller.getModel().getExperimentoVO().getAbates().get(abate - 1)
-							.getCones().get(i - 1).getpGordura()));
+					lbl2.setText(String.valueOf(
+							controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones().get(i - 1).getpGordura()));
 					orderAux.remove(0);
 
 					JLabel lbl3 = (JLabel) orderAux.get(0);
-					lbl3.setText(String.valueOf(controller.getModel().getExperimentoVO().getAbates().get(abate - 1)
-							.getCones().get(i - 1).getpPeito1()));
+					lbl3.setText(String.valueOf(
+							controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones().get(i - 1).getpPeito1()));
 					orderAux.remove(0);
 
 					JLabel lbl4 = (JLabel) orderAux.get(0);
-					lbl4.setText(String.valueOf(controller.getModel().getExperimentoVO().getAbates().get(abate - 1)
-							.getCones().get(i - 1).getPesoSobreCoxa()));
+					lbl4.setText(String.valueOf(
+							controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones().get(i - 1).getPesoSobreCoxa()));
 					orderAux.remove(0);
 					if (orderAux.size() == 0) {
 						break;
@@ -462,12 +485,9 @@ public class ControllerConeP extends KeyAdapter implements FocusListener {
 				}
 			}
 			if (key) {
-				for (int i = 0; i < controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones()
-						.size(); i++) {
-					if (controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones().get(i)
-							.getAbate() == abate
-							&& controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones().get(i)
-									.getNcone() == cone) {
+				for (int i = 0; i < controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones().size(); i++) {
+					if (controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones().get(i).getAbate() == abate
+							&& controller.getModel().getExperimentoVO().getAbates().get(abate - 1).getCones().get(i).getNcone() == cone) {
 						ordem++;
 					}
 				}
@@ -569,24 +589,19 @@ public class ControllerConeP extends KeyAdapter implements FocusListener {
 
 	private void popularListaCones() {
 		conesTemp.add(new ConeVOP(abate, camara, cone, Integer.parseInt(viewCone.getNumero1JFT().getText()),
-				Integer.parseInt(viewCone.getpGord1JFT().getText()),
-				Integer.parseInt(viewCone.getpPeito11JFT().getText()),
+				Integer.parseInt(viewCone.getpGord1JFT().getText()), Integer.parseInt(viewCone.getpPeito11JFT().getText()),
 				Integer.parseInt(viewCone.getpCoxa1JFT().getText())));
 		conesTemp.add(new ConeVOP(abate, camara, cone, Integer.parseInt(viewCone.getNumero2JFT().getText()),
-				Integer.parseInt(viewCone.getpGord2JFT().getText()),
-				Integer.parseInt(viewCone.getpPeito12JFT().getText()),
+				Integer.parseInt(viewCone.getpGord2JFT().getText()), Integer.parseInt(viewCone.getpPeito12JFT().getText()),
 				Integer.parseInt(viewCone.getpCoxa2JFT().getText())));
 		conesTemp.add(new ConeVOP(abate, camara, cone, Integer.parseInt(viewCone.getNumero3JFT().getText()),
-				Integer.parseInt(viewCone.getpGord3JFT().getText()),
-				Integer.parseInt(viewCone.getpPeito13JFT().getText()),
+				Integer.parseInt(viewCone.getpGord3JFT().getText()), Integer.parseInt(viewCone.getpPeito13JFT().getText()),
 				Integer.parseInt(viewCone.getpCoxa3JFT().getText())));
 		conesTemp.add(new ConeVOP(abate, camara, cone, Integer.parseInt(viewCone.getNumero4JFT().getText()),
-				Integer.parseInt(viewCone.getpGord4JFT().getText()),
-				Integer.parseInt(viewCone.getpPeito14JFT().getText()),
+				Integer.parseInt(viewCone.getpGord4JFT().getText()), Integer.parseInt(viewCone.getpPeito14JFT().getText()),
 				Integer.parseInt(viewCone.getpCoxa4JFT().getText())));
 		conesTemp.add(new ConeVOP(abate, camara, cone, Integer.parseInt(viewCone.getNumero5JFT().getText()),
-				Integer.parseInt(viewCone.getpGord5JFT().getText()),
-				Integer.parseInt(viewCone.getpPeito15JFT().getText()),
+				Integer.parseInt(viewCone.getpGord5JFT().getText()), Integer.parseInt(viewCone.getpPeito15JFT().getText()),
 				Integer.parseInt(viewCone.getpCoxa5JFT().getText())));
 	}
 

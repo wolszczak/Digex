@@ -46,9 +46,9 @@ public class ViewEscolhaTipoDigSC extends javax.swing.JFrame {
 
 		abate1Label.setText("Mortalidade:");
 
-		jLabel39.setText("[2] - Digitar Mortalidade");
+		jLabel39.setText("[2] - Digitar Mortalidade última baia");
 
-		jLabel40.setText("[3] - Digitar Medicados");
+		jLabel40.setText("[3] - Digitar Medicados última baia");
 
 		jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 		jLabel41.setText("Opção");

@@ -59,6 +59,7 @@ public class ControllerEscolhaExp extends KeyAdapter {
 				suino = false;
 				return true;
 			} catch (Exception e) {
+				e.printStackTrace();
 				System.out.println("tentou carregar experimento de frango");
 			}
 		} else if (tipoExp.equals("P")) {
@@ -69,6 +70,7 @@ public class ControllerEscolhaExp extends KeyAdapter {
 				suino = false;
 				return true;
 			} catch (Exception e) {
+				e.printStackTrace();
 				System.out.println("tentou carregar experimento de peru");
 			}
 		} else if (tipoExp.equals("SC")) {
@@ -79,6 +81,7 @@ public class ControllerEscolhaExp extends KeyAdapter {
 				peru = false;
 				return true;
 			} catch (Exception e) {
+				e.printStackTrace();
 				System.out.println("tentou carregar experimento de suino");
 			}
 		}

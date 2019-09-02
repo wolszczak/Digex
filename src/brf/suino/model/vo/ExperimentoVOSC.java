@@ -9,17 +9,15 @@ import brf.peru.model.vo.ConsumoVOP;
 public class ExperimentoVOSC implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private InfoExpVOSC infoExp;
-    private List<ConsumoVOSC> consumo;
-    private List<MortalidadeVOSC> mortalidade;
-    private List<MedicadosVOSC> medicados;
-    private List<PesagensVOSC> pesagens;
+	private List<ConsumoVOSC> consumo;
+	private List<MortalidadeVOSC> mortalidade;
+	private List<MedicadosVOSC> medicados;
 
-    public ExperimentoVOSC() {
-        this.consumo = new ArrayList<>();
-        this.mortalidade = new ArrayList<>();
-        this.medicados = new ArrayList<>();
-        this.pesagens = new ArrayList<>();
-    }
+	public ExperimentoVOSC() {
+		this.consumo = new ArrayList<>();
+		this.mortalidade = new ArrayList<>();
+		this.medicados = new ArrayList<>();
+	}
 
 	public InfoExpVOSC getInfoExp() {
 		return infoExp;
@@ -37,21 +35,12 @@ public class ExperimentoVOSC implements Serializable {
 		this.consumo = consumo;
 	}
 
-
 	public List<MedicadosVOSC> getMedicados() {
 		return medicados;
 	}
 
 	public void setMedicados(List<MedicadosVOSC> medicados) {
 		this.medicados = medicados;
-	}
-
-	public List<PesagensVOSC> getPesagens() {
-		return pesagens;
-	}
-
-	public void setPesagens(List<PesagensVOSC> pesagens) {
-		this.pesagens = pesagens;
 	}
 
 	public List<MortalidadeVOSC> getMortalidade() {
@@ -62,6 +51,4 @@ public class ExperimentoVOSC implements Serializable {
 		this.mortalidade = mortalidade;
 	}
 
-
-    
 }

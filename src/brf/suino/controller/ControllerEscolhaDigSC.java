@@ -50,10 +50,6 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 				&& controller.getModel().getExperimentoVO().getMortalidade().isEmpty()) {
 			viewEscolhaDig.getExportarMortLabel().setForeground(Color.GRAY);
 		}
-		if (controller.getModel().getExperimentoVO().getPesagens() != null
-				&& controller.getModel().getExperimentoVO().getPesagens().isEmpty()) {
-			viewEscolhaDig.getExportarPesagemLabel().setForeground(Color.GRAY);
-		}
 		histSetup();
 	}
 
@@ -163,16 +159,6 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 			}
 		case KeyEvent.VK_2:
 			viewEscolhaDig.setVisible(false);
-			if (controller.getModel().getExperimentoVO().getPesagens() != null
-					&& controller.getModel().getExperimentoVO().getPesagens().size() != 0) {
-
-			} else {
-//				controller.startPesagensSC(controller.getModel().getExperimentoVO().getInfoExp().getDatasFases());
-				System.out.println("Abrir tela de IMPORTAÇÃO DE ARQUIVOS DA BALANÇA");
-				break;
-			}
-			break;
-		case KeyEvent.VK_3:
 			if (controller.getModel().getExperimentoVO().getConsumo().isEmpty()) {
 				JOptionPane.showMessageDialog(viewEscolhaDig, "Não há registros de Granja!", "DIGEX - Aviso", JOptionPane.WARNING_MESSAGE);
 			} else {
@@ -198,36 +184,10 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 				fileChooser.setSelectedFile(null);
 			}
 			break;
-		case KeyEvent.VK_4:
-			if (controller.getModel().getExperimentoVO().getMedicados().isEmpty()) {
-				JOptionPane.showMessageDialog(viewEscolhaDig, "Não há registros de Medicados!!", "DIGEX - Aviso",
-						JOptionPane.WARNING_MESSAGE);
-			} else {
-				JFileChooser fileChooser = new JFileChooser();
-				fileChooser.addChoosableFileFilter(new ExpFileFilter());
-				fileChooser.setFileView(new SystemFileView());
-				fileChooser.setAcceptAllFileFilterUsed(false);
-				fileChooser.setSelectedFile(new File(viewEscolhaDig.getTesteJFT().getText()));
-				int returnVal = fileChooser.showDialog(viewEscolhaDig, "Salvar");
-				if (returnVal == JFileChooser.APPROVE_OPTION) {
-					File file = fileChooser.getSelectedFile();
-					String localExportar = file.getAbsolutePath();
-//					try {
-//						DesempenhoDAOP.exportarArquivo(controller.getModel().getExperimentoVO().getInfoExp(),
-//								controller.getModel().getExperimentoVO().getConsumo(), localExportar);
-//						JOptionPane.showMessageDialog(viewEscolhaDig, "Arquivo de Granja salvo com sucesso!");
-//					} catch (IOException ex) {
-//						String msg = "Falha ao tentar salvar o arquivo! \n" + "Verifique se ele está aberto e tente novamente.";
-//						JOptionPane.showMessageDialog(viewEscolhaDig, msg);
-//						Logger.getLogger(ControllerEscolhaDigSC.class.getName()).log(Level.SEVERE, null, ex);
-//					}
-				}
-				fileChooser.setSelectedFile(null);
-			}
-			break;
-		case KeyEvent.VK_5:
+		case KeyEvent.VK_3:
+			viewEscolhaDig.setVisible(false);
 			if (controller.getModel().getExperimentoVO().getMortalidade().isEmpty()) {
-				JOptionPane.showMessageDialog(viewEscolhaDig, "Não há registros de Mortalidade!", "DIGEX - Aviso",
+				JOptionPane.showMessageDialog(viewEscolhaDig, "Não há registros de Mortalidade!!", "DIGEX - Aviso",
 						JOptionPane.WARNING_MESSAGE);
 			} else {
 				JFileChooser fileChooser = new JFileChooser();
@@ -252,49 +212,33 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 				fileChooser.setSelectedFile(null);
 			}
 			break;
-		case KeyEvent.VK_6:
-			JFileChooser fileChooser = new JFileChooser();
-			fileChooser.addChoosableFileFilter(new ExpFileFilter());
-			fileChooser.setFileView(new SystemFileView());
-			fileChooser.setAcceptAllFileFilterUsed(false);
-			int returnVal = fileChooser.showDialog(viewEscolhaDig, "Salvar");
-			if (returnVal == JFileChooser.APPROVE_OPTION) {
-				File file = fileChooser.getSelectedFile();
-				String localExportar = file.getAbsolutePath();
-//				try {
-//					AbateDAOP.exportarArquivo(controller.getModel().getExperimentoVO().getInfoExp(),
-//							controller.getModel().getExperimentoVO().getAbates(), localExportar);
-//					JOptionPane.showMessageDialog(viewEscolhaDig, "Arquivo de Rendimento salvo com sucesso!");
-//				} catch (Exception ex) {
-//					String msg = "Falha ao tentar salvar o arquivo!\n" + "Verifique se ele está aberto e tente novamente.";
-//					JOptionPane.showMessageDialog(viewEscolhaDig, msg);
-//					Logger.getLogger(ControllerEscolhaDigSC.class.getName()).log(Level.SEVERE, null, ex);
-//				}
+		case KeyEvent.VK_4:
+			viewEscolhaDig.setVisible(false);
+			if (controller.getModel().getExperimentoVO().getMedicados().isEmpty()) {
+				JOptionPane.showMessageDialog(viewEscolhaDig, "Não há registros de Medicados!", "DIGEX - Aviso",
+						JOptionPane.WARNING_MESSAGE);
+			} else {
+				JFileChooser fileChooser = new JFileChooser();
+				fileChooser.addChoosableFileFilter(new ExpFileFilter());
+				fileChooser.setFileView(new SystemFileView());
+				fileChooser.setAcceptAllFileFilterUsed(false);
+				fileChooser.setSelectedFile(new File(viewEscolhaDig.getTesteJFT().getText()));
+				int returnVal = fileChooser.showDialog(viewEscolhaDig, "Salvar");
+				if (returnVal == JFileChooser.APPROVE_OPTION) {
+					File file = fileChooser.getSelectedFile();
+					String localExportar = file.getAbsolutePath();
+//					try {
+//						DesempenhoDAOP.exportarArquivo(controller.getModel().getExperimentoVO().getInfoExp(),
+//								controller.getModel().getExperimentoVO().getConsumo(), localExportar);
+//						JOptionPane.showMessageDialog(viewEscolhaDig, "Arquivo de Granja salvo com sucesso!");
+//					} catch (IOException ex) {
+//						String msg = "Falha ao tentar salvar o arquivo! \n" + "Verifique se ele está aberto e tente novamente.";
+//						JOptionPane.showMessageDialog(viewEscolhaDig, msg);
+//						Logger.getLogger(ControllerEscolhaDigSC.class.getName()).log(Level.SEVERE, null, ex);
+//					}
+				}
+				fileChooser.setSelectedFile(null);
 			}
-			fileChooser.setSelectedFile(null);
-
-			break;
-		case KeyEvent.VK_7:
-			viewEscolhaDig.setVisible(false);
-//			if (controller.getModel().getExperimentoVO().getPesagens() != null
-//					&& controller.getModel().getExperimentoVO().getPesagens().size() != 0) {
-//				
-//			} else {
-////				controller.startPesagensSC(idades);
-//				System.out.println("Abrir tela de IMPORTAÇÃO DE ARQUIVOS DA BALANÇA");
-//				break;
-//			}
-			break;
-		case KeyEvent.VK_8:
-			viewEscolhaDig.setVisible(false);
-//			if (controller.getModel().getExperimentoVO().getPesagens() != null
-//					&& controller.getModel().getExperimentoVO().getPesagens().size() != 0) {
-//				
-//			} else {
-////				controller.startPesagensSC(idades);
-//				System.out.println("Abrir tela de IMPORTAÇÃO DE ARQUIVOS DA BALANÇA");
-//				break;
-//			}
 			break;
 		}
 	}

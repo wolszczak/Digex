@@ -120,7 +120,7 @@ public class ControllerEscolhaBalF extends KeyAdapter {
                     List<BalancaVOF> balanca = new ArrayList<>();
                     int ordem = 1;
                     for (String obs : arquivoDta) {
-                        balanca.add(new BalancaVOF(ordem++, Integer.parseInt(obs.substring(1, 4)), Integer.parseInt(obs.substring(6))));
+                        balanca.add(new BalancaVOF(ordem++, Integer.parseInt(obs.substring(1, 4).trim()), Integer.parseInt(obs.substring(6).trim())));
                         System.out.println("ordem: " + balanca.get(ordem-2).getOrdem()+
                                 " anilha: " + balanca.get(ordem-2).getAnilha() + 
                                 " peso: " + balanca.get(ordem-2).getpVivo());
