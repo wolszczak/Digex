@@ -49,17 +49,13 @@ public class ControllerEscolhaTipoDigSC extends KeyAdapter {
 
 		for (MortalidadeVOSC m : controller.getModel().getExperimentoVO().getMortalidade()) {
 			if (m.getBaia() == lastBaia) {
-				if (m.getMortos().size() > 0) {
-					obsAbate[1] = m.getMortos().size();
-				}
+				obsAbate[1]++;
 			}
 		}
 
 		for (MedicadosVOSC m : controller.getModel().getExperimentoVO().getMedicados()) {
 			if (m.getBaia() == lastBaia) {
-				if (m.getMedicados().size() > 0) {
-					obsAbate[1] = m.getMedicados().size();
-				}
+				obsAbate[1]++;
 			}
 		}
 

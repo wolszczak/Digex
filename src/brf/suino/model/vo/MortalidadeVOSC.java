@@ -11,21 +11,30 @@ public class MortalidadeVOSC implements Serializable{
 	private int sexo;
 	private int trat1;
 	private int trat2;
-	private boolean finalizado;
-	private List<MortoVOSC> mortos;
+	private int ordem;
+	private String data;
+	private int peso;
+	private int brinco;
+	private int fase;
+	private int causa;
+//	private List<MortoVOSC> mortos;
 	
 	public MortalidadeVOSC() {
-		this.mortos = new ArrayList<>();
+//		this.mortos = new ArrayList<>();
 	}
 	
-	public MortalidadeVOSC(int galpao, int baia, int sexo, int trat1, int trat2, boolean finalizado, List<MortoVOSC> mortos) {
+	public MortalidadeVOSC(int galpao, int baia, int sexo, int trat1, int trat2, int ordem, String data, int peso, int brinco, int fase, int causa) {
 		this.galpao =  galpao;
 		this.baia = baia;
 		this.sexo = sexo;
 		this.trat1 = trat1;
 		this.trat2 = trat2;
-		this.finalizado = finalizado;
-		this.mortos = mortos;
+		this.ordem = ordem;
+		this.data = data;
+		this.peso = peso;
+		this.brinco = brinco;
+		this.fase = fase;
+		this.causa = causa;
 	}
 
 	
@@ -62,21 +71,6 @@ public class MortalidadeVOSC implements Serializable{
 		this.trat2 = trat2;
 	}
 
-	public List<MortoVOSC> getMortos() {
-		return mortos;
-	}
-
-	public void setMortos(List<MortoVOSC> mortos) {
-		this.mortos = mortos;
-	}
-
-	public boolean isFinalizado() {
-		return finalizado;
-	}
-
-	public void setFinalizado(boolean finalizado) {
-		this.finalizado = finalizado;
-	}
 
 	public int getGalpao() {
 		return galpao;
@@ -84,6 +78,54 @@ public class MortalidadeVOSC implements Serializable{
 
 	public void setGalpao(int galpao) {
 		this.galpao = galpao;
+	}
+
+	public int getOrdem() {
+		return ordem;
+	}
+
+	public void setOrdem(int ordem) {
+		this.ordem = ordem;
+	}
+
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
+	public int getPeso() {
+		return peso;
+	}
+
+	public void setPeso(int peso) {
+		this.peso = peso;
+	}
+
+	public int getBrinco() {
+		return brinco;
+	}
+
+	public void setBrinco(int brinco) {
+		this.brinco = brinco;
+	}
+
+	public int getFase() {
+		return fase;
+	}
+
+	public void setFase(int fase) {
+		this.fase = fase;
+	}
+
+	public int getCausa() {
+		return causa;
+	}
+
+	public void setCausa(int causa) {
+		this.causa = causa;
 	}
 	
 	

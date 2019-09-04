@@ -109,18 +109,16 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 					// FINALIZADA E SE SÃO DA MESMA BAIA DO CONSUMO
 					if (controller.getModel().getExperimentoVO().getMortalidade() != null
 							&& controller.getModel().getExperimentoVO().getMortalidade().size() != 0) {
-						if (controller.getModel().getExperimentoVO().getConsumo()
-								.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getBaia() == controller.getModel()
-										.getExperimentoVO().getMortalidade()
-										.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).getBaia()
-								&& !controller.getModel().getExperimentoVO().getMortalidade()
-										.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).isFinalizado()) {
+//						if (controller.getModel().getExperimentoVO().getConsumo()
+//								.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getBaia() == controller.getModel()
+//										.getExperimentoVO().getMortalidade()
+//										.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).getBaia()) {
 							// ESCOLHA DIGITACAO MORTALIDADE PARA A ULTIMA BAIA DIGITADA
 							ControllerEscolhaTipoDigSC controllerEscolhaTipoDigSC = new ControllerEscolhaTipoDigSC(controller);
 							controllerEscolhaTipoDigSC.openWindow(datasFases);
 							viewEscolhaDig.setVisible(false);
 							break;
-						}
+//						}
 					} else if (controller.getModel().getExperimentoVO().getMedicados() != null
 							&& controller.getModel().getExperimentoVO().getMedicados().size() != 0) {
 						if (controller.getModel().getExperimentoVO().getConsumo()
