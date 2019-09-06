@@ -79,7 +79,7 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 	private javax.swing.JLabel jLabel9;
 	private javax.swing.JPanel jPanel1;
 	private javax.swing.JPanel jPanel2;
-	private javax.swing.JPanel pnlMortalidade;
+	private javax.swing.JPanel pnlMedicados;
 	private javax.swing.JPanel jPanel5;
 	private javax.swing.JPanel jPanel6;
 	private javax.swing.JPanel jPanel7;
@@ -198,7 +198,7 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		jLabel51 = new javax.swing.JLabel();
 		opcaoJFT = new javax.swing.JFormattedTextField();
 		jLabel27 = new javax.swing.JLabel();
-		pnlMortalidade = new javax.swing.JPanel();
+		pnlMedicados = new javax.swing.JPanel();
 		jLabel7 = new javax.swing.JLabel();
 		brincoHist4Label = new javax.swing.JLabel();
 		jLabel15 = new javax.swing.JLabel();
@@ -680,7 +680,7 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 								.addContainerGap()));
 		jPanel7.setLayout(jPanel7Layout);
 
-		pnlMortalidade.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+		pnlMedicados.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
 		jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
 		jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -942,11 +942,11 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		lblDose_1.setText("Dose 3");
 		lblDose_1.setHorizontalAlignment(SwingConstants.CENTER);
 
-		javax.swing.GroupLayout gl_pnlMortalidade = new javax.swing.GroupLayout(pnlMortalidade);
-		gl_pnlMortalidade.setHorizontalGroup(gl_pnlMortalidade.createParallelGroup(Alignment.TRAILING)
+		javax.swing.GroupLayout gl_pnlMedicados = new javax.swing.GroupLayout(pnlMedicados);
+		gl_pnlMedicados.setHorizontalGroup(gl_pnlMedicados.createParallelGroup(Alignment.TRAILING)
 				.addComponent(jLabel7, GroupLayout.DEFAULT_SIZE, 602, Short.MAX_VALUE)
-				.addGroup(gl_pnlMortalidade.createSequentialGroup().addContainerGap()
-						.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_pnlMedicados.createSequentialGroup().addContainerGap()
+						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
 								.addComponent(jLabel29, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 								.addComponent(ordemHist1Label, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
 								.addComponent(ordemHist2Label, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
@@ -955,7 +955,7 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 								.addComponent(ordemHist5Label, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
 								.addComponent(ordemJFT, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
 						.addPreferredGap(ComponentPlacement.RELATED)
-						.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
 								.addComponent(dataHist3Label, GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
 								.addComponent(jLabel28, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
 								.addComponent(dataJFT, GroupLayout.PREFERRED_SIZE, 74, GroupLayout.PREFERRED_SIZE)
@@ -964,9 +964,9 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 								.addComponent(dataHist4Label, GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
 								.addComponent(dataHist5Label, GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE))
 						.addPreferredGap(ComponentPlacement.RELATED)
-						.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
 								.addComponent(brincoHist3Label, GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
-								.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.TRAILING, false)
+								.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.TRAILING, false)
 										.addComponent(jLabel15, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 										.addComponent(brincoJFT, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE))
 								.addComponent(brincoHist4Label, GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
@@ -974,9 +974,9 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 								.addComponent(brincoHist1Label, GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
 								.addComponent(brincoHist2Label, GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE))
 						.addPreferredGap(ComponentPlacement.RELATED)
-						.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
 								.addComponent(medicamentoHist3Label, GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-								.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.LEADING, false)
+								.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING, false)
 										.addComponent(medicamentoHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
 												Short.MAX_VALUE)
 										.addComponent(medicamentoHist4Label, GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
@@ -985,13 +985,13 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 												Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 								.addComponent(medicamentoHist2Label, GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE))
 						.addPreferredGap(ComponentPlacement.UNRELATED)
-						.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.TRAILING)
-										.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.TRAILING)
+										.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
 												.addComponent(causaHist3Label, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
 												.addComponent(causaHist2Label, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
 												.addComponent(causaHist1Label, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
-												.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.TRAILING, false)
+												.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.TRAILING, false)
 														.addComponent(causaHist5Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE,
 																GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 														.addComponent(causaHist4Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 55,
@@ -999,7 +999,7 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 										.addComponent(causaJFT, GroupLayout.PREFERRED_SIZE, 57, GroupLayout.PREFERRED_SIZE))
 								.addComponent(jLabel32, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE))
 						.addPreferredGap(ComponentPlacement.RELATED)
-						.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.LEADING, false)
+						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING, false)
 								.addComponent(dose1Hist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 								.addComponent(dose1JFT, Alignment.TRAILING)
 								.addComponent(dose1Hist5Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
@@ -1012,57 +1012,57 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 										Short.MAX_VALUE)
 								.addComponent(jLabel30, GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE))
 						.addPreferredGap(ComponentPlacement.RELATED)
-						.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_pnlMortalidade.createSequentialGroup()
-										.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_pnlMedicados.createSequentialGroup()
+										.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
 												.addComponent(dose2JFT, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
 												.addComponent(dose2Hist5Label, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE))
 										.addPreferredGap(ComponentPlacement.RELATED)
-										.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.LEADING)
-												.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.TRAILING)
+										.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
+												.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.TRAILING)
 														.addComponent(lblDose_1, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
 														.addComponent(dose3JFT, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
 														.addComponent(dose3Hist1Label, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 56,
 																GroupLayout.PREFERRED_SIZE))
 												.addComponent(dose3Hist5Label, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE))
 										.addPreferredGap(ComponentPlacement.RELATED)
-										.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.LEADING).addComponent(controleJFT,
+										.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING).addComponent(controleJFT,
 												GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
 												.addComponent(jLabel35, GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE))
 										.addGap(22))
-								.addGroup(gl_pnlMortalidade.createSequentialGroup().addGroup(gl_pnlMortalidade
+								.addGroup(gl_pnlMedicados.createSequentialGroup().addGroup(gl_pnlMedicados
 										.createParallelGroup(Alignment.LEADING)
-										.addGroup(gl_pnlMortalidade.createSequentialGroup()
+										.addGroup(gl_pnlMedicados.createSequentialGroup()
 												.addComponent(dose2Hist4Label, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
 												.addPreferredGap(ComponentPlacement.RELATED)
 												.addComponent(dose3Hist4Label, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE))
-										.addGroup(gl_pnlMortalidade.createSequentialGroup()
+										.addGroup(gl_pnlMedicados.createSequentialGroup()
 												.addComponent(dose2Hist3Label, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
 												.addPreferredGap(ComponentPlacement.RELATED)
 												.addComponent(dose3Hist3Label, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE))
-										.addGroup(gl_pnlMortalidade.createSequentialGroup()
+										.addGroup(gl_pnlMedicados.createSequentialGroup()
 												.addComponent(dose2Hist2Label, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
 												.addPreferredGap(ComponentPlacement.RELATED)
 												.addComponent(dose3Hist2Label, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE))
 										.addComponent(dose2Hist1Label, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
 										.addComponent(lblDose, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE))
 										.addContainerGap(103, Short.MAX_VALUE)))));
-		gl_pnlMortalidade.setVerticalGroup(gl_pnlMortalidade.createParallelGroup(Alignment.LEADING).addGroup(gl_pnlMortalidade
+		gl_pnlMedicados.setVerticalGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING).addGroup(gl_pnlMedicados
 				.createSequentialGroup().addContainerGap().addComponent(jLabel7).addPreferredGap(ComponentPlacement.UNRELATED)
-				.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.TRAILING).addGroup(gl_pnlMortalidade.createSequentialGroup()
-						.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.LEADING).addComponent(jLabel35, Alignment.TRAILING)
-								.addGroup(gl_pnlMortalidade.createSequentialGroup().addGroup(gl_pnlMortalidade
+				.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.TRAILING).addGroup(gl_pnlMedicados.createSequentialGroup()
+						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING).addComponent(jLabel35, Alignment.TRAILING)
+								.addGroup(gl_pnlMedicados.createSequentialGroup().addGroup(gl_pnlMedicados
 										.createParallelGroup(Alignment.LEADING).addComponent(jLabel29)
-										.addGroup(gl_pnlMortalidade.createSequentialGroup().addGroup(gl_pnlMortalidade
+										.addGroup(gl_pnlMedicados.createSequentialGroup().addGroup(gl_pnlMedicados
 												.createParallelGroup(Alignment.LEADING)
-												.addGroup(gl_pnlMortalidade.createSequentialGroup().addGroup(gl_pnlMortalidade
+												.addGroup(gl_pnlMedicados.createSequentialGroup().addGroup(gl_pnlMedicados
 														.createParallelGroup(Alignment.LEADING).addComponent(jLabel28)
-														.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.BASELINE)
+														.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.BASELINE)
 																.addComponent(jLabel15).addComponent(jLabel16).addComponent(jLabel32))
-														.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.BASELINE)
+														.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.BASELINE)
 																.addComponent(jLabel30).addComponent(lblDose)))
 														.addPreferredGap(ComponentPlacement.RELATED)
-														.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.LEADING, false)
+														.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING, false)
 																.addComponent(dose2Hist1Label, GroupLayout.DEFAULT_SIZE,
 																		GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 																.addComponent(ordemHist1Label, GroupLayout.DEFAULT_SIZE, 14,
@@ -1076,11 +1076,11 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 																		Short.MAX_VALUE)
 																.addComponent(causaHist1Label, GroupLayout.DEFAULT_SIZE, 14,
 																		Short.MAX_VALUE)))
-												.addGroup(gl_pnlMortalidade.createSequentialGroup().addComponent(lblDose_1)
+												.addGroup(gl_pnlMedicados.createSequentialGroup().addComponent(lblDose_1)
 														.addPreferredGap(ComponentPlacement.RELATED).addComponent(dose3Hist1Label,
 																GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)))
 												.addPreferredGap(ComponentPlacement.UNRELATED)
-												.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.LEADING, false)
+												.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING, false)
 														.addComponent(dose3Hist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
 																Short.MAX_VALUE)
 														.addComponent(dose1Hist2Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
@@ -1092,15 +1092,15 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 														.addComponent(dose2Hist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
 																Short.MAX_VALUE))))
 										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.LEADING)
+										.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
 												.addComponent(dose3Hist3Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
 												.addComponent(dose2Hist3Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
 												.addGroup(
-														gl_pnlMortalidade.createSequentialGroup()
+														gl_pnlMedicados.createSequentialGroup()
 																.addComponent(
 																		causaHist3Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
 																.addPreferredGap(ComponentPlacement.RELATED))
-												.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.TRAILING, false)
+												.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.TRAILING, false)
 														.addComponent(dose1Hist3Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE,
 																GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 														.addComponent(medicamentoHist3Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE,
@@ -1112,30 +1112,30 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 														.addComponent(dataHist3Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE,
 																GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
 										.addGap(11)
-										.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.LEADING)
-												.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.LEADING, false)
-														.addGroup(gl_pnlMortalidade.createSequentialGroup()
+										.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
+												.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING, false)
+														.addGroup(gl_pnlMedicados.createSequentialGroup()
 																.addComponent(ordemHist4Label, GroupLayout.PREFERRED_SIZE, 14,
 																		GroupLayout.PREFERRED_SIZE)
 																.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE,
 																		Short.MAX_VALUE)
 																.addComponent(ordemHist5Label, GroupLayout.PREFERRED_SIZE, 14,
 																		GroupLayout.PREFERRED_SIZE))
-														.addGroup(gl_pnlMortalidade.createSequentialGroup().addGroup(gl_pnlMortalidade
+														.addGroup(gl_pnlMedicados.createSequentialGroup().addGroup(gl_pnlMedicados
 																.createParallelGroup(Alignment.TRAILING)
-																.addGroup(gl_pnlMortalidade.createSequentialGroup()
-																		.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.LEADING)
+																.addGroup(gl_pnlMedicados.createSequentialGroup()
+																		.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
 																				.addComponent(medicamentoHist4Label,
 																						GroupLayout.PREFERRED_SIZE, 14,
 																						GroupLayout.PREFERRED_SIZE)
 																				.addComponent(brincoHist4Label, GroupLayout.PREFERRED_SIZE,
 																						14, GroupLayout.PREFERRED_SIZE))
 																		.addPreferredGap(ComponentPlacement.UNRELATED))
-																.addGroup(gl_pnlMortalidade.createSequentialGroup()
+																.addGroup(gl_pnlMedicados.createSequentialGroup()
 																		.addComponent(dataHist4Label, GroupLayout.PREFERRED_SIZE, 14,
 																				GroupLayout.PREFERRED_SIZE)
 																		.addGap(11)))
-																.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.TRAILING)
+																.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.TRAILING)
 																		.addComponent(dataHist5Label, Alignment.LEADING,
 																				GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
 																		.addComponent(brincoHist5Label, Alignment.LEADING,
@@ -1143,7 +1143,7 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 																		.addComponent(medicamentoHist5Label, Alignment.LEADING,
 																				GroupLayout.PREFERRED_SIZE, 14,
 																				GroupLayout.PREFERRED_SIZE))))
-												.addGroup(gl_pnlMortalidade.createSequentialGroup().addGroup(gl_pnlMortalidade
+												.addGroup(gl_pnlMedicados.createSequentialGroup().addGroup(gl_pnlMedicados
 														.createParallelGroup(Alignment.LEADING, false)
 														.addComponent(dose3Hist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
 																Short.MAX_VALUE)
@@ -1152,7 +1152,7 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 														.addComponent(dose1Hist4Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
 														.addComponent(causaHist4Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE))
 														.addPreferredGap(ComponentPlacement.UNRELATED)
-														.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.LEADING, false)
+														.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING, false)
 																.addComponent(causaHist5Label, GroupLayout.DEFAULT_SIZE, 14,
 																		Short.MAX_VALUE)
 																.addComponent(dose1Hist5Label, GroupLayout.DEFAULT_SIZE, 14,
@@ -1162,7 +1162,7 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 																.addComponent(dose3Hist5Label, GroupLayout.DEFAULT_SIZE,
 																		GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
 						.addPreferredGap(ComponentPlacement.RELATED)
-						.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.BASELINE)
+						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.BASELINE)
 								.addComponent(dataJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
 								.addComponent(brincoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
 								.addComponent(medicamentoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
@@ -1170,17 +1170,17 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 								.addComponent(controleJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 								.addComponent(ordemJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
 								.addComponent(causaJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)))
-						.addGroup(gl_pnlMortalidade.createParallelGroup(Alignment.BASELINE)
+						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.BASELINE)
 								.addComponent(dose2JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 								.addComponent(dose3JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
 				.addGap(17)));
-		pnlMortalidade.setLayout(gl_pnlMortalidade);
+		pnlMedicados.setLayout(gl_pnlMedicados);
 
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
 		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
 				.addGroup(jPanel1Layout.createSequentialGroup().addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING)
 						.addGroup(jPanel1Layout.createSequentialGroup()
-								.addComponent(pnlMortalidade, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(pnlMedicados, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 								.addPreferredGap(ComponentPlacement.UNRELATED)
 								.addComponent(jPanel7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 						.addGroup(
@@ -1194,7 +1194,7 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 						.addGroup(jPanel1Layout.createSequentialGroup()
 								.addComponent(baiaJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 								.addPreferredGap(ComponentPlacement.RELATED)
-								.addComponent(pnlMortalidade, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+								.addComponent(pnlMedicados, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 						.addGroup(jPanel1Layout.createSequentialGroup().addContainerGap().addComponent(jPanel7, GroupLayout.PREFERRED_SIZE,
 								165, GroupLayout.PREFERRED_SIZE)))
 						.addPreferredGap(ComponentPlacement.UNRELATED).addComponent(registrosLabel).addContainerGap()));
@@ -1785,11 +1785,11 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 	}
 
 	public javax.swing.JPanel getjPanel3() {
-		return pnlMortalidade;
+		return pnlMedicados;
 	}
 
 	public void setjPanel3(javax.swing.JPanel jPanel3) {
-		this.pnlMortalidade = jPanel3;
+		this.pnlMedicados = jPanel3;
 	}
 
 	public javax.swing.JPanel getjPanel5() {
@@ -2069,10 +2069,226 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 	}
 
 	public javax.swing.JPanel getPnlMortalidade() {
-		return pnlMortalidade;
+		return pnlMedicados;
 	}
 
 	public void setPnlMortalidade(javax.swing.JPanel pnlMortalidade) {
-		this.pnlMortalidade = pnlMortalidade;
+		this.pnlMedicados = pnlMortalidade;
+	}
+
+	public javax.swing.JFormattedTextField getDose1JFT() {
+		return dose1JFT;
+	}
+
+	public void setDose1JFT(javax.swing.JFormattedTextField dose1jft) {
+		dose1JFT = dose1jft;
+	}
+
+	public javax.swing.JLabel getMedicamentoHist1Label() {
+		return medicamentoHist1Label;
+	}
+
+	public void setMedicamentoHist1Label(javax.swing.JLabel medicamentoHist1Label) {
+		this.medicamentoHist1Label = medicamentoHist1Label;
+	}
+
+	public javax.swing.JLabel getDose1Hist1Label() {
+		return dose1Hist1Label;
+	}
+
+	public void setDose1Hist1Label(javax.swing.JLabel dose1Hist1Label) {
+		this.dose1Hist1Label = dose1Hist1Label;
+	}
+
+	public javax.swing.JLabel getMedicamentoHist2Label() {
+		return medicamentoHist2Label;
+	}
+
+	public void setMedicamentoHist2Label(javax.swing.JLabel medicamentoHist2Label) {
+		this.medicamentoHist2Label = medicamentoHist2Label;
+	}
+
+	public javax.swing.JLabel getDose1Hist2Label() {
+		return dose1Hist2Label;
+	}
+
+	public void setDose1Hist2Label(javax.swing.JLabel dose1Hist2Label) {
+		this.dose1Hist2Label = dose1Hist2Label;
+	}
+
+	public javax.swing.JLabel getMedicamentoHist3Label() {
+		return medicamentoHist3Label;
+	}
+
+	public void setMedicamentoHist3Label(javax.swing.JLabel medicamentoHist3Label) {
+		this.medicamentoHist3Label = medicamentoHist3Label;
+	}
+
+	public javax.swing.JLabel getDose1Hist3Label() {
+		return dose1Hist3Label;
+	}
+
+	public void setDose1Hist3Label(javax.swing.JLabel dose1Hist3Label) {
+		this.dose1Hist3Label = dose1Hist3Label;
+	}
+
+	public javax.swing.JLabel getMedicamentoHist4Label() {
+		return medicamentoHist4Label;
+	}
+
+	public void setMedicamentoHist4Label(javax.swing.JLabel medicamentoHist4Label) {
+		this.medicamentoHist4Label = medicamentoHist4Label;
+	}
+
+	public javax.swing.JLabel getDose1Hist4Label() {
+		return dose1Hist4Label;
+	}
+
+	public void setDose1Hist4Label(javax.swing.JLabel dose1Hist4Label) {
+		this.dose1Hist4Label = dose1Hist4Label;
+	}
+
+	public javax.swing.JLabel getMedicamentoHist5Label() {
+		return medicamentoHist5Label;
+	}
+
+	public void setMedicamentoHist5Label(javax.swing.JLabel medicamentoHist5Label) {
+		this.medicamentoHist5Label = medicamentoHist5Label;
+	}
+
+	public javax.swing.JLabel getDose1Hist5Label() {
+		return dose1Hist5Label;
+	}
+
+	public void setDose1Hist5Label(javax.swing.JLabel dose1Hist5Label) {
+		this.dose1Hist5Label = dose1Hist5Label;
+	}
+
+	public javax.swing.JFormattedTextField getMedicamentoJFT() {
+		return medicamentoJFT;
+	}
+
+	public void setMedicamentoJFT(javax.swing.JFormattedTextField medicamentoJFT) {
+		this.medicamentoJFT = medicamentoJFT;
+	}
+
+	public JLabel getLblDose() {
+		return lblDose;
+	}
+
+	public void setLblDose(JLabel lblDose) {
+		this.lblDose = lblDose;
+	}
+
+	public JLabel getDose2Hist1Label() {
+		return dose2Hist1Label;
+	}
+
+	public void setDose2Hist1Label(JLabel dose2Hist1Label) {
+		this.dose2Hist1Label = dose2Hist1Label;
+	}
+
+	public JLabel getDose2Hist2Label() {
+		return dose2Hist2Label;
+	}
+
+	public void setDose2Hist2Label(JLabel dose2Hist2Label) {
+		this.dose2Hist2Label = dose2Hist2Label;
+	}
+
+	public JLabel getDose2Hist3Label() {
+		return dose2Hist3Label;
+	}
+
+	public void setDose2Hist3Label(JLabel dose2Hist3Label) {
+		this.dose2Hist3Label = dose2Hist3Label;
+	}
+
+	public JLabel getDose2Hist4Label() {
+		return dose2Hist4Label;
+	}
+
+	public void setDose2Hist4Label(JLabel dose2Hist4Label) {
+		this.dose2Hist4Label = dose2Hist4Label;
+	}
+
+	public JLabel getDose2Hist5Label() {
+		return dose2Hist5Label;
+	}
+
+	public void setDose2Hist5Label(JLabel dose2Hist5Label) {
+		this.dose2Hist5Label = dose2Hist5Label;
+	}
+
+	public JFormattedTextField getDose2JFT() {
+		return dose2JFT;
+	}
+
+	public void setDose2JFT(JFormattedTextField dose2jft) {
+		dose2JFT = dose2jft;
+	}
+
+	public JFormattedTextField getDose3JFT() {
+		return dose3JFT;
+	}
+
+	public void setDose3JFT(JFormattedTextField dose3jft) {
+		dose3JFT = dose3jft;
+	}
+
+	public JLabel getDose3Hist5Label() {
+		return dose3Hist5Label;
+	}
+
+	public void setDose3Hist5Label(JLabel dose3Hist5Label) {
+		this.dose3Hist5Label = dose3Hist5Label;
+	}
+
+	public JLabel getDose3Hist4Label() {
+		return dose3Hist4Label;
+	}
+
+	public void setDose3Hist4Label(JLabel dose3Hist4Label) {
+		this.dose3Hist4Label = dose3Hist4Label;
+	}
+
+	public JLabel getDose3Hist3Label() {
+		return dose3Hist3Label;
+	}
+
+	public void setDose3Hist3Label(JLabel dose3Hist3Label) {
+		this.dose3Hist3Label = dose3Hist3Label;
+	}
+
+	public JLabel getDose3Hist2Label() {
+		return dose3Hist2Label;
+	}
+
+	public void setDose3Hist2Label(JLabel dose3Hist2Label) {
+		this.dose3Hist2Label = dose3Hist2Label;
+	}
+
+	public JLabel getDose3Hist1Label() {
+		return dose3Hist1Label;
+	}
+
+	public void setDose3Hist1Label(JLabel dose3Hist1Label) {
+		this.dose3Hist1Label = dose3Hist1Label;
+	}
+
+	public JLabel getLblDose_1() {
+		return lblDose_1;
+	}
+
+	public void setLblDose_1(JLabel lblDose_1) {
+		this.lblDose_1 = lblDose_1;
+	}
+
+	public javax.swing.JPanel getPnlMedicados() {
+		return pnlMedicados;
+	}
+
+	public void setPnlMedicados(javax.swing.JPanel pnlMedicados) {
+		this.pnlMedicados = pnlMedicados;
 	}
 }

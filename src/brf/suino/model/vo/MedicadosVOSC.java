@@ -23,7 +23,7 @@ public class MedicadosVOSC implements Serializable {
 	public MedicadosVOSC() {
 	}
 
-	public void MedicadosVOSC(int galpao, int baia, int sexo, int trat1, int trat2, int ordem, String data, int brinco, int medicamento,
+	public MedicadosVOSC(int galpao, int baia, int sexo, int trat1, int trat2, int ordem, String data, int brinco, int medicamento,
 			int causa, int dose1, int dose2, int dose3) {
 		this.galpao = galpao;
 		this.baia = baia;
