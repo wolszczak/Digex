@@ -119,25 +119,6 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 							viewEscolhaDig.setVisible(false);
 							break;
 //						}
-					} else if (controller.getModel().getExperimentoVO().getMedicados() != null
-							&& controller.getModel().getExperimentoVO().getMedicados().size() != 0) {
-						if (controller.getModel().getExperimentoVO().getConsumo()
-								.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getBaia() == controller.getModel()
-										.getExperimentoVO().getMedicados()
-										.get(controller.getModel().getExperimentoVO().getMedicados().size() - 1).getBaia()
-								&& !controller.getModel().getExperimentoVO().getMedicados()
-										.get(controller.getModel().getExperimentoVO().getMedicados().size() - 1).isFinalizado()) {
-							// ESCOLHA DIGITACAO MEDICADOS PARA A ULTIMA BAIA DIGITADA
-							ControllerEscolhaTipoDigSC controllerEscolhaTipoDigSC = new ControllerEscolhaTipoDigSC(controller);
-							controllerEscolhaTipoDigSC.openWindow(datasFases);
-							viewEscolhaDig.setVisible(false);
-							break;
-						} else {
-							// ABRIR TELA CONSUMOS
-							controller.startConsumoSC(datasFases);
-							System.out.println("Abrir tela de CONSUMOS");
-							break;
-						}
 					} else {
 						ControllerEscolhaTipoDigSC controllerEscolhaTipoDigSC = new ControllerEscolhaTipoDigSC(controller);
 						controllerEscolhaTipoDigSC.openWindow(datasFases);

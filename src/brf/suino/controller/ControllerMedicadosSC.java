@@ -16,25 +16,26 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.border.Border;
 
-import brf.suino.model.bo.MortalidadeBOSC;
+import brf.suino.model.bo.MedicadosBOSC;
 import brf.suino.model.vo.MortalidadeVOSC;
+import brf.suino.view.ViewMedicadosSC;
 import brf.suino.view.ViewMortalidadeSC;
 import brf.util.FocusOrderPolicy;
 import brf.util.TextFormatter;
 
-public class ControllerMortalidadeSC extends KeyAdapter implements FocusListener {
+public class ControllerMedicadosSC extends KeyAdapter implements FocusListener {
 	private ControllerSC controller;
-	private ViewMortalidadeSC view;
-	private List<MortalidadeVOSC> mortosHist, mortosErros;
+	private ViewMedicadosSC view;
+	private List<MortalidadeVOSC> medicadosHist;
 	private List<Component> order, orderLoadHist;
 	private List<String> datasFases;
 	private int ordem, galpao, baia, sexo, trata, trata2;
-	private MortalidadeBOSC bo;
+	private MedicadosBOSC bo;
 	private Border defaultBorder;
 
-	public ControllerMortalidadeSC(ControllerSC c) {
+	public ControllerMedicadosSC(ControllerSC c) {
 		this.controller = c;
-		bo = new MortalidadeBOSC(c);
+		bo = new MedicadosBOSC(c);
 
 	}
 
@@ -45,7 +46,7 @@ public class ControllerMortalidadeSC extends KeyAdapter implements FocusListener
 		this.sexo = sexo;
 		this.trata = trata;
 		this.trata2 = trata2;
-		view = new ViewMortalidadeSC();
+		view = new ViewMedicadosSC();
 		view.setTitle("DIGEX - Mortalidade Suínos Creche");
 		view.setResizable(false);
 		view.setLocationRelativeTo(null);
@@ -131,13 +132,13 @@ public class ControllerMortalidadeSC extends KeyAdapter implements FocusListener
 				&& controller.getModel().getExperimentoVO().getMortalidade().size() > 0) {
 			if (controller.getModel().getExperimentoVO().getMortalidade()
 					.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).getBaia() == baia) {
-				mortosHist = new ArrayList<>();
+				medicadosHist = new ArrayList<>();
 				for (MortalidadeVOSC m : controller.getModel().getExperimentoVO().getMortalidade()) {
 					if (m.getBaia() == baia) {
-						mortosHist.add(m);
+						medicadosHist.add(m);
 					}
 				}
-				ordem = mortosHist.get(mortosHist.size() - 1).getOrdem() + 1;
+				ordem = medicadosHist.get(medicadosHist.size() - 1).getOrdem() + 1;
 			} else {
 				ordem = 1;
 			}
@@ -148,35 +149,35 @@ public class ControllerMortalidadeSC extends KeyAdapter implements FocusListener
 		view.getOrdemJFT().setText(String.valueOf(ordem));
 		TextFormatter.formatStringJFT(view.getOrdemJFT(), view.getOrdemJFT().getText(), 2);
 
-		if (mortosHist != null) {
+		if (medicadosHist != null) {
 			for (int k = 0; k < 5; k++) {
-				if (mortosHist != null && mortosHist.size() > 0) {
+				if (medicadosHist != null && medicadosHist.size() > 0) {
 					JLabel lbl1 = (JLabel) orderLoadHist.get(0);
-					lbl1.setText(String.valueOf(mortosHist.get(mortosHist.size() - 1).getCausa()));
+					lbl1.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getCausa()));
 					orderLoadHist.remove(0);
 
 					JLabel lbl2 = (JLabel) orderLoadHist.get(0);
-					lbl2.setText(String.valueOf(mortosHist.get(mortosHist.size() - 1).getFase()));
+					lbl2.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getFase()));
 					orderLoadHist.remove(0);
 
 					JLabel lbl3 = (JLabel) orderLoadHist.get(0);
-					lbl3.setText(String.valueOf(mortosHist.get(mortosHist.size() - 1).getPeso()));
+					lbl3.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getPeso()));
 					orderLoadHist.remove(0);
 
 					JLabel lbl4 = (JLabel) orderLoadHist.get(0);
-					lbl4.setText(String.valueOf(mortosHist.get(mortosHist.size() - 1).getBrinco()));
+					lbl4.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getBrinco()));
 					orderLoadHist.remove(0);
 
 					JLabel lbl5 = (JLabel) orderLoadHist.get(0);
-					lbl5.setText(String.valueOf(mortosHist.get(mortosHist.size() - 1).getData()));
+					lbl5.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getData()));
 					orderLoadHist.remove(0);
 
 					JLabel lbl6 = (JLabel) orderLoadHist.get(0);
-					lbl6.setText(String.valueOf(mortosHist.get(mortosHist.size() - 1).getOrdem()));
+					lbl6.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getOrdem()));
 					TextFormatter.formatStringOrdem(lbl6, lbl6.getText(), 3);
 
 					orderLoadHist.remove(0);
-					mortosHist.remove(mortosHist.size() - 1);
+					medicadosHist.remove(medicadosHist.size() - 1);
 				}
 
 			}
