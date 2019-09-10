@@ -363,9 +363,10 @@ public class ControllerMortalidadeSC extends KeyAdapter implements FocusListener
 	private Integer calculaControleJFT() {
 		int soma = 0;
 		String[] split = view.getDataJFT().getText().split("/");
-		soma += Integer.parseInt(split[0]);
-		soma += Integer.parseInt(split[1]);
-		soma += Integer.parseInt(split[2]);
+//		soma += Integer.parseInt(split[0]);
+//		soma += Integer.parseInt(split[1]);
+//		soma += Integer.parseInt(split[2]);
+		soma += Integer.parseInt(split[0] + split[1] + split[2]);
 		soma += Integer.parseInt(view.getBrincoJFT().getText());
 		soma += Integer.parseInt(view.getPesoJFT().getText());
 		soma += Integer.parseInt(view.getFaseJFT().getText());

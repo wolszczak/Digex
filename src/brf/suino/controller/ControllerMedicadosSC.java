@@ -270,12 +270,12 @@ public class ControllerMedicadosSC extends KeyAdapter implements FocusListener {
 					view.getBrincoJFT().grabFocus();
 				}
 			} else if ((JFormattedTextField) e.getSource() == view.getBrincoJFT()) {
-				TextFormatter.formatStringJFT(src, text, 4);
+				TextFormatter.formatStringJFT(src, text, 3);
 				view.getBrincoJFT().setEnabled(false);
 				view.getMedicamentoJFT().setEnabled(true);
 				view.getMedicamentoJFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getMedicamentoJFT()) {
-				TextFormatter.formatStringJFT(src, text, 6);
+				TextFormatter.formatStringJFT(src, text, 2);
 				view.getMedicamentoJFT().setEnabled(false);
 				view.getCausaJFT().setEnabled(true);
 				view.getCausaJFT().grabFocus();
@@ -301,8 +301,10 @@ public class ControllerMedicadosSC extends KeyAdapter implements FocusListener {
 				view.getControleJFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getControleJFT()) {
 				TextFormatter.formatStringJFT(src, text, 6);
-				if (view.getDataJFT().getText().equals("00/00/00") && view.getBrincoJFT().getText().equals("0000")
-						&& view.getCausaJFT().getText().equals("00")) {
+				if (view.getDataJFT().getText().equals("00/00/00") && view.getBrincoJFT().getText().equals("000")
+						&& view.getCausaJFT().getText().equals("00") && view.getMedicamentoJFT().getText().equals("00")
+						&& view.getDose1JFT().getText().equals("00") && view.getDose2JFT().getText().equals("00")
+						&& view.getDose3JFT().getText().equals("00")) {
 					view.getControleJFT().setEnabled(false);
 					view.getOpcaoJFT().setEnabled(true);
 					view.getOpcaoJFT().grabFocus();
@@ -418,9 +420,10 @@ public class ControllerMedicadosSC extends KeyAdapter implements FocusListener {
 	private Integer calculaControleJFT() {
 		int soma = 0;
 		String[] split = view.getDataJFT().getText().split("/");
-		soma += Integer.parseInt(split[0]);
-		soma += Integer.parseInt(split[1]);
-		soma += Integer.parseInt(split[2]);
+//		soma += Integer.parseInt(split[0]);
+//		soma += Integer.parseInt(split[1]);
+//		soma += Integer.parseInt(split[2]);
+		soma += Integer.parseInt(split[0] + split[1] + split[2]);
 		soma += Integer.parseInt(view.getBrincoJFT().getText());
 		soma += Integer.parseInt(view.getMedicamentoJFT().getText());
 		soma += Integer.parseInt(view.getCausaJFT().getText());

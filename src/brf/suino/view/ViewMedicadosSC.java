@@ -375,7 +375,7 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		medicamentoHist4Label.setEnabled(false);
 
 		try {
-			brincoJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			brincoJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -394,7 +394,7 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		medicamentoHist5Label.setEnabled(false);
 
 		try {
-			medicamentoJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+			medicamentoJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -446,7 +446,7 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		dataHist5Label.setEnabled(false);
 
 		try {
-			dataJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+			dataJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/##")));
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -490,7 +490,7 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		ordemLabel.setText("Ordem");
 
 		try {
-			dose1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+			dose1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -552,7 +552,7 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		causaLabel.setText("Causa");
 
 		try {
-			controleJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			controleJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -591,7 +591,7 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		dose2Hist5Label.setEnabled(false);
 
 		try {
-			dose2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+			dose2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -622,7 +622,7 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		dose3Hist5Label.setEnabled(false);
 
 		try {
-			dose3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+			dose3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}

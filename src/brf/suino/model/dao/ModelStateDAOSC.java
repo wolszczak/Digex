@@ -76,7 +76,7 @@ public class ModelStateDAOSC {
 			c.printStackTrace();
 			return false;
 		}
-//		ExperimentoVOSC e = (ExperimentoVOSC) obj;
+		ExperimentoVOSC e = (ExperimentoVOSC) obj;
 //		e.setMedicados(new ArrayList<>());
 //		e.setMortalidade(new ArrayList<>());
 		model.setExperimentoVO((ExperimentoVOSC) obj);
