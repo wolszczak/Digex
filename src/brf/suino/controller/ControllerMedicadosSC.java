@@ -59,6 +59,7 @@ public class ControllerMedicadosSC extends KeyAdapter implements FocusListener {
 		view.getBrincoJFT().setText("0000");
 		view.getMedicamentoJFT().setText("000000");
 		view.getCausaJFT().setText("00");
+		TextFormatter.formatStringJFT(view.getCausaJFT(), view.getCausaJFT().getText().trim(), 2);
 		view.getDose1JFT().setText("00");
 		view.getDose2JFT().setText("00");
 		view.getDose3JFT().setText("00");
@@ -192,20 +193,19 @@ public class ControllerMedicadosSC extends KeyAdapter implements FocusListener {
 
 					JLabel lbl6 = (JLabel) orderLoadHist.get(0);
 					lbl6.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getBrinco()));
-					TextFormatter.formatStringOrdem(lbl6, lbl6.getText(), 3);
+					orderLoadHist.remove(0);
 
 					JLabel lbl7 = (JLabel) orderLoadHist.get(0);
 					lbl6.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getData()));
-					TextFormatter.formatStringOrdem(lbl7, lbl7.getText(), 3);
+					orderLoadHist.remove(0);
 
 					JLabel lbl8 = (JLabel) orderLoadHist.get(0);
 					lbl6.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getOrdem()));
-					TextFormatter.formatStringOrdem(lbl8, lbl8.getText(), 3);
-
 					orderLoadHist.remove(0);
 					medicadosHist.remove(medicadosHist.size() - 1);
+				} else {
+					break;
 				}
-
 			}
 		}
 	}
@@ -280,7 +280,7 @@ public class ControllerMedicadosSC extends KeyAdapter implements FocusListener {
 				view.getCausaJFT().setEnabled(true);
 				view.getCausaJFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getCausaJFT()) {
-				TextFormatter.formatStringJFT(src, text, 1);
+				TextFormatter.formatStringJFT(src, text, 2);
 				view.getCausaJFT().setEnabled(false);
 				view.getDose1JFT().setEnabled(true);
 				view.getDose1JFT().grabFocus();
@@ -302,7 +302,6 @@ public class ControllerMedicadosSC extends KeyAdapter implements FocusListener {
 			} else if ((JFormattedTextField) e.getSource() == view.getControleJFT()) {
 				TextFormatter.formatStringJFT(src, text, 6);
 				if (view.getDataJFT().getText().equals("00/00/00") && view.getBrincoJFT().getText().equals("0000")
-						&& view.getPesoJFT().getText().equals("000000") && view.getFaseJFT().getText().equals("0")
 						&& view.getCausaJFT().getText().equals("00")) {
 					view.getControleJFT().setEnabled(false);
 					view.getOpcaoJFT().setEnabled(true);
@@ -371,19 +370,19 @@ public class ControllerMedicadosSC extends KeyAdapter implements FocusListener {
 		view.getCausaHist3Label().setText(String.valueOf(view.getCausaHist4Label().getText()));
 		view.getCausaHist4Label().setText(String.valueOf(view.getCausaHist5Label().getText()));
 		view.getCausaHist5Label().setText(String.valueOf(view.getCausaJFT().getText()));
-		
+
 		view.getDose1Hist1Label().setText(String.valueOf(view.getDose1Hist2Label().getText()));
 		view.getDose1Hist2Label().setText(String.valueOf(view.getDose1Hist3Label().getText()));
 		view.getDose1Hist3Label().setText(String.valueOf(view.getDose1Hist4Label().getText()));
 		view.getDose1Hist4Label().setText(String.valueOf(view.getDose1Hist5Label().getText()));
 		view.getDose1Hist5Label().setText(String.valueOf(view.getDose1JFT().getText()));
-		
+
 		view.getDose2Hist1Label().setText(String.valueOf(view.getDose2Hist2Label().getText()));
 		view.getDose2Hist2Label().setText(String.valueOf(view.getDose2Hist3Label().getText()));
 		view.getDose2Hist3Label().setText(String.valueOf(view.getDose2Hist4Label().getText()));
 		view.getDose2Hist4Label().setText(String.valueOf(view.getDose2Hist5Label().getText()));
 		view.getDose2Hist5Label().setText(String.valueOf(view.getDose2JFT().getText()));
-		
+
 		view.getDose3Hist1Label().setText(String.valueOf(view.getDose3Hist2Label().getText()));
 		view.getDose3Hist2Label().setText(String.valueOf(view.getDose3Hist3Label().getText()));
 		view.getDose3Hist3Label().setText(String.valueOf(view.getDose3Hist4Label().getText()));
@@ -393,7 +392,8 @@ public class ControllerMedicadosSC extends KeyAdapter implements FocusListener {
 		view.getDataJFT().setText("00/00/00");
 		view.getBrincoJFT().setText("0000");
 		view.getMedicamentoJFT().setText("000000");
-		view.getCausaJFT().setText("0");
+		view.getCausaJFT().setText("00");
+		TextFormatter.formatStringJFT(view.getCausaJFT(), view.getCausaJFT().getText().trim(), 2);
 		view.getDose1JFT().setText("00");
 		view.getDose2JFT().setText("00");
 		view.getDose3JFT().setText("00");

@@ -1,211 +1,82 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package brf.suino.view;
 
-import javax.swing.GroupLayout;
+import java.text.ParseException;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.JFormattedTextField;
-import javax.swing.SwingConstants;
+import javax.swing.JPanel;
 import javax.swing.JLabel;
-import javax.swing.border.SoftBevelBorder;
-import javax.swing.border.BevelBorder;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.SwingConstants;
 
+/**
+ *
+ * @author 612251
+ */
 public class ViewMedicadosSC extends javax.swing.JFrame {
-	private static final long serialVersionUID = 1L;
-	private javax.swing.JFormattedTextField baiaJFT;
-	private javax.swing.JPanel baiaJP;
-	private javax.swing.JLabel fornecidaHist1Label;
-	private javax.swing.JLabel brincoHist1Label;
-	private javax.swing.JLabel causaHist1Label;
-	private javax.swing.JLabel fornecidaHist2Label;
-	private javax.swing.JLabel brincoHist2Label;
-	private javax.swing.JLabel causaHist2Label;
-	private javax.swing.JLabel fornecidaHist3Label;
-	private javax.swing.JLabel brincoHist3Label;
-	private javax.swing.JLabel causaHist3Label;
-	private javax.swing.JLabel fornecidaHist4Label;
-	private javax.swing.JLabel brincoHist4Label;
-	private javax.swing.JLabel causaHist4Label;
-	private javax.swing.JLabel fornecidaHist5Label;
-	private javax.swing.JLabel brincoHist5Label;
-	private javax.swing.JLabel causaHist5Label;
-	private javax.swing.JFormattedTextField fornecidaJFT;
-	private javax.swing.JFormattedTextField brincoJFT;
-	private javax.swing.JFormattedTextField galpaoJFT;
-	private javax.swing.JLabel dataHist1Label;
-	private javax.swing.JLabel dataHist2Label;
-	private javax.swing.JLabel dataHist3Label;
-	private javax.swing.JLabel dataHist4Label;
-	private javax.swing.JLabel dataHist5Label;
-	private javax.swing.JFormattedTextField dataJFT;
-	private javax.swing.JLabel jLabel10;
-	private javax.swing.JLabel jLabel11;
-	private javax.swing.JLabel jLabel12;
-	private javax.swing.JLabel jLabel13;
-	private javax.swing.JLabel jLabel14;
-	private javax.swing.JLabel jLabel15;
-	private javax.swing.JLabel jLabel16;
-	private javax.swing.JLabel jLabel17;
-	private javax.swing.JLabel jLabel18;
-	private javax.swing.JLabel jLabel19;
-	private javax.swing.JLabel jLabel20;
-	private javax.swing.JLabel jLabel21;
-	private javax.swing.JLabel jLabel22;
-	private javax.swing.JLabel jLabel23;
-	private javax.swing.JLabel jLabel24;
-	private javax.swing.JLabel jLabel27;
-	private javax.swing.JLabel jLabel28;
-	private javax.swing.JLabel jLabel29;
-	private javax.swing.JLabel jLabel30;
-	private javax.swing.JLabel jLabel31;
-	private javax.swing.JLabel jLabel32;
-	private javax.swing.JLabel jLabel33;
-	private javax.swing.JLabel jLabel34;
-	private javax.swing.JLabel jLabel35;
-	private javax.swing.JLabel jLabel39;
-	private javax.swing.JLabel jLabel40;
-	private javax.swing.JLabel jLabel41;
-	private javax.swing.JLabel jLabel42;
-	private javax.swing.JLabel jLabel43;
-	private javax.swing.JLabel jLabel44;
-	private javax.swing.JLabel jLabel45;
-	private javax.swing.JLabel jLabel46;
-	private javax.swing.JLabel jLabel47;
-	private javax.swing.JLabel jLabel48;
-	private javax.swing.JLabel jLabel49;
-	private javax.swing.JLabel jLabel50;
-	private javax.swing.JLabel jLabel51;
-	private javax.swing.JLabel jLabel6;
-	private javax.swing.JLabel jLabel7;
-	private javax.swing.JLabel jLabel9;
-	private javax.swing.JPanel jPanel1;
-	private javax.swing.JPanel jPanel2;
-	private javax.swing.JPanel pnlMedicados;
-	private javax.swing.JPanel jPanel5;
-	private javax.swing.JPanel jPanel6;
-	private javax.swing.JPanel jPanel7;
-	private javax.swing.JFormattedTextField dose1JFT;
-	private javax.swing.JFormattedTextField opcaoJFT;
-	private javax.swing.JLabel ordemHist1Label;
-	private javax.swing.JLabel ordemHist2Label;
-	private javax.swing.JLabel ordemHist3Label;
-	private javax.swing.JLabel ordemHist4Label;
-	private javax.swing.JLabel ordemHist5Label;
-	private javax.swing.JFormattedTextField ordemJFT;
-	private javax.swing.JFormattedTextField causaJFT;
-	private javax.swing.JLabel registrosLabel;
-	private javax.swing.JFormattedTextField sexoJFT;
-	private javax.swing.JLabel sobraHist1Label;
-	private javax.swing.JLabel medicamentoHist1Label;
-	private javax.swing.JLabel dose1Hist1Label;
-	private javax.swing.JLabel sobraHist2Label;
-	private javax.swing.JLabel medicamentoHist2Label;
-	private javax.swing.JLabel dose1Hist2Label;
-	private javax.swing.JLabel sobraHist3Label;
-	private javax.swing.JLabel medicamentoHist3Label;
-	private javax.swing.JLabel dose1Hist3Label;
-	private javax.swing.JLabel sobraHist4Label;
-	private javax.swing.JLabel medicamentoHist4Label;
-	private javax.swing.JLabel dose1Hist4Label;
-	private javax.swing.JLabel sobraHist5Label;
-	private javax.swing.JLabel medicamentoHist5Label;
-	private javax.swing.JLabel dose1Hist5Label;
-	private javax.swing.JFormattedTextField sobraJFT;
-	private javax.swing.JFormattedTextField medicamentoJFT;
-	private javax.swing.JFormattedTextField trata2JFT;
-	private javax.swing.JFormattedTextField trataJFT;
-	private JFormattedTextField controleJFT;
-	private JLabel lblDose;
-	private JLabel dose2Hist1Label;
-	private JLabel dose2Hist2Label;
-	private JLabel dose2Hist3Label;
-	private JLabel dose2Hist4Label;
-	private JLabel dose2Hist5Label;
-	private JFormattedTextField dose2JFT;
-	private JFormattedTextField dose3JFT;
-	private JLabel dose3Hist5Label;
-	private JLabel dose3Hist4Label;
-	private JLabel dose3Hist3Label;
-	private JLabel dose3Hist2Label;
-	private JLabel dose3Hist1Label;
-	private JLabel lblDose_1;
 
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Creates new form ViewMedicadosSC
+	 */
 	public ViewMedicadosSC() {
 		initComponents();
 	}
 
+	/**
+	 * This method is called from within the constructor to initialize the form.
+	 * WARNING: Do NOT modify this code. The content of this method is always
+	 * regenerated by the Form Editor.
+	 */
+	@SuppressWarnings("unchecked")
+	// <editor-fold defaultstate="collapsed" desc="Generated
+	// Code">//GEN-BEGIN:initComponents
 	private void initComponents() {
 
-		jPanel5 = new javax.swing.JPanel();
-		jLabel17 = new javax.swing.JLabel();
-		jLabel18 = new javax.swing.JLabel();
-		jLabel19 = new javax.swing.JLabel();
-		jLabel39 = new javax.swing.JLabel();
-		jLabel40 = new javax.swing.JLabel();
-		jPanel6 = new javax.swing.JPanel();
-		jLabel20 = new javax.swing.JLabel();
-		jLabel21 = new javax.swing.JLabel();
-		jLabel22 = new javax.swing.JLabel();
-		jLabel41 = new javax.swing.JLabel();
-		jLabel43 = new javax.swing.JLabel();
-		jLabel23 = new javax.swing.JLabel();
-		jPanel2 = new javax.swing.JPanel();
-		jLabel6 = new javax.swing.JLabel();
-		fornecidaHist4Label = new javax.swing.JLabel();
-		jLabel9 = new javax.swing.JLabel();
-		sobraHist4Label = new javax.swing.JLabel();
-		fornecidaJFT = new javax.swing.JFormattedTextField();
-		fornecidaHist5Label = new javax.swing.JLabel();
-		jLabel10 = new javax.swing.JLabel();
-		sobraHist5Label = new javax.swing.JLabel();
-		sobraJFT = new javax.swing.JFormattedTextField();
-		fornecidaHist1Label = new javax.swing.JLabel();
-		sobraHist1Label = new javax.swing.JLabel();
-		fornecidaHist2Label = new javax.swing.JLabel();
-		sobraHist2Label = new javax.swing.JLabel();
-		fornecidaHist3Label = new javax.swing.JLabel();
-		sobraHist3Label = new javax.swing.JLabel();
-		jLabel13 = new javax.swing.JLabel();
-		jLabel14 = new javax.swing.JLabel();
-		jLabel42 = new javax.swing.JLabel();
-		jLabel46 = new javax.swing.JLabel();
-		jLabel47 = new javax.swing.JLabel();
-		jLabel48 = new javax.swing.JLabel();
-		jLabel49 = new javax.swing.JLabel();
-		jLabel11 = new javax.swing.JLabel();
-		jLabel12 = new javax.swing.JLabel();
-		jPanel1 = new javax.swing.JPanel();
 		baiaJP = new javax.swing.JPanel();
 		jLabel31 = new javax.swing.JLabel();
 		baiaJFT = new javax.swing.JFormattedTextField();
-		baiaJFT.setEditable(false);
-		baiaJFT.setEnabled(false);
 		sexoJFT = new javax.swing.JFormattedTextField();
-		sexoJFT.setEditable(false);
 		jLabel34 = new javax.swing.JLabel();
 		trataJFT = new javax.swing.JFormattedTextField();
-		trataJFT.setEditable(false);
 		jLabel44 = new javax.swing.JLabel();
 		galpaoJFT = new javax.swing.JFormattedTextField();
-		galpaoJFT.setEnabled(false);
 		jLabel45 = new javax.swing.JLabel();
 		trata2JFT = new javax.swing.JFormattedTextField();
-		trata2JFT.setEditable(false);
 		jLabel33 = new javax.swing.JLabel();
-		registrosLabel = new javax.swing.JLabel();
+		jPanel1 = new javax.swing.JPanel();
+		baiaJP_1 = new javax.swing.JPanel();
+		baiaLabel = new javax.swing.JLabel();
+		baiaJFT = new javax.swing.JFormattedTextField();
+		sexoJFT = new javax.swing.JFormattedTextField();
+		trataLabel = new javax.swing.JLabel();
+		trataJFT = new javax.swing.JFormattedTextField();
+		galpaoLabel = new javax.swing.JLabel();
+		galpaoJFT = new javax.swing.JFormattedTextField();
+		trata2Label = new javax.swing.JLabel();
+		trata2JFT = new javax.swing.JFormattedTextField();
+		sexoLabel = new javax.swing.JLabel();
 		jPanel7 = new javax.swing.JPanel();
-		jLabel24 = new javax.swing.JLabel();
-		jLabel50 = new javax.swing.JLabel();
-		jLabel51 = new javax.swing.JLabel();
+		escolhaLabel = new javax.swing.JLabel();
+		sairLabel = new javax.swing.JLabel();
+		opcaoLabel = new javax.swing.JLabel();
 		opcaoJFT = new javax.swing.JFormattedTextField();
-		jLabel27 = new javax.swing.JLabel();
+		voltarLabel = new javax.swing.JLabel();
 		pnlMedicados = new javax.swing.JPanel();
-		jLabel7 = new javax.swing.JLabel();
+		headerLabel = new javax.swing.JLabel();
 		brincoHist4Label = new javax.swing.JLabel();
-		jLabel15 = new javax.swing.JLabel();
+		brincoLabel = new javax.swing.JLabel();
 		medicamentoHist4Label = new javax.swing.JLabel();
 		brincoJFT = new javax.swing.JFormattedTextField();
 		brincoHist5Label = new javax.swing.JLabel();
-		jLabel16 = new javax.swing.JLabel();
+		medicamentoLabel = new javax.swing.JLabel();
 		medicamentoHist5Label = new javax.swing.JLabel();
 		medicamentoJFT = new javax.swing.JFormattedTextField();
 		brincoHist1Label = new javax.swing.JLabel();
@@ -220,14 +91,14 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		dataHist4Label = new javax.swing.JLabel();
 		dataHist5Label = new javax.swing.JLabel();
 		dataJFT = new javax.swing.JFormattedTextField();
-		jLabel28 = new javax.swing.JLabel();
+		dataLabel = new javax.swing.JLabel();
 		ordemHist1Label = new javax.swing.JLabel();
 		ordemHist2Label = new javax.swing.JLabel();
 		ordemHist3Label = new javax.swing.JLabel();
 		ordemHist4Label = new javax.swing.JLabel();
 		ordemHist5Label = new javax.swing.JLabel();
 		ordemJFT = new javax.swing.JFormattedTextField();
-		jLabel29 = new javax.swing.JLabel();
+		ordemLabel = new javax.swing.JLabel();
 		dose1JFT = new javax.swing.JFormattedTextField();
 		causaJFT = new javax.swing.JFormattedTextField();
 		dose1Hist5Label = new javax.swing.JLabel();
@@ -240,312 +111,26 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		causaHist2Label = new javax.swing.JLabel();
 		dose1Hist1Label = new javax.swing.JLabel();
 		causaHist1Label = new javax.swing.JLabel();
-		jLabel30 = new javax.swing.JLabel();
-		jLabel32 = new javax.swing.JLabel();
-		jLabel35 = new javax.swing.JLabel();
+		dose1Label = new javax.swing.JLabel();
+		causaLabel = new javax.swing.JLabel();
+		controleJFT = new javax.swing.JFormattedTextField();
+		controleLabel = new javax.swing.JLabel();
+		dose2Label = new javax.swing.JLabel();
+		dose2Hist1Label = new javax.swing.JLabel();
+		dose2Hist2Label = new javax.swing.JLabel();
+		dose2Hist3Label = new javax.swing.JLabel();
+		dose2Hist4Label = new javax.swing.JLabel();
+		dose2Hist5Label = new javax.swing.JLabel();
+		dose2JFT = new javax.swing.JFormattedTextField();
+		dose3Label = new javax.swing.JLabel();
+		dose3Hist1Label = new javax.swing.JLabel();
+		dose3Hist2Label = new javax.swing.JLabel();
+		dose3Hist3Label = new javax.swing.JLabel();
+		dose3Hist4Label = new javax.swing.JLabel();
+		dose3Hist5Label = new javax.swing.JLabel();
+		dose3JFT = new javax.swing.JFormattedTextField();
 
-		jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-		jLabel17.setText("Escolha uma opção:");
-
-		jLabel18.setText("[1] - Digitar Próxima Baia");
-
-		jLabel19.setText("[2] - Finalizar Desempenho / Voltar");
-
-		jLabel39.setText("[0] - Sair");
-
-		jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		jLabel40.setText("Opção");
-
-		javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-		jPanel5.setLayout(jPanel5Layout);
-		jPanel5Layout.setHorizontalGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(jPanel5Layout
-				.createSequentialGroup().addContainerGap()
-				.addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(jPanel5Layout.createSequentialGroup()
-								.addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addComponent(jLabel39).addComponent(jLabel19).addComponent(jLabel18).addComponent(jLabel17))
-								.addGap(0, 0, Short.MAX_VALUE))
-						.addGroup(jPanel5Layout.createSequentialGroup().addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-				.addContainerGap()));
-		jPanel5Layout.setVerticalGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel5Layout.createSequentialGroup().addContainerGap().addComponent(jLabel17).addGap(18, 18, 18)
-						.addComponent(jLabel18).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(jLabel19)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE).addComponent(jLabel39)
-						.addGap(36, 36, 36)
-						.addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel40))
-						.addContainerGap()));
-
-		jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-		jLabel20.setText("Escolha uma opção:");
-
-		jLabel21.setText("[1] - Digitar Mortalidade");
-
-		jLabel22.setText("[2] - Digitar Medicados");
-
-		jLabel41.setText("[0] - Sair");
-
-		jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		jLabel43.setText("Opção");
-
-		jLabel23.setText("[3] - Finalizar Desempenho / Voltar");
-
-		javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-		jPanel6.setLayout(jPanel6Layout);
-		jPanel6Layout.setHorizontalGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel6Layout.createSequentialGroup().addContainerGap()
-						.addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addGroup(jPanel6Layout.createSequentialGroup()
-										.addComponent(jLabel43, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-												Short.MAX_VALUE)
-										.addGap(8, 8, 8))
-								.addGroup(jPanel6Layout.createSequentialGroup()
-										.addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addComponent(jLabel41).addComponent(jLabel22).addComponent(jLabel21).addComponent(jLabel20)
-												.addComponent(jLabel23))
-										.addGap(0, 10, Short.MAX_VALUE)))
-						.addContainerGap()));
-		jPanel6Layout.setVerticalGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel6Layout.createSequentialGroup().addContainerGap().addComponent(jLabel20).addGap(18, 18, 18)
-						.addComponent(jLabel21).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(jLabel22)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(jLabel23)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE).addComponent(jLabel41)
-						.addGap(36, 36, 36)
-						.addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel43))
-						.addContainerGap()));
-
-		jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-		jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-		jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel6.setText("Consumo de Ração");
-
-		fornecidaHist4Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		fornecidaHist4Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-		fornecidaHist4Label.setEnabled(false);
-
-		jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel9.setText("Fornecida");
-
-		sobraHist4Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		sobraHist4Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-		sobraHist4Label.setEnabled(false);
-
-		try {
-			fornecidaJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-		} catch (java.text.ParseException ex) {
-			ex.printStackTrace();
-		}
-		fornecidaJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-		fornecidaJFT.setEnabled(false);
-
-		fornecidaHist5Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		fornecidaHist5Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-		fornecidaHist5Label.setEnabled(false);
-
-		jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel10.setText("Sobra");
-
-		sobraHist5Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		sobraHist5Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-		sobraHist5Label.setEnabled(false);
-
-		try {
-			sobraJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
-		} catch (java.text.ParseException ex) {
-			ex.printStackTrace();
-		}
-		sobraJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-		sobraJFT.setEnabled(false);
-
-		fornecidaHist1Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		fornecidaHist1Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-		fornecidaHist1Label.setEnabled(false);
-
-		sobraHist1Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		sobraHist1Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-		sobraHist1Label.setEnabled(false);
-
-		fornecidaHist2Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		fornecidaHist2Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-		fornecidaHist2Label.setEnabled(false);
-
-		sobraHist2Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		sobraHist2Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-		sobraHist2Label.setEnabled(false);
-
-		fornecidaHist3Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		fornecidaHist3Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-		fornecidaHist3Label.setEnabled(false);
-
-		sobraHist3Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		sobraHist3Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-		sobraHist3Label.setEnabled(false);
-
-		try {
-			dataJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/##")));
-		} catch (java.text.ParseException ex) {
-			ex.printStackTrace();
-		}
-		dataJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-		dataJFT.setToolTipText("");
-
-		jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel13.setText("Data");
-
-		try {
-			ordemJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-		} catch (java.text.ParseException ex) {
-			ex.printStackTrace();
-		}
-		ordemJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-		ordemJFT.setEnabled(false);
-
-		jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel14.setText("Ordem");
-
-		jLabel42.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-		jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel42.setText("Controles");
-
-		jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel46.setText("Fornecida");
-
-		jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel47.setText("Sobra");
-
-		jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel48.setText("Nº Animais");
-
-		jLabel49.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel49.setText("Peso");
-
-		jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel11.setText("Nº Animais");
-
-		jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel12.setText("Peso");
-
-		javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-		jPanel2.setLayout(jPanel2Layout);
-		jPanel2Layout.setHorizontalGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-				.addGroup(jPanel2Layout.createSequentialGroup().addContainerGap().addGroup(jPanel2Layout
-						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(jPanel2Layout.createSequentialGroup()
-								.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false))
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-								.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING))
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-								.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-										.addComponent(fornecidaHist1Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(fornecidaHist2Label, javax.swing.GroupLayout.Alignment.TRAILING,
-												javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-												Short.MAX_VALUE)
-										.addComponent(fornecidaHist5Label, javax.swing.GroupLayout.Alignment.TRAILING,
-												javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(fornecidaHist3Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(fornecidaHist4Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(fornecidaJFT, javax.swing.GroupLayout.Alignment.TRAILING,
-												javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-								.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-										.addComponent(sobraJFT, javax.swing.GroupLayout.Alignment.TRAILING)
-										.addComponent(sobraHist5Label, javax.swing.GroupLayout.Alignment.TRAILING,
-												javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(sobraHist4Label, javax.swing.GroupLayout.Alignment.TRAILING,
-												javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(sobraHist3Label, javax.swing.GroupLayout.Alignment.TRAILING,
-												javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(sobraHist2Label, javax.swing.GroupLayout.Alignment.TRAILING,
-												javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(sobraHist1Label, javax.swing.GroupLayout.Alignment.TRAILING,
-												javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 56,
-												javax.swing.GroupLayout.PREFERRED_SIZE))
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-								.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false).addComponent(
-										jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE))
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-								.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-
-										.addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 56,
-												javax.swing.GroupLayout.PREFERRED_SIZE))))
-						.addContainerGap()));
-		jPanel2Layout.setVerticalGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup().addContainerGap()
-						.addComponent(jLabel6).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-						.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(jPanel2Layout
-								.createSequentialGroup()
-								.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-										.addComponent(jLabel9).addComponent(jLabel10))
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-								.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-										.addComponent(fornecidaHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addComponent(sobraHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE))
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-								.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addComponent(fornecidaHist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addComponent(sobraHist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE))
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-								.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addComponent(fornecidaHist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addComponent(sobraHist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE))
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-								.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addComponent(fornecidaHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addComponent(sobraHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE))
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-								.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addComponent(fornecidaHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addComponent(sobraHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE)))
-								.addGroup(jPanel2Layout.createSequentialGroup().addComponent(jLabel13)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-												.addComponent(fornecidaJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(sobraJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-														javax.swing.GroupLayout.PREFERRED_SIZE)))
-								.addGroup(jPanel2Layout.createSequentialGroup().addComponent(jLabel14)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-								.addGroup(jPanel2Layout.createSequentialGroup()
-										.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-												.addComponent(jLabel12).addComponent(jLabel11))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)))
-								.addGroup(jPanel2Layout.createSequentialGroup().addGap(145, 145, 145)
-										.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE))))
-						.addContainerGap()));
-
-		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-		baiaJP.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+		baiaJP_1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
 		jLabel31.setText("Baia");
 
@@ -601,8 +186,8 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 
 		jLabel33.setText("Sexo");
 
-		javax.swing.GroupLayout baiaJPLayout = new javax.swing.GroupLayout(baiaJP);
-		baiaJP.setLayout(baiaJPLayout);
+		javax.swing.GroupLayout baiaJPLayout = new javax.swing.GroupLayout(baiaJP_1);
+		baiaJP_1.setLayout(baiaJPLayout);
 		baiaJPLayout.setHorizontalGroup(baiaJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 				.addGroup(baiaJPLayout.createSequentialGroup().addContainerGap().addComponent(jLabel44)
 						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -638,19 +223,109 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 														javax.swing.GroupLayout.PREFERRED_SIZE))
 										.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
 
-		registrosLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-		registrosLabel.setForeground(new java.awt.Color(0, 153, 255));
-		registrosLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		registrosLabel.setText("Registros salvos com sucesso!!");
+		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+		baiaJP_1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+		baiaLabel.setText("Baia");
+
+		try {
+			baiaJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+		} catch (java.text.ParseException ex) {
+			ex.printStackTrace();
+		}
+		baiaJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+		try {
+			sexoJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+		} catch (java.text.ParseException ex) {
+			ex.printStackTrace();
+		}
+		sexoJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+		sexoJFT.setEnabled(false);
+
+		trataLabel.setText("Trat.");
+
+		try {
+			trataJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+		} catch (java.text.ParseException ex) {
+			ex.printStackTrace();
+		}
+		trataJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+		trataJFT.setEnabled(false);
+
+		galpaoLabel.setText("Galpão");
+
+		galpaoJFT.setEditable(false);
+		try {
+			galpaoJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+		} catch (java.text.ParseException ex) {
+			ex.printStackTrace();
+		}
+		galpaoJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+		galpaoJFT.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				galpaoJFT1ActionPerformed(evt);
+			}
+		});
+
+		trata2Label.setText("Trat. 2");
+
+		try {
+			trata2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+		} catch (java.text.ParseException ex) {
+			ex.printStackTrace();
+		}
+		trata2JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+		trata2JFT.setEnabled(false);
+
+		sexoLabel.setText("Sexo");
+
+		javax.swing.GroupLayout baiaJP1Layout = new javax.swing.GroupLayout(baiaJP_1);
+		baiaJP_1.setLayout(baiaJP1Layout);
+		baiaJP1Layout.setHorizontalGroup(baiaJP1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				.addGroup(baiaJP1Layout.createSequentialGroup().addContainerGap().addComponent(galpaoLabel)
+						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+						.addComponent(galpaoJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED).addComponent(baiaLabel)
+						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+						.addComponent(baiaJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+						.addGap(16, 16, 16).addComponent(sexoLabel).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+						.addComponent(sexoJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+						.addGap(18, 18, 18).addComponent(trataLabel).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+						.addComponent(trataJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+						.addGap(16, 16, 16).addComponent(trata2Label).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+						.addComponent(trata2JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+						.addContainerGap(92, Short.MAX_VALUE)));
+		baiaJP1Layout
+				.setVerticalGroup(
+						baiaJP1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+								.addGroup(baiaJP1Layout.createSequentialGroup().addContainerGap()
+										.addGroup(baiaJP1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+												.addComponent(baiaLabel)
+												.addComponent(baiaJFT, javax.swing.GroupLayout.PREFERRED_SIZE,
+														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(sexoJFT, javax.swing.GroupLayout.PREFERRED_SIZE,
+														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(trataLabel)
+												.addComponent(trataJFT, javax.swing.GroupLayout.PREFERRED_SIZE,
+														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(galpaoLabel)
+												.addComponent(galpaoJFT, javax.swing.GroupLayout.PREFERRED_SIZE,
+														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(sexoLabel).addComponent(trata2Label).addComponent(trata2JFT,
+														javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+														javax.swing.GroupLayout.PREFERRED_SIZE))
+										.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
 
 		jPanel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-		jLabel24.setText("Escolha uma opção:");
+		escolhaLabel.setText("Escolha uma opção:");
 
-		jLabel50.setText("[0] - Sair");
+		sairLabel.setText("[0] - Sair");
 
-		jLabel51.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		jLabel51.setText("Opção");
+		opcaoLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+		opcaoLabel.setText("Opção");
 
 		try {
 			opcaoJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
@@ -660,45 +335,47 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		opcaoJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		opcaoJFT.setEnabled(false);
 
-		jLabel27.setText("[9] - Voltar");
+		voltarLabel.setText("[9] - Voltar");
 
 		javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-		jPanel7Layout.setHorizontalGroup(jPanel7Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel7Layout.createSequentialGroup()
-				.addContainerGap()
-				.addGroup(jPanel7Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel7Layout.createSequentialGroup().addGap(4)
-						.addComponent(jLabel51, GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE).addPreferredGap(ComponentPlacement.RELATED)
-						.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
-						.addGroup(jPanel7Layout.createSequentialGroup().addComponent(jLabel50).addGap(124, 134, Short.MAX_VALUE))
-						.addComponent(jLabel27).addComponent(jLabel24))
-				.addContainerGap()));
+		jPanel7Layout.setHorizontalGroup(jPanel7Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel7Layout.createSequentialGroup().addContainerGap()
+						.addGroup(jPanel7Layout.createParallelGroup(Alignment.LEADING)
+								.addGroup(jPanel7Layout.createSequentialGroup().addGap(4)
+										.addComponent(opcaoLabel, GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+										.addPreferredGap(ComponentPlacement.RELATED)
+										.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
+								.addGroup(jPanel7Layout.createSequentialGroup().addComponent(sairLabel).addGap(124, 134, Short.MAX_VALUE))
+								.addComponent(voltarLabel).addComponent(escolhaLabel))
+						.addContainerGap()));
 		jPanel7Layout
 				.setVerticalGroup(jPanel7Layout.createParallelGroup(Alignment.LEADING).addGroup(Alignment.TRAILING,
-						jPanel7Layout.createSequentialGroup().addContainerGap(82, Short.MAX_VALUE).addComponent(jLabel24).addGap(18)
-								.addComponent(jLabel27).addPreferredGap(ComponentPlacement.RELATED).addComponent(jLabel50).addGap(36)
-								.addGroup(jPanel7Layout.createParallelGroup(Alignment.BASELINE).addComponent(jLabel51).addComponent(
+						jPanel7Layout.createSequentialGroup().addContainerGap(82, Short.MAX_VALUE).addComponent(escolhaLabel).addGap(18)
+								.addComponent(voltarLabel).addPreferredGap(ComponentPlacement.RELATED).addComponent(sairLabel).addGap(36)
+								.addGroup(jPanel7Layout.createParallelGroup(Alignment.BASELINE).addComponent(opcaoLabel).addComponent(
 										opcaoJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 								.addContainerGap()));
 		jPanel7.setLayout(jPanel7Layout);
 
 		pnlMedicados.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-		jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-		jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel7.setText("Mortos / Descartados");
+		headerLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+		headerLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+		headerLabel.setText("Medicados");
 
 		brincoHist4Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		brincoHist4Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 		brincoHist4Label.setEnabled(false);
 
-		jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel15.setText("Brinco");
+		brincoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+		brincoLabel.setText("Brinco");
 
 		medicamentoHist4Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		medicamentoHist4Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 		medicamentoHist4Label.setEnabled(false);
 
 		try {
-			brincoJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+			brincoJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -709,15 +386,15 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		brincoHist5Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 		brincoHist5Label.setEnabled(false);
 
-		jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel16.setText("Medicamento");
+		medicamentoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+		medicamentoLabel.setText("Medicamento");
 
 		medicamentoHist5Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		medicamentoHist5Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 		medicamentoHist5Label.setEnabled(false);
 
 		try {
-			medicamentoJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
+			medicamentoJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -768,8 +445,18 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		dataHist5Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 		dataHist5Label.setEnabled(false);
 
-		jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel28.setText("Data");
+		try {
+			dataJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		dataJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+		dataJFT.setToolTipText("");
+		dataJFT.setEnabled(false);
+
+		dataLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+		dataLabel.setText("Data");
 
 		ordemHist1Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		ordemHist1Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -799,11 +486,11 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		ordemJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		ordemJFT.setEnabled(false);
 
-		jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel29.setText("Ordem");
+		ordemLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+		ordemLabel.setText("Ordem");
 
 		try {
-			dose1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			dose1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -811,7 +498,7 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		dose1JFT.setEnabled(false);
 
 		try {
-			causaJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+			causaJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -858,365 +545,454 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		causaHist1Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 		causaHist1Label.setEnabled(false);
 
-		jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel30.setText("Dose 1");
+		dose1Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+		dose1Label.setText("Dose 1");
 
-		jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel32.setText("Causa");
+		causaLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+		causaLabel.setText("Causa");
 
-		jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel35.setText("Controle");
-
-		controleJFT = new JFormattedTextField();
 		try {
-			controleJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
+			controleJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
-		controleJFT.setHorizontalAlignment(SwingConstants.CENTER);
+		controleJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		controleJFT.setEnabled(false);
+		controleJFT.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				controleFornecidaJFT1ActionPerformed(evt);
+			}
+		});
 
-		lblDose = new JLabel();
-		lblDose.setText("Dose 2");
-		lblDose.setHorizontalAlignment(SwingConstants.CENTER);
+		controleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+		controleLabel.setText("Controle");
 
-		dose2Hist1Label = new JLabel();
-		dose2Hist1Label.setHorizontalAlignment(SwingConstants.CENTER);
+		dose2Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+		dose2Label.setText("Dose 2");
+
+		dose2Hist1Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+		dose2Hist1Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 		dose2Hist1Label.setEnabled(false);
-		dose2Hist1Label.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
 
-		dose2Hist2Label = new JLabel();
-		dose2Hist2Label.setHorizontalAlignment(SwingConstants.CENTER);
+		dose2Hist2Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+		dose2Hist2Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 		dose2Hist2Label.setEnabled(false);
-		dose2Hist2Label.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
 
-		dose2Hist3Label = new JLabel();
-		dose2Hist3Label.setHorizontalAlignment(SwingConstants.CENTER);
+		dose2Hist3Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+		dose2Hist3Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 		dose2Hist3Label.setEnabled(false);
-		dose2Hist3Label.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
 
-		dose2Hist4Label = new JLabel();
-		dose2Hist4Label.setHorizontalAlignment(SwingConstants.CENTER);
+		dose2Hist4Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+		dose2Hist4Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 		dose2Hist4Label.setEnabled(false);
-		dose2Hist4Label.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
 
-		dose2Hist5Label = new JLabel();
-		dose2Hist5Label.setHorizontalAlignment(SwingConstants.CENTER);
+		dose2Hist5Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+		dose2Hist5Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 		dose2Hist5Label.setEnabled(false);
-		dose2Hist5Label.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
 
-		dose2JFT = new JFormattedTextField();
-		dose2JFT.setHorizontalAlignment(SwingConstants.CENTER);
+		try {
+			dose2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+		} catch (java.text.ParseException ex) {
+			ex.printStackTrace();
+		}
+		dose2JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		dose2JFT.setEnabled(false);
 
-		dose3JFT = new JFormattedTextField();
-		dose3JFT.setHorizontalAlignment(SwingConstants.CENTER);
+		dose3Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+		dose3Label.setText("Dose 3");
+
+		dose3Hist1Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+		dose3Hist1Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+		dose3Hist1Label.setEnabled(false);
+
+		dose3Hist2Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+		dose3Hist2Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+		dose3Hist2Label.setEnabled(false);
+
+		dose3Hist3Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+		dose3Hist3Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+		dose3Hist3Label.setEnabled(false);
+
+		dose3Hist4Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+		dose3Hist4Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+		dose3Hist4Label.setEnabled(false);
+
+		dose3Hist5Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+		dose3Hist5Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+		dose3Hist5Label.setEnabled(false);
+
+		try {
+			dose3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+		} catch (java.text.ParseException ex) {
+			ex.printStackTrace();
+		}
+		dose3JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		dose3JFT.setEnabled(false);
 
-		dose3Hist5Label = new JLabel();
-		dose3Hist5Label.setHorizontalAlignment(SwingConstants.CENTER);
-		dose3Hist5Label.setEnabled(false);
-		dose3Hist5Label.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
-
-		dose3Hist4Label = new JLabel();
-		dose3Hist4Label.setHorizontalAlignment(SwingConstants.CENTER);
-		dose3Hist4Label.setEnabled(false);
-		dose3Hist4Label.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
-
-		dose3Hist3Label = new JLabel();
-		dose3Hist3Label.setHorizontalAlignment(SwingConstants.CENTER);
-		dose3Hist3Label.setEnabled(false);
-		dose3Hist3Label.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
-
-		dose3Hist2Label = new JLabel();
-		dose3Hist2Label.setHorizontalAlignment(SwingConstants.CENTER);
-		dose3Hist2Label.setEnabled(false);
-		dose3Hist2Label.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
-
-		dose3Hist1Label = new JLabel();
-		dose3Hist1Label.setHorizontalAlignment(SwingConstants.CENTER);
-		dose3Hist1Label.setEnabled(false);
-		dose3Hist1Label.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
-
-		lblDose_1 = new JLabel();
-		lblDose_1.setText("Dose 3");
-		lblDose_1.setHorizontalAlignment(SwingConstants.CENTER);
-
 		javax.swing.GroupLayout gl_pnlMedicados = new javax.swing.GroupLayout(pnlMedicados);
-		gl_pnlMedicados.setHorizontalGroup(gl_pnlMedicados.createParallelGroup(Alignment.TRAILING)
-				.addComponent(jLabel7, GroupLayout.DEFAULT_SIZE, 602, Short.MAX_VALUE)
-				.addGroup(gl_pnlMedicados.createSequentialGroup().addContainerGap()
-						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
-								.addComponent(jLabel29, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(ordemHist1Label, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-								.addComponent(ordemHist2Label, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-								.addComponent(ordemHist3Label, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-								.addComponent(ordemHist4Label, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-								.addComponent(ordemHist5Label, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-								.addComponent(ordemJFT, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
-								.addComponent(dataHist3Label, GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
-								.addComponent(jLabel28, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
-								.addComponent(dataJFT, GroupLayout.PREFERRED_SIZE, 74, GroupLayout.PREFERRED_SIZE)
-								.addComponent(dataHist1Label, GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
-								.addComponent(dataHist2Label, GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
-								.addComponent(dataHist4Label, GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
-								.addComponent(dataHist5Label, GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE))
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
-								.addComponent(brincoHist3Label, GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
-								.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.TRAILING, false)
-										.addComponent(jLabel15, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(brincoJFT, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE))
-								.addComponent(brincoHist4Label, GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
-								.addComponent(brincoHist5Label, GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
-								.addComponent(brincoHist1Label, GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
-								.addComponent(brincoHist2Label, GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE))
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
-								.addComponent(medicamentoHist3Label, GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-								.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING, false)
-										.addComponent(medicamentoHist1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-												Short.MAX_VALUE)
-										.addComponent(medicamentoHist4Label, GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-										.addComponent(medicamentoHist5Label, GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-										.addComponent(medicamentoJFT, GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE).addComponent(jLabel16,
-												Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-								.addComponent(medicamentoHist2Label, GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE))
-						.addPreferredGap(ComponentPlacement.UNRELATED)
-						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.TRAILING)
-										.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
-												.addComponent(causaHist3Label, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
-												.addComponent(causaHist2Label, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
-												.addComponent(causaHist1Label, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
-												.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.TRAILING, false)
-														.addComponent(causaHist5Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE,
-																GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-														.addComponent(causaHist4Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 55,
-																Short.MAX_VALUE)))
-										.addComponent(causaJFT, GroupLayout.PREFERRED_SIZE, 57, GroupLayout.PREFERRED_SIZE))
-								.addComponent(jLabel32, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING, false)
-								.addComponent(dose1Hist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(dose1JFT, Alignment.TRAILING)
-								.addComponent(dose1Hist5Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(dose1Hist4Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(dose1Hist2Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(dose1Hist1Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(jLabel30, GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE))
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_pnlMedicados.createSequentialGroup()
-										.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
-												.addComponent(dose2JFT, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
-												.addComponent(dose2Hist5Label, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
-												.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.TRAILING)
-														.addComponent(lblDose_1, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
-														.addComponent(dose3JFT, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
-														.addComponent(dose3Hist1Label, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 56,
-																GroupLayout.PREFERRED_SIZE))
-												.addComponent(dose3Hist5Label, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING).addComponent(controleJFT,
-												GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
-												.addComponent(jLabel35, GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE))
-										.addGap(22))
-								.addGroup(gl_pnlMedicados.createSequentialGroup().addGroup(gl_pnlMedicados
-										.createParallelGroup(Alignment.LEADING)
-										.addGroup(gl_pnlMedicados.createSequentialGroup()
-												.addComponent(dose2Hist4Label, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
-												.addPreferredGap(ComponentPlacement.RELATED)
-												.addComponent(dose3Hist4Label, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE))
-										.addGroup(gl_pnlMedicados.createSequentialGroup()
-												.addComponent(dose2Hist3Label, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
-												.addPreferredGap(ComponentPlacement.RELATED)
-												.addComponent(dose3Hist3Label, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE))
-										.addGroup(gl_pnlMedicados.createSequentialGroup()
-												.addComponent(dose2Hist2Label, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
-												.addPreferredGap(ComponentPlacement.RELATED)
-												.addComponent(dose3Hist2Label, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE))
-										.addComponent(dose2Hist1Label, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
-										.addComponent(lblDose, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE))
-										.addContainerGap(103, Short.MAX_VALUE)))));
-		gl_pnlMedicados.setVerticalGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING).addGroup(gl_pnlMedicados
-				.createSequentialGroup().addContainerGap().addComponent(jLabel7).addPreferredGap(ComponentPlacement.UNRELATED)
-				.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.TRAILING).addGroup(gl_pnlMedicados.createSequentialGroup()
-						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING).addComponent(jLabel35, Alignment.TRAILING)
-								.addGroup(gl_pnlMedicados.createSequentialGroup().addGroup(gl_pnlMedicados
-										.createParallelGroup(Alignment.LEADING).addComponent(jLabel29)
-										.addGroup(gl_pnlMedicados.createSequentialGroup().addGroup(gl_pnlMedicados
-												.createParallelGroup(Alignment.LEADING)
-												.addGroup(gl_pnlMedicados.createSequentialGroup().addGroup(gl_pnlMedicados
-														.createParallelGroup(Alignment.LEADING).addComponent(jLabel28)
-														.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.BASELINE)
-																.addComponent(jLabel15).addComponent(jLabel16).addComponent(jLabel32))
-														.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.BASELINE)
-																.addComponent(jLabel30).addComponent(lblDose)))
-														.addPreferredGap(ComponentPlacement.RELATED)
-														.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING, false)
-																.addComponent(dose2Hist1Label, GroupLayout.DEFAULT_SIZE,
-																		GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-																.addComponent(ordemHist1Label, GroupLayout.DEFAULT_SIZE, 14,
-																		Short.MAX_VALUE)
-																.addComponent(dataHist1Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
-																.addComponent(brincoHist1Label, GroupLayout.DEFAULT_SIZE, 14,
-																		Short.MAX_VALUE)
-																.addComponent(medicamentoHist1Label, GroupLayout.DEFAULT_SIZE, 14,
-																		Short.MAX_VALUE)
-																.addComponent(dose1Hist1Label, GroupLayout.DEFAULT_SIZE, 14,
-																		Short.MAX_VALUE)
-																.addComponent(causaHist1Label, GroupLayout.DEFAULT_SIZE, 14,
-																		Short.MAX_VALUE)))
-												.addGroup(gl_pnlMedicados.createSequentialGroup().addComponent(lblDose_1)
-														.addPreferredGap(ComponentPlacement.RELATED).addComponent(dose3Hist1Label,
-																GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)))
-												.addPreferredGap(ComponentPlacement.UNRELATED)
-												.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING, false)
-														.addComponent(dose3Hist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-																Short.MAX_VALUE)
-														.addComponent(dose1Hist2Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
-														.addComponent(causaHist2Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
-														.addComponent(medicamentoHist2Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
-														.addComponent(brincoHist2Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
-														.addComponent(dataHist2Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
-														.addComponent(ordemHist2Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
-														.addComponent(dose2Hist2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-																Short.MAX_VALUE))))
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
-												.addComponent(dose3Hist3Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
-												.addComponent(dose2Hist3Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
-												.addGroup(
-														gl_pnlMedicados.createSequentialGroup()
-																.addComponent(
-																		causaHist3Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
-																.addPreferredGap(ComponentPlacement.RELATED))
-												.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.TRAILING, false)
-														.addComponent(dose1Hist3Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE,
-																GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-														.addComponent(medicamentoHist3Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE,
-																GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-														.addComponent(brincoHist3Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE,
-																GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-														.addComponent(ordemHist3Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 14,
-																Short.MAX_VALUE)
-														.addComponent(dataHist3Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE,
-																GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-										.addGap(11)
-										.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
-												.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING, false)
-														.addGroup(gl_pnlMedicados.createSequentialGroup()
-																.addComponent(ordemHist4Label, GroupLayout.PREFERRED_SIZE, 14,
-																		GroupLayout.PREFERRED_SIZE)
-																.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE,
-																		Short.MAX_VALUE)
-																.addComponent(ordemHist5Label, GroupLayout.PREFERRED_SIZE, 14,
-																		GroupLayout.PREFERRED_SIZE))
-														.addGroup(gl_pnlMedicados.createSequentialGroup().addGroup(gl_pnlMedicados
-																.createParallelGroup(Alignment.TRAILING)
-																.addGroup(gl_pnlMedicados.createSequentialGroup()
-																		.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
-																				.addComponent(medicamentoHist4Label,
-																						GroupLayout.PREFERRED_SIZE, 14,
-																						GroupLayout.PREFERRED_SIZE)
-																				.addComponent(brincoHist4Label, GroupLayout.PREFERRED_SIZE,
-																						14, GroupLayout.PREFERRED_SIZE))
-																		.addPreferredGap(ComponentPlacement.UNRELATED))
-																.addGroup(gl_pnlMedicados.createSequentialGroup()
-																		.addComponent(dataHist4Label, GroupLayout.PREFERRED_SIZE, 14,
-																				GroupLayout.PREFERRED_SIZE)
-																		.addGap(11)))
-																.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.TRAILING)
-																		.addComponent(dataHist5Label, Alignment.LEADING,
-																				GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-																		.addComponent(brincoHist5Label, Alignment.LEADING,
-																				GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-																		.addComponent(medicamentoHist5Label, Alignment.LEADING,
-																				GroupLayout.PREFERRED_SIZE, 14,
-																				GroupLayout.PREFERRED_SIZE))))
-												.addGroup(gl_pnlMedicados.createSequentialGroup().addGroup(gl_pnlMedicados
-														.createParallelGroup(Alignment.LEADING, false)
-														.addComponent(dose3Hist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-																Short.MAX_VALUE)
-														.addComponent(dose2Hist4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-																Short.MAX_VALUE)
-														.addComponent(dose1Hist4Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
-														.addComponent(causaHist4Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE))
-														.addPreferredGap(ComponentPlacement.UNRELATED)
-														.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING, false)
-																.addComponent(causaHist5Label, GroupLayout.DEFAULT_SIZE, 14,
-																		Short.MAX_VALUE)
-																.addComponent(dose1Hist5Label, GroupLayout.DEFAULT_SIZE, 14,
-																		Short.MAX_VALUE)
-																.addComponent(dose2Hist5Label, GroupLayout.DEFAULT_SIZE,
-																		GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-																.addComponent(dose3Hist5Label, GroupLayout.DEFAULT_SIZE,
-																		GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.BASELINE)
-								.addComponent(dataJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
-								.addComponent(brincoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
-								.addComponent(medicamentoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
-								.addComponent(dose1JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
-								.addComponent(controleJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-								.addComponent(ordemJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
-								.addComponent(causaJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)))
-						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.BASELINE)
-								.addComponent(dose2JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-								.addComponent(dose3JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-				.addGap(17)));
 		pnlMedicados.setLayout(gl_pnlMedicados);
+		gl_pnlMedicados.setHorizontalGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				.addComponent(headerLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+				.addGroup(gl_pnlMedicados.createSequentialGroup().addContainerGap().addGroup(gl_pnlMedicados
+						.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+						.addComponent(ordemHist5Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE,
+								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(ordemHist4Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE,
+								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(ordemHist3Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE,
+								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(ordemHist2Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE,
+								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(ordemHist1Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE,
+								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(ordemLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE,
+								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(ordemJFT)).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+								.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+										.addComponent(dataHist5Label, javax.swing.GroupLayout.Alignment.LEADING,
+												javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addComponent(dataHist4Label, javax.swing.GroupLayout.Alignment.LEADING,
+												javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addComponent(dataHist3Label, javax.swing.GroupLayout.Alignment.LEADING,
+												javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addComponent(dataHist2Label, javax.swing.GroupLayout.Alignment.LEADING,
+												javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addComponent(dataHist1Label, javax.swing.GroupLayout.Alignment.LEADING,
+												javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addComponent(dataLabel, javax.swing.GroupLayout.Alignment.LEADING,
+												javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE))
+								.addComponent(dataJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+								.addComponent(brincoHist5Label, javax.swing.GroupLayout.Alignment.LEADING,
+										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(brincoHist4Label, javax.swing.GroupLayout.Alignment.LEADING,
+										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(brincoHist3Label, javax.swing.GroupLayout.Alignment.LEADING,
+										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(brincoHist2Label, javax.swing.GroupLayout.Alignment.LEADING,
+										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(brincoHist1Label, javax.swing.GroupLayout.Alignment.LEADING,
+										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(brincoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(brincoJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 45,
+										javax.swing.GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(
+								javax.swing.GroupLayout.Alignment.TRAILING,
+								gl_pnlMedicados.createSequentialGroup().addGap(7, 7, 7).addComponent(medicamentoLabel,
+										javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_pnlMedicados.createSequentialGroup()
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+												.addComponent(medicamentoHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 66,
+														javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(medicamentoHist2Label, javax.swing.GroupLayout.Alignment.TRAILING,
+														javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(medicamentoHist3Label, javax.swing.GroupLayout.Alignment.TRAILING,
+														javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(medicamentoHist4Label, javax.swing.GroupLayout.Alignment.TRAILING,
+														javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(medicamentoHist5Label, javax.swing.GroupLayout.Alignment.TRAILING,
+														javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(medicamentoJFT, javax.swing.GroupLayout.Alignment.TRAILING,
+														javax.swing.GroupLayout.PREFERRED_SIZE, 66,
+														javax.swing.GroupLayout.PREFERRED_SIZE))))
+						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+								.addGroup(gl_pnlMedicados.createSequentialGroup().addGap(8, 8, 8).addComponent(causaLabel,
+										javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_pnlMedicados.createSequentialGroup()
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+												.addComponent(causaHist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
+														javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(causaHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
+														javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(causaHist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
+														javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(causaHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
+														javax.swing.GroupLayout.PREFERRED_SIZE)))
+								.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gl_pnlMedicados.createSequentialGroup()
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+												.addComponent(causaHist5Label, javax.swing.GroupLayout.DEFAULT_SIZE,
+														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+												.addComponent(causaJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 57,
+														javax.swing.GroupLayout.PREFERRED_SIZE))))
+						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+								.addComponent(dose1JFT, javax.swing.GroupLayout.Alignment.TRAILING)
+								.addComponent(dose1Hist5Label, javax.swing.GroupLayout.Alignment.TRAILING,
+										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(dose1Hist4Label, javax.swing.GroupLayout.Alignment.TRAILING,
+										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(dose1Hist3Label, javax.swing.GroupLayout.Alignment.TRAILING,
+										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(dose1Hist2Label, javax.swing.GroupLayout.Alignment.TRAILING,
+										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(dose1Hist1Label, javax.swing.GroupLayout.Alignment.TRAILING,
+										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(dose1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 56,
+										javax.swing.GroupLayout.PREFERRED_SIZE))
+						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+								.addComponent(dose2JFT, javax.swing.GroupLayout.Alignment.TRAILING)
+								.addComponent(dose2Hist5Label, javax.swing.GroupLayout.Alignment.TRAILING,
+										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(dose2Hist4Label, javax.swing.GroupLayout.Alignment.TRAILING,
+										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(dose2Hist3Label, javax.swing.GroupLayout.Alignment.TRAILING,
+										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(dose2Hist2Label, javax.swing.GroupLayout.Alignment.TRAILING,
+										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(dose2Hist1Label, javax.swing.GroupLayout.Alignment.TRAILING,
+										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(dose2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 56,
+										javax.swing.GroupLayout.PREFERRED_SIZE))
+						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+								.addComponent(dose3JFT, javax.swing.GroupLayout.Alignment.TRAILING)
+								.addComponent(dose3Hist5Label, javax.swing.GroupLayout.Alignment.TRAILING,
+										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(dose3Hist4Label, javax.swing.GroupLayout.Alignment.TRAILING,
+										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(dose3Hist3Label, javax.swing.GroupLayout.Alignment.TRAILING,
+										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(dose3Hist2Label, javax.swing.GroupLayout.Alignment.TRAILING,
+										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(dose3Hist1Label, javax.swing.GroupLayout.Alignment.TRAILING,
+										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(dose3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 56,
+										javax.swing.GroupLayout.PREFERRED_SIZE))
+						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(controleJFT)
+								.addComponent(controleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE))
+						.addContainerGap()));
+		gl_pnlMedicados.setVerticalGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gl_pnlMedicados.createSequentialGroup().addContainerGap()
+						.addComponent(headerLabel).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(gl_pnlMedicados
+								.createSequentialGroup()
+								.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+										.addComponent(brincoLabel).addComponent(medicamentoLabel))
+								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+								.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+										.addComponent(medicamentoHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+												javax.swing.GroupLayout.PREFERRED_SIZE)
+										.addComponent(brincoHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+												javax.swing.GroupLayout.PREFERRED_SIZE))
+								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+								.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+										.addComponent(brincoHist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+												javax.swing.GroupLayout.PREFERRED_SIZE)
+										.addComponent(medicamentoHist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+												javax.swing.GroupLayout.PREFERRED_SIZE))
+								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+								.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+										.addComponent(brincoHist3Label, javax.swing.GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+										.addComponent(medicamentoHist3Label, javax.swing.GroupLayout.DEFAULT_SIZE,
+												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+								.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+										.addComponent(brincoHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+												javax.swing.GroupLayout.PREFERRED_SIZE)
+										.addComponent(medicamentoHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+												javax.swing.GroupLayout.PREFERRED_SIZE))
+								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+								.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+										.addComponent(brincoHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+												javax.swing.GroupLayout.PREFERRED_SIZE)
+										.addComponent(medicamentoHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+												javax.swing.GroupLayout.PREFERRED_SIZE)))
+								.addGroup(gl_pnlMedicados.createSequentialGroup().addComponent(dataLabel)
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+										.addComponent(dataHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+												javax.swing.GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+										.addComponent(dataHist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+												javax.swing.GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+										.addComponent(dataHist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+												javax.swing.GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+										.addComponent(dataHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+												javax.swing.GroupLayout.PREFERRED_SIZE)
+										.addGap(11, 11, 11)
+										.addComponent(dataHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+												javax.swing.GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+												.addComponent(dataJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
+														javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(brincoJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
+														javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(medicamentoJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
+														javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(causaJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
+														javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(dose1JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
+														javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(ordemJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
+														javax.swing.GroupLayout.PREFERRED_SIZE)))
+								.addGroup(gl_pnlMedicados.createSequentialGroup().addComponent(ordemLabel)
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+										.addComponent(ordemHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+												javax.swing.GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+										.addComponent(ordemHist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+												javax.swing.GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+										.addComponent(ordemHist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+												javax.swing.GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+										.addComponent(ordemHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+												javax.swing.GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED).addComponent(ordemHist5Label,
+												javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_pnlMedicados.createSequentialGroup()
+										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+												.addComponent(causaLabel).addComponent(dose1Label))
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+												.addComponent(dose1Hist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+														javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(causaHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+														javax.swing.GroupLayout.PREFERRED_SIZE))
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+												.addComponent(causaHist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+														javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(dose1Hist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+														javax.swing.GroupLayout.PREFERRED_SIZE))
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+												.addComponent(causaHist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+														javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(dose1Hist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+														javax.swing.GroupLayout.PREFERRED_SIZE))
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+												.addComponent(causaHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+														javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(dose1Hist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+														javax.swing.GroupLayout.PREFERRED_SIZE))
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+												.addComponent(causaHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+														javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(dose1Hist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+														javax.swing.GroupLayout.PREFERRED_SIZE)))
+								.addGroup(gl_pnlMedicados.createSequentialGroup().addComponent(dose2Label)
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+										.addComponent(dose2Hist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+												javax.swing.GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+										.addComponent(dose2Hist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+												javax.swing.GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+										.addComponent(dose2Hist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+												javax.swing.GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+										.addComponent(dose2Hist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+												javax.swing.GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED).addComponent(dose2Hist5Label,
+												javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_pnlMedicados.createSequentialGroup()
+										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+												.addComponent(controleLabel)
+												.addGroup(gl_pnlMedicados.createSequentialGroup().addComponent(dose3Label)
+														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+														.addComponent(dose3Hist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+																javax.swing.GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+														.addComponent(dose3Hist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+																javax.swing.GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+														.addComponent(dose3Hist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+																javax.swing.GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+														.addComponent(dose3Hist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+																javax.swing.GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+														.addComponent(dose3Hist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
+																javax.swing.GroupLayout.PREFERRED_SIZE)))
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+												.addComponent(dose2JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
+														javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+														.addComponent(dose3JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
+																javax.swing.GroupLayout.PREFERRED_SIZE)
+														.addComponent(controleJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
+																javax.swing.GroupLayout.PREFERRED_SIZE)))))
+						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
 
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-				.addGroup(jPanel1Layout.createSequentialGroup().addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING)
+		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel1Layout.createSequentialGroup()
+				.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel1Layout.createSequentialGroup()
+						.addComponent(pnlMedicados, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(jPanel7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 						.addGroup(jPanel1Layout.createSequentialGroup()
-								.addComponent(pnlMedicados, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addPreferredGap(ComponentPlacement.UNRELATED)
-								.addComponent(jPanel7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(
-								jPanel1Layout.createSequentialGroup()
-										.addComponent(baiaJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.PREFERRED_SIZE)
-										.addGap(0, 385, Short.MAX_VALUE))
-						.addComponent(registrosLabel, GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)).addContainerGap()));
+								.addComponent(baiaJP_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addGap(0, 384, Short.MAX_VALUE)))
+				.addContainerGap()));
 		jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING)
-				.addGroup(jPanel1Layout.createSequentialGroup().addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING)
-						.addGroup(jPanel1Layout.createSequentialGroup()
-								.addComponent(baiaJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+				.addGroup(jPanel1Layout.createSequentialGroup().addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+						.addGroup(jPanel1Layout.createSequentialGroup().addContainerGap()
+								.addComponent(baiaJP_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 								.addPreferredGap(ComponentPlacement.RELATED)
-								.addComponent(pnlMedicados, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-						.addGroup(jPanel1Layout.createSequentialGroup().addContainerGap().addComponent(jPanel7, GroupLayout.PREFERRED_SIZE,
-								165, GroupLayout.PREFERRED_SIZE)))
-						.addPreferredGap(ComponentPlacement.UNRELATED).addComponent(registrosLabel).addContainerGap()));
+								.addComponent(pnlMedicados, GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE))
+						.addGroup(jPanel1Layout.createSequentialGroup().addGap(126).addComponent(jPanel7, GroupLayout.PREFERRED_SIZE, 158,
+								GroupLayout.PREFERRED_SIZE)))
+						.addGap(31)));
 		jPanel1.setLayout(jPanel1Layout);
+
+		registrosLabel = new JLabel();
+		registrosLabel.setText("Registros salvos com sucesso!!");
+		registrosLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		registrosLabel.setForeground(new Color(0, 153, 255));
+		registrosLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
+
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-
-		layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(layout.createSequentialGroup().addContainerGap()
-						.addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+		layout.setHorizontalGroup(layout.createParallelGroup(Alignment.LEADING).addGroup(Alignment.TRAILING,
+				layout.createSequentialGroup().addContainerGap().addGroup(layout.createParallelGroup(Alignment.TRAILING)
+						.addComponent(registrosLabel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 825, Short.MAX_VALUE)
+						.addComponent(jPanel1, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 						.addContainerGap()));
-		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(layout.createSequentialGroup().addContainerGap()
-						.addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addContainerGap()));
+		layout.setVerticalGroup(layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(layout.createSequentialGroup().addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 304, Short.MAX_VALUE)
+						.addPreferredGap(ComponentPlacement.RELATED).addComponent(registrosLabel).addContainerGap()));
 		getContentPane().setLayout(layout);
+
 		pack();
-	}
+	}// </editor-fold>//GEN-END:initComponents
 
-	private void galpaoJFTActionPerformed(java.awt.event.ActionEvent evt) {
-	}
+	private void galpaoJFTActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_galpaoJFTActionPerformed
+		// TODO add your handling code here:
+	}// GEN-LAST:event_galpaoJFTActionPerformed
 
+	private void controleFornecidaJFT1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_controleFornecidaJFT1ActionPerformed
+		// TODO add your handling code here:
+	}// GEN-LAST:event_controleFornecidaJFT1ActionPerformed
+
+	private void galpaoJFT1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_galpaoJFT1ActionPerformed
+		// TODO add your handling code here:
+	}// GEN-LAST:event_galpaoJFT1ActionPerformed
+
+	/**
+	 * @param args the command line arguments
+	 */
 	public static void main(String args[]) {
+		/* Set the Nimbus look and feel */
+		// <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
+		// (optional) ">
+		/*
+		 * If Nimbus (introduced in Java SE 6) is not available, stay with the default
+		 * look and feel. For details see
+		 * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+		 */
 		try {
 			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
 				if ("Nimbus".equals(info.getName())) {
@@ -1233,12 +1009,102 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
 			java.util.logging.Logger.getLogger(ViewMedicadosSC.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		}
+		// </editor-fold>
+
+		/* Create and display the form */
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				new ViewMedicadosSC().setVisible(true);
 			}
 		});
 	}
+
+	// Variables declaration - do not modify//GEN-BEGIN:variables
+	private javax.swing.JFormattedTextField baiaJFT;
+	private JPanel baiaJP;
+	private JPanel baiaJP_1;
+	private javax.swing.JFormattedTextField trata2JFT;
+	private javax.swing.JFormattedTextField trataJFT;
+	private javax.swing.JFormattedTextField galpaoJFT;
+	private javax.swing.JFormattedTextField sexoJFT;
+	private javax.swing.JLabel brincoLabel;
+	private javax.swing.JLabel medicamentoLabel;
+	private javax.swing.JLabel escolhaLabel;
+	private javax.swing.JLabel voltarLabel;
+	private javax.swing.JLabel dataLabel;
+	private javax.swing.JLabel ordemLabel;
+	private javax.swing.JLabel dose1Label;
+	private javax.swing.JLabel causaLabel;
+	private javax.swing.JLabel controleLabel;
+	private javax.swing.JLabel baiaLabel;
+	private javax.swing.JLabel trataLabel;
+	private javax.swing.JLabel sexoLabel;
+	private javax.swing.JLabel sairLabel;
+	private javax.swing.JLabel opcaoLabel;
+	private javax.swing.JLabel galpaoLabel;
+	private javax.swing.JLabel trata2Label;
+	private javax.swing.JLabel dose2Label;
+	private javax.swing.JLabel dose3Label;
+	private javax.swing.JLabel headerLabel;
+	private javax.swing.JFormattedTextField ordemJFT;
+	private javax.swing.JFormattedTextField causaJFT;
+	private javax.swing.JFormattedTextField brincoJFT;
+	private javax.swing.JFormattedTextField dataJFT;
+	private javax.swing.JFormattedTextField medicamentoJFT;
+	private javax.swing.JFormattedTextField controleJFT;
+	private javax.swing.JFormattedTextField dose1JFT;
+	private javax.swing.JFormattedTextField dose2JFT;
+	private javax.swing.JFormattedTextField dose3JFT;
+	private javax.swing.JFormattedTextField opcaoJFT;
+	private javax.swing.JLabel ordemHist1Label;
+	private javax.swing.JLabel ordemHist2Label;
+	private javax.swing.JLabel ordemHist3Label;
+	private javax.swing.JLabel ordemHist4Label;
+	private javax.swing.JLabel ordemHist5Label;
+	private javax.swing.JLabel dataHist1Label;
+	private javax.swing.JLabel dataHist2Label;
+	private javax.swing.JLabel dataHist3Label;
+	private javax.swing.JLabel dataHist4Label;
+	private javax.swing.JLabel dataHist5Label;
+	private javax.swing.JLabel brincoHist1Label;
+	private javax.swing.JLabel causaHist1Label;
+	private javax.swing.JLabel brincoHist2Label;
+	private javax.swing.JLabel causaHist2Label;
+	private javax.swing.JLabel brincoHist3Label;
+	private javax.swing.JLabel causaHist3Label;
+	private javax.swing.JLabel brincoHist4Label;
+	private javax.swing.JLabel causaHist4Label;
+	private javax.swing.JLabel brincoHist5Label;
+	private javax.swing.JLabel causaHist5Label;
+	private javax.swing.JLabel jLabel31;
+	private javax.swing.JLabel jLabel33;
+	private javax.swing.JLabel jLabel34;
+	private javax.swing.JLabel jLabel44;
+	private javax.swing.JLabel jLabel45;
+	private javax.swing.JPanel jPanel1;
+	private javax.swing.JPanel pnlMedicados;
+	private javax.swing.JPanel jPanel7;
+	private javax.swing.JLabel medicamentoHist1Label;
+	private javax.swing.JLabel dose1Hist1Label;
+	private javax.swing.JLabel dose2Hist1Label;
+	private javax.swing.JLabel dose3Hist1Label;
+	private javax.swing.JLabel medicamentoHist2Label;
+	private javax.swing.JLabel dose1Hist2Label;
+	private javax.swing.JLabel dose2Hist2Label;
+	private javax.swing.JLabel dose3Hist2Label;
+	private javax.swing.JLabel medicamentoHist3Label;
+	private javax.swing.JLabel dose1Hist3Label;
+	private javax.swing.JLabel dose2Hist3Label;
+	private javax.swing.JLabel dose3Hist3Label;
+	private javax.swing.JLabel medicamentoHist4Label;
+	private javax.swing.JLabel dose1Hist4Label;
+	private javax.swing.JLabel dose2Hist4Label;
+	private javax.swing.JLabel dose3Hist4Label;
+	private javax.swing.JLabel medicamentoHist5Label;
+	private javax.swing.JLabel dose1Hist5Label;
+	private javax.swing.JLabel dose2Hist5Label;
+	private javax.swing.JLabel dose3Hist5Label;
+	private JLabel registrosLabel;
 
 	public javax.swing.JFormattedTextField getBaiaJFT() {
 		return baiaJFT;
@@ -1248,148 +1114,28 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		this.baiaJFT = baiaJFT;
 	}
 
-	public javax.swing.JPanel getBaiaJP() {
-		return baiaJP;
+	public JPanel getBaiaJP() {
+		return baiaJP_1;
 	}
 
-	public void setBaiaJP(javax.swing.JPanel baiaJP) {
-		this.baiaJP = baiaJP;
+	public void setBaiaJP(JPanel baiaJP) {
+		this.baiaJP_1 = baiaJP;
 	}
 
-	public javax.swing.JLabel getFornecidaHist1Label() {
-		return fornecidaHist1Label;
+	public javax.swing.JFormattedTextField getTrata2JFT() {
+		return trata2JFT;
 	}
 
-	public void setFornecidaHist1Label(javax.swing.JLabel fornecidaHist1Label) {
-		this.fornecidaHist1Label = fornecidaHist1Label;
+	public void setTrata2JFT(javax.swing.JFormattedTextField trata2jft) {
+		trata2JFT = trata2jft;
 	}
 
-	public javax.swing.JLabel getBrincoHist1Label() {
-		return brincoHist1Label;
+	public javax.swing.JFormattedTextField getTrataJFT() {
+		return trataJFT;
 	}
 
-	public void setBrincoHist1Label(javax.swing.JLabel brincoHist1Label) {
-		this.brincoHist1Label = brincoHist1Label;
-	}
-
-	public javax.swing.JLabel getFaseHist1Label() {
-		return causaHist1Label;
-	}
-
-	public void setFaseHist1Label(javax.swing.JLabel faseHist1Label) {
-		this.causaHist1Label = faseHist1Label;
-	}
-
-	public javax.swing.JLabel getFornecidaHist2Label() {
-		return fornecidaHist2Label;
-	}
-
-	public void setFornecidaHist2Label(javax.swing.JLabel fornecidaHist2Label) {
-		this.fornecidaHist2Label = fornecidaHist2Label;
-	}
-
-	public javax.swing.JLabel getBrincoHist2Label() {
-		return brincoHist2Label;
-	}
-
-	public void setBrincoHist2Label(javax.swing.JLabel brincoHist2Label) {
-		this.brincoHist2Label = brincoHist2Label;
-	}
-
-	public javax.swing.JLabel getFaseHist2Label() {
-		return causaHist2Label;
-	}
-
-	public void setFaseHist2Label(javax.swing.JLabel faseHist2Label) {
-		this.causaHist2Label = faseHist2Label;
-	}
-
-	public javax.swing.JLabel getFornecidaHist3Label() {
-		return fornecidaHist3Label;
-	}
-
-	public void setFornecidaHist3Label(javax.swing.JLabel fornecidaHist3Label) {
-		this.fornecidaHist3Label = fornecidaHist3Label;
-	}
-
-	public javax.swing.JLabel getBrincoHist3Label() {
-		return brincoHist3Label;
-	}
-
-	public void setBrincoHist3Label(javax.swing.JLabel brincoHist3Label) {
-		this.brincoHist3Label = brincoHist3Label;
-	}
-
-	public javax.swing.JLabel getFaseHist3Label() {
-		return causaHist3Label;
-	}
-
-	public void setFaseHist3Label(javax.swing.JLabel faseHist3Label) {
-		this.causaHist3Label = faseHist3Label;
-	}
-
-	public javax.swing.JLabel getFornecidaHist4Label() {
-		return fornecidaHist4Label;
-	}
-
-	public void setFornecidaHist4Label(javax.swing.JLabel fornecidaHist4Label) {
-		this.fornecidaHist4Label = fornecidaHist4Label;
-	}
-
-	public javax.swing.JLabel getBrincoHist4Label() {
-		return brincoHist4Label;
-	}
-
-	public void setBrincoHist4Label(javax.swing.JLabel brincoHist4Label) {
-		this.brincoHist4Label = brincoHist4Label;
-	}
-
-	public javax.swing.JLabel getFaseHist4Label() {
-		return causaHist4Label;
-	}
-
-	public void setFaseHist4Label(javax.swing.JLabel faseHist4Label) {
-		this.causaHist4Label = faseHist4Label;
-	}
-
-	public javax.swing.JLabel getFornecidaHist5Label() {
-		return fornecidaHist5Label;
-	}
-
-	public void setFornecidaHist5Label(javax.swing.JLabel fornecidaHist5Label) {
-		this.fornecidaHist5Label = fornecidaHist5Label;
-	}
-
-	public javax.swing.JLabel getBrincoHist5Label() {
-		return brincoHist5Label;
-	}
-
-	public void setBrincoHist5Label(javax.swing.JLabel brincoHist5Label) {
-		this.brincoHist5Label = brincoHist5Label;
-	}
-
-	public javax.swing.JLabel getFaseHist5Label() {
-		return causaHist5Label;
-	}
-
-	public void setFaseHist5Label(javax.swing.JLabel faseHist5Label) {
-		this.causaHist5Label = faseHist5Label;
-	}
-
-	public javax.swing.JFormattedTextField getFornecidaJFT() {
-		return fornecidaJFT;
-	}
-
-	public void setFornecidaJFT(javax.swing.JFormattedTextField fornecidaJFT) {
-		this.fornecidaJFT = fornecidaJFT;
-	}
-
-	public javax.swing.JFormattedTextField getBrincoJFT() {
-		return brincoJFT;
-	}
-
-	public void setBrincoJFT(javax.swing.JFormattedTextField brincoJFT) {
-		this.brincoJFT = brincoJFT;
+	public void setTrataJFT(javax.swing.JFormattedTextField trataJFT) {
+		this.trataJFT = trataJFT;
 	}
 
 	public javax.swing.JFormattedTextField getGalpaoJFT() {
@@ -1400,44 +1146,196 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		this.galpaoJFT = galpaoJFT;
 	}
 
-	public javax.swing.JLabel getDataHist1Label() {
-		return dataHist1Label;
+	public javax.swing.JFormattedTextField getSexoJFT() {
+		return sexoJFT;
 	}
 
-	public void setDataHist1Label(javax.swing.JLabel dataHist1Label) {
-		this.dataHist1Label = dataHist1Label;
+	public void setSexoJFT(javax.swing.JFormattedTextField sexoJFT) {
+		this.sexoJFT = sexoJFT;
 	}
 
-	public javax.swing.JLabel getDataHist2Label() {
-		return dataHist2Label;
+	public javax.swing.JLabel getBrincoLabel() {
+		return brincoLabel;
 	}
 
-	public void setDataHist2Label(javax.swing.JLabel dataHist2Label) {
-		this.dataHist2Label = dataHist2Label;
+	public void setBrincoLabel(javax.swing.JLabel brincoLabel) {
+		this.brincoLabel = brincoLabel;
 	}
 
-	public javax.swing.JLabel getDataHist3Label() {
-		return dataHist3Label;
+	public javax.swing.JLabel getMedicamentoLabel() {
+		return medicamentoLabel;
 	}
 
-	public void setDataHist3Label(javax.swing.JLabel dataHist3Label) {
-		this.dataHist3Label = dataHist3Label;
+	public void setMedicamentoLabel(javax.swing.JLabel medicamentoLabel) {
+		this.medicamentoLabel = medicamentoLabel;
 	}
 
-	public javax.swing.JLabel getDataHist4Label() {
-		return dataHist4Label;
+	public javax.swing.JLabel getEscolhaLabel() {
+		return escolhaLabel;
 	}
 
-	public void setDataHist4Label(javax.swing.JLabel dataHist4Label) {
-		this.dataHist4Label = dataHist4Label;
+	public void setEscolhaLabel(javax.swing.JLabel escolhaLabel) {
+		this.escolhaLabel = escolhaLabel;
 	}
 
-	public javax.swing.JLabel getDataHist5Label() {
-		return dataHist5Label;
+	public javax.swing.JLabel getVoltarLabel() {
+		return voltarLabel;
 	}
 
-	public void setDataHist5Label(javax.swing.JLabel dataHist5Label) {
-		this.dataHist5Label = dataHist5Label;
+	public void setVoltarLabel(javax.swing.JLabel voltarLabel) {
+		this.voltarLabel = voltarLabel;
+	}
+
+	public javax.swing.JLabel getDataLabel() {
+		return dataLabel;
+	}
+
+	public void setDataLabel(javax.swing.JLabel dataLabel) {
+		this.dataLabel = dataLabel;
+	}
+
+	public javax.swing.JLabel getOrdemLabel() {
+		return ordemLabel;
+	}
+
+	public void setOrdemLabel(javax.swing.JLabel ordemLabel) {
+		this.ordemLabel = ordemLabel;
+	}
+
+	public javax.swing.JLabel getDose1Label() {
+		return dose1Label;
+	}
+
+	public void setDose1Label(javax.swing.JLabel dose1Label) {
+		this.dose1Label = dose1Label;
+	}
+
+	public javax.swing.JLabel getCausaLabel() {
+		return causaLabel;
+	}
+
+	public void setCausaLabel(javax.swing.JLabel causaLabel) {
+		this.causaLabel = causaLabel;
+	}
+
+	public javax.swing.JLabel getControleLabel() {
+		return controleLabel;
+	}
+
+	public void setControleLabel(javax.swing.JLabel controleLabel) {
+		this.controleLabel = controleLabel;
+	}
+
+	public javax.swing.JLabel getBaiaLabel() {
+		return baiaLabel;
+	}
+
+	public void setBaiaLabel(javax.swing.JLabel baiaLabel) {
+		this.baiaLabel = baiaLabel;
+	}
+
+	public javax.swing.JLabel getTrataLabel() {
+		return trataLabel;
+	}
+
+	public void setTrataLabel(javax.swing.JLabel trataLabel) {
+		this.trataLabel = trataLabel;
+	}
+
+	public javax.swing.JLabel getSexoLabel() {
+		return sexoLabel;
+	}
+
+	public void setSexoLabel(javax.swing.JLabel sexoLabel) {
+		this.sexoLabel = sexoLabel;
+	}
+
+	public javax.swing.JLabel getSairLabel() {
+		return sairLabel;
+	}
+
+	public void setSairLabel(javax.swing.JLabel sairLabel) {
+		this.sairLabel = sairLabel;
+	}
+
+	public javax.swing.JLabel getOpcaoLabel() {
+		return opcaoLabel;
+	}
+
+	public void setOpcaoLabel(javax.swing.JLabel opcaoLabel) {
+		this.opcaoLabel = opcaoLabel;
+	}
+
+	public javax.swing.JLabel getGalpaoLabel() {
+		return galpaoLabel;
+	}
+
+	public void setGalpaoLabel(javax.swing.JLabel galpaoLabel) {
+		this.galpaoLabel = galpaoLabel;
+	}
+
+	public javax.swing.JLabel getTrata2Label() {
+		return trata2Label;
+	}
+
+	public void setTrata2Label(javax.swing.JLabel trata2Label) {
+		this.trata2Label = trata2Label;
+	}
+
+	public javax.swing.JLabel getDose2Label() {
+		return dose2Label;
+	}
+
+	public void setDose2Label(javax.swing.JLabel dose2Label) {
+		this.dose2Label = dose2Label;
+	}
+
+	public javax.swing.JLabel getDose3Label() {
+		return dose3Label;
+	}
+
+	public void setDose3Label(javax.swing.JLabel dose3Label) {
+		this.dose3Label = dose3Label;
+	}
+
+	public javax.swing.JLabel getHeaderLabel() {
+		return headerLabel;
+	}
+
+	public void setHeaderLabel(javax.swing.JLabel headerLabel) {
+		this.headerLabel = headerLabel;
+	}
+
+	public javax.swing.JLabel getRegistrosLabel() {
+		return registrosLabel;
+	}
+
+	public void setRegistrosLabel(javax.swing.JLabel registrosLabel) {
+		this.registrosLabel = registrosLabel;
+	}
+
+	public javax.swing.JFormattedTextField getOrdemJFT() {
+		return ordemJFT;
+	}
+
+	public void setOrdemJFT(javax.swing.JFormattedTextField ordemJFT) {
+		this.ordemJFT = ordemJFT;
+	}
+
+	public javax.swing.JFormattedTextField getCausaJFT() {
+		return causaJFT;
+	}
+
+	public void setCausaJFT(javax.swing.JFormattedTextField causaJFT) {
+		this.causaJFT = causaJFT;
+	}
+
+	public javax.swing.JFormattedTextField getBrincoJFT() {
+		return brincoJFT;
+	}
+
+	public void setBrincoJFT(javax.swing.JFormattedTextField brincoJFT) {
+		this.brincoJFT = brincoJFT;
 	}
 
 	public javax.swing.JFormattedTextField getDataJFT() {
@@ -1448,380 +1346,44 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		this.dataJFT = dataJFT;
 	}
 
-	public javax.swing.JLabel getjLabel10() {
-		return jLabel10;
+	public javax.swing.JFormattedTextField getMedicamentoJFT() {
+		return medicamentoJFT;
 	}
 
-	public void setjLabel10(javax.swing.JLabel jLabel10) {
-		this.jLabel10 = jLabel10;
+	public void setMedicamentoJFT(javax.swing.JFormattedTextField medicamentoJFT) {
+		this.medicamentoJFT = medicamentoJFT;
 	}
 
-	public javax.swing.JLabel getjLabel11() {
-		return jLabel11;
+	public javax.swing.JFormattedTextField getControleJFT() {
+		return controleJFT;
 	}
 
-	public void setjLabel11(javax.swing.JLabel jLabel11) {
-		this.jLabel11 = jLabel11;
+	public void setControleJFT(javax.swing.JFormattedTextField controleJFT) {
+		this.controleJFT = controleJFT;
 	}
 
-	public javax.swing.JLabel getjLabel12() {
-		return jLabel12;
-	}
-
-	public void setjLabel12(javax.swing.JLabel jLabel12) {
-		this.jLabel12 = jLabel12;
-	}
-
-	public javax.swing.JLabel getjLabel13() {
-		return jLabel13;
-	}
-
-	public void setjLabel13(javax.swing.JLabel jLabel13) {
-		this.jLabel13 = jLabel13;
-	}
-
-	public javax.swing.JLabel getjLabel14() {
-		return jLabel14;
-	}
-
-	public void setjLabel14(javax.swing.JLabel jLabel14) {
-		this.jLabel14 = jLabel14;
-	}
-
-	public javax.swing.JLabel getjLabel15() {
-		return jLabel15;
-	}
-
-	public void setjLabel15(javax.swing.JLabel jLabel15) {
-		this.jLabel15 = jLabel15;
-	}
-
-	public javax.swing.JLabel getjLabel16() {
-		return jLabel16;
-	}
-
-	public void setjLabel16(javax.swing.JLabel jLabel16) {
-		this.jLabel16 = jLabel16;
-	}
-
-	public javax.swing.JLabel getjLabel17() {
-		return jLabel17;
-	}
-
-	public void setjLabel17(javax.swing.JLabel jLabel17) {
-		this.jLabel17 = jLabel17;
-	}
-
-	public javax.swing.JLabel getjLabel18() {
-		return jLabel18;
-	}
-
-	public void setjLabel18(javax.swing.JLabel jLabel18) {
-		this.jLabel18 = jLabel18;
-	}
-
-	public javax.swing.JLabel getjLabel19() {
-		return jLabel19;
-	}
-
-	public void setjLabel19(javax.swing.JLabel jLabel19) {
-		this.jLabel19 = jLabel19;
-	}
-
-	public javax.swing.JLabel getjLabel20() {
-		return jLabel20;
-	}
-
-	public void setjLabel20(javax.swing.JLabel jLabel20) {
-		this.jLabel20 = jLabel20;
-	}
-
-	public javax.swing.JLabel getjLabel21() {
-		return jLabel21;
-	}
-
-	public void setjLabel21(javax.swing.JLabel jLabel21) {
-		this.jLabel21 = jLabel21;
-	}
-
-	public javax.swing.JLabel getjLabel22() {
-		return jLabel22;
-	}
-
-	public void setjLabel22(javax.swing.JLabel jLabel22) {
-		this.jLabel22 = jLabel22;
-	}
-
-	public javax.swing.JLabel getjLabel23() {
-		return jLabel23;
-	}
-
-	public void setjLabel23(javax.swing.JLabel jLabel23) {
-		this.jLabel23 = jLabel23;
-	}
-
-	public javax.swing.JLabel getjLabel24() {
-		return jLabel24;
-	}
-
-	public void setjLabel24(javax.swing.JLabel jLabel24) {
-		this.jLabel24 = jLabel24;
-	}
-
-	public javax.swing.JLabel getjLabel27() {
-		return jLabel27;
-	}
-
-	public void setjLabel27(javax.swing.JLabel jLabel27) {
-		this.jLabel27 = jLabel27;
-	}
-
-	public javax.swing.JLabel getjLabel28() {
-		return jLabel28;
-	}
-
-	public void setjLabel28(javax.swing.JLabel jLabel28) {
-		this.jLabel28 = jLabel28;
-	}
-
-	public javax.swing.JLabel getjLabel29() {
-		return jLabel29;
-	}
-
-	public void setjLabel29(javax.swing.JLabel jLabel29) {
-		this.jLabel29 = jLabel29;
-	}
-
-	public javax.swing.JLabel getjLabel30() {
-		return jLabel30;
-	}
-
-	public void setjLabel30(javax.swing.JLabel jLabel30) {
-		this.jLabel30 = jLabel30;
-	}
-
-	public javax.swing.JLabel getjLabel31() {
-		return jLabel31;
-	}
-
-	public void setjLabel31(javax.swing.JLabel jLabel31) {
-		this.jLabel31 = jLabel31;
-	}
-
-	public javax.swing.JLabel getjLabel32() {
-		return jLabel32;
-	}
-
-	public void setjLabel32(javax.swing.JLabel jLabel32) {
-		this.jLabel32 = jLabel32;
-	}
-
-	public javax.swing.JLabel getjLabel33() {
-		return jLabel33;
-	}
-
-	public void setjLabel33(javax.swing.JLabel jLabel33) {
-		this.jLabel33 = jLabel33;
-	}
-
-	public javax.swing.JLabel getjLabel34() {
-		return jLabel34;
-	}
-
-	public void setjLabel34(javax.swing.JLabel jLabel34) {
-		this.jLabel34 = jLabel34;
-	}
-
-	public javax.swing.JLabel getjLabel35() {
-		return jLabel35;
-	}
-
-	public void setjLabel35(javax.swing.JLabel jLabel35) {
-		this.jLabel35 = jLabel35;
-	}
-
-	public javax.swing.JLabel getjLabel39() {
-		return jLabel39;
-	}
-
-	public void setjLabel39(javax.swing.JLabel jLabel39) {
-		this.jLabel39 = jLabel39;
-	}
-
-	public javax.swing.JLabel getjLabel40() {
-		return jLabel40;
-	}
-
-	public void setjLabel40(javax.swing.JLabel jLabel40) {
-		this.jLabel40 = jLabel40;
-	}
-
-	public javax.swing.JLabel getjLabel41() {
-		return jLabel41;
-	}
-
-	public void setjLabel41(javax.swing.JLabel jLabel41) {
-		this.jLabel41 = jLabel41;
-	}
-
-	public javax.swing.JLabel getjLabel42() {
-		return jLabel42;
-	}
-
-	public void setjLabel42(javax.swing.JLabel jLabel42) {
-		this.jLabel42 = jLabel42;
-	}
-
-	public javax.swing.JLabel getjLabel43() {
-		return jLabel43;
-	}
-
-	public void setjLabel43(javax.swing.JLabel jLabel43) {
-		this.jLabel43 = jLabel43;
-	}
-
-	public javax.swing.JLabel getjLabel44() {
-		return jLabel44;
-	}
-
-	public void setjLabel44(javax.swing.JLabel jLabel44) {
-		this.jLabel44 = jLabel44;
-	}
-
-	public javax.swing.JLabel getjLabel45() {
-		return jLabel45;
-	}
-
-	public void setjLabel45(javax.swing.JLabel jLabel45) {
-		this.jLabel45 = jLabel45;
-	}
-
-	public javax.swing.JLabel getjLabel46() {
-		return jLabel46;
-	}
-
-	public void setjLabel46(javax.swing.JLabel jLabel46) {
-		this.jLabel46 = jLabel46;
-	}
-
-	public javax.swing.JLabel getjLabel47() {
-		return jLabel47;
-	}
-
-	public void setjLabel47(javax.swing.JLabel jLabel47) {
-		this.jLabel47 = jLabel47;
-	}
-
-	public javax.swing.JLabel getjLabel48() {
-		return jLabel48;
-	}
-
-	public void setjLabel48(javax.swing.JLabel jLabel48) {
-		this.jLabel48 = jLabel48;
-	}
-
-	public javax.swing.JLabel getjLabel49() {
-		return jLabel49;
-	}
-
-	public void setjLabel49(javax.swing.JLabel jLabel49) {
-		this.jLabel49 = jLabel49;
-	}
-
-	public javax.swing.JLabel getjLabel50() {
-		return jLabel50;
-	}
-
-	public void setjLabel50(javax.swing.JLabel jLabel50) {
-		this.jLabel50 = jLabel50;
-	}
-
-	public javax.swing.JLabel getjLabel51() {
-		return jLabel51;
-	}
-
-	public void setjLabel51(javax.swing.JLabel jLabel51) {
-		this.jLabel51 = jLabel51;
-	}
-
-	public javax.swing.JLabel getjLabel6() {
-		return jLabel6;
-	}
-
-	public void setjLabel6(javax.swing.JLabel jLabel6) {
-		this.jLabel6 = jLabel6;
-	}
-
-	public javax.swing.JLabel getjLabel7() {
-		return jLabel7;
-	}
-
-	public void setjLabel7(javax.swing.JLabel jLabel7) {
-		this.jLabel7 = jLabel7;
-	}
-
-	public javax.swing.JLabel getjLabel9() {
-		return jLabel9;
-	}
-
-	public void setjLabel9(javax.swing.JLabel jLabel9) {
-		this.jLabel9 = jLabel9;
-	}
-
-	public javax.swing.JPanel getjPanel1() {
-		return jPanel1;
-	}
-
-	public void setjPanel1(javax.swing.JPanel jPanel1) {
-		this.jPanel1 = jPanel1;
-	}
-
-	public javax.swing.JPanel getjPanel2() {
-		return jPanel2;
-	}
-
-	public void setjPanel2(javax.swing.JPanel jPanel2) {
-		this.jPanel2 = jPanel2;
-	}
-
-	public javax.swing.JPanel getjPanel3() {
-		return pnlMedicados;
-	}
-
-	public void setjPanel3(javax.swing.JPanel jPanel3) {
-		this.pnlMedicados = jPanel3;
-	}
-
-	public javax.swing.JPanel getjPanel5() {
-		return jPanel5;
-	}
-
-	public void setjPanel5(javax.swing.JPanel jPanel5) {
-		this.jPanel5 = jPanel5;
-	}
-
-	public javax.swing.JPanel getjPanel6() {
-		return jPanel6;
-	}
-
-	public void setjPanel6(javax.swing.JPanel jPanel6) {
-		this.jPanel6 = jPanel6;
-	}
-
-	public javax.swing.JPanel getjPanel7() {
-		return jPanel7;
-	}
-
-	public void setjPanel7(javax.swing.JPanel jPanel7) {
-		this.jPanel7 = jPanel7;
-	}
-
-	public javax.swing.JFormattedTextField getCausaJFT() {
+	public javax.swing.JFormattedTextField getDose1JFT() {
 		return dose1JFT;
 	}
 
-	public void setCausaJFT(javax.swing.JFormattedTextField causaJFT) {
-		this.dose1JFT = causaJFT;
+	public void setDose1JFT(javax.swing.JFormattedTextField dose1jft) {
+		dose1JFT = dose1jft;
+	}
+
+	public javax.swing.JFormattedTextField getDose2JFT() {
+		return dose2JFT;
+	}
+
+	public void setDose2JFT(javax.swing.JFormattedTextField dose2jft) {
+		dose2JFT = dose2jft;
+	}
+
+	public javax.swing.JFormattedTextField getDose3JFT() {
+		return dose3JFT;
+	}
+
+	public void setDose3JFT(javax.swing.JFormattedTextField dose3jft) {
+		dose3JFT = dose3jft;
 	}
 
 	public javax.swing.JFormattedTextField getOpcaoJFT() {
@@ -1872,216 +1434,188 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		this.ordemHist5Label = ordemHist5Label;
 	}
 
-	public javax.swing.JFormattedTextField getOrdemJFT() {
-		return ordemJFT;
+	public javax.swing.JLabel getDataHist1Label() {
+		return dataHist1Label;
 	}
 
-	public void setOrdemJFT(javax.swing.JFormattedTextField ordemJFT) {
-		this.ordemJFT = ordemJFT;
+	public void setDataHist1Label(javax.swing.JLabel dataHist1Label) {
+		this.dataHist1Label = dataHist1Label;
 	}
 
-	public javax.swing.JFormattedTextField getFaseJFT() {
-		return causaJFT;
+	public javax.swing.JLabel getDataHist2Label() {
+		return dataHist2Label;
 	}
 
-	public void setFaseJFT(javax.swing.JFormattedTextField faseJFT) {
-		this.causaJFT = faseJFT;
+	public void setDataHist2Label(javax.swing.JLabel dataHist2Label) {
+		this.dataHist2Label = dataHist2Label;
 	}
 
-	public javax.swing.JLabel getRegistrosLabel() {
-		return registrosLabel;
+	public javax.swing.JLabel getDataHist3Label() {
+		return dataHist3Label;
 	}
 
-	public void setRegistrosLabel(javax.swing.JLabel registrosLabel) {
-		this.registrosLabel = registrosLabel;
+	public void setDataHist3Label(javax.swing.JLabel dataHist3Label) {
+		this.dataHist3Label = dataHist3Label;
 	}
 
-	public javax.swing.JFormattedTextField getSexoJFT() {
-		return sexoJFT;
+	public javax.swing.JLabel getDataHist4Label() {
+		return dataHist4Label;
 	}
 
-	public void setSexoJFT(javax.swing.JFormattedTextField sexoJFT) {
-		this.sexoJFT = sexoJFT;
+	public void setDataHist4Label(javax.swing.JLabel dataHist4Label) {
+		this.dataHist4Label = dataHist4Label;
 	}
 
-	public javax.swing.JLabel getSobraHist1Label() {
-		return sobraHist1Label;
+	public javax.swing.JLabel getDataHist5Label() {
+		return dataHist5Label;
 	}
 
-	public void setSobraHist1Label(javax.swing.JLabel sobraHist1Label) {
-		this.sobraHist1Label = sobraHist1Label;
+	public void setDataHist5Label(javax.swing.JLabel dataHist5Label) {
+		this.dataHist5Label = dataHist5Label;
 	}
 
-	public javax.swing.JLabel getPesoHist1Label() {
-		return medicamentoHist1Label;
+	public javax.swing.JLabel getBrincoHist1Label() {
+		return brincoHist1Label;
 	}
 
-	public void setPesoHist1Label(javax.swing.JLabel pesoHist1Label) {
-		this.medicamentoHist1Label = pesoHist1Label;
+	public void setBrincoHist1Label(javax.swing.JLabel brincoHist1Label) {
+		this.brincoHist1Label = brincoHist1Label;
 	}
 
 	public javax.swing.JLabel getCausaHist1Label() {
-		return dose1Hist1Label;
+		return causaHist1Label;
 	}
 
 	public void setCausaHist1Label(javax.swing.JLabel causaHist1Label) {
-		this.dose1Hist1Label = causaHist1Label;
+		this.causaHist1Label = causaHist1Label;
 	}
 
-	public javax.swing.JLabel getSobraHist2Label() {
-		return sobraHist2Label;
+	public javax.swing.JLabel getBrincoHist2Label() {
+		return brincoHist2Label;
 	}
 
-	public void setSobraHist2Label(javax.swing.JLabel sobraHist2Label) {
-		this.sobraHist2Label = sobraHist2Label;
-	}
-
-	public javax.swing.JLabel getPesoHist2Label() {
-		return medicamentoHist2Label;
-	}
-
-	public void setPesoHist2Label(javax.swing.JLabel pesoHist2Label) {
-		this.medicamentoHist2Label = pesoHist2Label;
+	public void setBrincoHist2Label(javax.swing.JLabel brincoHist2Label) {
+		this.brincoHist2Label = brincoHist2Label;
 	}
 
 	public javax.swing.JLabel getCausaHist2Label() {
-		return dose1Hist2Label;
+		return causaHist2Label;
 	}
 
 	public void setCausaHist2Label(javax.swing.JLabel causaHist2Label) {
-		this.dose1Hist2Label = causaHist2Label;
+		this.causaHist2Label = causaHist2Label;
 	}
 
-	public javax.swing.JLabel getSobraHist3Label() {
-		return sobraHist3Label;
+	public javax.swing.JLabel getBrincoHist3Label() {
+		return brincoHist3Label;
 	}
 
-	public void setSobraHist3Label(javax.swing.JLabel sobraHist3Label) {
-		this.sobraHist3Label = sobraHist3Label;
-	}
-
-	public javax.swing.JLabel getPesoHist3Label() {
-		return medicamentoHist3Label;
-	}
-
-	public void setPesoHist3Label(javax.swing.JLabel pesoHist3Label) {
-		this.medicamentoHist3Label = pesoHist3Label;
+	public void setBrincoHist3Label(javax.swing.JLabel brincoHist3Label) {
+		this.brincoHist3Label = brincoHist3Label;
 	}
 
 	public javax.swing.JLabel getCausaHist3Label() {
-		return dose1Hist3Label;
+		return causaHist3Label;
 	}
 
 	public void setCausaHist3Label(javax.swing.JLabel causaHist3Label) {
-		this.dose1Hist3Label = causaHist3Label;
+		this.causaHist3Label = causaHist3Label;
 	}
 
-	public javax.swing.JLabel getSobraHist4Label() {
-		return sobraHist4Label;
+	public javax.swing.JLabel getBrincoHist4Label() {
+		return brincoHist4Label;
 	}
 
-	public void setSobraHist4Label(javax.swing.JLabel sobraHist4Label) {
-		this.sobraHist4Label = sobraHist4Label;
-	}
-
-	public javax.swing.JLabel getPesoHist4Label() {
-		return medicamentoHist4Label;
-	}
-
-	public void setPesoHist4Label(javax.swing.JLabel pesoHist4Label) {
-		this.medicamentoHist4Label = pesoHist4Label;
+	public void setBrincoHist4Label(javax.swing.JLabel brincoHist4Label) {
+		this.brincoHist4Label = brincoHist4Label;
 	}
 
 	public javax.swing.JLabel getCausaHist4Label() {
-		return dose1Hist4Label;
+		return causaHist4Label;
 	}
 
 	public void setCausaHist4Label(javax.swing.JLabel causaHist4Label) {
-		this.dose1Hist4Label = causaHist4Label;
+		this.causaHist4Label = causaHist4Label;
 	}
 
-	public javax.swing.JLabel getSobraHist5Label() {
-		return sobraHist5Label;
+	public javax.swing.JLabel getBrincoHist5Label() {
+		return brincoHist5Label;
 	}
 
-	public void setSobraHist5Label(javax.swing.JLabel sobraHist5Label) {
-		this.sobraHist5Label = sobraHist5Label;
-	}
-
-	public javax.swing.JLabel getPesoHist5Label() {
-		return medicamentoHist5Label;
-	}
-
-	public void setPesoHist5Label(javax.swing.JLabel pesoHist5Label) {
-		this.medicamentoHist5Label = pesoHist5Label;
+	public void setBrincoHist5Label(javax.swing.JLabel brincoHist5Label) {
+		this.brincoHist5Label = brincoHist5Label;
 	}
 
 	public javax.swing.JLabel getCausaHist5Label() {
-		return dose1Hist5Label;
+		return causaHist5Label;
 	}
 
 	public void setCausaHist5Label(javax.swing.JLabel causaHist5Label) {
-		this.dose1Hist5Label = causaHist5Label;
+		this.causaHist5Label = causaHist5Label;
 	}
 
-	public javax.swing.JFormattedTextField getSobraJFT() {
-		return sobraJFT;
+	public javax.swing.JLabel getjLabel31() {
+		return jLabel31;
 	}
 
-	public void setSobraJFT(javax.swing.JFormattedTextField sobraJFT) {
-		this.sobraJFT = sobraJFT;
+	public void setjLabel31(javax.swing.JLabel jLabel31) {
+		this.jLabel31 = jLabel31;
 	}
 
-	public javax.swing.JFormattedTextField getPesoJFT() {
-		return medicamentoJFT;
+	public javax.swing.JLabel getjLabel33() {
+		return jLabel33;
 	}
 
-	public void setPesoJFT(javax.swing.JFormattedTextField pesoJFT) {
-		this.medicamentoJFT = pesoJFT;
+	public void setjLabel33(javax.swing.JLabel jLabel33) {
+		this.jLabel33 = jLabel33;
 	}
 
-	public javax.swing.JFormattedTextField getTrata2JFT() {
-		return trata2JFT;
+	public javax.swing.JLabel getjLabel34() {
+		return jLabel34;
 	}
 
-	public void setTrata2JFT(javax.swing.JFormattedTextField trata2jft) {
-		trata2JFT = trata2jft;
+	public void setjLabel34(javax.swing.JLabel jLabel34) {
+		this.jLabel34 = jLabel34;
 	}
 
-	public javax.swing.JFormattedTextField getTrataJFT() {
-		return trataJFT;
+	public javax.swing.JLabel getjLabel44() {
+		return jLabel44;
 	}
 
-	public void setTrataJFT(javax.swing.JFormattedTextField trataJFT) {
-		this.trataJFT = trataJFT;
+	public void setjLabel44(javax.swing.JLabel jLabel44) {
+		this.jLabel44 = jLabel44;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public javax.swing.JLabel getjLabel45() {
+		return jLabel45;
 	}
 
-	public javax.swing.JFormattedTextField getControleJFT() {
-		return controleJFT;
+	public void setjLabel45(javax.swing.JLabel jLabel45) {
+		this.jLabel45 = jLabel45;
 	}
 
-	public void setControleJFT(javax.swing.JFormattedTextField controleJFT) {
-		this.controleJFT = controleJFT;
+	public javax.swing.JPanel getjPanel1() {
+		return jPanel1;
 	}
 
-	public javax.swing.JPanel getPnlMortalidade() {
+	public void setjPanel1(javax.swing.JPanel jPanel1) {
+		this.jPanel1 = jPanel1;
+	}
+
+	public javax.swing.JPanel getjPanel3() {
 		return pnlMedicados;
 	}
 
-	public void setPnlMortalidade(javax.swing.JPanel pnlMortalidade) {
-		this.pnlMedicados = pnlMortalidade;
+	public void setjPanel3(javax.swing.JPanel jPanel3) {
+		this.pnlMedicados = jPanel3;
 	}
 
-	public javax.swing.JFormattedTextField getDose1JFT() {
-		return dose1JFT;
+	public javax.swing.JPanel getjPanel7() {
+		return jPanel7;
 	}
 
-	public void setDose1JFT(javax.swing.JFormattedTextField dose1jft) {
-		dose1JFT = dose1jft;
+	public void setjPanel7(javax.swing.JPanel jPanel7) {
+		this.jPanel7 = jPanel7;
 	}
 
 	public javax.swing.JLabel getMedicamentoHist1Label() {
@@ -2100,6 +1634,22 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		this.dose1Hist1Label = dose1Hist1Label;
 	}
 
+	public javax.swing.JLabel getDose2Hist1Label() {
+		return dose2Hist1Label;
+	}
+
+	public void setDose2Hist1Label(javax.swing.JLabel dose2Hist1Label) {
+		this.dose2Hist1Label = dose2Hist1Label;
+	}
+
+	public javax.swing.JLabel getDose3Hist1Label() {
+		return dose3Hist1Label;
+	}
+
+	public void setDose3Hist1Label(javax.swing.JLabel dose3Hist1Label) {
+		this.dose3Hist1Label = dose3Hist1Label;
+	}
+
 	public javax.swing.JLabel getMedicamentoHist2Label() {
 		return medicamentoHist2Label;
 	}
@@ -2114,6 +1664,22 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 
 	public void setDose1Hist2Label(javax.swing.JLabel dose1Hist2Label) {
 		this.dose1Hist2Label = dose1Hist2Label;
+	}
+
+	public javax.swing.JLabel getDose2Hist2Label() {
+		return dose2Hist2Label;
+	}
+
+	public void setDose2Hist2Label(javax.swing.JLabel dose2Hist2Label) {
+		this.dose2Hist2Label = dose2Hist2Label;
+	}
+
+	public javax.swing.JLabel getDose3Hist2Label() {
+		return dose3Hist2Label;
+	}
+
+	public void setDose3Hist2Label(javax.swing.JLabel dose3Hist2Label) {
+		this.dose3Hist2Label = dose3Hist2Label;
 	}
 
 	public javax.swing.JLabel getMedicamentoHist3Label() {
@@ -2132,6 +1698,22 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		this.dose1Hist3Label = dose1Hist3Label;
 	}
 
+	public javax.swing.JLabel getDose2Hist3Label() {
+		return dose2Hist3Label;
+	}
+
+	public void setDose2Hist3Label(javax.swing.JLabel dose2Hist3Label) {
+		this.dose2Hist3Label = dose2Hist3Label;
+	}
+
+	public javax.swing.JLabel getDose3Hist3Label() {
+		return dose3Hist3Label;
+	}
+
+	public void setDose3Hist3Label(javax.swing.JLabel dose3Hist3Label) {
+		this.dose3Hist3Label = dose3Hist3Label;
+	}
+
 	public javax.swing.JLabel getMedicamentoHist4Label() {
 		return medicamentoHist4Label;
 	}
@@ -2146,6 +1728,22 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 
 	public void setDose1Hist4Label(javax.swing.JLabel dose1Hist4Label) {
 		this.dose1Hist4Label = dose1Hist4Label;
+	}
+
+	public javax.swing.JLabel getDose2Hist4Label() {
+		return dose2Hist4Label;
+	}
+
+	public void setDose2Hist4Label(javax.swing.JLabel dose2Hist4Label) {
+		this.dose2Hist4Label = dose2Hist4Label;
+	}
+
+	public javax.swing.JLabel getDose3Hist4Label() {
+		return dose3Hist4Label;
+	}
+
+	public void setDose3Hist4Label(javax.swing.JLabel dose3Hist4Label) {
+		this.dose3Hist4Label = dose3Hist4Label;
 	}
 
 	public javax.swing.JLabel getMedicamentoHist5Label() {
@@ -2164,124 +1762,20 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		this.dose1Hist5Label = dose1Hist5Label;
 	}
 
-	public javax.swing.JFormattedTextField getMedicamentoJFT() {
-		return medicamentoJFT;
-	}
-
-	public void setMedicamentoJFT(javax.swing.JFormattedTextField medicamentoJFT) {
-		this.medicamentoJFT = medicamentoJFT;
-	}
-
-	public JLabel getLblDose() {
-		return lblDose;
-	}
-
-	public void setLblDose(JLabel lblDose) {
-		this.lblDose = lblDose;
-	}
-
-	public JLabel getDose2Hist1Label() {
-		return dose2Hist1Label;
-	}
-
-	public void setDose2Hist1Label(JLabel dose2Hist1Label) {
-		this.dose2Hist1Label = dose2Hist1Label;
-	}
-
-	public JLabel getDose2Hist2Label() {
-		return dose2Hist2Label;
-	}
-
-	public void setDose2Hist2Label(JLabel dose2Hist2Label) {
-		this.dose2Hist2Label = dose2Hist2Label;
-	}
-
-	public JLabel getDose2Hist3Label() {
-		return dose2Hist3Label;
-	}
-
-	public void setDose2Hist3Label(JLabel dose2Hist3Label) {
-		this.dose2Hist3Label = dose2Hist3Label;
-	}
-
-	public JLabel getDose2Hist4Label() {
-		return dose2Hist4Label;
-	}
-
-	public void setDose2Hist4Label(JLabel dose2Hist4Label) {
-		this.dose2Hist4Label = dose2Hist4Label;
-	}
-
-	public JLabel getDose2Hist5Label() {
+	public javax.swing.JLabel getDose2Hist5Label() {
 		return dose2Hist5Label;
 	}
 
-	public void setDose2Hist5Label(JLabel dose2Hist5Label) {
+	public void setDose2Hist5Label(javax.swing.JLabel dose2Hist5Label) {
 		this.dose2Hist5Label = dose2Hist5Label;
 	}
 
-	public JFormattedTextField getDose2JFT() {
-		return dose2JFT;
-	}
-
-	public void setDose2JFT(JFormattedTextField dose2jft) {
-		dose2JFT = dose2jft;
-	}
-
-	public JFormattedTextField getDose3JFT() {
-		return dose3JFT;
-	}
-
-	public void setDose3JFT(JFormattedTextField dose3jft) {
-		dose3JFT = dose3jft;
-	}
-
-	public JLabel getDose3Hist5Label() {
+	public javax.swing.JLabel getDose3Hist5Label() {
 		return dose3Hist5Label;
 	}
 
-	public void setDose3Hist5Label(JLabel dose3Hist5Label) {
+	public void setDose3Hist5Label(javax.swing.JLabel dose3Hist5Label) {
 		this.dose3Hist5Label = dose3Hist5Label;
-	}
-
-	public JLabel getDose3Hist4Label() {
-		return dose3Hist4Label;
-	}
-
-	public void setDose3Hist4Label(JLabel dose3Hist4Label) {
-		this.dose3Hist4Label = dose3Hist4Label;
-	}
-
-	public JLabel getDose3Hist3Label() {
-		return dose3Hist3Label;
-	}
-
-	public void setDose3Hist3Label(JLabel dose3Hist3Label) {
-		this.dose3Hist3Label = dose3Hist3Label;
-	}
-
-	public JLabel getDose3Hist2Label() {
-		return dose3Hist2Label;
-	}
-
-	public void setDose3Hist2Label(JLabel dose3Hist2Label) {
-		this.dose3Hist2Label = dose3Hist2Label;
-	}
-
-	public JLabel getDose3Hist1Label() {
-		return dose3Hist1Label;
-	}
-
-	public void setDose3Hist1Label(JLabel dose3Hist1Label) {
-		this.dose3Hist1Label = dose3Hist1Label;
-	}
-
-	public JLabel getLblDose_1() {
-		return lblDose_1;
-	}
-
-	public void setLblDose_1(JLabel lblDose_1) {
-		this.lblDose_1 = lblDose_1;
 	}
 
 	public javax.swing.JPanel getPnlMedicados() {
@@ -2291,4 +1785,6 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 	public void setPnlMedicados(javax.swing.JPanel pnlMedicados) {
 		this.pnlMedicados = pnlMedicados;
 	}
+
+	// End of variables declaration//GEN-END:variables
 }

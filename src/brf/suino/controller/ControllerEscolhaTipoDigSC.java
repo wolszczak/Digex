@@ -107,14 +107,19 @@ public class ControllerEscolhaTipoDigSC extends KeyAdapter {
 			break;
 		case KeyEvent.VK_3:
 			view.setVisible(false);
-//			controller.startEscolhaDigRend(3, 0,
-//					controller.getModel().getExperimentoVO().getInfoExp().getDataAbate().get(2));
-//			if (controller.getModel().getExperimentoVO().getAbates() == null) {
-//				controller.getModel().getExperimentoVO().getAbates().get(2).setAbate(3);
-//			} else {
-//				controller.getModel().getExperimentoVO().getAbates().get(2).setAbate(3);
-//			}
-			System.out.println("Abate 3");
+			ControllerMedicadosSC medicados = new ControllerMedicadosSC(controller);
+			medicados.openWindow(
+					controller.getModel().getExperimentoVO().getConsumo()
+							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getGalpao(),
+					controller.getModel().getExperimentoVO().getConsumo()
+							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getBaia(),
+					controller.getModel().getExperimentoVO().getConsumo()
+							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getSexo(),
+					controller.getModel().getExperimentoVO().getConsumo()
+							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getTrat1(),
+					controller.getModel().getExperimentoVO().getConsumo()
+							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getTrat2(),
+					datasFases);
 			break;
 		case KeyEvent.VK_9:
 		case KeyEvent.VK_ESCAPE:
