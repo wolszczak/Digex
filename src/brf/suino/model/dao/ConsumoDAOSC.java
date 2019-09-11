@@ -22,6 +22,7 @@ public class ConsumoDAOSC {
 		buffer = new BufferedWriter(new FileWriter(localArquivo + "CONSUMO.csv"));
 		for (String h : header) {
 			buffer.write(h);
+			buffer.write(";");
 		}
 		buffer.newLine();
 		for (ConsumoVOSC c : consumo) {

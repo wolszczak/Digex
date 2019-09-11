@@ -65,7 +65,7 @@ public class ConsumoBOSC {
 			String[] split = dataString.split("/");
 			dataString = split[0] + "/" + split[1] + "/20" + split[2];
 			Date digitada = Utils.dateFromString(dataString);
-			Date inicioFase = Utils.dateFromString(fases.get(0));
+			Date inicioFase = Utils.dateFromString(controller.getModel().getExperimentoVO().getInfoExp().getInicioExp().toString());
 			Date finalFase = Utils.dateFromString(fases.get(fases.size() - 1));
 			if (digitada.before(inicioFase) || digitada.after(finalFase)) {
 				return "- Data fora do período do experimento.";
@@ -81,7 +81,7 @@ public class ConsumoBOSC {
 		Date dataFim = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yy");
 		try {
-			dataIni = sdf.parse(datasFases.get(0));
+			dataIni = sdf.parse(controller.getModel().getExperimentoVO().getInfoExp().getInicioExp());
 			dataFim = sdf.parse(datasFases.get(datasFases.size() - 1));
 			dataRacao = sdf.parse(data);
 		} catch (Exception e) {
@@ -93,6 +93,7 @@ public class ConsumoBOSC {
 			} else if (!data.equals("00/00/00") && racao == 0 && sobra == 0) {
 				msg = msg.concat("- Entrada/Saída de ração igual à 0\n");
 			}
+			
 		} else {
 			if (racao != 0 | sobra != 0) {
 				msg = msg.concat("- Data inválida!\n");
