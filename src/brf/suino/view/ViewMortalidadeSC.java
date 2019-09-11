@@ -5,6 +5,7 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JFormattedTextField;
 import javax.swing.SwingConstants;
+import javax.swing.JLabel;
 
 public class ViewMortalidadeSC extends javax.swing.JFrame {
 	private static final long serialVersionUID = 1L;
@@ -112,6 +113,7 @@ public class ViewMortalidadeSC extends javax.swing.JFrame {
 	private javax.swing.JFormattedTextField trata2JFT;
 	private javax.swing.JFormattedTextField trataJFT;
 	private JFormattedTextField controleJFT;
+	private JLabel lblVoltar;
 
 	public ViewMortalidadeSC() {
 		initComponents();
@@ -647,25 +649,34 @@ public class ViewMortalidadeSC extends javax.swing.JFrame {
 		opcaoJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		opcaoJFT.setEnabled(false);
 
-		jLabel27.setText("[2] - Voltar");
+		jLabel27.setText("[2] - Digitar próxima baia");
+
+		lblVoltar = new JLabel();
+		lblVoltar.setText("[9] - Voltar");
 
 		javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-		jPanel7Layout.setHorizontalGroup(jPanel7Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel7Layout.createSequentialGroup()
-				.addContainerGap()
-				.addGroup(jPanel7Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel7Layout.createSequentialGroup().addGap(4)
-						.addComponent(jLabel51, GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE).addPreferredGap(ComponentPlacement.RELATED)
-						.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
-						.addGroup(jPanel7Layout.createSequentialGroup()
-								.addGroup(
-										jPanel7Layout.createParallelGroup(Alignment.LEADING).addComponent(jLabel50).addComponent(jLabel24))
-								.addGap(71, 81, Short.MAX_VALUE))
-						.addComponent(jLabel26).addComponent(jLabel27))
-				.addContainerGap()));
+		jPanel7Layout
+				.setHorizontalGroup(
+						jPanel7Layout.createParallelGroup(Alignment.LEADING)
+								.addGroup(jPanel7Layout.createSequentialGroup().addContainerGap()
+										.addGroup(jPanel7Layout.createParallelGroup(Alignment.LEADING)
+												.addGroup(jPanel7Layout.createSequentialGroup().addGap(4)
+														.addComponent(jLabel51, GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
+												.addGroup(jPanel7Layout.createSequentialGroup()
+														.addGroup(jPanel7Layout.createParallelGroup(Alignment.LEADING)
+																.addComponent(jLabel50).addComponent(jLabel24))
+														.addGap(71, 81, Short.MAX_VALUE))
+												.addComponent(jLabel26).addComponent(jLabel27)
+												.addComponent(lblVoltar, GroupLayout.PREFERRED_SIZE, 68, GroupLayout.PREFERRED_SIZE))
+										.addContainerGap()));
 		jPanel7Layout
 				.setVerticalGroup(jPanel7Layout.createParallelGroup(Alignment.LEADING)
 						.addGroup(jPanel7Layout.createSequentialGroup().addContainerGap().addComponent(jLabel24).addGap(18)
 								.addComponent(jLabel26).addPreferredGap(ComponentPlacement.RELATED).addComponent(jLabel27)
-								.addPreferredGap(ComponentPlacement.RELATED, 57, Short.MAX_VALUE).addComponent(jLabel50).addGap(36)
+								.addPreferredGap(ComponentPlacement.RELATED, 37, Short.MAX_VALUE).addComponent(lblVoltar)
+								.addPreferredGap(ComponentPlacement.RELATED).addComponent(jLabel50).addGap(36)
 								.addGroup(jPanel7Layout.createParallelGroup(Alignment.BASELINE).addComponent(jLabel51).addComponent(
 										opcaoJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 								.addContainerGap()));

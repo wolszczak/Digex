@@ -1,43 +1,111 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package brf.suino.view;
 
-import java.text.ParseException;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.GroupLayout;
-import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import java.awt.Font;
 import java.awt.Color;
+import java.awt.Font;
+import java.text.ParseException;
+
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.SwingConstants;
 
-/**
- *
- * @author 612251
- */
 public class ViewMedicadosSC extends javax.swing.JFrame {
-
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Creates new form ViewMedicadosSC
-	 */
+	private javax.swing.JFormattedTextField baiaJFT;
+	private JPanel baiaJP;
+	private JPanel baiaJP_1;
+	private javax.swing.JFormattedTextField trata2JFT;
+	private javax.swing.JFormattedTextField trataJFT;
+	private javax.swing.JFormattedTextField galpaoJFT;
+	private javax.swing.JFormattedTextField sexoJFT;
+	private javax.swing.JLabel brincoLabel;
+	private javax.swing.JLabel medicamentoLabel;
+	private javax.swing.JLabel escolhaLabel;
+	private javax.swing.JLabel voltarLabel;
+	private javax.swing.JLabel dataLabel;
+	private javax.swing.JLabel ordemLabel;
+	private javax.swing.JLabel dose1Label;
+	private javax.swing.JLabel causaLabel;
+	private javax.swing.JLabel controleLabel;
+	private javax.swing.JLabel baiaLabel;
+	private javax.swing.JLabel trataLabel;
+	private javax.swing.JLabel sexoLabel;
+	private javax.swing.JLabel sairLabel;
+	private javax.swing.JLabel opcaoLabel;
+	private javax.swing.JLabel galpaoLabel;
+	private javax.swing.JLabel trata2Label;
+	private javax.swing.JLabel dose2Label;
+	private javax.swing.JLabel dose3Label;
+	private javax.swing.JLabel headerLabel;
+	private javax.swing.JFormattedTextField ordemJFT;
+	private javax.swing.JFormattedTextField causaJFT;
+	private javax.swing.JFormattedTextField brincoJFT;
+	private javax.swing.JFormattedTextField dataJFT;
+	private javax.swing.JFormattedTextField medicamentoJFT;
+	private javax.swing.JFormattedTextField controleJFT;
+	private javax.swing.JFormattedTextField dose1JFT;
+	private javax.swing.JFormattedTextField dose2JFT;
+	private javax.swing.JFormattedTextField dose3JFT;
+	private javax.swing.JFormattedTextField opcaoJFT;
+	private javax.swing.JLabel ordemHist1Label;
+	private javax.swing.JLabel ordemHist2Label;
+	private javax.swing.JLabel ordemHist3Label;
+	private javax.swing.JLabel ordemHist4Label;
+	private javax.swing.JLabel ordemHist5Label;
+	private javax.swing.JLabel dataHist1Label;
+	private javax.swing.JLabel dataHist2Label;
+	private javax.swing.JLabel dataHist3Label;
+	private javax.swing.JLabel dataHist4Label;
+	private javax.swing.JLabel dataHist5Label;
+	private javax.swing.JLabel brincoHist1Label;
+	private javax.swing.JLabel causaHist1Label;
+	private javax.swing.JLabel brincoHist2Label;
+	private javax.swing.JLabel causaHist2Label;
+	private javax.swing.JLabel brincoHist3Label;
+	private javax.swing.JLabel causaHist3Label;
+	private javax.swing.JLabel brincoHist4Label;
+	private javax.swing.JLabel causaHist4Label;
+	private javax.swing.JLabel brincoHist5Label;
+	private javax.swing.JLabel causaHist5Label;
+	private javax.swing.JLabel jLabel31;
+	private javax.swing.JLabel jLabel33;
+	private javax.swing.JLabel jLabel34;
+	private javax.swing.JLabel jLabel44;
+	private javax.swing.JLabel jLabel45;
+	private javax.swing.JPanel jPanel1;
+	private javax.swing.JPanel pnlMedicados;
+	private javax.swing.JPanel jPanel7;
+	private javax.swing.JLabel medicamentoHist1Label;
+	private javax.swing.JLabel dose1Hist1Label;
+	private javax.swing.JLabel dose2Hist1Label;
+	private javax.swing.JLabel dose3Hist1Label;
+	private javax.swing.JLabel medicamentoHist2Label;
+	private javax.swing.JLabel dose1Hist2Label;
+	private javax.swing.JLabel dose2Hist2Label;
+	private javax.swing.JLabel dose3Hist2Label;
+	private javax.swing.JLabel medicamentoHist3Label;
+	private javax.swing.JLabel dose1Hist3Label;
+	private javax.swing.JLabel dose2Hist3Label;
+	private javax.swing.JLabel dose3Hist3Label;
+	private javax.swing.JLabel medicamentoHist4Label;
+	private javax.swing.JLabel dose1Hist4Label;
+	private javax.swing.JLabel dose2Hist4Label;
+	private javax.swing.JLabel dose3Hist4Label;
+	private javax.swing.JLabel medicamentoHist5Label;
+	private javax.swing.JLabel dose1Hist5Label;
+	private javax.swing.JLabel dose2Hist5Label;
+	private javax.swing.JLabel dose3Hist5Label;
+	private JLabel registrosLabel;
+	private JLabel lblDigitar;
+
 	public ViewMedicadosSC() {
 		initComponents();
 	}
 
-	/**
-	 * This method is called from within the constructor to initialize the form.
-	 * WARNING: Do NOT modify this code. The content of this method is always
-	 * regenerated by the Form Editor.
-	 */
 	@SuppressWarnings("unchecked")
-	// <editor-fold defaultstate="collapsed" desc="Generated
-	// Code">//GEN-BEGIN:initComponents
 	private void initComponents() {
 
 		baiaJP = new javax.swing.JPanel();
@@ -337,24 +405,45 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 
 		voltarLabel.setText("[9] - Voltar");
 
+		lblDigitar = new JLabel();
+		lblDigitar.setText("[1] - Digitar próxima baia");
+
 		javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-		jPanel7Layout.setHorizontalGroup(jPanel7Layout.createParallelGroup(Alignment.LEADING)
-				.addGroup(jPanel7Layout.createSequentialGroup().addContainerGap()
-						.addGroup(jPanel7Layout.createParallelGroup(Alignment.LEADING)
-								.addGroup(jPanel7Layout.createSequentialGroup().addGap(4)
-										.addComponent(opcaoLabel, GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
-								.addGroup(jPanel7Layout.createSequentialGroup().addComponent(sairLabel).addGap(124, 134, Short.MAX_VALUE))
-								.addComponent(voltarLabel).addComponent(escolhaLabel))
-						.addContainerGap()));
-		jPanel7Layout
-				.setVerticalGroup(jPanel7Layout.createParallelGroup(Alignment.LEADING).addGroup(Alignment.TRAILING,
-						jPanel7Layout.createSequentialGroup().addContainerGap(82, Short.MAX_VALUE).addComponent(escolhaLabel).addGap(18)
-								.addComponent(voltarLabel).addPreferredGap(ComponentPlacement.RELATED).addComponent(sairLabel).addGap(36)
-								.addGroup(jPanel7Layout.createParallelGroup(Alignment.BASELINE).addComponent(opcaoLabel).addComponent(
-										opcaoJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-								.addContainerGap()));
+		jPanel7Layout.setHorizontalGroup(
+			jPanel7Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel7Layout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(jPanel7Layout.createParallelGroup(Alignment.LEADING)
+						.addComponent(lblDigitar, GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
+						.addGroup(jPanel7Layout.createSequentialGroup()
+							.addGap(4)
+							.addComponent(opcaoLabel, GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
+						.addGroup(jPanel7Layout.createSequentialGroup()
+							.addComponent(sairLabel)
+							.addGap(124, 134, Short.MAX_VALUE))
+						.addComponent(voltarLabel)
+						.addComponent(escolhaLabel))
+					.addContainerGap())
+		);
+		jPanel7Layout.setVerticalGroup(
+			jPanel7Layout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(jPanel7Layout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(escolhaLabel)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblDigitar)
+					.addPreferredGap(ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+					.addComponent(voltarLabel)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(sairLabel)
+					.addGap(36)
+					.addGroup(jPanel7Layout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(opcaoLabel)
+						.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap())
+		);
 		jPanel7.setLayout(jPanel7Layout);
 
 		pnlMedicados.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -939,14 +1028,14 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 								.addGap(0, 384, Short.MAX_VALUE)))
 				.addContainerGap()));
 		jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING)
-				.addGroup(jPanel1Layout.createSequentialGroup().addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-						.addGroup(jPanel1Layout.createSequentialGroup().addContainerGap()
-								.addComponent(baiaJP_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(ComponentPlacement.RELATED)
-								.addComponent(pnlMedicados, GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE))
-						.addGroup(jPanel1Layout.createSequentialGroup().addGap(126).addComponent(jPanel7, GroupLayout.PREFERRED_SIZE, 158,
-								GroupLayout.PREFERRED_SIZE)))
-						.addGap(31)));
+				.addGroup(jPanel1Layout.createSequentialGroup().addContainerGap()
+						.addComponent(baiaJP_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addComponent(pnlMedicados, GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE).addGap(31))
+				.addGroup(Alignment.LEADING,
+						jPanel1Layout.createSequentialGroup().addGap(111)
+								.addComponent(jPanel7, GroupLayout.PREFERRED_SIZE, 173, GroupLayout.PREFERRED_SIZE)
+								.addContainerGap(20, Short.MAX_VALUE)));
 		jPanel1.setLayout(jPanel1Layout);
 
 		registrosLabel = new JLabel();
@@ -1019,93 +1108,6 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		});
 	}
 
-	// Variables declaration - do not modify//GEN-BEGIN:variables
-	private javax.swing.JFormattedTextField baiaJFT;
-	private JPanel baiaJP;
-	private JPanel baiaJP_1;
-	private javax.swing.JFormattedTextField trata2JFT;
-	private javax.swing.JFormattedTextField trataJFT;
-	private javax.swing.JFormattedTextField galpaoJFT;
-	private javax.swing.JFormattedTextField sexoJFT;
-	private javax.swing.JLabel brincoLabel;
-	private javax.swing.JLabel medicamentoLabel;
-	private javax.swing.JLabel escolhaLabel;
-	private javax.swing.JLabel voltarLabel;
-	private javax.swing.JLabel dataLabel;
-	private javax.swing.JLabel ordemLabel;
-	private javax.swing.JLabel dose1Label;
-	private javax.swing.JLabel causaLabel;
-	private javax.swing.JLabel controleLabel;
-	private javax.swing.JLabel baiaLabel;
-	private javax.swing.JLabel trataLabel;
-	private javax.swing.JLabel sexoLabel;
-	private javax.swing.JLabel sairLabel;
-	private javax.swing.JLabel opcaoLabel;
-	private javax.swing.JLabel galpaoLabel;
-	private javax.swing.JLabel trata2Label;
-	private javax.swing.JLabel dose2Label;
-	private javax.swing.JLabel dose3Label;
-	private javax.swing.JLabel headerLabel;
-	private javax.swing.JFormattedTextField ordemJFT;
-	private javax.swing.JFormattedTextField causaJFT;
-	private javax.swing.JFormattedTextField brincoJFT;
-	private javax.swing.JFormattedTextField dataJFT;
-	private javax.swing.JFormattedTextField medicamentoJFT;
-	private javax.swing.JFormattedTextField controleJFT;
-	private javax.swing.JFormattedTextField dose1JFT;
-	private javax.swing.JFormattedTextField dose2JFT;
-	private javax.swing.JFormattedTextField dose3JFT;
-	private javax.swing.JFormattedTextField opcaoJFT;
-	private javax.swing.JLabel ordemHist1Label;
-	private javax.swing.JLabel ordemHist2Label;
-	private javax.swing.JLabel ordemHist3Label;
-	private javax.swing.JLabel ordemHist4Label;
-	private javax.swing.JLabel ordemHist5Label;
-	private javax.swing.JLabel dataHist1Label;
-	private javax.swing.JLabel dataHist2Label;
-	private javax.swing.JLabel dataHist3Label;
-	private javax.swing.JLabel dataHist4Label;
-	private javax.swing.JLabel dataHist5Label;
-	private javax.swing.JLabel brincoHist1Label;
-	private javax.swing.JLabel causaHist1Label;
-	private javax.swing.JLabel brincoHist2Label;
-	private javax.swing.JLabel causaHist2Label;
-	private javax.swing.JLabel brincoHist3Label;
-	private javax.swing.JLabel causaHist3Label;
-	private javax.swing.JLabel brincoHist4Label;
-	private javax.swing.JLabel causaHist4Label;
-	private javax.swing.JLabel brincoHist5Label;
-	private javax.swing.JLabel causaHist5Label;
-	private javax.swing.JLabel jLabel31;
-	private javax.swing.JLabel jLabel33;
-	private javax.swing.JLabel jLabel34;
-	private javax.swing.JLabel jLabel44;
-	private javax.swing.JLabel jLabel45;
-	private javax.swing.JPanel jPanel1;
-	private javax.swing.JPanel pnlMedicados;
-	private javax.swing.JPanel jPanel7;
-	private javax.swing.JLabel medicamentoHist1Label;
-	private javax.swing.JLabel dose1Hist1Label;
-	private javax.swing.JLabel dose2Hist1Label;
-	private javax.swing.JLabel dose3Hist1Label;
-	private javax.swing.JLabel medicamentoHist2Label;
-	private javax.swing.JLabel dose1Hist2Label;
-	private javax.swing.JLabel dose2Hist2Label;
-	private javax.swing.JLabel dose3Hist2Label;
-	private javax.swing.JLabel medicamentoHist3Label;
-	private javax.swing.JLabel dose1Hist3Label;
-	private javax.swing.JLabel dose2Hist3Label;
-	private javax.swing.JLabel dose3Hist3Label;
-	private javax.swing.JLabel medicamentoHist4Label;
-	private javax.swing.JLabel dose1Hist4Label;
-	private javax.swing.JLabel dose2Hist4Label;
-	private javax.swing.JLabel dose3Hist4Label;
-	private javax.swing.JLabel medicamentoHist5Label;
-	private javax.swing.JLabel dose1Hist5Label;
-	private javax.swing.JLabel dose2Hist5Label;
-	private javax.swing.JLabel dose3Hist5Label;
-	private JLabel registrosLabel;
-
 	public javax.swing.JFormattedTextField getBaiaJFT() {
 		return baiaJFT;
 	}
@@ -1115,11 +1117,19 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 	}
 
 	public JPanel getBaiaJP() {
-		return baiaJP_1;
+		return baiaJP;
 	}
 
 	public void setBaiaJP(JPanel baiaJP) {
-		this.baiaJP_1 = baiaJP;
+		this.baiaJP = baiaJP;
+	}
+
+	public JPanel getBaiaJP_1() {
+		return baiaJP_1;
+	}
+
+	public void setBaiaJP_1(JPanel baiaJP_1) {
+		this.baiaJP_1 = baiaJP_1;
 	}
 
 	public javax.swing.JFormattedTextField getTrata2JFT() {
@@ -1304,14 +1314,6 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 
 	public void setHeaderLabel(javax.swing.JLabel headerLabel) {
 		this.headerLabel = headerLabel;
-	}
-
-	public javax.swing.JLabel getRegistrosLabel() {
-		return registrosLabel;
-	}
-
-	public void setRegistrosLabel(javax.swing.JLabel registrosLabel) {
-		this.registrosLabel = registrosLabel;
 	}
 
 	public javax.swing.JFormattedTextField getOrdemJFT() {
@@ -1602,12 +1604,12 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		this.jPanel1 = jPanel1;
 	}
 
-	public javax.swing.JPanel getjPanel3() {
+	public javax.swing.JPanel getPnlMedicados() {
 		return pnlMedicados;
 	}
 
-	public void setjPanel3(javax.swing.JPanel jPanel3) {
-		this.pnlMedicados = jPanel3;
+	public void setPnlMedicados(javax.swing.JPanel pnlMedicados) {
+		this.pnlMedicados = pnlMedicados;
 	}
 
 	public javax.swing.JPanel getjPanel7() {
@@ -1778,13 +1780,12 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		this.dose3Hist5Label = dose3Hist5Label;
 	}
 
-	public javax.swing.JPanel getPnlMedicados() {
-		return pnlMedicados;
+	public JLabel getRegistrosLabel() {
+		return registrosLabel;
 	}
 
-	public void setPnlMedicados(javax.swing.JPanel pnlMedicados) {
-		this.pnlMedicados = pnlMedicados;
+	public void setRegistrosLabel(JLabel registrosLabel) {
+		this.registrosLabel = registrosLabel;
 	}
 
-	// End of variables declaration//GEN-END:variables
 }

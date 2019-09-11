@@ -4,14 +4,19 @@ import java.awt.Color;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
+import com.sun.istack.internal.logging.Logger;
+
 import brf.main.controller.ControllerEscolhaExp;
 import brf.main.view.ViewEscolhaExp;
+import brf.suino.model.dao.ConsumoDAOSC;
 import brf.suino.view.ViewEscolhaDigSC;
 import brf.suino.view.ViewEscolhaTipoDigSC;
 import brf.util.ExpFileFilter;
@@ -113,11 +118,11 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 //								.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getBaia() == controller.getModel()
 //										.getExperimentoVO().getMortalidade()
 //										.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).getBaia()) {
-							// ESCOLHA DIGITACAO MORTALIDADE PARA A ULTIMA BAIA DIGITADA
-							ControllerEscolhaTipoDigSC controllerEscolhaTipoDigSC = new ControllerEscolhaTipoDigSC(controller);
-							controllerEscolhaTipoDigSC.openWindow(datasFases);
-							viewEscolhaDig.setVisible(false);
-							break;
+						// ESCOLHA DIGITACAO MORTALIDADE PARA A ULTIMA BAIA DIGITADA
+						ControllerEscolhaTipoDigSC controllerEscolhaTipoDigSC = new ControllerEscolhaTipoDigSC(controller);
+						controllerEscolhaTipoDigSC.openWindow(datasFases);
+						viewEscolhaDig.setVisible(false);
+						break;
 //						}
 					} else {
 						ControllerEscolhaTipoDigSC controllerEscolhaTipoDigSC = new ControllerEscolhaTipoDigSC(controller);
@@ -150,15 +155,14 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 				if (returnVal == JFileChooser.APPROVE_OPTION) {
 					File file = fileChooser.getSelectedFile();
 					String localExportar = file.getAbsolutePath();
-//					try {
-//						DesempenhoDAOP.exportarArquivo(controller.getModel().getExperimentoVO().getInfoExp(),
-//								controller.getModel().getExperimentoVO().getConsumo(), localExportar);
-//						JOptionPane.showMessageDialog(viewEscolhaDig, "Arquivo de Granja salvo com sucesso!");
-//					} catch (IOException ex) {
-//						String msg = "Falha ao tentar salvar o arquivo! \n" + "Verifique se ele está aberto e tente novamente.";
-//						JOptionPane.showMessageDialog(viewEscolhaDig, msg);
-//						Logger.getLogger(ControllerEscolhaDigSC.class.getName()).log(Level.SEVERE, null, ex);
-//					}
+					try {
+						ConsumoDAOSC.exportarArquivo(controller.getModel().getExperimentoVO().getInfoExp(),
+								controller.getModel().getExperimentoVO().getConsumo(), localExportar);
+						JOptionPane.showMessageDialog(viewEscolhaDig, "Arquivo de Granja salvo com sucesso!");
+					} catch (IOException ex) {
+						String msg = "Falha ao tentar salvar o arquivo! \n" + "Verifique se ele está aberto e tente novamente.";
+						JOptionPane.showMessageDialog(viewEscolhaDig, msg);
+					}
 				}
 				fileChooser.setSelectedFile(null);
 			}
@@ -166,7 +170,7 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 		case KeyEvent.VK_3:
 			viewEscolhaDig.setVisible(false);
 			if (controller.getModel().getExperimentoVO().getMortalidade().isEmpty()) {
-				JOptionPane.showMessageDialog(viewEscolhaDig, "Não há registros de Mortalidade!!", "DIGEX - Aviso",
+				JOptionPane.showMessageDialog(viewEscolhaDig, "Não há registros de Mortalidade!", "DIGEX - Aviso",
 						JOptionPane.WARNING_MESSAGE);
 			} else {
 				JFileChooser fileChooser = new JFileChooser();

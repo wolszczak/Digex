@@ -35,7 +35,6 @@ public class ControllerMortalidadeSC extends KeyAdapter implements FocusListener
 	public ControllerMortalidadeSC(ControllerSC c) {
 		this.controller = c;
 		bo = new MortalidadeBOSC(c);
-
 	}
 
 	public void openWindow(Integer galpao, Integer baia, Integer sexo, Integer trata, Integer trata2, List<String> datasFases) {
@@ -214,9 +213,16 @@ public class ControllerMortalidadeSC extends KeyAdapter implements FocusListener
 				}
 				break;
 			case KeyEvent.VK_1:
-
+				view.setVisible(false);
+				ControllerMedicadosSC medicados = new ControllerMedicadosSC(controller);
+				medicados.openWindow(galpao, baia, sexo, trata, trata2, datasFases);
 				break;
 			case KeyEvent.VK_2:
+				view.setVisible(false);
+				ControllerConsumoSC consumo = new ControllerConsumoSC(controller);
+				consumo.openWindow(datasFases);
+				break;
+			case KeyEvent.VK_9:
 				view.setVisible(false);
 				ControllerEscolhaTipoDigSC controllerEscolha = new ControllerEscolhaTipoDigSC(controller);
 				controllerEscolha.openWindow(datasFases);

@@ -36,7 +36,6 @@ public class ControllerMedicadosSC extends KeyAdapter implements FocusListener {
 	public ControllerMedicadosSC(ControllerSC c) {
 		this.controller = c;
 		bo = new MedicadosBOSC(c);
-
 	}
 
 	public void openWindow(Integer galpao, Integer baia, Integer sexo, Integer trata, Integer trata2, List<String> datasFases) {
@@ -196,11 +195,11 @@ public class ControllerMedicadosSC extends KeyAdapter implements FocusListener {
 					orderLoadHist.remove(0);
 
 					JLabel lbl7 = (JLabel) orderLoadHist.get(0);
-					lbl6.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getData()));
+					lbl7.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getData()));
 					orderLoadHist.remove(0);
 
 					JLabel lbl8 = (JLabel) orderLoadHist.get(0);
-					lbl6.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getOrdem()));
+					lbl8.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getOrdem()));
 					orderLoadHist.remove(0);
 					medicadosHist.remove(medicadosHist.size() - 1);
 				} else {
@@ -241,12 +240,19 @@ public class ControllerMedicadosSC extends KeyAdapter implements FocusListener {
 				}
 				break;
 			case KeyEvent.VK_1:
-
+				view.setVisible(false);
+				ControllerConsumoSC consumo = new ControllerConsumoSC(controller);
+				consumo.openWindow(datasFases);
 				break;
 			case KeyEvent.VK_2:
 				view.setVisible(false);
 				ControllerEscolhaTipoDigSC controllerEscolha = new ControllerEscolhaTipoDigSC(controller);
 				controllerEscolha.openWindow(datasFases);
+				break;
+			case KeyEvent.VK_9:
+				view.setVisible(false);
+				ControllerEscolhaTipoDigSC escolha = new ControllerEscolhaTipoDigSC(controller);
+				escolha.openWindow(datasFases);
 				break;
 			}
 		}
@@ -254,7 +260,6 @@ public class ControllerMedicadosSC extends KeyAdapter implements FocusListener {
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-
 		if (e.getKeyChar() == KeyEvent.VK_ENTER) {
 			JFormattedTextField src = (JFormattedTextField) e.getSource();
 			String text = src.getText();
@@ -337,7 +342,6 @@ public class ControllerMedicadosSC extends KeyAdapter implements FocusListener {
 						view.getPnlMedicados().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
 					}
 				}
-
 			}
 		}
 	}

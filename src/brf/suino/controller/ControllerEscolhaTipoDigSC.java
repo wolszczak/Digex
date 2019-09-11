@@ -55,7 +55,7 @@ public class ControllerEscolhaTipoDigSC extends KeyAdapter {
 
 		for (MedicadosVOSC m : controller.getModel().getExperimentoVO().getMedicados()) {
 			if (m.getBaia() == lastBaia) {
-				obsAbate[1]++;
+				obsAbate[2]++;
 			}
 		}
 
