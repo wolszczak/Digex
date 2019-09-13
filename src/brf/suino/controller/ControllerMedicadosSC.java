@@ -25,6 +25,7 @@ import brf.util.TextFormatter;
 
 public class ControllerMedicadosSC extends KeyAdapter implements FocusListener {
 	private ControllerSC controller;
+	private List<MedicadosVOSC> erros;
 	private ViewMedicadosSC view;
 	private List<MedicadosVOSC> medicadosHist;
 	private List<Component> order, orderLoadHist;
@@ -45,6 +46,7 @@ public class ControllerMedicadosSC extends KeyAdapter implements FocusListener {
 		this.sexo = sexo;
 		this.trata = trata;
 		this.trata2 = trata2;
+		erros = new ArrayList<>();
 		view = new ViewMedicadosSC();
 		view.setTitle("DIGEX - Medicados Suínos Creche");
 		view.setResizable(false);
@@ -59,10 +61,11 @@ public class ControllerMedicadosSC extends KeyAdapter implements FocusListener {
 		view.getMedicamentoJFT().setText("000000");
 		view.getCausaJFT().setText("00");
 		TextFormatter.formatStringJFT(view.getCausaJFT(), view.getCausaJFT().getText().trim(), 2);
-		view.getDose1JFT().setText("00");
-		view.getDose2JFT().setText("00");
-		view.getDose3JFT().setText("00");
+		view.getDose1JFT().setText("000");
+		view.getDose2JFT().setText("000");
+		view.getDose3JFT().setText("000");
 		view.getControleJFT().setText("000000");
+		view.getControleBrincos().setText("000000");
 		view.getDataJFT().setEnabled(true);
 		view.getDataJFT().grabFocus();
 		view.getRegistrosLabel().setVisible(false);
@@ -132,6 +135,7 @@ public class ControllerMedicadosSC extends KeyAdapter implements FocusListener {
 		order.add(view.getDose2JFT());
 		order.add(view.getDose3JFT());
 		order.add(view.getControleJFT());
+		order.add(view.getControleBrincos());
 
 		FocusOrderPolicy newPolicy = new FocusOrderPolicy(order);
 		view.setFocusTraversalPolicy(newPolicy);
@@ -275,7 +279,7 @@ public class ControllerMedicadosSC extends KeyAdapter implements FocusListener {
 					view.getBrincoJFT().grabFocus();
 				}
 			} else if ((JFormattedTextField) e.getSource() == view.getBrincoJFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
+				TextFormatter.formatStringJFT(src, text, 4);
 				view.getBrincoJFT().setEnabled(false);
 				view.getMedicamentoJFT().setEnabled(true);
 				view.getMedicamentoJFT().grabFocus();
@@ -290,29 +294,29 @@ public class ControllerMedicadosSC extends KeyAdapter implements FocusListener {
 				view.getDose1JFT().setEnabled(true);
 				view.getDose1JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getDose1JFT()) {
-				TextFormatter.formatStringJFT(src, text, 2);
+				TextFormatter.formatStringJFT(src, text, 3);
 				view.getDose1JFT().setEnabled(false);
 				view.getDose2JFT().setEnabled(true);
 				view.getDose2JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getDose2JFT()) {
-				TextFormatter.formatStringJFT(src, text, 2);
+				TextFormatter.formatStringJFT(src, text, 3);
 				view.getDose2JFT().setEnabled(false);
 				view.getDose3JFT().setEnabled(true);
 				view.getDose3JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getDose3JFT()) {
-				TextFormatter.formatStringJFT(src, text, 2);
+				TextFormatter.formatStringJFT(src, text, 3);
 				view.getDose3JFT().setEnabled(false);
 				view.getControleJFT().setEnabled(true);
 				view.getControleJFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getControleJFT()) {
 				TextFormatter.formatStringJFT(src, text, 6);
-				if (view.getDataJFT().getText().equals("00/00/00") && view.getBrincoJFT().getText().equals("000")
+				if (view.getDataJFT().getText().equals("00/00/00") && view.getBrincoJFT().getText().equals("0000")
 						&& view.getCausaJFT().getText().equals("00") && view.getMedicamentoJFT().getText().equals("00")
-						&& view.getDose1JFT().getText().equals("00") && view.getDose2JFT().getText().equals("00")
-						&& view.getDose3JFT().getText().equals("00")) {
+						&& view.getDose1JFT().getText().equals("000") && view.getDose2JFT().getText().equals("000")
+						&& view.getDose3JFT().getText().equals("000") && view.getControleJFT().getText().trim().equals("000000")) {
 					view.getControleJFT().setEnabled(false);
-					view.getOpcaoJFT().setEnabled(true);
-					view.getOpcaoJFT().grabFocus();
+					view.getControleBrincos().setEnabled(true);
+					view.getControleBrincos().grabFocus();
 				} else {
 					if (Integer.parseInt(view.getControleJFT().getText()) == calculaControleJFT()) {
 						controller.getModel().getExperimentoVO().getMedicados()
@@ -334,13 +338,23 @@ public class ControllerMedicadosSC extends KeyAdapter implements FocusListener {
 						TextFormatter.formatStringJFT(view.getOrdemJFT(), view.getOrdemJFT().getText(), 2);
 						updateHist();
 						ordem++;
-						view.getOrdemJFT().setText(String.valueOf(ordem));
 						view.getRegistrosLabel().setVisible(true);
 						view.getPnlMedicados().setBorder(defaultBorder);
 					} else {
 						fluxoErroControle();
 						view.getPnlMedicados().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
 					}
+				}
+			} else if ((JFormattedTextField) e.getSource() == view.getControleBrincos()) {
+				TextFormatter.formatStringJFT(src, text, 6);
+				if (Integer.parseInt(view.getControleBrincos().getText().trim()) == calculaControleBrincos()) {
+					view.getControleBrincos().setEnabled(false);
+					view.getOpcaoJFT().setEnabled(true);
+					view.getOpcaoJFT().grabFocus();
+				} else {
+					fluxoErroControleBrincos();
+					recuperaHist();
+					view.getPnlMedicados().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
 				}
 			}
 		}
@@ -395,30 +409,117 @@ public class ControllerMedicadosSC extends KeyAdapter implements FocusListener {
 		view.getDose3Hist4Label().setText(String.valueOf(view.getDose3Hist5Label().getText()));
 		view.getDose3Hist5Label().setText(String.valueOf(view.getDose3JFT().getText()));
 
-		view.getDataJFT().setText("00/00/00");
-		view.getBrincoJFT().setText("0000");
-		view.getMedicamentoJFT().setText("000000");
-		view.getCausaJFT().setText("00");
-		TextFormatter.formatStringJFT(view.getCausaJFT(), view.getCausaJFT().getText().trim(), 2);
-		view.getDose1JFT().setText("00");
-		view.getDose2JFT().setText("00");
-		view.getDose3JFT().setText("00");
-		view.getControleJFT().setText("000000");
+		if (!erros.isEmpty()) {
+			recuperaHist();
+		} else {
+			view.getOrdemJFT().setText(String.valueOf(ordem));
+			view.getDataJFT().setText("00/00/00");
+			view.getBrincoJFT().setText("0000");
+			view.getMedicamentoJFT().setText("000000");
+			view.getCausaJFT().setText("00");
+			TextFormatter.formatStringJFT(view.getCausaJFT(), view.getCausaJFT().getText().trim(), 2);
+			view.getDose1JFT().setText("000");
+			view.getDose2JFT().setText("000");
+			view.getDose3JFT().setText("000");
+			view.getControleJFT().setText("000000");
+			view.getControleBrincos().setText("000000");
 
-		view.getBrincoJFT().setEnabled(false);
-		view.getMedicamentoJFT().setEnabled(false);
-		view.getCausaJFT().setEnabled(false);
-		view.getDose1JFT().setEnabled(false);
-		view.getDose2JFT().setEnabled(false);
-		view.getDose3JFT().setEnabled(false);
-		view.getControleJFT().setEnabled(false);
-		view.pack();
+			view.getBrincoJFT().setEnabled(false);
+			view.getMedicamentoJFT().setEnabled(false);
+			view.getCausaJFT().setEnabled(false);
+			view.getDose1JFT().setEnabled(false);
+			view.getDose2JFT().setEnabled(false);
+			view.getDose3JFT().setEnabled(false);
+			view.getControleJFT().setEnabled(false);
+			view.pack();
+		}
+
+	}
+
+	private void recuperaHist() {
+		view.getOrdemJFT().setText(String.valueOf(erros.get(0).getOrdem()));
+		TextFormatter.formatStringJFT(view.getOrdemJFT(), view.getOrdemJFT().getText(), 2);
+		view.getDataJFT().setText(String.valueOf(erros.get(0).getData()));
+		TextFormatter.formatStringJFT(view.getDataJFT(), view.getDataJFT().getText(), 8);
+		view.getBrincoJFT().setText(String.valueOf(erros.get(0).getBrinco()));
+		TextFormatter.formatStringJFT(view.getBrincoJFT(), view.getBrincoJFT().getText(), 4);
+		view.getMedicamentoJFT().setText(String.valueOf(erros.get(0).getMedicamento()));
+		TextFormatter.formatStringJFT(view.getMedicamentoJFT(), view.getMedicamentoJFT().getText(), 2);
+		view.getCausaJFT().setText(String.valueOf(erros.get(0).getCausa()));
+		TextFormatter.formatStringJFT(view.getCausaJFT(), view.getCausaJFT().getText(), 2);
+		view.getDose1JFT().setText(String.valueOf(erros.get(0).getDose1()));
+		TextFormatter.formatStringJFT(view.getDose1JFT(), view.getDose1JFT().getText(), 3);
+		view.getDose2JFT().setText(String.valueOf(erros.get(0).getDose2()));
+		TextFormatter.formatStringJFT(view.getDose2JFT(), view.getDose2JFT().getText(), 3);
+		view.getDose3JFT().setText(String.valueOf(erros.get(0).getDose3()));
+		TextFormatter.formatStringJFT(view.getDose3JFT(), view.getDose3JFT().getText(), 3);
+
+		erros.remove(0);
 	}
 
 	private void fluxoErroControle() {
 		view.getControleJFT().setEnabled(false);
 		view.getDataJFT().setEnabled(true);
 		view.getDataJFT().grabFocus();
+	}
+
+	private void fluxoErroControleBrincos() {
+		for (MedicadosVOSC m : controller.getModel().getExperimentoVO().getMedicados()) {
+			if (m.getBaia() == baia) {
+				erros.add(m);
+			}
+		}
+		controller.getModel().getExperimentoVO().getMedicados().removeIf(x -> x.getBaia() == baia);
+
+		view.getOrdemHist1Label().setText("");
+		view.getDataHist1Label().setText("");
+		view.getBrincoHist1Label().setText("");
+		view.getMedicamentoHist1Label().setText("");
+		view.getCausaHist1Label().setText("");
+		view.getDose1Hist1Label().setText("");
+		view.getDose2Hist1Label().setText("");
+		view.getDose3Hist1Label().setText("");
+
+		view.getOrdemHist2Label().setText("");
+		view.getDataHist2Label().setText("");
+		view.getBrincoHist2Label().setText("");
+		view.getMedicamentoHist2Label().setText("");
+		view.getCausaHist2Label().setText("");
+		view.getDose1Hist2Label().setText("");
+		view.getDose2Hist2Label().setText("");
+		view.getDose3Hist2Label().setText("");
+
+		view.getOrdemHist3Label().setText("");
+		view.getDataHist3Label().setText("");
+		view.getBrincoHist3Label().setText("");
+		view.getMedicamentoHist3Label().setText("");
+		view.getCausaHist3Label().setText("");
+		view.getDose1Hist3Label().setText("");
+		view.getDose2Hist3Label().setText("");
+		view.getDose3Hist3Label().setText("");
+
+		view.getOrdemHist4Label().setText("");
+		view.getDataHist4Label().setText("");
+		view.getBrincoHist4Label().setText("");
+		view.getMedicamentoHist4Label().setText("");
+		view.getCausaHist4Label().setText("");
+		view.getDose1Hist4Label().setText("");
+		view.getDose2Hist4Label().setText("");
+		view.getDose3Hist4Label().setText("");
+
+		view.getOrdemHist5Label().setText("");
+		view.getDataHist5Label().setText("");
+		view.getBrincoHist5Label().setText("");
+		view.getMedicamentoHist5Label().setText("");
+		view.getCausaHist5Label().setText("");
+		view.getDose1Hist5Label().setText("");
+		view.getDose2Hist5Label().setText("");
+		view.getDose3Hist5Label().setText("");
+
+		view.getControleBrincos().setEnabled(false);
+		view.getDataJFT().setEnabled(true);
+		view.getDataJFT().grabFocus();
+
 	}
 
 	private Integer calculaControleJFT() {
@@ -434,6 +535,16 @@ public class ControllerMedicadosSC extends KeyAdapter implements FocusListener {
 		soma += Integer.parseInt(view.getDose1JFT().getText());
 		soma += Integer.parseInt(view.getDose2JFT().getText());
 		soma += Integer.parseInt(view.getDose3JFT().getText());
+		return soma;
+	}
+
+	private Integer calculaControleBrincos() {
+		int soma = 0;
+		for (MedicadosVOSC m : controller.getModel().getExperimentoVO().getMedicados()) {
+			if (m.getBaia() == baia) {
+				soma += m.getBrinco();
+			}
+		}
 		return soma;
 	}
 

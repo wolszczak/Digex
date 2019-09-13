@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.SwingConstants;
+import javax.swing.JFormattedTextField;
 
 public class ViewMedicadosSC extends javax.swing.JFrame {
 	private static final long serialVersionUID = 1L;
@@ -100,6 +101,8 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 	private javax.swing.JLabel dose3Hist5Label;
 	private JLabel registrosLabel;
 	private JLabel lblDigitar;
+	private JFormattedTextField controleBrincos;
+	private JLabel lblControleBrincos;
 
 	public ViewMedicadosSC() {
 		initComponents();
@@ -409,41 +412,26 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		lblDigitar.setText("[1] - Digitar próxima baia");
 
 		javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-		jPanel7Layout.setHorizontalGroup(
-			jPanel7Layout.createParallelGroup(Alignment.LEADING)
-				.addGroup(jPanel7Layout.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(jPanel7Layout.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblDigitar, GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-						.addGroup(jPanel7Layout.createSequentialGroup()
-							.addGap(4)
-							.addComponent(opcaoLabel, GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
-						.addGroup(jPanel7Layout.createSequentialGroup()
-							.addComponent(sairLabel)
-							.addGap(124, 134, Short.MAX_VALUE))
-						.addComponent(voltarLabel)
-						.addComponent(escolhaLabel))
-					.addContainerGap())
-		);
-		jPanel7Layout.setVerticalGroup(
-			jPanel7Layout.createParallelGroup(Alignment.TRAILING)
-				.addGroup(jPanel7Layout.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(escolhaLabel)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(lblDigitar)
-					.addPreferredGap(ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-					.addComponent(voltarLabel)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(sairLabel)
-					.addGap(36)
-					.addGroup(jPanel7Layout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(opcaoLabel)
-						.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap())
-		);
+		jPanel7Layout.setHorizontalGroup(jPanel7Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel7Layout.createSequentialGroup().addContainerGap()
+						.addGroup(jPanel7Layout.createParallelGroup(Alignment.LEADING)
+								.addComponent(lblDigitar, GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
+								.addGroup(jPanel7Layout.createSequentialGroup().addGap(4)
+										.addComponent(opcaoLabel, GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+										.addPreferredGap(ComponentPlacement.RELATED)
+										.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
+								.addGroup(jPanel7Layout.createSequentialGroup().addComponent(sairLabel).addGap(124, 134, Short.MAX_VALUE))
+								.addComponent(voltarLabel).addComponent(escolhaLabel))
+						.addContainerGap()));
+		jPanel7Layout
+				.setVerticalGroup(jPanel7Layout.createParallelGroup(Alignment.TRAILING)
+						.addGroup(jPanel7Layout.createSequentialGroup().addContainerGap().addComponent(escolhaLabel)
+								.addPreferredGap(ComponentPlacement.RELATED).addComponent(lblDigitar)
+								.addPreferredGap(ComponentPlacement.RELATED, 23, Short.MAX_VALUE).addComponent(voltarLabel)
+								.addPreferredGap(ComponentPlacement.RELATED).addComponent(sairLabel).addGap(36)
+								.addGroup(jPanel7Layout.createParallelGroup(Alignment.BASELINE).addComponent(opcaoLabel).addComponent(
+										opcaoJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+								.addContainerGap()));
 		jPanel7.setLayout(jPanel7Layout);
 
 		pnlMedicados.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -464,7 +452,7 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		medicamentoHist4Label.setEnabled(false);
 
 		try {
-			brincoJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+			brincoJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -579,7 +567,7 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		ordemLabel.setText("Ordem");
 
 		try {
-			dose1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			dose1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -680,7 +668,7 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		dose2Hist5Label.setEnabled(false);
 
 		try {
-			dose2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			dose2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -711,311 +699,275 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 		dose3Hist5Label.setEnabled(false);
 
 		try {
-			dose3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			dose3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
 		dose3JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		dose3JFT.setEnabled(false);
 
+		controleBrincos = new JFormattedTextField();
+		try {
+			controleBrincos.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
+		} catch (java.text.ParseException ex) {
+			ex.printStackTrace();
+		}
+		controleBrincos.setHorizontalAlignment(SwingConstants.CENTER);
+		controleBrincos.setEnabled(false);
+
+		lblControleBrincos = new JLabel();
+		lblControleBrincos.setText("Controle Brincos");
+		lblControleBrincos.setHorizontalAlignment(SwingConstants.CENTER);
+
 		javax.swing.GroupLayout gl_pnlMedicados = new javax.swing.GroupLayout(pnlMedicados);
-		pnlMedicados.setLayout(gl_pnlMedicados);
-		gl_pnlMedicados.setHorizontalGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addComponent(headerLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+		gl_pnlMedicados.setHorizontalGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
+				.addComponent(headerLabel, GroupLayout.DEFAULT_SIZE, 697, Short.MAX_VALUE)
 				.addGroup(gl_pnlMedicados.createSequentialGroup().addContainerGap().addGroup(gl_pnlMedicados
-						.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-						.addComponent(ordemHist5Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(ordemHist4Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(ordemHist3Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(ordemHist2Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(ordemHist1Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(ordemLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(ordemJFT)).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-										.addComponent(dataHist5Label, javax.swing.GroupLayout.Alignment.LEADING,
-												javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(dataHist4Label, javax.swing.GroupLayout.Alignment.LEADING,
-												javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(dataHist3Label, javax.swing.GroupLayout.Alignment.LEADING,
-												javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(dataHist2Label, javax.swing.GroupLayout.Alignment.LEADING,
-												javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(dataHist1Label, javax.swing.GroupLayout.Alignment.LEADING,
-												javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(dataLabel, javax.swing.GroupLayout.Alignment.LEADING,
-												javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE))
-								.addComponent(dataJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-								.addComponent(brincoHist5Label, javax.swing.GroupLayout.Alignment.LEADING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(brincoHist4Label, javax.swing.GroupLayout.Alignment.LEADING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(brincoHist3Label, javax.swing.GroupLayout.Alignment.LEADING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(brincoHist2Label, javax.swing.GroupLayout.Alignment.LEADING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(brincoHist1Label, javax.swing.GroupLayout.Alignment.LEADING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(brincoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+						.createParallelGroup(Alignment.TRAILING, false)
+						.addComponent(ordemHist5Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
+						.addComponent(ordemHist4Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
+						.addComponent(ordemHist3Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
+						.addComponent(ordemHist2Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
+						.addComponent(ordemHist1Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
+						.addComponent(ordemLabel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(ordemJFT)).addPreferredGap(ComponentPlacement.RELATED)
+						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.TRAILING, false)
+										.addComponent(dataHist5Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+												Short.MAX_VALUE)
+										.addComponent(dataHist4Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+												Short.MAX_VALUE)
+										.addComponent(dataHist3Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+												Short.MAX_VALUE)
+										.addComponent(dataHist2Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+												Short.MAX_VALUE)
+										.addComponent(dataHist1Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+												Short.MAX_VALUE)
+										.addComponent(dataLabel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE))
+								.addComponent(dataJFT, GroupLayout.PREFERRED_SIZE, 74, GroupLayout.PREFERRED_SIZE))
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.TRAILING, false)
+								.addComponent(brincoHist5Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
 										Short.MAX_VALUE)
-								.addComponent(brincoJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 45,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(
-								javax.swing.GroupLayout.Alignment.TRAILING,
-								gl_pnlMedicados.createSequentialGroup().addGap(7, 7, 7).addComponent(medicamentoLabel,
-										javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-								.addGroup(gl_pnlMedicados.createSequentialGroup()
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addComponent(medicamentoHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 66,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(medicamentoHist2Label, javax.swing.GroupLayout.Alignment.TRAILING,
-														javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(medicamentoHist3Label, javax.swing.GroupLayout.Alignment.TRAILING,
-														javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(medicamentoHist4Label, javax.swing.GroupLayout.Alignment.TRAILING,
-														javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(medicamentoHist5Label, javax.swing.GroupLayout.Alignment.TRAILING,
-														javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(medicamentoJFT, javax.swing.GroupLayout.Alignment.TRAILING,
-														javax.swing.GroupLayout.PREFERRED_SIZE, 66,
-														javax.swing.GroupLayout.PREFERRED_SIZE))))
-						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addGroup(gl_pnlMedicados.createSequentialGroup().addGap(8, 8, 8).addComponent(causaLabel,
-										javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-								.addGroup(gl_pnlMedicados.createSequentialGroup()
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addComponent(causaHist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(causaHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(causaHist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(causaHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
-														javax.swing.GroupLayout.PREFERRED_SIZE)))
-								.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gl_pnlMedicados.createSequentialGroup()
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-												.addComponent(causaHist5Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(causaJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 57,
-														javax.swing.GroupLayout.PREFERRED_SIZE))))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-								.addComponent(dose1JFT, javax.swing.GroupLayout.Alignment.TRAILING)
-								.addComponent(dose1Hist5Label, javax.swing.GroupLayout.Alignment.TRAILING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(dose1Hist4Label, javax.swing.GroupLayout.Alignment.TRAILING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(dose1Hist3Label, javax.swing.GroupLayout.Alignment.TRAILING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(dose1Hist2Label, javax.swing.GroupLayout.Alignment.TRAILING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(dose1Hist1Label, javax.swing.GroupLayout.Alignment.TRAILING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(dose1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 56,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-								.addComponent(dose2JFT, javax.swing.GroupLayout.Alignment.TRAILING)
-								.addComponent(dose2Hist5Label, javax.swing.GroupLayout.Alignment.TRAILING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(dose2Hist4Label, javax.swing.GroupLayout.Alignment.TRAILING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(dose2Hist3Label, javax.swing.GroupLayout.Alignment.TRAILING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(dose2Hist2Label, javax.swing.GroupLayout.Alignment.TRAILING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(dose2Hist1Label, javax.swing.GroupLayout.Alignment.TRAILING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(dose2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 56,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-								.addComponent(dose3JFT, javax.swing.GroupLayout.Alignment.TRAILING)
-								.addComponent(dose3Hist5Label, javax.swing.GroupLayout.Alignment.TRAILING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(dose3Hist4Label, javax.swing.GroupLayout.Alignment.TRAILING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(dose3Hist3Label, javax.swing.GroupLayout.Alignment.TRAILING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(dose3Hist2Label, javax.swing.GroupLayout.Alignment.TRAILING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(dose3Hist1Label, javax.swing.GroupLayout.Alignment.TRAILING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(dose3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 56,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(controleJFT)
-								.addComponent(controleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE))
+								.addComponent(brincoHist4Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(brincoHist3Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(brincoHist2Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(brincoHist1Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(brincoLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(brincoJFT, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE))
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.TRAILING)
+								.addComponent(medicamentoLabel, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
+										.addComponent(medicamentoHist1Label, GroupLayout.PREFERRED_SIZE, 66, GroupLayout.PREFERRED_SIZE)
+										.addComponent(medicamentoHist2Label, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 66,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(medicamentoHist3Label, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 66,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(medicamentoHist4Label, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 66,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(medicamentoHist5Label, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 66,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(medicamentoJFT, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 66,
+												GroupLayout.PREFERRED_SIZE)))
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.TRAILING)
+								.addComponent(causaLabel, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
+										.addComponent(causaHist2Label, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
+										.addComponent(causaHist1Label, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
+										.addComponent(causaHist3Label, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
+										.addComponent(causaHist4Label, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING, false)
+										.addComponent(causaHist5Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addComponent(causaJFT, GroupLayout.PREFERRED_SIZE, 57, GroupLayout.PREFERRED_SIZE)))
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING, false).addComponent(dose1JFT, Alignment.TRAILING)
+								.addComponent(dose1Hist5Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(dose1Hist4Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(dose1Hist3Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(dose1Hist2Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(dose1Hist1Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(dose1Label, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE))
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING, false).addComponent(dose2JFT, Alignment.TRAILING)
+								.addComponent(dose2Hist5Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(dose2Hist4Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(dose2Hist3Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(dose2Hist2Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(dose2Hist1Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(dose2Label, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE))
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING, false).addComponent(dose3JFT, Alignment.TRAILING)
+								.addComponent(dose3Hist5Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(dose3Hist4Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(dose3Hist3Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(dose3Hist2Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(dose3Hist1Label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(dose3Label, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE))
+						.addPreferredGap(ComponentPlacement.UNRELATED)
+						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING).addComponent(controleJFT, 88, 88, 88)
+								.addComponent(controleLabel, GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE))
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.TRAILING)
+								.addComponent(controleBrincos, GroupLayout.PREFERRED_SIZE, 88, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblControleBrincos, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
 						.addContainerGap()));
-		gl_pnlMedicados.setVerticalGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gl_pnlMedicados.createSequentialGroup().addContainerGap()
-						.addComponent(headerLabel).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(gl_pnlMedicados
-								.createSequentialGroup()
-								.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-										.addComponent(brincoLabel).addComponent(medicamentoLabel))
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-								.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addComponent(medicamentoHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addComponent(brincoHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE))
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-								.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addComponent(brincoHist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addComponent(medicamentoHist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE))
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-								.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-										.addComponent(brincoHist3Label, javax.swing.GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
-										.addComponent(medicamentoHist3Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-								.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addComponent(brincoHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addComponent(medicamentoHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE))
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-								.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addComponent(brincoHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addComponent(medicamentoHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE)))
+		gl_pnlMedicados.setVerticalGroup(gl_pnlMedicados.createParallelGroup(Alignment.TRAILING)
+				.addGroup(gl_pnlMedicados.createSequentialGroup().addContainerGap().addComponent(headerLabel)
+						.addPreferredGap(ComponentPlacement.UNRELATED)
+						.addGroup(gl_pnlMedicados
+								.createParallelGroup(
+										Alignment.LEADING)
+								.addGroup(gl_pnlMedicados.createSequentialGroup()
+										.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.BASELINE).addComponent(brincoLabel)
+												.addComponent(medicamentoLabel))
+										.addPreferredGap(ComponentPlacement.RELATED)
+										.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
+												.addComponent(medicamentoHist1Label, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE)
+												.addComponent(brincoHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
+										.addPreferredGap(ComponentPlacement.UNRELATED)
+										.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
+												.addComponent(brincoHist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+												.addComponent(medicamentoHist2Label, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE))
+										.addPreferredGap(ComponentPlacement.UNRELATED)
+										.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING, false)
+												.addComponent(brincoHist3Label, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+												.addComponent(medicamentoHist3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+														Short.MAX_VALUE))
+										.addPreferredGap(ComponentPlacement.UNRELATED)
+										.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
+												.addComponent(brincoHist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+												.addComponent(medicamentoHist4Label, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE))
+										.addPreferredGap(ComponentPlacement.UNRELATED).addGroup(
+												gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
+														.addComponent(brincoHist5Label, GroupLayout.PREFERRED_SIZE, 14,
+																GroupLayout.PREFERRED_SIZE)
+														.addComponent(
+																medicamentoHist5Label, GroupLayout.PREFERRED_SIZE, 14,
+																GroupLayout.PREFERRED_SIZE)))
 								.addGroup(gl_pnlMedicados.createSequentialGroup().addComponent(dataLabel)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addComponent(dataHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addComponent(dataHist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addComponent(dataHist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addComponent(dataHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addGap(11, 11, 11)
-										.addComponent(dataHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-												.addComponent(dataJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(brincoJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(medicamentoJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(causaJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(dose1JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(ordemJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-														javax.swing.GroupLayout.PREFERRED_SIZE)))
+										.addPreferredGap(ComponentPlacement.RELATED)
+										.addComponent(dataHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.UNRELATED)
+										.addComponent(dataHist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.UNRELATED)
+										.addComponent(dataHist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.UNRELATED)
+										.addComponent(dataHist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE).addGap(11)
+										.addComponent(dataHist5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.RELATED)
+										.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.BASELINE)
+												.addComponent(dataJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+												.addComponent(brincoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+												.addComponent(medicamentoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+												.addComponent(causaJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+												.addComponent(dose1JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+												.addComponent(ordemJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)))
 								.addGroup(gl_pnlMedicados.createSequentialGroup().addComponent(ordemLabel)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addComponent(ordemHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addComponent(ordemHist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addComponent(ordemHist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addComponent(ordemHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED).addComponent(ordemHist5Label,
-												javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+										.addPreferredGap(ComponentPlacement.RELATED)
+										.addComponent(ordemHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.UNRELATED)
+										.addComponent(ordemHist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.UNRELATED)
+										.addComponent(ordemHist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.UNRELATED)
+										.addComponent(ordemHist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.UNRELATED)
+										.addComponent(ordemHist5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
 								.addGroup(gl_pnlMedicados.createSequentialGroup()
-										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-												.addComponent(causaLabel).addComponent(dose1Label))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addComponent(dose1Hist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(causaHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-														javax.swing.GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addComponent(causaHist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(dose1Hist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-														javax.swing.GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addComponent(causaHist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(dose1Hist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-														javax.swing.GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addComponent(causaHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(dose1Hist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-														javax.swing.GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addComponent(causaHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(dose1Hist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-														javax.swing.GroupLayout.PREFERRED_SIZE)))
+										.addGroup(gl_pnlMedicados
+												.createParallelGroup(Alignment.BASELINE).addComponent(causaLabel).addComponent(dose1Label))
+										.addPreferredGap(ComponentPlacement.RELATED)
+										.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
+												.addComponent(dose1Hist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+												.addComponent(causaHist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
+										.addPreferredGap(ComponentPlacement.UNRELATED)
+										.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
+												.addComponent(causaHist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+												.addComponent(dose1Hist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
+										.addPreferredGap(ComponentPlacement.UNRELATED).addGroup(
+												gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
+														.addComponent(causaHist3Label, GroupLayout.PREFERRED_SIZE, 14,
+																GroupLayout.PREFERRED_SIZE)
+														.addComponent(dose1Hist3Label, GroupLayout.PREFERRED_SIZE, 14,
+																GroupLayout.PREFERRED_SIZE))
+										.addPreferredGap(ComponentPlacement.UNRELATED).addGroup(
+												gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
+														.addComponent(causaHist4Label, GroupLayout.PREFERRED_SIZE, 14,
+																GroupLayout.PREFERRED_SIZE)
+														.addComponent(dose1Hist4Label, GroupLayout.PREFERRED_SIZE, 14,
+																GroupLayout.PREFERRED_SIZE))
+										.addPreferredGap(ComponentPlacement.UNRELATED).addGroup(
+												gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
+														.addComponent(causaHist5Label, GroupLayout.PREFERRED_SIZE, 14,
+																GroupLayout.PREFERRED_SIZE)
+														.addComponent(dose1Hist5Label, GroupLayout.PREFERRED_SIZE, 14,
+																GroupLayout.PREFERRED_SIZE)))
 								.addGroup(gl_pnlMedicados.createSequentialGroup().addComponent(dose2Label)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addComponent(dose2Hist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addComponent(dose2Hist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addComponent(dose2Hist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addComponent(dose2Hist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED).addComponent(dose2Hist5Label,
-												javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-								.addGroup(gl_pnlMedicados.createSequentialGroup()
-										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-												.addComponent(controleLabel)
-												.addGroup(gl_pnlMedicados.createSequentialGroup().addComponent(dose3Label)
-														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-														.addComponent(dose3Hist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-														.addComponent(dose3Hist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-														.addComponent(dose3Hist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-														.addComponent(dose3Hist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-														.addComponent(dose3Hist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addComponent(dose2JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-														.addComponent(dose3JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(controleJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-																javax.swing.GroupLayout.PREFERRED_SIZE)))))
-						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+										.addPreferredGap(ComponentPlacement.RELATED)
+										.addComponent(dose2Hist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.UNRELATED)
+										.addComponent(dose2Hist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.UNRELATED)
+										.addComponent(dose2Hist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.UNRELATED)
+										.addComponent(dose2Hist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.UNRELATED)
+										.addComponent(dose2Hist5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_pnlMedicados.createSequentialGroup().addGroup(gl_pnlMedicados
+										.createParallelGroup(Alignment.TRAILING)
+										.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.BASELINE).addComponent(controleLabel)
+												.addComponent(lblControleBrincos))
+										.addGroup(gl_pnlMedicados.createSequentialGroup().addComponent(dose3Label)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(dose3Hist1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.UNRELATED)
+												.addComponent(dose3Hist2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.UNRELATED)
+												.addComponent(dose3Hist3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.UNRELATED)
+												.addComponent(dose3Hist4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.UNRELATED)
+												.addComponent(dose3Hist5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)))
+										.addPreferredGap(ComponentPlacement.RELATED)
+										.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.LEADING)
+												.addComponent(dose2JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+												.addGroup(gl_pnlMedicados.createParallelGroup(Alignment.BASELINE)
+														.addComponent(dose3JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+														.addComponent(controleJFT, GroupLayout.PREFERRED_SIZE, 20,
+																GroupLayout.PREFERRED_SIZE)
+														.addComponent(controleBrincos, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+																GroupLayout.PREFERRED_SIZE)))))
+						.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+		pnlMedicados.setLayout(gl_pnlMedicados);
 
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
 		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel1Layout.createSequentialGroup()
@@ -1786,6 +1738,14 @@ public class ViewMedicadosSC extends javax.swing.JFrame {
 
 	public void setRegistrosLabel(JLabel registrosLabel) {
 		this.registrosLabel = registrosLabel;
+	}
+
+	public JFormattedTextField getControleBrincos() {
+		return controleBrincos;
+	}
+
+	public void setControleBrincos(JFormattedTextField controleBrincos) {
+		this.controleBrincos = controleBrincos;
 	}
 
 }

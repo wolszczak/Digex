@@ -7,18 +7,16 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
-import com.sun.istack.internal.logging.Logger;
-
 import brf.main.controller.ControllerEscolhaExp;
 import brf.main.view.ViewEscolhaExp;
 import brf.suino.model.dao.ConsumoDAOSC;
+import brf.suino.model.dao.MedicadosDAOSC;
+import brf.suino.model.dao.MortalidadeDAOSC;
 import brf.suino.view.ViewEscolhaDigSC;
-import brf.suino.view.ViewEscolhaTipoDigSC;
 import brf.util.ExpFileFilter;
 import brf.util.SystemFileView;
 
@@ -47,13 +45,15 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 				&& controller.getModel().getExperimentoVO().getConsumo().isEmpty()) {
 			viewEscolhaDig.getExportarConsLabel().setForeground(Color.GRAY);
 		}
-		if (controller.getModel().getExperimentoVO().getMedicados() != null
-				&& controller.getModel().getExperimentoVO().getMedicados().isEmpty()) {
-			viewEscolhaDig.getExportarMediLabel().setForeground(Color.GRAY);
-		}
 		if (controller.getModel().getExperimentoVO().getMortalidade() != null
 				&& controller.getModel().getExperimentoVO().getMortalidade().isEmpty()) {
 			viewEscolhaDig.getExportarMortLabel().setForeground(Color.GRAY);
+		}
+		if (controller.getModel().getExperimentoVO().getMedicados() != null
+				&& controller.getModel().getExperimentoVO().getMedicados().isEmpty()) {
+			viewEscolhaDig.getExportarMediLabel().setForeground(Color.GRAY);
+		}else {
+			
 		}
 		histSetup();
 	}
@@ -142,9 +142,8 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 				break;
 			}
 		case KeyEvent.VK_2:
-			viewEscolhaDig.setVisible(false);
 			if (controller.getModel().getExperimentoVO().getConsumo().isEmpty()) {
-				JOptionPane.showMessageDialog(viewEscolhaDig, "Não há registros de Granja!", "DIGEX - Aviso", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(viewEscolhaDig, "Não há registros de CONSUMOS!", "DIGEX - Aviso", JOptionPane.WARNING_MESSAGE);
 			} else {
 				JFileChooser fileChooser = new JFileChooser();
 				fileChooser.addChoosableFileFilter(new ExpFileFilter());
@@ -158,7 +157,7 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 					try {
 						ConsumoDAOSC.exportarArquivo(controller.getModel().getExperimentoVO().getInfoExp(),
 								controller.getModel().getExperimentoVO().getConsumo(), localExportar);
-						JOptionPane.showMessageDialog(viewEscolhaDig, "Arquivo de Granja salvo com sucesso!");
+						JOptionPane.showMessageDialog(viewEscolhaDig, "Arquivo de CONSUMOS salvo com sucesso!");
 					} catch (IOException ex) {
 						String msg = "Falha ao tentar salvar o arquivo! \n" + "Verifique se ele está aberto e tente novamente.";
 						JOptionPane.showMessageDialog(viewEscolhaDig, msg);
@@ -168,7 +167,6 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 			}
 			break;
 		case KeyEvent.VK_3:
-			viewEscolhaDig.setVisible(false);
 			if (controller.getModel().getExperimentoVO().getMortalidade().isEmpty()) {
 				JOptionPane.showMessageDialog(viewEscolhaDig, "Não há registros de Mortalidade!", "DIGEX - Aviso",
 						JOptionPane.WARNING_MESSAGE);
@@ -182,21 +180,19 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 				if (returnVal == JFileChooser.APPROVE_OPTION) {
 					File file = fileChooser.getSelectedFile();
 					String localExportar = file.getAbsolutePath();
-//					try {
-//						DesempenhoDAOP.exportarArquivo(controller.getModel().getExperimentoVO().getInfoExp(),
-//								controller.getModel().getExperimentoVO().getConsumo(), localExportar);
-//						JOptionPane.showMessageDialog(viewEscolhaDig, "Arquivo de Granja salvo com sucesso!");
-//					} catch (IOException ex) {
-//						String msg = "Falha ao tentar salvar o arquivo! \n" + "Verifique se ele está aberto e tente novamente.";
-//						JOptionPane.showMessageDialog(viewEscolhaDig, msg);
-//						Logger.getLogger(ControllerEscolhaDigSC.class.getName()).log(Level.SEVERE, null, ex);
-//					}
+					try {
+					MortalidadeDAOSC.exportarArquivo(controller.getModel().getExperimentoVO().getInfoExp(),
+							controller.getModel().getExperimentoVO().getMortalidade(), localExportar);
+					JOptionPane.showMessageDialog(viewEscolhaDig, "Arquivo de MORTALIDADE salvo com sucesso!");
+				} catch (IOException ex) {
+					String msg = "Falha ao tentar salvar o arquivo! \n" + "Verifique se ele está aberto e tente novamente.";
+					JOptionPane.showMessageDialog(viewEscolhaDig, msg);
+				}
 				}
 				fileChooser.setSelectedFile(null);
 			}
 			break;
 		case KeyEvent.VK_4:
-			viewEscolhaDig.setVisible(false);
 			if (controller.getModel().getExperimentoVO().getMedicados().isEmpty()) {
 				JOptionPane.showMessageDialog(viewEscolhaDig, "Não há registros de Medicados!", "DIGEX - Aviso",
 						JOptionPane.WARNING_MESSAGE);
@@ -210,15 +206,14 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 				if (returnVal == JFileChooser.APPROVE_OPTION) {
 					File file = fileChooser.getSelectedFile();
 					String localExportar = file.getAbsolutePath();
-//					try {
-//						DesempenhoDAOP.exportarArquivo(controller.getModel().getExperimentoVO().getInfoExp(),
-//								controller.getModel().getExperimentoVO().getConsumo(), localExportar);
-//						JOptionPane.showMessageDialog(viewEscolhaDig, "Arquivo de Granja salvo com sucesso!");
-//					} catch (IOException ex) {
-//						String msg = "Falha ao tentar salvar o arquivo! \n" + "Verifique se ele está aberto e tente novamente.";
-//						JOptionPane.showMessageDialog(viewEscolhaDig, msg);
-//						Logger.getLogger(ControllerEscolhaDigSC.class.getName()).log(Level.SEVERE, null, ex);
-//					}
+					try {
+						MedicadosDAOSC.exportarArquivo(controller.getModel().getExperimentoVO().getInfoExp(),
+								controller.getModel().getExperimentoVO().getMedicados(), localExportar);
+						JOptionPane.showMessageDialog(viewEscolhaDig, "Arquivo de MEDICADOS salvo com sucesso!");
+					} catch (IOException ex) {
+						String msg = "Falha ao tentar salvar o arquivo! \n" + "Verifique se ele está aberto e tente novamente.";
+						JOptionPane.showMessageDialog(viewEscolhaDig, msg);
+					}
 				}
 				fileChooser.setSelectedFile(null);
 			}

@@ -93,7 +93,7 @@ public class ViewEscolhaDigSC extends javax.swing.JFrame {
 		qtdeConsLabel.setForeground(new java.awt.Color(0, 153, 255));
 		qtdeConsLabel.setText("999/999 registro(s)");
 
-		exportarMediLabel.setText("[3] - Arquivo de Mortalidade");
+		exportarMediLabel.setText("[4] - Arquivo de Medicados");
 
 		jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		jLabel6.setText("Digitação");
@@ -102,7 +102,7 @@ public class ViewEscolhaDigSC extends javax.swing.JFrame {
 		jLabel7.setText("Exportação");
 
 		exportarMortLabel = new JLabel();
-		exportarMortLabel.setText("[4] - Arquivo de Medicados");
+		exportarMortLabel.setText("[3] - Arquivo de Mortalidade");
 
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
 		jPanel1Layout.setHorizontalGroup(
@@ -136,12 +136,6 @@ public class ViewEscolhaDigSC extends javax.swing.JFrame {
 										.addComponent(protocoloJFT, GroupLayout.PREFERRED_SIZE, 160, GroupLayout.PREFERRED_SIZE))))
 							.addContainerGap())
 						.addGroup(jPanel1Layout.createSequentialGroup()
-							.addGap(228)
-							.addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING)
-								.addComponent(exportarMediLabel, GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
-								.addComponent(exportarMortLabel, GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE))
-							.addContainerGap())
-						.addGroup(jPanel1Layout.createSequentialGroup()
 							.addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING)
 								.addComponent(jLabel10, GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
 								.addComponent(jLabel11, GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
@@ -150,6 +144,14 @@ public class ViewEscolhaDigSC extends javax.swing.JFrame {
 									.addPreferredGap(ComponentPlacement.UNRELATED)
 									.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)))
 							.addContainerGap())))
+				.addGroup(Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+					.addGap(238)
+					.addComponent(exportarMortLabel, GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+					.addContainerGap())
+				.addGroup(Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+					.addGap(238)
+					.addComponent(exportarMediLabel, GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+					.addContainerGap())
 		);
 		jPanel1Layout.setVerticalGroup(
 			jPanel1Layout.createParallelGroup(Alignment.LEADING)
@@ -174,11 +176,11 @@ public class ViewEscolhaDigSC extends javax.swing.JFrame {
 							.addComponent(desempenhoLabel)
 							.addComponent(qtdeConsLabel))
 						.addComponent(exportarConsLabel))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(exportarMediLabel)
-					.addPreferredGap(ComponentPlacement.RELATED)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addComponent(exportarMortLabel)
-					.addGap(55)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(exportarMediLabel)
+					.addGap(45)
 					.addComponent(jLabel10)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(jLabel11)
