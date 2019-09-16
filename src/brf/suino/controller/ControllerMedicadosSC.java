@@ -331,7 +331,8 @@ public class ControllerMedicadosSC extends KeyAdapter implements FocusListener {
 										Integer.parseInt(view.getCausaJFT().getText().trim()),
 										Integer.parseInt(view.getDose1JFT().getText().trim()),
 										Integer.parseInt(view.getDose2JFT().getText().trim()),
-										Integer.parseInt(view.getDose3JFT().getText().trim())));
+										Integer.parseInt(view.getDose3JFT().getText().trim()),
+										Integer.parseInt(view.getControleJFT().getText().trim())));
 						controller.getModel().getModelStateDAO().saveModelState(false);
 						view.getDataJFT().setEnabled(true);
 						view.getDataJFT().grabFocus();
@@ -453,6 +454,8 @@ public class ControllerMedicadosSC extends KeyAdapter implements FocusListener {
 		TextFormatter.formatStringJFT(view.getDose2JFT(), view.getDose2JFT().getText(), 3);
 		view.getDose3JFT().setText(String.valueOf(erros.get(0).getDose3()));
 		TextFormatter.formatStringJFT(view.getDose3JFT(), view.getDose3JFT().getText(), 3);
+		view.getControleJFT().setText(String.valueOf(erros.get(0).getControle()));
+		TextFormatter.formatStringJFT(view.getControleJFT(), view.getControleJFT().getText(), 6);
 
 		erros.remove(0);
 	}

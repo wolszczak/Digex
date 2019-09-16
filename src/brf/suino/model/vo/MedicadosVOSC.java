@@ -19,12 +19,13 @@ public class MedicadosVOSC implements Serializable {
 	private int dose1;
 	private int dose2;
 	private int dose3;
+	private int controle;
 
 	public MedicadosVOSC() {
 	}
 
 	public MedicadosVOSC(int galpao, int baia, int sexo, int trat1, int trat2, int ordem, String data, int brinco, int medicamento,
-			int causa, int dose1, int dose2, int dose3) {
+			int causa, int dose1, int dose2, int dose3, int controle) {
 		this.galpao = galpao;
 		this.baia = baia;
 		this.sexo = sexo;
@@ -38,6 +39,7 @@ public class MedicadosVOSC implements Serializable {
 		this.dose1 = dose1;
 		this.dose2 = dose2;
 		this.dose3 = dose3;
+		this.controle = controle;
 	}
 
 	public int getBaia() {
@@ -142,6 +144,14 @@ public class MedicadosVOSC implements Serializable {
 
 	public void setDose3(int dose3) {
 		this.dose3 = dose3;
+	}
+
+	public int getControle() {
+		return controle;
+	}
+
+	public void setControle(int controle) {
+		this.controle = controle;
 	}
 
 }
