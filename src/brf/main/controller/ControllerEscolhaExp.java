@@ -1,14 +1,5 @@
 package brf.main.controller;
 
-import brf.frango.controller.ControllerF;
-import brf.main.view.ViewEscolhaExp;
-import brf.frango.model.ModelF;
-import brf.peru.controller.ControllerP;
-import brf.peru.model.ModelP;
-import brf.suino.controller.ControllerSC;
-import brf.suino.model.ModelSC;
-import brf.util.SystemFileFilter;
-import brf.util.SystemFileView;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.File;
@@ -17,6 +8,17 @@ import java.util.regex.Pattern;
 import javax.swing.JFileChooser;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
+
+import brf.frango.controller.ControllerF;
+import brf.frango.model.ModelF;
+import brf.main.view.ViewEscolhaExp;
+import brf.peru.controller.ControllerP;
+import brf.peru.model.ModelP;
+import brf.suino.controller.ControllerSC;
+import brf.suino.controller.ControllerST;
+import brf.suino.model.ModelSC;
+import brf.util.SystemFileFilter;
+import brf.util.SystemFileView;
 
 public class ControllerEscolhaExp extends KeyAdapter {
 	private ViewEscolhaExp viewEscolhaExp;
@@ -27,6 +29,7 @@ public class ControllerEscolhaExp extends KeyAdapter {
 	boolean frango, peru, suino;
 	private ModelSC msc;
 	private ControllerSC csc;
+	private ControllerST cst;
 
 	public void openWindow(String idDigitador) {
 		viewEscolhaExp = new ViewEscolhaExp();
@@ -116,6 +119,9 @@ public class ControllerEscolhaExp extends KeyAdapter {
 			System.out.println("SUÍNO");
 			break;
 		case KeyEvent.VK_4:
+			
+			break;
+		case KeyEvent.VK_5:
 			viewEscolhaExp.setVisible(false);
 			JFileChooser fileChooser = new JFileChooser();
 			fileChooser.addChoosableFileFilter(new SystemFileFilter());
@@ -128,13 +134,13 @@ public class ControllerEscolhaExp extends KeyAdapter {
 				String[] split = localArquivo.split(Pattern.quote("\\"));
 				String nomeArquivo = split[split.length - 1];
 				String tipoExp = "";
-				boolean versaoOK =  false;
-				if(split[6].equals("frango")) {
-					versaoOK = carregaModel(localArquivo,"F");	
-				}else if (split[6].equals("peru")) {
-					versaoOK = carregaModel(localArquivo,"P");	
-				}else if (split[6].equals("suinos_creche")) {
-					versaoOK = carregaModel(localArquivo,"SC");	
+				boolean versaoOK = false;
+				if (split[6].equals("frango")) {
+					versaoOK = carregaModel(localArquivo, "F");
+				} else if (split[6].equals("peru")) {
+					versaoOK = carregaModel(localArquivo, "P");
+				} else if (split[6].equals("suinos_creche")) {
+					versaoOK = carregaModel(localArquivo, "SC");
 				}
 				if (versaoOK && frango) {
 					cf.startEscolhaDig();

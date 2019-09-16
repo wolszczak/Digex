@@ -16,23 +16,23 @@ import brf.main.view.ViewEscolhaExp;
 import brf.suino.model.dao.ConsumoDAOSC;
 import brf.suino.model.dao.MedicadosDAOSC;
 import brf.suino.model.dao.MortalidadeDAOSC;
-import brf.suino.view.ViewEscolhaDigSC;
+import brf.suino.view.ViewEscolhaDigST;
 import brf.util.ExpFileFilter;
 import brf.util.SystemFileView;
 
-public class ControllerEscolhaDigSC extends KeyAdapter {
-	private final ControllerSC controller;
-	private ViewEscolhaDigSC viewEscolhaDig;
+public class ControllerEscolhaDigST extends KeyAdapter {
+	private final ControllerST controller;
+	private ViewEscolhaDigST viewEscolhaDig;
 	private ViewEscolhaExp viewEscolhaExp;
 	private ControllerEscolhaExp controllerescolhaExp;
 	private List<String> datasFases = new ArrayList<>();
 
-	public ControllerEscolhaDigSC(ControllerSC c) {
+	public ControllerEscolhaDigST(ControllerST c) {
 		controller = c;
 	}
 
 	public void openWindow(List<String> datasFases) {
-		viewEscolhaDig = new ViewEscolhaDigSC();
+		viewEscolhaDig = new ViewEscolhaDigST();
 		viewEscolhaDig.setTitle("DIGEX - Suínos Creche");
 		viewEscolhaDig.setResizable(false);
 		viewEscolhaDig.setLocationRelativeTo(null);
@@ -104,43 +104,43 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 			}
 			break;
 		case KeyEvent.VK_1:
-			viewEscolhaDig.setVisible(false);
-			if (controller.getModel().getExperimentoVO().getConsumo() != null
-					&& controller.getModel().getExperimentoVO().getConsumo().size() != 0) {
-				// VERIFICA SE O CONSUMO NA ULTIMA BAIA JÁ FOI FINALIZADO
-				if (controller.getModel().getExperimentoVO().getConsumo()
-						.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).isFinalizado()) {
-					// DIGITAÇÃO DO CONSUMO JÁ FOI FINALIZADA, VERIFICAR SE MORTALIDADE ESTÁ
-					// FINALIZADA E SE SÃO DA MESMA BAIA DO CONSUMO
-					if (controller.getModel().getExperimentoVO().getMortalidade() != null
-							&& controller.getModel().getExperimentoVO().getMortalidade().size() != 0) {
-//						if (controller.getModel().getExperimentoVO().getConsumo()
-//								.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getBaia() == controller.getModel()
-//										.getExperimentoVO().getMortalidade()
-//										.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).getBaia()) {
-						// ESCOLHA DIGITACAO MORTALIDADE PARA A ULTIMA BAIA DIGITADA
-						ControllerEscolhaTipoDigST controllerEscolhaTipoDigSC = new ControllerEscolhaTipoDigST(controller);
-						controllerEscolhaTipoDigSC.openWindow(datasFases);
-						viewEscolhaDig.setVisible(false);
-						break;
-//						}
-					} else {
-						ControllerEscolhaTipoDigST controllerEscolhaTipoDigSC = new ControllerEscolhaTipoDigST(controller);
-						controllerEscolhaTipoDigSC.openWindow(datasFases);
-						viewEscolhaDig.setVisible(false);
-						break;
-					}
-				} else {
-					// ABRIR TELA CONSUMOS
-					controller.startConsumoSC(datasFases);
-					System.out.println("Abrir tela de CONSUMOS");
-					break;
-				}
-			} else {
-				controller.startConsumoSC(datasFases);
-				System.out.println("Abrir tela de CONSUMOS");
-				break;
-			}
+//			viewEscolhaDig.setVisible(false);
+//			if (controller.getModel().getExperimentoVO().getConsumo() != null
+//					&& controller.getModel().getExperimentoVO().getConsumo().size() != 0) {
+//				// VERIFICA SE O CONSUMO NA ULTIMA BAIA JÁ FOI FINALIZADO
+//				if (controller.getModel().getExperimentoVO().getConsumo()
+//						.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).isFinalizado()) {
+//					// DIGITAÇÃO DO CONSUMO JÁ FOI FINALIZADA, VERIFICAR SE MORTALIDADE ESTÁ
+//					// FINALIZADA E SE SÃO DA MESMA BAIA DO CONSUMO
+//					if (controller.getModel().getExperimentoVO().getMortalidade() != null
+//							&& controller.getModel().getExperimentoVO().getMortalidade().size() != 0) {
+////						if (controller.getModel().getExperimentoVO().getConsumo()
+////								.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getBaia() == controller.getModel()
+////										.getExperimentoVO().getMortalidade()
+////										.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).getBaia()) {
+//						// ESCOLHA DIGITACAO MORTALIDADE PARA A ULTIMA BAIA DIGITADA
+//						ControllerEscolhaTipoDigST controllerEscolhaTipoDigSC = new ControllerEscolhaTipoDigST(controller);
+//						controllerEscolhaTipoDigSC.openWindow(datasFases);
+//						viewEscolhaDig.setVisible(false);
+//						break;
+////						}
+//					} else {
+//						ControllerEscolhaTipoDigST controllerEscolhaTipoDigSC = new ControllerEscolhaTipoDigST(controller);
+//						controllerEscolhaTipoDigSC.openWindow(datasFases);
+//						viewEscolhaDig.setVisible(false);
+//						break;
+//					}
+//				} else {
+//					// ABRIR TELA CONSUMOS
+//					controller.startConsumoSC(datasFases);
+//					System.out.println("Abrir tela de CONSUMOS");
+//					break;
+//				}
+//			} else {
+//				controller.startConsumoSC(datasFases);
+//				System.out.println("Abrir tela de CONSUMOS");
+//				break;
+//			}
 		case KeyEvent.VK_2:
 			if (controller.getModel().getExperimentoVO().getConsumo().isEmpty()) {
 				JOptionPane.showMessageDialog(viewEscolhaDig, "Não há registros de CONSUMOS!", "DIGEX - Aviso", JOptionPane.WARNING_MESSAGE);

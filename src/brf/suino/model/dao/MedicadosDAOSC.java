@@ -13,7 +13,7 @@ import brf.suino.model.vo.MedicadosVOSC;
 import brf.suino.model.vo.RmeVOSC;
 
 public class MedicadosDAOSC {
-	public static final String[] HEADER_CONSUMO = { "BAIA", "SEXO", "TRAT1", "TRAT2", "DATA", "MEDICA",	"CAUSA",	"DOSE1",	"DOSE2",	"DOSE3" };
+	public static final String[] HEADER_CONSUMO = { "BAIA", "SEXO", "TRAT1", "TRAT2", "DATA", "BRINCO","MEDICACAO",	"CAUSA",	"DOSE1",	"DOSE2",	"DOSE3" };
 
 	public static void exportarArquivo(InfoExpVOSC infoExp, List<MedicadosVOSC> medicados, String localArquivo) throws IOException {
 		List<String> header = new ArrayList<>();
@@ -36,6 +36,8 @@ public class MedicadosDAOSC {
 				buffer.write("" + m.getTrat2());
 				buffer.write(";");
 				buffer.write("" + m.getData());
+				buffer.write(";");
+				buffer.write("" + m.getBrinco());
 				buffer.write(";");
 				buffer.write("" + m.getMedicamento());
 				buffer.write(";");

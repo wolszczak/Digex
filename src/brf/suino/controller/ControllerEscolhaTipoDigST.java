@@ -17,12 +17,12 @@ import brf.suino.model.vo.MortalidadeVOSC;
 import brf.suino.model.vo.RmeVOSC;
 import brf.suino.view.ViewEscolhaTipoDigSC;
 
-public class ControllerEscolhaTipoDigSC extends KeyAdapter {
+public class ControllerEscolhaTipoDigST extends KeyAdapter {
 	private final ControllerSC controller;
 	private ViewEscolhaTipoDigSC view;
 	private List<String> datasFases;
 
-	public ControllerEscolhaTipoDigSC(ControllerSC c) {
+	public ControllerEscolhaTipoDigST(ControllerSC c) {
 		controller = c;
 	}
 

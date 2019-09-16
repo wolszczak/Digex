@@ -197,7 +197,7 @@ public class ControllerMortalidadeSC extends KeyAdapter implements FocusListener
 					JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 			if (option == 0) {
 				view.setVisible(false);
-				ControllerEscolhaTipoDigSC controllerEscolhaTipoDigSC = new ControllerEscolhaTipoDigSC(controller);
+				ControllerEscolhaTipoDigST controllerEscolhaTipoDigSC = new ControllerEscolhaTipoDigST(controller);
 				controllerEscolhaTipoDigSC.openWindow(datasFases);
 				System.out.println("Voltar");
 			}
@@ -224,7 +224,7 @@ public class ControllerMortalidadeSC extends KeyAdapter implements FocusListener
 				break;
 			case KeyEvent.VK_9:
 				view.setVisible(false);
-				ControllerEscolhaTipoDigSC controllerEscolha = new ControllerEscolhaTipoDigSC(controller);
+				ControllerEscolhaTipoDigST controllerEscolha = new ControllerEscolhaTipoDigST(controller);
 				controllerEscolha.openWindow(datasFases);
 				break;
 			}
