@@ -55,7 +55,7 @@ public class ViewEscolhaExp extends javax.swing.JFrame {
 
         retomarExpLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         retomarExpLabel.setForeground(new java.awt.Color(0, 153, 255));
-        retomarExpLabel.setText("5 - Retomar Experimento Salvo");
+        retomarExpLabel.setText("9 - Retomar Experimento Salvo");
 
         jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -114,12 +114,13 @@ public class ViewEscolhaExp extends javax.swing.JFrame {
         					.addComponent(jLabel5)
         					.addPreferredGap(ComponentPlacement.RELATED)
         					.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
-        				.addGroup(jPanel1Layout.createSequentialGroup()
+        				.addGroup(Alignment.LEADING, jPanel1Layout.createSequentialGroup()
         					.addGap(10)
         					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-        						.addComponent(jLabel4)
-        						.addComponent(retomarExpLabel))
-        					.addGap(0, 0, Short.MAX_VALUE)))
+        						.addComponent(retomarExpLabel, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
+        						.addGroup(jPanel1Layout.createSequentialGroup()
+        							.addComponent(jLabel4)
+        							.addGap(143, 143, Short.MAX_VALUE)))))
         			.addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -127,9 +128,9 @@ public class ViewEscolhaExp extends javax.swing.JFrame {
         		.addGroup(jPanel1Layout.createSequentialGroup()
         			.addContainerGap()
         			.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, 112, GroupLayout.PREFERRED_SIZE)
-        			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(retomarExpLabel)
         			.addPreferredGap(ComponentPlacement.UNRELATED)
+        			.addComponent(retomarExpLabel)
+        			.addPreferredGap(ComponentPlacement.RELATED)
         			.addComponent(jLabel4)
         			.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         			.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)

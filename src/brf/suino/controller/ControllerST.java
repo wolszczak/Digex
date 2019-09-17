@@ -1,37 +1,40 @@
 package brf.suino.controller;
 
+import java.util.List;
+
 import brf.suino.model.ModelSC;
+import brf.suino.model.ModelST;
 
 public class ControllerST {
-	private ModelSC modelSC;
+	private ModelST modelST;
 	private final String idDigitador;
 	private ControllerInfoExpST ctrlInfoExp;
 	private ControllerEscolhaDigST ctrlEscolhaDig;
 //	private ControllerConsumoSC ctrlConsumo;
 //	private ControllerMortalidadeSC ctrlMortalidade;
 
-	public ControllerST(ModelSC msc, String idDigitador) {
-		this.modelSC = msc;
+	public ControllerST(ModelST mst, String idDigitador) {
+		this.modelST = mst;
 		this.idDigitador = idDigitador;
 	}
 
-	public ModelSC getModel() {
-		return modelSC;
+	public ModelST getModel() {
+		return modelST;
 	}
 
 	public String getIdDigitador() {
 		return idDigitador;
 	}
 
-//	public void startModuloSuino() {
-//		ctrlInfoExp = new ControllerInfoExpSC(this);
-//		ctrlInfoExp.openWindow(idDigitador);
-//	}
+	public void startModuloSuino() {
+		ctrlInfoExp = new ControllerInfoExpST(this);
+		ctrlInfoExp.openWindow(idDigitador);
+	}
 
-//	public void startEscolhaDig(List<String> datasFase) {
-//		ctrlEscolhaDig = new ControllerEscolhaDigSC(this);
-//		ctrlEscolhaDig.openWindow(datasFase);
-//	}
+	public void startEscolhaDig(List<String> datasFase) {
+		ctrlEscolhaDig = new ControllerEscolhaDigST(this);
+		ctrlEscolhaDig.openWindow(datasFase);
+	}
 
 //	public void startConsumoSC(List<String> datasFase) {
 //		ctrlConsumo = new ControllerConsumoSC(this);

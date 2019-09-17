@@ -22,9 +22,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.border.Border;
 
 import brf.main.controller.ControllerEscolhaExp;
-import brf.suino.model.vo.InfoExpVOSC;
 import brf.suino.model.vo.InfoExpVOST;
-import brf.suino.view.ViewInfoExpSC;
 import brf.suino.view.ViewInfoExpST;
 import brf.util.FocusOrderPolicy;
 import brf.util.TextFormatter;
@@ -57,7 +55,7 @@ public class ControllerInfoExpST extends KeyAdapter implements ActionListener, F
 
 	public void openWindow(String idDigitador) {
 		viewInfoExp = new ViewInfoExpST();
-		viewInfoExp.setTitle("DIGEX - Suínos Creche");
+		viewInfoExp.setTitle("DIGEX - Suínos Terminação");
 		viewInfoExp.setResizable(false);
 		viewInfoExp.setLocationRelativeTo(null);
 		viewInfoExp.setVisible(true);
@@ -232,10 +230,10 @@ public class ControllerInfoExpST extends KeyAdapter implements ActionListener, F
 				break;
 			case KeyEvent.VK_1:
 				if (!duplaDigitacao) {
-//					info1 = new InfoExpVOSC(idDigitador, protocolo, idLocal, local, galpao, teste, idArea, area,
-//							Integer.parseInt(viewInfoExp.getNrBaiaJFT().getText()), inicioExp, fimExp,
-//							Integer.parseInt(viewInfoExp.getIdadeAlojJFT().getText()),
-//							Integer.parseInt(viewInfoExp.getNrFasesJFT().getText()), datasFase);
+					info1 = new InfoExpVOST(idDigitador, protocolo, idLocal, local, galpao, teste, idArea, area,
+							Integer.parseInt(viewInfoExp.getNrBaiaJFT().getText()), inicioExp, fimExp,
+							Integer.parseInt(viewInfoExp.getIdadeAlojJFT().getText()),
+							Integer.parseInt(viewInfoExp.getNrFasesJFT().getText()), datasFase);
 					duplaDigitacao = true;
 					viewInfoExp.setVisible(false);
 					view1 = viewInfoExp;
@@ -251,31 +249,30 @@ public class ControllerInfoExpST extends KeyAdapter implements ActionListener, F
 						resetaFasesAbates();
 					}
 				} else if (duplaDigitacao) {
-//					info2 = new InfoExpVOSC(idDigitador, protocolo, idLocal, local, galpao, teste, idArea, area,
-//							Integer.parseInt(viewInfoExp.getNrBaiaJFT().getText()), inicioExp, fimExp,
-//							Integer.parseInt(viewInfoExp.getIdadeAlojJFT().getText()),
-//							Integer.parseInt(viewInfoExp.getNrFasesJFT().getText()), datasFase);
-//					boolean isOk = controller.getModel().getInfoExpBO().duplaDigitacao(info1, info2);
-//					if (isOk) {
-//						viewInfoExp.setVisible(false);
-//						controller.startEscolhaDig(datasFase);
-//						System.out.println("Continuar digitação");
-//					} else {
-//						JOptionPane.showMessageDialog(viewInfoExp, "Problema(s):\n" + info2.getErrorMessage(), "DIGEX - Dupla Digitação",
-//								JOptionPane.ERROR_MESSAGE);
-//						duplaDigitacao = false;
-//						viewInfoExp.setVisible(false);
-//						view2 = viewInfoExp;
-//						viewInfoExp = view1;
-//						viewInfoExp.setVisible(true);
-//						viewInfoExp.getOpcaoJFT().setEnabled(false);
-//						viewInfoExp.getProtocoloJFT().setEnabled(true);
-//						viewInfoExp.getProtocoloJFT().grabFocus();
-//						datasFase = new ArrayList<>();
-//						mostraCamposErrados();
-//						resetaFasesAbates();
-////                        }
-//					}
+					info2 = new InfoExpVOST(idDigitador, protocolo, idLocal, local, galpao, teste, idArea, area,
+							Integer.parseInt(viewInfoExp.getNrBaiaJFT().getText()), inicioExp, fimExp,
+							Integer.parseInt(viewInfoExp.getIdadeAlojJFT().getText()),
+							Integer.parseInt(viewInfoExp.getNrFasesJFT().getText()), datasFase);
+					boolean isOk = controller.getModel().getInfoExpBO().duplaDigitacao(info1, info2);
+					if (isOk) {
+						viewInfoExp.setVisible(false);
+						controller.startEscolhaDig(datasFase);
+						System.out.println("Continuar digitação");
+					} else {
+						JOptionPane.showMessageDialog(viewInfoExp, "Problema(s):\n" + info2.getErrorMessage(), "DIGEX - Dupla Digitação",
+								JOptionPane.ERROR_MESSAGE);
+						duplaDigitacao = false;
+						viewInfoExp.setVisible(false);
+						view2 = viewInfoExp;
+						viewInfoExp = view1;
+						viewInfoExp.setVisible(true);
+						viewInfoExp.getOpcaoJFT().setEnabled(false);
+						viewInfoExp.getProtocoloJFT().setEnabled(true);
+						viewInfoExp.getProtocoloJFT().grabFocus();
+						datasFase = new ArrayList<>();
+						mostraCamposErrados();
+						resetaFasesAbates();
+                        }
 				}
 				break;
 			case KeyEvent.VK_9:

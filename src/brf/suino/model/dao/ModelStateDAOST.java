@@ -26,7 +26,7 @@ public class ModelStateDAOST {
 
 	public void saveModelState(boolean backup) {
 		String localArquivo = new JFileChooser().getFileSystemView().getDefaultDirectory().toString()
-				+ "\\DIGEX\\experimentos\\suinos_creche\\";
+				+ "\\DIGEX\\experimentos\\suinos_terminacao\\";
 		String nomeArquivo = model.getExperimentoVO().getInfoExp().getTeste();
 		try {
 			Files.createDirectories(Paths.get(localArquivo));
@@ -74,11 +74,6 @@ public class ModelStateDAOST {
 			c.printStackTrace();
 			return false;
 		}
-//		ExperimentoVOSC e = (ExperimentoVOSC) obj;
-//		e.setMedicados(new ArrayList<>());
-//		e.setMortalidade(new ArrayList<>());
-//		model.setExperimentoVO((ExperimentoVOSC) obj);
-//		saveModelState(false);
 		return true;
 	}
 }

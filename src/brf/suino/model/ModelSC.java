@@ -16,7 +16,6 @@ public class ModelSC {
     private ExperimentoVOSC experimentoVO;
     private InfoExpBOSC infoExpBO;
     private InfoExpVOSC infoExpVO;
-  //    private AvaliacaoPeDAOP avalPeDAO;
     
     public ModelSC() {
        modelStateDAO = new ModelStateDAOSC(this);

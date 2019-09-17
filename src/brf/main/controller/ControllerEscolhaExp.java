@@ -17,6 +17,7 @@ import brf.peru.model.ModelP;
 import brf.suino.controller.ControllerSC;
 import brf.suino.controller.ControllerST;
 import brf.suino.model.ModelSC;
+import brf.suino.model.ModelST;
 import brf.util.SystemFileFilter;
 import brf.util.SystemFileView;
 
@@ -26,9 +27,10 @@ public class ControllerEscolhaExp extends KeyAdapter {
 	private ControllerF cf;
 	private ModelP mp;
 	private ControllerP cp;
-	boolean frango, peru, suino;
+	boolean frango, peru, suinoCreche, suinoTerminacao;
 	private ModelSC msc;
 	private ControllerSC csc;
+	private ModelST mst;
 	private ControllerST cst;
 
 	public void openWindow(String idDigitador) {
@@ -45,6 +47,8 @@ public class ControllerEscolhaExp extends KeyAdapter {
 		cp = new ControllerP(mp, idDigitador);
 		msc = new ModelSC();
 		csc = new ControllerSC(msc, idDigitador);
+		mst = new ModelST();
+		cst = new ControllerST(mst, idDigitador);
 	}
 
 	public void resumeWindow() {
@@ -59,7 +63,7 @@ public class ControllerEscolhaExp extends KeyAdapter {
 				cf.getModel().getModelStateDAO().loadModelState(localArquivo);
 				frango = true;
 				peru = false;
-				suino = false;
+				suinoCreche = false;
 				return true;
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -70,7 +74,7 @@ public class ControllerEscolhaExp extends KeyAdapter {
 				cp.getModel().getModelStateDAO().loadModelState(localArquivo);
 				peru = true;
 				frango = false;
-				suino = false;
+				suinoCreche = false;
 				return true;
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -79,13 +83,25 @@ public class ControllerEscolhaExp extends KeyAdapter {
 		} else if (tipoExp.equals("SC")) {
 			try {
 				csc.getModel().getModelStateDAO().loadModelState(localArquivo);
-				suino = true;
+				suinoCreche = true;
 				frango = false;
 				peru = false;
 				return true;
 			} catch (Exception e) {
 				e.printStackTrace();
-				System.out.println("tentou carregar experimento de suino");
+				System.out.println("tentou carregar experimento de suino creche");
+			}
+		} else if (tipoExp.equals("ST")) {
+			try {
+				cst.getModel().getModelStateDAO().loadModelState(localArquivo);
+				suinoTerminacao = true;
+				suinoCreche = false;
+				frango = false;
+				peru = false;
+				return true;
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println("tentou carregar experimento de suino terminação");
 			}
 		}
 		return false;
@@ -116,12 +132,14 @@ public class ControllerEscolhaExp extends KeyAdapter {
 		case KeyEvent.VK_3:
 			viewEscolhaExp.setVisible(false);
 			csc.startModuloSuino();
-			System.out.println("SUÍNO");
+			System.out.println("SUÍNO CRECHE");
 			break;
 		case KeyEvent.VK_4:
-			
+			viewEscolhaExp.setVisible(false);
+			cst.startModuloSuino();
+			System.out.println("SUÍNO CRECHE");
 			break;
-		case KeyEvent.VK_5:
+		case KeyEvent.VK_9:
 			viewEscolhaExp.setVisible(false);
 			JFileChooser fileChooser = new JFileChooser();
 			fileChooser.addChoosableFileFilter(new SystemFileFilter());
@@ -141,13 +159,18 @@ public class ControllerEscolhaExp extends KeyAdapter {
 					versaoOK = carregaModel(localArquivo, "P");
 				} else if (split[6].equals("suinos_creche")) {
 					versaoOK = carregaModel(localArquivo, "SC");
+				} else if (split[6].equals("suinos_terminacao")) {
+					versaoOK = carregaModel(localArquivo, "ST");
 				}
+
 				if (versaoOK && frango) {
 					cf.startEscolhaDig();
 				} else if (versaoOK && peru) {
 					cp.startEscolhaDig(cp.getModel().getExperimentoVO().getInfoExp().getIdadeFase());
-				} else if (versaoOK && suino) {
+				} else if (versaoOK && suinoCreche) {
 					csc.startEscolhaDig(csc.getModel().getExperimentoVO().getInfoExp().getDatasFases());
+				} else if (versaoOK && suinoTerminacao) {
+					cst.startEscolhaDig(cst.getModel().getExperimentoVO().getInfoExp().getDatasFases());
 				} else {
 					JOptionPane.showMessageDialog(viewEscolhaExp, "Arquivo criado em outra versão do Software!", "DIGEX - Aviso",
 							JOptionPane.WARNING_MESSAGE);
