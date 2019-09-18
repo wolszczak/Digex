@@ -119,13 +119,13 @@ public class ControllerEscolhaDigSC extends KeyAdapter {
 //										.getExperimentoVO().getMortalidade()
 //										.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).getBaia()) {
 						// ESCOLHA DIGITACAO MORTALIDADE PARA A ULTIMA BAIA DIGITADA
-						ControllerEscolhaTipoDigST controllerEscolhaTipoDigSC = new ControllerEscolhaTipoDigST(controller);
+						ControllerEscolhaTipoDigSC controllerEscolhaTipoDigSC = new ControllerEscolhaTipoDigSC(controller);
 						controllerEscolhaTipoDigSC.openWindow(datasFases);
 						viewEscolhaDig.setVisible(false);
 						break;
 //						}
 					} else {
-						ControllerEscolhaTipoDigST controllerEscolhaTipoDigSC = new ControllerEscolhaTipoDigST(controller);
+						ControllerEscolhaTipoDigSC controllerEscolhaTipoDigSC = new ControllerEscolhaTipoDigSC(controller);
 						controllerEscolhaTipoDigSC.openWindow(datasFases);
 						viewEscolhaDig.setVisible(false);
 						break;

@@ -7,13 +7,13 @@ import java.util.List;
 public class ExperimentoVOST implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private InfoExpVOST infoExp;
+	private List<MortalidadeVOSC> mortalidade;
 //	private List<ConsumoVOST> consumo;
-//	private List<MortalidadeVOSC> mortalidade;
-//	private List<MedicadosVOSC> medicados;
+	private List<MedicadosVOST> medicados;
 
 	public ExperimentoVOST() {
+		this.mortalidade = new ArrayList<>();
 //		this.consumo = new ArrayList<>();
-//		this.mortalidade = new ArrayList<>();
 //		this.medicados = new ArrayList<>();
 	}
 
@@ -23,6 +23,22 @@ public class ExperimentoVOST implements Serializable {
 
 	public void setInfoExp(InfoExpVOST infoExp) {
 		this.infoExp = infoExp;
+	}
+
+	public List<MortalidadeVOSC> getMortalidade() {
+		return mortalidade;
+	}
+
+	public void setMortalidade(List<MortalidadeVOSC> mortalidade) {
+		this.mortalidade = mortalidade;
+	}
+
+	public List<MedicadosVOST> getMedicados() {
+		return medicados;
+	}
+
+	public void setMedicados(List<MedicadosVOST> medicados) {
+		this.medicados = medicados;
 	}
 
 

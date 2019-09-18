@@ -1,34 +1,26 @@
 package brf.suino.controller;
 
-import java.awt.Color;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 
-import brf.peru.model.vo.AbateVOP;
-import brf.peru.model.vo.BaiaAmostradosVOP;
-import brf.suino.model.vo.ConsumoVOSC;
-import brf.suino.model.vo.MedicadosVOSC;
-import brf.suino.model.vo.MortalidadeVOSC;
-import brf.suino.model.vo.RmeVOSC;
-import brf.suino.view.ViewEscolhaTipoDigSC;
+import brf.suino.view.ViewEscolhaTipoDigST;
 
 public class ControllerEscolhaTipoDigST extends KeyAdapter {
-	private final ControllerSC controller;
-	private ViewEscolhaTipoDigSC view;
+	private final ControllerST controller;
+	private ViewEscolhaTipoDigST view;
 	private List<String> datasFases;
 
-	public ControllerEscolhaTipoDigST(ControllerSC c) {
+	public ControllerEscolhaTipoDigST(ControllerST c) {
 		controller = c;
 	}
 
 	public void openWindow(List<String> datasFases) {
 		this.datasFases = datasFases;
-		view = new ViewEscolhaTipoDigSC();
+		view = new ViewEscolhaTipoDigST();
 		view.setTitle("DIGEX - Suínos Creche");
 		view.setResizable(false);
 		view.setLocationRelativeTo(null);
@@ -40,26 +32,26 @@ public class ControllerEscolhaTipoDigST extends KeyAdapter {
 
 	public void histSetup() {
 		int obsAbate[] = { 0, 0, 0 };
-		int lastBaia = controller.getModel().getExperimentoVO().getConsumo()
-				.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getBaia();
-		List<ConsumoVOSC> lista = new ArrayList<>();
+//		int lastBaia = controller.getModel().getExperimentoVO().getConsumo()
+//				.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getBaia();
+//		List<ConsumoVOSC> lista = new ArrayList<>();
+//
+//		obsAbate[0] = controller.getModel().getExperimentoVO().getConsumo()
+//				.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getRme().size();
+//
+//		for (MortalidadeVOSC m : controller.getModel().getExperimentoVO().getMortalidade()) {
+//			if (m.getBaia() == lastBaia) {
+//				obsAbate[1]++;
+//			}
+//		}
+//
+//		for (MedicadosVOSC m : controller.getModel().getExperimentoVO().getMedicados()) {
+//			if (m.getBaia() == lastBaia) {
+//				obsAbate[2]++;
+//			}
+//		}
 
-		obsAbate[0] = controller.getModel().getExperimentoVO().getConsumo()
-				.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getRme().size();
-
-		for (MortalidadeVOSC m : controller.getModel().getExperimentoVO().getMortalidade()) {
-			if (m.getBaia() == lastBaia) {
-				obsAbate[1]++;
-			}
-		}
-
-		for (MedicadosVOSC m : controller.getModel().getExperimentoVO().getMedicados()) {
-			if (m.getBaia() == lastBaia) {
-				obsAbate[2]++;
-			}
-		}
-
-		view.getLabelBaia().setText(String.valueOf(lastBaia));
+//		view.getLabelBaia().setText(String.valueOf(lastBaia));
 		view.getLabelBaiaRegistros().setText(obsAbate[0] + " registro(s)");
 		view.getLabelMortalidadeRegistros().setText(obsAbate[1] + " registro(s)");
 		view.getLabelMedicadosRegistros().setText(obsAbate[2] + " registro(s)");
@@ -86,40 +78,40 @@ public class ControllerEscolhaTipoDigST extends KeyAdapter {
 			break;
 		case KeyEvent.VK_1:
 			view.setVisible(false);
-			ControllerConsumoSC consumo = new ControllerConsumoSC(controller);
-			consumo.openWindow(datasFases);
+//			ControllerConsumoST consumo = new ControllerConsumoST(controller);
+//			consumo.openWindow(datasFases);
 			break;
 		case KeyEvent.VK_2:
-			view.setVisible(false);
-			ControllerMortalidadeSC mortalidade = new ControllerMortalidadeSC(controller);
-			mortalidade.openWindow(
-					controller.getModel().getExperimentoVO().getConsumo()
-							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getGalpao(),
-					controller.getModel().getExperimentoVO().getConsumo()
-							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getBaia(),
-					controller.getModel().getExperimentoVO().getConsumo()
-							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getSexo(),
-					controller.getModel().getExperimentoVO().getConsumo()
-							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getTrat1(),
-					controller.getModel().getExperimentoVO().getConsumo()
-							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getTrat2(),
-					datasFases);
+//			view.setVisible(false);
+//			ControllerMortalidadeSC mortalidade = new ControllerMortalidadeSC(controller);
+//			mortalidade.openWindow(
+//					controller.getModel().getExperimentoVO().getConsumo()
+//							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getGalpao(),
+//					controller.getModel().getExperimentoVO().getConsumo()
+//							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getBaia(),
+//					controller.getModel().getExperimentoVO().getConsumo()
+//							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getSexo(),
+//					controller.getModel().getExperimentoVO().getConsumo()
+//							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getTrat1(),
+//					controller.getModel().getExperimentoVO().getConsumo()
+//							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getTrat2(),
+//					datasFases);
 			break;
 		case KeyEvent.VK_3:
 			view.setVisible(false);
-			ControllerMedicadosSC medicados = new ControllerMedicadosSC(controller);
-			medicados.openWindow(
-					controller.getModel().getExperimentoVO().getConsumo()
-							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getGalpao(),
-					controller.getModel().getExperimentoVO().getConsumo()
-							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getBaia(),
-					controller.getModel().getExperimentoVO().getConsumo()
-							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getSexo(),
-					controller.getModel().getExperimentoVO().getConsumo()
-							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getTrat1(),
-					controller.getModel().getExperimentoVO().getConsumo()
-							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getTrat2(),
-					datasFases);
+//			ControllerMedicadosSC medicados = new ControllerMedicadosSC(controller);
+//			medicados.openWindow(
+//					controller.getModel().getExperimentoVO().getConsumo()
+//							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getGalpao(),
+//					controller.getModel().getExperimentoVO().getConsumo()
+//							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getBaia(),
+//					controller.getModel().getExperimentoVO().getConsumo()
+//							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getSexo(),
+//					controller.getModel().getExperimentoVO().getConsumo()
+//							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getTrat1(),
+//					controller.getModel().getExperimentoVO().getConsumo()
+//							.get(controller.getModel().getExperimentoVO().getConsumo().size() - 1).getTrat2(),
+//					datasFases);
 			break;
 		case KeyEvent.VK_9:
 		case KeyEvent.VK_ESCAPE:
@@ -127,7 +119,7 @@ public class ControllerEscolhaTipoDigST extends KeyAdapter {
 					JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 			if (option == 0) {
 				view.setVisible(false);
-				ControllerEscolhaDigSC ce = new ControllerEscolhaDigSC(controller);
+				ControllerEscolhaDigST ce = new ControllerEscolhaDigST(controller);
 				ce.openWindow(datasFases);
 				System.out.println("Voltar");
 			}
