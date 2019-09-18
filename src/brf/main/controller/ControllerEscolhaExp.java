@@ -137,7 +137,7 @@ public class ControllerEscolhaExp extends KeyAdapter {
 		case KeyEvent.VK_4:
 			viewEscolhaExp.setVisible(false);
 			cst.startModuloSuino();
-			System.out.println("SUÍNO CRECHE");
+			System.out.println("SUÍNO TERMINAÇÃO");
 			break;
 		case KeyEvent.VK_9:
 			viewEscolhaExp.setVisible(false);

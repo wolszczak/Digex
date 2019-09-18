@@ -5,6 +5,10 @@ import java.util.List;
 import java.util.Objects;
 
 public class InfoExpVOST implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String idDigitador;
 	private String protocolo;
 	private int local;

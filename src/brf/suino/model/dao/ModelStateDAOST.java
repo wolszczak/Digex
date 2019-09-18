@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 
 import brf.suino.model.ModelST;
+import brf.suino.model.vo.ExperimentoVOST;
 
 public class ModelStateDAOST {
 	private final ModelST model;
@@ -74,6 +75,7 @@ public class ModelStateDAOST {
 			c.printStackTrace();
 			return false;
 		}
+		model.setExperimentoVO((ExperimentoVOST) obj);
 		return true;
 	}
 }

@@ -18,4 +18,8 @@ public class InfoExpBOST {
 		} else
 			return false;
 	}
+
+	public ModelST getModel() {
+		return model;
+	}
 }
