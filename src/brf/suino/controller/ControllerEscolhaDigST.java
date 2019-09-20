@@ -3,22 +3,14 @@ package brf.suino.controller;
 import java.awt.Color;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 import brf.main.controller.ControllerEscolhaExp;
 import brf.main.view.ViewEscolhaExp;
-import brf.suino.model.dao.ConsumoDAOSC;
-import brf.suino.model.dao.MedicadosDAOSC;
-import brf.suino.model.dao.MortalidadeDAOSC;
 import brf.suino.view.ViewEscolhaDigST;
-import brf.util.ExpFileFilter;
-import brf.util.SystemFileView;
 
 public class ControllerEscolhaDigST extends KeyAdapter {
 	private final ControllerST controller;
@@ -41,10 +33,7 @@ public class ControllerEscolhaDigST extends KeyAdapter {
 		view.getTesteJFT().setText(controller.getModel().getExperimentoVO().getInfoExp().getTeste());
 		view.getOpcaoJFT().addKeyListener(this);
 		this.datasFases = datasFases;
-//		if (controller.getModel().getExperimentoVO().getConsumo() != null
-//				&& controller.getModel().getExperimentoVO().getConsumo().isEmpty()) {
-//			viewEscolhaDig.getExportarConsLabel().setForeground(Color.GRAY);
-//		}
+
 		if (controller.getModel().getExperimentoVO().getMortalidade() != null
 				&& controller.getModel().getExperimentoVO().getMortalidade().isEmpty()) {
 			view.getExportarMortLabel().setForeground(Color.GRAY);
@@ -53,6 +42,7 @@ public class ControllerEscolhaDigST extends KeyAdapter {
 				&& controller.getModel().getExperimentoVO().getMedicados().isEmpty()) {
 			view.getExportarMediLabel().setForeground(Color.GRAY);
 		}
+		
 		histSetup();
 	}
 
@@ -76,8 +66,8 @@ public class ControllerEscolhaDigST extends KeyAdapter {
 	public void keyTyped(KeyEvent e) {
 		switch (e.getKeyChar()) {
 		case KeyEvent.VK_0:
-			int n = JOptionPane.showConfirmDialog(view, "Deseja realmente sair do programa?", "DIGEX - Sair",
-					JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+			int n = JOptionPane.showConfirmDialog(view, "Deseja realmente sair do programa?", "DIGEX - Sair", JOptionPane.YES_NO_OPTION,
+					JOptionPane.WARNING_MESSAGE);
 			if (n == 0) {
 				System.out.println("Fim...");
 				System.exit(0);
@@ -96,8 +86,8 @@ public class ControllerEscolhaDigST extends KeyAdapter {
 			break;
 		case KeyEvent.VK_1:
 			view.setVisible(false);
-//			ControllerEscolhaTipoDigST controllerEscolhaTipoDigST =  new ControllerEscolhaTipoDigST(controller);
-//			controllerEscolhaTipoDigST.openWindow(datasFases);
+			ControllerEscolhaTipoDigST controllerEscolhaTipoDigST = new ControllerEscolhaTipoDigST(controller);
+			controllerEscolhaTipoDigST.openWindow(datasFases);
 			break;
 		case KeyEvent.VK_2:
 			break;

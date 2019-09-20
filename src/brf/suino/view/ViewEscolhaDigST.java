@@ -6,6 +6,8 @@ import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.Color;
+import java.awt.Font;
+import javax.swing.SwingConstants;
 
 public class ViewEscolhaDigST extends javax.swing.JFrame {
 	private static final long serialVersionUID = 1L;
@@ -48,10 +50,11 @@ public class ViewEscolhaDigST extends javax.swing.JFrame {
 		jLabel10 = new javax.swing.JLabel();
 		jLabel11 = new javax.swing.JLabel();
 		opcaoJFT = new javax.swing.JFormattedTextField();
-		qtdeConsLabel = new javax.swing.JLabel();
 		exportarLivreLabel = new javax.swing.JLabel();
 		jLabel6 = new javax.swing.JLabel();
+		jLabel6.setFont(new Font("Tahoma", Font.BOLD, 11));
 		jLabel7 = new javax.swing.JLabel();
+		jLabel7.setFont(new Font("Tahoma", Font.BOLD, 11));
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,9 +93,6 @@ public class ViewEscolhaDigST extends javax.swing.JFrame {
 		}
 		opcaoJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-		qtdeConsLabel.setForeground(new java.awt.Color(0, 153, 255));
-		qtdeConsLabel.setText("999 registro(s)");
-
 		exportarLivreLabel.setText("[5] - Arquivo de Cons. Livre");
 
 		jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -103,133 +103,108 @@ public class ViewEscolhaDigST extends javax.swing.JFrame {
 
 		exportarMediLabel = new JLabel();
 		exportarMediLabel.setText("[4] - Arquivo de Medicados");
-		
+
 		lblMedicados = new JLabel();
-		lblMedicados.setText("[2] - Frigorífico");
-		
-		label_1 = new JLabel();
-		label_1.setText("999/999 registro(s)");
-		label_1.setForeground(new Color(0, 153, 255));
-		
+		lblMedicados.setText("[3] - Frigorífico");
+
+		frigoLabel = new JLabel();
+		frigoLabel.setText("999/999 registro(s)");
+		frigoLabel.setForeground(new Color(0, 153, 255));
+
 		exportarTratosLabel = new JLabel();
 		exportarTratosLabel.setText("[6] - Arquivo de Cons. Tratos");
-		
+
 		exportarFrigoLabel = new JLabel();
 		exportarFrigoLabel.setText("[7] - Arquivo de Frigorífico");
 
+		lblConsumo = new JLabel();
+		lblConsumo.setText("[2] - Consumo de Ração");
+
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-		jPanel1Layout.setHorizontalGroup(
-			jPanel1Layout.createParallelGroup(Alignment.TRAILING)
-				.addGroup(jPanel1Layout.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-						.addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING)
-							.addGroup(jPanel1Layout.createSequentialGroup()
-								.addComponent(jLabel3, GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
-								.addGap(51))
-							.addGroup(jPanel1Layout.createSequentialGroup()
-								.addGap(0)
-								.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-									.addComponent(jLabel2)
-									.addGroup(jPanel1Layout.createSequentialGroup()
-										.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING, false)
-											.addGroup(jPanel1Layout.createSequentialGroup()
-												.addComponent(desempenhoLabel, GroupLayout.PREFERRED_SIZE, 92, GroupLayout.PREFERRED_SIZE)
-												.addGap(10)
-												.addComponent(qtdeConsLabel, GroupLayout.PREFERRED_SIZE, 116, GroupLayout.PREFERRED_SIZE))
-											.addComponent(jLabel6, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-											.addComponent(jLabel7, GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
-											.addComponent(exportarMortLabel, GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)))
-									.addGroup(jPanel1Layout.createSequentialGroup()
-										.addComponent(jLabel1)
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-											.addComponent(testeJFT, GroupLayout.PREFERRED_SIZE, 74, GroupLayout.PREFERRED_SIZE)
-											.addComponent(protocoloJFT, GroupLayout.PREFERRED_SIZE, 160, GroupLayout.PREFERRED_SIZE))))
+		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING).addGroup(jPanel1Layout
+				.createSequentialGroup().addContainerGap()
+				.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+						.addGroup(jPanel1Layout.createSequentialGroup()
+								.addComponent(jLabel3, GroupLayout.DEFAULT_SIZE, 406, Short.MAX_VALUE).addGap(51))
+						.addGroup(jPanel1Layout
+								.createSequentialGroup().addGap(0).addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+										.addComponent(jLabel2)
+										.addGroup(jPanel1Layout.createSequentialGroup().addGroup(jPanel1Layout
+												.createParallelGroup(Alignment.LEADING)
+												.addGroup(jPanel1Layout.createSequentialGroup()
+														.addComponent(desempenhoLabel, GroupLayout.PREFERRED_SIZE, 119,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED).addComponent(frigoLabel))
+												.addComponent(jLabel6, GroupLayout.PREFERRED_SIZE, 248, GroupLayout.PREFERRED_SIZE))
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+														.addComponent(jLabel7, GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
+														.addGroup(jPanel1Layout.createSequentialGroup().addGap(10)
+																.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+																		.addComponent(exportarTratosLabel, Alignment.TRAILING,
+																				GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
+																		.addComponent(exportarLivreLabel, Alignment.TRAILING,
+																				GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
+																		.addComponent(exportarMediLabel, Alignment.TRAILING,
+																				GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
+																		.addComponent(exportarMortLabel, GroupLayout.DEFAULT_SIZE, 183,
+																				Short.MAX_VALUE)
+																		.addComponent(exportarFrigoLabel, GroupLayout.PREFERRED_SIZE, 159,
+																				GroupLayout.PREFERRED_SIZE)))))
+										.addGroup(jPanel1Layout.createSequentialGroup().addComponent(jLabel1)
+												.addPreferredGap(ComponentPlacement.UNRELATED)
+												.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+														.addComponent(testeJFT, GroupLayout.PREFERRED_SIZE, 74, GroupLayout.PREFERRED_SIZE)
+														.addComponent(protocoloJFT, GroupLayout.PREFERRED_SIZE, 160,
+																GroupLayout.PREFERRED_SIZE))))
 								.addContainerGap())
-							.addGroup(jPanel1Layout.createSequentialGroup()
-								.addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING)
-									.addComponent(jLabel10, GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
-									.addComponent(jLabel11, GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
-									.addGroup(jPanel1Layout.createSequentialGroup()
-										.addComponent(jLabel9, GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)))
-								.addContainerGap())
-							.addGroup(jPanel1Layout.createSequentialGroup()
+						.addGroup(
+								jPanel1Layout.createSequentialGroup()
+										.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+												.addComponent(jLabel10, GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
+												.addComponent(jLabel11, GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
+												.addGroup(Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+														.addComponent(jLabel9, GroupLayout.PREFERRED_SIZE, 361, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED).addComponent(opcaoJFT,
+																GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)))
+										.addContainerGap())
+						.addGroup(jPanel1Layout.createSequentialGroup()
 								.addComponent(lblMedicados, GroupLayout.PREFERRED_SIZE, 92, GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(ComponentPlacement.UNRELATED)
-								.addComponent(label_1, GroupLayout.PREFERRED_SIZE, 116, GroupLayout.PREFERRED_SIZE)
-								.addGap(10)
-								.addComponent(exportarMediLabel, GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
-								.addContainerGap())
-							.addGroup(jPanel1Layout.createSequentialGroup()
-								.addGap(228)
-								.addComponent(exportarLivreLabel, GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
-								.addContainerGap())
-							.addGroup(Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-								.addGap(228)
-								.addComponent(exportarTratosLabel, GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)))
+								.addContainerGap(365, Short.MAX_VALUE))
 						.addGroup(jPanel1Layout.createSequentialGroup()
-							.addGap(228)
-							.addComponent(exportarFrigoLabel, GroupLayout.PREFERRED_SIZE, 151, GroupLayout.PREFERRED_SIZE)
-							.addContainerGap())))
-		);
-		jPanel1Layout.setVerticalGroup(
-			jPanel1Layout.createParallelGroup(Alignment.LEADING)
-				.addGroup(jPanel1Layout.createSequentialGroup()
-					.addGap(29)
-					.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(jLabel1)
+								.addComponent(lblConsumo, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE)
+								.addContainerGap()))));
+		jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel1Layout.createSequentialGroup()
+				.addGap(29)
+				.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE).addComponent(jLabel1)
 						.addComponent(protocoloJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(4)
-					.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(jLabel2)
-						.addComponent(testeJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(18)
-					.addComponent(jLabel3)
-					.addGap(18)
-					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-						.addComponent(jLabel6)
-						.addComponent(jLabel7))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-						.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
-							.addComponent(desempenhoLabel)
-							.addComponent(qtdeConsLabel))
-						.addComponent(exportarMortLabel))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-						.addGroup(jPanel1Layout.createSequentialGroup()
-							.addComponent(exportarMediLabel)
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(exportarLivreLabel))
-						.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
-							.addComponent(lblMedicados)
-							.addComponent(label_1)))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(exportarTratosLabel)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(exportarFrigoLabel)
-					.addGap(1)
-					.addComponent(jLabel10)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(jLabel11)
-					.addGap(18)
-					.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(jLabel9)
-						.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap())
-		);
+				.addGap(4)
+				.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE).addComponent(jLabel2).addComponent(testeJFT,
+						GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+				.addGap(18).addComponent(jLabel3).addGap(18)
+				.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING).addComponent(jLabel7).addComponent(jLabel6))
+				.addPreferredGap(ComponentPlacement.UNRELATED)
+				.addGroup(
+						jPanel1Layout.createParallelGroup(Alignment.LEADING).addComponent(exportarMortLabel).addComponent(desempenhoLabel))
+				.addPreferredGap(ComponentPlacement.UNRELATED)
+				.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE).addComponent(lblConsumo).addComponent(exportarMediLabel))
+				.addPreferredGap(ComponentPlacement.UNRELATED)
+				.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE).addComponent(lblMedicados).addComponent(exportarLivreLabel)
+						.addComponent(frigoLabel))
+				.addPreferredGap(ComponentPlacement.UNRELATED).addComponent(exportarTratosLabel)
+				.addPreferredGap(ComponentPlacement.UNRELATED).addComponent(exportarFrigoLabel).addGap(1).addComponent(jLabel10)
+				.addPreferredGap(ComponentPlacement.RELATED).addComponent(jLabel11).addGap(18)
+				.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(jLabel9))
+				.addContainerGap()));
 		jPanel1.setLayout(jPanel1Layout);
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-		layout.setHorizontalGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(jPanel1, GroupLayout.DEFAULT_SIZE,
+		layout.setHorizontalGroup(
+				layout.createParallelGroup(Alignment.LEADING).addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 467, Short.MAX_VALUE));
+		layout.setVerticalGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(jPanel1, GroupLayout.DEFAULT_SIZE,
 				GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
-		layout.setVerticalGroup(
-				layout.createParallelGroup(Alignment.LEADING).addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE));
 		getContentPane().setLayout(layout);
 
 		pack();
@@ -274,21 +249,13 @@ public class ViewEscolhaDigST extends javax.swing.JFrame {
 	private javax.swing.JPanel jPanel1;
 	private javax.swing.JFormattedTextField opcaoJFT;
 	private javax.swing.JFormattedTextField protocoloJFT;
-	private javax.swing.JLabel qtdeConsLabel;
 	private javax.swing.JFormattedTextField testeJFT;
 	private JLabel exportarMediLabel;
 	private JLabel lblMedicados;
-	private JLabel label_1;
+	private JLabel frigoLabel;
 	private JLabel exportarTratosLabel;
 	private JLabel exportarFrigoLabel;
-
-	public javax.swing.JLabel getQtdeConsLabel() {
-		return qtdeConsLabel;
-	}
-
-	public void setQtdeConsLabel(javax.swing.JLabel qtdeConsLabel) {
-		this.qtdeConsLabel = qtdeConsLabel;
-	}
+	private JLabel lblConsumo;
 
 	public javax.swing.JLabel getExportarConsLabel() {
 		return exportarMortLabel;
