@@ -8,6 +8,7 @@ import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -15,6 +16,8 @@ import javax.swing.JFileChooser;
 
 import brf.suino.model.ModelST;
 import brf.suino.model.vo.ExperimentoVOST;
+import brf.suino.model.vo.MedicadosVOST;
+import brf.suino.model.vo.MortalidadeVOST;
 
 public class ModelStateDAOST {
 	private final ModelST model;
@@ -75,6 +78,11 @@ public class ModelStateDAOST {
 			c.printStackTrace();
 			return false;
 		}
+//		ExperimentoVOST e = (ExperimentoVOST) obj;
+//		e.setMortalidade(new ArrayList<MortalidadeVOST>());
+//		e.setMedicados(new ArrayList<MedicadosVOST>());
+//		model.setExperimentoVO(e);
+//		saveModelState(false);
 		model.setExperimentoVO((ExperimentoVOST) obj);
 		return true;
 	}

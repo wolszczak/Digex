@@ -3,6 +3,7 @@ package brf.suino.controller;
 import java.awt.Color;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,7 +43,7 @@ public class ControllerEscolhaDigST extends KeyAdapter {
 				&& controller.getModel().getExperimentoVO().getMedicados().isEmpty()) {
 			view.getExportarMediLabel().setForeground(Color.GRAY);
 		}
-		
+
 		histSetup();
 	}
 
@@ -63,7 +64,7 @@ public class ControllerEscolhaDigST extends KeyAdapter {
 	}
 
 	@Override
-	public void keyTyped(KeyEvent e) {
+	public void keyTyped(KeyEvent e)  {
 		switch (e.getKeyChar()) {
 		case KeyEvent.VK_0:
 			int n = JOptionPane.showConfirmDialog(view, "Deseja realmente sair do programa?", "DIGEX - Sair", JOptionPane.YES_NO_OPTION,
@@ -86,8 +87,8 @@ public class ControllerEscolhaDigST extends KeyAdapter {
 			break;
 		case KeyEvent.VK_1:
 			view.setVisible(false);
-			ControllerEscolhaTipoDigST controllerEscolhaTipoDigST = new ControllerEscolhaTipoDigST(controller);
-			controllerEscolhaTipoDigST.openWindow(datasFases);
+			ControllerMortalidadeST mortalidade = new ControllerMortalidadeST(controller);
+			mortalidade.openWindow(datasFases);
 			break;
 		case KeyEvent.VK_2:
 			break;

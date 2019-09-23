@@ -18,7 +18,6 @@ public class ModelST {
 		infoExpBO = new InfoExpBOST(this);
 	}
 
-
 	public ModelStateDAOST getModelStateDAO() {
 		return modelStateDAO;
 	}
@@ -43,11 +42,9 @@ public class ModelST {
 		this.infoExpVO = infoExpVO;
 	}
 
-
 	public ExperimentoVOST getExperimentoVO() {
 		return experimentoVO;
 	}
-
 
 	public void setExperimentoVO(ExperimentoVOST experimentoVO) {
 		this.experimentoVO = experimentoVO;
