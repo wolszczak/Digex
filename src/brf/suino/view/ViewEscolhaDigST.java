@@ -16,25 +16,6 @@ public class ViewEscolhaDigST extends javax.swing.JFrame {
 		initComponents();
 	}
 
-	public JLabel getExportarDesempenhoLabel() {
-		return exportarMortLabel;
-	}
-
-	public JLabel getExportarRendimentoLabel() {
-		return exportarLivreLabel;
-	}
-
-	public JFormattedTextField getOpcaoJFT() {
-		return opcaoJFT;
-	}
-
-	public JFormattedTextField getProtocoloJFT() {
-		return protocoloJFT;
-	}
-
-	public JFormattedTextField getTesteJFT() {
-		return testeJFT;
-	}
 
 	private void initComponents() {
 
@@ -257,27 +238,218 @@ public class ViewEscolhaDigST extends javax.swing.JFrame {
 	private JLabel exportarFrigoLabel;
 	private JLabel lblConsumo;
 
-	public javax.swing.JLabel getExportarConsLabel() {
+	public javax.swing.JLabel getDesempenhoLabel() {
+		return desempenhoLabel;
+	}
+
+
+	public void setDesempenhoLabel(javax.swing.JLabel desempenhoLabel) {
+		this.desempenhoLabel = desempenhoLabel;
+	}
+
+
+	public javax.swing.JLabel getExportarMortLabel() {
 		return exportarMortLabel;
 	}
 
-	public void setExportarConsLabel(javax.swing.JLabel exportarConsLabel) {
-		this.exportarMortLabel = exportarConsLabel;
+
+	public void setExportarMortLabel(javax.swing.JLabel exportarMortLabel) {
+		this.exportarMortLabel = exportarMortLabel;
 	}
 
-	public javax.swing.JLabel getExportarMediLabel() {
+
+	public javax.swing.JLabel getExportarLivreLabel() {
 		return exportarLivreLabel;
 	}
 
-	public void setExportarMediLabel(javax.swing.JLabel exportarMediLabel) {
-		this.exportarLivreLabel = exportarMediLabel;
+
+	public void setExportarLivreLabel(javax.swing.JLabel exportarLivreLabel) {
+		this.exportarLivreLabel = exportarLivreLabel;
 	}
 
-	public JLabel getExportarMortLabel() {
+
+	public javax.swing.JLabel getjLabel1() {
+		return jLabel1;
+	}
+
+
+	public void setjLabel1(javax.swing.JLabel jLabel1) {
+		this.jLabel1 = jLabel1;
+	}
+
+
+	public javax.swing.JLabel getjLabel10() {
+		return jLabel10;
+	}
+
+
+	public void setjLabel10(javax.swing.JLabel jLabel10) {
+		this.jLabel10 = jLabel10;
+	}
+
+
+	public javax.swing.JLabel getjLabel11() {
+		return jLabel11;
+	}
+
+
+	public void setjLabel11(javax.swing.JLabel jLabel11) {
+		this.jLabel11 = jLabel11;
+	}
+
+
+	public javax.swing.JLabel getjLabel2() {
+		return jLabel2;
+	}
+
+
+	public void setjLabel2(javax.swing.JLabel jLabel2) {
+		this.jLabel2 = jLabel2;
+	}
+
+
+	public javax.swing.JLabel getjLabel3() {
+		return jLabel3;
+	}
+
+
+	public void setjLabel3(javax.swing.JLabel jLabel3) {
+		this.jLabel3 = jLabel3;
+	}
+
+
+	public javax.swing.JLabel getjLabel6() {
+		return jLabel6;
+	}
+
+
+	public void setjLabel6(javax.swing.JLabel jLabel6) {
+		this.jLabel6 = jLabel6;
+	}
+
+
+	public javax.swing.JLabel getjLabel7() {
+		return jLabel7;
+	}
+
+
+	public void setjLabel7(javax.swing.JLabel jLabel7) {
+		this.jLabel7 = jLabel7;
+	}
+
+
+	public javax.swing.JLabel getjLabel9() {
+		return jLabel9;
+	}
+
+
+	public void setjLabel9(javax.swing.JLabel jLabel9) {
+		this.jLabel9 = jLabel9;
+	}
+
+
+	public javax.swing.JPanel getjPanel1() {
+		return jPanel1;
+	}
+
+
+	public void setjPanel1(javax.swing.JPanel jPanel1) {
+		this.jPanel1 = jPanel1;
+	}
+
+
+	public javax.swing.JFormattedTextField getOpcaoJFT() {
+		return opcaoJFT;
+	}
+
+
+	public void setOpcaoJFT(javax.swing.JFormattedTextField opcaoJFT) {
+		this.opcaoJFT = opcaoJFT;
+	}
+
+
+	public javax.swing.JFormattedTextField getProtocoloJFT() {
+		return protocoloJFT;
+	}
+
+
+	public void setProtocoloJFT(javax.swing.JFormattedTextField protocoloJFT) {
+		this.protocoloJFT = protocoloJFT;
+	}
+
+
+	public javax.swing.JFormattedTextField getTesteJFT() {
+		return testeJFT;
+	}
+
+
+	public void setTesteJFT(javax.swing.JFormattedTextField testeJFT) {
+		this.testeJFT = testeJFT;
+	}
+
+
+	public JLabel getExportarMediLabel() {
 		return exportarMediLabel;
 	}
 
-	public void setExportarMortLabel(JLabel exportarMortLabel) {
-		this.exportarMediLabel = exportarMortLabel;
+
+	public void setExportarMediLabel(JLabel exportarMediLabel) {
+		this.exportarMediLabel = exportarMediLabel;
 	}
+
+
+	public JLabel getLblMedicados() {
+		return lblMedicados;
+	}
+
+
+	public void setLblMedicados(JLabel lblMedicados) {
+		this.lblMedicados = lblMedicados;
+	}
+
+
+	public JLabel getFrigoLabel() {
+		return frigoLabel;
+	}
+
+
+	public void setFrigoLabel(JLabel frigoLabel) {
+		this.frigoLabel = frigoLabel;
+	}
+
+
+	public JLabel getExportarTratosLabel() {
+		return exportarTratosLabel;
+	}
+
+
+	public void setExportarTratosLabel(JLabel exportarTratosLabel) {
+		this.exportarTratosLabel = exportarTratosLabel;
+	}
+
+
+	public JLabel getExportarFrigoLabel() {
+		return exportarFrigoLabel;
+	}
+
+
+	public void setExportarFrigoLabel(JLabel exportarFrigoLabel) {
+		this.exportarFrigoLabel = exportarFrigoLabel;
+	}
+
+
+	public JLabel getLblConsumo() {
+		return lblConsumo;
+	}
+
+
+	public void setLblConsumo(JLabel lblConsumo) {
+		this.lblConsumo = lblConsumo;
+	}
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 }

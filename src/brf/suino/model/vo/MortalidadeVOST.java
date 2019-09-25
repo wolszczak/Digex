@@ -13,17 +13,17 @@ public class MortalidadeVOST implements Serializable {
 	private int trat2;
 	private int ordem;
 	private String data;
-	private int pesoIni;
 	private int pesoMorto;
 	private int brinco;
 	private int fase;
 	private int causa;
+	private boolean finalizado;
 
 	public MortalidadeVOST() {
 	}
 
-	public MortalidadeVOST(int galpao, int baia, int sexo, int trat1, int trat2, int ordem, String data, int pesoIni, int pesoMorto, int brinco, int fase,
-			int causa) {
+	public MortalidadeVOST(int galpao, int baia, int sexo, int trat1, int trat2, int ordem, String data, int pesoMorto, int brinco,
+			int fase, int causa, boolean finalizado) {
 		this.galpao = galpao;
 		this.baia = baia;
 		this.sexo = sexo;
@@ -31,11 +31,11 @@ public class MortalidadeVOST implements Serializable {
 		this.trat2 = trat2;
 		this.ordem = ordem;
 		this.data = data;
-		this.pesoIni = pesoIni;
 		this.pesoMorto = pesoMorto;
 		this.brinco = brinco;
 		this.fase = fase;
 		this.causa = causa;
+		this.finalizado = finalizado;
 	}
 
 	public int getBaia() {
@@ -94,7 +94,6 @@ public class MortalidadeVOST implements Serializable {
 		this.data = data;
 	}
 
-
 	public int getBrinco() {
 		return brinco;
 	}
@@ -119,20 +118,20 @@ public class MortalidadeVOST implements Serializable {
 		this.causa = causa;
 	}
 
-	public int getPesoIni() {
-		return pesoIni;
-	}
-
-	public void setPesoIni(int pesoIni) {
-		this.pesoIni = pesoIni;
-	}
-
 	public int getPesoMorto() {
 		return pesoMorto;
 	}
 
 	public void setPesoMorto(int pesoMorto) {
 		this.pesoMorto = pesoMorto;
+	}
+
+	public boolean isFinalizado() {
+		return finalizado;
+	}
+
+	public void setFinalizado(boolean finalizado) {
+		this.finalizado = finalizado;
 	}
 
 }
