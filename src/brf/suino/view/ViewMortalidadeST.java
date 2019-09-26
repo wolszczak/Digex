@@ -113,7 +113,7 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 		jLabel53 = new javax.swing.JLabel();
 		opcaoMediJFT = new javax.swing.JFormattedTextField();
 		jLabel43 = new javax.swing.JLabel();
-		jPanel4 = new javax.swing.JPanel();
+		pnlMedicados = new javax.swing.JPanel();
 		jLabel8 = new javax.swing.JLabel();
 		brincoMediHist4Label = new javax.swing.JLabel();
 		jLabel18 = new javax.swing.JLabel();
@@ -846,35 +846,51 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 		jLabel43.setText("[9] - Voltar");
 
 		javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-		jPanel8.setLayout(jPanel8Layout);
-		jPanel8Layout.setHorizontalGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(jPanel8Layout
-				.createSequentialGroup().addContainerGap()
-				.addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addGroup(jPanel8Layout.createSequentialGroup().addGap(4, 4, 4)
-								.addComponent(jLabel53, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(opcaoMediJFT,
-										javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+		jPanel8Layout.setHorizontalGroup(
+			jPanel8Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel8Layout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(jPanel8Layout.createParallelGroup(Alignment.LEADING)
 						.addGroup(jPanel8Layout.createSequentialGroup()
-								.addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addComponent(jLabel52).addComponent(jLabel43))
-								.addGap(0, 118, Short.MAX_VALUE))
-						.addComponent(jLabel42, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE))
-				.addContainerGap()));
-		jPanel8Layout.setVerticalGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel8Layout.createSequentialGroup().addContainerGap().addComponent(jLabel40).addGap(18, 18, 18)
-						.addComponent(jLabel41).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(jLabel42)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE).addComponent(jLabel43)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(jLabel52).addGap(18, 18, 18)
-						.addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel53)
-								.addComponent(opcaoMediJFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addContainerGap()));
+							.addGroup(jPanel8Layout.createParallelGroup(Alignment.LEADING)
+								.addComponent(jLabel41, GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+								.addComponent(jLabel42, GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+								.addComponent(jLabel40, GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE))
+							.addContainerGap())
+						.addGroup(jPanel8Layout.createSequentialGroup()
+							.addComponent(jLabel53, GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(opcaoMediJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+							.addGap(14))
+						.addGroup(jPanel8Layout.createSequentialGroup()
+							.addComponent(jLabel52)
+							.addContainerGap(138, Short.MAX_VALUE))
+						.addGroup(jPanel8Layout.createSequentialGroup()
+							.addComponent(jLabel43)
+							.addContainerGap(128, Short.MAX_VALUE))))
+		);
+		jPanel8Layout.setVerticalGroup(
+			jPanel8Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel8Layout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(jLabel40)
+					.addGap(18)
+					.addComponent(jLabel41)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(jLabel42)
+					.addPreferredGap(ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+					.addComponent(jLabel43)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(jLabel52)
+					.addGap(42)
+					.addGroup(jPanel8Layout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(jLabel53)
+						.addComponent(opcaoMediJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap())
+		);
+		jPanel8.setLayout(jPanel8Layout);
 
-		jPanel4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+		pnlMedicados.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
 		jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
 		jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -911,7 +927,7 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 		MedicamentoHist5Label.setEnabled(false);
 
 		try {
-			medicamentoJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+			medicamentoJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1069,7 +1085,7 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 		jLabel56.setText("Dose1");
 
 		try {
-			controleMediJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			controleMediJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1146,13 +1162,13 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 		jLabel58.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		jLabel58.setText("Dose3");
 
-		javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-		jPanel4.setLayout(jPanel4Layout);
-		jPanel4Layout.setHorizontalGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+		javax.swing.GroupLayout gl_pnlMedicados = new javax.swing.GroupLayout(pnlMedicados);
+		pnlMedicados.setLayout(gl_pnlMedicados);
+		gl_pnlMedicados.setHorizontalGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 				.addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-				.addGroup(jPanel4Layout.createSequentialGroup().addContainerGap().addGroup(jPanel4Layout
+				.addGroup(gl_pnlMedicados.createSequentialGroup().addContainerGap().addGroup(gl_pnlMedicados
 						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
 								.addComponent(ordemMediHist5Label, javax.swing.GroupLayout.Alignment.LEADING,
 										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 								.addComponent(ordemMediHist4Label, javax.swing.GroupLayout.Alignment.LEADING,
@@ -1167,8 +1183,8 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 						.addComponent(ordemMediJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
 						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+								.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
 										.addComponent(dataMediHist5Label, javax.swing.GroupLayout.Alignment.LEADING,
 												javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 										.addComponent(dataMediHist4Label, javax.swing.GroupLayout.Alignment.LEADING,
@@ -1184,7 +1200,7 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 								.addComponent(dataMediJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 74,
 										javax.swing.GroupLayout.PREFERRED_SIZE))
 						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
 								.addComponent(brincoMediHist5Label, javax.swing.GroupLayout.Alignment.LEADING,
 										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 								.addComponent(brincoMediHist4Label, javax.swing.GroupLayout.Alignment.LEADING,
@@ -1200,8 +1216,8 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 								.addComponent(brincoMediJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 45,
 										javax.swing.GroupLayout.PREFERRED_SIZE))
 						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+								.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 										.addComponent(MedicamentoHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 66,
 												javax.swing.GroupLayout.PREFERRED_SIZE)
 										.addComponent(MedicamentoHist2Label, javax.swing.GroupLayout.Alignment.TRAILING,
@@ -1216,9 +1232,9 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 												javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
 								.addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE,
 										66, javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(jPanel4Layout
+						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(gl_pnlMedicados
 								.createSequentialGroup().addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-								.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+								.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 										.addComponent(causaMediHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 66,
 												javax.swing.GroupLayout.PREFERRED_SIZE)
 										.addComponent(causaMediHist2Label, javax.swing.GroupLayout.Alignment.TRAILING,
@@ -1232,10 +1248,10 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 										.addComponent(causaMediJFT, javax.swing.GroupLayout.Alignment.TRAILING,
 												javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
 								.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-										jPanel4Layout.createSequentialGroup().addGap(7, 7, 7).addComponent(jLabel20,
+										gl_pnlMedicados.createSequentialGroup().addGap(7, 7, 7).addComponent(jLabel20,
 												javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
 						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 								.addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
 								.addComponent(dose1Hist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 55,
 										javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1249,7 +1265,7 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 										javax.swing.GroupLayout.PREFERRED_SIZE)
 								.addComponent(dose1JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
 						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
 								.addComponent(dose2JFT, javax.swing.GroupLayout.Alignment.TRAILING)
 								.addComponent(dose2Hist5Label, javax.swing.GroupLayout.Alignment.TRAILING,
 										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1263,7 +1279,7 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 								.addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
 						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
 								.addComponent(dose3JFT, javax.swing.GroupLayout.Alignment.TRAILING)
 								.addComponent(dose3Hist5Label, javax.swing.GroupLayout.Alignment.TRAILING,
 										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1277,38 +1293,38 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 								.addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
 						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 								.addComponent(controleMediJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 100,
 										javax.swing.GroupLayout.PREFERRED_SIZE)
 								.addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 100,
 										javax.swing.GroupLayout.PREFERRED_SIZE))
 						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
-		jPanel4Layout.setVerticalGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup().addContainerGap()
+		gl_pnlMedicados.setVerticalGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gl_pnlMedicados.createSequentialGroup().addContainerGap()
 						.addComponent(jLabel8).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-						.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(jPanel4Layout
+						.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(gl_pnlMedicados
 								.createSequentialGroup()
-								.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+								.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
 										.addComponent(jLabel18).addComponent(jLabel19))
 								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-								.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+								.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 										.addComponent(MedicamentoHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
 												javax.swing.GroupLayout.PREFERRED_SIZE)
 										.addComponent(brincoMediHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
 												javax.swing.GroupLayout.PREFERRED_SIZE))
 								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-								.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+								.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 										.addComponent(brincoMediHist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
 												javax.swing.GroupLayout.PREFERRED_SIZE)
 										.addComponent(MedicamentoHist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
 												javax.swing.GroupLayout.PREFERRED_SIZE))
 								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-								.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+								.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
 										.addComponent(brincoMediHist3Label, javax.swing.GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
 										.addComponent(MedicamentoHist3Label, javax.swing.GroupLayout.DEFAULT_SIZE,
 												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-								.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+								.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 										.addComponent(brincoMediHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
 												javax.swing.GroupLayout.PREFERRED_SIZE)
 										.addComponent(MedicamentoHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
@@ -1316,12 +1332,12 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 										.addComponent(causaMediHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
 												javax.swing.GroupLayout.PREFERRED_SIZE))
 								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-								.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+								.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 										.addComponent(brincoMediHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
 												javax.swing.GroupLayout.PREFERRED_SIZE)
 										.addComponent(MedicamentoHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
 												javax.swing.GroupLayout.PREFERRED_SIZE)))
-								.addGroup(jPanel4Layout.createSequentialGroup().addComponent(jLabel54)
+								.addGroup(gl_pnlMedicados.createSequentialGroup().addComponent(jLabel54)
 										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 										.addComponent(ordemMediHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
 												javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1337,16 +1353,16 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
 										.addComponent(ordemMediHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
 												javax.swing.GroupLayout.PREFERRED_SIZE))
-								.addGroup(jPanel4Layout.createSequentialGroup()
-										.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addGroup(jPanel4Layout.createSequentialGroup().addComponent(jLabel56)
+								.addGroup(gl_pnlMedicados.createSequentialGroup()
+										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+												.addGroup(gl_pnlMedicados.createSequentialGroup().addComponent(jLabel56)
 														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 														.addComponent(dose1Hist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
 																javax.swing.GroupLayout.PREFERRED_SIZE)
 														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
 														.addComponent(dose1Hist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
 																javax.swing.GroupLayout.PREFERRED_SIZE))
-												.addGroup(jPanel4Layout.createSequentialGroup().addComponent(jLabel20)
+												.addGroup(gl_pnlMedicados.createSequentialGroup().addComponent(jLabel20)
 														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 														.addComponent(causaMediHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
 																javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1354,8 +1370,8 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 														.addComponent(causaMediHist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
 																javax.swing.GroupLayout.PREFERRED_SIZE)))
 										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addGroup(jPanel4Layout.createSequentialGroup()
+										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+												.addGroup(gl_pnlMedicados.createSequentialGroup()
 														.addComponent(dose1Hist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
 																javax.swing.GroupLayout.PREFERRED_SIZE)
 														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1367,14 +1383,14 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 										.addComponent(causaMediHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
 												javax.swing.GroupLayout.PREFERRED_SIZE)
 										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
 												.addComponent(causaMediJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
 														javax.swing.GroupLayout.PREFERRED_SIZE)
 												.addComponent(dose1JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
 														javax.swing.GroupLayout.PREFERRED_SIZE)))
-								.addGroup(jPanel4Layout.createSequentialGroup()
-										.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-												.addGroup(jPanel4Layout.createSequentialGroup().addComponent(jLabel49)
+								.addGroup(gl_pnlMedicados.createSequentialGroup()
+										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+												.addGroup(gl_pnlMedicados.createSequentialGroup().addComponent(jLabel49)
 														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 														.addComponent(dataMediHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
 																javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1391,11 +1407,11 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 														.addComponent(dataMediHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
 																javax.swing.GroupLayout.PREFERRED_SIZE)
 														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-												.addGroup(jPanel4Layout.createSequentialGroup()
+												.addGroup(gl_pnlMedicados.createSequentialGroup()
 														.addComponent(dose1Hist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
 																javax.swing.GroupLayout.PREFERRED_SIZE)
 														.addGap(6, 6, 6)))
-										.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
 												.addComponent(dataMediJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
 														javax.swing.GroupLayout.PREFERRED_SIZE)
 												.addComponent(brincoMediJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
@@ -1404,10 +1420,10 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 														javax.swing.GroupLayout.PREFERRED_SIZE)
 												.addComponent(ordemMediJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
 														javax.swing.GroupLayout.PREFERRED_SIZE)))
-								.addGroup(jPanel4Layout.createSequentialGroup()
-										.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+								.addGroup(gl_pnlMedicados.createSequentialGroup()
+										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
 												.addComponent(jLabel57)
-												.addGroup(jPanel4Layout.createSequentialGroup().addComponent(jLabel55)
+												.addGroup(gl_pnlMedicados.createSequentialGroup().addComponent(jLabel55)
 														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 														.addComponent(dose2Hist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
 																javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1424,12 +1440,12 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 														.addComponent(dose2Hist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
 																javax.swing.GroupLayout.PREFERRED_SIZE)))
 										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+										.addGroup(gl_pnlMedicados.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
 												.addComponent(dose2JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
 														javax.swing.GroupLayout.PREFERRED_SIZE)
 												.addComponent(controleMediJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
 														javax.swing.GroupLayout.PREFERRED_SIZE)))
-								.addGroup(jPanel4Layout.createSequentialGroup().addComponent(jLabel58)
+								.addGroup(gl_pnlMedicados.createSequentialGroup().addComponent(jLabel58)
 										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 										.addComponent(dose3Hist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
 												javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1450,31 +1466,31 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 						.addGap(18, 18, 18)));
 
 		javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+		jPanel2Layout.setHorizontalGroup(
+			jPanel2Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel2Layout.createSequentialGroup()
+					.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+						.addGroup(jPanel2Layout.createSequentialGroup()
+							.addComponent(pnlMedicados, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addComponent(jPanel8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addGroup(Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+							.addContainerGap()
+							.addComponent(registrosMediLabel, GroupLayout.DEFAULT_SIZE, 827, Short.MAX_VALUE)))
+					.addContainerGap())
+		);
+		jPanel2Layout.setVerticalGroup(
+			jPanel2Layout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING, false)
+						.addComponent(pnlMedicados, 0, 0, Short.MAX_VALUE)
+						.addComponent(jPanel8, GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(registrosMediLabel)
+					.addContainerGap(42, Short.MAX_VALUE))
+		);
 		jPanel2.setLayout(jPanel2Layout);
-		jPanel2Layout.setHorizontalGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(jPanel2Layout
-				.createSequentialGroup()
-				.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(jPanel2Layout.createSequentialGroup()
-								.addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addComponent(registrosMediLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE))
-				.addContainerGap()));
-		jPanel2Layout.setVerticalGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(
-				javax.swing.GroupLayout.Alignment.TRAILING,
-				jPanel2Layout.createSequentialGroup().addContainerGap().addGroup(jPanel2Layout
-						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addGroup(jPanel2Layout.createSequentialGroup()
-								.addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addGap(0, 0, Short.MAX_VALUE)))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(registrosMediLabel)
-						.addContainerGap()));
 
 		jPanel9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -1701,7 +1717,7 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 	private javax.swing.JPanel jPanel1;
 	private javax.swing.JPanel jPanel2;
 	private javax.swing.JPanel pnlMortalidade;
-	private javax.swing.JPanel jPanel4;
+	private javax.swing.JPanel pnlMedicados;
 	private javax.swing.JPanel jPanel8;
 	private javax.swing.JPanel jPanel9;
 	private javax.swing.JFormattedTextField causaMortJFT;
@@ -2382,11 +2398,11 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 	}
 
 	public javax.swing.JPanel getjPanel4() {
-		return jPanel4;
+		return pnlMedicados;
 	}
 
 	public void setjPanel4(javax.swing.JPanel jPanel4) {
-		this.jPanel4 = jPanel4;
+		this.pnlMedicados = jPanel4;
 	}
 
 	public javax.swing.JPanel getjPanel8() {
@@ -2955,5 +2971,13 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 
 	public void setCausaMortHist3Label(javax.swing.JLabel causaMortHist3Label) {
 		this.causaMortHist3Label = causaMortHist3Label;
+	}
+
+	public javax.swing.JPanel getPnlMedicados() {
+		return pnlMedicados;
+	}
+
+	public void setPnlMedicados(javax.swing.JPanel pnlMedicados) {
+		this.pnlMedicados = pnlMedicados;
 	}
 }
