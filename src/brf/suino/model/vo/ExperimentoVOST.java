@@ -8,12 +8,12 @@ public class ExperimentoVOST implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private InfoExpVOST infoExp;
 	private List<MortalidadeVOST> mortalidade;
-//	private List<ConsumoVOST> consumo;
+	private List<ConsumoLivreVOST> consumoLivre;
 	private List<MedicadosVOST> medicados;
 
 	public ExperimentoVOST() {
 		this.mortalidade = new ArrayList<>();
-//		this.consumo = new ArrayList<>();
+		this.consumoLivre = new ArrayList<>();
 		this.medicados = new ArrayList<>();
 	}
 
@@ -39,6 +39,14 @@ public class ExperimentoVOST implements Serializable {
 
 	public void setMedicados(List<MedicadosVOST> medicados) {
 		this.medicados = medicados;
+	}
+
+	public List<ConsumoLivreVOST> getConsumoLivre() {
+		return consumoLivre;
+	}
+
+	public void setConsumoLivre(List<ConsumoLivreVOST> consumoLivre) {
+		this.consumoLivre = consumoLivre;
 	}
 
 

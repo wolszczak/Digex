@@ -43,6 +43,14 @@ public class ControllerEscolhaDigST extends KeyAdapter {
 				&& controller.getModel().getExperimentoVO().getMedicados().isEmpty()) {
 			view.getExportarMediLabel().setForeground(Color.GRAY);
 		}
+		if (controller.getModel().getExperimentoVO().getConsumoLivre() != null
+				&& controller.getModel().getExperimentoVO().getConsumoLivre().isEmpty()) {
+			view.getExportarLivreLabel().setForeground(Color.GRAY);
+		}
+//		if (controller.getModel().getExperimentoVO().getConsumoLivre() != null
+//				&& controller.getModel().getExperimentoVO().getConsumoLivre().isEmpty()) {
+//			view.getExportarLivreLabel().setForeground(Color.GRAY);
+//		}
 
 		histSetup();
 	}

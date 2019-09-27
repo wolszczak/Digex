@@ -81,6 +81,7 @@ public class ModelStateDAOST {
 //		ExperimentoVOST e = (ExperimentoVOST) obj;
 //		e.setMortalidade(new ArrayList<MortalidadeVOST>());
 //		e.setMedicados(new ArrayList<MedicadosVOST>());
+//		e.setConsumoLivre(new ArrayList<>());
 //		model.setExperimentoVO(e);
 //		saveModelState(false);
 		model.setExperimentoVO((ExperimentoVOST) obj);

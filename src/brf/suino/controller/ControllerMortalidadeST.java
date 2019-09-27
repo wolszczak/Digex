@@ -17,7 +17,6 @@ import javax.swing.SwingUtilities;
 import javax.swing.border.Border;
 
 import brf.suino.model.bo.MortalidadeBOST;
-import brf.suino.model.vo.MedicadosVOSC;
 import brf.suino.model.vo.MedicadosVOST;
 import brf.suino.model.vo.MortalidadeVOST;
 import brf.suino.view.ViewMortalidadeST;
@@ -132,7 +131,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 		orderMediHist.add(view.getBrincoMediHist4Label());
 		orderMediHist.add(view.getDataMediHist4Label());
 		orderMediHist.add(view.getOrdemMediHist4Label());
-		
+
 		orderMediHist.add(view.getDose3Hist3Label());
 		orderMediHist.add(view.getDose2Hist3Label());
 		orderMediHist.add(view.getDose1Hist3Label());
@@ -198,38 +197,79 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 	}
 
 	private void loadHist() {
-		if (controller.getModel().getExperimentoVO().getMedicados() != null
-				&& !controller.getModel().getExperimentoVO().getMedicados().isEmpty()) {
-			if (!controller.getModel().getExperimentoVO().getMedicados()
-					.get(controller.getModel().getExperimentoVO().getMedicados().size() - 1).isFinalizado()) {
-//				MEDICADOS NÃO ESTÁ FINALIZADA NA ULTIMA BAIA
-				medicadosHist = new ArrayList<>();
+		if (controller.getModel().getExperimentoVO().getConsumoLivre() != null
+				&& !controller.getModel().getExperimentoVO().getConsumoLivre().isEmpty()) {
+			if (!controller.getModel().getExperimentoVO().getConsumoLivre()
+					.get(controller.getModel().getExperimentoVO().getConsumoLivre().size() - 1).isFinalizado()) {
+				view.setVisible(false);
+				ControllerConsumoLivreST consumoLivreST = new ControllerConsumoLivreST(controller);
+				consumoLivreST.openWindow(
+						controller.getModel().getExperimentoVO().getConsumoLivre()
+								.get(controller.getModel().getExperimentoVO().getConsumoLivre().size() - 1).getGalpao(),
+						controller.getModel().getExperimentoVO().getConsumoLivre()
+								.get(controller.getModel().getExperimentoVO().getConsumoLivre().size() - 1).getBaia(),
+						controller.getModel().getExperimentoVO().getConsumoLivre()
+								.get(controller.getModel().getExperimentoVO().getConsumoLivre().size() - 1).getSexo(),
+						controller.getModel().getExperimentoVO().getConsumoLivre()
+								.get(controller.getModel().getExperimentoVO().getConsumoLivre().size() - 1).getTrat1(),
+						controller.getModel().getExperimentoVO().getConsumoLivre()
+								.get(controller.getModel().getExperimentoVO().getConsumoLivre().size() - 1).getTrat2(),
+						datasFases);
+			}
+		} else {
+			if (controller.getModel().getExperimentoVO().getMedicados() != null
+					&& !controller.getModel().getExperimentoVO().getMedicados().isEmpty()) {
+				if (!controller.getModel().getExperimentoVO().getMedicados()
+						.get(controller.getModel().getExperimentoVO().getMedicados().size() - 1).isFinalizado()) {
+//					MEDICADOS NÃO ESTÁ FINALIZADA NA ULTIMA BAIA
+					medicadosHist = new ArrayList<>();
 
-				for (MedicadosVOST m : controller.getModel().getExperimentoVO().getMedicados()) {
-					if (m.getBaia() == controller.getModel().getExperimentoVO().getMortalidade()
-							.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).getBaia()) {
-						medicadosHist.add(m);
+					for (MedicadosVOST m : controller.getModel().getExperimentoVO().getMedicados()) {
+						if (m.getBaia() == controller.getModel().getExperimentoVO().getMortalidade()
+								.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).getBaia()) {
+							medicadosHist.add(m);
+						}
+					}
+					ordemMedi = medicadosHist.get(medicadosHist.size() - 1).getOrdem() + 1;
+					view.getBaiaJFT().setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getBaia()));
+					view.getBaiaJFT().setEnabled(false);
+					view.getSexoJFT().setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getSexo()));
+					view.getSexoJFT().setEnabled(false);
+					view.getTrataJFT().setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getTrat1()));
+					view.getTrataJFT().setEnabled(false);
+					view.getTrata2JFT().setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getTrat2()));
+					view.getTrata2JFT().setEnabled(false);
+					view.getDataMediJFT().setEnabled(true);
+					view.getDataMediJFT().grabFocus();
+
+					if (controller.getModel().getExperimentoVO().getMortalidade() != null
+							&& !controller.getModel().getExperimentoVO().getMortalidade().isEmpty()) {
+
+						if (controller.getModel().getExperimentoVO().getMortalidade()
+								.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).getBaia() == controller
+										.getModel().getExperimentoVO().getMortalidade()
+										.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).getBaia()) {
+							mortosHist = new ArrayList<>();
+							for (MortalidadeVOST m : controller.getModel().getExperimentoVO().getMortalidade()) {
+								if (m.getBaia() == controller.getModel().getExperimentoVO().getMortalidade()
+										.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).getBaia()) {
+									mortosHist.add(m);
+								}
+							}
+							ordemMort = mortosHist.get(mortosHist.size() - 1).getOrdem() + 1;
+						}
+					} else {
+						ordemMort = 1;
 					}
 				}
-				ordemMedi = medicadosHist.get(medicadosHist.size() - 1).getOrdem() + 1;
-				view.getBaiaJFT().setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getBaia()));
-				view.getBaiaJFT().setEnabled(false);
-				view.getSexoJFT().setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getSexo()));
-				view.getSexoJFT().setEnabled(false);
-				view.getTrataJFT().setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getTrat1()));
-				view.getTrataJFT().setEnabled(false);
-				view.getTrata2JFT().setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getTrat2()));
-				view.getTrata2JFT().setEnabled(false);
-				view.getDataMediJFT().setEnabled(true);
-				view.getDataMediJFT().grabFocus();
-
+			} else {
+//				Lista de medicados está vazia
+				ordemMedi = 1;
 				if (controller.getModel().getExperimentoVO().getMortalidade() != null
 						&& !controller.getModel().getExperimentoVO().getMortalidade().isEmpty()) {
 
-					if (controller.getModel().getExperimentoVO().getMortalidade()
-							.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).getBaia() == controller.getModel()
-									.getExperimentoVO().getMortalidade()
-									.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).getBaia()) {
+					if (!controller.getModel().getExperimentoVO().getMortalidade()
+							.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).isFinalizado()) {
 						mortosHist = new ArrayList<>();
 						for (MortalidadeVOST m : controller.getModel().getExperimentoVO().getMortalidade()) {
 							if (m.getBaia() == controller.getModel().getExperimentoVO().getMortalidade()
@@ -238,120 +278,100 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 							}
 						}
 						ordemMort = mortosHist.get(mortosHist.size() - 1).getOrdem() + 1;
+						view.getBaiaJFT().setText(String.valueOf(mortosHist.get(mortosHist.size() - 1).getBaia()));
+						view.getBaiaJFT().setEnabled(false);
+						view.getSexoJFT().setText(String.valueOf(mortosHist.get(mortosHist.size() - 1).getSexo()));
+						view.getSexoJFT().setEnabled(false);
+						view.getTrataJFT().setText(String.valueOf(mortosHist.get(mortosHist.size() - 1).getTrat1()));
+						view.getTrataJFT().setEnabled(false);
+						view.getTrata2JFT().setText(String.valueOf(mortosHist.get(mortosHist.size() - 1).getTrat2()));
+						view.getTrata2JFT().setEnabled(false);
+						view.getDataMortJFT().setEnabled(true);
+						view.getDataMortJFT().grabFocus();
 					}
 				} else {
 					ordemMort = 1;
 				}
 			}
-		} else {
-//			Lista de medicados está vazia
-			ordemMedi = 1;
-			if (controller.getModel().getExperimentoVO().getMortalidade() != null
-					&& !controller.getModel().getExperimentoVO().getMortalidade().isEmpty()) {
 
-				if (!controller.getModel().getExperimentoVO().getMortalidade()
-						.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).isFinalizado()) {
-					mortosHist = new ArrayList<>();
-					for (MortalidadeVOST m : controller.getModel().getExperimentoVO().getMortalidade()) {
-						if (m.getBaia() == controller.getModel().getExperimentoVO().getMortalidade()
-								.get(controller.getModel().getExperimentoVO().getMortalidade().size() - 1).getBaia()) {
-							mortosHist.add(m);
-						}
+			view.getOrdemMortJFT().setText(String.valueOf(ordemMort));
+			view.getOrdemMediJFT().setText(String.valueOf(ordemMedi));
+			TextFormatter.formatStringJFT(view.getOrdemMortJFT(), view.getOrdemMortJFT().getText(), 2);
+			TextFormatter.formatStringJFT(view.getOrdemMediJFT(), view.getOrdemMediJFT().getText(), 2);
+
+			if (medicadosHist != null) {
+				for (int k = 0; k < 5; k++) {
+					if (medicadosHist != null && medicadosHist.size() > 0) {
+						JLabel lbl1 = (JLabel) orderMediHist.get(0);
+						lbl1.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getDose3()));
+						orderMediHist.remove(0);
+
+						JLabel lbl2 = (JLabel) orderMediHist.get(0);
+						lbl2.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getDose2()));
+						orderMediHist.remove(0);
+
+						JLabel lbl3 = (JLabel) orderMediHist.get(0);
+						lbl3.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getDose1()));
+						orderMediHist.remove(0);
+
+						JLabel lbl4 = (JLabel) orderMediHist.get(0);
+						lbl4.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getCausa()));
+						orderMediHist.remove(0);
+
+						JLabel lbl5 = (JLabel) orderMediHist.get(0);
+						lbl5.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getMedicamento()));
+						orderMediHist.remove(0);
+
+						JLabel lbl6 = (JLabel) orderMediHist.get(0);
+						lbl6.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getBrinco()));
+						orderMediHist.remove(0);
+
+						JLabel lbl7 = (JLabel) orderMediHist.get(0);
+						lbl7.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getData()));
+						orderMediHist.remove(0);
+
+						JLabel lbl8 = (JLabel) orderMediHist.get(0);
+						lbl8.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getOrdem()));
+						orderMediHist.remove(0);
+						medicadosHist.remove(medicadosHist.size() - 1);
+					} else {
+						break;
 					}
-					ordemMort = mortosHist.get(mortosHist.size() - 1).getOrdem() + 1;
-					view.getBaiaJFT().setText(String.valueOf(mortosHist.get(mortosHist.size() - 1).getBaia()));
-					view.getBaiaJFT().setEnabled(false);
-					view.getSexoJFT().setText(String.valueOf(mortosHist.get(mortosHist.size() - 1).getSexo()));
-					view.getSexoJFT().setEnabled(false);
-					view.getTrataJFT().setText(String.valueOf(mortosHist.get(mortosHist.size() - 1).getTrat1()));
-					view.getTrataJFT().setEnabled(false);
-					view.getTrata2JFT().setText(String.valueOf(mortosHist.get(mortosHist.size() - 1).getTrat2()));
-					view.getTrata2JFT().setEnabled(false);
-					view.getDataMortJFT().setEnabled(true);
-					view.getDataMortJFT().grabFocus();
-				}
-			} else {
-				ordemMort = 1;
-			}
-		}
-
-		view.getOrdemMortJFT().setText(String.valueOf(ordemMort));
-		view.getOrdemMediJFT().setText(String.valueOf(ordemMedi));
-		TextFormatter.formatStringJFT(view.getOrdemMortJFT(), view.getOrdemMortJFT().getText(), 2);
-		TextFormatter.formatStringJFT(view.getOrdemMediJFT(), view.getOrdemMediJFT().getText(), 2);
-
-		if (medicadosHist != null) {
-			for (int k = 0; k < 5; k++) {
-				if (medicadosHist != null && medicadosHist.size() > 0) {
-					JLabel lbl1 = (JLabel) orderMediHist.get(0);
-					lbl1.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getDose3()));
-					orderMediHist.remove(0);
-
-					JLabel lbl2 = (JLabel) orderMediHist.get(0);
-					lbl2.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getDose2()));
-					orderMediHist.remove(0);
-
-					JLabel lbl3 = (JLabel) orderMediHist.get(0);
-					lbl3.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getDose1()));
-					orderMediHist.remove(0);
-
-					JLabel lbl4 = (JLabel) orderMediHist.get(0);
-					lbl4.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getCausa()));
-					orderMediHist.remove(0);
-
-					JLabel lbl5 = (JLabel) orderMediHist.get(0);
-					lbl5.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getMedicamento()));
-					orderMediHist.remove(0);
-
-					JLabel lbl6 = (JLabel) orderMediHist.get(0);
-					lbl6.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getBrinco()));
-					orderMediHist.remove(0);
-
-					JLabel lbl7 = (JLabel) orderMediHist.get(0);
-					lbl7.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getData()));
-					orderMediHist.remove(0);
-
-					JLabel lbl8 = (JLabel) orderMediHist.get(0);
-					lbl8.setText(String.valueOf(medicadosHist.get(medicadosHist.size() - 1).getOrdem()));
-					orderMediHist.remove(0);
-					medicadosHist.remove(medicadosHist.size() - 1);
-				} else {
-					break;
 				}
 			}
-		}
 
-		if (mortosHist != null) {
-			for (int k = 0; k < 5; k++) {
-				if (mortosHist != null && mortosHist.size() > 0) {
-					JLabel lbl1 = (JLabel) orderMortHist.get(0);
-					lbl1.setText(String.valueOf(mortosHist.get(mortosHist.size() - 1).getCausa()));
-					orderMortHist.remove(0);
+			if (mortosHist != null) {
+				for (int k = 0; k < 5; k++) {
+					if (mortosHist != null && mortosHist.size() > 0) {
+						JLabel lbl1 = (JLabel) orderMortHist.get(0);
+						lbl1.setText(String.valueOf(mortosHist.get(mortosHist.size() - 1).getCausa()));
+						orderMortHist.remove(0);
 
-					JLabel lbl2 = (JLabel) orderMortHist.get(0);
-					lbl2.setText(String.valueOf(mortosHist.get(mortosHist.size() - 1).getFase()));
-					orderMortHist.remove(0);
+						JLabel lbl2 = (JLabel) orderMortHist.get(0);
+						lbl2.setText(String.valueOf(mortosHist.get(mortosHist.size() - 1).getFase()));
+						orderMortHist.remove(0);
 
-					JLabel lbl3 = (JLabel) orderMortHist.get(0);
-					lbl3.setText(String.valueOf(mortosHist.get(mortosHist.size() - 1).getPesoMorto()));
-					orderMortHist.remove(0);
+						JLabel lbl3 = (JLabel) orderMortHist.get(0);
+						lbl3.setText(String.valueOf(mortosHist.get(mortosHist.size() - 1).getPesoMorto()));
+						orderMortHist.remove(0);
 
-					JLabel lbl4 = (JLabel) orderMortHist.get(0);
-					lbl4.setText(String.valueOf(mortosHist.get(mortosHist.size() - 1).getBrinco()));
-					orderMortHist.remove(0);
+						JLabel lbl4 = (JLabel) orderMortHist.get(0);
+						lbl4.setText(String.valueOf(mortosHist.get(mortosHist.size() - 1).getBrinco()));
+						orderMortHist.remove(0);
 
-					JLabel lbl5 = (JLabel) orderMortHist.get(0);
-					lbl5.setText(String.valueOf(mortosHist.get(mortosHist.size() - 1).getData()));
-					orderMortHist.remove(0);
+						JLabel lbl5 = (JLabel) orderMortHist.get(0);
+						lbl5.setText(String.valueOf(mortosHist.get(mortosHist.size() - 1).getData()));
+						orderMortHist.remove(0);
 
-					JLabel lbl6 = (JLabel) orderMortHist.get(0);
-					lbl6.setText(String.valueOf(mortosHist.get(mortosHist.size() - 1).getOrdem()));
-					TextFormatter.formatStringOrdem(lbl6, lbl6.getText(), 3);
+						JLabel lbl6 = (JLabel) orderMortHist.get(0);
+						lbl6.setText(String.valueOf(mortosHist.get(mortosHist.size() - 1).getOrdem()));
+						TextFormatter.formatStringOrdem(lbl6, lbl6.getText(), 3);
 
-					orderMortHist.remove(0);
-					mortosHist.remove(mortosHist.size() - 1);
+						orderMortHist.remove(0);
+						mortosHist.remove(mortosHist.size() - 1);
+					}
+
 				}
-
 			}
 		}
 	}
@@ -398,8 +418,40 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 				break;
 			case KeyEvent.VK_3:
 				view.setVisible(false);
-//				ControllerConsumoSC consumo = new ControllerConsumoSC(controller);
-//				consumo.openWindow(datasFases);
+				ControllerConsumoLivreST consumost = new ControllerConsumoLivreST(controller);
+				consumost.openWindow(Integer.parseInt(view.getGalpaoJFT().getText()), Integer.parseInt(view.getBaiaJFT().getText()),
+						Integer.parseInt(view.getSexoJFT().getText()), Integer.parseInt(view.getTrataJFT().getText()),
+						Integer.parseInt(view.getTrata2JFT().getText()), datasFases);
+				break;
+			case KeyEvent.VK_9:
+				view.setVisible(false);
+				ControllerEscolhaTipoDigST controllerEscolha = new ControllerEscolhaTipoDigST(controller);
+				controllerEscolha.openWindow(datasFases);
+				break;
+			}
+		}
+		if ((JFormattedTextField) e.getSource() == view.getOpcaoMediJFT()) {
+			switch (e.getKeyChar()) {
+			case KeyEvent.VK_0:
+				int n = JOptionPane.showConfirmDialog(view, "Deseja realmente sair do programa?", "DIGEX - Sair", JOptionPane.YES_NO_OPTION,
+						JOptionPane.WARNING_MESSAGE);
+				if (n == 0) {
+					System.out.println("Fim...");
+					System.exit(0);
+				}
+				break;
+			case KeyEvent.VK_1:
+				view.setVisible(false);
+				ControllerMortalidadeST m = new ControllerMortalidadeST(controller);
+				m.openWindow(datasFases);
+				break;
+			case KeyEvent.VK_2:
+				view.setVisible(false);
+				ControllerConsumoLivreST consumost = new ControllerConsumoLivreST(controller);
+				consumost.openWindow(Integer.parseInt(view.getGalpaoJFT().getText().trim()),
+						Integer.parseInt(view.getBaiaJFT().getText().trim()), Integer.parseInt(view.getSexoJFT().getText().trim()),
+						Integer.parseInt(view.getTrataJFT().getText().trim()), Integer.parseInt(view.getTrata2JFT().getText().trim()),
+						datasFases);
 				break;
 			case KeyEvent.VK_9:
 				view.setVisible(false);
@@ -562,6 +614,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 						&& view.getDose3JFT().getText().equals("000") && view.getControleMediJFT().getText().trim().equals("000000")) {
 					controller.getModel().getExperimentoVO().getMedicados()
 							.get(controller.getModel().getExperimentoVO().getMedicados().size() - 1).setFinalizado(true);
+					controller.getModel().getModelStateDAO().saveModelState(false);
 					view.getControleMediJFT().setEnabled(false);
 					view.getOpcaoMediJFT().setEnabled(true);
 					view.getOpcaoMediJFT().grabFocus();
