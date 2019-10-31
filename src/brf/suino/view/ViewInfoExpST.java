@@ -280,7 +280,7 @@ public class ViewInfoExpST extends javax.swing.JFrame {
 
 		fasesJP.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-		jLabel11.setText("Nr. Fases");
+		jLabel11.setText("Nr. Abates");
 
 		try {
 			nrFasesJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
@@ -290,7 +290,7 @@ public class ViewInfoExpST extends javax.swing.JFrame {
 		nrFasesJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		nrFasesJFT.setEnabled(false);
 
-		jLabel18.setText("Fase");
+		jLabel18.setText("Abate");
 
 		faseJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		faseJFT.setEnabled(false);

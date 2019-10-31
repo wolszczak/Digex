@@ -35,22 +35,26 @@ public class ControllerEscolhaDigST extends KeyAdapter {
 		view.getOpcaoJFT().addKeyListener(this);
 		this.datasFases = datasFases;
 
-		if (controller.getModel().getExperimentoVO().getMortalidade() != null
-				&& controller.getModel().getExperimentoVO().getMortalidade().isEmpty()) {
+		if (controller.getModel().getExperimentoVO().getBaias().isEmpty()) {
+			view.getExportarMortLabel().setForeground(Color.GRAY);
+		} else if (controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
+				.getMortalidades().isEmpty()) {
 			view.getExportarMortLabel().setForeground(Color.GRAY);
 		}
-		if (controller.getModel().getExperimentoVO().getMedicados() != null
-				&& controller.getModel().getExperimentoVO().getMedicados().isEmpty()) {
+
+		if (controller.getModel().getExperimentoVO().getBaias().isEmpty()) {
+			view.getExportarMediLabel().setForeground(Color.GRAY);
+		} else if (controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
+				.getMortalidades().isEmpty()) {
 			view.getExportarMediLabel().setForeground(Color.GRAY);
 		}
-		if (controller.getModel().getExperimentoVO().getConsumoLivre() != null
-				&& controller.getModel().getExperimentoVO().getConsumoLivre().isEmpty()) {
+
+		if (controller.getModel().getExperimentoVO().getBaias().isEmpty()) {
+			view.getExportarLivreLabel().setForeground(Color.GRAY);
+		} else if (controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
+				.getConsumoLivre().getRme().isEmpty()) {
 			view.getExportarLivreLabel().setForeground(Color.GRAY);
 		}
-//		if (controller.getModel().getExperimentoVO().getConsumoLivre() != null
-//				&& controller.getModel().getExperimentoVO().getConsumoLivre().isEmpty()) {
-//			view.getExportarLivreLabel().setForeground(Color.GRAY);
-//		}
 
 		histSetup();
 	}
@@ -72,7 +76,7 @@ public class ControllerEscolhaDigST extends KeyAdapter {
 	}
 
 	@Override
-	public void keyTyped(KeyEvent e)  {
+	public void keyTyped(KeyEvent e) {
 		switch (e.getKeyChar()) {
 		case KeyEvent.VK_0:
 			int n = JOptionPane.showConfirmDialog(view, "Deseja realmente sair do programa?", "DIGEX - Sair", JOptionPane.YES_NO_OPTION,
@@ -99,6 +103,32 @@ public class ControllerEscolhaDigST extends KeyAdapter {
 			mortalidade.openWindow(datasFases);
 			break;
 		case KeyEvent.VK_2:
+//			ControllerConsumoLivreST consumo = new ControllerConsumoLivreST(controller);
+//			if (controller.getModel().getExperimentoVO().getBaias().size() > 0) {
+//				if (controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
+//						.getConsumoLivre().isFinalizado()) {
+//					view.setVisible(false);
+//					consumo.openWindow(controller.getModel().getExperimentoVO().getBaias().get, null, null, null, null,
+//							datasFases);
+//				} else {
+//					view.setVisible(false);
+//					consumo.openWindow(
+//							controller.getModel().getExperimentoVO().getBaias()
+//									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumoLivre().getGalpao(),
+//							controller.getModel().getExperimentoVO().getBaias()
+//									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumoLivre().getBaia(),
+//							controller.getModel().getExperimentoVO().getBaias()
+//									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumoLivre().getSexo(),
+//							controller.getModel().getExperimentoVO().getBaias()
+//									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumoLivre().getTrat1(),
+//							controller.getModel().getExperimentoVO().getBaias()
+//									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumoLivre().getTrat2(),
+//							datasFases);
+//				}
+//			} else {
+//				view.setVisible(false);
+//				consumo.openWindow(controller.getModel().getExperimentoVO().getInfoExp().getGalpao(), null, null, null, null, datasFases);
+//			}
 			break;
 		case KeyEvent.VK_3:
 			break;

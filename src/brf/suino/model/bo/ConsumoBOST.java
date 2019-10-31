@@ -28,26 +28,26 @@ public class ConsumoBOST {
 		return msg;
 	}
 
-	public boolean isBaiaDigitada(int baia) {
-		for (ConsumoLivreVOST consumo : controller.getModel().getExperimentoVO().getConsumoLivre()) {
-			if (baia == consumo.getBaia()) {
-				return true;
-			}
-		}
-		return false;
-	}
+//	public boolean isBaiaDigitada(int baia) {
+//		for (ConsumoLivreVOST consumo : controller.getModel().getExperimentoVO().getBaias().get(0).getConsumo() ) {
+//			if (baia == consumo.getBaia()) {
+//				return true;
+//			}
+//		}
+//		return false;
+//	}
 
-	public void excluirBaia(int baia) {
-		ConsumoLivreVOST consumoRemocao = null;
-		for (ConsumoLivreVOST consumo : controller.getModel().getExperimentoVO().getConsumoLivre()) {
-			if (baia == consumo.getBaia()) {
-				consumoRemocao = consumo;
-				break;
-			}
-		}
-		controller.getModel().getExperimentoVO().getConsumoLivre().remove(consumoRemocao);
-		controller.getModel().getModelStateDAO().saveModelState(false);
-	}
+//	public void excluirBaia(int baia) {
+//		ConsumoLivreVOST consumoRemocao = null;
+//		for (ConsumoLivreVOST consumo : controller.getModel().getExperimentoVO().getConsumoLivre()) {
+//			if (baia == consumo.getBaia()) {
+//				consumoRemocao = consumo;
+//				break;
+//			}
+//		}
+//		controller.getModel().getExperimentoVO().getConsumoLivre().remove(consumoRemocao);
+//		controller.getModel().getModelStateDAO().saveModelState(false);
+//	}
 
 	public String verificaData(String dataString, List<String> fases) {
 		if (dataString.equals("00/00/00")) {

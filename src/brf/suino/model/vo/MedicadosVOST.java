@@ -6,11 +6,6 @@ import java.util.List;
 
 public class MedicadosVOST implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private int galpao;
-	private int baia;
-	private int sexo;
-	private int trat1;
-	private int trat2;
 	private int ordem;
 	private String data;
 	private int brinco;
@@ -24,13 +19,8 @@ public class MedicadosVOST implements Serializable {
 	public MedicadosVOST() {
 	}
 
-	public MedicadosVOST(int galpao, int baia, int sexo, int trat1, int trat2, int ordem, String data, int brinco, int medicamento,
-			int causa, int dose1, int dose2, int dose3, boolean finalizado) {
-		this.galpao = galpao;
-		this.baia = baia;
-		this.sexo = sexo;
-		this.trat1 = trat1;
-		this.trat2 = trat2;
+	public MedicadosVOST(int ordem, String data, int brinco, int medicamento, int causa, int dose1, int dose2, int dose3,
+			boolean finalizado) {
 		this.ordem = ordem;
 		this.data = data;
 		this.brinco = brinco;
@@ -40,46 +30,6 @@ public class MedicadosVOST implements Serializable {
 		this.dose2 = dose2;
 		this.dose3 = dose3;
 		this.finalizado = finalizado;
-	}
-
-	public int getBaia() {
-		return baia;
-	}
-
-	public void setBaia(int baia) {
-		this.baia = baia;
-	}
-
-	public int getSexo() {
-		return sexo;
-	}
-
-	public void setSexo(int sexo) {
-		this.sexo = sexo;
-	}
-
-	public int getTrat1() {
-		return trat1;
-	}
-
-	public void setTrat1(int trat1) {
-		this.trat1 = trat1;
-	}
-
-	public int getTrat2() {
-		return trat2;
-	}
-
-	public void setTrat2(int trat2) {
-		this.trat2 = trat2;
-	}
-
-	public int getGalpao() {
-		return galpao;
-	}
-
-	public void setGalpao(int galpao) {
-		this.galpao = galpao;
 	}
 
 	public int getOrdem() {

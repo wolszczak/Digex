@@ -79,6 +79,7 @@ public class ModelStateDAOST {
 			return false;
 		}
 //		ExperimentoVOST e = (ExperimentoVOST) obj;
+//		e.setBaias(new ArrayList<>());
 //		e.setMortalidade(new ArrayList<MortalidadeVOST>());
 //		e.setMedicados(new ArrayList<MedicadosVOST>());
 //		e.setConsumoLivre(new ArrayList<>());

@@ -7,14 +7,10 @@ import java.util.List;
 public class ExperimentoVOST implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private InfoExpVOST infoExp;
-	private List<MortalidadeVOST> mortalidade;
-	private List<ConsumoLivreVOST> consumoLivre;
-	private List<MedicadosVOST> medicados;
+	private List<BaiaVOST> baias;
 
 	public ExperimentoVOST() {
-		this.mortalidade = new ArrayList<>();
-		this.consumoLivre = new ArrayList<>();
-		this.medicados = new ArrayList<>();
+		this.baias = new ArrayList<>();
 	}
 
 	public InfoExpVOST getInfoExp() {
@@ -25,30 +21,12 @@ public class ExperimentoVOST implements Serializable {
 		this.infoExp = infoExp;
 	}
 
-	public List<MortalidadeVOST> getMortalidade() {
-		return mortalidade;
+	public List<BaiaVOST> getBaias() {
+		return baias;
 	}
 
-	public void setMortalidade(List<MortalidadeVOST> mortalidade) {
-		this.mortalidade = mortalidade;
+	public void setBaias(List<BaiaVOST> baias) {
+		this.baias = baias;
 	}
-
-	public List<MedicadosVOST> getMedicados() {
-		return medicados;
-	}
-
-	public void setMedicados(List<MedicadosVOST> medicados) {
-		this.medicados = medicados;
-	}
-
-	public List<ConsumoLivreVOST> getConsumoLivre() {
-		return consumoLivre;
-	}
-
-	public void setConsumoLivre(List<ConsumoLivreVOST> consumoLivre) {
-		this.consumoLivre = consumoLivre;
-	}
-
-
 
 }
