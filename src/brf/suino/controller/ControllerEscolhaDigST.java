@@ -35,24 +35,24 @@ public class ControllerEscolhaDigST extends KeyAdapter {
 		view.getOpcaoJFT().addKeyListener(this);
 		this.datasFases = datasFases;
 
-		if (controller.getModel().getExperimentoVO().getBaias().isEmpty()) {
+		if (controller.getModel().getExperimentoVO().getBaias() == null || controller.getModel().getExperimentoVO().getBaias().isEmpty()) {
 			view.getExportarMortLabel().setForeground(Color.GRAY);
 		} else if (controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
-				.getMortalidades().isEmpty()) {
+				.getMortalidades() == null) {
 			view.getExportarMortLabel().setForeground(Color.GRAY);
 		}
 
-		if (controller.getModel().getExperimentoVO().getBaias().isEmpty()) {
+		if (controller.getModel().getExperimentoVO().getBaias() == null || controller.getModel().getExperimentoVO().getBaias().isEmpty()) {
 			view.getExportarMediLabel().setForeground(Color.GRAY);
 		} else if (controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
-				.getMortalidades().isEmpty()) {
+				.getMedicados() == null) {
 			view.getExportarMediLabel().setForeground(Color.GRAY);
 		}
 
-		if (controller.getModel().getExperimentoVO().getBaias().isEmpty()) {
+		if (controller.getModel().getExperimentoVO().getBaias() == null || controller.getModel().getExperimentoVO().getBaias().isEmpty()) {
 			view.getExportarLivreLabel().setForeground(Color.GRAY);
 		} else if (controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
-				.getConsumoLivre().getRme().isEmpty()) {
+				.getConsumoLivre() == null) {
 			view.getExportarLivreLabel().setForeground(Color.GRAY);
 		}
 

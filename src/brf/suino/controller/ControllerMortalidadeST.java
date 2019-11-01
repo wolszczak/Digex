@@ -34,7 +34,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 	private List<MedicadosVOST> medicadosHist;
 	private List<Component> order, orderMortHist, orderMediHist;
 	private List<String> datasFases;
-	private int ordemMort, ordemMedi, lastBaia;
+	private int ordemMort, ordemMedi;
 	private MortalidadeBOST bo;
 	private Border defaultBorder;
 
@@ -56,6 +56,13 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 	}
 
 	private void preparaTelaNovaBaia() {
+		ordemMedi = 1;
+		ordemMort = 1;
+		view.getOrdemMediJFT().setText(String.valueOf(ordemMedi));
+		view.getOrdemMortJFT().setText(String.valueOf(ordemMort));
+		TextFormatter.formatStringJFT(view.getOrdemMediJFT(), view.getOrdemMediJFT().getText(), 3);
+		TextFormatter.formatStringJFT(view.getOrdemMediJFT(), view.getOrdemMediJFT().getText(), 3);
+
 		view.getRegistrosMortLabel().setVisible(false);
 		view.getRegistrosMediLabel().setVisible(false);
 		view.getOpcaoMortJFT().addKeyListener(this);
@@ -84,6 +91,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 		criarOrdemComponentes();
 		criarOrdemComponentesMortHist();
 		criarOrdemComponentesMediHist();
+
 	}
 
 	private void criarOrdemComponentesMortHist() {
@@ -211,6 +219,14 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 				// ULTIMA BAIA NÃO FINALIZADA
 				ultimaBaia = controller.getModel().getExperimentoVO().getBaias()
 						.get(controller.getModel().getExperimentoVO().getBaias().size() - 1);
+				view.getBaiaJFT().setText(String.valueOf(ultimaBaia.getBaia()));
+				TextFormatter.formatStringJFT(view.getBaiaJFT(), view.getBaiaJFT().getText(), 3);
+				view.getSexoJFT().setText(String.valueOf(ultimaBaia.getSexo()));
+				TextFormatter.formatStringJFT(view.getSexoJFT(), view.getSexoJFT().getText(), 1);
+				view.getTrataJFT().setText(String.valueOf(ultimaBaia.getTrat1()));
+				TextFormatter.formatStringJFT(view.getTrataJFT(), view.getTrataJFT().getText(), 2);
+				view.getTrata2JFT().setText(String.valueOf(ultimaBaia.getTrat2()));
+				TextFormatter.formatStringJFT(view.getTrata2JFT(), view.getTrata2JFT().getText(), 2);
 				if (ultimaBaia.getConsumoLivre() != null) {
 					if (!ultimaBaia.getConsumoLivre().isFinalizado()) {
 						// ABRE TELA DE CONSUMOS
@@ -221,7 +237,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 						// SEGUE PARA DIGITAÇÃO DE UMA NOVA BAIA
 						preparaTelaNovaBaia();
 					}
-				} else if (ultimaBaia.getMedicados() != null) {
+				}else if (ultimaBaia.getMedicados() != null) {
 					if (!ultimaBaia.getMedicados().get(ultimaBaia.getMedicados().size() - 1).isFinalizado()) {
 						// CARREGA HISTORICO DE MEDICADOS E PREPARA TELA PARA DIGITAÇÃO DE NOVOS
 						// REGISTROS
@@ -230,12 +246,20 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 						view.getDataMediJFT().setEnabled(true);
 						if (ultimaBaia.getMortalidades() != null) {
 							loadMortalidadesHist(ultimaBaia);
-							preparaTelaMortalidade();
 						}
 					} else {
 						// CARREGA HISTORICO DE MORTALIDADE E PREPARA TELA PARA DIGITAÇÃO DE NOVOS
 						// REGISTROS
 						if (ultimaBaia.getMortalidades() != null) {
+							if(ultimaBaia.getMortalidades().get(ultimaBaia.getMortalidades().size()-1).isFinalizado()) {
+								view.setVisible(false);
+								ControllerConsumoLivreST consumoLivreST = new ControllerConsumoLivreST(controller);
+								consumoLivreST.openWindow(ultimaBaia, datasFases);
+							}
+							
+							
+							
+							
 							loadMortalidadesHist(ultimaBaia);
 							preparaTelaMortalidade();
 						} else {
@@ -249,8 +273,11 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 						// REGISTROS
 						loadMortalidadesHist(ultimaBaia);
 						preparaTelaMortalidade();
+					} else if (ultimaBaia.getMedicados() == null) {
+						loadMortalidadesHist(ultimaBaia);
+						preparaTelaMedicados();
 					} else {
-						// SEGUE PARA DIGITAÇÃO DE UMA NOVA BAIA
+//						SEGUE PARA DIGITAÇÃO DE UMA NOVA BAIA
 						preparaTelaNovaBaia();
 					}
 				}
@@ -302,7 +329,11 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 	}
 
 	private void loadMedicadosHist(BaiaVOST ultimaBaia) {
+		medicadosHist = new ArrayList<>();
 		medicadosHist.addAll(ultimaBaia.getMedicados());
+		ordemMedi = medicadosHist.get(medicadosHist.size() - 1).getOrdem() + 1;
+		view.getOrdemMediJFT().setText(String.valueOf(ordemMedi));
+		TextFormatter.formatStringJFT(view.getOrdemMediJFT(), view.getOrdemMediJFT().getText(), 3);
 		for (int k = 0; k < 5; k++) {
 			if (medicadosHist != null && medicadosHist.size() > 0) {
 				JLabel lbl1 = (JLabel) orderMediHist.get(0);
@@ -344,7 +375,11 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 	}
 
 	private void loadMortalidadesHist(BaiaVOST ultimaBaia) {
+		mortosHist = new ArrayList<>();
 		mortosHist.addAll(ultimaBaia.getMortalidades());
+		ordemMort = mortosHist.get(mortosHist.size() - 1).getOrdem() + 1;
+		view.getOrdemMortJFT().setText(String.valueOf(ordemMort));
+		TextFormatter.formatStringJFT(view.getOrdemMediJFT(), view.getOrdemMediJFT().getText(), 3);
 		for (int k = 0; k < 5; k++) {
 			if (mortosHist != null && mortosHist.size() > 0) {
 				JLabel lbl1 = (JLabel) orderMortHist.get(0);
@@ -409,6 +444,12 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 				}
 				break;
 			case KeyEvent.VK_1:
+				controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
+						.getMortalidades()
+						.get(controller.getModel().getExperimentoVO().getBaias()
+								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMortalidades().size() - 1)
+						.setFinalizado(true);
+				controller.getModel().getModelStateDAO().saveModelState(false);
 				view.getOpcaoMortJFT().setEnabled(false);
 				view.getDataMediJFT().setEnabled(true);
 				view.getDataMediJFT().grabFocus();
@@ -535,11 +576,21 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 				if (view.getDataMortJFT().getText().equals("00/00/00") && view.getBrincoMortJFT().getText().equals("0000")
 						&& view.getPesoJFT().getText().equals("000000") && view.getFaseMortJFT().getText().equals("0")
 						&& view.getCausaMortJFT().getText().equals("00")) {
-					controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
-							.getMortalidades()
-							.get(controller.getModel().getExperimentoVO().getBaias()
-									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMortalidades().size() - 1)
-							.setFinalizado(true);
+
+					if (controller.getModel().getExperimentoVO().getBaias()
+							.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMortalidades() == null) {
+						controller.getModel().getExperimentoVO().getBaias()
+								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).setMortalidades(new ArrayList<>());
+						controller.getModel().getExperimentoVO().getBaias()
+								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMortalidades()
+								.add(new MortalidadeVOST(0, "00/00/0000", 0, 0, 0, 0, true));
+					}
+//					controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
+//							.getMortalidades()
+//							.get(controller.getModel().getExperimentoVO().getBaias()
+//									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMortalidades().size() - 1)
+//							.setFinalizado(true);
+//					controller.getModel().getModelStateDAO().saveModelState(false);
 					view.getControleMortJFT().setEnabled(false);
 					view.getOpcaoMortJFT().setEnabled(true);
 					view.getOpcaoMortJFT().grabFocus();
@@ -568,9 +619,9 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 						controller.getModel().getModelStateDAO().saveModelState(false);
 						view.getDataMortJFT().setEnabled(true);
 						view.getDataMortJFT().grabFocus();
-						TextFormatter.formatStringJFT(view.getOrdemMortJFT(), view.getOrdemMortJFT().getText(), 2);
-						updateHistMort();
 						ordemMort++;
+//						TextFormatter.formatStringJFT(view.getOrdemMortJFT(), view.getOrdemMortJFT().getText(), 3);
+						updateHistMort();
 						view.getOrdemMortJFT().setText(String.valueOf(ordemMort));
 						view.getRegistrosLabel().setVisible(true);
 						view.getPnlMortalidade().setBorder(defaultBorder);
@@ -627,12 +678,19 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 						&& view.getCausaMediJFT().getText().equals("00") && view.getMedicamentoJFT().getText().equals("00")
 						&& view.getDose1JFT().getText().equals("000") && view.getDose2JFT().getText().equals("000")
 						&& view.getDose3JFT().getText().equals("000") && view.getControleMediJFT().getText().trim().equals("000000")) {
-					controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
-							.getMedicados()
-							.get(controller.getModel().getExperimentoVO().getBaias()
-									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMedicados().size() - 1)
-							.setFinalizado(true);
-					controller.getModel().getModelStateDAO().saveModelState(false);
+					if (controller.getModel().getExperimentoVO().getBaias()
+							.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMedicados() == null) {
+						controller.getModel().getExperimentoVO().getBaias()
+								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).setMedicados(new ArrayList<>());
+						controller.getModel().getExperimentoVO().getBaias()
+								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMedicados()
+								.add(new MedicadosVOST(0, "00/00/0000", 0, 0, 0, 0, 0, 0, true));
+					} else {
+						controller.getModel().getExperimentoVO().getBaias()
+								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMedicados()
+								.add(new MedicadosVOST(0, "00/00/0000", 0, 0, 0, 0, 0, 0, true));
+					}
+//					controller.getModel().getModelStateDAO().saveModelState(false);
 					view.getControleMediJFT().setEnabled(false);
 					view.getOpcaoMediJFT().setEnabled(true);
 					view.getOpcaoMediJFT().grabFocus();
@@ -667,9 +725,9 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 						controller.getModel().getModelStateDAO().saveModelState(false);
 						view.getDataMediJFT().setEnabled(true);
 						view.getDataMediJFT().grabFocus();
-						TextFormatter.formatStringJFT(view.getOrdemMediJFT(), view.getOrdemMediJFT().getText(), 2);
-						updateHistMedi();
 						ordemMedi++;
+//						TextFormatter.formatStringJFT(view.getOrdemMediJFT(), view.getOrdemMediJFT().getText(), 2);
+						updateHistMedi();
 						view.getRegistrosMediLabel().setVisible(true);
 						view.getPnlMedicados().setBorder(defaultBorder);
 					} else {
@@ -687,6 +745,8 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 		view.getOrdemMortHist3Label().setText(String.valueOf(view.getOrdemMortHist4Label().getText()));
 		view.getOrdemMortHist4Label().setText(String.valueOf(view.getOrdemMortHist5Label().getText()));
 		view.getOrdemMortHist5Label().setText(String.valueOf(view.getOrdemMortJFT().getText()));
+		view.getOrdemMortJFT().setText(String.valueOf(ordemMort));
+		TextFormatter.formatStringJFT(view.getOrdemMortJFT(), view.getOrdemMortJFT().getText(), 3);
 
 		view.getDataMortHist1Label().setText(String.valueOf(view.getDataMortHist2Label().getText()));
 		view.getDataMortHist2Label().setText(String.valueOf(view.getDataMortHist3Label().getText()));
@@ -730,6 +790,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 		view.getFaseMortJFT().setEnabled(false);
 		view.getCausaMortJFT().setEnabled(false);
 		view.getControleMortJFT().setEnabled(false);
+
 		view.pack();
 	}
 
@@ -739,6 +800,8 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 		view.getOrdemMediHist3Label().setText(String.valueOf(view.getOrdemMediHist4Label().getText()));
 		view.getOrdemMediHist4Label().setText(String.valueOf(view.getOrdemMediHist5Label().getText()));
 		view.getOrdemMediHist5Label().setText(String.valueOf(view.getOrdemMediJFT().getText()));
+		view.getOrdemMediJFT().setText(String.valueOf(ordemMedi));
+		TextFormatter.formatStringJFT(view.getOrdemMediJFT(), view.getOrdemMediJFT().getText(), 3);
 
 		view.getDataMediHist1Label().setText(String.valueOf(view.getDataMediHist2Label().getText()));
 		view.getDataMediHist2Label().setText(String.valueOf(view.getDataMediHist3Label().getText()));
