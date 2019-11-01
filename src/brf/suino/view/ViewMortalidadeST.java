@@ -176,15 +176,6 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 		dose3Hist2Label = new javax.swing.JLabel();
 		dose3Hist1Label = new javax.swing.JLabel();
 		jLabel58 = new javax.swing.JLabel();
-		jPanel9 = new javax.swing.JPanel();
-		jLabel46 = new javax.swing.JLabel();
-		jLabel47 = new javax.swing.JLabel();
-		jLabel48 = new javax.swing.JLabel();
-		jLabel59 = new javax.swing.JLabel();
-		jLabel60 = new javax.swing.JLabel();
-		opcaoMortJFT = new javax.swing.JFormattedTextField();
-		jLabel50 = new javax.swing.JLabel();
-		jLabel51 = new javax.swing.JLabel();
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1268,63 +1259,10 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 		);
 		jPanel2.setLayout(jPanel2Layout);
 
-		jPanel9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-		jLabel46.setText("Escolha uma opção:");
-
-		jLabel47.setText("[1] - Digitar Medicados");
-
-		jLabel48.setText("[2] - Digitar nova baia");
-
-		jLabel59.setText("[0] - Sair");
-
-		jLabel60.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		jLabel60.setText("Opção");
-
-		try {
-			opcaoMortJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
-		} catch (java.text.ParseException ex) {
-			ex.printStackTrace();
-		}
-		opcaoMortJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-		opcaoMortJFT.setEnabled(false);
-
-		jLabel50.setText("[9] - Voltar");
-
-		jLabel51.setText("[3] - Digitar Consumo");
-
-		javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-		jPanel9.setLayout(jPanel9Layout);
-		jPanel9Layout.setHorizontalGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel9Layout.createSequentialGroup().addContainerGap()
-						.addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(jLabel47, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
-								.addGroup(jPanel9Layout.createSequentialGroup().addGap(4, 4, 4)
-										.addComponent(jLabel60, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-												Short.MAX_VALUE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(opcaoMortJFT,
-												javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-								.addComponent(jLabel48, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(jLabel51, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(jLabel46, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(jLabel50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(jLabel59, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE))
-						.addContainerGap()));
-		jPanel9Layout.setVerticalGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel9Layout.createSequentialGroup().addContainerGap().addComponent(jLabel46).addGap(18, 18, 18)
-						.addComponent(jLabel47).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(jLabel48)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(jLabel51)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE).addComponent(jLabel50)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(jLabel59).addGap(18, 18, 18)
-						.addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel60)
-								.addComponent(opcaoMortJFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addContainerGap()));
+//		try {
+//		} catch (java.text.ParseException ex) {
+//			ex.printStackTrace();
+//		}
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
@@ -1337,11 +1275,9 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 						.addComponent(registrosMortLabel, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 847, Short.MAX_VALUE)
 						.addComponent(jPanel2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 						.addGroup(jPanel1Layout.createSequentialGroup()
-							.addComponent(pnlMortalidade, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(jPanel9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(jPanel1Layout.createSequentialGroup()
-							.addComponent(baiaJP, GroupLayout.PREFERRED_SIZE, 565, GroupLayout.PREFERRED_SIZE)
+							.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+								.addComponent(pnlMortalidade, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(baiaJP, GroupLayout.PREFERRED_SIZE, 565, GroupLayout.PREFERRED_SIZE))
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(panel, GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)))
 					.addContainerGap())
@@ -1350,13 +1286,12 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 			jPanel1Layout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(jPanel1Layout.createSequentialGroup()
 					.addContainerGap()
-					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING, false)
-						.addComponent(panel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(baiaJP, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-						.addComponent(jPanel9, GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
-						.addComponent(pnlMortalidade, GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE))
+						.addGroup(jPanel1Layout.createSequentialGroup()
+							.addComponent(baiaJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(pnlMortalidade, GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE))
+						.addComponent(panel, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addComponent(registrosMortLabel)
 					.addPreferredGap(ComponentPlacement.RELATED)
@@ -1364,47 +1299,72 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 					.addContainerGap())
 		);
 		
-		JLabel lblOpo = new JLabel();
-		lblOpo.setHorizontalAlignment(SwingConstants.TRAILING);
-		lblOpo.setText("Opção");
+		lblMedicados = new JLabel();
+		lblMedicados.setText("Opções de digitação");
+		lblMedicados.setHorizontalAlignment(SwingConstants.CENTER);
 		
-		JFormattedTextField formattedTextField = new JFormattedTextField();
-		formattedTextField.setHorizontalAlignment(SwingConstants.CENTER);
+		lblMortalidade = new JLabel();
+		lblMortalidade.setText("[1] - Mortalidade");
 		
 		lblMedicados_1 = new JLabel();
 		lblMedicados_1.setText("[2] - Medicados");
 		
-		lblMedicados = new JLabel();
-		lblMedicados.setText("[1] - Mortos");
+		lblSair = new JLabel();
+		lblSair.setText("[3] - Consumo");
+		
+		label = new JLabel();
+		label.setText("[9] - Voltar");
+		
+		label_1 = new JLabel();
+		label_1.setText("[0] - Sair");
+		
+		formattedTextField = new JFormattedTextField();
+		formattedTextField.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		lblOpo = new JLabel();
+		lblOpo.setText("Opção");
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addComponent(lblMedicados, GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
 				.addGroup(gl_panel.createSequentialGroup()
-					.addComponent(lblOpo, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(formattedTextField, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblMedicados_1, GroupLayout.PREFERRED_SIZE, 95, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblMedicados, GroupLayout.PREFERRED_SIZE, 74, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(103, Short.MAX_VALUE))
+						.addComponent(lblMortalidade, GroupLayout.PREFERRED_SIZE, 149, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING, false)
+							.addComponent(lblSair, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addComponent(lblMedicados_1, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+						.addComponent(label, GroupLayout.PREFERRED_SIZE, 52, GroupLayout.PREFERRED_SIZE)
+						.addComponent(label_1, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_panel.createSequentialGroup()
+							.addComponent(lblOpo, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(formattedTextField, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))))
 		);
 		gl_panel.setVerticalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel.createSequentialGroup()
+					.addComponent(lblMedicados)
+					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_panel.createSequentialGroup()
-							.addGap(11)
-							.addComponent(formattedTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addComponent(lblMortalidade)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(lblMedicados_1))
 						.addGroup(gl_panel.createSequentialGroup()
-							.addGap(14)
-							.addComponent(lblOpo)))
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-				.addGroup(gl_panel.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(lblMedicados)
-					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(lblMedicados_1))
+							.addComponent(label)
+							.addGap(6)
+							.addComponent(label_1)))
+					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel.createSequentialGroup()
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+								.addComponent(formattedTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblSair)))
+						.addGroup(gl_panel.createSequentialGroup()
+							.addGap(9)
+							.addComponent(lblOpo))))
 		);
 		panel.setLayout(gl_panel);
 		jPanel1.setLayout(jPanel1Layout);
@@ -1532,12 +1492,7 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 	private javax.swing.JLabel jLabel43;
 	private javax.swing.JLabel jLabel44;
 	private javax.swing.JLabel jLabel45;
-	private javax.swing.JLabel jLabel46;
-	private javax.swing.JLabel jLabel47;
-	private javax.swing.JLabel jLabel48;
 	private javax.swing.JLabel jLabel49;
-	private javax.swing.JLabel jLabel50;
-	private javax.swing.JLabel jLabel51;
 	private javax.swing.JLabel jLabel52;
 	private javax.swing.JLabel jLabel53;
 	private javax.swing.JLabel jLabel54;
@@ -1545,8 +1500,6 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 	private javax.swing.JLabel jLabel56;
 	private javax.swing.JLabel jLabel57;
 	private javax.swing.JLabel jLabel58;
-	private javax.swing.JLabel jLabel59;
-	private javax.swing.JLabel jLabel60;
 	private javax.swing.JLabel jLabel7;
 	private javax.swing.JLabel jLabel8;
 	private javax.swing.JPanel jPanel1;
@@ -1554,12 +1507,10 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 	private javax.swing.JPanel pnlMortalidade;
 	private javax.swing.JPanel pnlMedicados;
 	private javax.swing.JPanel jPanel8;
-	private javax.swing.JPanel jPanel9;
 	private javax.swing.JFormattedTextField causaMortJFT;
 	private javax.swing.JFormattedTextField dose2JFT;
 	private javax.swing.JFormattedTextField dose3JFT;
 	private javax.swing.JFormattedTextField opcaoMediJFT;
-	private javax.swing.JFormattedTextField opcaoMortJFT;
 	private javax.swing.JLabel ordemMortHist1Label;
 	private javax.swing.JLabel ordemMediHist1Label;
 	private javax.swing.JLabel ordemMortHist2Label;
@@ -1614,8 +1565,14 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 	private javax.swing.JFormattedTextField trataJFT;
 	private JFormattedTextField controleBaiaJFT;
 	private JLabel lblControle;
-	private JLabel lblMedicados_1;
 	private JLabel lblMedicados;
+	private JLabel lblMortalidade;
+	private JLabel lblMedicados_1;
+	private JLabel lblSair;
+	private JLabel label;
+	private JLabel label_1;
+	private JFormattedTextField formattedTextField;
+	private JLabel lblOpo;
 
 	// End of variables declaration//GEN-END:variables
 	public javax.swing.JFormattedTextField getBaiaJFT() {
@@ -2074,30 +2031,7 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 		this.jLabel45 = jLabel45;
 	}
 
-	public javax.swing.JLabel getjLabel46() {
-		return jLabel46;
-	}
-
-	public void setjLabel46(javax.swing.JLabel jLabel46) {
-		this.jLabel46 = jLabel46;
-	}
-
-	public javax.swing.JLabel getjLabel47() {
-		return jLabel47;
-	}
-
-	public void setjLabel47(javax.swing.JLabel jLabel47) {
-		this.jLabel47 = jLabel47;
-	}
-
-	public javax.swing.JLabel getjLabel48() {
-		return jLabel48;
-	}
-
-	public void setjLabel48(javax.swing.JLabel jLabel48) {
-		this.jLabel48 = jLabel48;
-	}
-
+	
 	public javax.swing.JLabel getjLabel49() {
 		return jLabel49;
 	}
@@ -2106,21 +2040,6 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 		this.jLabel49 = jLabel49;
 	}
 
-	public javax.swing.JLabel getjLabel50() {
-		return jLabel50;
-	}
-
-	public void setjLabel50(javax.swing.JLabel jLabel50) {
-		this.jLabel50 = jLabel50;
-	}
-
-	public javax.swing.JLabel getjLabel51() {
-		return jLabel51;
-	}
-
-	public void setjLabel51(javax.swing.JLabel jLabel51) {
-		this.jLabel51 = jLabel51;
-	}
 
 	public javax.swing.JLabel getjLabel52() {
 		return jLabel52;
@@ -2178,21 +2097,6 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 		this.jLabel58 = jLabel58;
 	}
 
-	public javax.swing.JLabel getjLabel59() {
-		return jLabel59;
-	}
-
-	public void setjLabel59(javax.swing.JLabel jLabel59) {
-		this.jLabel59 = jLabel59;
-	}
-
-	public javax.swing.JLabel getjLabel60() {
-		return jLabel60;
-	}
-
-	public void setjLabel60(javax.swing.JLabel jLabel60) {
-		this.jLabel60 = jLabel60;
-	}
 
 	public javax.swing.JLabel getjLabel7() {
 		return jLabel7;
@@ -2250,13 +2154,6 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 		this.jPanel8 = jPanel8;
 	}
 
-	public javax.swing.JPanel getjPanel9() {
-		return jPanel9;
-	}
-
-	public void setjPanel9(javax.swing.JPanel jPanel9) {
-		this.jPanel9 = jPanel9;
-	}
 
 	public javax.swing.JFormattedTextField getCausaMortJFT() {
 		return causaMortJFT;
@@ -2290,13 +2187,6 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 		this.opcaoMediJFT = opcaoMediJFT;
 	}
 
-	public javax.swing.JFormattedTextField getOpcaoMortJFT() {
-		return opcaoMortJFT;
-	}
-
-	public void setOpcaoMortJFT(javax.swing.JFormattedTextField opcaoMortJFT) {
-		this.opcaoMortJFT = opcaoMortJFT;
-	}
 
 	public javax.swing.JLabel getOrdemMortHist1Label() {
 		return ordemMortHist1Label;
