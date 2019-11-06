@@ -12,53 +12,33 @@ public class BaiaVOST implements Serializable {
 	private int sexo;
 	private int trat1;
 	private int trat2;
+	private int trat3;
 	private List<MortalidadeVOST> mortalidades;
 	private List<MedicadosVOST> medicados;
-	private ConsumoLivreVOST consumoLivre;
-	private boolean finalizado;
+	private ConsumoLivreVOST consumos;
+	private boolean finalizado, consumoLivre, consumoTratos;
 
-	public BaiaVOST(int galpao, int baia, int sexo, int trat1, int trat2, List<MortalidadeVOST> mortalidades, List<MedicadosVOST> medicados,
-			ConsumoLivreVOST consumo, boolean finalizado) {
+	public BaiaVOST(int galpao, int baia, int sexo, int trat1, int trat2, int trat3, List<MortalidadeVOST> mortalidades,
+			List<MedicadosVOST> medicados, ConsumoLivreVOST consumos, boolean finalizado, boolean consumoLivre, boolean consumoTratos) {
 		super();
 		this.galpao = galpao;
 		this.baia = baia;
 		this.sexo = sexo;
 		this.trat1 = trat1;
 		this.trat2 = trat2;
+		this.trat3 = trat3;
 		this.mortalidades = mortalidades;
 		this.medicados = medicados;
-		this.consumoLivre = consumo;
+		this.consumos = consumos;
 		this.finalizado = finalizado;
+		this.consumoLivre = consumoLivre;
+		this.consumoTratos = consumoTratos;
 	}
 
 	public BaiaVOST() {
 		mortalidades = new ArrayList<>();
 		medicados = new ArrayList<>();
-		consumoLivre = new ConsumoLivreVOST();
-	}
-
-	public List<MortalidadeVOST> getMortalidades() {
-		return mortalidades;
-	}
-
-	public void setMortalidades(List<MortalidadeVOST> mortalidades) {
-		this.mortalidades = mortalidades;
-	}
-
-	public List<MedicadosVOST> getMedicados() {
-		return medicados;
-	}
-
-	public void setMedicados(List<MedicadosVOST> medicados) {
-		this.medicados = medicados;
-	}
-
-	public ConsumoLivreVOST getConsumoLivre() {
-		return consumoLivre;
-	}
-
-	public void setConsumoLivre(ConsumoLivreVOST consumoLivre) {
-		this.consumoLivre = consumoLivre;
+		consumos = new ConsumoLivreVOST();
 	}
 
 	public int getGalpao() {
@@ -101,12 +81,60 @@ public class BaiaVOST implements Serializable {
 		this.trat2 = trat2;
 	}
 
+	public int getTrat3() {
+		return trat3;
+	}
+
+	public void setTrat3(int trat3) {
+		this.trat3 = trat3;
+	}
+
+	public List<MortalidadeVOST> getMortalidades() {
+		return mortalidades;
+	}
+
+	public void setMortalidades(List<MortalidadeVOST> mortalidades) {
+		this.mortalidades = mortalidades;
+	}
+
+	public List<MedicadosVOST> getMedicados() {
+		return medicados;
+	}
+
+	public void setMedicados(List<MedicadosVOST> medicados) {
+		this.medicados = medicados;
+	}
+
+	public ConsumoLivreVOST getConsumos() {
+		return consumos;
+	}
+
+	public void setConsumos(ConsumoLivreVOST consumos) {
+		this.consumos = consumos;
+	}
+
 	public boolean isFinalizado() {
 		return finalizado;
 	}
 
 	public void setFinalizado(boolean finalizado) {
 		this.finalizado = finalizado;
+	}
+
+	public boolean isConsumoLivre() {
+		return consumoLivre;
+	}
+
+	public void setConsumoLivre(boolean consumoLivre) {
+		this.consumoLivre = consumoLivre;
+	}
+
+	public boolean isConsumoTratos() {
+		return consumoTratos;
+	}
+
+	public void setConsumoTratos(boolean consumoTratos) {
+		this.consumoTratos = consumoTratos;
 	}
 
 }

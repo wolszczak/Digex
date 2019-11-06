@@ -125,7 +125,6 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 		}
 		if (e.getKeyChar() == KeyEvent.VK_ENTER) {
 			JFormattedTextField src = null;
-			JCheckBox chk = null;
 			String text = "";
 
 			if (e.getSource() == viewBaiaAmostrados.getCheckColunaExtra()) {

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.BorderFactory;
+import javax.swing.JCheckBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -46,7 +47,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 	public void openWindow(List<String> datasFases) {
 		this.datasFases = datasFases;
 		view = new ViewMortalidadeST();
-		view.setTitle("DIGEX - Mortalidade Suínos Terminação");
+		view.setTitle("DIGEX - Baias Suínos Terminação");
 		view.setResizable(false);
 		view.setLocationRelativeTo(null);
 		view.setVisible(true);
@@ -65,8 +66,8 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 
 		view.getRegistrosMortLabel().setVisible(false);
 		view.getRegistrosMediLabel().setVisible(false);
-		view.getOpcaoMortJFT().addKeyListener(this);
-		view.getOpcaoMediJFT().addKeyListener(this);
+//		view.getOpcaoMortJFT().addKeyListener(this);
+//		view.getOpcaoMediJFT().addKeyListener(this);
 		view.getGalpaoJFT().setText(String.valueOf(controller.getModel().getExperimentoVO().getInfoExp().getGalpao()));
 
 		view.getDataMortJFT().setText("00/00/00");
@@ -189,7 +190,6 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 		order.add(view.getFaseMortJFT());
 		order.add(view.getCausaMortJFT());
 		order.add(view.getControleMortJFT());
-		order.add(view.getOpcaoMortJFT());
 		order.add(view.getDataMediJFT());
 		order.add(view.getBrincoMediJFT());
 		order.add(view.getMedicamentoJFT());
@@ -198,7 +198,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 		order.add(view.getDose2JFT());
 		order.add(view.getDose3JFT());
 		order.add(view.getControleMediJFT());
-		order.add(view.getOpcaoMediJFT());
+		order.add(view.getOpcaoJFT());
 
 		FocusOrderPolicy newPolicy = new FocusOrderPolicy(order);
 		view.setFocusTraversalPolicy(newPolicy);
@@ -227,8 +227,8 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 				TextFormatter.formatStringJFT(view.getTrataJFT(), view.getTrataJFT().getText(), 2);
 				view.getTrata2JFT().setText(String.valueOf(ultimaBaia.getTrat2()));
 				TextFormatter.formatStringJFT(view.getTrata2JFT(), view.getTrata2JFT().getText(), 2);
-				if (ultimaBaia.getConsumoLivre() != null) {
-					if (!ultimaBaia.getConsumoLivre().isFinalizado()) {
+				if (ultimaBaia.getConsumos() != null) {
+					if (!ultimaBaia.getConsumos().isFinalizado()) {
 						// ABRE TELA DE CONSUMOS
 						view.setVisible(false);
 						ControllerConsumoLivreST consumoLivreST = new ControllerConsumoLivreST(controller);
@@ -237,7 +237,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 						// SEGUE PARA DIGITAÇÃO DE UMA NOVA BAIA
 						preparaTelaNovaBaia();
 					}
-				}else if (ultimaBaia.getMedicados() != null) {
+				} else if (ultimaBaia.getMedicados() != null) {
 					if (!ultimaBaia.getMedicados().get(ultimaBaia.getMedicados().size() - 1).isFinalizado()) {
 						// CARREGA HISTORICO DE MEDICADOS E PREPARA TELA PARA DIGITAÇÃO DE NOVOS
 						// REGISTROS
@@ -251,15 +251,12 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 						// CARREGA HISTORICO DE MORTALIDADE E PREPARA TELA PARA DIGITAÇÃO DE NOVOS
 						// REGISTROS
 						if (ultimaBaia.getMortalidades() != null) {
-							if(ultimaBaia.getMortalidades().get(ultimaBaia.getMortalidades().size()-1).isFinalizado()) {
+							if (ultimaBaia.getMortalidades().get(ultimaBaia.getMortalidades().size() - 1).isFinalizado()) {
 								view.setVisible(false);
 								ControllerConsumoLivreST consumoLivreST = new ControllerConsumoLivreST(controller);
 								consumoLivreST.openWindow(ultimaBaia, datasFases);
 							}
-							
-							
-							
-							
+
 							loadMortalidadesHist(ultimaBaia);
 							preparaTelaMortalidade();
 						} else {
@@ -433,7 +430,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 				System.out.println("Voltar");
 			}
 		}
-		if ((JFormattedTextField) e.getSource() == view.getOpcaoMortJFT()) {
+		if ((JFormattedTextField) e.getSource() == view.getOpcaoJFT()) {
 			switch (e.getKeyChar()) {
 			case KeyEvent.VK_0:
 				int n = JOptionPane.showConfirmDialog(view, "Deseja realmente sair do programa?", "DIGEX - Sair", JOptionPane.YES_NO_OPTION,
@@ -450,7 +447,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMortalidades().size() - 1)
 						.setFinalizado(true);
 				controller.getModel().getModelStateDAO().saveModelState(false);
-				view.getOpcaoMortJFT().setEnabled(false);
+				view.getOpcaoJFT().setEnabled(false);
 				view.getDataMediJFT().setEnabled(true);
 				view.getDataMediJFT().grabFocus();
 				break;
@@ -471,271 +468,258 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 				break;
 			}
 		}
-		if ((JFormattedTextField) e.getSource() == view.getOpcaoMediJFT()) {
-			switch (e.getKeyChar()) {
-			case KeyEvent.VK_0:
-				int n = JOptionPane.showConfirmDialog(view, "Deseja realmente sair do programa?", "DIGEX - Sair", JOptionPane.YES_NO_OPTION,
-						JOptionPane.WARNING_MESSAGE);
-				if (n == 0) {
-					System.out.println("Fim...");
-					System.exit(0);
-				}
-				break;
-			case KeyEvent.VK_1:
-				view.setVisible(false);
-				ControllerMortalidadeST m = new ControllerMortalidadeST(controller);
-				m.openWindow(datasFases);
-				break;
-			case KeyEvent.VK_2:
-				view.setVisible(false);
-				ControllerConsumoLivreST consumost = new ControllerConsumoLivreST(controller);
-				consumost.openWindow(ultimaBaia, datasFases);
-				break;
-			case KeyEvent.VK_9:
-				view.setVisible(false);
-				ControllerEscolhaTipoDigST controllerEscolha = new ControllerEscolhaTipoDigST(controller);
-				controllerEscolha.openWindow(datasFases);
-				break;
-			}
-		}
 	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
 		if (e.getKeyChar() == KeyEvent.VK_ENTER) {
-			JFormattedTextField src = (JFormattedTextField) e.getSource();
-			String text = src.getText();
-			if ((JFormattedTextField) e.getSource() == view.getBaiaJFT()) {
-				view.getBaiaJFT().setEnabled(false);
-				TextFormatter.formatStringJFT(src, text, 3);
-				view.getSexoJFT().setEnabled(true);
-				view.getSexoJFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getSexoJFT()) {
-				view.getSexoJFT().setEnabled(false);
-				TextFormatter.formatStringJFT(src, text, 1);
-				view.getTrataJFT().setEnabled(true);
-				view.getTrataJFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getTrataJFT()) {
-				view.getTrataJFT().setEnabled(false);
-				TextFormatter.formatStringJFT(src, text, 2);
-				view.getTrata2JFT().setEnabled(true);
-				view.getTrata2JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getTrata2JFT()) {
-				view.getTrata2JFT().setEnabled(false);
-				TextFormatter.formatStringJFT(src, text, 2);
-				view.getControleBaiaJFT().setEnabled(true);
-				view.getControleBaiaJFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getControleBaiaJFT()) {
-				view.getControleBaiaJFT().setEnabled(false);
-				TextFormatter.formatStringJFT(src, text, 4);
-				if (Integer.parseInt(view.getControleBaiaJFT().getText()) == calculaControleBaia()) {
-					controller.getModel().getExperimentoVO().getBaias()
-							.add(new BaiaVOST(Integer.parseInt(view.getGalpaoJFT().getText()),
-									Integer.parseInt(view.getBaiaJFT().getText()), Integer.parseInt(view.getSexoJFT().getText()),
-									Integer.parseInt(view.getTrataJFT().getText()), Integer.parseInt(view.getTrata2JFT().getText()), null,
-									null, null, false));
-					view.getDataMortJFT().setEnabled(true);
-					view.getDataMortJFT().grabFocus();
-					view.getBaiaJP().setBorder(defaultBorder);
-				} else {
-					fluxoErroControleBaia();
-				}
-			} else if ((JFormattedTextField) e.getSource() == view.getDataMortJFT()) {
-				view.getRegistrosLabel().setVisible(false);
-				TextFormatter.formatStringJFT(src, text, 8);
-				String msg = bo.verificaData(view.getDataMortJFT().getText(), datasFases);
-				if (msg != null) {
-					JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
-				} else {
-					view.getDataMortJFT().setEnabled(false);
-					view.getBrincoMortJFT().setEnabled(true);
-					view.getBrincoMortJFT().grabFocus();
-				}
-			} else if ((JFormattedTextField) e.getSource() == view.getBrincoMortJFT()) {
-				TextFormatter.formatStringJFT(src, text, 4);
-				view.getBrincoMortJFT().setEnabled(false);
-				view.getPesoJFT().setEnabled(true);
-				view.getPesoJFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getPesoJFT()) {
-				TextFormatter.formatStringJFT(src, text, 6);
-				view.getPesoJFT().setEnabled(false);
-				view.getFaseMortJFT().setEnabled(true);
-				view.getFaseMortJFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getFaseMortJFT()) {
-				TextFormatter.formatStringJFT(src, text, 1);
-				view.getFaseMortJFT().setEnabled(false);
-				view.getCausaMortJFT().setEnabled(true);
-				view.getCausaMortJFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getCausaMortJFT()) {
-				TextFormatter.formatStringJFT(src, text, 2);
-				view.getCausaMortJFT().setEnabled(false);
-				view.getControleMortJFT().setEnabled(true);
-				view.getControleMortJFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getControleMortJFT()) {
-				TextFormatter.formatStringJFT(src, text, 6);
-				if (view.getDataMortJFT().getText().equals("00/00/00") && view.getBrincoMortJFT().getText().equals("0000")
-						&& view.getPesoJFT().getText().equals("000000") && view.getFaseMortJFT().getText().equals("0")
-						&& view.getCausaMortJFT().getText().equals("00")) {
+			JFormattedTextField src = null;
+			String text = "";
 
-					if (controller.getModel().getExperimentoVO().getBaias()
-							.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMortalidades() == null) {
+			if (e.getSource() == view.getCheckBoxLivre() || e.getSource() == view.getCheckBoxTratos()) {
+				
+			} else {
+				src = (JFormattedTextField) e.getSource();
+				text = src.getText();
+				if ((JFormattedTextField) e.getSource() == view.getBaiaJFT()) {
+					view.getBaiaJFT().setEnabled(false);
+					TextFormatter.formatStringJFT(src, text, 3);
+					view.getSexoJFT().setEnabled(true);
+					view.getSexoJFT().grabFocus();
+				} else if ((JFormattedTextField) e.getSource() == view.getSexoJFT()) {
+					view.getSexoJFT().setEnabled(false);
+					TextFormatter.formatStringJFT(src, text, 1);
+					view.getTrataJFT().setEnabled(true);
+					view.getTrataJFT().grabFocus();
+				} else if ((JFormattedTextField) e.getSource() == view.getTrataJFT()) {
+					view.getTrataJFT().setEnabled(false);
+					TextFormatter.formatStringJFT(src, text, 2);
+					view.getTrata2JFT().setEnabled(true);
+					view.getTrata2JFT().grabFocus();
+				} else if ((JFormattedTextField) e.getSource() == view.getTrata2JFT()) {
+					view.getTrata2JFT().setEnabled(false);
+					TextFormatter.formatStringJFT(src, text, 2);
+					view.getTrata3JFT().setEnabled(true);
+					view.getTrata3JFT().grabFocus();
+				} else if ((JFormattedTextField) e.getSource() == view.getTrata3JFT()) {
+					view.getTrata2JFT().setEnabled(false);
+					TextFormatter.formatStringJFT(src, text, 2);
+					view.getControleBaiaJFT().setEnabled(true);
+					view.getControleBaiaJFT().grabFocus();
+				} else if ((JFormattedTextField) e.getSource() == view.getControleBaiaJFT()) {
+					view.getControleBaiaJFT().setEnabled(false);
+					TextFormatter.formatStringJFT(src, text, 4);
+					if (Integer.parseInt(view.getControleBaiaJFT().getText()) == calculaControleBaia()) {
 						controller.getModel().getExperimentoVO().getBaias()
-								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).setMortalidades(new ArrayList<>());
-						controller.getModel().getExperimentoVO().getBaias()
-								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMortalidades()
-								.add(new MortalidadeVOST(0, "00/00/0000", 0, 0, 0, 0, true));
+								.add(new BaiaVOST(Integer.parseInt(view.getGalpaoJFT().getText()),
+										Integer.parseInt(view.getBaiaJFT().getText()), Integer.parseInt(view.getSexoJFT().getText()),
+										Integer.parseInt(view.getTrataJFT().getText()), Integer.parseInt(view.getTrata2JFT().getText()),
+										Integer.parseInt(view.getTrata3JFT().getText()), null, null, null, false, false, false));
+						view.getDataMortJFT().setEnabled(true);
+						view.getDataMortJFT().grabFocus();
+						view.getBaiaJP().setBorder(defaultBorder);
+					} else {
+						fluxoErroControleBaia();
 					}
-//					controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
-//							.getMortalidades()
-//							.get(controller.getModel().getExperimentoVO().getBaias()
-//									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMortalidades().size() - 1)
-//							.setFinalizado(true);
-//					controller.getModel().getModelStateDAO().saveModelState(false);
-					view.getControleMortJFT().setEnabled(false);
-					view.getOpcaoMortJFT().setEnabled(true);
-					view.getOpcaoMortJFT().grabFocus();
-				} else {
-					if (Integer.parseInt(view.getControleMortJFT().getText()) == calculaControleMortJFT()) {
+				} else if ((JFormattedTextField) e.getSource() == view.getDataMortJFT()) {
+					view.getRegistrosLabel().setVisible(false);
+					TextFormatter.formatStringJFT(src, text, 8);
+					String msg = bo.verificaData(view.getDataMortJFT().getText(), datasFases);
+					if (msg != null) {
+						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+					} else {
+						view.getDataMortJFT().setEnabled(false);
+						view.getBrincoMortJFT().setEnabled(true);
+						view.getBrincoMortJFT().grabFocus();
+					}
+				} else if ((JFormattedTextField) e.getSource() == view.getBrincoMortJFT()) {
+					TextFormatter.formatStringJFT(src, text, 4);
+					view.getBrincoMortJFT().setEnabled(false);
+					view.getPesoJFT().setEnabled(true);
+					view.getPesoJFT().grabFocus();
+				} else if ((JFormattedTextField) e.getSource() == view.getPesoJFT()) {
+					TextFormatter.formatStringJFT(src, text, 6);
+					view.getPesoJFT().setEnabled(false);
+					view.getFaseMortJFT().setEnabled(true);
+					view.getFaseMortJFT().grabFocus();
+				} else if ((JFormattedTextField) e.getSource() == view.getFaseMortJFT()) {
+					TextFormatter.formatStringJFT(src, text, 1);
+					view.getFaseMortJFT().setEnabled(false);
+					view.getCausaMortJFT().setEnabled(true);
+					view.getCausaMortJFT().grabFocus();
+				} else if ((JFormattedTextField) e.getSource() == view.getCausaMortJFT()) {
+					TextFormatter.formatStringJFT(src, text, 2);
+					view.getCausaMortJFT().setEnabled(false);
+					view.getControleMortJFT().setEnabled(true);
+					view.getControleMortJFT().grabFocus();
+				} else if ((JFormattedTextField) e.getSource() == view.getControleMortJFT()) {
+					TextFormatter.formatStringJFT(src, text, 6);
+					if (view.getDataMortJFT().getText().equals("00/00/00") && view.getBrincoMortJFT().getText().equals("0000")
+							&& view.getPesoJFT().getText().equals("000000") && view.getFaseMortJFT().getText().equals("0")
+							&& view.getCausaMortJFT().getText().equals("00")) {
+
 						if (controller.getModel().getExperimentoVO().getBaias()
-								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMortalidades() != null) {
-							controller.getModel().getExperimentoVO().getBaias()
-									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMortalidades()
-									.add(new MortalidadeVOST(Integer.parseInt(view.getOrdemMortJFT().getText().trim()),
-											view.getDataMortJFT().getText().trim(), Integer.parseInt(view.getPesoJFT().getText().trim()),
-											Integer.parseInt(view.getBrincoMortJFT().getText().trim()),
-											Integer.parseInt(view.getFaseMortJFT().getText().trim()),
-											Integer.parseInt(view.getCausaMortJFT().getText().trim()), false));
-						} else {
+								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMortalidades() == null) {
 							controller.getModel().getExperimentoVO().getBaias()
 									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).setMortalidades(new ArrayList<>());
 							controller.getModel().getExperimentoVO().getBaias()
 									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMortalidades()
-									.add(new MortalidadeVOST(Integer.parseInt(view.getOrdemMortJFT().getText().trim()),
-											view.getDataMortJFT().getText().trim(), Integer.parseInt(view.getPesoJFT().getText().trim()),
-											Integer.parseInt(view.getBrincoMortJFT().getText().trim()),
-											Integer.parseInt(view.getFaseMortJFT().getText().trim()),
-											Integer.parseInt(view.getCausaMortJFT().getText().trim()), false));
+									.add(new MortalidadeVOST(0, "00/00/0000", 0, 0, 0, 0, true));
 						}
 						controller.getModel().getModelStateDAO().saveModelState(false);
-						view.getDataMortJFT().setEnabled(true);
-						view.getDataMortJFT().grabFocus();
-						ordemMort++;
-//						TextFormatter.formatStringJFT(view.getOrdemMortJFT(), view.getOrdemMortJFT().getText(), 3);
-						updateHistMort();
-						view.getOrdemMortJFT().setText(String.valueOf(ordemMort));
-						view.getRegistrosLabel().setVisible(true);
-						view.getPnlMortalidade().setBorder(defaultBorder);
+						view.getControleMortJFT().setEnabled(false);
+						view.getOpcaoJFT().setEnabled(true);
+						view.getOpcaoJFT().setText("");
+						view.getOpcaoJFT().grabFocus();
 					} else {
-						fluxoErroControleMort();
-						view.getPnlMortalidade().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
-					}
-				}
-
-			} else if ((JFormattedTextField) e.getSource() == view.getDataMediJFT()) {
-				view.getRegistrosMediLabel().setVisible(false);
-				TextFormatter.formatStringJFT(src, text, 8);
-				String msg = bo.verificaData(view.getDataMediJFT().getText(), datasFases);
-				if (msg != null) {
-					JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
-				} else {
-					view.getDataMediJFT().setEnabled(false);
-					view.getBrincoMediJFT().setEnabled(true);
-					view.getBrincoMediJFT().grabFocus();
-				}
-			} else if ((JFormattedTextField) e.getSource() == view.getBrincoMediJFT()) {
-				TextFormatter.formatStringJFT(src, text, 4);
-				view.getBrincoMediJFT().setEnabled(false);
-				view.getMedicamentoJFT().setEnabled(true);
-				view.getMedicamentoJFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getMedicamentoJFT()) {
-				TextFormatter.formatStringJFT(src, text, 2);
-				view.getMedicamentoJFT().setEnabled(false);
-				view.getCausaMediJFT().setEnabled(true);
-				view.getCausaMediJFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getCausaMediJFT()) {
-				TextFormatter.formatStringJFT(src, text, 2);
-				view.getCausaMediJFT().setEnabled(false);
-				view.getDose1JFT().setEnabled(true);
-				view.getDose1JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getDose1JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				view.getDose1JFT().setEnabled(false);
-				view.getDose2JFT().setEnabled(true);
-				view.getDose2JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getDose2JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				view.getDose2JFT().setEnabled(false);
-				view.getDose3JFT().setEnabled(true);
-				view.getDose3JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getDose3JFT()) {
-				TextFormatter.formatStringJFT(src, text, 3);
-				view.getDose3JFT().setEnabled(false);
-				view.getControleMediJFT().setEnabled(true);
-				view.getControleMediJFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getControleMediJFT()) {
-				TextFormatter.formatStringJFT(src, text, 6);
-				if (view.getDataMediJFT().getText().equals("00/00/00") && view.getBrincoMediJFT().getText().equals("0000")
-						&& view.getCausaMediJFT().getText().equals("00") && view.getMedicamentoJFT().getText().equals("00")
-						&& view.getDose1JFT().getText().equals("000") && view.getDose2JFT().getText().equals("000")
-						&& view.getDose3JFT().getText().equals("000") && view.getControleMediJFT().getText().trim().equals("000000")) {
-					if (controller.getModel().getExperimentoVO().getBaias()
-							.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMedicados() == null) {
-						controller.getModel().getExperimentoVO().getBaias()
-								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).setMedicados(new ArrayList<>());
-						controller.getModel().getExperimentoVO().getBaias()
-								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMedicados()
-								.add(new MedicadosVOST(0, "00/00/0000", 0, 0, 0, 0, 0, 0, true));
-					} else {
-						controller.getModel().getExperimentoVO().getBaias()
-								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMedicados()
-								.add(new MedicadosVOST(0, "00/00/0000", 0, 0, 0, 0, 0, 0, true));
-					}
-//					controller.getModel().getModelStateDAO().saveModelState(false);
-					view.getControleMediJFT().setEnabled(false);
-					view.getOpcaoMediJFT().setEnabled(true);
-					view.getOpcaoMediJFT().grabFocus();
-				} else {
-					if (Integer.parseInt(view.getControleMediJFT().getText()) == calculaControleMediJFT()) {
-						if (controller.getModel().getExperimentoVO().getBaias()
-								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMedicados() != null) {
-							controller.getModel().getExperimentoVO().getBaias()
-									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMedicados()
-									.add(new MedicadosVOST(Integer.parseInt(view.getOrdemMediJFT().getText().trim()),
-											view.getDataMediJFT().getText().trim(),
-											Integer.parseInt(view.getBrincoMediJFT().getText().trim()),
-											Integer.parseInt(view.getMedicamentoJFT().getText().trim()),
-											Integer.parseInt(view.getCausaMediJFT().getText().trim()),
-											Integer.parseInt(view.getDose1JFT().getText().trim()),
-											Integer.parseInt(view.getDose2JFT().getText().trim()),
-											Integer.parseInt(view.getDose3JFT().getText().trim()), false));
+						if (Integer.parseInt(view.getControleMortJFT().getText()) == calculaControleMortJFT()) {
+							if (controller.getModel().getExperimentoVO().getBaias()
+									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMortalidades() != null) {
+								controller.getModel().getExperimentoVO().getBaias()
+										.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMortalidades()
+										.add(new MortalidadeVOST(Integer.parseInt(view.getOrdemMortJFT().getText().trim()),
+												view.getDataMortJFT().getText().trim(),
+												Integer.parseInt(view.getPesoJFT().getText().trim()),
+												Integer.parseInt(view.getBrincoMortJFT().getText().trim()),
+												Integer.parseInt(view.getFaseMortJFT().getText().trim()),
+												Integer.parseInt(view.getCausaMortJFT().getText().trim()), false));
+							} else {
+								controller.getModel().getExperimentoVO().getBaias()
+										.get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
+										.setMortalidades(new ArrayList<>());
+								controller.getModel().getExperimentoVO().getBaias()
+										.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMortalidades()
+										.add(new MortalidadeVOST(Integer.parseInt(view.getOrdemMortJFT().getText().trim()),
+												view.getDataMortJFT().getText().trim(),
+												Integer.parseInt(view.getPesoJFT().getText().trim()),
+												Integer.parseInt(view.getBrincoMortJFT().getText().trim()),
+												Integer.parseInt(view.getFaseMortJFT().getText().trim()),
+												Integer.parseInt(view.getCausaMortJFT().getText().trim()), false));
+							}
+							controller.getModel().getModelStateDAO().saveModelState(false);
+							view.getDataMortJFT().setEnabled(true);
+							view.getDataMortJFT().grabFocus();
+							ordemMort++;
+//							TextFormatter.formatStringJFT(view.getOrdemMortJFT(), view.getOrdemMortJFT().getText(), 3);
+							updateHistMort();
+							view.getOrdemMortJFT().setText(String.valueOf(ordemMort));
+							view.getRegistrosLabel().setVisible(true);
+							view.getPnlMortalidade().setBorder(defaultBorder);
 						} else {
+							fluxoErroControleMort();
+							view.getPnlMortalidade().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
+						}
+					}
+
+				} else if ((JFormattedTextField) e.getSource() == view.getDataMediJFT()) {
+					view.getRegistrosMediLabel().setVisible(false);
+					TextFormatter.formatStringJFT(src, text, 8);
+					String msg = bo.verificaData(view.getDataMediJFT().getText(), datasFases);
+					if (msg != null) {
+						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+					} else {
+						view.getDataMediJFT().setEnabled(false);
+						view.getBrincoMediJFT().setEnabled(true);
+						view.getBrincoMediJFT().grabFocus();
+					}
+				} else if ((JFormattedTextField) e.getSource() == view.getBrincoMediJFT()) {
+					TextFormatter.formatStringJFT(src, text, 4);
+					view.getBrincoMediJFT().setEnabled(false);
+					view.getMedicamentoJFT().setEnabled(true);
+					view.getMedicamentoJFT().grabFocus();
+				} else if ((JFormattedTextField) e.getSource() == view.getMedicamentoJFT()) {
+					TextFormatter.formatStringJFT(src, text, 2);
+					view.getMedicamentoJFT().setEnabled(false);
+					view.getCausaMediJFT().setEnabled(true);
+					view.getCausaMediJFT().grabFocus();
+				} else if ((JFormattedTextField) e.getSource() == view.getCausaMediJFT()) {
+					TextFormatter.formatStringJFT(src, text, 2);
+					view.getCausaMediJFT().setEnabled(false);
+					view.getDose1JFT().setEnabled(true);
+					view.getDose1JFT().grabFocus();
+				} else if ((JFormattedTextField) e.getSource() == view.getDose1JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					view.getDose1JFT().setEnabled(false);
+					view.getDose2JFT().setEnabled(true);
+					view.getDose2JFT().grabFocus();
+				} else if ((JFormattedTextField) e.getSource() == view.getDose2JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					view.getDose2JFT().setEnabled(false);
+					view.getDose3JFT().setEnabled(true);
+					view.getDose3JFT().grabFocus();
+				} else if ((JFormattedTextField) e.getSource() == view.getDose3JFT()) {
+					TextFormatter.formatStringJFT(src, text, 3);
+					view.getDose3JFT().setEnabled(false);
+					view.getControleMediJFT().setEnabled(true);
+					view.getControleMediJFT().grabFocus();
+				} else if ((JFormattedTextField) e.getSource() == view.getControleMediJFT()) {
+					TextFormatter.formatStringJFT(src, text, 6);
+					if (view.getDataMediJFT().getText().equals("00/00/00") && view.getBrincoMediJFT().getText().equals("0000")
+							&& view.getCausaMediJFT().getText().equals("00") && view.getMedicamentoJFT().getText().equals("00")
+							&& view.getDose1JFT().getText().equals("000") && view.getDose2JFT().getText().equals("000")
+							&& view.getDose3JFT().getText().equals("000") && view.getControleMediJFT().getText().trim().equals("000000")) {
+						if (controller.getModel().getExperimentoVO().getBaias()
+								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMedicados() == null) {
 							controller.getModel().getExperimentoVO().getBaias()
 									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).setMedicados(new ArrayList<>());
 							controller.getModel().getExperimentoVO().getBaias()
 									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMedicados()
-									.add(new MedicadosVOST(Integer.parseInt(view.getOrdemMediJFT().getText().trim()),
-											view.getDataMediJFT().getText().trim(),
-											Integer.parseInt(view.getBrincoMediJFT().getText().trim()),
-											Integer.parseInt(view.getMedicamentoJFT().getText().trim()),
-											Integer.parseInt(view.getCausaMediJFT().getText().trim()),
-											Integer.parseInt(view.getDose1JFT().getText().trim()),
-											Integer.parseInt(view.getDose2JFT().getText().trim()),
-											Integer.parseInt(view.getDose3JFT().getText().trim()), false));
+									.add(new MedicadosVOST(0, "00/00/0000", 0, 0, 0, 0, 0, 0, true));
+						} else {
+							controller.getModel().getExperimentoVO().getBaias()
+									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMedicados()
+									.add(new MedicadosVOST(0, "00/00/0000", 0, 0, 0, 0, 0, 0, true));
 						}
 						controller.getModel().getModelStateDAO().saveModelState(false);
-						view.getDataMediJFT().setEnabled(true);
-						view.getDataMediJFT().grabFocus();
-						ordemMedi++;
-//						TextFormatter.formatStringJFT(view.getOrdemMediJFT(), view.getOrdemMediJFT().getText(), 2);
-						updateHistMedi();
-						view.getRegistrosMediLabel().setVisible(true);
-						view.getPnlMedicados().setBorder(defaultBorder);
+						view.getControleMediJFT().setEnabled(false);
+						view.getOpcaoJFT().setEnabled(true);
+						view.getOpcaoJFT().setText("");
+						view.getOpcaoJFT().grabFocus();
 					} else {
-						fluxoErroControleMedi();
-						view.getPnlMedicados().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
+						if (Integer.parseInt(view.getControleMediJFT().getText()) == calculaControleMediJFT()) {
+							if (controller.getModel().getExperimentoVO().getBaias()
+									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMedicados() != null) {
+								controller.getModel().getExperimentoVO().getBaias()
+										.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMedicados()
+										.add(new MedicadosVOST(Integer.parseInt(view.getOrdemMediJFT().getText().trim()),
+												view.getDataMediJFT().getText().trim(),
+												Integer.parseInt(view.getBrincoMediJFT().getText().trim()),
+												Integer.parseInt(view.getMedicamentoJFT().getText().trim()),
+												Integer.parseInt(view.getCausaMediJFT().getText().trim()),
+												Integer.parseInt(view.getDose1JFT().getText().trim()),
+												Integer.parseInt(view.getDose2JFT().getText().trim()),
+												Integer.parseInt(view.getDose3JFT().getText().trim()), false));
+							} else {
+								controller.getModel().getExperimentoVO().getBaias()
+										.get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
+										.setMedicados(new ArrayList<>());
+								controller.getModel().getExperimentoVO().getBaias()
+										.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMedicados()
+										.add(new MedicadosVOST(Integer.parseInt(view.getOrdemMediJFT().getText().trim()),
+												view.getDataMediJFT().getText().trim(),
+												Integer.parseInt(view.getBrincoMediJFT().getText().trim()),
+												Integer.parseInt(view.getMedicamentoJFT().getText().trim()),
+												Integer.parseInt(view.getCausaMediJFT().getText().trim()),
+												Integer.parseInt(view.getDose1JFT().getText().trim()),
+												Integer.parseInt(view.getDose2JFT().getText().trim()),
+												Integer.parseInt(view.getDose3JFT().getText().trim()), false));
+							}
+							controller.getModel().getModelStateDAO().saveModelState(false);
+							view.getDataMediJFT().setEnabled(true);
+							view.getDataMediJFT().grabFocus();
+							ordemMedi++;
+//							TextFormatter.formatStringJFT(view.getOrdemMediJFT(), view.getOrdemMediJFT().getText(), 2);
+							updateHistMedi();
+							view.getRegistrosMediLabel().setVisible(true);
+							view.getPnlMedicados().setBorder(defaultBorder);
+						} else {
+							fluxoErroControleMedi();
+							view.getPnlMedicados().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
+						}
 					}
 				}
 			}
+
 		}
 	}
 

@@ -52,7 +52,7 @@ public class ControllerEscolhaDigST extends KeyAdapter {
 		if (controller.getModel().getExperimentoVO().getBaias() == null || controller.getModel().getExperimentoVO().getBaias().isEmpty()) {
 			view.getExportarLivreLabel().setForeground(Color.GRAY);
 		} else if (controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
-				.getConsumoLivre() == null) {
+				.getConsumos() == null) {
 			view.getExportarLivreLabel().setForeground(Color.GRAY);
 		}
 
