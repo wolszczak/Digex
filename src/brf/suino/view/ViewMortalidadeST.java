@@ -187,12 +187,6 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 		trata3JFT.setHorizontalAlignment(SwingConstants.CENTER);
 		trata3JFT.setEnabled(false);
 
-		JLabel lblConsumo = new JLabel();
-		lblConsumo.setText("Consumo");
-		lblConsumo.setHorizontalAlignment(SwingConstants.TRAILING);
-
-		JPanel panel_1 = new JPanel();
-
 		javax.swing.GroupLayout baiaJPLayout = new javax.swing.GroupLayout(baiaJP);
 		baiaJPLayout.setHorizontalGroup(baiaJPLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(baiaJPLayout.createSequentialGroup().addContainerGap().addComponent(jLabel44)
@@ -214,56 +208,23 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 						.addComponent(lblControle, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE)
 						.addPreferredGap(ComponentPlacement.RELATED)
 						.addComponent(controleBaiaJFT, GroupLayout.PREFERRED_SIZE, 67, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addComponent(lblConsumo, GroupLayout.PREFERRED_SIZE, 67, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)));
-		baiaJPLayout
-				.setVerticalGroup(
-						baiaJPLayout
-								.createParallelGroup(
-										Alignment.LEADING)
-								.addGroup(
-										baiaJPLayout.createSequentialGroup().addContainerGap()
-												.addGroup(
-														baiaJPLayout.createParallelGroup(Alignment.BASELINE).addComponent(jLabel31)
-																.addComponent(baiaJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-																		GroupLayout.PREFERRED_SIZE)
-																.addComponent(sexoJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-																		GroupLayout.PREFERRED_SIZE)
-																.addComponent(jLabel34)
-																.addComponent(trataJFT, GroupLayout.PREFERRED_SIZE,
-																		GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																.addComponent(jLabel44)
-																.addComponent(galpaoJFT, GroupLayout.PREFERRED_SIZE,
-																		GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																.addComponent(jLabel33).addComponent(jLabel45)
-																.addComponent(trata2JFT, GroupLayout.PREFERRED_SIZE,
-																		GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																.addComponent(lblTrat)
-																.addComponent(trata3JFT, GroupLayout.PREFERRED_SIZE,
-																		GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																.addComponent(lblControle)
-																.addComponent(controleBaiaJFT, GroupLayout.PREFERRED_SIZE,
-																		GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																.addComponent(lblConsumo))
-												.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-								.addComponent(panel_1, GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE));
-
-		checkBoxTratos = new JCheckBox("Tratos");
-
-		checkBoxLivre = new JCheckBox("Livre");
-		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
-		gl_panel_1.setHorizontalGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_1.createSequentialGroup().addComponent(checkBoxTratos, GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
-						.addGap(12))
-				.addGroup(gl_panel_1.createSequentialGroup().addComponent(checkBoxLivre, GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
-						.addContainerGap()));
-		gl_panel_1.setVerticalGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_1.createSequentialGroup().addComponent(checkBoxTratos)
-						.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(checkBoxLivre)));
-		panel_1.setLayout(gl_panel_1);
+						.addContainerGap(290, Short.MAX_VALUE)));
+		baiaJPLayout.setVerticalGroup(baiaJPLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(baiaJPLayout.createSequentialGroup().addContainerGap()
+						.addGroup(baiaJPLayout.createParallelGroup(Alignment.BASELINE).addComponent(jLabel31)
+								.addComponent(baiaJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(sexoJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(jLabel34)
+								.addComponent(trataJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(jLabel44)
+								.addComponent(galpaoJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(jLabel33).addComponent(jLabel45)
+								.addComponent(trata2JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblTrat)
+								.addComponent(trata3JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblControle).addComponent(controleBaiaJFT, GroupLayout.PREFERRED_SIZE,
+										GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addContainerGap(25, Short.MAX_VALUE)));
 		baiaJP.setLayout(baiaJPLayout);
 
 		registrosMortLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -849,7 +810,12 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 		label_14.setHorizontalAlignment(SwingConstants.CENTER);
 
 		dataMediJFT = new JFormattedTextField();
-		dataMediJFT.setToolTipText("");
+		try {
+			dataMediJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/##")));
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		dataMediJFT.setHorizontalAlignment(SwingConstants.CENTER);
 		dataMediJFT.setEnabled(false);
 
@@ -907,6 +873,12 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 		medicamentoHist5Label.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
 
 		medicamentoJFT = new JFormattedTextField();
+		try {
+			medicamentoJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		medicamentoJFT.setHorizontalAlignment(SwingConstants.CENTER);
 		medicamentoJFT.setEnabled(false);
 
@@ -1290,16 +1262,16 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 		pnlMedicados.setLayout(gl_pnlMedicados);
 
 		javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-		jPanel2Layout.setHorizontalGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel2Layout.createSequentialGroup()
-				.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
-						.addGroup(jPanel2Layout.createSequentialGroup().addContainerGap().addComponent(registrosMediLabel,
-								GroupLayout.DEFAULT_SIZE, 759, Short.MAX_VALUE))
-						.addComponent(pnlMedicados, GroupLayout.PREFERRED_SIZE, 697, GroupLayout.PREFERRED_SIZE))
-				.addContainerGap()));
+		jPanel2Layout.setHorizontalGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel2Layout.createSequentialGroup()
+						.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+								.addComponent(pnlMedicados, GroupLayout.PREFERRED_SIZE, 697, GroupLayout.PREFERRED_SIZE)
+								.addGroup(jPanel2Layout.createSequentialGroup().addContainerGap().addComponent(registrosMediLabel,
+										GroupLayout.DEFAULT_SIZE, 807, Short.MAX_VALUE)))));
 		jPanel2Layout.setVerticalGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
 				.addGroup(jPanel2Layout.createSequentialGroup()
-						.addComponent(pnlMedicados, GroupLayout.PREFERRED_SIZE, 215, GroupLayout.PREFERRED_SIZE).addGap(17)
-						.addComponent(registrosMediLabel).addContainerGap(42, Short.MAX_VALUE)));
+						.addComponent(pnlMedicados, GroupLayout.PREFERRED_SIZE, 215, GroupLayout.PREFERRED_SIZE)
+						.addPreferredGap(ComponentPlacement.RELATED).addComponent(registrosMediLabel).addGap(22)));
 		jPanel2.setLayout(jPanel2Layout);
 
 //		try {
@@ -1311,32 +1283,34 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 		panel.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-		jPanel1Layout
-				.setHorizontalGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-						.addGroup(jPanel1Layout.createSequentialGroup().addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-								.addComponent(registrosMortLabel, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 779, Short.MAX_VALUE)
-								.addComponent(jPanel2, GroupLayout.DEFAULT_SIZE, 779, Short.MAX_VALUE)
-								.addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING, false)
-										.addComponent(baiaJP, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-												Short.MAX_VALUE)
-										.addGroup(Alignment.LEADING,
-												jPanel1Layout.createSequentialGroup()
-														.addComponent(pnlMortalidade, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-																GroupLayout.PREFERRED_SIZE)
-														.addPreferredGap(ComponentPlacement.RELATED)
-														.addComponent(panel, GroupLayout.PREFERRED_SIZE, 223, GroupLayout.PREFERRED_SIZE))))
-								.addContainerGap()));
-		jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING)
-				.addGroup(jPanel1Layout.createSequentialGroup().addContainerGap()
-						.addComponent(baiaJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-								.addComponent(pnlMortalidade, GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
-								.addComponent(panel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(ComponentPlacement.UNRELATED).addComponent(registrosMortLabel)
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap()));
+		jPanel1Layout.setHorizontalGroup(
+			jPanel1Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel1Layout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+						.addComponent(baiaJP, GroupLayout.PREFERRED_SIZE, 698, GroupLayout.PREFERRED_SIZE)
+						.addComponent(registrosMortLabel, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 827, Short.MAX_VALUE)
+						.addGroup(jPanel1Layout.createSequentialGroup()
+							.addComponent(pnlMortalidade, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel, GroupLayout.PREFERRED_SIZE, 223, GroupLayout.PREFERRED_SIZE))
+						.addComponent(jPanel2, GroupLayout.DEFAULT_SIZE, 827, Short.MAX_VALUE))
+					.addContainerGap())
+		);
+		jPanel1Layout.setVerticalGroup(
+			jPanel1Layout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(jPanel1Layout.createSequentialGroup()
+					.addComponent(baiaJP, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+						.addComponent(panel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(pnlMortalidade, GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(registrosMortLabel)
+					.addGap(27)
+					.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
+		);
 
 		lblMedicados = new JLabel();
 		lblMedicados.setText("Opções de digitação");
@@ -1349,7 +1323,7 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 		lblMedicados_1.setText("[2] - Medicados");
 
 		lblSair = new JLabel();
-		lblSair.setText("[3] - Consumo");
+		lblSair.setText("[3] - Consumo Livre");
 
 		label = new JLabel();
 		label.setText("[9] - Voltar");
@@ -1365,34 +1339,32 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 		lblOpo.setText("Opção");
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
-				gl_panel.createParallelGroup(Alignment.LEADING).addComponent(lblMedicados, GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
+				gl_panel.createParallelGroup(Alignment.LEADING).addComponent(lblMedicados, GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
 						.addGroup(gl_panel.createSequentialGroup()
-								.addGroup(gl_panel.createParallelGroup(Alignment.LEADING).addComponent(lblSair).addComponent(lblMedicados_1)
-										.addComponent(lblMortalidade, GroupLayout.PREFERRED_SIZE, 115, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_panel.createParallelGroup(Alignment.LEADING, false).addComponent(lblMedicados_1)
+										.addComponent(lblMortalidade, GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+										.addComponent(lblSair, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 								.addPreferredGap(ComponentPlacement.UNRELATED)
 								.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
 										.addGroup(gl_panel.createSequentialGroup()
 												.addComponent(lblOpo, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE)
 												.addPreferredGap(ComponentPlacement.RELATED)
 												.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
-										.addComponent(label_1, GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
-										.addComponent(label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE))
+										.addComponent(label_1, GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+										.addComponent(label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE))
 								.addContainerGap()));
-		gl_panel.setVerticalGroup(
-				gl_panel.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel.createSequentialGroup().addComponent(lblMedicados).addPreferredGap(ComponentPlacement.RELATED)
-								.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-										.addGroup(gl_panel.createSequentialGroup().addComponent(lblMortalidade)
-												.addPreferredGap(ComponentPlacement.RELATED).addComponent(lblMedicados_1))
-										.addGroup(gl_panel.createSequentialGroup().addComponent(label)
-												.addPreferredGap(ComponentPlacement.RELATED).addComponent(label_1)))
-								.addPreferredGap(ComponentPlacement.RELATED)
-								.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-										.addGroup(gl_panel.createSequentialGroup().addGap(6).addComponent(lblSair))
-										.addGroup(gl_panel.createSequentialGroup().addGap(18).addGroup(
-												gl_panel.createParallelGroup(Alignment.BASELINE).addComponent(lblOpo).addComponent(opcaoJFT,
-														GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
-								.addContainerGap()));
+		gl_panel.setVerticalGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel.createSequentialGroup().addComponent(lblMedicados).addPreferredGap(ComponentPlacement.RELATED)
+						.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_panel.createSequentialGroup().addComponent(lblMortalidade)
+										.addPreferredGap(ComponentPlacement.RELATED).addComponent(lblMedicados_1))
+								.addGroup(gl_panel.createSequentialGroup().addComponent(label).addPreferredGap(ComponentPlacement.RELATED)
+										.addComponent(label_1)))
+						.addGroup(gl_panel.createParallelGroup(Alignment.LEADING).addGroup(gl_panel.createSequentialGroup().addGap(18)
+								.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE).addComponent(lblOpo).addComponent(opcaoJFT,
+										GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+								.addGroup(gl_panel.createSequentialGroup().addGap(6).addComponent(lblSair)))
+						.addContainerGap()));
 		panel.setLayout(gl_panel);
 		jPanel1.setLayout(jPanel1Layout);
 
@@ -1577,8 +1549,6 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 	private JFormattedTextField dose3JFT;
 	private JFormattedTextField controleMediJFT;
 	private JPanel pnlMedicados;
-	private JCheckBox checkBoxTratos;
-	private JCheckBox checkBoxLivre;
 
 	// End of variables declaration//GEN-END:variables
 	public javax.swing.JFormattedTextField getBaiaJFT() {
@@ -2637,19 +2607,4 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 		this.opcaoJFT = opcaoJFT;
 	}
 
-	public JCheckBox getCheckBoxTratos() {
-		return checkBoxTratos;
-	}
-
-	public void setCheckBoxTratos(JCheckBox checkBoxTratos) {
-		this.checkBoxTratos = checkBoxTratos;
-	}
-
-	public JCheckBox getCheckBoxLivre() {
-		return checkBoxLivre;
-	}
-
-	public void setCheckBoxLivre(JCheckBox checkBoxLivre) {
-		this.checkBoxLivre = checkBoxLivre;
-	}
 }

@@ -50,11 +50,9 @@ public class ConsumoBOST {
 //	}
 
 	public String verificaData(String dataString, List<String> fases) {
-		if (dataString.equals("00/00/00")) {
+		if (dataString.equals("00/00/0000")) {
 			return null;
 		} else {
-			String[] split = dataString.split("/");
-			dataString = split[0] + "/" + split[1] + "/20" + split[2];
 			Date digitada = Utils.dateFromString(dataString);
 			Date inicioFase = Utils.dateFromString(controller.getModel().getExperimentoVO().getInfoExp().getInicioExp().toString());
 			Date finalFase = Utils.dateFromString(fases.get(fases.size() - 1));
@@ -78,10 +76,10 @@ public class ConsumoBOST {
 		} catch (Exception e) {
 			return "- Formato de data incorreta\n";
 		}
-		if (!data.equals("00/00/00")) {
+		if (!data.equals("00/00/0000")) {
 			if (dataRacao.after(dataFim) || dataRacao.before(dataIni)) {
 				msg = msg.concat("- Idade fora do período do experimento\n");
-			} else if (!data.equals("00/00/00") && racao == 0 && sobra == 0) {
+			} else if (!data.equals("00/00/0000") && racao == 0 && sobra == 0) {
 				msg = msg.concat("- Entrada/Saída de ração igual à 0\n");
 			}
 			

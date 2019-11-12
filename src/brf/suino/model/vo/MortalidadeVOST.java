@@ -13,19 +13,17 @@ public class MortalidadeVOST implements Serializable {
 	private int brinco;
 	private int fase;
 	private int causa;
-	private boolean finalizado;
 
 	public MortalidadeVOST() {
 	}
 
-	public MortalidadeVOST(int ordem, String data, int pesoMorto, int brinco, int fase, int causa, boolean finalizado) {
+	public MortalidadeVOST(int ordem, String data, int pesoMorto, int brinco, int fase, int causa) {
 		this.ordem = ordem;
 		this.data = data;
 		this.pesoMorto = pesoMorto;
 		this.brinco = brinco;
 		this.fase = fase;
 		this.causa = causa;
-		this.finalizado = finalizado;
 	}
 
 	public int getOrdem() {
@@ -74,14 +72,6 @@ public class MortalidadeVOST implements Serializable {
 
 	public void setPesoMorto(int pesoMorto) {
 		this.pesoMorto = pesoMorto;
-	}
-
-	public boolean isFinalizado() {
-		return finalizado;
-	}
-
-	public void setFinalizado(boolean finalizado) {
-		this.finalizado = finalizado;
 	}
 
 }

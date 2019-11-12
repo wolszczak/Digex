@@ -14,13 +14,11 @@ public class MedicadosVOST implements Serializable {
 	private int dose1;
 	private int dose2;
 	private int dose3;
-	private boolean finalizado;
 
 	public MedicadosVOST() {
 	}
 
-	public MedicadosVOST(int ordem, String data, int brinco, int medicamento, int causa, int dose1, int dose2, int dose3,
-			boolean finalizado) {
+	public MedicadosVOST(int ordem, String data, int brinco, int medicamento, int causa, int dose1, int dose2, int dose3) {
 		this.ordem = ordem;
 		this.data = data;
 		this.brinco = brinco;
@@ -29,7 +27,6 @@ public class MedicadosVOST implements Serializable {
 		this.dose1 = dose1;
 		this.dose2 = dose2;
 		this.dose3 = dose3;
-		this.finalizado = finalizado;
 	}
 
 	public int getOrdem() {
@@ -94,14 +91,6 @@ public class MedicadosVOST implements Serializable {
 
 	public void setDose3(int dose3) {
 		this.dose3 = dose3;
-	}
-
-	public boolean isFinalizado() {
-		return finalizado;
-	}
-
-	public void setFinalizado(boolean finalizado) {
-		this.finalizado = finalizado;
 	}
 
 }

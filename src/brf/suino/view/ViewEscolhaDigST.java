@@ -99,7 +99,7 @@ public class ViewEscolhaDigST extends javax.swing.JFrame {
 		exportarFrigoLabel.setText("[7] - Arquivo de Frigorífico");
 
 		lblConsumo = new JLabel();
-		lblConsumo.setText("[2] - Consumo de Ração");
+		lblConsumo.setText("[2] - Consumo por Tratos");
 
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
 		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING).addGroup(jPanel1Layout

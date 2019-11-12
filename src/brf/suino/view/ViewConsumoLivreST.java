@@ -9,6 +9,9 @@ import java.text.ParseException;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JFormattedTextField;
+import javax.swing.SwingConstants;
+import javax.swing.JLabel;
 
 /**
  *
@@ -35,10 +38,9 @@ public class ViewConsumoLivreST extends javax.swing.JFrame {
 
 		jPanel1 = new javax.swing.JPanel();
 		baiaJP = new javax.swing.JPanel();
-		jLabel36 = new javax.swing.JLabel();
 		jLabel31 = new javax.swing.JLabel();
-		controleBaiaJFT = new javax.swing.JFormattedTextField();
 		baiaJFT = new javax.swing.JFormattedTextField();
+		baiaJFT.setEnabled(false);
 		sexoJFT = new javax.swing.JFormattedTextField();
 		jLabel34 = new javax.swing.JLabel();
 		trataJFT = new javax.swing.JFormattedTextField();
@@ -97,17 +99,7 @@ public class ViewConsumoLivreST extends javax.swing.JFrame {
 
 		baiaJP.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-		jLabel36.setText("Controle");
-
 		jLabel31.setText("Baia");
-
-		try {
-			controleBaiaJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
-		} catch (java.text.ParseException ex) {
-			ex.printStackTrace();
-		}
-		controleBaiaJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-		controleBaiaJFT.setEnabled(false);
 
 		try {
 			baiaJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
@@ -161,48 +153,74 @@ public class ViewConsumoLivreST extends javax.swing.JFrame {
 
 		jLabel33.setText("Sexo");
 
+		trata3JFT = new JFormattedTextField();
+		try {
+			trataJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+		} catch (java.text.ParseException ex) {
+			ex.printStackTrace();
+		}
+		trata3JFT.setHorizontalAlignment(SwingConstants.CENTER);
+		trata3JFT.setEnabled(false);
+
+		JLabel lblTrat = new JLabel();
+		lblTrat.setHorizontalAlignment(SwingConstants.TRAILING);
+		lblTrat.setText("Trat. 3");
+
 		javax.swing.GroupLayout baiaJPLayout = new javax.swing.GroupLayout(baiaJP);
+		baiaJPLayout.setHorizontalGroup(
+			baiaJPLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(baiaJPLayout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(jLabel44)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(galpaoJFT, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(jLabel31)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(baiaJFT, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+					.addGap(16)
+					.addComponent(jLabel33)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(sexoJFT, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
+					.addComponent(jLabel34)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(trataJFT, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+					.addGap(16)
+					.addComponent(jLabel45)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(trata2JFT, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(lblTrat, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(trata3JFT, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(62, Short.MAX_VALUE))
+		);
+		baiaJPLayout.setVerticalGroup(
+			baiaJPLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(baiaJPLayout.createSequentialGroup()
+					.addGroup(baiaJPLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(baiaJPLayout.createSequentialGroup()
+							.addContainerGap()
+							.addGroup(baiaJPLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(trata3JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addGroup(baiaJPLayout.createParallelGroup(Alignment.BASELINE)
+									.addComponent(jLabel31)
+									.addComponent(baiaJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+									.addComponent(sexoJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+									.addComponent(jLabel34)
+									.addComponent(trataJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+									.addComponent(jLabel44)
+									.addComponent(galpaoJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+									.addComponent(jLabel33)
+									.addComponent(jLabel45)
+									.addComponent(trata2JFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
+						.addGroup(baiaJPLayout.createSequentialGroup()
+							.addGap(14)
+							.addComponent(lblTrat)))
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+		);
 		baiaJP.setLayout(baiaJPLayout);
-		baiaJPLayout.setHorizontalGroup(baiaJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(baiaJPLayout.createSequentialGroup().addContainerGap().addComponent(jLabel44)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(galpaoJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED).addComponent(jLabel31)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(baiaJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addGap(16, 16, 16).addComponent(jLabel33).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(sexoJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addGap(18, 18, 18).addComponent(jLabel34).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(trataJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addGap(16, 16, 16).addComponent(jLabel45).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(trata2JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED).addComponent(jLabel36)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(controleBaiaJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(211, Short.MAX_VALUE)));
-		baiaJPLayout
-				.setVerticalGroup(
-						baiaJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addGroup(baiaJPLayout.createSequentialGroup().addContainerGap()
-										.addGroup(baiaJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-												.addComponent(jLabel31)
-												.addComponent(baiaJFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(sexoJFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(jLabel34)
-												.addComponent(trataJFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(jLabel44)
-												.addComponent(galpaoJFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(jLabel33).addComponent(jLabel45)
-												.addComponent(trata2JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(jLabel36).addComponent(controleBaiaJFT,
-														javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE))
-										.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
 
 		registrosLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
 		registrosLabel.setForeground(new java.awt.Color(0, 153, 255));
@@ -348,7 +366,7 @@ public class ViewConsumoLivreST extends javax.swing.JFrame {
 		dataHist5Label.setEnabled(false);
 
 		try {
-			dataJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/##")));
+			dataJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
@@ -565,23 +583,30 @@ public class ViewConsumoLivreST extends javax.swing.JFrame {
 		pnlConsumo.setLayout(gl_pnlConsumo);
 
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+		jPanel1Layout.setHorizontalGroup(
+			jPanel1Layout.createParallelGroup(Alignment.LEADING)
 				.addComponent(registrosLabel, GroupLayout.DEFAULT_SIZE, 671, Short.MAX_VALUE)
 				.addGroup(jPanel1Layout.createSequentialGroup()
-						.addComponent(pnlConsumo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addComponent(jPanel7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addComponent(pnlConsumo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(jPanel7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 				.addGroup(jPanel1Layout.createSequentialGroup()
-						.addComponent(baiaJP, GroupLayout.PREFERRED_SIZE, 561, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(110, Short.MAX_VALUE)));
-		jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING)
-				.addGroup(jPanel1Layout.createSequentialGroup().addContainerGap()
-						.addComponent(baiaJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-								.addComponent(pnlConsumo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-								.addComponent(jPanel7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(ComponentPlacement.RELATED, 17, Short.MAX_VALUE).addComponent(registrosLabel).addContainerGap()));
+					.addComponent(baiaJP, GroupLayout.PREFERRED_SIZE, 516, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(155, Short.MAX_VALUE))
+		);
+		jPanel1Layout.setVerticalGroup(
+			jPanel1Layout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(jPanel1Layout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(baiaJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+						.addComponent(pnlConsumo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(jPanel7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+					.addComponent(registrosLabel)
+					.addContainerGap())
+		);
 		jPanel1.setLayout(jPanel1Layout);
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -647,7 +672,6 @@ public class ViewConsumoLivreST extends javax.swing.JFrame {
 	// Variables declaration - do not modify//GEN-BEGIN:variables
 	private javax.swing.JFormattedTextField baiaJFT;
 	private javax.swing.JPanel baiaJP;
-	private javax.swing.JFormattedTextField controleBaiaJFT;
 	private javax.swing.JFormattedTextField controleFornecidaJFT;
 	private javax.swing.JPanel controleRMEJP2;
 	private javax.swing.JFormattedTextField controleSobraJFT;
@@ -675,7 +699,6 @@ public class ViewConsumoLivreST extends javax.swing.JFrame {
 	private javax.swing.JLabel jLabel31;
 	private javax.swing.JLabel jLabel33;
 	private javax.swing.JLabel jLabel34;
-	private javax.swing.JLabel jLabel36;
 	private javax.swing.JLabel jLabel44;
 	private javax.swing.JLabel jLabel45;
 	private javax.swing.JLabel jLabel50;
@@ -704,6 +727,7 @@ public class ViewConsumoLivreST extends javax.swing.JFrame {
 	private javax.swing.JFormattedTextField sobraJFT;
 	private javax.swing.JFormattedTextField trata2JFT;
 	private javax.swing.JFormattedTextField trataJFT;
+	private javax.swing.JFormattedTextField trata3JFT;
 
 	public javax.swing.JFormattedTextField getBaiaJFT() {
 		return baiaJFT;
@@ -719,14 +743,6 @@ public class ViewConsumoLivreST extends javax.swing.JFrame {
 
 	public void setBaiaJP(javax.swing.JPanel baiaJP) {
 		this.baiaJP = baiaJP;
-	}
-
-	public javax.swing.JFormattedTextField getControleBaiaJFT() {
-		return controleBaiaJFT;
-	}
-
-	public void setControleBaiaJFT(javax.swing.JFormattedTextField controleBaiaJFT) {
-		this.controleBaiaJFT = controleBaiaJFT;
 	}
 
 	public javax.swing.JFormattedTextField getControleFornecidaJFT() {
@@ -943,14 +959,6 @@ public class ViewConsumoLivreST extends javax.swing.JFrame {
 
 	public void setjLabel34(javax.swing.JLabel jLabel34) {
 		this.jLabel34 = jLabel34;
-	}
-
-	public javax.swing.JLabel getjLabel36() {
-		return jLabel36;
-	}
-
-	public void setjLabel36(javax.swing.JLabel jLabel36) {
-		this.jLabel36 = jLabel36;
 	}
 
 	public javax.swing.JLabel getjLabel44() {
@@ -1177,5 +1185,11 @@ public class ViewConsumoLivreST extends javax.swing.JFrame {
 		this.trataJFT = trataJFT;
 	}
 
-	// End of variables declaration//GEN-END:variables
+	public javax.swing.JFormattedTextField getTrata3JFT() {
+		return trata3JFT;
+	}
+
+	public void setTrata3JFT(javax.swing.JFormattedTextField trata3jft) {
+		trata3JFT = trata3jft;
+	}
 }

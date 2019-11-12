@@ -16,10 +16,10 @@ public class BaiaVOST implements Serializable {
 	private List<MortalidadeVOST> mortalidades;
 	private List<MedicadosVOST> medicados;
 	private ConsumoLivreVOST consumos;
-	private boolean finalizado, consumoLivre, consumoTratos;
+	private boolean finalizado;
 
 	public BaiaVOST(int galpao, int baia, int sexo, int trat1, int trat2, int trat3, List<MortalidadeVOST> mortalidades,
-			List<MedicadosVOST> medicados, ConsumoLivreVOST consumos, boolean finalizado, boolean consumoLivre, boolean consumoTratos) {
+			List<MedicadosVOST> medicados, ConsumoLivreVOST consumos, boolean finalizado) {
 		super();
 		this.galpao = galpao;
 		this.baia = baia;
@@ -31,8 +31,6 @@ public class BaiaVOST implements Serializable {
 		this.medicados = medicados;
 		this.consumos = consumos;
 		this.finalizado = finalizado;
-		this.consumoLivre = consumoLivre;
-		this.consumoTratos = consumoTratos;
 	}
 
 	public BaiaVOST() {
@@ -119,22 +117,6 @@ public class BaiaVOST implements Serializable {
 
 	public void setFinalizado(boolean finalizado) {
 		this.finalizado = finalizado;
-	}
-
-	public boolean isConsumoLivre() {
-		return consumoLivre;
-	}
-
-	public void setConsumoLivre(boolean consumoLivre) {
-		this.consumoLivre = consumoLivre;
-	}
-
-	public boolean isConsumoTratos() {
-		return consumoTratos;
-	}
-
-	public void setConsumoTratos(boolean consumoTratos) {
-		this.consumoTratos = consumoTratos;
 	}
 
 }
