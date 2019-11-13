@@ -33,7 +33,7 @@ public class ControllerConsumoLivreST extends KeyAdapter implements FocusListene
 	private ConsumoBOST consumoBO;
 	private BaiaVOST ultimaBaia;
 	private List<RmeVOST> consumosErros;
-	private int ordem, controleBaia;
+	private int ordem;
 	private Integer galpao, baia, sexo, trata, trata2, trata3;
 	private List<String> datasFases;
 	private List<Component> order, orderLoadHist;

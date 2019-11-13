@@ -1293,7 +1293,7 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 						.addGroup(jPanel1Layout.createSequentialGroup()
 							.addComponent(pnlMortalidade, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(panel, GroupLayout.PREFERRED_SIZE, 223, GroupLayout.PREFERRED_SIZE))
+							.addComponent(panel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 						.addComponent(jPanel2, GroupLayout.DEFAULT_SIZE, 827, Short.MAX_VALUE))
 					.addContainerGap())
 		);
@@ -1303,8 +1303,8 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 					.addComponent(baiaJP, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-						.addComponent(panel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(pnlMortalidade, GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE))
+						.addComponent(pnlMortalidade, GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
+						.addComponent(panel, GroupLayout.PREFERRED_SIZE, 139, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(registrosMortLabel)
 					.addGap(27)
@@ -1337,34 +1337,54 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 		lblOpo = new JLabel();
 		lblOpo.setHorizontalAlignment(SwingConstants.TRAILING);
 		lblOpo.setText("Opção");
+		
+		JLabel lblNova = new JLabel();
+		lblNova.setText("[4] - Nova Baia");
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
-				gl_panel.createParallelGroup(Alignment.LEADING).addComponent(lblMedicados, GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
-						.addGroup(gl_panel.createSequentialGroup()
-								.addGroup(gl_panel.createParallelGroup(Alignment.LEADING, false).addComponent(lblMedicados_1)
-										.addComponent(lblMortalidade, GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
-										.addComponent(lblSair, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-								.addPreferredGap(ComponentPlacement.UNRELATED)
-								.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-										.addGroup(gl_panel.createSequentialGroup()
-												.addComponent(lblOpo, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE)
-												.addPreferredGap(ComponentPlacement.RELATED)
-												.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
-										.addComponent(label_1, GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
-										.addComponent(label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE))
-								.addContainerGap()));
-		gl_panel.setVerticalGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel.createSequentialGroup().addComponent(lblMedicados).addPreferredGap(ComponentPlacement.RELATED)
-						.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_panel.createSequentialGroup().addComponent(lblMortalidade)
-										.addPreferredGap(ComponentPlacement.RELATED).addComponent(lblMedicados_1))
-								.addGroup(gl_panel.createSequentialGroup().addComponent(label).addPreferredGap(ComponentPlacement.RELATED)
-										.addComponent(label_1)))
-						.addGroup(gl_panel.createParallelGroup(Alignment.LEADING).addGroup(gl_panel.createSequentialGroup().addGap(18)
-								.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE).addComponent(lblOpo).addComponent(opcaoJFT,
-										GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-								.addGroup(gl_panel.createSequentialGroup().addGap(6).addComponent(lblSair)))
-						.addContainerGap()));
+			gl_panel.createParallelGroup(Alignment.TRAILING)
+				.addComponent(lblMedicados, GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
+				.addGroup(gl_panel.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING, false)
+						.addComponent(lblMedicados_1)
+						.addComponent(lblMortalidade, GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+						.addComponent(lblSair))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+						.addComponent(label_1, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+						.addComponent(label, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+						.addComponent(lblNova, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap())
+				.addGroup(gl_panel.createSequentialGroup()
+					.addContainerGap(145, Short.MAX_VALUE)
+					.addComponent(lblOpo, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
+		);
+		gl_panel.setVerticalGroup(
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel.createSequentialGroup()
+					.addComponent(lblMedicados)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblMortalidade)
+						.addComponent(lblNova))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblMedicados_1)
+						.addComponent(label))
+					.addGap(6)
+					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblSair)
+						.addComponent(label_1))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
+						.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblOpo))
+					.addGap(34))
+		);
 		panel.setLayout(gl_panel);
 		jPanel1.setLayout(jPanel1Layout);
 
@@ -2606,5 +2626,4 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 	public void setOpcaoJFT(JFormattedTextField opcaoJFT) {
 		this.opcaoJFT = opcaoJFT;
 	}
-
 }

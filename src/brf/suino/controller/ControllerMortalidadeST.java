@@ -96,7 +96,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 			if (ultimaBaia.getConsumos() != null) {
 				if (!ultimaBaia.getConsumos().isFinalizado()) {
 					view.setVisible(false);
-					ControllerConsumoLivreST ccl =  new ControllerConsumoLivreST(controller);
+					ControllerConsumoLivreST ccl = new ControllerConsumoLivreST(controller);
 					ccl.openWindow(ultimaBaia, datasFases);
 				} else {
 					if (ultimaBaia.getMedicados() != null) {
@@ -122,20 +122,6 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 
 	}
 
-//	@Override
-//	public void itemStateChanged(ItemEvent e) {
-//		if (e.getStateChange() == ItemEvent.SELECTED && e.getSource() == view.getCheckBoxLivre()) {
-//			consumoLivre = true;
-//		} else {
-//			consumoLivre = false;
-//		}
-//
-//		if (e.getStateChange() == ItemEvent.SELECTED && e.getSource() == view.getCheckBoxTratos()) {
-//			consumoTratos = true;
-//		} else {
-//			consumoTratos = false;
-//		}
-//	}
 
 	private void preparaTelaNovaBaia() {
 		ordemMedi = 1;
@@ -469,6 +455,12 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 				view.setVisible(false);
 				ControllerConsumoLivreST consumost = new ControllerConsumoLivreST(controller);
 				consumost.openWindow(ultimaBaia, datasFases);
+				break;
+			case KeyEvent.VK_4:
+				controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
+						.setFinalizado(true);
+				controller.getModel().getModelStateDAO().saveModelState(false);
+				preparaTelaNovaBaia();
 				break;
 			case KeyEvent.VK_9:
 				view.setVisible(false);
