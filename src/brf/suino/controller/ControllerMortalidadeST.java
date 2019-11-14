@@ -41,7 +41,6 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 	private int ordemMort, ordemMedi;
 	private MortalidadeBOST bo;
 	private Border defaultBorder;
-	private boolean consumoLivre, consumoTratos;
 
 	public ControllerMortalidadeST(ControllerST c) {
 		this.controller = c;
@@ -60,68 +59,72 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 //		view.getCheckBoxLivre().addItemListener(this);
 //		view.getCheckBoxLivre().addKeyListener(this);
 		preparaTelaNovaBaia();
+		criarOrdemComponentes();
 		loadHist();
 		view.pack();
 	}
 
 	private void loadHist() {
-		if (!controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
-				.isFinalizado()) {
-			// ULTIMA BAIA NÃO FINALIZADA
-			ultimaBaia = controller.getModel().getExperimentoVO().getBaias()
-					.get(controller.getModel().getExperimentoVO().getBaias().size() - 1);
-			view.getBaiaJFT().setText(String.valueOf(ultimaBaia.getBaia()));
-			TextFormatter.formatStringJFT(view.getBaiaJFT(), view.getBaiaJFT().getText(), 3);
-			view.getSexoJFT().setText(String.valueOf(ultimaBaia.getSexo()));
-			TextFormatter.formatStringJFT(view.getSexoJFT(), view.getSexoJFT().getText(), 1);
-			view.getTrataJFT().setText(String.valueOf(ultimaBaia.getTrat1()));
-			TextFormatter.formatStringJFT(view.getTrataJFT(), view.getTrataJFT().getText(), 2);
-			view.getTrata2JFT().setText(String.valueOf(ultimaBaia.getTrat2()));
-			TextFormatter.formatStringJFT(view.getTrata2JFT(), view.getTrata2JFT().getText(), 2);
-			view.getLblControle().setVisible(false);
-			view.getControleBaiaJFT().setVisible(false);
-//			view.getCheckBoxTratos().setEnabled(false);
-//			view.getCheckBoxLivre().setEnabled(false);
-//			if (ultimaBaia.isConsumoLivre()) {
-//				view.getCheckBoxLivre().setSelected(true);
-//			} else {
-//				view.getCheckBoxLivre().setSelected(false);
-//			}
-//			if (ultimaBaia.isConsumoTratos()) {
-//				view.getCheckBoxTratos().setSelected(true);
-//			} else {
-//				view.getCheckBoxTratos().setSelected(false);
-//			}
+		if (controller.getModel().getExperimentoVO().getBaias().size() > 0) {
+			if (!controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
+					.isFinalizado()) {
+				// ULTIMA BAIA NÃO FINALIZADA
+				ultimaBaia = controller.getModel().getExperimentoVO().getBaias()
+						.get(controller.getModel().getExperimentoVO().getBaias().size() - 1);
+				view.getBaiaJFT().setText(String.valueOf(ultimaBaia.getBaia()));
+				TextFormatter.formatStringJFT(view.getBaiaJFT(), view.getBaiaJFT().getText(), 3);
+				view.getSexoJFT().setText(String.valueOf(ultimaBaia.getSexo()));
+				TextFormatter.formatStringJFT(view.getSexoJFT(), view.getSexoJFT().getText(), 1);
+				view.getTrataJFT().setText(String.valueOf(ultimaBaia.getTrat1()));
+				TextFormatter.formatStringJFT(view.getTrataJFT(), view.getTrataJFT().getText(), 2);
+				view.getTrata2JFT().setText(String.valueOf(ultimaBaia.getTrat2()));
+				TextFormatter.formatStringJFT(view.getTrata2JFT(), view.getTrata2JFT().getText(), 2);
+				view.getLblControle().setVisible(false);
+				view.getControleBaiaJFT().setVisible(false);
+//				view.getCheckBoxTratos().setEnabled(false);
+//				view.getCheckBoxLivre().setEnabled(false);
+//				if (ultimaBaia.isConsumoLivre()) {
+//					view.getCheckBoxLivre().setSelected(true);
+//				} else {
+//					view.getCheckBoxLivre().setSelected(false);
+//				}
+//				if (ultimaBaia.isConsumoTratos()) {
+//					view.getCheckBoxTratos().setSelected(true);
+//				} else {
+//					view.getCheckBoxTratos().setSelected(false);
+//				}
 
-			if (ultimaBaia.getConsumos() != null) {
-				if (!ultimaBaia.getConsumos().isFinalizado()) {
-					view.setVisible(false);
-					ControllerConsumoLivreST ccl = new ControllerConsumoLivreST(controller);
-					ccl.openWindow(ultimaBaia, datasFases);
-				} else {
-					if (ultimaBaia.getMedicados() != null) {
-						loadMedicadosHist(ultimaBaia);
+				if (ultimaBaia.getConsumos() != null) {
+					if (!ultimaBaia.getConsumos().isFinalizado()) {
+						view.setVisible(false);
+						ControllerConsumoLivreST ccl = new ControllerConsumoLivreST(controller);
+						ccl.openWindow(ultimaBaia, datasFases);
+					} else {
+						if (ultimaBaia.getMedicados() != null) {
+							loadMedicadosHist(ultimaBaia);
+						}
+						if (ultimaBaia.getMortalidades() != null) {
+							loadMortalidadesHist(ultimaBaia);
+						}
 					}
+				} else {
 					if (ultimaBaia.getMortalidades() != null) {
 						loadMortalidadesHist(ultimaBaia);
 					}
+					if (ultimaBaia.getMedicados() != null) {
+						loadMedicadosHist(ultimaBaia);
+					}
 				}
+				view.getOpcaoJFT().setEnabled(true);
+				view.getOpcaoJFT().grabFocus();
 			} else {
-				if (ultimaBaia.getMortalidades() != null) {
-					loadMortalidadesHist(ultimaBaia);
-				}
-				if (ultimaBaia.getMedicados() != null) {
-					loadMedicadosHist(ultimaBaia);
-				}
+				preparaTelaNovaBaia();
 			}
-			view.getOpcaoJFT().setEnabled(true);
-			view.getOpcaoJFT().grabFocus();
 		} else {
 			preparaTelaNovaBaia();
 		}
 
 	}
-
 
 	private void preparaTelaNovaBaia() {
 		ordemMedi = 1;
@@ -154,7 +157,6 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 		view.getBaiaJFT().setEnabled(true);
 		view.getBaiaJFT().grabFocus();
 		defaultBorder = view.getPnlMortalidade().getBorder();
-		criarOrdemComponentes();
 		criarOrdemComponentesMortHist();
 		criarOrdemComponentesMediHist();
 
@@ -275,12 +277,8 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 
 	public void listenerSetup(List<Component> components) {
 		components.stream().forEach((it) -> {
-			if (it instanceof JFormattedTextField) {
-				((JFormattedTextField) it).addFocusListener(this);
-			}
-			if (!(it instanceof JCheckBox)) {
-				it.addKeyListener(this);
-			}
+			((JFormattedTextField) it).addKeyListener(this);
+			((JFormattedTextField) it).addFocusListener(this);
 		});
 	}
 
@@ -454,6 +452,10 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 			case KeyEvent.VK_3:
 				view.setVisible(false);
 				ControllerConsumoLivreST consumost = new ControllerConsumoLivreST(controller);
+				if (ultimaBaia == null) {
+					ultimaBaia = controller.getModel().getExperimentoVO().getBaias()
+							.get(controller.getModel().getExperimentoVO().getBaias().size() - 1);
+				}
 				consumost.openWindow(ultimaBaia, datasFases);
 				break;
 			case KeyEvent.VK_4:
@@ -535,6 +537,22 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 				view.getControleBaiaJFT().setEnabled(false);
 				TextFormatter.formatStringJFT(src, text, 4);
 				if (Integer.parseInt(view.getControleBaiaJFT().getText()) == calculaControleBaia()) {
+					if (controller.getModel().getExperimentoVO().getBaias() == null) {
+						controller.getModel().getExperimentoVO().setBaias(new ArrayList<>());
+						controller.getModel().getExperimentoVO().getBaias()
+								.add(new BaiaVOST(Integer.parseInt(view.getGalpaoJFT().getText()),
+										Integer.parseInt(view.getBaiaJFT().getText()), Integer.parseInt(view.getSexoJFT().getText()),
+										Integer.parseInt(view.getTrataJFT().getText()), Integer.parseInt(view.getTrata2JFT().getText()),
+										Integer.parseInt(view.getTrata3JFT().getText()), null, null, null, false));
+						controller.getModel().getModelStateDAO().saveModelState(false);
+					} else {
+						controller.getModel().getExperimentoVO().getBaias()
+								.add(new BaiaVOST(Integer.parseInt(view.getGalpaoJFT().getText()),
+										Integer.parseInt(view.getBaiaJFT().getText()), Integer.parseInt(view.getSexoJFT().getText()),
+										Integer.parseInt(view.getTrataJFT().getText()), Integer.parseInt(view.getTrata2JFT().getText()),
+										Integer.parseInt(view.getTrata3JFT().getText()), null, null, null, false));
+						controller.getModel().getModelStateDAO().saveModelState(false);
+					}
 //						controller.getModel().getExperimentoVO().getBaias()
 //								.add(new BaiaVOST(Integer.parseInt(view.getGalpaoJFT().getText()),
 //										Integer.parseInt(view.getBaiaJFT().getText()), Integer.parseInt(view.getSexoJFT().getText()),

@@ -214,11 +214,11 @@ public class ControllerConsumoLivreST extends KeyAdapter implements FocusListene
 				}
 				break;
 			case KeyEvent.VK_1:
-//				view.setVisible(false);
-//				controller.startMortalidadeSC(Integer.parseInt(view.getGalpaoJFT().getText().trim()),
-//						Integer.parseInt(view.getBaiaJFT().getText().trim()), Integer.parseInt(view.getSexoJFT().getText().trim()),
-//						Integer.parseInt(view.getTrataJFT().getText().trim()), Integer.parseInt(view.getTrata2JFT().getText().trim()),
-//						datasFases);
+				view.setVisible(false);
+				controller.startMortalidadeST(Integer.parseInt(view.getGalpaoJFT().getText().trim()),
+						Integer.parseInt(view.getBaiaJFT().getText().trim()), Integer.parseInt(view.getSexoJFT().getText().trim()),
+						Integer.parseInt(view.getTrataJFT().getText().trim()), Integer.parseInt(view.getTrata2JFT().getText().trim()),
+						datasFases);
 				break;
 			case KeyEvent.VK_2:
 //				view.setVisible(false);
@@ -332,49 +332,69 @@ public class ControllerConsumoLivreST extends KeyAdapter implements FocusListene
 				}
 
 			} else if ((JFormattedTextField) e.getSource() == view.getControleFornecidaJFT()) {
-				if (Integer.parseInt(view.getControleFornecidaJFT().getText().trim()) == calculaControleRacaoFornecida()) {
-					TextFormatter.formatStringJFT(jft, text, 6);
+				if (view.getDataJFT().getText().equals("00/00/0000") && Integer.parseInt(view.getFornecidaJFT().getText()) == 0
+						&& Integer.parseInt(view.getFornecidaJFT().getText()) == 0) {
 					view.getPnlConsumo().setBorder(defaultBorder);
 					view.getControleFornecidaJFT().setEnabled(false);
 					view.getControleSobraJFT().setEnabled(true);
 					((JFormattedTextField) e.getSource()).transferFocus();
 					view.getControleSobraJFT().grabFocus();
 				} else {
-					view.getPnlConsumo().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
-					consumosErros.addAll(controller.getModel().getExperimentoVO().getBaias()
-							.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumos().getRme());
-					controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
-							.getConsumos().setRme(new ArrayList<>());
-					fluxoErroControle();
-					view.getControleFornecidaJFT().setText("000000");
-					view.getControleFornecidaJFT().setEnabled(false);
-					ordem = consumosErros.get(0).getOrdem();
-					recuperaHistConsumo();
-					TextFormatter.formatStringJFT(view.getOrdemJFT(), view.getOrdemJFT().getText(), 2);
+					if (Integer.parseInt(view.getControleFornecidaJFT().getText().trim()) == calculaControleRacaoFornecida()) {
+						TextFormatter.formatStringJFT(jft, text, 6);
+						view.getPnlConsumo().setBorder(defaultBorder);
+						view.getControleFornecidaJFT().setEnabled(false);
+						view.getControleSobraJFT().setEnabled(true);
+						((JFormattedTextField) e.getSource()).transferFocus();
+						view.getControleSobraJFT().grabFocus();
+					} else {
+						view.getPnlConsumo().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
+						consumosErros.addAll(controller.getModel().getExperimentoVO().getBaias()
+								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumos().getRme());
+						controller.getModel().getExperimentoVO().getBaias()
+								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumos()
+								.setRme(new ArrayList<>());
+						fluxoErroControle();
+						view.getControleFornecidaJFT().setText("000000");
+						view.getControleFornecidaJFT().setEnabled(false);
+						ordem = consumosErros.get(0).getOrdem();
+						recuperaHistConsumo();
+						TextFormatter.formatStringJFT(view.getOrdemJFT(), view.getOrdemJFT().getText(), 2);
+					}
 				}
 			} else if ((JFormattedTextField) e.getSource() == view.getControleSobraJFT()) {
-				if (Integer.parseInt(view.getControleSobraJFT().getText().trim()) == calculaControleSobra()) {
-					TextFormatter.formatStringJFT(jft, text, 6);
-					view.getPnlConsumo().setBorder(defaultBorder);
-					controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
-							.getConsumos().setFinalizado(true);
-					controller.getModel().getModelStateDAO().saveModelState(false);
+				if (view.getDataJFT().getText().equals("00/00/0000") && Integer.parseInt(view.getFornecidaJFT().getText()) == 0
+						&& Integer.parseInt(view.getFornecidaJFT().getText()) == 0) {
 					view.getControleSobraJFT().setEnabled(false);
 					view.getOpcaoJFT().setEnabled(true);
 					((JFormattedTextField) e.getSource()).transferFocus();
 					view.getOpcaoJFT().grabFocus();
 				} else {
-					view.getPnlConsumo().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
-					consumosErros.addAll(controller.getModel().getExperimentoVO().getBaias()
-							.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumos().getRme());
-					controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
-							.getConsumos().setRme(new ArrayList<>());
-					fluxoErroControle();
-					view.getControleSobraJFT().setText("000000");
-					ordem = consumosErros.get(0).getOrdem();
-					recuperaHistConsumo();
-					TextFormatter.formatStringJFT(view.getOrdemJFT(), view.getOrdemJFT().getText(), 2);
+					if (Integer.parseInt(view.getControleSobraJFT().getText().trim()) == calculaControleSobra()) {
+						TextFormatter.formatStringJFT(jft, text, 6);
+						view.getPnlConsumo().setBorder(defaultBorder);
+						controller.getModel().getExperimentoVO().getBaias()
+								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumos().setFinalizado(true);
+						controller.getModel().getModelStateDAO().saveModelState(false);
+						view.getControleSobraJFT().setEnabled(false);
+						view.getOpcaoJFT().setEnabled(true);
+						((JFormattedTextField) e.getSource()).transferFocus();
+						view.getOpcaoJFT().grabFocus();
+					} else {
+						view.getPnlConsumo().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
+						consumosErros.addAll(controller.getModel().getExperimentoVO().getBaias()
+								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumos().getRme());
+						controller.getModel().getExperimentoVO().getBaias()
+								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumos()
+								.setRme(new ArrayList<>());
+						fluxoErroControle();
+						view.getControleSobraJFT().setText("000000");
+						ordem = consumosErros.get(0).getOrdem();
+						recuperaHistConsumo();
+						TextFormatter.formatStringJFT(view.getOrdemJFT(), view.getOrdemJFT().getText(), 2);
+					}
 				}
+
 			}
 
 		}

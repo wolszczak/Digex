@@ -11,7 +11,7 @@ public class ControllerST {
 	private ControllerInfoExpST ctrlInfoExp;
 	private ControllerEscolhaDigST ctrlEscolhaDig;
 //	private ControllerConsumoSC ctrlConsumo;
-//	private ControllerMortalidadeSC ctrlMortalidade;
+	private ControllerMortalidadeST ctrlMortalidade;
 
 	public ControllerST(ModelST mst, String idDigitador) {
 		this.modelST = mst;
@@ -41,9 +41,9 @@ public class ControllerST {
 //		ctrlConsumo.openWindow(datasFase);
 //	}
 
-//	public void startMortalidadeSC(Integer galpao, Integer baia, Integer sexo, Integer trata, Integer trata2,List<String> datasFases) {
-//		ctrlMortalidade = new ControllerMortalidadeSC(this);
-//		ctrlMortalidade.openWindow(galpao, baia, sexo, trata, trata2, datasFases);
-//	}
+	public void startMortalidadeST(Integer galpao, Integer baia, Integer sexo, Integer trata, Integer trata2, List<String> datasFases) {
+		ctrlMortalidade = new ControllerMortalidadeST(this);
+		ctrlMortalidade.openWindow(datasFases);
+	}
 
 }
