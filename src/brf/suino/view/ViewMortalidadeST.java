@@ -290,7 +290,7 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 		dataMortHist5Label.setEnabled(false);
 
 		try {
-			dataMortJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/##")));
+			dataMortJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
 		} catch (ParseException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -811,7 +811,7 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 
 		dataMediJFT = new JFormattedTextField();
 		try {
-			dataMediJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/##")));
+			dataMediJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
 		} catch (ParseException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

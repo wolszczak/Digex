@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.List;
 
 import brf.suino.controller.ControllerST;
+import brf.suino.model.vo.BaiaVOST;
+import brf.suino.model.vo.ConsumoVOSC;
 import brf.util.Utils;
 
 public class MortalidadeBOST {
@@ -14,12 +16,44 @@ public class MortalidadeBOST {
 		this.controller = controller;
 	}
 
+	public String verificaCabecalho(int baia, int sexo) {
+		String msg = "";
+		if (baia == 0) {
+			msg = msg.concat("- Baia igual à 0\n");
+		}
+		if (sexo != 1 && sexo != 2) {
+			msg = msg.concat("- Sexo diferente de 1 e 2\n");
+		}
+		return msg;
+	}
+
+	public boolean isBaiaDigitada(int baia) {
+		for (BaiaVOST b : controller.getModel().getExperimentoVO().getBaias()) {
+			if (baia == b.getBaia()) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public void excluirBaia(int baia) {
+		BaiaVOST baiaRemocao = null;
+		for (BaiaVOST b : controller.getModel().getExperimentoVO().getBaias()) {
+			if (baia == b.getBaia()) {
+				baiaRemocao = b;
+				break;
+			}
+		}
+		controller.getModel().getExperimentoVO().getBaias().remove(baiaRemocao);
+		controller.getModel().getModelStateDAO().saveModelState(false);
+	}
+
 	public String verificaData(String dataString, List<String> fases) {
-		if (dataString.equals("00/00/00")) {
+		if (dataString.equals("00/00/0000")) {
 			return null;
 		} else {
-			String[] split = dataString.split("/");
-			dataString = split[0] + "/" + split[1] + "/20" + split[2];
+//			String[] split = dataString.split("/");
+//			dataString = split[0] + "/" + split[1] + "/20" + split[2];
 			Date digitada = Utils.dateFromString(dataString);
 			Date inicioFase = Utils.dateFromString(controller.getModel().getExperimentoVO().getInfoExp().getInicioExp().toString());
 			Date finalFase = Utils.dateFromString(fases.get(fases.size() - 1));

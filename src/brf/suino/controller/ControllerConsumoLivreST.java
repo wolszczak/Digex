@@ -64,7 +64,7 @@ public class ControllerConsumoLivreST extends KeyAdapter implements FocusListene
 		view.getRegistrosLabel().setVisible(false);
 		defaultBorder = view.getPnlConsumo().getBorder();
 		ordem = 1;
-		view.getOpcaoJFT().addKeyListener(this);
+//		view.getOpcaoJFT().addKeyListener(this);
 		view.getGalpaoJFT().setText(String.valueOf(galpao));
 
 		if (this.baia != null && sexo != null && trata != null && trata2 != null) {
@@ -221,11 +221,37 @@ public class ControllerConsumoLivreST extends KeyAdapter implements FocusListene
 						datasFases);
 				break;
 			case KeyEvent.VK_2:
-//				view.setVisible(false);
-//				ControllerMedicadosSC medicados = new ControllerMedicadosSC(controller);
-//				medicados.openWindow(Integer.parseInt(view.getGalpaoJFT().getText()), Integer.parseInt(view.getBaiaJFT().getText()),
-//						Integer.parseInt(view.getSexoJFT().getText()), Integer.parseInt(view.getTrataJFT().getText()),
-//						Integer.parseInt(view.getTrata2JFT().getText()), datasFases);
+				if (controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
+						.getMedicados() == null
+						&& controller.getModel().getExperimentoVO().getBaias()
+								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMortalidades() == null
+						&& controller.getModel().getExperimentoVO().getBaias()
+								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumos() == null) {
+					int option = JOptionPane.showConfirmDialog(view,
+							"Nenhum dado foi digitado para essa baia.\nDeseja realmente finalizá-la?", "DIGEX - Aviso",
+							JOptionPane.WARNING_MESSAGE);
+					if (option == 0) {
+						view.setVisible(false);
+						controller.getModel().getExperimentoVO().getBaias()
+								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumos().setFinalizado(true);
+						controller.getModel().getExperimentoVO().getBaias()
+								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).setFinalizado(true);
+						controller.getModel().getModelStateDAO().saveModelState(false);
+						ControllerMortalidadeST cont = new ControllerMortalidadeST(controller);
+						cont.openWindow(datasFases);
+					} else {
+						view.getOpcaoJFT().grabFocus();
+					}
+				} else {
+					view.setVisible(false);
+					controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
+							.getConsumos().setFinalizado(true);
+					controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
+							.setFinalizado(true);
+					controller.getModel().getModelStateDAO().saveModelState(false);
+					ControllerMortalidadeST cont = new ControllerMortalidadeST(controller);
+					cont.openWindow(datasFases);
+				}
 				break;
 			case KeyEvent.VK_3:
 //				view.setVisible(false);
@@ -332,7 +358,9 @@ public class ControllerConsumoLivreST extends KeyAdapter implements FocusListene
 				}
 
 			} else if ((JFormattedTextField) e.getSource() == view.getControleFornecidaJFT()) {
-				if (view.getDataJFT().getText().equals("00/00/0000") && Integer.parseInt(view.getFornecidaJFT().getText()) == 0
+				if (controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
+						.getConsumos() == null && view.getDataJFT().getText().equals("00/00/0000")
+						&& Integer.parseInt(view.getFornecidaJFT().getText()) == 0
 						&& Integer.parseInt(view.getFornecidaJFT().getText()) == 0) {
 					view.getPnlConsumo().setBorder(defaultBorder);
 					view.getControleFornecidaJFT().setEnabled(false);
@@ -363,7 +391,9 @@ public class ControllerConsumoLivreST extends KeyAdapter implements FocusListene
 					}
 				}
 			} else if ((JFormattedTextField) e.getSource() == view.getControleSobraJFT()) {
-				if (view.getDataJFT().getText().equals("00/00/0000") && Integer.parseInt(view.getFornecidaJFT().getText()) == 0
+				if (controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
+						.getConsumos() == null && view.getDataJFT().getText().equals("00/00/0000")
+						&& Integer.parseInt(view.getFornecidaJFT().getText()) == 0
 						&& Integer.parseInt(view.getFornecidaJFT().getText()) == 0) {
 					view.getControleSobraJFT().setEnabled(false);
 					view.getOpcaoJFT().setEnabled(true);

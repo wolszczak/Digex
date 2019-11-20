@@ -26,7 +26,7 @@ public class ControllerEscolhaDigST extends KeyAdapter {
 
 	public void openWindow(List<String> datasFases) {
 		view = new ViewEscolhaDigST();
-		view.setTitle("DIGEX - Suínos Creche");
+		view.setTitle("DIGEX - Suínos Terminação");
 		view.setResizable(false);
 		view.setLocationRelativeTo(null);
 		view.setVisible(true);
