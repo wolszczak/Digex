@@ -56,6 +56,11 @@ public class ControllerEscolhaDigST extends KeyAdapter {
 			view.getExportarLivreLabel().setForeground(Color.GRAY);
 		}
 
+		if (controller.getModel().getExperimentoVO().getConsumosTratos() == null
+				|| controller.getModel().getExperimentoVO().getConsumosTratos().isEmpty()) {
+			view.getExportarTratosLabel().setForeground(Color.GRAY);
+		}
+
 		histSetup();
 	}
 
@@ -103,32 +108,9 @@ public class ControllerEscolhaDigST extends KeyAdapter {
 			mortalidade.openWindow(datasFases);
 			break;
 		case KeyEvent.VK_2:
-//			ControllerConsumoLivreST consumo = new ControllerConsumoLivreST(controller);
-//			if (controller.getModel().getExperimentoVO().getBaias().size() > 0) {
-//				if (controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
-//						.getConsumoLivre().isFinalizado()) {
-//					view.setVisible(false);
-//					consumo.openWindow(controller.getModel().getExperimentoVO().getBaias().get, null, null, null, null,
-//							datasFases);
-//				} else {
-//					view.setVisible(false);
-//					consumo.openWindow(
-//							controller.getModel().getExperimentoVO().getBaias()
-//									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumoLivre().getGalpao(),
-//							controller.getModel().getExperimentoVO().getBaias()
-//									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumoLivre().getBaia(),
-//							controller.getModel().getExperimentoVO().getBaias()
-//									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumoLivre().getSexo(),
-//							controller.getModel().getExperimentoVO().getBaias()
-//									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumoLivre().getTrat1(),
-//							controller.getModel().getExperimentoVO().getBaias()
-//									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumoLivre().getTrat2(),
-//							datasFases);
-//				}
-//			} else {
-//				view.setVisible(false);
-//				consumo.openWindow(controller.getModel().getExperimentoVO().getInfoExp().getGalpao(), null, null, null, null, datasFases);
-//			}
+			view.setVisible(false);
+			ControllerConsumoTratosST cl = new ControllerConsumoTratosST(controller);
+			cl.openWindow(datasFases);
 			break;
 		case KeyEvent.VK_3:
 			break;

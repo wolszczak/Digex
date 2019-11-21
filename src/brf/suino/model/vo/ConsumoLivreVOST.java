@@ -17,13 +17,13 @@ public class ConsumoLivreVOST implements Serializable {
 	private int trat2;
 	private int trat3;
 	private boolean finalizado;
-	private List<RmeVOST> rme;
+	private List<RmeLivreVOST> rme;
 
 	public ConsumoLivreVOST() {
 		this.rme = new ArrayList<>();
 	}
 
-	public ConsumoLivreVOST(int galpao, int baia, int sexo, int trat1, int trat2, int trat3, boolean finalizado, List<RmeVOST> rme) {
+	public ConsumoLivreVOST(int galpao, int baia, int sexo, int trat1, int trat2, int trat3, boolean finalizado, List<RmeLivreVOST> rme) {
 		this.galpao = galpao;
 		this.baia = baia;
 		this.sexo = sexo;
@@ -66,11 +66,11 @@ public class ConsumoLivreVOST implements Serializable {
 		this.trat2 = trat2;
 	}
 
-	public List<RmeVOST> getRme() {
+	public List<RmeLivreVOST> getRme() {
 		return rme;
 	}
 
-	public void setRme(List<RmeVOST> rme) {
+	public void setRme(List<RmeLivreVOST> rme) {
 		this.rme = rme;
 	}
 

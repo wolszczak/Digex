@@ -21,7 +21,7 @@ import javax.swing.border.Border;
 import brf.suino.model.bo.ConsumoBOST;
 import brf.suino.model.vo.BaiaVOST;
 import brf.suino.model.vo.ConsumoLivreVOST;
-import brf.suino.model.vo.RmeVOST;
+import brf.suino.model.vo.RmeLivreVOST;
 import brf.suino.view.ViewConsumoLivreST;
 import brf.util.FocusOrderPolicy;
 import brf.util.TextFormatter;
@@ -32,7 +32,7 @@ public class ControllerConsumoLivreST extends KeyAdapter implements FocusListene
 	private ConsumoLivreVOST consumoHist;
 	private ConsumoBOST consumoBO;
 	private BaiaVOST ultimaBaia;
-	private List<RmeVOST> consumosErros;
+	private List<RmeLivreVOST> consumosErros;
 	private int ordem;
 	private Integer galpao, baia, sexo, trata, trata2, trata3;
 	private List<String> datasFases;
@@ -54,7 +54,7 @@ public class ControllerConsumoLivreST extends KeyAdapter implements FocusListene
 		this.datasFases = datasFases;
 		this.ultimaBaia = baia;
 		view = new ViewConsumoLivreST();
-		view.setTitle("DIGEX - Consumo Suínos Creche");
+		view.setTitle("DIGEX - Consumo Livre Suínos Terminação");
 		view.setResizable(false);
 		view.setLocationRelativeTo(null);
 		view.setVisible(true);
@@ -337,14 +337,14 @@ public class ControllerConsumoLivreST extends KeyAdapter implements FocusListene
 									.setConsumos(new ConsumoLivreVOST(galpao, baia, sexo, trata, trata2, trata3, false, new ArrayList<>()));
 							controller.getModel().getExperimentoVO().getBaias()
 									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumos().getRme()
-									.add(new RmeVOST(Integer.parseInt(view.getOrdemJFT().getText().trim()),
+									.add(new RmeLivreVOST(Integer.parseInt(view.getOrdemJFT().getText().trim()),
 											view.getDataJFT().getText().trim(), Integer.parseInt(view.getFornecidaJFT().getText().trim()),
 											Integer.parseInt(view.getSobraJFT().getText().trim())));
 							controller.getModel().getModelStateDAO().saveModelState(false);
 						} else {
 							controller.getModel().getExperimentoVO().getBaias()
 									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumos().getRme()
-									.add(new RmeVOST(Integer.parseInt(view.getOrdemJFT().getText().trim()),
+									.add(new RmeLivreVOST(Integer.parseInt(view.getOrdemJFT().getText().trim()),
 											view.getDataJFT().getText().trim(), Integer.parseInt(view.getFornecidaJFT().getText().trim()),
 											Integer.parseInt(view.getSobraJFT().getText().trim())));
 							controller.getModel().getModelStateDAO().saveModelState(false);
@@ -493,7 +493,7 @@ public class ControllerConsumoLivreST extends KeyAdapter implements FocusListene
 
 	private Integer calculaControleRacaoFornecida() {
 		int soma = 0;
-		for (RmeVOST consumo : controller.getModel().getExperimentoVO().getBaias()
+		for (RmeLivreVOST consumo : controller.getModel().getExperimentoVO().getBaias()
 				.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumos().getRme()) {
 			soma += consumo.getFornecida();
 		}
@@ -502,7 +502,7 @@ public class ControllerConsumoLivreST extends KeyAdapter implements FocusListene
 
 	private Integer calculaControleSobra() {
 		int soma = 0;
-		for (RmeVOST consumo : controller.getModel().getExperimentoVO().getBaias()
+		for (RmeLivreVOST consumo : controller.getModel().getExperimentoVO().getBaias()
 				.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumos().getRme()) {
 			soma += consumo.getSobra();
 		}

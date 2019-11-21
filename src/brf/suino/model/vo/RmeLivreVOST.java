@@ -2,17 +2,17 @@ package brf.suino.model.vo;
 
 import java.io.Serializable;
 
-public class RmeVOST implements Serializable {
+public class RmeLivreVOST implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int ordem;
 	private String dataRacao;
 	private int fornecida;
 	private int sobra;
 
-	public RmeVOST() {
+	public RmeLivreVOST() {
 	}
 
-	public RmeVOST(int ordem, String dataRacao, int fornecida, int sobra) {
+	public RmeLivreVOST(int ordem, String dataRacao, int fornecida, int sobra) {
 		this.ordem = ordem;
 		this.dataRacao = dataRacao;
 		this.fornecida = fornecida;

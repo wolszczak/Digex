@@ -333,7 +333,6 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 		});
 	}
 
-
 	private void loadMedicadosHist(BaiaVOST ultimaBaia) {
 		medicadosHist = new ArrayList<>();
 		medicadosHist.addAll(ultimaBaia.getMedicados());
