@@ -1,134 +1,19 @@
 package brf.suino.view;
 
-import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.SoftBevelBorder;
+import javax.swing.border.BevelBorder;
 
 public class ViewConsumoTratosST extends javax.swing.JFrame {
 	public ViewConsumoTratosST() {
 		initComponents();
 	}
-
-	public JFormattedTextField getAviarioJFT() {
-		return aviarioJFT;
-	}
-
+	
 	public JPanel getConeJP() {
-		return coneJP;
+		return pnlConsumo;
 	}
-
-	public JFormattedTextField getControleJFT() {
-		return controleJFT;
-	}
-
-	public JFormattedTextField getDataAbateJFT() {
-		return dataAbateJFT;
-	}
-
-	public JLabel getNumHist1Label() {
-		return numHist1Label;
-	}
-
-	public JLabel getNumHist2Label() {
-		return numHist2Label;
-	}
-
-	public JLabel getNumHist3Label() {
-		return numHist3Label;
-	}
-
-	public JLabel getNumHist4Label() {
-		return numHist4Label;
-	}
-
-	public JLabel getNumHist5Label() {
-		return numHist5Label;
-	}
-
-	public JLabel getOrdemHist1Label() {
-		return ordemHist1Label;
-	}
-
-	public JLabel getOrdemHist2Label() {
-		return ordemHist2Label;
-	}
-
-	public JLabel getOrdemHist3Label() {
-		return ordemHist3Label;
-	}
-
-	public JLabel getOrdemHist4Label() {
-		return ordemHist4Label;
-	}
-
-	public JLabel getOrdemHist5Label() {
-		return ordemHist5Label;
-	}
-
-	public JFormattedTextField getpCoxa5JFT() {
-		return pCoxa5JFT;
-	}
-
-	public JLabel getpCoxaHist1Label() {
-		return pCoxaHist1Label;
-	}
-
-	public JLabel getpCoxaHist2Label() {
-		return pCoxaHist2Label;
-	}
-
-	public JLabel getpCoxaHist3Label() {
-		return pCoxaHist3Label;
-	}
-
-	public JLabel getpCoxaHist4Label() {
-		return pCoxaHist4Label;
-	}
-
-	public JLabel getpCoxaHist5Label() {
-		return pCoxaHist5Label;
-	}
-
-	public JLabel getpGordHist1Label() {
-		return pGordHist1Label;
-	}
-
-	public JLabel getpGordHist2Label() {
-		return pGordHist2Label;
-	}
-
-	public JLabel getpGordHist3Label() {
-		return pGordHist3Label;
-	}
-
-	public JLabel getpGordHist4Label() {
-		return pGordHist4Label;
-	}
-
-	public JLabel getpGordHist5Label() {
-		return pGordHist5Label;
-	}
-
-	public JLabel getpPeito1Hist1Label() {
-		return pPeito1Hist1Label;
-	}
-
-	public JLabel getpPeito1Hist2Label() {
-		return pPeito1Hist2Label;
-	}
-
-	public JLabel getpPeito1Hist3Label() {
-		return pPeito1Hist3Label;
-	}
-
-	public JLabel getpPeito1Hist4Label() {
-		return pPeito1Hist4Label;
-	}
-
-	public JLabel getpPeito1Hist5Label() {
-		return pPeito1Hist5Label;
-	}
-
+        
 	public JLabel getRegistrosLabel() {
 		return registrosLabel;
 	}
@@ -141,803 +26,741 @@ public class ViewConsumoTratosST extends javax.swing.JFrame {
 	@SuppressWarnings("unchecked")
 	// <editor-fold defaultstate="collapsed" desc="Generated
 	// <editor-fold defaultstate="collapsed" desc="Generated
-	// Code">//GEN-BEGIN:initComponents
-	private void initComponents() {
-
-		jPanel1 = new javax.swing.JPanel();
-		coneJP = new javax.swing.JPanel();
-		jLabel12 = new javax.swing.JLabel();
-		controleJFT = new javax.swing.JFormattedTextField();
-		ordemHist1Label = new javax.swing.JLabel();
-		ordemHist2Label = new javax.swing.JLabel();
-		numHist1Label = new javax.swing.JLabel();
-		numHist2Label = new javax.swing.JLabel();
-		pGordHist1Label = new javax.swing.JLabel();
-		pGordHist2Label = new javax.swing.JLabel();
-		pPeito1Hist1Label = new javax.swing.JLabel();
-		pPeito1Hist2Label = new javax.swing.JLabel();
-		pPeito2Hist1Label = new javax.swing.JLabel();
-		pPeito2Hist2Label = new javax.swing.JLabel();
-		ordemHist3Label = new javax.swing.JLabel();
-		numHist3Label = new javax.swing.JLabel();
-		pGordHist3Label = new javax.swing.JLabel();
-		pPeito1Hist3Label = new javax.swing.JLabel();
-		pPeito2Hist3Label = new javax.swing.JLabel();
-		ordemHist4Label = new javax.swing.JLabel();
-		numHist4Label = new javax.swing.JLabel();
-		pGordHist4Label = new javax.swing.JLabel();
-		pPeito1Hist4Label = new javax.swing.JLabel();
-		pPeito2Hist4Label = new javax.swing.JLabel();
-		ordemHist5Label = new javax.swing.JLabel();
-		numHist5Label = new javax.swing.JLabel();
-		pGordHist5Label = new javax.swing.JLabel();
-		pPeito1Hist5Label = new javax.swing.JLabel();
-		pPeito2Hist5Label = new javax.swing.JLabel();
-		pCoxaHist1Label = new javax.swing.JLabel();
-		pCoxaHist2Label = new javax.swing.JLabel();
-		pCoxaHist3Label = new javax.swing.JLabel();
-		pCoxaHist4Label = new javax.swing.JLabel();
-		pCoxaHist5Label = new javax.swing.JLabel();
-		pCoxa5JFT = new javax.swing.JFormattedTextField();
-		pPeito25JFT = new javax.swing.JFormattedTextField();
-		jLabel13 = new javax.swing.JLabel();
-		jLabel14 = new javax.swing.JLabel();
-		jLabel15 = new javax.swing.JLabel();
-		pPeito2Hist5Label1 = new javax.swing.JLabel();
-		pCoxaHist5Label1 = new javax.swing.JLabel();
-		pPeito1Hist5Label1 = new javax.swing.JLabel();
-		pPeito1Hist4Label1 = new javax.swing.JLabel();
-		pPeito2Hist4Label1 = new javax.swing.JLabel();
-		pCoxaHist4Label1 = new javax.swing.JLabel();
-		pCoxaHist3Label1 = new javax.swing.JLabel();
-		pPeito2Hist3Label1 = new javax.swing.JLabel();
-		pPeito1Hist3Label1 = new javax.swing.JLabel();
-		pPeito1Hist2Label1 = new javax.swing.JLabel();
-		pPeito2Hist2Label1 = new javax.swing.JLabel();
-		pCoxaHist2Label1 = new javax.swing.JLabel();
-		pCoxaHist1Label1 = new javax.swing.JLabel();
-		pPeito2Hist1Label1 = new javax.swing.JLabel();
-		pPeito1Hist1Label1 = new javax.swing.JLabel();
-		ordemHist5Label1 = new javax.swing.JLabel();
-		numHist5Label1 = new javax.swing.JLabel();
-		pGordHist5Label1 = new javax.swing.JLabel();
-		pGordHist4Label1 = new javax.swing.JLabel();
-		numHist4Label1 = new javax.swing.JLabel();
-		ordemHist4Label1 = new javax.swing.JLabel();
-		ordemHist3Label1 = new javax.swing.JLabel();
-		numHist3Label1 = new javax.swing.JLabel();
-		pGordHist3Label1 = new javax.swing.JLabel();
-		pGordHist2Label1 = new javax.swing.JLabel();
-		numHist2Label1 = new javax.swing.JLabel();
-		ordemHist2Label1 = new javax.swing.JLabel();
-		ordemHist1Label1 = new javax.swing.JLabel();
-		numHist1Label1 = new javax.swing.JLabel();
-		pGordHist1Label1 = new javax.swing.JLabel();
-		numHist1Label2 = new javax.swing.JLabel();
-		registrosLabel = new javax.swing.JLabel();
-		jPanel2 = new javax.swing.JPanel();
-		jLabel10 = new javax.swing.JLabel();
-		aviarioJFT = new javax.swing.JFormattedTextField();
-		jLabel22 = new javax.swing.JLabel();
-		dataAbateJFT = new javax.swing.JFormattedTextField();
-
-		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-		coneJP.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-		jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel12.setText("Controle");
-
-		try {
-			controleJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
-		} catch (java.text.ParseException ex) {
-			ex.printStackTrace();
-		}
-		controleJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-		controleJFT.setEnabled(false);
-
-		ordemHist1Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		ordemHist1Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-		ordemHist2Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		ordemHist2Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-		numHist1Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		numHist1Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        pnlConsumo = new javax.swing.JPanel();
+        consumoJFT = new javax.swing.JFormattedTextField();
+        baiaJFT = new javax.swing.JFormattedTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        baia10Label = new javax.swing.JLabel();
+        consumo10Label = new javax.swing.JLabel();
+        ordem10Label = new javax.swing.JLabel();
+        ordem9Label = new javax.swing.JLabel();
+        baia9Label = new javax.swing.JLabel();
+        consumo9Label = new javax.swing.JLabel();
+        consumo8Label = new javax.swing.JLabel();
+        baia8Label = new javax.swing.JLabel();
+        ordem8Label = new javax.swing.JLabel();
+        ordem7Label = new javax.swing.JLabel();
+        baia7Label = new javax.swing.JLabel();
+        consumo7Label = new javax.swing.JLabel();
+        consumo6Label = new javax.swing.JLabel();
+        baia6Label = new javax.swing.JLabel();
+        ordem6Label = new javax.swing.JLabel();
+        ordem5Label = new javax.swing.JLabel();
+        baia5Label = new javax.swing.JLabel();
+        consumo5Label = new javax.swing.JLabel();
+        consumo4Label = new javax.swing.JLabel();
+        baia4Label = new javax.swing.JLabel();
+        ordem4Label = new javax.swing.JLabel();
+        ordem3Label = new javax.swing.JLabel();
+        baia3Label = new javax.swing.JLabel();
+        consumo3Label = new javax.swing.JLabel();
+        consumo2Label = new javax.swing.JLabel();
+        baia2Label = new javax.swing.JLabel();
+        ordem2Label = new javax.swing.JLabel();
+        ordem1Label = new javax.swing.JLabel();
+        numHist1Label1 = new javax.swing.JLabel();
+        consumo1Label = new javax.swing.JLabel();
+        baia1Label = new javax.swing.JLabel();
+        pnlDigitados = new javax.swing.JPanel();
+        ordemHist1Label = new javax.swing.JLabel();
+        baiaHist1Label = new javax.swing.JLabel();
+        consumoHist1Label = new javax.swing.JLabel();
+        consumoHist2Label = new javax.swing.JLabel();
+        baiaHist2Label = new javax.swing.JLabel();
+        ordemHist2Label = new javax.swing.JLabel();
+        ordemHist3Label = new javax.swing.JLabel();
+        baiaHist3Label = new javax.swing.JLabel();
+        consumoHist3Label = new javax.swing.JLabel();
+        consumoHist4Label = new javax.swing.JLabel();
+        baiaHist4Label = new javax.swing.JLabel();
+        ordemHist4Label = new javax.swing.JLabel();
+        ordemHist5Label = new javax.swing.JLabel();
+        baiaHist5Label = new javax.swing.JLabel();
+        consumoHist5Label = new javax.swing.JLabel();
+        consumoHist6Label = new javax.swing.JLabel();
+        baiaHist6Label = new javax.swing.JLabel();
+        ordemHist6Label = new javax.swing.JLabel();
+        ordemHist7Label = new javax.swing.JLabel();
+        baiaHist7Label = new javax.swing.JLabel();
+        consumoHist7Label = new javax.swing.JLabel();
+        consumoHist8Label = new javax.swing.JLabel();
+        baiaHist8Label = new javax.swing.JLabel();
+        ordemHist8Label = new javax.swing.JLabel();
+        ordemHist9Label = new javax.swing.JLabel();
+        baiaHist9Label = new javax.swing.JLabel();
+        consumoHist9Label = new javax.swing.JLabel();
+        consumoHist10Label = new javax.swing.JLabel();
+        ordemHist10Label = new javax.swing.JLabel();
+        baiaHist10Label = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        pnlControle = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        controleJFT = new javax.swing.JFormattedTextField();
+        ordemJFT = new javax.swing.JFormattedTextField();
+        registrosLabel = new javax.swing.JLabel();
+        pnlHeader = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        tratosJFT = new javax.swing.JFormattedTextField();
+        jLabel22 = new javax.swing.JLabel();
+        dataJFT = new javax.swing.JFormattedTextField();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        pnlConsumo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        try {
+            consumoJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        consumoJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        consumoJFT.setEnabled(false);
+
+        try {
+            baiaJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        baiaJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        baiaJFT.setEnabled(false);
 
-		numHist2Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		numHist2Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("Ordem");
 
-		pGordHist1Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pGordHist1Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("Baia");
 
-		pGordHist2Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pGordHist2Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setText("Consumo");
 
-		pPeito1Hist1Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pPeito1Hist1Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        baia10Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        baia10Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pPeito1Hist2Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pPeito1Hist2Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        consumo10Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        consumo10Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pPeito2Hist1Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pPeito2Hist1Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        ordem10Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ordem10Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pPeito2Hist2Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pPeito2Hist2Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        ordem9Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ordem9Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		ordemHist3Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		ordemHist3Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        baia9Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        baia9Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		numHist3Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		numHist3Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        consumo9Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        consumo9Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pGordHist3Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pGordHist3Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        consumo8Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        consumo8Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pPeito1Hist3Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pPeito1Hist3Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        baia8Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        baia8Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pPeito2Hist3Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pPeito2Hist3Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        ordem8Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ordem8Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		ordemHist4Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		ordemHist4Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        ordem7Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ordem7Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		numHist4Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		numHist4Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        baia7Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        baia7Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pGordHist4Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pGordHist4Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        consumo7Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        consumo7Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pPeito1Hist4Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pPeito1Hist4Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        consumo6Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        consumo6Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pPeito2Hist4Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pPeito2Hist4Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        baia6Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        baia6Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		ordemHist5Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		ordemHist5Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        ordem6Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ordem6Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		numHist5Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		numHist5Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        ordem5Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ordem5Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pGordHist5Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pGordHist5Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        baia5Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        baia5Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pPeito1Hist5Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pPeito1Hist5Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        consumo5Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        consumo5Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pPeito2Hist5Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pPeito2Hist5Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        consumo4Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        consumo4Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pCoxaHist1Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pCoxaHist1Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        baia4Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        baia4Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pCoxaHist2Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pCoxaHist2Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        ordem4Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ordem4Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pCoxaHist3Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pCoxaHist3Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        ordem3Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ordem3Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pCoxaHist4Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pCoxaHist4Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        baia3Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        baia3Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pCoxaHist5Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pCoxaHist5Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        consumo3Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        consumo3Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		try {
-			pCoxa5JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
-		} catch (java.text.ParseException ex) {
-			ex.printStackTrace();
-		}
-		pCoxa5JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-		pCoxa5JFT.setEnabled(false);
+        consumo2Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        consumo2Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		try {
-			pPeito25JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
-		} catch (java.text.ParseException ex) {
-			ex.printStackTrace();
-		}
-		pPeito25JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-		pPeito25JFT.setEnabled(false);
+        baia2Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        baia2Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel13.setText("Ordem");
+        ordem2Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ordem2Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel14.setText("Baia");
+        ordem1Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ordem1Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel15.setText("Consumo");
+        numHist1Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        numHist1Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pPeito2Hist5Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pPeito2Hist5Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        consumo1Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        consumo1Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pCoxaHist5Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pCoxaHist5Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        baia1Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        baia1Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pPeito1Hist5Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pPeito1Hist5Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        ordemHist1Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ordemHist1Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pPeito1Hist4Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pPeito1Hist4Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        baiaHist1Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        baiaHist1Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pPeito2Hist4Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pPeito2Hist4Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        consumoHist1Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        consumoHist1Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pCoxaHist4Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pCoxaHist4Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        consumoHist2Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        consumoHist2Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pCoxaHist3Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pCoxaHist3Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        baiaHist2Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        baiaHist2Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pPeito2Hist3Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pPeito2Hist3Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        ordemHist2Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ordemHist2Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pPeito1Hist3Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pPeito1Hist3Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        ordemHist3Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ordemHist3Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pPeito1Hist2Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pPeito1Hist2Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        baiaHist3Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        baiaHist3Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pPeito2Hist2Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pPeito2Hist2Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        consumoHist3Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        consumoHist3Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pCoxaHist2Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pCoxaHist2Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        consumoHist4Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        consumoHist4Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pCoxaHist1Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pCoxaHist1Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        baiaHist4Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        baiaHist4Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pPeito2Hist1Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pPeito2Hist1Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        ordemHist4Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ordemHist4Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pPeito1Hist1Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pPeito1Hist1Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        ordemHist5Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ordemHist5Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		ordemHist5Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		ordemHist5Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        baiaHist5Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        baiaHist5Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		numHist5Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		numHist5Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        consumoHist5Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        consumoHist5Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		pGordHist5Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pGordHist5Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-		pGordHist4Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pGordHist4Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-		numHist4Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		numHist4Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-		ordemHist4Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		ordemHist4Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-		ordemHist3Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		ordemHist3Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-		numHist3Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		numHist3Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-		pGordHist3Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pGordHist3Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-		pGordHist2Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pGordHist2Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-		numHist2Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		numHist2Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-		ordemHist2Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		ordemHist2Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-		ordemHist1Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		ordemHist1Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-		numHist1Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		numHist1Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-		pGordHist1Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		pGordHist1Label1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-		numHist1Label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		numHist1Label2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-		javax.swing.GroupLayout coneJPLayout = new javax.swing.GroupLayout(coneJP);
-		coneJP.setLayout(coneJPLayout);
-		coneJPLayout.setHorizontalGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(coneJPLayout
-				.createSequentialGroup().addContainerGap()
-				.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(coneJPLayout
-						.createSequentialGroup()
-						.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-								.addComponent(pPeito1Hist4Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(pPeito1Hist3Label, javax.swing.GroupLayout.Alignment.LEADING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(pPeito1Hist2Label, javax.swing.GroupLayout.Alignment.LEADING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(pPeito1Hist1Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(pPeito1Hist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 32,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-						.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addGroup(coneJPLayout.createSequentialGroup()
-										.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-												.addComponent(pPeito2Hist4Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(pPeito2Hist5Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(pPeito2Hist3Label, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addComponent(pCoxaHist3Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(pCoxaHist4Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(pCoxaHist5Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-								.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, coneJPLayout.createSequentialGroup()
-										.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addComponent(pPeito2Hist1Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(pPeito2Hist2Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-												.addComponent(pCoxaHist1Label, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
-												.addComponent(pCoxaHist2Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-						.addGroup(coneJPLayout.createSequentialGroup()
-								.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-										.addComponent(ordemHist1Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(ordemHist2Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(ordemHist3Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(ordemHist4Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(
-												ordemHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 32,
-												javax.swing.GroupLayout.PREFERRED_SIZE))
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-								.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-										.addComponent(numHist4Label, javax.swing.GroupLayout.Alignment.LEADING,
-												javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-										.addComponent(numHist3Label, javax.swing.GroupLayout.Alignment.LEADING,
-												javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(numHist2Label, javax.swing.GroupLayout.Alignment.LEADING,
-												javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(numHist5Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-								.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-										.addComponent(pGordHist2Label, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
-										.addComponent(pGordHist3Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(pGordHist4Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(pGordHist5Label, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-						.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-								.addComponent(pGordHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 56,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addGroup(javax.swing.GroupLayout.Alignment.LEADING, coneJPLayout.createSequentialGroup()
-										.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-												.addComponent(numHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 32,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addGroup(javax.swing.GroupLayout.Alignment.LEADING,
-														coneJPLayout.createSequentialGroup()
-																.addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 32,
-																		javax.swing.GroupLayout.PREFERRED_SIZE)
-																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-																.addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 32,
-																		javax.swing.GroupLayout.PREFERRED_SIZE)))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED).addComponent(jLabel15,
-												javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))))
-				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-				.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(coneJPLayout
-						.createSequentialGroup()
-						.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-								.addComponent(pPeito1Hist4Label1, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(pPeito1Hist3Label1, javax.swing.GroupLayout.Alignment.LEADING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(pPeito1Hist2Label1, javax.swing.GroupLayout.Alignment.LEADING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(pPeito1Hist1Label1, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(pPeito1Hist5Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 32,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-						.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, coneJPLayout.createSequentialGroup()
-										.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addComponent(pPeito2Hist1Label1, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(pPeito2Hist2Label1, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-												.addComponent(pCoxaHist1Label1, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(pCoxaHist2Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 56,
-														javax.swing.GroupLayout.PREFERRED_SIZE)))
-								.addGroup(coneJPLayout.createSequentialGroup().addGroup(coneJPLayout
-										.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-										.addComponent(pPeito25JFT, javax.swing.GroupLayout.Alignment.LEADING)
-										.addComponent(pPeito2Hist4Label1, javax.swing.GroupLayout.Alignment.LEADING,
-												javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(pPeito2Hist5Label1, javax.swing.GroupLayout.Alignment.LEADING,
-												javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(pPeito2Hist3Label1, javax.swing.GroupLayout.Alignment.LEADING,
-												javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addComponent(pCoxaHist3Label1, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(pCoxaHist4Label1, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(pCoxaHist5Label1, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(pCoxa5JFT)))))
-						.addGroup(coneJPLayout.createSequentialGroup().addGroup(coneJPLayout
-								.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-										.addComponent(ordemHist1Label1, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(ordemHist2Label1, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(ordemHist3Label1, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(ordemHist4Label1, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(ordemHist5Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 32,
-												javax.swing.GroupLayout.PREFERRED_SIZE))
-								.addComponent(numHist1Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 32,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-								.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING).addGroup(coneJPLayout
-										.createSequentialGroup()
-										.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-												.addComponent(numHist4Label1, javax.swing.GroupLayout.Alignment.LEADING,
-														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-														Short.MAX_VALUE)
-												.addComponent(numHist3Label1, javax.swing.GroupLayout.Alignment.LEADING,
-														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-														Short.MAX_VALUE)
-												.addComponent(numHist2Label1, javax.swing.GroupLayout.Alignment.LEADING,
-														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-														Short.MAX_VALUE)
-												.addComponent(numHist5Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 32,
-														javax.swing.GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-												.addComponent(pGordHist2Label1, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(pGordHist3Label1, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(pGordHist4Label1, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(pGordHist5Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 56,
-														javax.swing.GroupLayout.PREFERRED_SIZE)))
-										.addGroup(coneJPLayout.createSequentialGroup()
-												.addComponent(numHist1Label2, javax.swing.GroupLayout.PREFERRED_SIZE, 32,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-												.addComponent(pGordHist1Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 56,
-														javax.swing.GroupLayout.PREFERRED_SIZE)))))
-				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-				.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addComponent(controleJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-				.addContainerGap()));
-		coneJPLayout.setVerticalGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(coneJPLayout
-				.createSequentialGroup().addContainerGap(12, Short.MAX_VALUE)
-				.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel13)
-						.addComponent(jLabel14).addComponent(jLabel15))
-				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-				.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING)
-						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, coneJPLayout.createSequentialGroup()
-								.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-										.addGroup(coneJPLayout.createSequentialGroup()
-												.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-														.addComponent(ordemHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(numHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(pGordHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE))
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-												.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-														.addComponent(ordemHist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(numHist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(pGordHist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE))
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-												.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-														.addComponent(ordemHist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(numHist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(pGordHist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE))
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-												.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-														.addComponent(ordemHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(numHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(pGordHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE))
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-												.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-														.addComponent(ordemHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(numHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(pGordHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE))
-												.addGap(12, 12, 12).addComponent(pCoxaHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE,
-														14, javax.swing.GroupLayout.PREFERRED_SIZE))
-										.addComponent(pPeito2Hist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addComponent(pPeito1Hist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-												javax.swing.GroupLayout.PREFERRED_SIZE))
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-								.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-												coneJPLayout.createSequentialGroup()
-														.addComponent(pPeito1Hist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-														.addComponent(pPeito1Hist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-														.addComponent(pPeito1Hist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-														.addComponent(pPeito1Hist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE))
-										.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, coneJPLayout.createSequentialGroup()
-												.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-														.addComponent(pPeito2Hist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(pCoxaHist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE))
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-												.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-														.addComponent(pPeito2Hist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(pCoxaHist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE))
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-												.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-														.addComponent(pPeito2Hist4Label, javax.swing.GroupLayout.Alignment.TRAILING,
-																javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(pCoxaHist4Label, javax.swing.GroupLayout.Alignment.TRAILING,
-																javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE))
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-												.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-														.addComponent(pPeito2Hist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(pCoxaHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)))))
-						.addGroup(coneJPLayout.createSequentialGroup().addGroup(coneJPLayout
-								.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-								.addComponent(pPeito1Hist1Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addGroup(coneJPLayout.createSequentialGroup()
-										.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-														.addComponent(ordemHist1Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(numHist1Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(pGordHist1Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE))
-												.addComponent(numHist1Label2, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-														javax.swing.GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-														coneJPLayout.createSequentialGroup().addGroup(coneJPLayout
-																.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-																.addComponent(ordemHist2Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																		javax.swing.GroupLayout.PREFERRED_SIZE)
-																.addComponent(numHist2Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																		javax.swing.GroupLayout.PREFERRED_SIZE)
-																.addComponent(
-																		pGordHist2Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																		javax.swing.GroupLayout.PREFERRED_SIZE))
-																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-																.addGroup(coneJPLayout
-																		.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-																		.addComponent(ordemHist3Label1,
-																				javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																				javax.swing.GroupLayout.PREFERRED_SIZE)
-																		.addComponent(
-																				numHist3Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																				javax.swing.GroupLayout.PREFERRED_SIZE)
-																		.addComponent(pGordHist3Label1,
-																				javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																				javax.swing.GroupLayout.PREFERRED_SIZE))
-																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-																.addGroup(coneJPLayout
-																		.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-																		.addComponent(ordemHist4Label1,
-																				javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																				javax.swing.GroupLayout.PREFERRED_SIZE)
-																		.addComponent(
-																				numHist4Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																				javax.swing.GroupLayout.PREFERRED_SIZE)
-																		.addComponent(pGordHist4Label1,
-																				javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																				javax.swing.GroupLayout.PREFERRED_SIZE))
-																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-																.addGroup(coneJPLayout
-																		.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-																		.addComponent(ordemHist5Label1,
-																				javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																				javax.swing.GroupLayout.PREFERRED_SIZE)
-																		.addComponent(numHist5Label1,
-																				javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																				javax.swing.GroupLayout.PREFERRED_SIZE)
-																		.addComponent(pGordHist5Label1,
-																				javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																				javax.swing.GroupLayout.PREFERRED_SIZE))
-																.addGap(12, 12, 12).addComponent(pCoxaHist1Label1,
-																		javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																		javax.swing.GroupLayout.PREFERRED_SIZE))
-												.addComponent(pPeito2Hist1Label1, javax.swing.GroupLayout.Alignment.TRAILING,
-														javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-														javax.swing.GroupLayout.PREFERRED_SIZE))))
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-								.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-												coneJPLayout.createSequentialGroup()
-														.addComponent(pPeito1Hist2Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-														.addComponent(pPeito1Hist3Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-														.addComponent(pPeito1Hist4Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-														.addComponent(pPeito1Hist5Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE))
-										.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, coneJPLayout.createSequentialGroup()
-												.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-														.addComponent(pPeito2Hist2Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(pCoxaHist2Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE))
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-												.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-														.addComponent(pPeito2Hist3Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(pCoxaHist3Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE))
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-												.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-														.addComponent(pPeito2Hist4Label1, javax.swing.GroupLayout.Alignment.TRAILING,
-																javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(pCoxaHist4Label1, javax.swing.GroupLayout.Alignment.TRAILING,
-																javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE))
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-												.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-														.addComponent(pPeito2Hist5Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(pCoxaHist5Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-																javax.swing.GroupLayout.PREFERRED_SIZE))))))
-				.addGap(6, 6, 6)
-				.addGroup(coneJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-						.addComponent(pPeito25JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addComponent(pCoxa5JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addComponent(controleJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-				.addContainerGap()));
-
-		registrosLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-		registrosLabel.setForeground(new java.awt.Color(0, 153, 255));
-		registrosLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		registrosLabel.setText("Registros salvos com sucesso!!");
-
-		jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-		jLabel10.setText("Aviário");
-
-		aviarioJFT.setEditable(false);
-		aviarioJFT.setForeground(new java.awt.Color(0, 153, 255));
-		try {
-			aviarioJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
-		} catch (java.text.ParseException ex) {
-			ex.printStackTrace();
-		}
-		aviarioJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-		jLabel22.setText("Data");
-
-		dataAbateJFT.setEditable(false);
-		dataAbateJFT.setForeground(new java.awt.Color(0, 153, 255));
-		try {
-			dataAbateJFT
-					.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
-		} catch (java.text.ParseException ex) {
-			ex.printStackTrace();
-		}
-		dataAbateJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-		javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-		jPanel2.setLayout(jPanel2Layout);
-		jPanel2Layout.setHorizontalGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel2Layout.createSequentialGroup().addContainerGap().addComponent(jLabel22)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-						.addComponent(dataAbateJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addGap(29, 29, 29).addComponent(jLabel10).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(aviarioJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(19, Short.MAX_VALUE)));
-		jPanel2Layout.setVerticalGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel2Layout.createSequentialGroup().addContainerGap()
-						.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel10)
-								.addComponent(aviarioJFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addComponent(jLabel22).addComponent(dataAbateJFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addContainerGap()));
-
-		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-		jPanel1.setLayout(jPanel1Layout);
-		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(jPanel1Layout
-				.createSequentialGroup().addContainerGap()
-				.addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(jPanel1Layout
-						.createSequentialGroup()
-						.addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-										jPanel1Layout.createSequentialGroup().addGap(0, 2, Short.MAX_VALUE).addComponent(registrosLabel,
-												javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)))
-						.addContainerGap())
-						.addGroup(jPanel1Layout.createSequentialGroup()
-								.addComponent(coneJP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))));
-		jPanel1Layout
-				.setVerticalGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(jPanel1Layout.createSequentialGroup().addContainerGap()
-								.addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-								.addComponent(coneJP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(registrosLabel)
-								.addContainerGap()));
-
-		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-		getContentPane().setLayout(layout);
-		layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(layout
-						.createSequentialGroup().addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addGap(0, 0, Short.MAX_VALUE)));
-		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(layout
-						.createSequentialGroup().addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addGap(0, 0, Short.MAX_VALUE)));
-
-		pack();
-	}// </editor-fold>//GEN-END:initComponents
+        consumoHist6Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        consumoHist6Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        baiaHist6Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        baiaHist6Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        ordemHist6Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ordemHist6Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        ordemHist7Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ordemHist7Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        baiaHist7Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        baiaHist7Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        consumoHist7Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        consumoHist7Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        consumoHist8Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        consumoHist8Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        baiaHist8Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        baiaHist8Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        ordemHist8Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ordemHist8Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        ordemHist9Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ordemHist9Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        baiaHist9Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        baiaHist9Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        consumoHist9Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        consumoHist9Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        consumoHist10Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        consumoHist10Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        ordemHist10Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ordemHist10Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        baiaHist10Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        baiaHist10Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setText("Digitados");
+
+        javax.swing.GroupLayout pnlDigitadosLayout = new javax.swing.GroupLayout(pnlDigitados);
+        pnlDigitados.setLayout(pnlDigitadosLayout);
+        pnlDigitadosLayout.setHorizontalGroup(
+            pnlDigitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDigitadosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlDigitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlDigitadosLayout.createSequentialGroup()
+                        .addGroup(pnlDigitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(ordemHist9Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ordemHist8Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ordemHist7Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ordemHist6Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ordemHist10Label, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlDigitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDigitadosLayout.createSequentialGroup()
+                                .addGroup(pnlDigitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(baiaHist6Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(baiaHist7Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pnlDigitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(consumoHist6Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(consumoHist7Label, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(pnlDigitadosLayout.createSequentialGroup()
+                                .addGroup(pnlDigitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(baiaHist9Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(baiaHist10Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(baiaHist8Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pnlDigitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(consumoHist8Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(consumoHist9Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(consumoHist10Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                    .addGroup(pnlDigitadosLayout.createSequentialGroup()
+                        .addGroup(pnlDigitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ordemHist1Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ordemHist2Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ordemHist3Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ordemHist4Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ordemHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlDigitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(pnlDigitadosLayout.createSequentialGroup()
+                                .addGroup(pnlDigitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(baiaHist4Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(baiaHist3Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(baiaHist2Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(baiaHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pnlDigitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(consumoHist2Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(consumoHist3Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(consumoHist4Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(consumoHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(pnlDigitadosLayout.createSequentialGroup()
+                                .addComponent(baiaHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(consumoHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        pnlDigitadosLayout.setVerticalGroup(
+            pnlDigitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDigitadosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlDigitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ordemHist6Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnlDigitadosLayout.createSequentialGroup()
+                        .addGroup(pnlDigitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(consumoHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ordemHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(baiaHist1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlDigitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDigitadosLayout.createSequentialGroup()
+                                .addGroup(pnlDigitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(consumoHist2Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(pnlDigitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(ordemHist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(baiaHist2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pnlDigitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(ordemHist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(baiaHist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(consumoHist3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pnlDigitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(ordemHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(baiaHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(consumoHist4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pnlDigitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(ordemHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(baiaHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(consumoHist5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(12, 12, 12)
+                                .addComponent(consumoHist6Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(baiaHist6Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlDigitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDigitadosLayout.createSequentialGroup()
+                        .addComponent(ordemHist7Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ordemHist8Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ordemHist9Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ordemHist10Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDigitadosLayout.createSequentialGroup()
+                        .addGroup(pnlDigitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(baiaHist7Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(consumoHist7Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlDigitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(baiaHist8Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(consumoHist8Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlDigitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(baiaHist9Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(consumoHist9Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlDigitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(baiaHist10Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(consumoHist10Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("Controle");
+
+        try {
+            controleJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        controleJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        controleJFT.setEnabled(false);
+
+        javax.swing.GroupLayout pnlControleLayout = new javax.swing.GroupLayout(pnlControle);
+        pnlControle.setLayout(pnlControleLayout);
+        pnlControleLayout.setHorizontalGroup(
+            pnlControleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlControleLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlControleLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(controleJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        pnlControleLayout.setVerticalGroup(
+            pnlControleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlControleLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(controleJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        ordemJFT.setEditable(false);
+        try {
+            ordemJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        ordemJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        ordemJFT.setEnabled(false);
+
+        javax.swing.GroupLayout pnlConsumoLayout = new javax.swing.GroupLayout(pnlConsumo);
+        pnlConsumo.setLayout(pnlConsumoLayout);
+        pnlConsumoLayout.setHorizontalGroup(
+            pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlConsumoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pnlDigitados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlConsumoLayout.createSequentialGroup()
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(pnlConsumoLayout.createSequentialGroup()
+                        .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlConsumoLayout.createSequentialGroup()
+                                .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(ordem9Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(ordem8Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(ordem7Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(ordem6Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(ordem10Label, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ordemJFT, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlConsumoLayout.createSequentialGroup()
+                                        .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(baia6Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(baia7Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(consumo6Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(consumo7Label, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(pnlConsumoLayout.createSequentialGroup()
+                                        .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(baiaJFT, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(baia9Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(baia10Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(baia8Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(consumo8Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(consumo9Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(consumo10Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(consumoJFT)))))
+                            .addGroup(pnlConsumoLayout.createSequentialGroup()
+                                .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(ordem1Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(ordem2Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(ordem3Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(ordem4Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(ordem5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(numHist1Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(pnlConsumoLayout.createSequentialGroup()
+                                        .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(baia4Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(baia3Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(baia2Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(baia5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(consumo2Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(consumo3Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(consumo4Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(consumo5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(pnlConsumoLayout.createSequentialGroup()
+                                        .addComponent(baia1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(consumo1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(pnlControle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+        pnlConsumoLayout.setVerticalGroup(
+            pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlConsumoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlConsumoLayout.createSequentialGroup()
+                        .addGap(0, 10, Short.MAX_VALUE)
+                        .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel15))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(ordem6Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pnlConsumoLayout.createSequentialGroup()
+                                .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(consumo1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(ordem1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(numHist1Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(baia1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlConsumoLayout.createSequentialGroup()
+                                        .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(consumo2Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(ordem2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(baia2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(ordem3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(baia3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(consumo3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(ordem4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(baia4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(consumo4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(ordem5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(baia5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(consumo5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(12, 12, 12)
+                                        .addComponent(consumo6Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(baia6Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(pnlConsumoLayout.createSequentialGroup()
+                                .addComponent(ordem7Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(ordem8Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(ordem9Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(ordem10Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(consumoJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlConsumoLayout.createSequentialGroup()
+                                .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(baia7Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(consumo7Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(baia8Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(consumo8Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(baia9Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(consumo9Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(baia10Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(consumo10Label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pnlConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(baiaJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ordemJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addComponent(pnlDigitados, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(23, 23, 23))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlConsumoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnlControle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        registrosLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        registrosLabel.setForeground(new java.awt.Color(0, 153, 255));
+        registrosLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        registrosLabel.setText("Registros salvos com sucesso!!");
+
+        pnlHeader.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jLabel10.setText("Tratos");
+
+        tratosJFT.setEditable(false);
+        tratosJFT.setForeground(new java.awt.Color(0, 153, 255));
+        try {
+            tratosJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        tratosJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jLabel22.setText("Data");
+
+        dataJFT.setEditable(false);
+        dataJFT.setForeground(new java.awt.Color(0, 153, 255));
+        try {
+            dataJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        dataJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        javax.swing.GroupLayout pnlHeaderLayout = new javax.swing.GroupLayout(pnlHeader);
+        pnlHeader.setLayout(pnlHeaderLayout);
+        pnlHeaderLayout.setHorizontalGroup(
+            pnlHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel22)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(dataJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tratosJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlHeaderLayout.setVerticalGroup(
+            pnlHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(tratosJFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel22)
+                    .addComponent(dataJFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(pnlConsumo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(registrosLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pnlHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlConsumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(registrosLabel)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
 
 	/**
 	 * @param args the command line arguments
@@ -992,82 +815,733 @@ public class ViewConsumoTratosST extends javax.swing.JFrame {
 		});
 	}
 
-	// Variables declaration - do not modify//GEN-BEGIN:variables
-	private javax.swing.JFormattedTextField aviarioJFT;
-	private javax.swing.JPanel coneJP;
-	private javax.swing.JFormattedTextField controleJFT;
-	private javax.swing.JFormattedTextField dataAbateJFT;
-	private javax.swing.JLabel jLabel10;
-	private javax.swing.JLabel jLabel12;
-	private javax.swing.JLabel jLabel13;
-	private javax.swing.JLabel jLabel14;
-	private javax.swing.JLabel jLabel15;
-	private javax.swing.JLabel jLabel22;
-	private javax.swing.JPanel jPanel1;
-	private javax.swing.JPanel jPanel2;
-	private javax.swing.JLabel numHist1Label;
-	private javax.swing.JLabel numHist1Label1;
-	private javax.swing.JLabel numHist1Label2;
-	private javax.swing.JLabel numHist2Label;
-	private javax.swing.JLabel numHist2Label1;
-	private javax.swing.JLabel numHist3Label;
-	private javax.swing.JLabel numHist3Label1;
-	private javax.swing.JLabel numHist4Label;
-	private javax.swing.JLabel numHist4Label1;
-	private javax.swing.JLabel numHist5Label;
-	private javax.swing.JLabel numHist5Label1;
-	private javax.swing.JLabel ordemHist1Label;
-	private javax.swing.JLabel ordemHist1Label1;
-	private javax.swing.JLabel ordemHist2Label;
-	private javax.swing.JLabel ordemHist2Label1;
-	private javax.swing.JLabel ordemHist3Label;
-	private javax.swing.JLabel ordemHist3Label1;
-	private javax.swing.JLabel ordemHist4Label;
-	private javax.swing.JLabel ordemHist4Label1;
-	private javax.swing.JLabel ordemHist5Label;
-	private javax.swing.JLabel ordemHist5Label1;
-	private javax.swing.JFormattedTextField pCoxa5JFT;
-	private javax.swing.JLabel pCoxaHist1Label;
-	private javax.swing.JLabel pCoxaHist1Label1;
-	private javax.swing.JLabel pCoxaHist2Label;
-	private javax.swing.JLabel pCoxaHist2Label1;
-	private javax.swing.JLabel pCoxaHist3Label;
-	private javax.swing.JLabel pCoxaHist3Label1;
-	private javax.swing.JLabel pCoxaHist4Label;
-	private javax.swing.JLabel pCoxaHist4Label1;
-	private javax.swing.JLabel pCoxaHist5Label;
-	private javax.swing.JLabel pCoxaHist5Label1;
-	private javax.swing.JLabel pGordHist1Label;
-	private javax.swing.JLabel pGordHist1Label1;
-	private javax.swing.JLabel pGordHist2Label;
-	private javax.swing.JLabel pGordHist2Label1;
-	private javax.swing.JLabel pGordHist3Label;
-	private javax.swing.JLabel pGordHist3Label1;
-	private javax.swing.JLabel pGordHist4Label;
-	private javax.swing.JLabel pGordHist4Label1;
-	private javax.swing.JLabel pGordHist5Label;
-	private javax.swing.JLabel pGordHist5Label1;
-	private javax.swing.JLabel pPeito1Hist1Label;
-	private javax.swing.JLabel pPeito1Hist1Label1;
-	private javax.swing.JLabel pPeito1Hist2Label;
-	private javax.swing.JLabel pPeito1Hist2Label1;
-	private javax.swing.JLabel pPeito1Hist3Label;
-	private javax.swing.JLabel pPeito1Hist3Label1;
-	private javax.swing.JLabel pPeito1Hist4Label;
-	private javax.swing.JLabel pPeito1Hist4Label1;
-	private javax.swing.JLabel pPeito1Hist5Label;
-	private javax.swing.JLabel pPeito1Hist5Label1;
-	private javax.swing.JFormattedTextField pPeito25JFT;
-	private javax.swing.JLabel pPeito2Hist1Label;
-	private javax.swing.JLabel pPeito2Hist1Label1;
-	private javax.swing.JLabel pPeito2Hist2Label;
-	private javax.swing.JLabel pPeito2Hist2Label1;
-	private javax.swing.JLabel pPeito2Hist3Label;
-	private javax.swing.JLabel pPeito2Hist3Label1;
-	private javax.swing.JLabel pPeito2Hist4Label;
-	private javax.swing.JLabel pPeito2Hist4Label1;
-	private javax.swing.JLabel pPeito2Hist5Label;
-	private javax.swing.JLabel pPeito2Hist5Label1;
-	private javax.swing.JLabel registrosLabel;
-	// End of variables declaration//GEN-END:variables
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel baia10Label;
+    private javax.swing.JLabel baia1Label;
+    private javax.swing.JLabel baia2Label;
+    private javax.swing.JLabel baia3Label;
+    private javax.swing.JLabel baia4Label;
+    private javax.swing.JLabel baia5Label;
+    private javax.swing.JLabel baia6Label;
+    private javax.swing.JLabel baia7Label;
+    private javax.swing.JLabel baia8Label;
+    private javax.swing.JLabel baia9Label;
+    private javax.swing.JLabel baiaHist10Label;
+    private javax.swing.JLabel baiaHist1Label;
+    private javax.swing.JLabel baiaHist2Label;
+    private javax.swing.JLabel baiaHist3Label;
+    private javax.swing.JLabel baiaHist4Label;
+    private javax.swing.JLabel baiaHist5Label;
+    private javax.swing.JLabel baiaHist6Label;
+    private javax.swing.JLabel baiaHist7Label;
+    private javax.swing.JLabel baiaHist8Label;
+    private javax.swing.JLabel baiaHist9Label;
+    private javax.swing.JFormattedTextField baiaJFT;
+    private javax.swing.JLabel consumo10Label;
+    private javax.swing.JLabel consumo1Label;
+    private javax.swing.JLabel consumo2Label;
+    private javax.swing.JLabel consumo3Label;
+    private javax.swing.JLabel consumo4Label;
+    private javax.swing.JLabel consumo5Label;
+    private javax.swing.JLabel consumo6Label;
+    private javax.swing.JLabel consumo7Label;
+    private javax.swing.JLabel consumo8Label;
+    private javax.swing.JLabel consumo9Label;
+    private javax.swing.JLabel consumoHist10Label;
+    private javax.swing.JLabel consumoHist1Label;
+    private javax.swing.JLabel consumoHist2Label;
+    private javax.swing.JLabel consumoHist3Label;
+    private javax.swing.JLabel consumoHist4Label;
+    private javax.swing.JLabel consumoHist5Label;
+    private javax.swing.JLabel consumoHist6Label;
+    private javax.swing.JLabel consumoHist7Label;
+    private javax.swing.JLabel consumoHist8Label;
+    private javax.swing.JLabel consumoHist9Label;
+    private javax.swing.JFormattedTextField consumoJFT;
+    private javax.swing.JFormattedTextField controleJFT;
+    private javax.swing.JFormattedTextField dataJFT;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel numHist1Label1;
+    private javax.swing.JLabel ordem10Label;
+    private javax.swing.JLabel ordem1Label;
+    private javax.swing.JLabel ordem2Label;
+    private javax.swing.JLabel ordem3Label;
+    private javax.swing.JLabel ordem4Label;
+    private javax.swing.JLabel ordem5Label;
+    private javax.swing.JLabel ordem6Label;
+    private javax.swing.JLabel ordem7Label;
+    private javax.swing.JLabel ordem8Label;
+    private javax.swing.JLabel ordem9Label;
+    private javax.swing.JLabel ordemHist10Label;
+    private javax.swing.JLabel ordemHist1Label;
+    private javax.swing.JLabel ordemHist2Label;
+    private javax.swing.JLabel ordemHist3Label;
+    private javax.swing.JLabel ordemHist4Label;
+    private javax.swing.JLabel ordemHist5Label;
+    private javax.swing.JLabel ordemHist6Label;
+    private javax.swing.JLabel ordemHist7Label;
+    private javax.swing.JLabel ordemHist8Label;
+    private javax.swing.JLabel ordemHist9Label;
+    private javax.swing.JFormattedTextField ordemJFT;
+    private javax.swing.JPanel pnlConsumo;
+    private javax.swing.JPanel pnlControle;
+    private javax.swing.JPanel pnlDigitados;
+    private javax.swing.JPanel pnlHeader;
+    private javax.swing.JLabel registrosLabel;
+    private javax.swing.JFormattedTextField tratosJFT;
+    // End of variables declaration//GEN-END:variables
+	public javax.swing.JLabel getBaia10Label() {
+		return baia10Label;
+	}
+
+	public void setBaia10Label(javax.swing.JLabel baia10Label) {
+		this.baia10Label = baia10Label;
+	}
+
+	public javax.swing.JLabel getBaia1Label() {
+		return baia1Label;
+	}
+
+	public void setBaia1Label(javax.swing.JLabel baia1Label) {
+		this.baia1Label = baia1Label;
+	}
+
+	public javax.swing.JLabel getBaia2Label() {
+		return baia2Label;
+	}
+
+	public void setBaia2Label(javax.swing.JLabel baia2Label) {
+		this.baia2Label = baia2Label;
+	}
+
+	public javax.swing.JLabel getBaia3Label() {
+		return baia3Label;
+	}
+
+	public void setBaia3Label(javax.swing.JLabel baia3Label) {
+		this.baia3Label = baia3Label;
+	}
+
+	public javax.swing.JLabel getBaia4Label() {
+		return baia4Label;
+	}
+
+	public void setBaia4Label(javax.swing.JLabel baia4Label) {
+		this.baia4Label = baia4Label;
+	}
+
+	public javax.swing.JLabel getBaia5Label() {
+		return baia5Label;
+	}
+
+	public void setBaia5Label(javax.swing.JLabel baia5Label) {
+		this.baia5Label = baia5Label;
+	}
+
+	public javax.swing.JLabel getBaia6Label() {
+		return baia6Label;
+	}
+
+	public void setBaia6Label(javax.swing.JLabel baia6Label) {
+		this.baia6Label = baia6Label;
+	}
+
+	public javax.swing.JLabel getBaia7Label() {
+		return baia7Label;
+	}
+
+	public void setBaia7Label(javax.swing.JLabel baia7Label) {
+		this.baia7Label = baia7Label;
+	}
+
+	public javax.swing.JLabel getBaia8Label() {
+		return baia8Label;
+	}
+
+	public void setBaia8Label(javax.swing.JLabel baia8Label) {
+		this.baia8Label = baia8Label;
+	}
+
+	public javax.swing.JLabel getBaia9Label() {
+		return baia9Label;
+	}
+
+	public void setBaia9Label(javax.swing.JLabel baia9Label) {
+		this.baia9Label = baia9Label;
+	}
+
+	public javax.swing.JLabel getBaiaHist10Label() {
+		return baiaHist10Label;
+	}
+
+	public void setBaiaHist10Label(javax.swing.JLabel baiaHist10Label) {
+		this.baiaHist10Label = baiaHist10Label;
+	}
+
+	public javax.swing.JLabel getBaiaHist1Label() {
+		return baiaHist1Label;
+	}
+
+	public void setBaiaHist1Label(javax.swing.JLabel baiaHist1Label) {
+		this.baiaHist1Label = baiaHist1Label;
+	}
+
+	public javax.swing.JLabel getBaiaHist2Label() {
+		return baiaHist2Label;
+	}
+
+	public void setBaiaHist2Label(javax.swing.JLabel baiaHist2Label) {
+		this.baiaHist2Label = baiaHist2Label;
+	}
+
+	public javax.swing.JLabel getBaiaHist3Label() {
+		return baiaHist3Label;
+	}
+
+	public void setBaiaHist3Label(javax.swing.JLabel baiaHist3Label) {
+		this.baiaHist3Label = baiaHist3Label;
+	}
+
+	public javax.swing.JLabel getBaiaHist4Label() {
+		return baiaHist4Label;
+	}
+
+	public void setBaiaHist4Label(javax.swing.JLabel baiaHist4Label) {
+		this.baiaHist4Label = baiaHist4Label;
+	}
+
+	public javax.swing.JLabel getBaiaHist5Label() {
+		return baiaHist5Label;
+	}
+
+	public void setBaiaHist5Label(javax.swing.JLabel baiaHist5Label) {
+		this.baiaHist5Label = baiaHist5Label;
+	}
+
+	public javax.swing.JLabel getBaiaHist6Label() {
+		return baiaHist6Label;
+	}
+
+	public void setBaiaHist6Label(javax.swing.JLabel baiaHist6Label) {
+		this.baiaHist6Label = baiaHist6Label;
+	}
+
+	public javax.swing.JLabel getBaiaHist7Label() {
+		return baiaHist7Label;
+	}
+
+	public void setBaiaHist7Label(javax.swing.JLabel baiaHist7Label) {
+		this.baiaHist7Label = baiaHist7Label;
+	}
+
+	public javax.swing.JLabel getBaiaHist8Label() {
+		return baiaHist8Label;
+	}
+
+	public void setBaiaHist8Label(javax.swing.JLabel baiaHist8Label) {
+		this.baiaHist8Label = baiaHist8Label;
+	}
+
+	public javax.swing.JLabel getBaiaHist9Label() {
+		return baiaHist9Label;
+	}
+
+	public void setBaiaHist9Label(javax.swing.JLabel baiaHist9Label) {
+		this.baiaHist9Label = baiaHist9Label;
+	}
+
+	public javax.swing.JFormattedTextField getBaiaJFT() {
+		return baiaJFT;
+	}
+
+	public void setBaiaJFT(javax.swing.JFormattedTextField baiaJFT) {
+		this.baiaJFT = baiaJFT;
+	}
+
+	public javax.swing.JLabel getConsumo10Label() {
+		return consumo10Label;
+	}
+
+	public void setConsumo10Label(javax.swing.JLabel consumo10Label) {
+		this.consumo10Label = consumo10Label;
+	}
+
+	public javax.swing.JLabel getConsumo1Label() {
+		return consumo1Label;
+	}
+
+	public void setConsumo1Label(javax.swing.JLabel consumo1Label) {
+		this.consumo1Label = consumo1Label;
+	}
+
+	public javax.swing.JLabel getConsumo2Label() {
+		return consumo2Label;
+	}
+
+	public void setConsumo2Label(javax.swing.JLabel consumo2Label) {
+		this.consumo2Label = consumo2Label;
+	}
+
+	public javax.swing.JLabel getConsumo3Label() {
+		return consumo3Label;
+	}
+
+	public void setConsumo3Label(javax.swing.JLabel consumo3Label) {
+		this.consumo3Label = consumo3Label;
+	}
+
+	public javax.swing.JLabel getConsumo4Label() {
+		return consumo4Label;
+	}
+
+	public void setConsumo4Label(javax.swing.JLabel consumo4Label) {
+		this.consumo4Label = consumo4Label;
+	}
+
+	public javax.swing.JLabel getConsumo5Label() {
+		return consumo5Label;
+	}
+
+	public void setConsumo5Label(javax.swing.JLabel consumo5Label) {
+		this.consumo5Label = consumo5Label;
+	}
+
+	public javax.swing.JLabel getConsumo6Label() {
+		return consumo6Label;
+	}
+
+	public void setConsumo6Label(javax.swing.JLabel consumo6Label) {
+		this.consumo6Label = consumo6Label;
+	}
+
+	public javax.swing.JLabel getConsumo7Label() {
+		return consumo7Label;
+	}
+
+	public void setConsumo7Label(javax.swing.JLabel consumo7Label) {
+		this.consumo7Label = consumo7Label;
+	}
+
+	public javax.swing.JLabel getConsumo8Label() {
+		return consumo8Label;
+	}
+
+	public void setConsumo8Label(javax.swing.JLabel consumo8Label) {
+		this.consumo8Label = consumo8Label;
+	}
+
+	public javax.swing.JLabel getConsumo9Label() {
+		return consumo9Label;
+	}
+
+	public void setConsumo9Label(javax.swing.JLabel consumo9Label) {
+		this.consumo9Label = consumo9Label;
+	}
+
+	public javax.swing.JLabel getConsumoHist10Label() {
+		return consumoHist10Label;
+	}
+
+	public void setConsumoHist10Label(javax.swing.JLabel consumoHist10Label) {
+		this.consumoHist10Label = consumoHist10Label;
+	}
+
+	public javax.swing.JLabel getConsumoHist1Label() {
+		return consumoHist1Label;
+	}
+
+	public void setConsumoHist1Label(javax.swing.JLabel consumoHist1Label) {
+		this.consumoHist1Label = consumoHist1Label;
+	}
+
+	public javax.swing.JLabel getConsumoHist2Label() {
+		return consumoHist2Label;
+	}
+
+	public void setConsumoHist2Label(javax.swing.JLabel consumoHist2Label) {
+		this.consumoHist2Label = consumoHist2Label;
+	}
+
+	public javax.swing.JLabel getConsumoHist3Label() {
+		return consumoHist3Label;
+	}
+
+	public void setConsumoHist3Label(javax.swing.JLabel consumoHist3Label) {
+		this.consumoHist3Label = consumoHist3Label;
+	}
+
+	public javax.swing.JLabel getConsumoHist4Label() {
+		return consumoHist4Label;
+	}
+
+	public void setConsumoHist4Label(javax.swing.JLabel consumoHist4Label) {
+		this.consumoHist4Label = consumoHist4Label;
+	}
+
+	public javax.swing.JLabel getConsumoHist5Label() {
+		return consumoHist5Label;
+	}
+
+	public void setConsumoHist5Label(javax.swing.JLabel consumoHist5Label) {
+		this.consumoHist5Label = consumoHist5Label;
+	}
+
+	public javax.swing.JLabel getConsumoHist6Label() {
+		return consumoHist6Label;
+	}
+
+	public void setConsumoHist6Label(javax.swing.JLabel consumoHist6Label) {
+		this.consumoHist6Label = consumoHist6Label;
+	}
+
+	public javax.swing.JLabel getConsumoHist7Label() {
+		return consumoHist7Label;
+	}
+
+	public void setConsumoHist7Label(javax.swing.JLabel consumoHist7Label) {
+		this.consumoHist7Label = consumoHist7Label;
+	}
+
+	public javax.swing.JLabel getConsumoHist8Label() {
+		return consumoHist8Label;
+	}
+
+	public void setConsumoHist8Label(javax.swing.JLabel consumoHist8Label) {
+		this.consumoHist8Label = consumoHist8Label;
+	}
+
+	public javax.swing.JLabel getConsumoHist9Label() {
+		return consumoHist9Label;
+	}
+
+	public void setConsumoHist9Label(javax.swing.JLabel consumoHist9Label) {
+		this.consumoHist9Label = consumoHist9Label;
+	}
+
+	public javax.swing.JFormattedTextField getConsumoJFT() {
+		return consumoJFT;
+	}
+
+	public void setConsumoJFT(javax.swing.JFormattedTextField consumoJFT) {
+		this.consumoJFT = consumoJFT;
+	}
+
+	public javax.swing.JFormattedTextField getDataJFT() {
+		return dataJFT;
+	}
+
+	public void setDataJFT(javax.swing.JFormattedTextField dataJFT) {
+		this.dataJFT = dataJFT;
+	}
+
+	public javax.swing.JLabel getjLabel10() {
+		return jLabel10;
+	}
+
+	public void setjLabel10(javax.swing.JLabel jLabel10) {
+		this.jLabel10 = jLabel10;
+	}
+
+	public javax.swing.JLabel getjLabel12() {
+		return jLabel12;
+	}
+
+	public void setjLabel12(javax.swing.JLabel jLabel12) {
+		this.jLabel12 = jLabel12;
+	}
+
+	public javax.swing.JLabel getjLabel13() {
+		return jLabel13;
+	}
+
+	public void setjLabel13(javax.swing.JLabel jLabel13) {
+		this.jLabel13 = jLabel13;
+	}
+
+	public javax.swing.JLabel getjLabel14() {
+		return jLabel14;
+	}
+
+	public void setjLabel14(javax.swing.JLabel jLabel14) {
+		this.jLabel14 = jLabel14;
+	}
+
+	public javax.swing.JLabel getjLabel15() {
+		return jLabel15;
+	}
+
+	public void setjLabel15(javax.swing.JLabel jLabel15) {
+		this.jLabel15 = jLabel15;
+	}
+
+	public javax.swing.JLabel getjLabel16() {
+		return jLabel16;
+	}
+
+	public void setjLabel16(javax.swing.JLabel jLabel16) {
+		this.jLabel16 = jLabel16;
+	}
+
+	public javax.swing.JLabel getjLabel22() {
+		return jLabel22;
+	}
+
+	public void setjLabel22(javax.swing.JLabel jLabel22) {
+		this.jLabel22 = jLabel22;
+	}
+
+	public javax.swing.JPanel getjPanel1() {
+		return jPanel1;
+	}
+
+	public void setjPanel1(javax.swing.JPanel jPanel1) {
+		this.jPanel1 = jPanel1;
+	}
+
+	public javax.swing.JPanel getjPanel2() {
+		return pnlHeader;
+	}
+
+	public void setjPanel2(javax.swing.JPanel jPanel2) {
+		this.pnlHeader = jPanel2;
+	}
+
+	public javax.swing.JLabel getNumHist1Label1() {
+		return numHist1Label1;
+	}
+
+	public void setNumHist1Label1(javax.swing.JLabel numHist1Label1) {
+		this.numHist1Label1 = numHist1Label1;
+	}
+
+	public javax.swing.JLabel getOrdem10Label() {
+		return ordem10Label;
+	}
+
+	public void setOrdem10Label(javax.swing.JLabel ordem10Label) {
+		this.ordem10Label = ordem10Label;
+	}
+
+	public javax.swing.JLabel getOrdem1Label() {
+		return ordem1Label;
+	}
+
+	public void setOrdem1Label(javax.swing.JLabel ordem1Label) {
+		this.ordem1Label = ordem1Label;
+	}
+
+	public javax.swing.JLabel getOrdem2Label() {
+		return ordem2Label;
+	}
+
+	public void setOrdem2Label(javax.swing.JLabel ordem2Label) {
+		this.ordem2Label = ordem2Label;
+	}
+
+	public javax.swing.JLabel getOrdem3Label() {
+		return ordem3Label;
+	}
+
+	public void setOrdem3Label(javax.swing.JLabel ordem3Label) {
+		this.ordem3Label = ordem3Label;
+	}
+
+	public javax.swing.JLabel getOrdem4Label() {
+		return ordem4Label;
+	}
+
+	public void setOrdem4Label(javax.swing.JLabel ordem4Label) {
+		this.ordem4Label = ordem4Label;
+	}
+
+	public javax.swing.JLabel getOrdem5Label() {
+		return ordem5Label;
+	}
+
+	public void setOrdem5Label(javax.swing.JLabel ordem5Label) {
+		this.ordem5Label = ordem5Label;
+	}
+
+	public javax.swing.JLabel getOrdem6Label() {
+		return ordem6Label;
+	}
+
+	public void setOrdem6Label(javax.swing.JLabel ordem6Label) {
+		this.ordem6Label = ordem6Label;
+	}
+
+	public javax.swing.JLabel getOrdem7Label() {
+		return ordem7Label;
+	}
+
+	public void setOrdem7Label(javax.swing.JLabel ordem7Label) {
+		this.ordem7Label = ordem7Label;
+	}
+
+	public javax.swing.JLabel getOrdem8Label() {
+		return ordem8Label;
+	}
+
+	public void setOrdem8Label(javax.swing.JLabel ordem8Label) {
+		this.ordem8Label = ordem8Label;
+	}
+
+	public javax.swing.JLabel getOrdem9Label() {
+		return ordem9Label;
+	}
+
+	public void setOrdem9Label(javax.swing.JLabel ordem9Label) {
+		this.ordem9Label = ordem9Label;
+	}
+
+	public javax.swing.JLabel getOrdemHist10Label() {
+		return ordemHist10Label;
+	}
+
+	public void setOrdemHist10Label(javax.swing.JLabel ordemHist10Label) {
+		this.ordemHist10Label = ordemHist10Label;
+	}
+
+	public javax.swing.JLabel getOrdemHist1Label() {
+		return ordemHist1Label;
+	}
+
+	public void setOrdemHist1Label(javax.swing.JLabel ordemHist1Label) {
+		this.ordemHist1Label = ordemHist1Label;
+	}
+
+	public javax.swing.JLabel getOrdemHist2Label() {
+		return ordemHist2Label;
+	}
+
+	public void setOrdemHist2Label(javax.swing.JLabel ordemHist2Label) {
+		this.ordemHist2Label = ordemHist2Label;
+	}
+
+	public javax.swing.JLabel getOrdemHist3Label() {
+		return ordemHist3Label;
+	}
+
+	public void setOrdemHist3Label(javax.swing.JLabel ordemHist3Label) {
+		this.ordemHist3Label = ordemHist3Label;
+	}
+
+	public javax.swing.JLabel getOrdemHist4Label() {
+		return ordemHist4Label;
+	}
+
+	public void setOrdemHist4Label(javax.swing.JLabel ordemHist4Label) {
+		this.ordemHist4Label = ordemHist4Label;
+	}
+
+	public javax.swing.JLabel getOrdemHist5Label() {
+		return ordemHist5Label;
+	}
+
+	public void setOrdemHist5Label(javax.swing.JLabel ordemHist5Label) {
+		this.ordemHist5Label = ordemHist5Label;
+	}
+
+	public javax.swing.JLabel getOrdemHist6Label() {
+		return ordemHist6Label;
+	}
+
+	public void setOrdemHist6Label(javax.swing.JLabel ordemHist6Label) {
+		this.ordemHist6Label = ordemHist6Label;
+	}
+
+	public javax.swing.JLabel getOrdemHist7Label() {
+		return ordemHist7Label;
+	}
+
+	public void setOrdemHist7Label(javax.swing.JLabel ordemHist7Label) {
+		this.ordemHist7Label = ordemHist7Label;
+	}
+
+	public javax.swing.JLabel getOrdemHist8Label() {
+		return ordemHist8Label;
+	}
+
+	public void setOrdemHist8Label(javax.swing.JLabel ordemHist8Label) {
+		this.ordemHist8Label = ordemHist8Label;
+	}
+
+	public javax.swing.JLabel getOrdemHist9Label() {
+		return ordemHist9Label;
+	}
+
+	public void setOrdemHist9Label(javax.swing.JLabel ordemHist9Label) {
+		this.ordemHist9Label = ordemHist9Label;
+	}
+
+	public javax.swing.JPanel getPnlDigitados() {
+		return pnlDigitados;
+	}
+
+	public void setPnlDigitados(javax.swing.JPanel pnlDigitados) {
+		this.pnlDigitados = pnlDigitados;
+	}
+
+	public javax.swing.JFormattedTextField getTratosJFT() {
+		return tratosJFT;
+	}
+
+	public void setTratosJFT(javax.swing.JFormattedTextField tratosJFT) {
+		this.tratosJFT = tratosJFT;
+	}
+
+	public void setConeJP(javax.swing.JPanel coneJP) {
+		this.pnlConsumo = coneJP;
+	}
+
+	public void setControleJFT(javax.swing.JFormattedTextField controleJFT) {
+		this.controleJFT = controleJFT;
+	}
+
+	public void setRegistrosLabel(javax.swing.JLabel registrosLabel) {
+		this.registrosLabel = registrosLabel;
+	}
+
+	public javax.swing.JFormattedTextField getControleJFT() {
+		return controleJFT;
+	}
+
+	public javax.swing.JFormattedTextField getOrdemJFT() {
+		return ordemJFT;
+	}
+
+	public void setOrdemJFT(javax.swing.JFormattedTextField ordemJFT) {
+		this.ordemJFT = ordemJFT;
+	}
+
+	public javax.swing.JPanel getPnlConsumo() {
+		return pnlConsumo;
+	}
+
+	public void setPnlConsumo(javax.swing.JPanel pnlConsumo) {
+		this.pnlConsumo = pnlConsumo;
+	}
+
+	public javax.swing.JPanel getPnlControle() {
+		return pnlControle;
+	}
+
+	public void setPnlControle(javax.swing.JPanel pnlControle) {
+		this.pnlControle = pnlControle;
+	}
+
+	public javax.swing.JPanel getPnlHeader() {
+		return pnlHeader;
+	}
+
+	public void setPnlHeader(javax.swing.JPanel pnlHeader) {
+		this.pnlHeader = pnlHeader;
+	}
 }
