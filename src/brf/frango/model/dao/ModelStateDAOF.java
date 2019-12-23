@@ -79,13 +79,9 @@ public class ModelStateDAOF {
            return false;
         }
         ExperimentoVOF e = (ExperimentoVOF) obj;
-        for(int k = 0; k < e.getAbates().get(1).getBalanca().size(); k++) {
-        	if(e.getAbates().get(1).getBalanca().get(k).getAnilha() == 536 && e.getAbates().get(1).getBalanca().get(k).getpVivo() == 2760) {
-        		e.getAbates().get(1).getBalanca().remove(k);
-        	}
-        }
-        
+        e.getAbates().get(0).getBalanca().get(270).setAnilha(275);
         model.setExperimentoVO(e);
+        
         saveModelState(false);
         return true;
     }

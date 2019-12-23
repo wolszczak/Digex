@@ -10,7 +10,6 @@ public class ModelST {
 	private ExperimentoVOST experimentoVO;
 	private InfoExpBOST infoExpBO;
 	private InfoExpVOST infoExpVO;
-	// private AvaliacaoPeDAOP avalPeDAO;
 
 	public ModelST() {
 		modelStateDAO = new ModelStateDAOST(this);

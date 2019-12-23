@@ -27,6 +27,21 @@ public class ConsumoBOST {
 		}
 		return msg;
 	}
+	
+	public String verificaCabecalhoConsumoTratos(String data,List<String> datasFases, int tratos) {
+		String msg = "";
+		if(tratos == 0 && data != "00/00/0000") {
+			return "- Quantidade de tratos não pode ser 0.";
+		}
+		if(tratos != 0 && data == "00/00/0000") {
+			return "- Valor de data inválido.";
+		}
+		msg = verificaData(data, datasFases);
+		if(msg != null) {
+			return "- Data fora do período do experimento\n";
+		}
+		return null;
+	}
 
 //	public boolean isBaiaDigitada(int baia) {
 //		for (ConsumoLivreVOST consumo : controller.getModel().getExperimentoVO().getBaias().get(0).getConsumo() ) {
@@ -63,7 +78,17 @@ public class ConsumoBOST {
 		return null;
 	}
 
-	public String verificaRacao(String data, Integer racao, Integer sobra,  List<String> datasFases) {
+	public String verificaConsumoTratos(int baia, int consumo) {
+		if (baia == 0 && consumo != 0) {
+			return "Baia não digitada!";
+		}
+		if (baia != 0 && consumo == 0) {
+			return "Consumo não digitado!";
+		}
+		return null;
+	}
+
+	public String verificaRacao(String data, Integer racao, Integer sobra, List<String> datasFases) {
 		String msg = "";
 		Date dataRacao = new Date();
 		Date dataIni = new Date();
@@ -82,7 +107,7 @@ public class ConsumoBOST {
 			} else if (!data.equals("00/00/0000") && racao == 0 && sobra == 0) {
 				msg = msg.concat("- Entrada/Saída de ração igual à 0\n");
 			}
-			
+
 		} else {
 			if (racao != 0 | sobra != 0) {
 				msg = msg.concat("- Data inválida!\n");

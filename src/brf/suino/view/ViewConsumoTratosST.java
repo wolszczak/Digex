@@ -77,6 +77,7 @@ public class ViewConsumoTratosST extends javax.swing.JFrame {
         baiaJFT = new javax.swing.JFormattedTextField();
         baia10Label = new javax.swing.JLabel();
         ordemJFT = new javax.swing.JFormattedTextField();
+        ordemJFT.setEditable(false);
         ordem10Label = new javax.swing.JLabel();
         ordem9Label = new javax.swing.JLabel();
         baia9Label = new javax.swing.JLabel();
@@ -112,11 +113,13 @@ public class ViewConsumoTratosST extends javax.swing.JFrame {
         pnlHeader = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         tratosJFT = new javax.swing.JFormattedTextField();
+        tratosJFT.setEnabled(false);
         jLabel22 = new javax.swing.JLabel();
         dataJFT = new javax.swing.JFormattedTextField();
         jPanel2 = new javax.swing.JPanel();
         jPanel2.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
         opcaoJFT = new javax.swing.JFormattedTextField();
+        opcaoJFT.setEnabled(false);
         jLabel11 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
@@ -384,10 +387,8 @@ public class ViewConsumoTratosST extends javax.swing.JFrame {
 
         baia10Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         baia10Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-        ordemJFT.setEditable(false);
         try {
-            ordemJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+            ordemJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -670,8 +671,6 @@ public class ViewConsumoTratosST extends javax.swing.JFrame {
         pnlHeader.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel10.setText("Tratos");
-
-        tratosJFT.setEditable(false);
         tratosJFT.setForeground(new java.awt.Color(0, 153, 255));
         try {
             tratosJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
@@ -715,8 +714,6 @@ public class ViewConsumoTratosST extends javax.swing.JFrame {
                     .addComponent(dataJFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
-
-        opcaoJFT.setEditable(false);
         opcaoJFT.setForeground(new java.awt.Color(0, 153, 255));
         try {
             opcaoJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
@@ -738,7 +735,7 @@ public class ViewConsumoTratosST extends javax.swing.JFrame {
         jLabel19.setText("0 - Sair");
 
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("9/ESC - Voltar");
+        jLabel20.setText("ESC - Voltar");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

@@ -27,23 +27,78 @@ public class ConsumoDAOSC {
 		buffer.newLine();
 		for (ConsumoVOSC c : consumo) {
 			for (RmeVOSC r : c.getRme()) {
-				buffer.write("" + c.getBaia());
-				buffer.write(";");
-				buffer.write("" + c.getSexo());
-				buffer.write(";");
-				buffer.write("" + c.getTrat1());
-				buffer.write(";");
-				buffer.write("" + c.getTrat2());
-				buffer.write(";");
-				buffer.write("" + r.getDataRacao());
-				buffer.write(";");
-				buffer.write("" + r.getFornecida());
-				buffer.write(";");
-				buffer.write("" + r.getPeso());
-				buffer.write(";");
-				buffer.write("" + r.getNumAnimais());
-				buffer.write(";");
-				buffer.newLine();
+				if (r.getFornecida() != 0 && r.getSobra() != 0) {
+					buffer.write("" + c.getBaia());
+					buffer.write(";");
+					buffer.write("" + c.getSexo());
+					buffer.write(";");
+					buffer.write("" + c.getTrat1());
+					buffer.write(";");
+					buffer.write("" + c.getTrat2());
+					buffer.write(";");
+					buffer.write("" + r.getDataRacao());
+					buffer.write(";");
+					buffer.write("" + r.getFornecida());
+					buffer.write(";");
+					buffer.write("" + r.getPeso());
+					buffer.write(";");
+					buffer.write("" + r.getNumAnimais());
+					buffer.write(";");
+					buffer.newLine();
+					buffer.write("" + c.getBaia());
+					buffer.write(";");
+					buffer.write("" + c.getSexo());
+					buffer.write(";");
+					buffer.write("" + c.getTrat1());
+					buffer.write(";");
+					buffer.write("" + c.getTrat2());
+					buffer.write(";");
+					buffer.write("" + r.getDataRacao());
+					buffer.write(";");
+					buffer.write("" + r.getSobra() * -1);
+					buffer.write(";");
+					buffer.write("" + r.getPeso());
+					buffer.write(";");
+					buffer.write("" + r.getNumAnimais());
+					buffer.write(";");
+					buffer.newLine();
+				} else if (r.getFornecida() != 0 && r.getSobra() == 0) {
+					buffer.write("" + c.getBaia());
+					buffer.write(";");
+					buffer.write("" + c.getSexo());
+					buffer.write(";");
+					buffer.write("" + c.getTrat1());
+					buffer.write(";");
+					buffer.write("" + c.getTrat2());
+					buffer.write(";");
+					buffer.write("" + r.getDataRacao());
+					buffer.write(";");
+					buffer.write("" + r.getFornecida());
+					buffer.write(";");
+					buffer.write("" + r.getPeso());
+					buffer.write(";");
+					buffer.write("" + r.getNumAnimais());
+					buffer.write(";");
+					buffer.newLine();
+				} else if (r.getFornecida() == 0 && r.getSobra() != 0) {
+					buffer.write("" + c.getBaia());
+					buffer.write(";");
+					buffer.write("" + c.getSexo());
+					buffer.write(";");
+					buffer.write("" + c.getTrat1());
+					buffer.write(";");
+					buffer.write("" + c.getTrat2());
+					buffer.write(";");
+					buffer.write("" + r.getDataRacao());
+					buffer.write(";");
+					buffer.write("" + r.getSobra()* -1);
+					buffer.write(";");
+					buffer.write("" + r.getPeso());
+					buffer.write(";");
+					buffer.write("" + r.getNumAnimais());
+					buffer.write(";");
+					buffer.newLine();
+				}
 			}
 		}
 		buffer.close();

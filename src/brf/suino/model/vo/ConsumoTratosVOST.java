@@ -7,13 +7,18 @@ import java.util.List;
 public class ConsumoTratosVOST implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String data;
+	private int tratos;
 	private List<RmeTratosVOST> consumosTratos;
+	private boolean finalizado;
 
 	public ConsumoTratosVOST() {
 	}
 
-	public ConsumoTratosVOST(int ordem, String dataRacao, int baia, int fornecida) {
-		consumosTratos = new ArrayList<>();
+	public ConsumoTratosVOST(String data, int tratos, List<RmeTratosVOST> consumos,  boolean finalizado) {
+		this.data = data;
+		this.tratos = tratos;
+		this.consumosTratos = consumos;
+		this.finalizado = finalizado;
 	}
 
 	public String getData() {
@@ -30,6 +35,22 @@ public class ConsumoTratosVOST implements Serializable {
 
 	public void setConsumosTratos(List<RmeTratosVOST> consumosTratos) {
 		this.consumosTratos = consumosTratos;
+	}
+
+	public boolean isFinalizado() {
+		return finalizado;
+	}
+
+	public void setFinalizado(boolean finalizado) {
+		this.finalizado = finalizado;
+	}
+
+	public int getTratos() {
+		return tratos;
+	}
+
+	public void setTratos(int tratos) {
+		this.tratos = tratos;
 	}
 	
 	

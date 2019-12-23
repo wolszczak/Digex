@@ -86,7 +86,7 @@ public class ViewEscolhaDigST extends javax.swing.JFrame {
 		exportarMediLabel.setText("[4] - Arquivo de Medicados");
 
 		lblMedicados = new JLabel();
-		lblMedicados.setText("[3] - Frigorífico");
+		lblMedicados.setText("[3] - Abrir Frigorífico");
 
 		frigoLabel = new JLabel();
 		frigoLabel.setText("999/999 registro(s)");
@@ -102,83 +102,103 @@ public class ViewEscolhaDigST extends javax.swing.JFrame {
 		lblConsumo.setText("[2] - Consumo por Tratos");
 
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING).addGroup(jPanel1Layout
-				.createSequentialGroup().addContainerGap()
-				.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+		jPanel1Layout.setHorizontalGroup(
+			jPanel1Layout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(jPanel1Layout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
 						.addGroup(jPanel1Layout.createSequentialGroup()
-								.addComponent(jLabel3, GroupLayout.DEFAULT_SIZE, 406, Short.MAX_VALUE).addGap(51))
-						.addGroup(jPanel1Layout
-								.createSequentialGroup().addGap(0).addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-										.addComponent(jLabel2)
-										.addGroup(jPanel1Layout.createSequentialGroup().addGroup(jPanel1Layout
-												.createParallelGroup(Alignment.LEADING)
-												.addGroup(jPanel1Layout.createSequentialGroup()
-														.addComponent(desempenhoLabel, GroupLayout.PREFERRED_SIZE, 119,
-																GroupLayout.PREFERRED_SIZE)
-														.addPreferredGap(ComponentPlacement.RELATED).addComponent(frigoLabel))
-												.addComponent(jLabel6, GroupLayout.PREFERRED_SIZE, 248, GroupLayout.PREFERRED_SIZE))
-												.addPreferredGap(ComponentPlacement.RELATED)
-												.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-														.addComponent(jLabel7, GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
-														.addGroup(jPanel1Layout.createSequentialGroup().addGap(10)
-																.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-																		.addComponent(exportarTratosLabel, Alignment.TRAILING,
-																				GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
-																		.addComponent(exportarLivreLabel, Alignment.TRAILING,
-																				GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
-																		.addComponent(exportarMediLabel, Alignment.TRAILING,
-																				GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
-																		.addComponent(exportarMortLabel, GroupLayout.DEFAULT_SIZE, 183,
-																				Short.MAX_VALUE)
-																		.addComponent(exportarFrigoLabel, GroupLayout.PREFERRED_SIZE, 159,
-																				GroupLayout.PREFERRED_SIZE)))))
-										.addGroup(jPanel1Layout.createSequentialGroup().addComponent(jLabel1)
-												.addPreferredGap(ComponentPlacement.UNRELATED)
-												.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-														.addComponent(testeJFT, GroupLayout.PREFERRED_SIZE, 74, GroupLayout.PREFERRED_SIZE)
-														.addComponent(protocoloJFT, GroupLayout.PREFERRED_SIZE, 160,
-																GroupLayout.PREFERRED_SIZE))))
-								.addContainerGap())
-						.addGroup(
-								jPanel1Layout.createSequentialGroup()
-										.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-												.addComponent(jLabel10, GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
-												.addComponent(jLabel11, GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
-												.addGroup(Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-														.addComponent(jLabel9, GroupLayout.PREFERRED_SIZE, 361, GroupLayout.PREFERRED_SIZE)
-														.addPreferredGap(ComponentPlacement.RELATED).addComponent(opcaoJFT,
-																GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)))
-										.addContainerGap())
+							.addComponent(jLabel3, GroupLayout.DEFAULT_SIZE, 406, Short.MAX_VALUE)
+							.addGap(51))
 						.addGroup(jPanel1Layout.createSequentialGroup()
-								.addComponent(lblMedicados, GroupLayout.PREFERRED_SIZE, 92, GroupLayout.PREFERRED_SIZE)
-								.addContainerGap(365, Short.MAX_VALUE))
+							.addGap(0)
+							.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+								.addComponent(jLabel2)
+								.addGroup(jPanel1Layout.createSequentialGroup()
+									.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+										.addGroup(jPanel1Layout.createSequentialGroup()
+											.addComponent(desempenhoLabel, GroupLayout.PREFERRED_SIZE, 119, GroupLayout.PREFERRED_SIZE)
+											.addPreferredGap(ComponentPlacement.RELATED)
+											.addComponent(frigoLabel))
+										.addComponent(jLabel6, GroupLayout.PREFERRED_SIZE, 248, GroupLayout.PREFERRED_SIZE))
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+										.addComponent(jLabel7, GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
+										.addGroup(jPanel1Layout.createSequentialGroup()
+											.addGap(10)
+											.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+												.addComponent(exportarTratosLabel, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
+												.addComponent(exportarLivreLabel, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
+												.addComponent(exportarMediLabel, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
+												.addComponent(exportarMortLabel, GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
+												.addComponent(exportarFrigoLabel, GroupLayout.PREFERRED_SIZE, 159, GroupLayout.PREFERRED_SIZE)))))
+								.addGroup(jPanel1Layout.createSequentialGroup()
+									.addComponent(jLabel1)
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+										.addComponent(testeJFT, GroupLayout.PREFERRED_SIZE, 74, GroupLayout.PREFERRED_SIZE)
+										.addComponent(protocoloJFT, GroupLayout.PREFERRED_SIZE, 160, GroupLayout.PREFERRED_SIZE))))
+							.addContainerGap())
 						.addGroup(jPanel1Layout.createSequentialGroup()
-								.addComponent(lblConsumo, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE)
-								.addContainerGap()))));
-		jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel1Layout.createSequentialGroup()
-				.addGap(29)
-				.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE).addComponent(jLabel1)
+							.addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING)
+								.addComponent(jLabel10, GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
+								.addComponent(jLabel11, GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
+								.addGroup(jPanel1Layout.createSequentialGroup()
+									.addComponent(jLabel9, GroupLayout.PREFERRED_SIZE, 361, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)))
+							.addContainerGap())
+						.addGroup(jPanel1Layout.createSequentialGroup()
+							.addComponent(lblConsumo, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap())
+						.addGroup(jPanel1Layout.createSequentialGroup()
+							.addComponent(lblMedicados, GroupLayout.PREFERRED_SIZE, 121, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap())))
+		);
+		jPanel1Layout.setVerticalGroup(
+			jPanel1Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel1Layout.createSequentialGroup()
+					.addGap(29)
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(jLabel1)
 						.addComponent(protocoloJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-				.addGap(4)
-				.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE).addComponent(jLabel2).addComponent(testeJFT,
-						GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-				.addGap(18).addComponent(jLabel3).addGap(18)
-				.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING).addComponent(jLabel7).addComponent(jLabel6))
-				.addPreferredGap(ComponentPlacement.UNRELATED)
-				.addGroup(
-						jPanel1Layout.createParallelGroup(Alignment.LEADING).addComponent(exportarMortLabel).addComponent(desempenhoLabel))
-				.addPreferredGap(ComponentPlacement.UNRELATED)
-				.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE).addComponent(lblConsumo).addComponent(exportarMediLabel))
-				.addPreferredGap(ComponentPlacement.UNRELATED)
-				.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE).addComponent(lblMedicados).addComponent(exportarLivreLabel)
+					.addGap(4)
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(jLabel2)
+						.addComponent(testeJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(18)
+					.addComponent(jLabel3)
+					.addGap(18)
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+						.addComponent(jLabel7)
+						.addComponent(jLabel6))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+						.addComponent(exportarMortLabel)
+						.addComponent(desempenhoLabel))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblConsumo)
+						.addComponent(exportarMediLabel))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblMedicados)
+						.addComponent(exportarLivreLabel)
 						.addComponent(frigoLabel))
-				.addPreferredGap(ComponentPlacement.UNRELATED).addComponent(exportarTratosLabel)
-				.addPreferredGap(ComponentPlacement.UNRELATED).addComponent(exportarFrigoLabel).addGap(1).addComponent(jLabel10)
-				.addPreferredGap(ComponentPlacement.RELATED).addComponent(jLabel11).addGap(18)
-				.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(exportarTratosLabel)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(exportarFrigoLabel)
+					.addGap(1)
+					.addComponent(jLabel10)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(jLabel11)
+					.addGap(18)
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(jLabel9))
-				.addContainerGap()));
+					.addContainerGap())
+		);
 		jPanel1.setLayout(jPanel1Layout);
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

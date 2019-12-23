@@ -113,6 +113,9 @@ public class ControllerEscolhaDigST extends KeyAdapter {
 			cl.openWindow(datasFases);
 			break;
 		case KeyEvent.VK_3:
+			view.setVisible(false);
+			ControllerImportarFrigoST cif = new ControllerImportarFrigoST(controller);
+			cif.openWindow(datasFases);
 			break;
 		case KeyEvent.VK_4:
 			break;

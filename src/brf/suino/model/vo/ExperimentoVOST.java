@@ -9,10 +9,12 @@ public class ExperimentoVOST implements Serializable {
 	private InfoExpVOST infoExp;
 	private List<BaiaVOST> baias;
 	private List<ConsumoTratosVOST> consumosTratos;
+	private List<FrigorificoVOST> frigorificoVOST;
 
 	public ExperimentoVOST() {
 		this.baias = new ArrayList<>();
 		this.consumosTratos = new ArrayList<>();
+		this.frigorificoVOST = new ArrayList<>();
 	}
 
 	public InfoExpVOST getInfoExp() {
@@ -37,6 +39,14 @@ public class ExperimentoVOST implements Serializable {
 
 	public void setConsumosTratos(List<ConsumoTratosVOST> consumosTratos) {
 		this.consumosTratos = consumosTratos;
+	}
+
+	public List<FrigorificoVOST> getFrigorificoVOST() {
+		return frigorificoVOST;
+	}
+
+	public void setFrigorificoVOST(List<FrigorificoVOST> frigorificoVOST) {
+		this.frigorificoVOST = frigorificoVOST;
 	}
 
 }
