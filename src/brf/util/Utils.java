@@ -43,8 +43,12 @@ public class Utils {
 
 	public static Date dateFromString(String string) {
 		try {
-			Date data = new SimpleDateFormat("dd/MM/yyyy").parse(string);
-			return data;
+			if(string.equals("0")) {
+				return null;
+			}else {
+				Date data = new SimpleDateFormat("dd/MM/yyyy").parse(string);
+				return data;
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

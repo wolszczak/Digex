@@ -43,7 +43,6 @@ public class ViewImportarFrigoST extends javax.swing.JFrame {
         jLabel40 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         registrosImportadosLabel = new javax.swing.JLabel();
-        registrosDigitadosLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,10 +69,6 @@ public class ViewImportarFrigoST extends javax.swing.JFrame {
         registrosImportadosLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         registrosImportadosLabel.setText("0 registro(s) importado(s)");
 
-        registrosDigitadosLabel.setForeground(new java.awt.Color(0, 153, 255));
-        registrosDigitadosLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        registrosDigitadosLabel.setText("0 registro(s) importado(s)");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -88,17 +83,14 @@ public class ViewImportarFrigoST extends javax.swing.JFrame {
                             .addComponent(jLabel41)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(opcaoJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(77, 77, 77)
-                                .addComponent(registrosImportadosLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(visualizarArquivoLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(registrosDigitadosLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)))))
+                                .addComponent(registrosImportadosLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(visualizarArquivoLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -111,9 +103,7 @@ public class ViewImportarFrigoST extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(registrosImportadosLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(visualizarArquivoLabel)
-                    .addComponent(registrosDigitadosLabel))
+                .addComponent(visualizarArquivoLabel)
                 .addGap(58, 58, 58)
                 .addComponent(jLabel39)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -199,17 +189,10 @@ public class ViewImportarFrigoST extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel41;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JFormattedTextField opcaoJFT;
-    private javax.swing.JLabel registrosDigitadosLabel;
     private javax.swing.JLabel registrosImportadosLabel;
     private javax.swing.JLabel visualizarArquivoLabel;
     // End of variables declaration//GEN-END:variables
-	public javax.swing.JLabel getRegistrosDigitadosLabel() {
-		return registrosDigitadosLabel;
-	}
-
-	public void setRegistrosDigitadosLabel(javax.swing.JLabel registrosDigitadosLabel) {
-		this.registrosDigitadosLabel = registrosDigitadosLabel;
-	}
+	
 
 	public javax.swing.JLabel getRegistrosImportadosLabel() {
 		return registrosImportadosLabel;
