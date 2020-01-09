@@ -9,29 +9,39 @@ public class PaletaVOST implements Serializable {
 	private Date data;
 	private int tatuagem;
 	private int palpeso;
-	private int pelpelgo;
+	private int palpelgo;
 	private int palpegof;
 	private int palpegom;
 	private int palosste;
 	private int palcama;
 	private int palcmsp;
+	private int palleca;
 
 	public PaletaVOST() {
 
 	}
 
 	public PaletaVOST(Date data, int tatuagem, int palpeso, int pelpelgo, int palpegof, int palpegom, int palosste, int palcama,
-			int palcmsp) {
+			int palcmsp, int palleca) {
 		super();
 		this.data = data;
 		this.tatuagem = tatuagem;
 		this.palpeso = palpeso;
-		this.pelpelgo = pelpelgo;
+		this.palpelgo = pelpelgo;
 		this.palpegof = palpegof;
 		this.palpegom = palpegom;
 		this.palosste = palosste;
 		this.palcama = palcama;
 		this.palcmsp = palcmsp;
+		this.palleca = palleca;
+	}
+
+	public int getPalleca() {
+		return palleca;
+	}
+
+	public void setPalleca(int palleca) {
+		this.palleca = palleca;
 	}
 
 	public Date getData() {
@@ -59,11 +69,11 @@ public class PaletaVOST implements Serializable {
 	}
 
 	public int getPelpelgo() {
-		return pelpelgo;
+		return palpelgo;
 	}
 
 	public void setPelpelgo(int pelpelgo) {
-		this.pelpelgo = pelpelgo;
+		this.palpelgo = pelpelgo;
 	}
 
 	public int getPalpegof() {

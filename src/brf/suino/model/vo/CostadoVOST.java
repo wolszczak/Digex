@@ -9,7 +9,7 @@ public class CostadoVOST implements Serializable {
 	private Date data;
 	private int tatuagem;
 	private int cospeso;
-	private int cocosste;
+	private int cososste;
 	private int cospelgo;
 	private int coslombo;
 	private int cosreta;
@@ -22,7 +22,7 @@ public class CostadoVOST implements Serializable {
 		this.data = data;
 		this.tatuagem = tatuagem;
 		this.cospeso = cospeso;
-		this.cocosste = cocosste;
+		this.cososste = cocosste;
 		this.cospelgo = cospelgo;
 		this.coslombo = coslombo;
 		this.cosreta = cosreta;
@@ -53,11 +53,11 @@ public class CostadoVOST implements Serializable {
 	}
 
 	public int getCocosste() {
-		return cocosste;
+		return cososste;
 	}
 
 	public void setCocosste(int cocosste) {
-		this.cocosste = cocosste;
+		this.cososste = cocosste;
 	}
 
 	public int getCospelgo() {

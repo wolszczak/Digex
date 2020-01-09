@@ -12,13 +12,12 @@ public class BarrigaVOST implements Serializable {
 	private int barcptpf;
 	private int barpront;
 	private int baresgor;
-	private int palleca;
 
 	public BarrigaVOST() {
 
 	}
 
-	public BarrigaVOST(Date data, int tatuagem, int barpeso, int barcptpf, int barpront, int baresgor, int palleca) {
+	public BarrigaVOST(Date data, int tatuagem, int barpeso, int barcptpf, int barpront, int baresgor) {
 		super();
 		this.data = data;
 		this.tatuagem = tatuagem;
@@ -26,7 +25,6 @@ public class BarrigaVOST implements Serializable {
 		this.barcptpf = barcptpf;
 		this.barpront = barpront;
 		this.baresgor = baresgor;
-		this.palleca = palleca;
 	}
 
 	public Date getData() {
@@ -75,14 +73,6 @@ public class BarrigaVOST implements Serializable {
 
 	public void setBaresgor(int baresgor) {
 		this.baresgor = baresgor;
-	}
-
-	public int getPalleca() {
-		return palleca;
-	}
-
-	public void setPalleca(int palleca) {
-		this.palleca = palleca;
 	}
 
 }

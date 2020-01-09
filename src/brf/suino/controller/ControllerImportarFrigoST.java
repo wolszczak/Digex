@@ -1,11 +1,12 @@
 package brf.suino.controller;
 
 import java.awt.Color;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ import brf.util.SystemFileFilter;
 import brf.util.SystemFileView;
 import brf.util.Utils;
 
-public class ControllerImportarFrigoST extends KeyAdapter {
+public class ControllerImportarFrigoST extends KeyAdapter implements ItemListener {
 	private final ControllerST controller;
 	private ViewImportarFrigoST view;
 	private ModelStateDAOST dao;
@@ -160,6 +161,12 @@ public class ControllerImportarFrigoST extends KeyAdapter {
 		}
 		fileChooser.setSelectedFile(null);
 		openWindow(datasFases);
+	}
+
+	@Override
+	public void itemStateChanged(ItemEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
