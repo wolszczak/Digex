@@ -279,12 +279,12 @@
                               <Component id="perpesoJFT" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="perpelgoHist1Label" min="-2" pref="54" max="-2" attributes="0"/>
-                              <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-                              <Component id="perpelgoHist2Label" alignment="0" min="-2" pref="54" max="-2" attributes="0"/>
-                              <Component id="perpelgoHist3Label" alignment="0" min="-2" pref="54" max="-2" attributes="0"/>
-                              <Component id="perpelgoJFT" min="-2" pref="54" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="perpelgoHist1Label" pref="54" max="32767" attributes="0"/>
+                              <Component id="perpelgoHist2Label" alignment="0" pref="54" max="32767" attributes="0"/>
+                              <Component id="perpelgoHist3Label" alignment="0" pref="54" max="32767" attributes="0"/>
+                              <Component id="perpelgoJFT" pref="54" max="32767" attributes="0"/>
+                              <Component id="jLabel15" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
@@ -293,10 +293,10 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="perpegofHist1Label" min="-2" pref="52" max="-2" attributes="0"/>
-                                      <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
-                                      <Component id="perpegofHist2Label" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="perpegofHist1Label" pref="52" max="32767" attributes="0"/>
+                                      <Component id="perpegofHist2Label" alignment="0" pref="52" max="32767" attributes="0"/>
+                                      <Component id="jLabel16" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -304,35 +304,23 @@
                                   <Component id="perpegofJFT" min="-2" pref="54" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                                  <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="perpegomHist1Label" min="-2" pref="53" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="perpegomHist2Label" alignment="1" min="-2" pref="54" max="-2" attributes="0"/>
-                                      <Component id="perpegomHist3Label" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
-                                      <Component id="perpegomJFT" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="perossteHist1Label" alignment="1" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="perpegomHist1Label" min="-2" pref="53" max="-2" attributes="0"/>
+                                  <Component id="perpegomHist2Label" alignment="1" min="-2" pref="54" max="-2" attributes="0"/>
+                                  <Component id="perpegomHist3Label" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
+                                  <Component id="perpegomJFT" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="perossteHist2Label" max="32767" attributes="0"/>
-                                  <Component id="perossteHist3Label" max="32767" attributes="0"/>
-                                  <Component id="perossteJFT" pref="51" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="jLabel17" alignment="1" min="-2" pref="54" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="perossteHist1Label" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="perossteHist2Label" max="32767" attributes="0"/>
+                              <Component id="perossteHist3Label" max="32767" attributes="0"/>
+                              <Component id="perossteJFT" pref="51" max="32767" attributes="0"/>
+                              <Component id="jLabel18" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -349,81 +337,85 @@
                                   <Component id="pemuscHist3Label" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                  <Component id="perpeJFT" min="-2" pref="48" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                                  <Component id="perpeJFT" min="-2" pref="32" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                      <Component id="perpeHist1Label" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
-                                      <Component id="jLabel20" alignment="0" min="-2" pref="49" max="-2" attributes="0"/>
-                                      <Component id="perpeHist2Label" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="perpeHist3Label" min="-2" pref="32" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="perpeHist3Label" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel21" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="percjpcsHist1Label" alignment="1" min="-2" pref="52" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="percjpcsHist2Label" max="32767" attributes="0"/>
-                                  <Component id="percjpcsHist3Label" max="32767" attributes="0"/>
-                                  <Component id="percjpcsJFT" pref="53" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel22" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="perpeh24Hist1Label" alignment="1" min="-2" pref="49" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="perpeh24Hist2Label" max="32767" attributes="0"/>
-                                  <Component id="perpeh24Hist3Label" max="32767" attributes="0"/>
-                                  <Component id="perpeh24JFT" pref="50" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                  <Component id="perdiniJFT" min="-2" pref="48" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                      <Component id="perdiniHist1Label" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
-                                      <Component id="jLabel23" alignment="0" min="-2" pref="49" max="-2" attributes="0"/>
-                                      <Component id="perdiniHist2Label" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                                          <Component id="perpeHist2Label" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                                          <Component id="perpeHist1Label" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jLabel20" min="-2" pref="33" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <Component id="perdiniHist3Label" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                  <Component id="perfinJFT" min="-2" pref="48" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                      <Component id="perfinHist1Label" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
-                                      <Component id="jLabel26" alignment="0" min="-2" pref="49" max="-2" attributes="0"/>
-                                      <Component id="perfinHist2Label" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="perfinHist3Label" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
+                              <Component id="jLabel21" min="-2" pref="23" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="percjpcsJFT" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="percjpcsHist3Label" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="percjpcsHist2Label" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="percjpcsHist1Label" alignment="0" min="-2" pref="29" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="perpeh24Hist1Label" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLabel22" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="perpeh24JFT" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="perpeh24Hist2Label" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="perpeh24Hist3Label" alignment="0" min="-2" pref="31" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="perdiniHist1Label" alignment="1" min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Component id="jLabel23" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Component id="perdiniHist2Label" alignment="1" min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Component id="perdiniHist3Label" alignment="1" min="-2" pref="34" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="perdiniJFT" alignment="1" min="-2" pref="35" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                  <Component id="perfinHist2Label" alignment="1" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="jLabel26" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="perfinHist1Label" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="perfinHist3Label" alignment="1" min="-2" pref="36" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="perfinJFT" alignment="1" min="-2" pref="36" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jLabel35" pref="78" max="32767" attributes="0"/>
                               <Component id="controleJFT" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -435,154 +427,175 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="perpesoHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                      <Component id="perpelgoHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                      <Component id="perpegofHist1Label" alignment="0" min="-2" pref="14" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="perpesoHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                      <Component id="perpelgoHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="perpesoHist3Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
-                                      <Component id="perpelgoHist3Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
-                                      <Component id="jLabel35" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="perpesoJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                      <Component id="perpelgoJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                      <Component id="controleJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                      <Component id="tatuagemJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                                  <Component id="pemuscHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="pemuscHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="pemuscHist3Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="pemuscJFT" min="-2" pref="20" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                                  <Component id="perpeHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="perpeHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="perpeHist3Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="perpeJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                      <Component id="percjpcsJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                      <Component id="perpeh24JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" attributes="0">
                                   <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                                  <Component id="perdiniHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="perdiniHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="perdiniHist3Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="perdiniJFT" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                                  <Component id="perfinHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="perfinHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="perfinHist3Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="perfinJFT" min="-2" pref="20" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="perossteHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="perossteHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="perossteHist3Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="perpegomHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="perpegomHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="perpegomHist3Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                              <Component id="perpegofHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="perpegofHist3Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="80" pref="80" max="-2" attributes="0"/>
+                                                      <Component id="perpeh24JFT" min="-2" pref="20" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                                                      <Component id="perpeh24Hist1Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="perpeh24Hist2Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="perpeh24Hist3Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="80" pref="80" max="-2" attributes="0"/>
+                                                      <Component id="percjpcsJFT" min="-2" pref="20" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                                                      <Component id="percjpcsHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="percjpcsHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="percjpcsHist3Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
                                           </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                                              <Component id="tatuagemHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="tatuagemHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                                              <Component id="tatuagemHist3Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="perpesoHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                              <Component id="perpelgoHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                              <Component id="perpegofHist1Label" alignment="0" min="-2" pref="14" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="perpesoHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                              <Component id="perpelgoHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="perpesoHist3Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
+                                              <Component id="perpelgoHist3Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
+                                              <Component id="jLabel35" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="perpesoJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                              <Component id="perpelgoJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                              <Component id="controleJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                              <Component id="tatuagemJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <Component id="pemuscHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="pemuscHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="pemuscHist3Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="pemuscJFT" min="-2" pref="20" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <Component id="perpeHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="perpeHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="perpeHist3Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="perpeJFT" min="-2" pref="20" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                                  <Component id="perossteHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="perossteHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="perossteHist3Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                                  <Component id="perpegomHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="perpegomHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="perpegomHist3Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                                      <Component id="perpegofHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Component id="perpegofHist3Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                                                      <Component id="tatuagemHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="tatuagemHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                                                      <Component id="tatuagemHist3Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="perpegomJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                              <Component id="perpegofJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                              <Component id="perossteJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel26" min="-2" pref="14" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="perdiniHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="perdiniHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="perdiniHist3Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Component id="perdiniJFT" min="-2" pref="20" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="perfinHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="perfinHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="perfinHist3Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Component id="perfinJFT" min="-2" pref="20" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="perpegomJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                      <Component id="perpegofJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                      <Component id="perossteJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="perpeh24Hist1Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="perpeh24Hist2Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="perpeh24Hist3Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="percjpcsHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="percjpcsHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="percjpcsHist3Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -611,7 +624,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel15">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="PERPELGO"/>
+                    <Property name="text" type="java.lang.String" value="PELGO"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="perpegofHist2Label">
@@ -648,7 +661,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel16">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="PERPEGOF"/>
+                    <Property name="text" type="java.lang.String" value="PEGOF"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="perpegofHist3Label">
@@ -742,7 +755,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel28">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="PERPESO"/>
+                    <Property name="text" type="java.lang.String" value="PESO"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="tatuagemHist1Label">
@@ -790,7 +803,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel29">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Tatuagem"/>
+                    <Property name="text" type="java.lang.String" value="TATUAGEM"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JFormattedTextField" name="controleJFT">
@@ -814,7 +827,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel17">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="PERPEGOM"/>
+                    <Property name="text" type="java.lang.String" value="PEGOM"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="perpegomHist1Label">
@@ -862,7 +875,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel18">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="PEROSSTE"/>
+                    <Property name="text" type="java.lang.String" value="OSSTE"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="perossteHist1Label">
@@ -910,7 +923,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel19">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="PERMUSC"/>
+                    <Property name="text" type="java.lang.String" value="MUSC"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="pemuscHist1Label">
@@ -958,7 +971,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel20">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="PERPE"/>
+                    <Property name="text" type="java.lang.String" value="PE"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="perpeHist1Label">
@@ -1006,7 +1019,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel21">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="PERCJPCS "/>
+                    <Property name="text" type="java.lang.String" value="JPC"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="percjpcsHist1Label">
@@ -1054,7 +1067,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel22">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="PERPEH24"/>
+                    <Property name="text" type="java.lang.String" value="PH"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="perpeh24Hist1Label">
@@ -1102,7 +1115,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel23">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="PERDINI"/>
+                    <Property name="text" type="java.lang.String" value="INI"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="perdiniHist1Label">
@@ -1150,7 +1163,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel26">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="PERFIN"/>
+                    <Property name="text" type="java.lang.String" value="FIN"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="perfinHist1Label">

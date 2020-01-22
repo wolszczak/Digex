@@ -287,52 +287,28 @@
                               <Component id="palpelgoJFT" min="-2" pref="54" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jLabel16" alignment="0" max="32767" attributes="0"/>
-                              <Component id="palpegofHist1Label" alignment="0" max="32767" attributes="0"/>
-                              <Component id="palpegofHist2Label" alignment="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="palpegofHist3Label" alignment="0" max="32767" attributes="0"/>
                               <Component id="palpegofJFT" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jLabel16" min="-2" pref="42" max="-2" attributes="0"/>
+                              <Component id="palpegofHist1Label" alignment="0" max="32767" attributes="0"/>
+                              <Component id="palpegofHist2Label" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="palpegomHist1Label" min="-2" pref="55" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="palpegomHist2Label" max="32767" attributes="0"/>
-                                      <Component id="palpegomHist3Label" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="palpegomJFT" alignment="0" pref="56" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="palpegomHist3Label" alignment="0" max="32767" attributes="0"/>
+                              <Component id="palpegomHist2Label" alignment="0" max="32767" attributes="0"/>
+                              <Component id="palpegomHist1Label" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jLabel17" alignment="0" pref="46" max="32767" attributes="0"/>
+                              <Component id="palpegomJFT" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="palossteHist1Label" min="-2" pref="49" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="palossteHist2Label" max="32767" attributes="0"/>
-                                      <Component id="palossteHist3Label" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="palossteJFT" alignment="0" pref="50" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="palossteHist1Label" alignment="0" min="-2" pref="49" max="-2" attributes="0"/>
+                              <Component id="palossteHist2Label" max="32767" attributes="0"/>
+                              <Component id="palossteHist3Label" alignment="0" max="32767" attributes="0"/>
+                              <Component id="palossteJFT" alignment="0" pref="50" max="32767" attributes="0"/>
+                              <Component id="jLabel18" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -364,27 +340,38 @@
                                   <Component id="palcmspHist3Label" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                  <Component id="pallecaJFT" min="-2" pref="48" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                                  <Component id="pallecaJFT" min="-2" pref="30" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                      <Component id="pallecaHist1Label" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
-                                      <Component id="jLabel21" alignment="0" min="-2" pref="49" max="-2" attributes="0"/>
-                                      <Component id="pallecaHist2Label" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="pallecaHist3Label" min="-2" pref="30" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="pallecaHist3Label" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                                          <Component id="pallecaHist2Label" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                                          <Component id="pallecaHist1Label" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jLabel21" min="-2" pref="31" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jLabel35" pref="78" max="32767" attributes="0"/>
-                              <Component id="controleJFT" max="32767" attributes="0"/>
+                              <Component id="jLabel35" max="32767" attributes="0"/>
+                              <Component id="controleJFT" min="-2" pref="78" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -415,20 +402,17 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="palpesoHist3Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
                                       <Component id="palpelgoHist3Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
-                                      <Component id="jLabel35" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="palpesoJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                                       <Component id="palpelgoJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                                       <Component id="palpegofJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                      <Component id="controleJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                                       <Component id="tatuagemJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                                       <Component id="palpegomJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                      <Component id="palossteJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Component id="palcamaHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
@@ -439,7 +423,7 @@
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="palcamaJFT" min="-2" pref="20" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Component id="palcmspHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
@@ -450,7 +434,7 @@
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="palcmspJFT" min="-2" pref="20" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Component id="pallecaHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
@@ -461,9 +445,42 @@
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="pallecaJFT" min="-2" pref="20" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="102" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                                              <Component id="palpegomHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="palpegomHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="palpegomHist3Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                                  <Component id="palpegofHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Component id="palpegofHist3Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                                  <Component id="tatuagemHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="tatuagemHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                                  <Component id="tatuagemHist3Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                                          <Component id="palossteJFT" min="-2" pref="20" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" max="-2" attributes="0"/>
                                           <Component id="palossteHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
@@ -472,35 +489,14 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="palossteHist3Label" min="-2" pref="14" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="palpegomHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="palpegomHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="palpegomHist3Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                              <Component id="palpegofHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="palpegofHist3Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                                              <Component id="tatuagemHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="tatuagemHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                                              <Component id="tatuagemHist3Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
                                   </Group>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="controleJFT" min="-2" pref="20" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -569,7 +565,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel16">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="PALPEGOF"/>
+                    <Property name="text" type="java.lang.String" value="PEGOF"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="palpegofHist3Label">
@@ -663,7 +659,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel28">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="PALPESO"/>
+                    <Property name="text" type="java.lang.String" value="PESO"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="tatuagemHist1Label">
@@ -711,7 +707,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel29">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Tatuagem"/>
+                    <Property name="text" type="java.lang.String" value="TATUAGEM"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JFormattedTextField" name="controleJFT">
@@ -735,7 +731,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel17">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="PALPEGOM "/>
+                    <Property name="text" type="java.lang.String" value="PEGOM "/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="palpegomHist1Label">
@@ -783,7 +779,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel18">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="PALOSSTE"/>
+                    <Property name="text" type="java.lang.String" value="OSSTE"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="palossteHist1Label">
@@ -831,7 +827,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel19">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="PALCAMA"/>
+                    <Property name="text" type="java.lang.String" value="CAMA"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="palcamaHist1Label">
@@ -879,7 +875,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel20">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="PALCMSP"/>
+                    <Property name="text" type="java.lang.String" value="CMSP"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="palcmspHist1Label">
@@ -927,7 +923,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel21">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="PALLECA"/>
+                    <Property name="text" type="java.lang.String" value="OLC"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="pallecaHist1Label">

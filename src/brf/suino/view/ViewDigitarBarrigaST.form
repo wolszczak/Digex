@@ -279,31 +279,23 @@
                               <Component id="barpesoJFT" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="barcptpfHist1Label" min="-2" pref="54" max="-2" attributes="0"/>
-                              <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-                              <Component id="barcptpfHist2Label" alignment="0" min="-2" pref="54" max="-2" attributes="0"/>
-                              <Component id="barcptpfHist3Label" alignment="0" min="-2" pref="54" max="-2" attributes="0"/>
-                              <Component id="barcptpfJFT" min="-2" pref="54" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="barcptpfHist1Label" pref="54" max="32767" attributes="0"/>
+                              <Component id="barcptpfHist2Label" alignment="0" pref="54" max="32767" attributes="0"/>
+                              <Component id="barcptpfHist3Label" alignment="0" pref="54" max="32767" attributes="0"/>
+                              <Component id="barcptpfJFT" pref="54" max="32767" attributes="0"/>
+                              <Component id="jLabel15" alignment="0" max="32767" attributes="0"/>
                           </Group>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="barprontHist1Label" min="-2" pref="53" max="-2" attributes="0"/>
-                                  </Group>
+                              <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="barprontHist2Label" max="32767" attributes="0"/>
+                                  <Component id="barprontHist3Label" max="32767" attributes="0"/>
+                                  <Component id="barprontJFT" pref="54" max="32767" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="barprontHist2Label" max="32767" attributes="0"/>
-                                      <Component id="barprontHist3Label" max="32767" attributes="0"/>
-                                      <Component id="barprontJFT" pref="54" max="32767" attributes="0"/>
-                                  </Group>
+                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="jLabel16" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="barprontHist1Label" alignment="0" pref="53" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -322,10 +314,10 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="baresgorHist1Label" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
-                                      <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="baresgorHist2Label" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="baresgorHist1Label" alignment="0" pref="53" max="32767" attributes="0"/>
+                                      <Component id="baresgorHist2Label" alignment="0" pref="53" max="32767" attributes="0"/>
+                                      <Component id="jLabel17" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -440,7 +432,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel15">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="BARCPTPF"/>
+                    <Property name="text" type="java.lang.String" value="CPTPF"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="barprontHist2Label">
@@ -477,7 +469,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel16">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="BARPRONT"/>
+                    <Property name="text" type="java.lang.String" value="PRONT"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="barprontHist3Label">
@@ -571,7 +563,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel28">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="BARPESO"/>
+                    <Property name="text" type="java.lang.String" value="PESO"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="tatuagemHist1Label">
@@ -643,7 +635,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel17">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="BARESGOR"/>
+                    <Property name="text" type="java.lang.String" value="ESGOR"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="baresgorHist1Label">

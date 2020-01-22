@@ -16,6 +16,7 @@ import javax.swing.JFileChooser;
 
 import brf.suino.model.ModelST;
 import brf.suino.model.vo.ExperimentoVOST;
+import brf.suino.model.vo.FrigorificoTempVOST;
 import brf.suino.model.vo.MedicadosVOST;
 import brf.suino.model.vo.MortalidadeVOST;
 
@@ -79,6 +80,7 @@ public class ModelStateDAOST {
 			return false;
 		}
 //		ExperimentoVOST e = (ExperimentoVOST) obj;
+//		e.setFrigorificoTempVOST(new FrigorificoTempVOST());
 //		e.setBaias(new ArrayList<>());
 //		e.setMortalidade(new ArrayList<MortalidadeVOST>());
 //		e.setMedicados(new ArrayList<MedicadosVOST>());

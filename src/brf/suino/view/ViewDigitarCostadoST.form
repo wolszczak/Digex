@@ -279,12 +279,12 @@
                               <Component id="cospesoJFT" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="cosossteHist1Label" min="-2" pref="54" max="-2" attributes="0"/>
-                              <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-                              <Component id="cosossteHist2Label" alignment="0" min="-2" pref="54" max="-2" attributes="0"/>
-                              <Component id="cosossteHist3Label" alignment="0" min="-2" pref="54" max="-2" attributes="0"/>
-                              <Component id="cosossteJFT" min="-2" pref="54" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="cosossteHist1Label" pref="54" max="32767" attributes="0"/>
+                              <Component id="cosossteHist2Label" alignment="0" pref="54" max="32767" attributes="0"/>
+                              <Component id="cosossteHist3Label" alignment="0" pref="54" max="32767" attributes="0"/>
+                              <Component id="cosossteJFT" pref="54" max="32767" attributes="0"/>
+                              <Component id="jLabel15" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
@@ -295,40 +295,25 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="cospelgoHist1Label" alignment="1" min="-2" pref="52" max="-2" attributes="0"/>
-                                          </Group>
                                           <Component id="cospelgoHist3Label" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="jLabel16" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="cospelgoHist1Label" alignment="0" pref="52" max="32767" attributes="0"/>
+                                          </Group>
                                       </Group>
                                       <Component id="cospelgoJFT" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="coslomboHist1Label" alignment="1" min="-2" pref="56" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="coslomboHist2Label" alignment="1" min="-2" pref="56" max="-2" attributes="0"/>
-                                          <Component id="coslomboHist3Label" alignment="1" min="-2" pref="56" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="coslomboHist1Label" pref="56" max="32767" attributes="0"/>
+                                  <Component id="coslomboHist2Label" alignment="0" pref="56" max="32767" attributes="0"/>
+                                  <Component id="coslomboHist3Label" alignment="0" pref="56" max="32767" attributes="0"/>
+                                  <Component id="jLabel17" alignment="0" max="32767" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="coslomboJFT" min="-2" pref="55" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="coslomboJFT" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -467,7 +452,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel15">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="COSOSSTE"/>
+                    <Property name="text" type="java.lang.String" value="OSSTE"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="cospelgoHist2Label">
@@ -504,7 +489,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel16">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="COSPELGO"/>
+                    <Property name="text" type="java.lang.String" value="PELGO"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="cospelgoHist3Label">
@@ -598,7 +583,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel28">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="COSPESO"/>
+                    <Property name="text" type="java.lang.String" value="PESO"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="tatuagemHist1Label">
@@ -646,7 +631,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel29">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Tatuagem"/>
+                    <Property name="text" type="java.lang.String" value="TATUAGEM"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JFormattedTextField" name="controleJFT">
@@ -670,7 +655,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel17">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="COSLOMBO"/>
+                    <Property name="text" type="java.lang.String" value="LOMBO"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="coslomboHist1Label">
@@ -718,7 +703,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel18">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="COSRETA"/>
+                    <Property name="text" type="java.lang.String" value="RETA"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="cosretaHist1Label">

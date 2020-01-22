@@ -104,6 +104,8 @@ public class ControllerImportarFrigoST extends KeyAdapter implements ItemListene
 			break;
 		case KeyEvent.VK_2:
 			view.setVisible(false);
+			ControllerPCRST pcr = new ControllerPCRST(controller);
+			pcr.openWindow(datasFases);
 			break;
 		}
 	}
@@ -126,13 +128,19 @@ public class ControllerImportarFrigoST extends KeyAdapter implements ItemListene
 					if (key) {
 						for (int z = 0; z < data.length; z++) {
 							if (!data[z].equals(colunasFrigo[z])) {
-								String msg = "";
+								String msg = "Problema(s) na estrutura do arquivo .csv. \nVerifique o arquivo e tente novamente.";
 								JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
 								break;
 							}
 						}
 						key = false;
 					} else {
+						System.out.println("");
+						for(int x = 0; x < data.length; x++) {
+							if(data[x].equals("")) {
+								data[x] = "0";
+							}
+						}
 						controller.getModel().getExperimentoVO().getFrigorificoVOST()
 								.add(new FrigorificoVOST(Integer.parseInt(data[0]), Integer.parseInt(data[1]), Integer.parseInt(data[2]),
 										data[3], data[4], Integer.parseInt(data[5]), data[6], Utils.dateFromString(data[7]),
@@ -166,7 +174,7 @@ public class ControllerImportarFrigoST extends KeyAdapter implements ItemListene
 	@Override
 	public void itemStateChanged(ItemEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
