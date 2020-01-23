@@ -6,7 +6,7 @@ import java.util.Date;
 public class PernilVOST implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private Date data;
+	private String data;
 	private int tatuagem;
 	private int perpeso;
 	private int perpelgo;
@@ -23,7 +23,7 @@ public class PernilVOST implements Serializable {
 	public PernilVOST() {
 	}
 	
-	public PernilVOST(Date data, int tatuagem, int perpeso, int perpelgo, int perpegof, int perpegom, int perosste, int permusc, int perpe,
+	public PernilVOST(String data, int tatuagem, int perpeso, int perpelgo, int perpegof, int perpegom, int perosste, int permusc, int perpe,
 			int percjpcs, int perpeh24, int perdini, int perdfin) {
 		super();
 		this.data = data;
@@ -41,11 +41,11 @@ public class PernilVOST implements Serializable {
 		this.perdfin = perdfin;
 	}
 
-	public Date getData() {
+	public String getData() {
 		return data;
 	}
 
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 

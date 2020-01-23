@@ -6,7 +6,7 @@ import java.util.Date;
 public class PaletaVOST implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private Date data;
+	private String data;
 	private int tatuagem;
 	private int palpeso;
 	private int palpelgo;
@@ -21,7 +21,7 @@ public class PaletaVOST implements Serializable {
 
 	}
 
-	public PaletaVOST(Date data, int tatuagem, int palpeso, int pelpelgo, int palpegof, int palpegom, int palosste, int palcama,
+	public PaletaVOST(String data, int tatuagem, int palpeso, int pelpelgo, int palpegof, int palpegom, int palosste, int palcama,
 			int palcmsp, int palleca) {
 		super();
 		this.data = data;
@@ -44,11 +44,11 @@ public class PaletaVOST implements Serializable {
 		this.palleca = palleca;
 	}
 
-	public Date getData() {
+	public String getData() {
 		return data;
 	}
 
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 

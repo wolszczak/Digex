@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.JLabel" name="tatuagemHist3">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder bevelType="1"/>
+          </Border>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel42">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder bevelType="1"/>
+          </Border>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel43">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder bevelType="1"/>
+          </Border>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel45">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder bevelType="1"/>
+          </Border>
+        </Property>
+      </Properties>
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -64,10 +106,10 @@
                           <Component id="registrosLabel" alignment="1" max="32767" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jPanel3" max="32767" attributes="0"/>
+                                  <Component id="pnlBarriga" max="32767" attributes="0"/>
                                   <Component id="baiaJP" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
@@ -82,13 +124,13 @@
                       <Component id="baiaJP" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jPanel3" max="32767" attributes="0"/>
+                          <Component id="pnlBarriga" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="registrosLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -112,7 +154,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="dataJFT" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="dataJFT" min="-2" pref="91" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -177,22 +219,11 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                                  <Component id="jLabel51" max="32767" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="opcaoJFT" min="-2" pref="20" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel50" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel25" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel24" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="0" pref="13" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="jLabel50" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel25" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel24" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -205,12 +236,7 @@
                           <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel50" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel51" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="opcaoJFT" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -218,37 +244,22 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel24">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Escolha uma op&#xe7;&#xe3;o:"/>
+                    <Property name="text" type="java.lang.String" value="Op&#xe7;&#xf5;es:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel25">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="[1] - Voltar"/>
+                    <Property name="text" type="java.lang.String" value="&lt;html&gt;[9999] - Digite na tatuagem para &lt;br/&gt; come&#xe7;ar uma nova data. &lt;/html&gt;"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel50">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="[0] - Sair"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel51">
-                  <Properties>
-                    <Property name="horizontalAlignment" type="int" value="4"/>
-                    <Property name="text" type="java.lang.String" value="Op&#xe7;&#xe3;o"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JFormattedTextField" name="opcaoJFT">
-                  <Properties>
-                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                      <Format format="#" subtype="-1" type="5"/>
-                    </Property>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="enabled" type="boolean" value="false"/>
+                    <Property name="text" type="java.lang.String" value="[ESC] - Voltar para tela anterior"/>
                   </Properties>
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="jPanel3">
+            <Container class="javax.swing.JPanel" name="pnlBarriga">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
@@ -264,62 +275,88 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="tatuagemHist3Label" alignment="0" max="32767" attributes="0"/>
-                              <Component id="tatuagemHist2Label" alignment="0" max="32767" attributes="0"/>
-                              <Component id="tatuagemHist1Label" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabel29" alignment="0" max="32767" attributes="0"/>
-                              <Component id="tatuagemJFT" max="32767" attributes="0"/>
+                              <Component id="tatuagemJFT2" max="32767" attributes="0"/>
+                              <Component id="tatuagemHist1" max="32767" attributes="0"/>
+                              <Component id="tatuagemHist2" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jLabel30" max="32767" attributes="0"/>
+                              <Component id="jLabel29" alignment="0" pref="48" max="32767" attributes="0"/>
+                              <Component id="tatuagemJFT" alignment="0" max="32767" attributes="0"/>
+                              <Component id="tatuagemJFT1" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="barpesoHist3Label" alignment="0" max="32767" attributes="0"/>
-                              <Component id="barpesoHist2Label" alignment="0" max="32767" attributes="0"/>
-                              <Component id="barpesoHist1Label" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabel28" alignment="0" pref="64" max="32767" attributes="0"/>
-                              <Component id="barpesoJFT" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="barcptpfHist1Label" pref="54" max="32767" attributes="0"/>
-                              <Component id="barcptpfHist2Label" alignment="0" pref="54" max="32767" attributes="0"/>
-                              <Component id="barcptpfHist3Label" alignment="0" pref="54" max="32767" attributes="0"/>
-                              <Component id="barcptpfJFT" pref="54" max="32767" attributes="0"/>
-                              <Component id="jLabel15" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="barprontHist2Label" max="32767" attributes="0"/>
-                                  <Component id="barprontHist3Label" max="32767" attributes="0"/>
-                                  <Component id="barprontJFT" pref="54" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jLabel16" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="barprontHist1Label" alignment="0" pref="53" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="baresgorHist3Label" max="32767" attributes="0"/>
-                                      <Component id="baresgorJFT" pref="53" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="jLabel28" pref="48" max="32767" attributes="0"/>
+                                      <Component id="peso3JFT" max="32767" attributes="0"/>
+                                      <Component id="peso2JFT" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="peso1JFT" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="jLabel15" pref="48" max="32767" attributes="0"/>
+                                      <Component id="cptf3JFT" max="32767" attributes="0"/>
+                                      <Component id="cptf2JFT" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="cptf1JFT" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="controleJFT" max="32767" attributes="0"/>
-                                      <Component id="jLabel35" pref="78" max="32767" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel16" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                              <Component id="pronta3JFT" min="-2" pref="54" max="-2" attributes="0"/>
+                                              <Component id="pronta2JFT" min="-2" pref="54" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jLabel17" min="-2" pref="44" max="-2" attributes="0"/>
+                                                      <Component id="esgor2JFT" alignment="0" min="-2" pref="49" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace pref="6" max="32767" attributes="0"/>
+                                                  <Component id="jLabel35" min="-2" pref="72" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="esgor3JFT" min="-2" pref="49" max="-2" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="controleJFT" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="pronta1JFT" min="-2" pref="54" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="esgor1JFT" min="-2" pref="49" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="pesoHist1" alignment="1" pref="48" max="32767" attributes="0"/>
+                                      <Component id="pesoHist2" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="pesoHist3" alignment="1" max="32767" attributes="0"/>
+                                  </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="baresgorHist1Label" alignment="0" pref="53" max="32767" attributes="0"/>
-                                      <Component id="baresgorHist2Label" alignment="0" pref="53" max="32767" attributes="0"/>
-                                      <Component id="jLabel17" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="cptfHist1" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="cptfHist2" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="cptfHist3" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="prontaHist3" alignment="0" pref="53" max="32767" attributes="0"/>
+                                      <Component id="prontaHist2" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="prontaHist1" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="esgorHist1" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="esgorHist2" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="esgorHist3" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                       </Group>
@@ -332,78 +369,83 @@
                           <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="barpesoHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                      <Component id="barcptpfHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Component id="tatuagemHist1" min="-2" pref="15" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="tatuagemHist2" min="-2" pref="15" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jLabel30" min="-2" pref="15" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="pesoHist1" min="-2" pref="15" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="pesoHist2" min="-2" pref="15" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="pesoHist3" min="-2" pref="15" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="cptfHist1" min="-2" pref="15" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="cptfHist2" min="-2" pref="15" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="cptfHist3" min="-2" pref="15" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="barpesoHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                      <Component id="barcptpfHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="barpesoHist3Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
-                                      <Component id="barcptpfHist3Label" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="barpesoJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                      <Component id="barcptpfJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                      <Component id="barprontJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                      <Component id="tatuagemJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="prontaHist1" min="-2" pref="15" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="prontaHist2" min="-2" pref="15" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="prontaHist3" min="-2" pref="15" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="tatuagemHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="tatuagemHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="tatuagemHist3Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                                                  <Component id="barprontHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="barprontHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                                                  <Component id="baresgorHist1Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="baresgorHist2Label" min="-2" pref="14" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="baresgorHist3Label" max="32767" attributes="0"/>
-                                              <Component id="barprontHist3Label" pref="14" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Component id="jLabel35" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="baresgorJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                      <Component id="controleJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                  </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="esgorHist1" min="-2" pref="15" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="esgorHist2" min="-2" pref="15" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="esgorHist3" min="-2" pref="15" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="tatuagemJFT2" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="peso1JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="cptf1JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="pronta1JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="esgor1JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="tatuagemJFT1" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="peso2JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="cptf2JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="pronta2JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="esgor2JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="tatuagemJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="peso3JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="cptf3JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="pronta3JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="esgor3JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="controleJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="31" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -418,51 +460,18 @@
                     <Property name="text" type="java.lang.String" value="Avalia&#xe7;&#xe3;o Barriga"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="barcptpfHist2Label">
-                  <Properties>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
-                        <BevelBorder bevelType="1"/>
-                      </Border>
-                    </Property>
-                    <Property name="enabled" type="boolean" value="false"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JLabel" name="jLabel15">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="CPTPF"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="barprontHist2Label">
-                  <Properties>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
-                        <BevelBorder bevelType="1"/>
-                      </Border>
-                    </Property>
-                    <Property name="enabled" type="boolean" value="false"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JFormattedTextField" name="barcptpfJFT">
+                <Component class="javax.swing.JFormattedTextField" name="cptf3JFT">
                   <Properties>
                     <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                       <Format format="##" subtype="-1" type="5"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="enabled" type="boolean" value="false"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="barcptpfHist3Label">
-                  <Properties>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
-                        <BevelBorder bevelType="1"/>
-                      </Border>
-                    </Property>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
@@ -472,18 +481,7 @@
                     <Property name="text" type="java.lang.String" value="PRONT"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="barprontHist3Label">
-                  <Properties>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
-                        <BevelBorder bevelType="1"/>
-                      </Border>
-                    </Property>
-                    <Property name="enabled" type="boolean" value="false"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JFormattedTextField" name="barprontJFT">
+                <Component class="javax.swing.JFormattedTextField" name="pronta3JFT">
                   <Properties>
                     <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                       <Format format="#####" subtype="-1" type="5"/>
@@ -492,62 +490,7 @@
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="barcptpfHist1Label">
-                  <Properties>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
-                        <BevelBorder bevelType="1"/>
-                      </Border>
-                    </Property>
-                    <Property name="enabled" type="boolean" value="false"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="barprontHist1Label">
-                  <Properties>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
-                        <BevelBorder bevelType="1"/>
-                      </Border>
-                    </Property>
-                    <Property name="enabled" type="boolean" value="false"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="barpesoHist1Label">
-                  <Properties>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
-                        <BevelBorder bevelType="1"/>
-                      </Border>
-                    </Property>
-                    <Property name="enabled" type="boolean" value="false"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="barpesoHist2Label">
-                  <Properties>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
-                        <BevelBorder bevelType="1"/>
-                      </Border>
-                    </Property>
-                    <Property name="enabled" type="boolean" value="false"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="barpesoHist3Label">
-                  <Properties>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
-                        <BevelBorder bevelType="1"/>
-                      </Border>
-                    </Property>
-                    <Property name="enabled" type="boolean" value="false"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JFormattedTextField" name="barpesoJFT">
+                <Component class="javax.swing.JFormattedTextField" name="peso3JFT">
                   <Properties>
                     <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                       <Connection code="new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter(&quot;####&quot;))" type="code"/>
@@ -566,39 +509,6 @@
                     <Property name="text" type="java.lang.String" value="PESO"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="tatuagemHist1Label">
-                  <Properties>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
-                        <BevelBorder bevelType="1"/>
-                      </Border>
-                    </Property>
-                    <Property name="enabled" type="boolean" value="false"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="tatuagemHist2Label">
-                  <Properties>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
-                        <BevelBorder bevelType="1"/>
-                      </Border>
-                    </Property>
-                    <Property name="enabled" type="boolean" value="false"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="tatuagemHist3Label">
-                  <Properties>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
-                        <BevelBorder bevelType="1"/>
-                      </Border>
-                    </Property>
-                    <Property name="enabled" type="boolean" value="false"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JFormattedTextField" name="tatuagemJFT">
                   <Properties>
                     <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
@@ -611,7 +521,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel29">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Tatuagem"/>
+                    <Property name="text" type="java.lang.String" value="TATU"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JFormattedTextField" name="controleJFT">
@@ -638,40 +548,255 @@
                     <Property name="text" type="java.lang.String" value="ESGOR"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="baresgorHist1Label">
+                <Component class="javax.swing.JFormattedTextField" name="esgor3JFT">
                   <Properties>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
-                        <BevelBorder bevelType="1"/>
-                      </Border>
+                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                      <Format format="#####" subtype="-1" type="5"/>
                     </Property>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="baresgorHist2Label">
+                <Component class="javax.swing.JLabel" name="jLabel30">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                      <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                         <BevelBorder bevelType="1"/>
                       </Border>
                     </Property>
-                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="baresgorHist3Label">
+                <Component class="javax.swing.JLabel" name="tatuagemHist2">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                      <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                         <BevelBorder bevelType="1"/>
                       </Border>
                     </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="tatuagemHist1">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                        <BevelBorder bevelType="1"/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="pesoHist3">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                        <BevelBorder bevelType="1"/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="pesoHist2">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                        <BevelBorder bevelType="1"/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="pesoHist1">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                        <BevelBorder bevelType="1"/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="cptfHist3">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                        <BevelBorder bevelType="1"/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="cptfHist2">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                        <BevelBorder bevelType="1"/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="cptfHist1">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                        <BevelBorder bevelType="1"/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="prontaHist3">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                        <BevelBorder bevelType="1"/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="prontaHist2">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                        <BevelBorder bevelType="1"/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="prontaHist1">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                        <BevelBorder bevelType="1"/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="esgorHist3">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                        <BevelBorder bevelType="1"/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="esgorHist2">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                        <BevelBorder bevelType="1"/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="esgorHist1">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                        <BevelBorder bevelType="1"/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JFormattedTextField" name="tatuagemJFT1">
+                  <Properties>
+                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                      <Format format="##" subtype="-1" type="5"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JFormattedTextField" name="baresgorJFT">
+                <Component class="javax.swing.JFormattedTextField" name="tatuagemJFT2">
+                  <Properties>
+                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                      <Format format="##" subtype="-1" type="5"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JFormattedTextField" name="peso2JFT">
+                  <Properties>
+                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter(&quot;####&quot;))" type="code"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="toolTipText" type="java.lang.String" value=""/>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JFormattedTextField" name="peso1JFT">
+                  <Properties>
+                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter(&quot;####&quot;))" type="code"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="toolTipText" type="java.lang.String" value=""/>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JFormattedTextField" name="cptf2JFT">
+                  <Properties>
+                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                      <Format format="##" subtype="-1" type="5"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JFormattedTextField" name="cptf1JFT">
+                  <Properties>
+                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                      <Format format="##" subtype="-1" type="5"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JFormattedTextField" name="pronta2JFT">
+                  <Properties>
+                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                      <Format format="#####" subtype="-1" type="5"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JFormattedTextField" name="pronta1JFT">
+                  <Properties>
+                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                      <Format format="#####" subtype="-1" type="5"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JFormattedTextField" name="esgor2JFT">
+                  <Properties>
+                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                      <Format format="#####" subtype="-1" type="5"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JFormattedTextField" name="esgor1JFT">
                   <Properties>
                     <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                       <Format format="#####" subtype="-1" type="5"/>

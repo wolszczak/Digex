@@ -6,7 +6,7 @@ import java.util.Date;
 public class CostadoVOST implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private Date data;
+	private String data;
 	private int tatuagem;
 	private int cospeso;
 	private int cososste;
@@ -17,7 +17,7 @@ public class CostadoVOST implements Serializable {
 	public CostadoVOST() {
 	}
 
-	public CostadoVOST(Date data, int tatuagem, int cospeso, int cocosste, int cospelgo, int coslombo, int cosreta) {
+	public CostadoVOST(String data, int tatuagem, int cospeso, int cocosste, int cospelgo, int coslombo, int cosreta) {
 		super();
 		this.data = data;
 		this.tatuagem = tatuagem;
@@ -28,11 +28,11 @@ public class CostadoVOST implements Serializable {
 		this.cosreta = cosreta;
 	}
 
-	public Date getData() {
+	public String getData() {
 		return data;
 	}
 
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 

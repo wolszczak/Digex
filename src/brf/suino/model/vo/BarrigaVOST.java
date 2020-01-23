@@ -6,7 +6,7 @@ import java.util.Date;
 public class BarrigaVOST implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private Date data;
+	private String data;
 	private int tatuagem;
 	private int barpeso;
 	private int barcptpf;
@@ -17,7 +17,7 @@ public class BarrigaVOST implements Serializable {
 
 	}
 
-	public BarrigaVOST(Date data, int tatuagem, int barpeso, int barcptpf, int barpront, int baresgor) {
+	public BarrigaVOST(String data, int tatuagem, int barpeso, int barcptpf, int barpront, int baresgor) {
 		super();
 		this.data = data;
 		this.tatuagem = tatuagem;
@@ -27,11 +27,11 @@ public class BarrigaVOST implements Serializable {
 		this.baresgor = baresgor;
 	}
 
-	public Date getData() {
+	public String getData() {
 		return data;
 	}
 
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 
