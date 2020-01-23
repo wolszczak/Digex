@@ -17,11 +17,6 @@ public class DigitacaoFrigoBOST {
 	}
 
 	public String verificaData(String dataString, List<String> fases) {
-		for(PCRVOST pcr : controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr()) {
-			if(dataString.equals(pcr.getData())) {
-				return "existente";
-			}
-		}
 		if (dataString.equals("00/00/0000")) {
 			return "- Data fora do período do experimento.";
 		} else {

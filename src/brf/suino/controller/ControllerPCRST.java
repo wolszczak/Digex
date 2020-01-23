@@ -36,7 +36,7 @@ public class ControllerPCRST extends KeyAdapter implements FocusListener, ItemLi
 	public ControllerPCRST(ControllerST controller) {
 		this.controller = controller;
 		this.bo = new DigitacaoFrigoBOST(controller);
-		this.pcrHist =  new ArrayList<>();
+		this.pcrHist = new ArrayList<>();
 	}
 
 	public void openWindow(List<String> datasFases) {
@@ -69,61 +69,72 @@ public class ControllerPCRST extends KeyAdapter implements FocusListener, ItemLi
 				TextFormatter.formatStringJFT(view.getDataJFT(), view.getDataJFT().getText(), 10);
 				String msg = bo.verificaData(view.getDataJFT().getText(), datasFases);
 				if (msg != null) {
-					if (msg.equals("existente")) {
-						int option = JOptionPane.showConfirmDialog(view, "A data informada já foi digitada, deseja digitar novamente??",
-								"DIGEX - Aviso", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
-						if (option == 0) {
-							for (int k = controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().size()
-									- 1; k == 0; k--) {
-								if (controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(k).getData()
-										.equals(view.getDataJFT().getText())) {
-									controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().remove(k);
-								}
-							}
-							controller.getModel().getModelStateDAO().saveModelState(false);
-						} else {
-							view.getDataJFT().grabFocus();
-						}
-					} else {
-						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
-					}
+					JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
 				} else {
+					carregarHistData();
 					view.getDataJFT().setEnabled(false);
 					view.getTatuagem1JFT().setEnabled(true);
 					view.getTatuagem1JFT().requestFocus();
 				}
 			} else if ((JFormattedTextField) e.getSource() == view.getTatuagem1JFT()) {
 				TextFormatter.formatStringJFT(view.getTatuagem1JFT(), view.getTatuagem1JFT().getText(), 4);
-				String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagem1JFT().getText()));
-				if (msg == null) {
+				if (Integer.parseInt(view.getTatuagem1JFT().getText()) == 9999) {
+					view.getTatuagem1JFT().setText(" ");
 					view.getTatuagem1JFT().setEnabled(false);
-					view.getTatuagem2JFT().setEnabled(true);
-					view.getTatuagem2JFT().grabFocus();
+					view.getDataJFT().setEnabled(true);
+					view.getDataJFT().setText("00/00/0000");
+					view.getDataJFT().grabFocus();
+					limparTela();
 				} else {
-					JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
-					view.getTatuagem1JFT().grabFocus();
+					String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagem1JFT().getText()));
+					if (msg == null) {
+						view.getTatuagem1JFT().setEnabled(false);
+						view.getTatuagem2JFT().setEnabled(true);
+						view.getTatuagem2JFT().grabFocus();
+					} else {
+						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+						view.getTatuagem1JFT().grabFocus();
+					}
 				}
 			} else if ((JFormattedTextField) e.getSource() == view.getTatuagem2JFT()) {
 				TextFormatter.formatStringJFT(view.getTatuagem2JFT(), view.getTatuagem2JFT().getText(), 4);
-				String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagem2JFT().getText()));
-				if (msg == null) {
+				if (Integer.parseInt(view.getTatuagem1JFT().getText()) == 9999) {
+					view.getTatuagem2JFT().setText(" ");
 					view.getTatuagem2JFT().setEnabled(false);
-					view.getTatuagem3JFT().setEnabled(true);
-					view.getTatuagem3JFT().grabFocus();
+					view.getDataJFT().setEnabled(true);
+					view.getDataJFT().setText("00/00/0000");
+					view.getDataJFT().grabFocus();
+					limparTela();
 				} else {
-					JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
-					view.getTatuagem2JFT().grabFocus();
+					String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagem2JFT().getText()));
+					if (msg == null) {
+						view.getTatuagem2JFT().setEnabled(false);
+						view.getTatuagem3JFT().setEnabled(true);
+						view.getTatuagem3JFT().grabFocus();
+					} else {
+						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+						view.getTatuagem2JFT().grabFocus();
+					}
 				}
 			} else if ((JFormattedTextField) e.getSource() == view.getTatuagem3JFT()) {
 				TextFormatter.formatStringJFT(view.getTatuagem3JFT(), view.getTatuagem3JFT().getText(), 4);
-				String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagem3JFT().getText()));
-				if (msg == null) {
+				if (Integer.parseInt(view.getTatuagem1JFT().getText()) == 9999) {
+					view.getTatuagem3JFT().setText(" ");
 					view.getTatuagem3JFT().setEnabled(false);
-					view.getEtpaquim1JFT().setEnabled(true);
-					view.getEtpaquim1JFT().grabFocus();
+					view.getDataJFT().setEnabled(true);
+					view.getDataJFT().setText("00/00/0000");
+					view.getDataJFT().grabFocus();
+					limparTela();
 				} else {
-					JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
-					view.getTatuagem3JFT().grabFocus();
+					String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagem3JFT().getText()));
+					if (msg == null) {
+						view.getTatuagem3JFT().setEnabled(false);
+						view.getEtpaquim1JFT().setEnabled(true);
+						view.getEtpaquim1JFT().grabFocus();
+					} else {
+						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+						view.getTatuagem3JFT().grabFocus();
+					}
 				}
 			} else if ((JFormattedTextField) e.getSource() == view.getEtpaquim1JFT()) {
 				TextFormatter.formatStringJFT(view.getEtpaquim1JFT(), view.getEtpaquim1JFT().getText(), 4);
@@ -223,7 +234,9 @@ public class ControllerPCRST extends KeyAdapter implements FocusListener, ItemLi
 				}
 			}
 		}
-		if (e.getKeyChar() == KeyEvent.VK_ESCAPE) {
+		if (e.getKeyChar() == KeyEvent.VK_ESCAPE)
+
+		{
 			int option = JOptionPane.showConfirmDialog(view, "Deseja realmente voltar para tela anterior?", "DIGEX - Voltar",
 					JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 			if (option == 0) {
@@ -234,6 +247,97 @@ public class ControllerPCRST extends KeyAdapter implements FocusListener, ItemLi
 			}
 		}
 
+	}
+
+	private void carregarHistData() {
+		int index = 0;
+		for (int n = controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().size() - 1; n >= 0; n--) {
+			if (controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(n).getData()
+					.equals(view.getDataJFT().getText())) {
+				index = n;
+				break;
+			}
+		}
+		if (index != 0) {
+			view.getTatuagemHist3().setText(
+					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index).getTatuagem()));
+			view.getEtpaquimHist3().setText(
+					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index).getEtpaquim()));
+			view.getPlpaquimHist3().setText(
+					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index).getPlpaquim()));
+			view.getGimHist3().setText(
+					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index).getGim()));
+			view.getCosph24Hist3().setText(
+					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index).getCosph24()));
+			view.getCospcjpcsHist3().setText(
+					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index).getCoscjpcs()));
+			view.getTatuagemHist2().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 1).getTatuagem()));
+			view.getEtpaquimHist2().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 1).getEtpaquim()));
+			view.getPlpaquimHist2().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 1).getPlpaquim()));
+			view.getGimHist2().setText(
+					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 1).getGim()));
+			view.getCosph24Hist2().setText(
+					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 1).getCosph24()));
+			view.getCospcjpcsHist2().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 1).getCoscjpcs()));
+			view.getTatuagemHist1().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 2).getTatuagem()));
+			view.getEtpaquimHist1().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 2).getEtpaquim()));
+			view.getPlpaquimHist1().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 2).getPlpaquim()));
+			view.getGimHist1().setText(
+					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 2).getGim()));
+			view.getCosph24Hist1().setText(
+					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 2).getCosph24()));
+			view.getCospcjpcsHist1().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 2).getCoscjpcs()));
+		} else {
+			limparTela();
+		}
+
+	}
+
+	private void limparTela() {
+		view.getTatuagemHist1().setText("");
+		view.getTatuagemHist2().setText("");
+		view.getTatuagemHist3().setText("");
+		view.getEtpaquimHist1().setText("");
+		view.getEtpaquimHist2().setText("");
+		view.getEtpaquimHist3().setText("");
+		view.getPlpaquimHist1().setText("");
+		view.getPlpaquimHist2().setText("");
+		view.getPlpaquimHist3().setText("");
+		view.getGimHist1().setText("");
+		view.getGimHist2().setText("");
+		view.getGimHist3().setText("");
+		view.getCosph24Hist1().setText("");
+		view.getCosph24Hist2().setText("");
+		view.getCosph24Hist3().setText("");
+		view.getCospcjpcsHist1().setText("");
+		view.getCospcjpcsHist2().setText("");
+		view.getCospcjpcsHist3().setText("");
+		view.getTatuagem1JFT().setText("");
+		view.getTatuagem2JFT().setText("");
+		view.getTatuagem3JFT().setText("");
+		view.getEtpaquim1JFT().setText("");
+		view.getEtpaquim2JFT().setText("");
+		view.getEtpaquim3JFT().setText("");
+		view.getPlpaquim1JFT().setText("");
+		view.getPlpaquim2JFT().setText("");
+		view.getPlpaquim3JFT().setText("");
+		view.getGim1JFT().setText("");
+		view.getGim2JFT().setText("");
+		view.getGim3JFT().setText("");
+		view.getCosph1JFT().setText("");
+		view.getCosph2JFT().setText("");
+		view.getCosph3JFT().setText("");
+		view.getCoscjpcs1JFT().setText("");
+		view.getCoscjpcs2JFT().setText("");
+		view.getCoscjpcs3JFT().setText("");
 	}
 
 	private void salvarPCR() {
@@ -257,7 +361,7 @@ public class ControllerPCRST extends KeyAdapter implements FocusListener, ItemLi
 
 	private void loadHist() {
 		if (pcrHist.size() > 0) {
-			for (int k = 1 - 1; k <= 3; k++) {
+			for (int k = 1; k <= 3; k++) {
 				JLabel lbl1 = (JLabel) orderHist.get(0);
 				lbl1.setText(String.valueOf(pcrHist.get(pcrHist.size() - k).getTatuagem()));
 				orderHist.remove(0);
@@ -277,7 +381,7 @@ public class ControllerPCRST extends KeyAdapter implements FocusListener, ItemLi
 				lbl6.setText(String.valueOf(pcrHist.get(pcrHist.size() - k).getCoscjpcs()));
 				orderHist.remove(0);
 			}
-			view.getDataJFT().setText(pcrHist.get(pcrHist.size()-1).getData());
+			view.getDataJFT().setText(pcrHist.get(pcrHist.size() - 1).getData());
 			criarOrdemComponentesHist();
 		} else {
 			for (Component c : orderHist) {
@@ -334,13 +438,15 @@ public class ControllerPCRST extends KeyAdapter implements FocusListener, ItemLi
 		view.getPlpaquimHist1().setText(view.getPlpaquim1JFT().getText());
 		view.getPlpaquimHist2().setText(view.getPlpaquim2JFT().getText());
 		view.getPlpaquimHist3().setText(view.getPlpaquim3JFT().getText());
+		view.getGimHist1().setText(view.getGim1JFT().getText());
+		view.getGimHist2().setText(view.getGim1JFT().getText());
+		view.getGimHist3().setText(view.getGim1JFT().getText());
 		view.getCosph24Hist1().setText(view.getCosph1JFT().getText());
 		view.getCosph24Hist2().setText(view.getCosph2JFT().getText());
 		view.getCosph24Hist3().setText(view.getCosph3JFT().getText());
 		view.getCospcjpcsHist1().setText(view.getCoscjpcs1JFT().getText());
 		view.getCospcjpcsHist2().setText(view.getCoscjpcs2JFT().getText());
 		view.getCospcjpcsHist3().setText(view.getCoscjpcs3JFT().getText());
-		
 
 		view.getTatuagem1JFT().setText("");
 		view.getTatuagem2JFT().setText("");
