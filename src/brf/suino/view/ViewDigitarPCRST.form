@@ -38,9 +38,10 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -69,7 +70,7 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="20" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -88,7 +89,7 @@
                               <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                       <Component id="registrosLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -262,160 +263,138 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel7" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="tatuagem2JFT" min="-2" pref="48" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="tatuagemHist3" pref="58" max="32767" attributes="0"/>
+                                              <Component id="tatuagemHist2" max="32767" attributes="0"/>
+                                              <Component id="tatuagemHist1" max="32767" attributes="0"/>
+                                          </Group>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="etpaquim2JFT" min="-2" pref="48" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="plpaquim2JFT" min="-2" pref="54" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="etpaquimHist3" pref="57" max="32767" attributes="0"/>
+                                              <Component id="etpaquimHist2" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="etpaquimHist1" alignment="1" max="32767" attributes="0"/>
+                                          </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="gim2JFT" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                                                  <Component id="cosph2JFT" min="-2" pref="59" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="coscjpcs2JFT" min="-2" pref="54" max="-2" attributes="0"/>
+                                              <Component id="plpaquimHist1" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="plpaquimHist2" max="32767" attributes="0"/>
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                  <Component id="plpaquimHist3" min="-2" pref="54" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="tatuagem2JFT" alignment="1" min="-2" pref="58" max="-2" attributes="0"/>
+                                              <Component id="jLabel29" min="-2" pref="58" max="-2" attributes="0"/>
+                                              <Component id="tatuagem1JFT" alignment="0" min="-2" pref="58" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="etpaquim2JFT" alignment="1" min="-2" pref="57" max="-2" attributes="0"/>
+                                              <Component id="jLabel28" max="32767" attributes="0"/>
+                                              <Component id="etpaquim1JFT" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="plpaquim1JFT" alignment="1" min="-2" pref="54" max="-2" attributes="0"/>
+                                              <Component id="jLabel15" min="-2" pref="54" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="tatuagemHist1" min="-2" pref="48" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="etpaquimHist1" min="-2" pref="48" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="plpaquimHist1" max="32767" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="tatuagemHist2" min="-2" pref="48" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="etpaquimHist2" min="-2" pref="48" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="plpaquimHist2" max="32767" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="tatuagemHist3" min="-2" pref="48" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="etpaquimHist3" min="-2" pref="48" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="plpaquimHist3" max="32767" attributes="0"/>
+                                              <Component id="gimHist3" max="32767" attributes="0"/>
+                                              <Component id="jLabel16" pref="49" max="32767" attributes="0"/>
+                                              <Component id="gim1JFT" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                                                  <Component id="cosph1JFT" min="-2" pref="59" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" attributes="0">
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="jLabel28" min="-2" pref="48" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="tatuagem1JFT" min="-2" pref="48" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="etpaquim1JFT" min="-2" pref="48" max="-2" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="plpaquim1JFT" alignment="1" min="-2" pref="54" max="-2" attributes="0"/>
-                                                      <Component id="jLabel15" min="-2" pref="54" max="-2" attributes="0"/>
+                                                      <Component id="jLabel17" alignment="1" max="32767" attributes="0"/>
+                                                      <Component id="cosph24Hist3" min="-2" pref="57" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel18" min="-2" pref="54" max="-2" attributes="0"/>
+                                              <Component id="cospcjpcsHist3" alignment="0" min="-2" pref="51" max="-2" attributes="0"/>
+                                              <Component id="coscjpcs1JFT" alignment="0" min="-2" pref="54" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="gimHist2" pref="49" max="32767" attributes="0"/>
+                                              <Component id="gimHist1" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" attributes="0">
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                              <Component id="gimHist3" max="32767" attributes="0"/>
-                                                              <Component id="jLabel16" pref="49" max="32767" attributes="0"/>
-                                                          </Group>
-                                                          <Group type="103" groupAlignment="0" attributes="0">
-                                                              <Group type="102" attributes="0">
-                                                                  <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                                                                  <Component id="cosph1JFT" min="-2" pref="59" max="-2" attributes="0"/>
-                                                              </Group>
-                                                              <Group type="102" alignment="0" attributes="0">
-                                                                  <EmptySpace max="-2" attributes="0"/>
-                                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                                      <Component id="cosph24Hist3" min="-2" pref="57" max="-2" attributes="0"/>
-                                                                      <Component id="jLabel17" min="-2" pref="54" max="-2" attributes="0"/>
-                                                                  </Group>
-                                                              </Group>
-                                                          </Group>
-                                                      </Group>
-                                                      <Component id="gim1JFT" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Group type="102" attributes="0">
-                                                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                                          <Component id="cospcjpcsHist3" min="-2" pref="51" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Group type="103" groupAlignment="0" attributes="0">
-                                                              <Component id="jLabel18" min="-2" pref="54" max="-2" attributes="0"/>
-                                                              <Component id="coscjpcs1JFT" min="-2" pref="54" max="-2" attributes="0"/>
-                                                          </Group>
-                                                      </Group>
-                                                  </Group>
+                                                  <Component id="cosph24Hist2" min="-2" pref="57" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="cospcjpcsHist2" min="-2" pref="51" max="-2" attributes="0"/>
                                               </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                      <Component id="gimHist1" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
-                                                      <Component id="gimHist2" min="-2" pref="49" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Group type="102" attributes="0">
-                                                          <Component id="cosph24Hist2" min="-2" pref="57" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="cospcjpcsHist2" min="-2" pref="51" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="102" attributes="0">
-                                                          <Component id="cosph24Hist1" min="-2" pref="57" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="cospcjpcsHist1" min="-2" pref="51" max="-2" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="cosph24Hist1" min="-2" pref="57" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="cospcjpcsHist1" min="-2" pref="51" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="tatuagem3JFT" min="-2" pref="48" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="etpaquim3JFT" min="-2" pref="48" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="plpaquim3JFT" min="-2" pref="54" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                                          <Component id="cosph3JFT" min="-2" pref="59" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="tatuagem3JFT" min="-2" pref="58" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="coscjpcs3JFT" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="etpaquim3JFT" min="-2" pref="57" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="plpaquim3JFT" min="-2" pref="54" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="gim3JFT" min="-2" pref="48" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="cosph3JFT" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
+                                          <Component id="plpaquim2JFT" min="-2" pref="54" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="gim2JFT" min="-2" pref="48" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="cosph2JFT" min="-2" pref="59" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel35" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="controleJFT" pref="77" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="coscjpcs2JFT" min="-2" pref="54" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jLabel35" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="coscjpcs3JFT" min="-2" pref="54" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="controleJFT" min="-2" pref="107" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace pref="35" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -425,7 +404,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="plpaquimHist1" alignment="0" max="32767" attributes="0"/>
                               <Component id="gimHist1" alignment="0" max="32767" attributes="0"/>
                               <Component id="cosph24Hist1" alignment="1" max="32767" attributes="0"/>
@@ -434,7 +413,7 @@
                               <Component id="etpaquimHist1" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="plpaquimHist2" alignment="0" max="32767" attributes="0"/>
                               <Component id="gimHist2" alignment="0" max="32767" attributes="0"/>
                               <Component id="cosph24Hist2" alignment="0" max="32767" attributes="0"/>
@@ -443,7 +422,7 @@
                               <Component id="etpaquimHist2" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="plpaquimHist3" alignment="0" max="32767" attributes="0"/>
                               <Component id="gimHist3" alignment="0" max="32767" attributes="0"/>
                               <Component id="cosph24Hist3" alignment="0" max="32767" attributes="0"/>
@@ -474,32 +453,24 @@
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="coscjpcs2JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="tatuagem2JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="etpaquim2JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="plpaquim2JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="gim2JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="cosph2JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                              </Group>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="tatuagem2JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="etpaquim2JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="plpaquim2JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="gim2JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="cosph2JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="coscjpcs2JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="coscjpcs3JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="controleJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="tatuagem3JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="etpaquim3JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="plpaquim3JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="gim3JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="cosph3JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                              </Group>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="tatuagem3JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="etpaquim3JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="plpaquim3JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="gim3JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="cosph3JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="coscjpcs3JFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="controleJFT" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -546,7 +517,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel29">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Tatuagem"/>
+                    <Property name="text" type="java.lang.String" value="TATU"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JFormattedTextField" name="controleJFT">
@@ -714,7 +685,7 @@
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JFormattedTextField" name="cosph3JFT">
+                <Component class="javax.swing.JFormattedTextField" name="coscjpcs3JFT">
                   <Properties>
                     <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                       <Format format="##" subtype="-1" type="5"/>
@@ -723,7 +694,7 @@
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JFormattedTextField" name="coscjpcs3JFT">
+                <Component class="javax.swing.JFormattedTextField" name="cosph3JFT">
                   <Properties>
                     <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                       <Format format="##" subtype="-1" type="5"/>

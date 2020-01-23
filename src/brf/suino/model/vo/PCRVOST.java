@@ -6,7 +6,7 @@ import java.util.Date;
 public class PCRVOST implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private Date data;
+	private String data;
 	private int tatuagem;
 	private int etpaquim;
 	private int plpaquim;
@@ -17,7 +17,7 @@ public class PCRVOST implements Serializable {
 	public PCRVOST() {
 	}
 	
-	public PCRVOST(Date data, int tatuagem, int etpaquim, int plpaquim, int gim, int cosph24, int coscjpcs) {
+	public PCRVOST(String data, int tatuagem, int etpaquim, int plpaquim, int gim, int cosph24, int coscjpcs) {
 		super();
 		this.data = data;
 		this.tatuagem = tatuagem;
@@ -28,11 +28,11 @@ public class PCRVOST implements Serializable {
 		this.coscjpcs = coscjpcs;
 	}
 
-	public Date getData() {
+	public String getData() {
 		return data;
 	}
 
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 

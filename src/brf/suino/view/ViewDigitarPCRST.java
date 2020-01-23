@@ -1,17 +1,10 @@
 package brf.suino.view;
 
-import brf.frango.view.*;
-import java.text.ParseException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JFormattedTextField;
-import javax.swing.JLabel;
+import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.GroupLayout;
-import javax.swing.SwingConstants;
-import java.awt.Color;
 import java.awt.Font;
+import java.awt.Color;
 
 public class ViewDigitarPCRST extends javax.swing.JFrame {
 
@@ -547,19 +540,6 @@ public class ViewDigitarPCRST extends javax.swing.JFrame {
         this.jLabel50 = jLabel50;
     }
 
-    /**
-     * @return the jLabel51
-     */
-    public javax.swing.JLabel getjLabel51() {
-        return jLabel51;
-    }
-
-    /**
-     * @param jLabel51 the jLabel51 to set
-     */
-    public void setjLabel51(javax.swing.JLabel jLabel51) {
-        this.jLabel51 = jLabel51;
-    }
 
     /**
      * @return the jLabel7
@@ -603,19 +583,7 @@ public class ViewDigitarPCRST extends javax.swing.JFrame {
         this.jPanel2 = jPanel2;
     }
 
-    /**
-     * @return the jPanel3
-     */
-    public javax.swing.JPanel getjPanel3() {
-        return jPanel3;
-    }
 
-    /**
-     * @param jPanel3 the jPanel3 to set
-     */
-    public void setjPanel3(javax.swing.JPanel jPanel3) {
-        this.jPanel3 = jPanel3;
-    }
 
     /**
      * @return the jPanel7
@@ -631,19 +599,6 @@ public class ViewDigitarPCRST extends javax.swing.JFrame {
         this.jPanel7 = jPanel7;
     }
 
-    /**
-     * @return the opcaoJFT
-     */
-    public javax.swing.JFormattedTextField getOpcaoJFT() {
-        return opcaoJFT;
-    }
-
-    /**
-     * @param opcaoJFT the opcaoJFT to set
-     */
-    public void setOpcaoJFT(javax.swing.JFormattedTextField opcaoJFT) {
-        this.opcaoJFT = opcaoJFT;
-    }
 
     /**
      * @return the plpaquim1JFT
@@ -849,14 +804,13 @@ public class ViewDigitarPCRST extends javax.swing.JFrame {
         baiaJP = new javax.swing.JPanel();
         jLabel44 = new javax.swing.JLabel();
         dataJFT = new javax.swing.JFormattedTextField();
+        dataJFT.setForeground(new Color(30, 144, 255));
         registrosLabel = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
-        jLabel51 = new javax.swing.JLabel();
-        opcaoJFT = new javax.swing.JFormattedTextField();
-        jPanel3 = new javax.swing.JPanel();
+        pnlPCR = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -882,8 +836,8 @@ public class ViewDigitarPCRST extends javax.swing.JFrame {
         etpaquim3JFT = new javax.swing.JFormattedTextField();
         plpaquim3JFT = new javax.swing.JFormattedTextField();
         gim3JFT = new javax.swing.JFormattedTextField();
-        cosph3JFT = new javax.swing.JFormattedTextField();
         coscjpcs3JFT = new javax.swing.JFormattedTextField();
+        cosph3JFT = new javax.swing.JFormattedTextField();
         tatuagemHist3 = new javax.swing.JLabel();
         etpaquimHist3 = new javax.swing.JLabel();
         plpaquimHist3 = new javax.swing.JLabel();
@@ -908,10 +862,8 @@ public class ViewDigitarPCRST extends javax.swing.JFrame {
         baiaJP.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel44.setText("Data");
-
-        dataJFT.setEditable(false);
         try {
-            dataJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+            dataJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -923,25 +875,25 @@ public class ViewDigitarPCRST extends javax.swing.JFrame {
         });
 
         javax.swing.GroupLayout baiaJPLayout = new javax.swing.GroupLayout(baiaJP);
-        baiaJP.setLayout(baiaJPLayout);
         baiaJPLayout.setHorizontalGroup(
-            baiaJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(baiaJPLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel44)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(dataJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        	baiaJPLayout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(baiaJPLayout.createSequentialGroup()
+        			.addContainerGap()
+        			.addComponent(jLabel44)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(dataJFT, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(395, Short.MAX_VALUE))
         );
         baiaJPLayout.setVerticalGroup(
-            baiaJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(baiaJPLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(baiaJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel44)
-                    .addComponent(dataJFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        	baiaJPLayout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(baiaJPLayout.createSequentialGroup()
+        			.addContainerGap()
+        			.addGroup(baiaJPLayout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(jLabel44)
+        				.addComponent(dataJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+        baiaJP.setLayout(baiaJPLayout);
 
         registrosLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         registrosLabel.setForeground(new java.awt.Color(0, 153, 255));
@@ -950,60 +902,43 @@ public class ViewDigitarPCRST extends javax.swing.JFrame {
 
         jPanel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel24.setText("Escolha uma opção:");
+        jLabel24.setText("Opções:");
 
-        jLabel25.setText("[1] - Voltar");
+        jLabel25.setText("<html>[9999] - Digite na tatuagem para <br/> começar uma nova data. </html>");
 
-        jLabel50.setText("[0] - Sair");
+        jLabel50.setText("[ESC] - Voltar para tela anterior");
 
-        jLabel51.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel51.setText("Opção");
-
-        try {
-            opcaoJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        opcaoJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        opcaoJFT.setEnabled(false);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(jLabel51, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(opcaoJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel50)
-                            .addComponent(jLabel25)
-                            .addComponent(jLabel24))
-                        .addGap(0, 13, Short.MAX_VALUE)))
-                .addContainerGap())
+        	jPanel7Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(jPanel7Layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addGroup(jPanel7Layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(jPanel7Layout.createSequentialGroup()
+        					.addComponent(jLabel24)
+        					.addGap(116))
+        				.addGroup(jPanel7Layout.createSequentialGroup()
+        					.addComponent(jLabel25, GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+        					.addGap(4))
+        				.addGroup(jPanel7Layout.createSequentialGroup()
+        					.addComponent(jLabel50)
+        					.addContainerGap(24, Short.MAX_VALUE))))
         );
         jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel24)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel25)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel50)
-                .addGap(26, 26, 26)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel51)
-                    .addComponent(opcaoJFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+        	jPanel7Layout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(jPanel7Layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addComponent(jLabel24)
+        			.addPreferredGap(ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+        			.addComponent(jLabel25)
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
+        			.addComponent(jLabel50)
+        			.addGap(30))
         );
+        jPanel7.setLayout(jPanel7Layout);
 
-        jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pnlPCR.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1019,7 +954,7 @@ public class ViewDigitarPCRST extends javax.swing.JFrame {
         jLabel28.setText("ET 3/4 C");
 
         try {
-            tatuagem1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            tatuagem1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1027,10 +962,10 @@ public class ViewDigitarPCRST extends javax.swing.JFrame {
         tatuagem1JFT.setEnabled(false);
 
         jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel29.setText("Tatuagem");
+        jLabel29.setText("TATU");
 
         try {
-            controleJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            controleJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1052,7 +987,7 @@ public class ViewDigitarPCRST extends javax.swing.JFrame {
         jLabel18.setText("COSCJPCS");
 
         try {
-            etpaquim1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            etpaquim1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1060,7 +995,7 @@ public class ViewDigitarPCRST extends javax.swing.JFrame {
         etpaquim1JFT.setEnabled(false);
 
         try {
-            plpaquim1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            plpaquim1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1084,7 +1019,7 @@ public class ViewDigitarPCRST extends javax.swing.JFrame {
         coscjpcs1JFT.setEnabled(false);
 
         try {
-            cosph1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            cosph1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1092,7 +1027,7 @@ public class ViewDigitarPCRST extends javax.swing.JFrame {
         cosph1JFT.setEnabled(false);
 
         try {
-            tatuagem2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            tatuagem2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1100,7 +1035,7 @@ public class ViewDigitarPCRST extends javax.swing.JFrame {
         tatuagem2JFT.setEnabled(false);
 
         try {
-            etpaquim2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            etpaquim2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1108,7 +1043,7 @@ public class ViewDigitarPCRST extends javax.swing.JFrame {
         etpaquim2JFT.setEnabled(false);
 
         try {
-            plpaquim2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            plpaquim2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1124,7 +1059,7 @@ public class ViewDigitarPCRST extends javax.swing.JFrame {
         gim2JFT.setEnabled(false);
 
         try {
-            cosph2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            cosph2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1140,7 +1075,7 @@ public class ViewDigitarPCRST extends javax.swing.JFrame {
         coscjpcs2JFT.setEnabled(false);
 
         try {
-            tatuagem3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            tatuagem3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1148,7 +1083,7 @@ public class ViewDigitarPCRST extends javax.swing.JFrame {
         tatuagem3JFT.setEnabled(false);
 
         try {
-            etpaquim3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            etpaquim3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1156,7 +1091,7 @@ public class ViewDigitarPCRST extends javax.swing.JFrame {
         etpaquim3JFT.setEnabled(false);
 
         try {
-            plpaquim3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            plpaquim3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1172,20 +1107,20 @@ public class ViewDigitarPCRST extends javax.swing.JFrame {
         gim3JFT.setEnabled(false);
 
         try {
-            cosph3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        cosph3JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        cosph3JFT.setEnabled(false);
-
-        try {
             coscjpcs3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
         coscjpcs3JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         coscjpcs3JFT.setEnabled(false);
+
+        try {
+            cosph3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        cosph3JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        cosph3JFT.setEnabled(false);
 
         tatuagemHist3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tatuagemHist3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -1244,245 +1179,189 @@ public class ViewDigitarPCRST extends javax.swing.JFrame {
         cospcjpcsHist1.setText(" ");
         cospcjpcsHist1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(tatuagem2JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(etpaquim2JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(plpaquim2JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(gim2JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addGap(54, 54, 54)
-                                        .addComponent(cosph2JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(coscjpcs2JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                                        .addComponent(tatuagemHist1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(etpaquimHist1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(plpaquimHist1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                                        .addComponent(tatuagemHist2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(etpaquimHist2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(plpaquimHist2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                                        .addComponent(tatuagemHist3, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(etpaquimHist3, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(plpaquimHist3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                                .addComponent(jLabel29)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                                .addComponent(tatuagem1JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(etpaquim1JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(plpaquim1JFT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                    .addComponent(gimHist3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE))
-                                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                                        .addGap(5, 5, 5)
-                                                        .addComponent(cosph1JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                            .addComponent(cosph24Hist3, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                            .addComponent(gim1JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                                .addGap(6, 6, 6)
-                                                .addComponent(cospcjpcsHist3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(coscjpcs1JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(gimHist1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(gimHist2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                                .addComponent(cosph24Hist2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(cospcjpcsHist2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                                .addComponent(cosph24Hist1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(cospcjpcsHist1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(tatuagem3JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(etpaquim3JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(plpaquim3JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(54, 54, 54)
-                                .addComponent(cosph3JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(coscjpcs3JFT))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(gim3JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(125, 125, 125)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel35, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(controleJFT, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE))))
-                .addContainerGap())
+        javax.swing.GroupLayout gl_pnlPCR = new javax.swing.GroupLayout(pnlPCR);
+        gl_pnlPCR.setHorizontalGroup(
+        	gl_pnlPCR.createParallelGroup(Alignment.LEADING)
+        		.addComponent(jLabel7, GroupLayout.DEFAULT_SIZE, 849, Short.MAX_VALUE)
+        		.addGroup(gl_pnlPCR.createSequentialGroup()
+        			.addContainerGap()
+        			.addGroup(gl_pnlPCR.createParallelGroup(Alignment.LEADING, false)
+        				.addComponent(tatuagem3JFT)
+        				.addComponent(tatuagem2JFT)
+        				.addComponent(tatuagem1JFT)
+        				.addComponent(jLabel29, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(tatuagemHist3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(tatuagemHist2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(tatuagemHist1, GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
+        			.addGap(6)
+        			.addGroup(gl_pnlPCR.createParallelGroup(Alignment.LEADING, false)
+        				.addComponent(etpaquim3JFT)
+        				.addComponent(etpaquimHist2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(etpaquimHist1, GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+        				.addComponent(etpaquimHist3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(jLabel28, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(etpaquim1JFT, 61, 61, Short.MAX_VALUE)
+        				.addComponent(etpaquim2JFT))
+        			.addGap(6)
+        			.addGroup(gl_pnlPCR.createParallelGroup(Alignment.LEADING, false)
+        				.addComponent(plpaquim3JFT)
+        				.addComponent(plpaquim2JFT)
+        				.addComponent(plpaquim1JFT)
+        				.addComponent(jLabel15, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(plpaquimHist3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(plpaquimHist2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(plpaquimHist1, GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE))
+        			.addGap(6)
+        			.addGroup(gl_pnlPCR.createParallelGroup(Alignment.LEADING, false)
+        				.addComponent(gim3JFT)
+        				.addComponent(gim2JFT)
+        				.addComponent(gimHist1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(gimHist2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(gimHist3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addGroup(gl_pnlPCR.createSequentialGroup()
+        					.addGap(1)
+        					.addComponent(gim1JFT))
+        				.addComponent(jLabel16, GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(gl_pnlPCR.createParallelGroup(Alignment.LEADING, false)
+        				.addComponent(cosph24Hist1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(cosph24Hist2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(cosph24Hist3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(jLabel17, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(cosph2JFT)
+        				.addComponent(cosph3JFT, 59, 59, Short.MAX_VALUE)
+        				.addComponent(cosph1JFT))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(gl_pnlPCR.createParallelGroup(Alignment.LEADING, false)
+        				.addComponent(cospcjpcsHist1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(cospcjpcsHist2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(cospcjpcsHist3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(jLabel18, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(coscjpcs1JFT)
+        				.addComponent(coscjpcs2JFT)
+        				.addComponent(coscjpcs3JFT))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(gl_pnlPCR.createParallelGroup(Alignment.LEADING, false)
+        				.addComponent(controleJFT)
+        				.addComponent(jLabel35, GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE))
+        			.addContainerGap(32, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(plpaquimHist1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(gimHist1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cosph24Hist1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cospcjpcsHist1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tatuagemHist1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(etpaquimHist1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(plpaquimHist2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(gimHist2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cosph24Hist2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cospcjpcsHist2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tatuagemHist2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(etpaquimHist2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(plpaquimHist3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(gimHist3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cosph24Hist3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cospcjpcsHist3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tatuagemHist3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(etpaquimHist3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel28)
-                        .addComponent(jLabel15)
-                        .addComponent(jLabel16)
-                        .addComponent(jLabel17)
-                        .addComponent(jLabel18))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel29)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tatuagem1JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(etpaquim1JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(plpaquim1JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(gim1JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cosph1JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(coscjpcs1JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(coscjpcs2JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel35))
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(tatuagem2JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(etpaquim2JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(plpaquim2JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(gim2JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(cosph2JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(coscjpcs3JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(controleJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(tatuagem3JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(etpaquim3JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(plpaquim3JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(gim3JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(cosph3JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+        gl_pnlPCR.setVerticalGroup(
+        	gl_pnlPCR.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(gl_pnlPCR.createSequentialGroup()
+        			.addContainerGap()
+        			.addComponent(jLabel7, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(gl_pnlPCR.createParallelGroup(Alignment.LEADING)
+        				.addComponent(cospcjpcsHist1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(cosph24Hist1, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
+        				.addComponent(gimHist1, GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
+        				.addComponent(plpaquimHist1, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
+        				.addComponent(etpaquimHist1, GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
+        				.addComponent(tatuagemHist1, GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(gl_pnlPCR.createParallelGroup(Alignment.TRAILING)
+        				.addComponent(cospcjpcsHist2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(cosph24Hist2, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
+        				.addComponent(gimHist2, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
+        				.addComponent(plpaquimHist2, GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
+        				.addComponent(etpaquimHist2, GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
+        				.addComponent(tatuagemHist2, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(gl_pnlPCR.createParallelGroup(Alignment.LEADING)
+        				.addComponent(cospcjpcsHist3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(cosph24Hist3, GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
+        				.addComponent(gimHist3, GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
+        				.addComponent(plpaquimHist3, GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
+        				.addComponent(etpaquimHist3, GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
+        				.addComponent(tatuagemHist3, GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(gl_pnlPCR.createParallelGroup(Alignment.LEADING)
+        				.addGroup(gl_pnlPCR.createParallelGroup(Alignment.BASELINE)
+        					.addComponent(jLabel28)
+        					.addComponent(jLabel16)
+        					.addComponent(jLabel17)
+        					.addComponent(jLabel29)
+        					.addComponent(jLabel15)
+        					.addComponent(jLabel18))
+        				.addGroup(gl_pnlPCR.createSequentialGroup()
+        					.addGap(20)
+        					.addGroup(gl_pnlPCR.createParallelGroup(Alignment.BASELINE)
+        						.addComponent(etpaquim1JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+        						.addComponent(gim1JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+        						.addComponent(tatuagem1JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+        						.addComponent(plpaquim1JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+        						.addComponent(cosph1JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+        						.addComponent(coscjpcs1JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(gl_pnlPCR.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(etpaquim2JFT, GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+        				.addComponent(tatuagem2JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(plpaquim2JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(gim2JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(cosph2JFT, GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+        				.addComponent(coscjpcs2JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(jLabel35))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(gl_pnlPCR.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(tatuagem3JFT, GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+        				.addComponent(etpaquim3JFT, GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+        				.addComponent(plpaquim3JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(gim3JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(cosph3JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(coscjpcs3JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(controleJFT, GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE))
+        			.addContainerGap())
         );
+        pnlPCR.setLayout(gl_pnlPCR);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(registrosLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(baiaJP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+        	jPanel2Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(jPanel2Layout.createSequentialGroup()
+        			.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+        				.addComponent(registrosLabel, GroupLayout.DEFAULT_SIZE, 702, Short.MAX_VALUE)
+        				.addGroup(jPanel2Layout.createSequentialGroup()
+        					.addGroup(jPanel2Layout.createParallelGroup(Alignment.TRAILING, false)
+        						.addComponent(baiaJP, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        						.addComponent(pnlPCR, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE))
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(jPanel7, GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)))
+        			.addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addComponent(baiaJP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(registrosLabel)
-                .addContainerGap())
+        	jPanel2Layout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(jPanel2Layout.createSequentialGroup()
+        			.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(jPanel2Layout.createSequentialGroup()
+        					.addComponent(baiaJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(pnlPCR, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        					.addGap(33))
+        				.addGroup(jPanel2Layout.createSequentialGroup()
+        					.addGap(120)
+        					.addComponent(jPanel7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        					.addPreferredGap(ComponentPlacement.RELATED)))
+        			.addComponent(registrosLabel)
+        			.addContainerGap())
         );
+        jPanel2.setLayout(jPanel2Layout);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        	jPanel1Layout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(jPanel1Layout.createSequentialGroup()
+        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        			.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        	jPanel1Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(jPanel1Layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addComponent(jPanel2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+        jPanel1.setLayout(jPanel1Layout);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1611,13 +1490,11 @@ public class ViewDigitarPCRST extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel pnlPCR;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JFormattedTextField opcaoJFT;
     private javax.swing.JFormattedTextField plpaquim1JFT;
     private javax.swing.JFormattedTextField plpaquim2JFT;
     private javax.swing.JFormattedTextField plpaquim3JFT;
@@ -1632,6 +1509,13 @@ public class ViewDigitarPCRST extends javax.swing.JFrame {
     private javax.swing.JLabel tatuagemHist2;
     private javax.swing.JLabel tatuagemHist3;
     // End of variables declaration//GEN-END:variables
+	public javax.swing.JPanel getPnlPCR() {
+		return pnlPCR;
+	}
+
+	public void setPnlPCR(javax.swing.JPanel pnlPCR) {
+		this.pnlPCR = pnlPCR;
+	}
 	
 
 

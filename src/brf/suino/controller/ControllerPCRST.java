@@ -1,5 +1,6 @@
 package brf.suino.controller;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
@@ -10,6 +11,7 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.BorderFactory;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -34,6 +36,7 @@ public class ControllerPCRST extends KeyAdapter implements FocusListener, ItemLi
 	public ControllerPCRST(ControllerST controller) {
 		this.controller = controller;
 		this.bo = new DigitacaoFrigoBOST(controller);
+		this.pcrHist =  new ArrayList<>();
 	}
 
 	public void openWindow(List<String> datasFases) {
@@ -49,9 +52,9 @@ public class ControllerPCRST extends KeyAdapter implements FocusListener, ItemLi
 		view.setLocationRelativeTo(null);
 		view.setVisible(true);
 		view.getControleJFT().setEnabled(false);
-		view.getOpcaoJFT().setEnabled(false);
 		view.getRegistrosLabel().setVisible(false);
 		defaultBorder = view.getBaiaJP().getBorder();
+		view.getControleJFT().setText("00000");
 
 		criarOrdemComponentes();
 		criarOrdemComponentesHist();
@@ -66,7 +69,24 @@ public class ControllerPCRST extends KeyAdapter implements FocusListener, ItemLi
 				TextFormatter.formatStringJFT(view.getDataJFT(), view.getDataJFT().getText(), 10);
 				String msg = bo.verificaData(view.getDataJFT().getText(), datasFases);
 				if (msg != null) {
-					JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+					if (msg.equals("existente")) {
+						int option = JOptionPane.showConfirmDialog(view, "A data informada já foi digitada, deseja digitar novamente??",
+								"DIGEX - Aviso", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+						if (option == 0) {
+							for (int k = controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().size()
+									- 1; k == 0; k--) {
+								if (controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(k).getData()
+										.equals(view.getDataJFT().getText())) {
+									controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().remove(k);
+								}
+							}
+							controller.getModel().getModelStateDAO().saveModelState(false);
+						} else {
+							view.getDataJFT().grabFocus();
+						}
+					} else {
+						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+					}
 				} else {
 					view.getDataJFT().setEnabled(false);
 					view.getTatuagem1JFT().setEnabled(true);
@@ -167,17 +187,39 @@ public class ControllerPCRST extends KeyAdapter implements FocusListener, ItemLi
 				view.getCoscjpcs1JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getCoscjpcs1JFT()) {
 				TextFormatter.formatStringJFT(view.getCoscjpcs1JFT(), view.getCoscjpcs1JFT().getText(), 2);
+				view.getCoscjpcs1JFT().setEnabled(false);
+				view.getCoscjpcs2JFT().setEnabled(true);
+				view.getCoscjpcs2JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getCoscjpcs2JFT()) {
+				TextFormatter.formatStringJFT(view.getCoscjpcs2JFT(), view.getCoscjpcs2JFT().getText(), 2);
+				view.getCoscjpcs2JFT().setEnabled(false);
+				view.getCoscjpcs3JFT().setEnabled(true);
+				view.getCoscjpcs3JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getCoscjpcs3JFT()) {
+				TextFormatter.formatStringJFT(view.getCoscjpcs3JFT(), view.getCoscjpcs3JFT().getText(), 2);
 				view.getCoscjpcs3JFT().setEnabled(false);
 				view.getControleJFT().setEnabled(true);
 				view.getControleJFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getControleJFT()) {
 				TextFormatter.formatStringJFT(view.getControleJFT(), view.getControleJFT().getText(), 5);
 				if (Integer.parseInt(view.getControleJFT().getText()) == calculaControle()) {
+					if (controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr() == null) {
+						controller.getModel().getExperimentoVO().getFrigorificoTempVOST().setPcr(new ArrayList<>());
+						salvarPCR();
+					} else {
+						salvarPCR();
+					}
+					updateHist();
+					view.getPnlPCR().setBorder(defaultBorder);
 					view.getControleJFT().setText("00000");
 					view.getControleJFT().setEnabled(false);
 					view.getTatuagem1JFT().setEnabled(true);
 					view.getTatuagem1JFT().grabFocus();
-					updateHist();
+				} else {
+					view.getPnlPCR().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
+					view.getControleJFT().setEnabled(false);
+					view.getTatuagem1JFT().setEnabled(true);
+					view.getTatuagem1JFT().grabFocus();
 				}
 			}
 		}
@@ -192,6 +234,25 @@ public class ControllerPCRST extends KeyAdapter implements FocusListener, ItemLi
 			}
 		}
 
+	}
+
+	private void salvarPCR() {
+		controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr()
+				.add(new PCRVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem1JFT().getText()),
+						Integer.parseInt(view.getEtpaquim1JFT().getText()), Integer.parseInt(view.getPlpaquim1JFT().getText()),
+						Integer.parseInt(view.getGim1JFT().getText()), Integer.parseInt(view.getCosph1JFT().getText()),
+						Integer.parseInt(view.getCoscjpcs1JFT().getText())));
+		controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr()
+				.add(new PCRVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem2JFT().getText()),
+						Integer.parseInt(view.getEtpaquim2JFT().getText()), Integer.parseInt(view.getPlpaquim2JFT().getText()),
+						Integer.parseInt(view.getGim2JFT().getText()), Integer.parseInt(view.getCosph2JFT().getText()),
+						Integer.parseInt(view.getCoscjpcs2JFT().getText())));
+		controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr()
+				.add(new PCRVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem3JFT().getText()),
+						Integer.parseInt(view.getEtpaquim3JFT().getText()), Integer.parseInt(view.getPlpaquim3JFT().getText()),
+						Integer.parseInt(view.getGim3JFT().getText()), Integer.parseInt(view.getCosph3JFT().getText()),
+						Integer.parseInt(view.getCoscjpcs3JFT().getText())));
+		controller.getModel().getModelStateDAO().saveModelState(false);
 	}
 
 	private void loadHist() {
@@ -216,6 +277,7 @@ public class ControllerPCRST extends KeyAdapter implements FocusListener, ItemLi
 				lbl6.setText(String.valueOf(pcrHist.get(pcrHist.size() - k).getCoscjpcs()));
 				orderHist.remove(0);
 			}
+			view.getDataJFT().setText(pcrHist.get(pcrHist.size()-1).getData());
 			criarOrdemComponentesHist();
 		} else {
 			for (Component c : orderHist) {
@@ -252,26 +314,7 @@ public class ControllerPCRST extends KeyAdapter implements FocusListener, ItemLi
 	@Override
 	public void keyPressed(KeyEvent e) {
 		Object src = e.getSource();
-		if ((JFormattedTextField) e.getSource() == view.getOpcaoJFT()) {
-			switch (e.getKeyChar()) {
-			case KeyEvent.VK_0:
-				int n = JOptionPane.showConfirmDialog(view, "Deseja realmente sair do programa?", "DIGEX - Sair", JOptionPane.YES_NO_OPTION,
-						JOptionPane.WARNING_MESSAGE);
-				if (n == 0) {
-					System.out.println("Fim...");
-					System.exit(0);
-				}
-				break;
-			case KeyEvent.VK_1:
-				view.setVisible(false);
-//				controller.startMortalidadeST(Integer.parseInt(view.getGalpaoJFT().getText().trim()),
-//						Integer.parseInt(view.getBaiaJFT().getText().trim()), Integer.parseInt(view.getSexoJFT().getText().trim()),
-//						Integer.parseInt(view.getTrataJFT().getText().trim()), Integer.parseInt(view.getTrata2JFT().getText().trim()),
-//						datasFases);
-				break;
-			}
-		}
-		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(view.getOpcaoJFT())) {
+		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(view.getDataJFT())) {
 			System.out.println("left");
 			Component prev = view.getFocusTraversalPolicy().getComponentBefore(view, (JFormattedTextField) src);
 			((JFormattedTextField) src).setEnabled(false);
@@ -297,6 +340,7 @@ public class ControllerPCRST extends KeyAdapter implements FocusListener, ItemLi
 		view.getCospcjpcsHist1().setText(view.getCoscjpcs1JFT().getText());
 		view.getCospcjpcsHist2().setText(view.getCoscjpcs2JFT().getText());
 		view.getCospcjpcsHist3().setText(view.getCoscjpcs3JFT().getText());
+		
 
 		view.getTatuagem1JFT().setText("");
 		view.getTatuagem2JFT().setText("");
@@ -307,76 +351,44 @@ public class ControllerPCRST extends KeyAdapter implements FocusListener, ItemLi
 		view.getPlpaquim1JFT().setText("");
 		view.getPlpaquim2JFT().setText("");
 		view.getPlpaquim3JFT().setText("");
+		view.getGim1JFT().setText("");
+		view.getGim2JFT().setText("");
+		view.getGim3JFT().setText("");
 		view.getCosph1JFT().setText("");
 		view.getCosph2JFT().setText("");
 		view.getCosph3JFT().setText("");
-		view.getCospcjpcsHist1().setText("");
-		view.getCospcjpcsHist2().setText("");
-		view.getCospcjpcsHist3().setText("");
+		view.getCoscjpcs1JFT().setText("");
+		view.getCoscjpcs2JFT().setText("");
+		view.getCoscjpcs3JFT().setText("");
 	}
 
 	private Integer calculaControle() {
 		int soma = 0;
-		soma += Integer.parseInt(view.getTatuagemHist1().getText());
-		soma += Integer.parseInt(view.getTatuagemHist2().getText());
-		soma += Integer.parseInt(view.getTatuagemHist3().getText());
+		soma += Integer.parseInt(view.getTatuagem1JFT().getText());
+		soma += Integer.parseInt(view.getTatuagem2JFT().getText());
+		soma += Integer.parseInt(view.getTatuagem3JFT().getText());
 
-		soma += Integer.parseInt(view.getEtpaquimHist1().getText());
-		soma += Integer.parseInt(view.getEtpaquimHist2().getText());
-		soma += Integer.parseInt(view.getEtpaquimHist3().getText());
+		soma += Integer.parseInt(view.getEtpaquim1JFT().getText());
+		soma += Integer.parseInt(view.getEtpaquim2JFT().getText());
+		soma += Integer.parseInt(view.getEtpaquim3JFT().getText());
 
-		soma += Integer.parseInt(view.getPlpaquimHist1().getText());
-		soma += Integer.parseInt(view.getPlpaquimHist2().getText());
-		soma += Integer.parseInt(view.getPlpaquimHist3().getText());
+		soma += Integer.parseInt(view.getPlpaquim1JFT().getText());
+		soma += Integer.parseInt(view.getPlpaquim2JFT().getText());
+		soma += Integer.parseInt(view.getPlpaquim3JFT().getText());
 
-		soma += Integer.parseInt(view.getGimHist1().getText());
-		soma += Integer.parseInt(view.getGimHist2().getText());
-		soma += Integer.parseInt(view.getGimHist3().getText());
+		soma += Integer.parseInt(view.getGim1JFT().getText());
+		soma += Integer.parseInt(view.getGim2JFT().getText());
+		soma += Integer.parseInt(view.getGim3JFT().getText());
 
-		soma += Integer.parseInt(view.getCosph24Hist1().getText());
-		soma += Integer.parseInt(view.getCosph24Hist2().getText());
-		soma += Integer.parseInt(view.getCosph24Hist3().getText());
+		soma += Integer.parseInt(view.getCosph1JFT().getText());
+		soma += Integer.parseInt(view.getCosph2JFT().getText());
+		soma += Integer.parseInt(view.getCosph3JFT().getText());
 
-		soma += Integer.parseInt(view.getCospcjpcsHist1().getText());
-		soma += Integer.parseInt(view.getCospcjpcsHist2().getText());
-		soma += Integer.parseInt(view.getCospcjpcsHist3().getText());
+		soma += Integer.parseInt(view.getCoscjpcs1JFT().getText());
+		soma += Integer.parseInt(view.getCoscjpcs2JFT().getText());
+		soma += Integer.parseInt(view.getCoscjpcs3JFT().getText());
 		return soma;
 	}
-
-//	private Integer calculaControleSobra() {
-//		int soma = 0;
-//		for (RmeLivreVOST consumo : controller.getModel().getExperimentoVO().getBaias()
-//				.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumos().getRme()) {
-//			soma += consumo.getSobra();
-//		}
-//		return soma;
-//	}
-
-//	public void fluxoErroControle() {
-//		view.getDataJFT().setText("00/00/0000");
-//		view.getFornecidaJFT().setText("00000");
-//		view.getSobraJFT().setText("00000");
-//		view.getOrdemHist5Label().setText("");
-//		view.getOrdemHist4Label().setText("");
-//		view.getOrdemHist3Label().setText("");
-//		view.getOrdemHist2Label().setText("");
-//		view.getOrdemHist1Label().setText("");
-//		view.getDataHist5Label().setText("");
-//		view.getDataHist4Label().setText("");
-//		view.getDataHist3Label().setText("");
-//		view.getDataHist2Label().setText("");
-//		view.getDataHist1Label().setText("");
-//		view.getFornecidaHist5Label().setText("");
-//		view.getFornecidaHist1Label().setText("");
-//		view.getFornecidaHist2Label().setText("");
-//		view.getFornecidaHist3Label().setText("");
-//		view.getFornecidaHist4Label().setText("");
-//		view.getSobraHist5Label().setText("");
-//		view.getSobraHist1Label().setText("");
-//		view.getSobraHist2Label().setText("");
-//		view.getSobraHist3Label().setText("");
-//		view.getSobraHist4Label().setText("");
-//	}
 
 	private void criarOrdemComponentes() {
 		order = new ArrayList<>();
@@ -397,10 +409,9 @@ public class ControllerPCRST extends KeyAdapter implements FocusListener, ItemLi
 		order.add(view.getCosph2JFT());
 		order.add(view.getCosph3JFT());
 		order.add(view.getCoscjpcs1JFT());
-		order.add(view.getCoscjpcs1JFT());
-		order.add(view.getCoscjpcs1JFT());
+		order.add(view.getCoscjpcs2JFT());
+		order.add(view.getCoscjpcs3JFT());
 		order.add(view.getControleJFT());
-		order.add(view.getOpcaoJFT());
 
 		FocusOrderPolicy newPolicy = new FocusOrderPolicy(order);
 		view.setFocusTraversalPolicy(newPolicy);

@@ -6,6 +6,7 @@ import java.util.List;
 
 import brf.suino.controller.ControllerST;
 import brf.suino.model.vo.FrigorificoVOST;
+import brf.suino.model.vo.PCRVOST;
 import brf.util.Utils;
 
 public class DigitacaoFrigoBOST {
@@ -16,8 +17,13 @@ public class DigitacaoFrigoBOST {
 	}
 
 	public String verificaData(String dataString, List<String> fases) {
+		for(PCRVOST pcr : controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr()) {
+			if(dataString.equals(pcr.getData())) {
+				return "existente";
+			}
+		}
 		if (dataString.equals("00/00/0000")) {
-			return null;
+			return "- Data fora do período do experimento.";
 		} else {
 			Date digitada = Utils.dateFromString(dataString);
 			Date inicioFase = Utils.dateFromString(controller.getModel().getExperimentoVO().getInfoExp().getInicioExp().toString());
