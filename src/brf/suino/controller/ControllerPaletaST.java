@@ -19,35 +19,35 @@ import javax.swing.SwingUtilities;
 import javax.swing.border.Border;
 
 import brf.suino.model.bo.DigitacaoFrigoBOST;
-import brf.suino.model.vo.PCRVOST;
-import brf.suino.view.ViewDigitarPCRST;
+import brf.suino.model.vo.PaletaVOST;
+import brf.suino.view.ViewDigitarPaletaST;
 import brf.util.FocusOrderPolicy;
 import brf.util.TextFormatter;
 
 public class ControllerPaletaST extends KeyAdapter implements FocusListener, ItemListener {
 	private final ControllerST controller;
-	private ViewDigitarPCRST view;
+	private ViewDigitarPaletaST view;
 	private Border defaultBorder;
 	private List<Component> order, orderHist;
 	private List<String> datasFases;
 	private DigitacaoFrigoBOST bo;
-	private List<PCRVOST> pcrHist;
+	private List<PaletaVOST> paletaHist;
 
 	public ControllerPaletaST(ControllerST controller) {
 		this.controller = controller;
 		this.bo = new DigitacaoFrigoBOST(controller);
-		this.pcrHist = new ArrayList<>();
+		this.paletaHist = new ArrayList<>();
 	}
 
 	public void openWindow(List<String> datasFases) {
 		this.datasFases = datasFases;
-		if (controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().size() > 0) {
-			this.pcrHist.addAll(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr());
+		if (controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().size() > 0) {
+			this.paletaHist.addAll(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta());
 		} else {
-			pcrHist = new ArrayList<>();
+			paletaHist = new ArrayList<>();
 		}
-		view = new ViewDigitarPCRST();
-		view.setTitle("DIGEX - Avaliação PCR");
+		view = new ViewDigitarPaletaST();
+		view.setTitle("DIGEX - Avaliação Paleta");
 		view.setResizable(false);
 		view.setLocationRelativeTo(null);
 		view.setVisible(true);
@@ -129,105 +129,150 @@ public class ControllerPaletaST extends KeyAdapter implements FocusListener, Ite
 					String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagem3JFT().getText()));
 					if (msg == null) {
 						view.getTatuagem3JFT().setEnabled(false);
-						view.getEtpaquim1JFT().setEnabled(true);
-						view.getEtpaquim1JFT().grabFocus();
+						view.getPeso1JFT().setEnabled(true);
+						view.getPeso1JFT().grabFocus();
 					} else {
 						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
 						view.getTatuagem3JFT().grabFocus();
 					}
 				}
-			} else if ((JFormattedTextField) e.getSource() == view.getEtpaquim1JFT()) {
-				TextFormatter.formatStringJFT(view.getEtpaquim1JFT(), view.getEtpaquim1JFT().getText(), 4);
-				view.getEtpaquim1JFT().setEnabled(false);
-				view.getEtpaquim2JFT().setEnabled(true);
-				view.getEtpaquim2JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getEtpaquim2JFT()) {
-				TextFormatter.formatStringJFT(view.getEtpaquim2JFT(), view.getEtpaquim2JFT().getText(), 4);
-				view.getEtpaquim2JFT().setEnabled(false);
-				view.getEtpaquim3JFT().setEnabled(true);
-				view.getEtpaquim3JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getEtpaquim3JFT()) {
-				TextFormatter.formatStringJFT(view.getEtpaquim3JFT(), view.getEtpaquim3JFT().getText(), 4);
-				view.getEtpaquim3JFT().setEnabled(false);
-				view.getPlpaquim1JFT().setEnabled(true);
-				view.getPlpaquim1JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getPlpaquim1JFT()) {
-				TextFormatter.formatStringJFT(view.getPlpaquim1JFT(), view.getPlpaquim1JFT().getText(), 4);
-				view.getPlpaquim1JFT().setEnabled(false);
-				view.getPlpaquim2JFT().setEnabled(true);
-				view.getPlpaquim2JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getPlpaquim2JFT()) {
-				TextFormatter.formatStringJFT(view.getPlpaquim2JFT(), view.getPlpaquim2JFT().getText(), 4);
-				view.getPlpaquim2JFT().setEnabled(false);
-				view.getPlpaquim3JFT().setEnabled(true);
-				view.getPlpaquim3JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getPlpaquim3JFT()) {
-				TextFormatter.formatStringJFT(view.getPlpaquim3JFT(), view.getPlpaquim3JFT().getText(), 4);
-				view.getPlpaquim3JFT().setEnabled(false);
-				view.getGim1JFT().setEnabled(true);
-				view.getGim1JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getGim1JFT()) {
-				TextFormatter.formatStringJFT(view.getGim1JFT(), view.getGim1JFT().getText(), 2);
-				view.getGim1JFT().setEnabled(false);
-				view.getGim2JFT().setEnabled(true);
-				view.getGim2JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getGim2JFT()) {
-				TextFormatter.formatStringJFT(view.getGim2JFT(), view.getGim2JFT().getText(), 2);
-				view.getGim2JFT().setEnabled(false);
-				view.getGim3JFT().setEnabled(true);
-				view.getGim3JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getGim3JFT()) {
-				TextFormatter.formatStringJFT(view.getGim3JFT(), view.getGim3JFT().getText(), 2);
-				view.getGim3JFT().setEnabled(false);
-				view.getCosph1JFT().setEnabled(true);
-				view.getCosph1JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getCosph1JFT()) {
-				TextFormatter.formatStringJFT(view.getCosph1JFT(), view.getCosph1JFT().getText(), 3);
-				view.getCosph1JFT().setEnabled(false);
-				view.getCosph2JFT().setEnabled(true);
-				view.getCosph2JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getCosph2JFT()) {
-				TextFormatter.formatStringJFT(view.getCosph2JFT(), view.getCosph2JFT().getText(), 3);
-				view.getCosph2JFT().setEnabled(false);
-				view.getCosph3JFT().setEnabled(true);
-				view.getCosph3JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getCosph3JFT()) {
-				TextFormatter.formatStringJFT(view.getCosph3JFT(), view.getCosph3JFT().getText(), 3);
-				view.getCosph3JFT().setEnabled(false);
-				view.getCoscjpcs1JFT().setEnabled(true);
-				view.getCoscjpcs1JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getCoscjpcs1JFT()) {
-				TextFormatter.formatStringJFT(view.getCoscjpcs1JFT(), view.getCoscjpcs1JFT().getText(), 2);
-				view.getCoscjpcs1JFT().setEnabled(false);
-				view.getCoscjpcs2JFT().setEnabled(true);
-				view.getCoscjpcs2JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getCoscjpcs2JFT()) {
-				TextFormatter.formatStringJFT(view.getCoscjpcs2JFT(), view.getCoscjpcs2JFT().getText(), 2);
-				view.getCoscjpcs2JFT().setEnabled(false);
-				view.getCoscjpcs3JFT().setEnabled(true);
-				view.getCoscjpcs3JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getCoscjpcs3JFT()) {
-				TextFormatter.formatStringJFT(view.getCoscjpcs3JFT(), view.getCoscjpcs3JFT().getText(), 2);
-				view.getCoscjpcs3JFT().setEnabled(false);
+			} else if ((JFormattedTextField) e.getSource() == view.getPeso1JFT()) {
+				TextFormatter.formatStringJFT(view.getPeso1JFT(), view.getPeso1JFT().getText(), 4);
+				view.getPeso1JFT().setEnabled(false);
+				view.getPeso2JFT().setEnabled(true);
+				view.getPeso2JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getPeso2JFT()) {
+				TextFormatter.formatStringJFT(view.getPeso2JFT(), view.getPeso2JFT().getText(), 4);
+				view.getPeso2JFT().setEnabled(false);
+				view.getPeso3JFT().setEnabled(true);
+				view.getPeso3JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getPeso3JFT()) {
+				TextFormatter.formatStringJFT(view.getPeso3JFT(), view.getPeso3JFT().getText(), 4);
+				view.getPeso3JFT().setEnabled(false);
+				view.getPelgo1JFT().setEnabled(true);
+				view.getPelgo1JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getPelgo1JFT()) {
+				TextFormatter.formatStringJFT(view.getPelgo1JFT(), view.getPelgo1JFT().getText(), 4);
+				view.getPelgo1JFT().setEnabled(false);
+				view.getPelgo2JFT().setEnabled(true);
+				view.getPelgo2JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getPelgo2JFT()) {
+				TextFormatter.formatStringJFT(view.getPelgo2JFT(), view.getPelgo2JFT().getText(), 4);
+				view.getPelgo2JFT().setEnabled(false);
+				view.getPelgo3JFT().setEnabled(true);
+				view.getPelgo3JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getPelgo3JFT()) {
+				TextFormatter.formatStringJFT(view.getPelgo3JFT(), view.getPelgo3JFT().getText(), 4);
+				view.getPelgo3JFT().setEnabled(false);
+				view.getPegof1JFT().setEnabled(true);
+				view.getPegof1JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getPegof1JFT()) {
+				TextFormatter.formatStringJFT(view.getPegof1JFT(), view.getPegof1JFT().getText(), 2);
+				view.getPegof1JFT().setEnabled(false);
+				view.getPegof2JFT().setEnabled(true);
+				view.getPegof2JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getPegof2JFT()) {
+				TextFormatter.formatStringJFT(view.getPegof2JFT(), view.getPegof2JFT().getText(), 2);
+				view.getPegof2JFT().setEnabled(false);
+				view.getPegof3JFT().setEnabled(true);
+				view.getPegof3JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getPegof3JFT()) {
+				TextFormatter.formatStringJFT(view.getPegof3JFT(), view.getPegof3JFT().getText(), 2);
+				view.getPegof3JFT().setEnabled(false);
+				view.getPegom1JFT().setEnabled(true);
+				view.getPegom1JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getPegom1JFT()) {
+				TextFormatter.formatStringJFT(view.getPegom1JFT(), view.getPegom1JFT().getText(), 3);
+				view.getPegom1JFT().setEnabled(false);
+				view.getPegom2JFT().setEnabled(true);
+				view.getPegom2JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getPegom2JFT()) {
+				TextFormatter.formatStringJFT(view.getPegom2JFT(), view.getPegom2JFT().getText(), 3);
+				view.getPegom2JFT().setEnabled(false);
+				view.getPegom3JFT().setEnabled(true);
+				view.getPegom3JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getPegom3JFT()) {
+				TextFormatter.formatStringJFT(view.getPegom3JFT(), view.getPegom3JFT().getText(), 3);
+				view.getPegom3JFT().setEnabled(false);
+				view.getOsste1JFT().setEnabled(true);
+				view.getOsste1JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getOsste1JFT()) {
+				TextFormatter.formatStringJFT(view.getOsste1JFT(), view.getOsste1JFT().getText(), 2);
+				view.getOsste1JFT().setEnabled(false);
+				view.getOsste2JFT().setEnabled(true);
+				view.getOsste2JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getOsste2JFT()) {
+				TextFormatter.formatStringJFT(view.getOsste2JFT(), view.getOsste2JFT().getText(), 2);
+				view.getOsste2JFT().setEnabled(false);
+				view.getOsste3JFT().setEnabled(true);
+				view.getOsste3JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getOsste3JFT()) {
+				TextFormatter.formatStringJFT(view.getOsste3JFT(), view.getOsste3JFT().getText(), 2);
+				view.getOsste3JFT().setEnabled(false);
+				view.getCama1JFT().setEnabled(true);
+				view.getCama1JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getCama1JFT()) {
+				TextFormatter.formatStringJFT(view.getCama1JFT(), view.getCama1JFT().getText(), 2);
+				view.getCama1JFT().setEnabled(false);
+				view.getCama2JFT().setEnabled(true);
+				view.getCama2JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getCama2JFT()) {
+				TextFormatter.formatStringJFT(view.getCama2JFT(), view.getCama2JFT().getText(), 2);
+				view.getCama2JFT().setEnabled(false);
+				view.getCama3JFT().setEnabled(true);
+				view.getCama3JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getCama3JFT()) {
+				TextFormatter.formatStringJFT(view.getCama3JFT(), view.getCama3JFT().getText(), 2);
+				view.getCama3JFT().setEnabled(false);
+				view.getCmsp1JFT().setEnabled(true);
+				view.getCmsp1JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getCmsp1JFT()) {
+				TextFormatter.formatStringJFT(view.getCmsp1JFT(), view.getCmsp1JFT().getText(), 2);
+				view.getCmsp1JFT().setEnabled(false);
+				view.getCmsp2JFT().setEnabled(true);
+				view.getCmsp2JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getCmsp2JFT()) {
+				TextFormatter.formatStringJFT(view.getCmsp2JFT(), view.getCmsp2JFT().getText(), 2);
+				view.getCmsp2JFT().setEnabled(false);
+				view.getCmsp3JFT().setEnabled(true);
+				view.getCmsp3JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getCmsp3JFT()) {
+				TextFormatter.formatStringJFT(view.getCmsp3JFT(), view.getCmsp3JFT().getText(), 2);
+				view.getCmsp3JFT().setEnabled(false);
+				view.getPalleca1JFT().setEnabled(true);
+				view.getPalleca1JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getPalleca1JFT()) {
+				TextFormatter.formatStringJFT(view.getPalleca1JFT(), view.getPalleca1JFT().getText(), 2);
+				view.getPalleca1JFT().setEnabled(false);
+				view.getPalleca2JFT().setEnabled(true);
+				view.getPalleca2JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getPalleca2JFT()) {
+				TextFormatter.formatStringJFT(view.getPalleca2JFT(), view.getPalleca2JFT().getText(), 2);
+				view.getPalleca2JFT().setEnabled(false);
+				view.getPalleca3JFT().setEnabled(true);
+				view.getPalleca3JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getPalleca3JFT()) {
+				TextFormatter.formatStringJFT(view.getPalleca3JFT(), view.getPalleca3JFT().getText(), 2);
+				view.getPalleca3JFT().setEnabled(false);
 				view.getControleJFT().setEnabled(true);
 				view.getControleJFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getControleJFT()) {
 				TextFormatter.formatStringJFT(view.getControleJFT(), view.getControleJFT().getText(), 5);
 				if (Integer.parseInt(view.getControleJFT().getText()) == calculaControle()) {
-					if (controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr() == null) {
-						controller.getModel().getExperimentoVO().getFrigorificoTempVOST().setPcr(new ArrayList<>());
-						salvarPCR();
+					if (controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta() == null) {
+						controller.getModel().getExperimentoVO().getFrigorificoTempVOST().setPaleta(new ArrayList<>());
+						salvarPaleta();
 					} else {
-						salvarPCR();
+						salvarPaleta();
 					}
 					updateHist();
-					view.getPnlPCR().setBorder(defaultBorder);
+					view.getPnlPaleta().setBorder(defaultBorder);
 					view.getControleJFT().setText("00000");
 					view.getControleJFT().setEnabled(false);
 					view.getTatuagem1JFT().setEnabled(true);
 					view.getTatuagem1JFT().grabFocus();
 				} else {
-					view.getPnlPCR().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
+					view.getPnlPaleta().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
 					view.getControleJFT().setEnabled(false);
 					view.getTatuagem1JFT().setEnabled(true);
 					view.getTatuagem1JFT().grabFocus();
@@ -251,50 +296,69 @@ public class ControllerPaletaST extends KeyAdapter implements FocusListener, Ite
 
 	private void carregarHistData() {
 		int index = 0;
-		for (int n = controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().size() - 1; n >= 0; n--) {
-			if (controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(n).getData()
+		for (int n = controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().size() - 1; n >= 0; n--) {
+			if (controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(n).getData()
 					.equals(view.getDataJFT().getText())) {
 				index = n;
 				break;
 			}
 		}
 		if (index != 0) {
-			view.getTatuagemHist3().setText(
-					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index).getTatuagem()));
-			view.getEtpaquimHist3().setText(
-					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index).getEtpaquim()));
-			view.getPlpaquimHist3().setText(
-					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index).getPlpaquim()));
-			view.getGimHist3().setText(
-					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index).getGim()));
-			view.getCosph24Hist3().setText(
-					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index).getCosph24()));
-			view.getCospcjpcsHist3().setText(
-					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index).getCoscjpcs()));
-			view.getTatuagemHist2().setText(String
-					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 1).getTatuagem()));
-			view.getEtpaquimHist2().setText(String
-					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 1).getEtpaquim()));
-			view.getPlpaquimHist2().setText(String
-					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 1).getPlpaquim()));
-			view.getGimHist2().setText(
-					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 1).getGim()));
-			view.getCosph24Hist2().setText(
-					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 1).getCosph24()));
-			view.getCospcjpcsHist2().setText(String
-					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 1).getCoscjpcs()));
-			view.getTatuagemHist1().setText(String
-					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 2).getTatuagem()));
-			view.getEtpaquimHist1().setText(String
-					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 2).getEtpaquim()));
-			view.getPlpaquimHist1().setText(String
-					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 2).getPlpaquim()));
-			view.getGimHist1().setText(
-					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 2).getGim()));
-			view.getCosph24Hist1().setText(
-					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 2).getCosph24()));
-			view.getCospcjpcsHist1().setText(String
-					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 2).getCoscjpcs()));
+			view.getTatuagem3Hist().setText(
+					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(index).getTatuagem()));
+			view.getPeso3Hist().setText(
+					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(index).getPalpeso()));
+			view.getPelgo3Hist().setText(
+					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(index).getPalpelgo()));
+			view.getPegof3Hist().setText(
+					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(index).getPalpegof()));
+			view.getPegom3Hist().setText(
+					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(index).getPalpegom()));
+			view.getOsste3Hist().setText(
+					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(index).getPalosste()));
+			view.getCama3Hist().setText(
+					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(index).getPalcama()));
+			view.getCmsp3Hist().setText(
+					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(index).getPalcmsp()));
+			view.getPalleca3Hist().setText(
+					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(index).getPalleca()));
+			view.getTatuagem2Hist().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(index - 1).getTatuagem()));
+			view.getPeso2Hist().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(index - 1).getPalpeso()));
+			view.getPelgo2Hist().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(index - 1).getPalpelgo()));
+			view.getPegof2Hist().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(index - 1).getPalpegof()));
+			view.getPegom2Hist().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(index - 1).getPalpegom()));
+			view.getOsste2Hist().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(index - 1).getPalosste()));
+			view.getCama2Hist().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(index - 1).getPalcama()));
+			view.getCmsp2Hist().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(index - 1).getPalcmsp()));
+			view.getPalleca2Hist().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(index - 1).getPalleca()));
+			view.getTatuagem1Hist().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(index - 2).getTatuagem()));
+			view.getPeso1Hist().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(index - 2).getPalpeso()));
+			view.getPelgo1Hist().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(index - 2).getPalpelgo()));
+			view.getPegof1Hist().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(index - 2).getPalpegof()));
+			view.getPegom1Hist().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(index - 2).getPalpegom()));
+			view.getOsste1Hist().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(index - 2).getPalosste()));
+			view.getCama1Hist().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(index - 2).getPalcama()));
+			view.getCmsp1Hist().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(index - 2).getPalcmsp()));
+			view.getPalleca1Hist().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().get(index - 2).getPalleca()));
+
 		} else {
 			limparTela();
 		}
@@ -302,86 +366,116 @@ public class ControllerPaletaST extends KeyAdapter implements FocusListener, Ite
 	}
 
 	private void limparTela() {
-		view.getTatuagemHist1().setText("");
-		view.getTatuagemHist2().setText("");
-		view.getTatuagemHist3().setText("");
-		view.getEtpaquimHist1().setText("");
-		view.getEtpaquimHist2().setText("");
-		view.getEtpaquimHist3().setText("");
-		view.getPlpaquimHist1().setText("");
-		view.getPlpaquimHist2().setText("");
-		view.getPlpaquimHist3().setText("");
-		view.getGimHist1().setText("");
-		view.getGimHist2().setText("");
-		view.getGimHist3().setText("");
-		view.getCosph24Hist1().setText("");
-		view.getCosph24Hist2().setText("");
-		view.getCosph24Hist3().setText("");
-		view.getCospcjpcsHist1().setText("");
-		view.getCospcjpcsHist2().setText("");
-		view.getCospcjpcsHist3().setText("");
+		view.getTatuagem1Hist().setText("");
+		view.getTatuagem2Hist().setText("");
+		view.getTatuagem3Hist().setText("");
+		view.getPeso1Hist().setText("");
+		view.getPeso2Hist().setText("");
+		view.getPeso3Hist().setText("");
+		view.getPelgo1Hist().setText("");
+		view.getPelgo2Hist().setText("");
+		view.getPelgo3Hist().setText("");
+		view.getPegof1Hist().setText("");
+		view.getPegof2Hist().setText("");
+		view.getPegof3Hist().setText("");
+		view.getPegom1Hist().setText("");
+		view.getPegom2Hist().setText("");
+		view.getPegom3Hist().setText("");
+		view.getOsste1Hist().setText("");
+		view.getOsste2Hist().setText("");
+		view.getOsste3Hist().setText("");
+		view.getCama1Hist().setText("");
+		view.getCama2Hist().setText("");
+		view.getCama3Hist().setText("");
+		view.getCmsp1Hist().setText("");
+		view.getCmsp2Hist().setText("");
+		view.getCmsp3Hist().setText("");
+		view.getPalleca1Hist().setText("");
+		view.getPalleca2Hist().setText("");
+		view.getPalleca3Hist().setText("");
 		view.getTatuagem1JFT().setText("");
 		view.getTatuagem2JFT().setText("");
 		view.getTatuagem3JFT().setText("");
-		view.getEtpaquim1JFT().setText("");
-		view.getEtpaquim2JFT().setText("");
-		view.getEtpaquim3JFT().setText("");
-		view.getPlpaquim1JFT().setText("");
-		view.getPlpaquim2JFT().setText("");
-		view.getPlpaquim3JFT().setText("");
-		view.getGim1JFT().setText("");
-		view.getGim2JFT().setText("");
-		view.getGim3JFT().setText("");
-		view.getCosph1JFT().setText("");
-		view.getCosph2JFT().setText("");
-		view.getCosph3JFT().setText("");
-		view.getCoscjpcs1JFT().setText("");
-		view.getCoscjpcs2JFT().setText("");
-		view.getCoscjpcs3JFT().setText("");
+		view.getPeso1JFT().setText("");
+		view.getPeso2JFT().setText("");
+		view.getPeso3JFT().setText("");
+		view.getPelgo1JFT().setText("");
+		view.getPelgo2JFT().setText("");
+		view.getPelgo3JFT().setText("");
+		view.getPegof1JFT().setText("");
+		view.getPegof2JFT().setText("");
+		view.getPegof3JFT().setText("");
+		view.getPegom1JFT().setText("");
+		view.getPegom2JFT().setText("");
+		view.getPegom3JFT().setText("");
+		view.getOsste1JFT().setText("");
+		view.getOsste2JFT().setText("");
+		view.getOsste3JFT().setText("");
+		view.getCama1JFT().setText("");
+		view.getCama2JFT().setText("");
+		view.getCama3JFT().setText("");
+		view.getCmsp1JFT().setText("");
+		view.getCmsp2JFT().setText("");
+		view.getCmsp3JFT().setText("");
+		view.getPalleca1JFT().setText("");
+		view.getPalleca2JFT().setText("");
+		view.getPalleca3JFT().setText("");
 	}
 
-	private void salvarPCR() {
-		controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr()
-				.add(new PCRVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem1JFT().getText()),
-						Integer.parseInt(view.getEtpaquim1JFT().getText()), Integer.parseInt(view.getPlpaquim1JFT().getText()),
-						Integer.parseInt(view.getGim1JFT().getText()), Integer.parseInt(view.getCosph1JFT().getText()),
-						Integer.parseInt(view.getCoscjpcs1JFT().getText())));
-		controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr()
-				.add(new PCRVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem2JFT().getText()),
-						Integer.parseInt(view.getEtpaquim2JFT().getText()), Integer.parseInt(view.getPlpaquim2JFT().getText()),
-						Integer.parseInt(view.getGim2JFT().getText()), Integer.parseInt(view.getCosph2JFT().getText()),
-						Integer.parseInt(view.getCoscjpcs2JFT().getText())));
-		controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr()
-				.add(new PCRVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem3JFT().getText()),
-						Integer.parseInt(view.getEtpaquim3JFT().getText()), Integer.parseInt(view.getPlpaquim3JFT().getText()),
-						Integer.parseInt(view.getGim3JFT().getText()), Integer.parseInt(view.getCosph3JFT().getText()),
-						Integer.parseInt(view.getCoscjpcs3JFT().getText())));
+	private void salvarPaleta() {
+		controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta()
+				.add(new PaletaVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem1JFT().getText()),
+						Integer.parseInt(view.getPeso1JFT().getText()), Integer.parseInt(view.getPelgo1JFT().getText()),
+						Integer.parseInt(view.getPegof1JFT().getText()), Integer.parseInt(view.getPegom1JFT().getText()),
+						Integer.parseInt(view.getOsste1JFT().getText()), Integer.parseInt(view.getCama1JFT().getText()),
+						Integer.parseInt(view.getCmsp1JFT().getText()), Integer.parseInt(view.getPalleca1JFT().getText())));
+		controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta()
+				.add(new PaletaVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem1JFT().getText()),
+						Integer.parseInt(view.getPeso1JFT().getText()), Integer.parseInt(view.getPelgo1JFT().getText()),
+						Integer.parseInt(view.getPegof1JFT().getText()), Integer.parseInt(view.getPegom1JFT().getText()),
+						Integer.parseInt(view.getOsste1JFT().getText()), Integer.parseInt(view.getCama1JFT().getText()),
+						Integer.parseInt(view.getCmsp1JFT().getText()), Integer.parseInt(view.getPalleca1JFT().getText())));
+		controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta()
+				.add(new PaletaVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem1JFT().getText()),
+						Integer.parseInt(view.getPeso1JFT().getText()), Integer.parseInt(view.getPelgo1JFT().getText()),
+						Integer.parseInt(view.getPegof1JFT().getText()), Integer.parseInt(view.getPegom1JFT().getText()),
+						Integer.parseInt(view.getOsste1JFT().getText()), Integer.parseInt(view.getCama1JFT().getText()),
+						Integer.parseInt(view.getCmsp1JFT().getText()), Integer.parseInt(view.getPalleca1JFT().getText())));
 		controller.getModel().getModelStateDAO().saveModelState(false);
 	}
 
 	private void loadHist() {
-		if (pcrHist.size() > 0) {
+		if (paletaHist.size() > 0) {
 			for (int k = 1; k <= 3; k++) {
 				JLabel lbl1 = (JLabel) orderHist.get(0);
-				lbl1.setText(String.valueOf(pcrHist.get(pcrHist.size() - k).getTatuagem()));
+				lbl1.setText(String.valueOf(paletaHist.get(paletaHist.size() - k).getTatuagem()));
 				orderHist.remove(0);
 				JLabel lbl2 = (JLabel) orderHist.get(0);
-				lbl2.setText(String.valueOf(pcrHist.get(pcrHist.size() - k).getEtpaquim()));
+				lbl2.setText(String.valueOf(paletaHist.get(paletaHist.size() - k).getPalpeso()));
 				orderHist.remove(0);
 				JLabel lbl3 = (JLabel) orderHist.get(0);
-				lbl3.setText(String.valueOf(pcrHist.get(pcrHist.size() - k).getPlpaquim()));
+				lbl3.setText(String.valueOf(paletaHist.get(paletaHist.size() - k).getPalpegof()));
 				orderHist.remove(0);
 				JLabel lbl4 = (JLabel) orderHist.get(0);
-				lbl4.setText(String.valueOf(pcrHist.get(pcrHist.size() - k).getGim()));
+				lbl4.setText(String.valueOf(paletaHist.get(paletaHist.size() - k).getPalpegof()));
 				orderHist.remove(0);
 				JLabel lbl5 = (JLabel) orderHist.get(0);
-				lbl5.setText(String.valueOf(pcrHist.get(pcrHist.size() - k).getCosph24()));
+				lbl5.setText(String.valueOf(paletaHist.get(paletaHist.size() - k).getPalpegom()));
 				orderHist.remove(0);
 				JLabel lbl6 = (JLabel) orderHist.get(0);
-				lbl6.setText(String.valueOf(pcrHist.get(pcrHist.size() - k).getCoscjpcs()));
+				lbl6.setText(String.valueOf(paletaHist.get(paletaHist.size() - k).getPalosste()));
+				orderHist.remove(0);
+				JLabel lbl7 = (JLabel) orderHist.get(0);
+				lbl7.setText(String.valueOf(paletaHist.get(paletaHist.size() - k).getPalcama()));
+				orderHist.remove(0);
+				JLabel lbl8 = (JLabel) orderHist.get(0);
+				lbl8.setText(String.valueOf(paletaHist.get(paletaHist.size() - k).getPalcmsp()));
+				orderHist.remove(0);
+				JLabel lbl9 = (JLabel) orderHist.get(0);
+				lbl9.setText(String.valueOf(paletaHist.get(paletaHist.size() - k).getPalleca()));
 				orderHist.remove(0);
 			}
-			view.getDataJFT().setText(pcrHist.get(pcrHist.size() - 1).getData());
+			view.getDataJFT().setText(paletaHist.get(paletaHist.size() - 1).getData());
 			criarOrdemComponentesHist();
 		} else {
 			for (Component c : orderHist) {
@@ -429,43 +523,61 @@ public class ControllerPaletaST extends KeyAdapter implements FocusListener, Ite
 	}
 
 	public void updateHist() {
-		view.getTatuagemHist1().setText(view.getTatuagem1JFT().getText());
-		view.getTatuagemHist2().setText(view.getTatuagem2JFT().getText());
-		view.getTatuagemHist3().setText(view.getTatuagem3JFT().getText());
-		view.getEtpaquimHist1().setText(view.getTatuagem1JFT().getText());
-		view.getEtpaquimHist2().setText(view.getTatuagem2JFT().getText());
-		view.getEtpaquimHist3().setText(view.getTatuagem3JFT().getText());
-		view.getPlpaquimHist1().setText(view.getPlpaquim1JFT().getText());
-		view.getPlpaquimHist2().setText(view.getPlpaquim2JFT().getText());
-		view.getPlpaquimHist3().setText(view.getPlpaquim3JFT().getText());
-		view.getGimHist1().setText(view.getGim1JFT().getText());
-		view.getGimHist2().setText(view.getGim1JFT().getText());
-		view.getGimHist3().setText(view.getGim1JFT().getText());
-		view.getCosph24Hist1().setText(view.getCosph1JFT().getText());
-		view.getCosph24Hist2().setText(view.getCosph2JFT().getText());
-		view.getCosph24Hist3().setText(view.getCosph3JFT().getText());
-		view.getCospcjpcsHist1().setText(view.getCoscjpcs1JFT().getText());
-		view.getCospcjpcsHist2().setText(view.getCoscjpcs2JFT().getText());
-		view.getCospcjpcsHist3().setText(view.getCoscjpcs3JFT().getText());
+		view.getTatuagem1Hist().setText(view.getTatuagem1JFT().getText());
+		view.getTatuagem2Hist().setText(view.getTatuagem2JFT().getText());
+		view.getTatuagem3Hist().setText(view.getTatuagem3JFT().getText());
+		view.getPeso1Hist().setText(view.getTatuagem1JFT().getText());
+		view.getPeso2Hist().setText(view.getTatuagem2JFT().getText());
+		view.getPeso3Hist().setText(view.getTatuagem3JFT().getText());
+		view.getPelgo1Hist().setText(view.getPelgo1JFT().getText());
+		view.getPelgo2Hist().setText(view.getPelgo2JFT().getText());
+		view.getPelgo3Hist().setText(view.getPelgo3JFT().getText());
+		view.getPegof1Hist().setText(view.getPegof1JFT().getText());
+		view.getPegof2Hist().setText(view.getPegof1JFT().getText());
+		view.getPegof3Hist().setText(view.getPegof1JFT().getText());
+		view.getPegom1Hist().setText(view.getPegom1JFT().getText());
+		view.getPegom2Hist().setText(view.getPegom2JFT().getText());
+		view.getPegom3Hist().setText(view.getPegom3JFT().getText());
+		view.getOsste1Hist().setText(view.getOsste1JFT().getText());
+		view.getOsste2Hist().setText(view.getOsste2JFT().getText());
+		view.getOsste3Hist().setText(view.getOsste3JFT().getText());
+		view.getCama1Hist().setText(view.getCama1Hist().getText());
+		view.getCama2Hist().setText(view.getCama2Hist().getText());
+		view.getCama3Hist().setText(view.getCama3Hist().getText());
+		view.getCmsp1Hist().setText(view.getCmsp1Hist().getText());
+		view.getCmsp2Hist().setText(view.getCmsp2Hist().getText());
+		view.getCmsp3Hist().setText(view.getCmsp3Hist().getText());
+		view.getPalleca1Hist().setText(view.getPalleca1Hist().getText());
+		view.getPalleca2Hist().setText(view.getPalleca2Hist().getText());
+		view.getPalleca3Hist().setText(view.getPalleca3Hist().getText());
 
 		view.getTatuagem1JFT().setText("");
 		view.getTatuagem2JFT().setText("");
 		view.getTatuagem3JFT().setText("");
-		view.getEtpaquim1JFT().setText("");
-		view.getEtpaquim2JFT().setText("");
-		view.getEtpaquim3JFT().setText("");
-		view.getPlpaquim1JFT().setText("");
-		view.getPlpaquim2JFT().setText("");
-		view.getPlpaquim3JFT().setText("");
-		view.getGim1JFT().setText("");
-		view.getGim2JFT().setText("");
-		view.getGim3JFT().setText("");
-		view.getCosph1JFT().setText("");
-		view.getCosph2JFT().setText("");
-		view.getCosph3JFT().setText("");
-		view.getCoscjpcs1JFT().setText("");
-		view.getCoscjpcs2JFT().setText("");
-		view.getCoscjpcs3JFT().setText("");
+		view.getPeso1JFT().setText("");
+		view.getPeso2JFT().setText("");
+		view.getPeso3JFT().setText("");
+		view.getPelgo1JFT().setText("");
+		view.getPelgo2JFT().setText("");
+		view.getPelgo3JFT().setText("");
+		view.getPegof1JFT().setText("");
+		view.getPegof2JFT().setText("");
+		view.getPegof3JFT().setText("");
+		view.getPegom1JFT().setText("");
+		view.getPegom2JFT().setText("");
+		view.getPegom3JFT().setText("");
+		view.getOsste1JFT().setText("");
+		view.getOsste2JFT().setText("");
+		view.getOsste3JFT().setText("");
+		view.getCama1JFT().setText("");
+		view.getCama2JFT().setText("");
+		view.getCama3JFT().setText("");
+		view.getCmsp1JFT().setText("");
+		view.getCmsp2JFT().setText("");
+		view.getCmsp3JFT().setText("");
+		view.getPalleca1Hist().setText("");
+		view.getPalleca2Hist().setText("");
+		view.getPalleca3Hist().setText("");
 	}
 
 	private Integer calculaControle() {
@@ -474,25 +586,38 @@ public class ControllerPaletaST extends KeyAdapter implements FocusListener, Ite
 		soma += Integer.parseInt(view.getTatuagem2JFT().getText());
 		soma += Integer.parseInt(view.getTatuagem3JFT().getText());
 
-		soma += Integer.parseInt(view.getEtpaquim1JFT().getText());
-		soma += Integer.parseInt(view.getEtpaquim2JFT().getText());
-		soma += Integer.parseInt(view.getEtpaquim3JFT().getText());
+		soma += Integer.parseInt(view.getPeso1JFT().getText());
+		soma += Integer.parseInt(view.getPeso2JFT().getText());
+		soma += Integer.parseInt(view.getPeso3JFT().getText());
 
-		soma += Integer.parseInt(view.getPlpaquim1JFT().getText());
-		soma += Integer.parseInt(view.getPlpaquim2JFT().getText());
-		soma += Integer.parseInt(view.getPlpaquim3JFT().getText());
+		soma += Integer.parseInt(view.getPelgo1JFT().getText());
+		soma += Integer.parseInt(view.getPelgo2JFT().getText());
+		soma += Integer.parseInt(view.getPelgo3JFT().getText());
 
-		soma += Integer.parseInt(view.getGim1JFT().getText());
-		soma += Integer.parseInt(view.getGim2JFT().getText());
-		soma += Integer.parseInt(view.getGim3JFT().getText());
+		soma += Integer.parseInt(view.getPegof1JFT().getText());
+		soma += Integer.parseInt(view.getPegof2JFT().getText());
+		soma += Integer.parseInt(view.getPegof3JFT().getText());
 
-		soma += Integer.parseInt(view.getCosph1JFT().getText());
-		soma += Integer.parseInt(view.getCosph2JFT().getText());
-		soma += Integer.parseInt(view.getCosph3JFT().getText());
+		soma += Integer.parseInt(view.getPegom1JFT().getText());
+		soma += Integer.parseInt(view.getPegom2JFT().getText());
+		soma += Integer.parseInt(view.getPegom3JFT().getText());
 
-		soma += Integer.parseInt(view.getCoscjpcs1JFT().getText());
-		soma += Integer.parseInt(view.getCoscjpcs2JFT().getText());
-		soma += Integer.parseInt(view.getCoscjpcs3JFT().getText());
+		soma += Integer.parseInt(view.getOsste1JFT().getText());
+		soma += Integer.parseInt(view.getOsste2JFT().getText());
+		soma += Integer.parseInt(view.getOsste3JFT().getText());
+
+		soma += Integer.parseInt(view.getCama1JFT().getText());
+		soma += Integer.parseInt(view.getCama2JFT().getText());
+		soma += Integer.parseInt(view.getCama3JFT().getText());
+
+		soma += Integer.parseInt(view.getCmsp1JFT().getText());
+		soma += Integer.parseInt(view.getCmsp2JFT().getText());
+		soma += Integer.parseInt(view.getCmsp3JFT().getText());
+
+		soma += Integer.parseInt(view.getPalleca1JFT().getText());
+		soma += Integer.parseInt(view.getPalleca2JFT().getText());
+		soma += Integer.parseInt(view.getPalleca3JFT().getText());
+
 		return soma;
 	}
 
@@ -502,21 +627,30 @@ public class ControllerPaletaST extends KeyAdapter implements FocusListener, Ite
 		order.add(view.getTatuagem1JFT());
 		order.add(view.getTatuagem2JFT());
 		order.add(view.getTatuagem3JFT());
-		order.add(view.getEtpaquim1JFT());
-		order.add(view.getEtpaquim2JFT());
-		order.add(view.getEtpaquim3JFT());
-		order.add(view.getPlpaquim1JFT());
-		order.add(view.getPlpaquim2JFT());
-		order.add(view.getPlpaquim3JFT());
-		order.add(view.getGim1JFT());
-		order.add(view.getGim2JFT());
-		order.add(view.getGim3JFT());
-		order.add(view.getCosph1JFT());
-		order.add(view.getCosph2JFT());
-		order.add(view.getCosph3JFT());
-		order.add(view.getCoscjpcs1JFT());
-		order.add(view.getCoscjpcs2JFT());
-		order.add(view.getCoscjpcs3JFT());
+		order.add(view.getPeso1JFT());
+		order.add(view.getPeso2JFT());
+		order.add(view.getPeso3JFT());
+		order.add(view.getPelgo1JFT());
+		order.add(view.getPelgo2JFT());
+		order.add(view.getPelgo3JFT());
+		order.add(view.getPegof1JFT());
+		order.add(view.getPegof2JFT());
+		order.add(view.getPegof3JFT());
+		order.add(view.getPegom1JFT());
+		order.add(view.getPegom2JFT());
+		order.add(view.getPegom3JFT());
+		order.add(view.getOsste1JFT());
+		order.add(view.getOsste2JFT());
+		order.add(view.getOsste3JFT());
+		order.add(view.getCama1JFT());
+		order.add(view.getCama2JFT());
+		order.add(view.getCama3JFT());
+		order.add(view.getCmsp1JFT());
+		order.add(view.getCmsp2JFT());
+		order.add(view.getCmsp3JFT());
+		order.add(view.getPalleca1JFT());
+		order.add(view.getPalleca2JFT());
+		order.add(view.getPalleca3JFT());
 		order.add(view.getControleJFT());
 
 		FocusOrderPolicy newPolicy = new FocusOrderPolicy(order);
@@ -526,24 +660,33 @@ public class ControllerPaletaST extends KeyAdapter implements FocusListener, Ite
 
 	private void criarOrdemComponentesHist() {
 		orderHist = new ArrayList<>();
-		orderHist.add(view.getTatuagemHist3());
-		orderHist.add(view.getEtpaquimHist3());
-		orderHist.add(view.getPlpaquimHist3());
-		orderHist.add(view.getGimHist3());
-		orderHist.add(view.getCosph24Hist3());
-		orderHist.add(view.getCospcjpcsHist3());
-		orderHist.add(view.getTatuagemHist2());
-		orderHist.add(view.getEtpaquimHist2());
-		orderHist.add(view.getPlpaquimHist2());
-		orderHist.add(view.getGimHist2());
-		orderHist.add(view.getCosph24Hist2());
-		orderHist.add(view.getCospcjpcsHist2());
-		orderHist.add(view.getTatuagemHist1());
-		orderHist.add(view.getEtpaquimHist1());
-		orderHist.add(view.getPlpaquimHist1());
-		orderHist.add(view.getGimHist1());
-		orderHist.add(view.getCosph24Hist1());
-		orderHist.add(view.getCospcjpcsHist1());
+		orderHist.add(view.getTatuagem3Hist());
+		orderHist.add(view.getPeso3Hist());
+		orderHist.add(view.getPelgo3Hist());
+		orderHist.add(view.getPegof3Hist());
+		orderHist.add(view.getPegom3Hist());
+		orderHist.add(view.getOsste3Hist());
+		orderHist.add(view.getCama3Hist());
+		orderHist.add(view.getCmsp3Hist());
+		orderHist.add(view.getPalleca3Hist());
+		orderHist.add(view.getTatuagem2Hist());
+		orderHist.add(view.getPeso2Hist());
+		orderHist.add(view.getPelgo2Hist());
+		orderHist.add(view.getPegof2Hist());
+		orderHist.add(view.getPegom2Hist());
+		orderHist.add(view.getOsste2Hist());
+		orderHist.add(view.getCama2Hist());
+		orderHist.add(view.getCmsp2Hist());
+		orderHist.add(view.getPalleca2Hist());
+		orderHist.add(view.getTatuagem1Hist());
+		orderHist.add(view.getPeso1Hist());
+		orderHist.add(view.getPelgo1Hist());
+		orderHist.add(view.getPegof1Hist());
+		orderHist.add(view.getPegom1Hist());
+		orderHist.add(view.getOsste1Hist());
+		orderHist.add(view.getCama1Hist());
+		orderHist.add(view.getCmsp1Hist());
+		orderHist.add(view.getPalleca1Hist());
 	}
 
 	@Override
@@ -552,12 +695,12 @@ public class ControllerPaletaST extends KeyAdapter implements FocusListener, Ite
 
 	}
 
-	public List<PCRVOST> getPcrHist() {
-		return pcrHist;
+	public List<PaletaVOST> getPaletaHist() {
+		return paletaHist;
 	}
 
-	public void setPcrHist(List<PCRVOST> pcrHist) {
-		this.pcrHist = pcrHist;
+	public void setPaletaHist(List<PaletaVOST> pcrHist) {
+		this.paletaHist = pcrHist;
 	}
 
 }

@@ -7,6 +7,9 @@ import java.util.logging.Logger;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import java.awt.Color;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class ViewDigitarCostadoST extends javax.swing.JFrame {
 
@@ -1191,299 +1194,233 @@ public class ViewDigitarCostadoST extends javax.swing.JFrame {
 		reta2JFT.setEnabled(false);
 
 		javax.swing.GroupLayout gl_pnlCostado = new javax.swing.GroupLayout(pnlCostado);
-		pnlCostado.setLayout(gl_pnlCostado);
-		gl_pnlCostado
-				.setHorizontalGroup(
-						gl_pnlCostado.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addGroup(gl_pnlCostado.createSequentialGroup().addContainerGap().addGroup(gl_pnlCostado
-										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(gl_pnlCostado
-												.createSequentialGroup()
-												.addComponent(tatuagem1JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 49,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(peso1JFT))
-										.addGroup(gl_pnlCostado
-												.createSequentialGroup()
-												.addComponent(tatuagem2JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 49,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(peso2JFT))
-										.addGroup(gl_pnlCostado.createSequentialGroup()
-												.addGroup(gl_pnlCostado.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-														.addComponent(tatuagem3JFT, javax.swing.GroupLayout.Alignment.TRAILING)
-														.addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 49,
-																javax.swing.GroupLayout.PREFERRED_SIZE))
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup(
-														gl_pnlCostado.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-																.addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, 62,
-																		Short.MAX_VALUE)
-																.addComponent(peso3JFT)))
-										.addGroup(gl_pnlCostado.createSequentialGroup()
-												.addGroup(gl_pnlCostado.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-														.addComponent(tatuagem3Hist, javax.swing.GroupLayout.PREFERRED_SIZE, 49,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(tatuagem2Hist, javax.swing.GroupLayout.PREFERRED_SIZE, 49,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(tatuagem1Hist, javax.swing.GroupLayout.PREFERRED_SIZE, 49,
-																javax.swing.GroupLayout.PREFERRED_SIZE))
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addGroup(gl_pnlCostado.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-														.addComponent(peso3Hist, javax.swing.GroupLayout.DEFAULT_SIZE,
-																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-														.addComponent(peso2Hist, javax.swing.GroupLayout.DEFAULT_SIZE,
-																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-														.addComponent(peso1Hist, javax.swing.GroupLayout.DEFAULT_SIZE,
-																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addGroup(gl_pnlCostado.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-												.addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
-												.addComponent(osste3JFT)
-												.addComponent(osste3Hist, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(osste2Hist, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(
-														osste1Hist, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(osste1JFT).addComponent(osste2JFT))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addGroup(
-												gl_pnlCostado.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-														.addGroup(gl_pnlCostado.createSequentialGroup().addGroup(gl_pnlCostado
-																.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-																.addComponent(pelgo1JFT, javax.swing.GroupLayout.DEFAULT_SIZE, 52,
-																		Short.MAX_VALUE)
-																.addComponent(pelgo2JFT))
-																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-																.addGroup(gl_pnlCostado
-																		.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-																		.addComponent(lombo2JFT).addComponent(lombo1JFT)))
-														.addGroup(gl_pnlCostado.createSequentialGroup().addGroup(
-																gl_pnlCostado.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-																		.addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 52,
-																				javax.swing.GroupLayout.PREFERRED_SIZE)
-																		.addComponent(pelgo3JFT, javax.swing.GroupLayout.Alignment.TRAILING,
-																				javax.swing.GroupLayout.PREFERRED_SIZE, 53,
-																				javax.swing.GroupLayout.PREFERRED_SIZE))
-																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-																.addGroup(gl_pnlCostado
-																		.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING,
-																				false)
-																		.addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, 56,
-																				Short.MAX_VALUE)
-																		.addComponent(lombo3JFT)))
-														.addGroup(gl_pnlCostado.createSequentialGroup().addGroup(gl_pnlCostado
-																.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-																.addComponent(pelgo1Hist, javax.swing.GroupLayout.DEFAULT_SIZE, 52,
-																		Short.MAX_VALUE)
-																.addComponent(pelgo2Hist, javax.swing.GroupLayout.DEFAULT_SIZE,
-																		javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-																.addComponent(pelgo3Hist, javax.swing.GroupLayout.DEFAULT_SIZE,
-																		javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-																.addGroup(gl_pnlCostado
-																		.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-																		.addComponent(lombo1Hist, javax.swing.GroupLayout.DEFAULT_SIZE,
-																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-																		.addComponent(lombo2Hist, javax.swing.GroupLayout.DEFAULT_SIZE,
-																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-																		.addComponent(lombo3Hist, javax.swing.GroupLayout.DEFAULT_SIZE,
-																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-										.addGroup(gl_pnlCostado.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addGroup(gl_pnlCostado.createSequentialGroup().addGap(7, 7, 7).addComponent(reta3JFT,
-														javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-												.addGroup(gl_pnlCostado.createSequentialGroup()
-														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-														.addGroup(gl_pnlCostado
-																.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-																.addComponent(reta2Hist, javax.swing.GroupLayout.Alignment.LEADING,
-																		javax.swing.GroupLayout.DEFAULT_SIZE,
-																		javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-																.addComponent(reta3Hist, javax.swing.GroupLayout.Alignment.LEADING,
-																		javax.swing.GroupLayout.DEFAULT_SIZE,
-																		javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-																.addComponent(jLabel18, javax.swing.GroupLayout.Alignment.LEADING,
-																		javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
-																.addComponent(reta1Hist, javax.swing.GroupLayout.DEFAULT_SIZE,
-																		javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-												.addGroup(gl_pnlCostado.createSequentialGroup()
-														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup(
-																gl_pnlCostado.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-																		.addComponent(reta1JFT).addComponent(reta2JFT))))
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addGroup(gl_pnlCostado.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
-												.addComponent(controleJFT))
-										.addContainerGap()));
-		gl_pnlCostado.setVerticalGroup(gl_pnlCostado.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gl_pnlCostado.createSequentialGroup().addContainerGap()
-						.addComponent(jLabel7).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addGroup(gl_pnlCostado.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addGroup(gl_pnlCostado.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-										.addGroup(gl_pnlCostado.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addGroup(gl_pnlCostado.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-														.addGroup(gl_pnlCostado.createSequentialGroup()
-																.addComponent(tatuagem1Hist, javax.swing.GroupLayout.PREFERRED_SIZE, 16,
-																		javax.swing.GroupLayout.PREFERRED_SIZE)
-																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-																.addComponent(tatuagem2Hist, javax.swing.GroupLayout.PREFERRED_SIZE, 16,
-																		javax.swing.GroupLayout.PREFERRED_SIZE)
-																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-																.addComponent(tatuagem3Hist, javax.swing.GroupLayout.PREFERRED_SIZE, 16,
-																		javax.swing.GroupLayout.PREFERRED_SIZE))
-														.addGroup(gl_pnlCostado.createSequentialGroup()
-																.addComponent(peso1Hist, javax.swing.GroupLayout.PREFERRED_SIZE, 16,
-																		javax.swing.GroupLayout.PREFERRED_SIZE)
-																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-																.addComponent(peso2Hist, javax.swing.GroupLayout.PREFERRED_SIZE, 16,
-																		javax.swing.GroupLayout.PREFERRED_SIZE)
-																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-																.addComponent(peso3Hist, javax.swing.GroupLayout.PREFERRED_SIZE, 16,
-																		javax.swing.GroupLayout.PREFERRED_SIZE)))
-												.addGroup(gl_pnlCostado.createSequentialGroup()
-														.addComponent(osste1Hist, javax.swing.GroupLayout.PREFERRED_SIZE, 16,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-														.addComponent(osste2Hist, javax.swing.GroupLayout.PREFERRED_SIZE, 16,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-														.addComponent(osste3Hist, javax.swing.GroupLayout.PREFERRED_SIZE, 16,
-																javax.swing.GroupLayout.PREFERRED_SIZE))
-												.addGroup(gl_pnlCostado.createSequentialGroup()
-														.addComponent(pelgo1Hist, javax.swing.GroupLayout.PREFERRED_SIZE, 16,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-														.addComponent(pelgo2Hist, javax.swing.GroupLayout.PREFERRED_SIZE, 16,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-														.addComponent(pelgo3Hist, javax.swing.GroupLayout.PREFERRED_SIZE, 16,
-																javax.swing.GroupLayout.PREFERRED_SIZE)))
-										.addGroup(gl_pnlCostado.createSequentialGroup()
-												.addComponent(lombo1Hist, javax.swing.GroupLayout.PREFERRED_SIZE, 16,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addComponent(lombo2Hist, javax.swing.GroupLayout.PREFERRED_SIZE, 16,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addComponent(lombo3Hist, javax.swing.GroupLayout.PREFERRED_SIZE, 16,
-														javax.swing.GroupLayout.PREFERRED_SIZE)))
+		gl_pnlCostado.setHorizontalGroup(
+			gl_pnlCostado.createParallelGroup(Alignment.LEADING)
+				.addComponent(jLabel7, GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
+				.addGroup(gl_pnlCostado.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(gl_pnlCostado.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_pnlCostado.createSequentialGroup()
+							.addComponent(tatuagem1JFT, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(peso1JFT, GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
+						.addGroup(gl_pnlCostado.createSequentialGroup()
+							.addGroup(gl_pnlCostado.createParallelGroup(Alignment.LEADING)
+								.addComponent(tatuagem3Hist, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+								.addComponent(tatuagem2Hist, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+								.addComponent(tatuagem1Hist, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+								.addComponent(tatuagem2JFT, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_pnlCostado.createParallelGroup(Alignment.LEADING)
+									.addComponent(tatuagem3JFT, Alignment.TRAILING, 49, 49, 49)
+									.addComponent(jLabel29, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(gl_pnlCostado.createParallelGroup(Alignment.LEADING)
+								.addComponent(peso1Hist, GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+								.addComponent(peso2Hist, GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+								.addComponent(peso3Hist, GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+								.addComponent(peso3JFT, GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+								.addComponent(peso2JFT, GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+								.addComponent(jLabel28, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(gl_pnlCostado.createParallelGroup(Alignment.LEADING)
+						.addComponent(jLabel15, GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+						.addComponent(osste3JFT, GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+						.addComponent(osste3Hist, GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+						.addComponent(osste2Hist, GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+						.addComponent(osste1Hist, GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+						.addComponent(osste1JFT, GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+						.addComponent(osste2JFT, GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(gl_pnlCostado.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_pnlCostado.createSequentialGroup()
+							.addGroup(gl_pnlCostado.createParallelGroup(Alignment.LEADING)
+								.addComponent(pelgo1Hist, GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+								.addComponent(pelgo2Hist, GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+								.addComponent(pelgo3Hist, GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(gl_pnlCostado.createParallelGroup(Alignment.LEADING)
+								.addComponent(lombo1Hist, GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+								.addComponent(lombo2Hist, GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+								.addComponent(lombo3Hist, GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)))
+						.addGroup(Alignment.TRAILING, gl_pnlCostado.createSequentialGroup()
+							.addGroup(gl_pnlCostado.createParallelGroup(Alignment.LEADING)
 								.addGroup(gl_pnlCostado.createSequentialGroup()
-										.addComponent(reta1Hist, javax.swing.GroupLayout.PREFERRED_SIZE, 16,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addComponent(reta2Hist, javax.swing.GroupLayout.PREFERRED_SIZE, 16,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(reta3Hist,
-												javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addGroup(gl_pnlCostado.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(jLabel18)
-								.addGroup(gl_pnlCostado.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-										.addComponent(jLabel28).addComponent(jLabel15))
-								.addGroup(gl_pnlCostado.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-										.addGroup(gl_pnlCostado.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addComponent(jLabel16).addComponent(jLabel29))
-										.addComponent(jLabel17)))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addGroup(gl_pnlCostado.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(
-								javax.swing.GroupLayout.Alignment.TRAILING,
-								gl_pnlCostado.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(gl_pnlCostado
-										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gl_pnlCostado
-												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addGroup(gl_pnlCostado.createSequentialGroup().addGroup(gl_pnlCostado
-														.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-														.addComponent(tatuagem1JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(peso1JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-																javax.swing.GroupLayout.PREFERRED_SIZE))
-														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-														.addGroup(gl_pnlCostado
-																.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-																.addComponent(jLabel35, javax.swing.GroupLayout.Alignment.TRAILING)
-																.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gl_pnlCostado
-																		.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-																		.addComponent(tatuagem2JFT, javax.swing.GroupLayout.PREFERRED_SIZE,
-																				20, javax.swing.GroupLayout.PREFERRED_SIZE)
-																		.addComponent(peso2JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-																				javax.swing.GroupLayout.PREFERRED_SIZE))))
-												.addGroup(gl_pnlCostado.createSequentialGroup()
-														.addComponent(osste1JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-														.addComponent(osste2JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-																javax.swing.GroupLayout.PREFERRED_SIZE)))
-										.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-												gl_pnlCostado.createSequentialGroup()
-														.addComponent(pelgo1JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-														.addComponent(pelgo2JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-																javax.swing.GroupLayout.PREFERRED_SIZE)))
+									.addComponent(jLabel16, GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+									.addGap(1))
+								.addGroup(Alignment.TRAILING, gl_pnlCostado.createSequentialGroup()
+									.addGroup(gl_pnlCostado.createParallelGroup(Alignment.TRAILING)
+										.addComponent(pelgo3JFT, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+										.addComponent(pelgo1JFT, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+										.addComponent(pelgo2JFT, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE))
+									.addPreferredGap(ComponentPlacement.RELATED)))
+							.addGroup(gl_pnlCostado.createParallelGroup(Alignment.LEADING)
+								.addGroup(Alignment.TRAILING, gl_pnlCostado.createSequentialGroup()
+									.addGap(1)
+									.addComponent(jLabel17, GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE))
+								.addComponent(lombo3JFT, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+								.addComponent(lombo2JFT, GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+								.addComponent(lombo1JFT, GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE))))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(gl_pnlCostado.createParallelGroup(Alignment.LEADING)
+						.addComponent(reta2Hist, GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+						.addComponent(reta3Hist, GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+						.addComponent(jLabel18, GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+						.addComponent(reta1Hist, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+						.addComponent(reta1JFT, 49, 52, Short.MAX_VALUE)
+						.addComponent(reta2JFT, 49, 52, Short.MAX_VALUE)
+						.addComponent(reta3JFT, GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(gl_pnlCostado.createParallelGroup(Alignment.LEADING)
+						.addComponent(jLabel35, GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
+						.addComponent(controleJFT, 78, 78, 78))
+					.addContainerGap())
+		);
+		gl_pnlCostado.setVerticalGroup(
+			gl_pnlCostado.createParallelGroup(Alignment.TRAILING)
+				.addGroup(gl_pnlCostado.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(jLabel7)
+					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addGroup(gl_pnlCostado.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_pnlCostado.createParallelGroup(Alignment.TRAILING)
+							.addGroup(gl_pnlCostado.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_pnlCostado.createSequentialGroup()
+									.addComponent(tatuagem1Hist, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(tatuagem2Hist, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(tatuagem3Hist, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_pnlCostado.createSequentialGroup()
+									.addComponent(pelgo1Hist, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(pelgo2Hist, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(pelgo3Hist, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_pnlCostado.createSequentialGroup()
+									.addGroup(gl_pnlCostado.createParallelGroup(Alignment.TRAILING)
+										.addComponent(peso1Hist, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE)
+										.addComponent(osste1Hist, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE))
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addGroup(gl_pnlCostado.createParallelGroup(Alignment.LEADING)
+										.addComponent(osste2Hist, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE)
+										.addComponent(peso2Hist, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE))
+									.addGroup(gl_pnlCostado.createParallelGroup(Alignment.LEADING)
 										.addGroup(gl_pnlCostado.createSequentialGroup()
-												.addComponent(lombo1JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(lombo2JFT,
-														javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-														javax.swing.GroupLayout.PREFERRED_SIZE)))
-								.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gl_pnlCostado.createSequentialGroup()
-										.addComponent(reta1JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(reta2JFT,
-												javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addGroup(gl_pnlCostado.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-								.addComponent(peso3JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addComponent(osste3JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addComponent(pelgo3JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addComponent(controleJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addComponent(tatuagem3JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addComponent(lombo3JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addComponent(reta3JFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addContainerGap()));
+											.addPreferredGap(ComponentPlacement.RELATED)
+											.addComponent(osste3Hist, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE))
+										.addGroup(Alignment.TRAILING, gl_pnlCostado.createSequentialGroup()
+											.addPreferredGap(ComponentPlacement.RELATED)
+											.addComponent(peso3Hist, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE)))))
+							.addGroup(gl_pnlCostado.createSequentialGroup()
+								.addComponent(lombo1Hist, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(lombo2Hist, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(lombo3Hist, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE)))
+						.addGroup(gl_pnlCostado.createSequentialGroup()
+							.addComponent(reta1Hist, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(reta2Hist, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(reta3Hist, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE)))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(gl_pnlCostado.createParallelGroup(Alignment.LEADING)
+						.addComponent(jLabel18)
+						.addGroup(gl_pnlCostado.createParallelGroup(Alignment.BASELINE)
+							.addComponent(jLabel28)
+							.addComponent(jLabel15))
+						.addGroup(gl_pnlCostado.createParallelGroup(Alignment.TRAILING)
+							.addGroup(gl_pnlCostado.createParallelGroup(Alignment.LEADING)
+								.addComponent(jLabel16)
+								.addComponent(jLabel29))
+							.addComponent(jLabel17)))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(gl_pnlCostado.createParallelGroup(Alignment.TRAILING)
+						.addGroup(gl_pnlCostado.createParallelGroup(Alignment.LEADING)
+							.addGroup(gl_pnlCostado.createParallelGroup(Alignment.TRAILING)
+								.addGroup(gl_pnlCostado.createParallelGroup(Alignment.LEADING)
+									.addGroup(gl_pnlCostado.createSequentialGroup()
+										.addComponent(tatuagem1JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.RELATED)
+										.addGroup(gl_pnlCostado.createParallelGroup(Alignment.TRAILING)
+											.addComponent(jLabel35)
+											.addComponent(tatuagem2JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)))
+									.addGroup(gl_pnlCostado.createSequentialGroup()
+										.addGroup(gl_pnlCostado.createParallelGroup(Alignment.BASELINE)
+											.addComponent(osste1JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+											.addComponent(peso1JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
+										.addPreferredGap(ComponentPlacement.RELATED)
+										.addGroup(gl_pnlCostado.createParallelGroup(Alignment.BASELINE)
+											.addComponent(osste2JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+											.addComponent(peso2JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))))
+								.addGroup(gl_pnlCostado.createSequentialGroup()
+									.addComponent(pelgo1JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(pelgo2JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)))
+							.addGroup(gl_pnlCostado.createSequentialGroup()
+								.addComponent(lombo1JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(lombo2JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)))
+						.addGroup(gl_pnlCostado.createSequentialGroup()
+							.addComponent(reta1JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(reta2JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(gl_pnlCostado.createParallelGroup(Alignment.BASELINE)
+						.addComponent(osste3JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+						.addComponent(pelgo3JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+						.addComponent(controleJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tatuagem3JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+						.addComponent(reta3JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lombo3JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+						.addComponent(peso3JFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap())
+		);
+		pnlCostado.setLayout(gl_pnlCostado);
 
 		javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-		jPanel2.setLayout(jPanel2Layout);
-		jPanel2Layout.setHorizontalGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+		jPanel2Layout.setHorizontalGroup(
+			jPanel2Layout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(jPanel2Layout.createSequentialGroup()
-						.addComponent(registrosLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addGap(16, 16, 16))
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-						.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-								.addComponent(pnlCostado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(baiaJP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addGap(19, 19, 19)));
-		jPanel2Layout
-				.setVerticalGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-								.addComponent(baiaJP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-								.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addComponent(pnlCostado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-												Short.MAX_VALUE)
-										.addGroup(jPanel2Layout.createSequentialGroup().addGap(0, 0, Short.MAX_VALUE).addComponent(jPanel7,
-												javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.PREFERRED_SIZE)))
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(registrosLabel)
-								.addGap(23, 23, 23)));
+					.addComponent(registrosLabel, GroupLayout.DEFAULT_SIZE, 666, Short.MAX_VALUE)
+					.addGap(16))
+				.addGroup(jPanel2Layout.createSequentialGroup()
+					.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+						.addComponent(pnlCostado, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(baiaJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(jPanel7, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addGap(19))
+		);
+		jPanel2Layout.setVerticalGroup(
+			jPanel2Layout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(jPanel2Layout.createSequentialGroup()
+					.addComponent(baiaJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+						.addComponent(jPanel7, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(pnlCostado, GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(registrosLabel)
+					.addGap(23))
+		);
+		jPanel2.setLayout(jPanel2Layout);
 
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+		jPanel1Layout.setHorizontalGroup(
+			jPanel1Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel1Layout.createSequentialGroup()
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+		);
+		jPanel1Layout.setVerticalGroup(
+			jPanel1Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel1Layout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, 312, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+		);
 		jPanel1.setLayout(jPanel1Layout);
-		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel1Layout.createSequentialGroup().addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-								javax.swing.GroupLayout.PREFERRED_SIZE)));
-		jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel1Layout.createSequentialGroup().addContainerGap().addComponent(jPanel2,
-						javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
 		getContentPane().setLayout(layout);

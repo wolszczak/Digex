@@ -21,13 +21,13 @@ public class PaletaVOST implements Serializable {
 
 	}
 
-	public PaletaVOST(String data, int tatuagem, int palpeso, int pelpelgo, int palpegof, int palpegom, int palosste, int palcama,
+	public PaletaVOST(String data, int tatuagem, int palpeso, int palpelgo, int palpegof, int palpegom, int palosste, int palcama,
 			int palcmsp, int palleca) {
 		super();
 		this.data = data;
 		this.tatuagem = tatuagem;
 		this.palpeso = palpeso;
-		this.palpelgo = pelpelgo;
+		this.palpelgo = palpelgo;
 		this.palpegof = palpegof;
 		this.palpegom = palpegom;
 		this.palosste = palosste;
@@ -114,6 +114,14 @@ public class PaletaVOST implements Serializable {
 
 	public void setPalcmsp(int palcmsp) {
 		this.palcmsp = palcmsp;
+	}
+
+	public int getPalpelgo() {
+		return palpelgo;
+	}
+
+	public void setPalpelgo(int palpelgo) {
+		this.palpelgo = palpelgo;
 	}
 
 }
