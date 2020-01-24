@@ -19,34 +19,34 @@ import javax.swing.SwingUtilities;
 import javax.swing.border.Border;
 
 import brf.suino.model.bo.DigitacaoFrigoBOST;
-import brf.suino.model.vo.PCRVOST;
-import brf.suino.view.ViewDigitarPCRST;
+import brf.suino.model.vo.BarrigaVOST;
+import brf.suino.view.ViewDigitarBarrigaST;
 import brf.util.FocusOrderPolicy;
 import brf.util.TextFormatter;
 
 public class ControllerBarrigaST extends KeyAdapter implements FocusListener, ItemListener {
 	private final ControllerST controller;
-	private ViewDigitarPCRST view;
+	private ViewDigitarBarrigaST view;
 	private Border defaultBorder;
 	private List<Component> order, orderHist;
 	private List<String> datasFases;
 	private DigitacaoFrigoBOST bo;
-	private List<PCRVOST> pcrHist;
+	private List<BarrigaVOST> barrigaHist;
 
 	public ControllerBarrigaST(ControllerST controller) {
 		this.controller = controller;
 		this.bo = new DigitacaoFrigoBOST(controller);
-		this.pcrHist = new ArrayList<>();
+		this.barrigaHist = new ArrayList<>();
 	}
 
 	public void openWindow(List<String> datasFases) {
 		this.datasFases = datasFases;
-		if (controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().size() > 0) {
-			this.pcrHist.addAll(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr());
+		if (controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga().size() > 0) {
+			this.barrigaHist.addAll(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga());
 		} else {
-			pcrHist = new ArrayList<>();
+			barrigaHist = new ArrayList<>();
 		}
-		view = new ViewDigitarPCRST();
+		view = new ViewDigitarBarrigaST();
 		view.setTitle("DIGEX - Avaliação PCR");
 		view.setResizable(false);
 		view.setLocationRelativeTo(null);
@@ -73,164 +73,149 @@ public class ControllerBarrigaST extends KeyAdapter implements FocusListener, It
 				} else {
 					carregarHistData();
 					view.getDataJFT().setEnabled(false);
-					view.getTatuagem1JFT().setEnabled(true);
-					view.getTatuagem1JFT().requestFocus();
+					view.getTatuagemJFT1().setEnabled(true);
+					view.getTatuagemJFT1().requestFocus();
 				}
-			} else if ((JFormattedTextField) e.getSource() == view.getTatuagem1JFT()) {
-				TextFormatter.formatStringJFT(view.getTatuagem1JFT(), view.getTatuagem1JFT().getText(), 4);
-				if (Integer.parseInt(view.getTatuagem1JFT().getText()) == 9999) {
-					view.getTatuagem1JFT().setText(" ");
-					view.getTatuagem1JFT().setEnabled(false);
+			} else if ((JFormattedTextField) e.getSource() == view.getTatuagemJFT1()) {
+				TextFormatter.formatStringJFT(view.getTatuagemJFT1(), view.getTatuagemJFT1().getText(), 4);
+				if (Integer.parseInt(view.getTatuagemJFT1().getText()) == 9999) {
+					view.getTatuagemJFT1().setText(" ");
+					view.getTatuagemJFT1().setEnabled(false);
 					view.getDataJFT().setEnabled(true);
 					view.getDataJFT().setText("00/00/0000");
 					view.getDataJFT().grabFocus();
 					limparTela();
 				} else {
-					String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagem1JFT().getText()));
+					String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagemJFT1().getText()));
 					if (msg == null) {
-						view.getTatuagem1JFT().setEnabled(false);
-						view.getTatuagem2JFT().setEnabled(true);
-						view.getTatuagem2JFT().grabFocus();
+						view.getTatuagemJFT1().setEnabled(false);
+						view.getTatuagemJFT2().setEnabled(true);
+						view.getTatuagemJFT2().grabFocus();
 					} else {
 						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
-						view.getTatuagem1JFT().grabFocus();
+						view.getTatuagemJFT1().grabFocus();
 					}
 				}
-			} else if ((JFormattedTextField) e.getSource() == view.getTatuagem2JFT()) {
-				TextFormatter.formatStringJFT(view.getTatuagem2JFT(), view.getTatuagem2JFT().getText(), 4);
-				if (Integer.parseInt(view.getTatuagem1JFT().getText()) == 9999) {
-					view.getTatuagem2JFT().setText(" ");
-					view.getTatuagem2JFT().setEnabled(false);
+			} else if ((JFormattedTextField) e.getSource() == view.getTatuagemJFT2()) {
+				TextFormatter.formatStringJFT(view.getTatuagemJFT2(), view.getTatuagemJFT2().getText(), 4);
+				if (Integer.parseInt(view.getTatuagemJFT1().getText()) == 9999) {
+					view.getTatuagemJFT2().setText(" ");
+					view.getTatuagemJFT2().setEnabled(false);
 					view.getDataJFT().setEnabled(true);
 					view.getDataJFT().setText("00/00/0000");
 					view.getDataJFT().grabFocus();
 					limparTela();
 				} else {
-					String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagem2JFT().getText()));
+					String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagemJFT2().getText()));
 					if (msg == null) {
-						view.getTatuagem2JFT().setEnabled(false);
-						view.getTatuagem3JFT().setEnabled(true);
-						view.getTatuagem3JFT().grabFocus();
+						view.getTatuagemJFT2().setEnabled(false);
+						view.getTatuagemJFT3().setEnabled(true);
+						view.getTatuagemJFT3().grabFocus();
 					} else {
 						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
-						view.getTatuagem2JFT().grabFocus();
+						view.getTatuagemJFT2().grabFocus();
 					}
 				}
-			} else if ((JFormattedTextField) e.getSource() == view.getTatuagem3JFT()) {
-				TextFormatter.formatStringJFT(view.getTatuagem3JFT(), view.getTatuagem3JFT().getText(), 4);
-				if (Integer.parseInt(view.getTatuagem1JFT().getText()) == 9999) {
-					view.getTatuagem3JFT().setText(" ");
-					view.getTatuagem3JFT().setEnabled(false);
+			} else if ((JFormattedTextField) e.getSource() == view.getTatuagemJFT3()) {
+				TextFormatter.formatStringJFT(view.getTatuagemJFT3(), view.getTatuagemJFT3().getText(), 4);
+				if (Integer.parseInt(view.getTatuagemJFT1().getText()) == 9999) {
+					view.getTatuagemJFT3().setText(" ");
+					view.getTatuagemJFT3().setEnabled(false);
 					view.getDataJFT().setEnabled(true);
 					view.getDataJFT().setText("00/00/0000");
 					view.getDataJFT().grabFocus();
 					limparTela();
 				} else {
-					String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagem3JFT().getText()));
+					String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagemJFT3().getText()));
 					if (msg == null) {
-						view.getTatuagem3JFT().setEnabled(false);
-						view.getEtpaquim1JFT().setEnabled(true);
-						view.getEtpaquim1JFT().grabFocus();
+						view.getTatuagemJFT3().setEnabled(false);
+						view.getPeso1JFT().setEnabled(true);
+						view.getPeso1JFT().grabFocus();
 					} else {
 						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
-						view.getTatuagem3JFT().grabFocus();
+						view.getTatuagemJFT3().grabFocus();
 					}
 				}
-			} else if ((JFormattedTextField) e.getSource() == view.getEtpaquim1JFT()) {
-				TextFormatter.formatStringJFT(view.getEtpaquim1JFT(), view.getEtpaquim1JFT().getText(), 4);
-				view.getEtpaquim1JFT().setEnabled(false);
-				view.getEtpaquim2JFT().setEnabled(true);
-				view.getEtpaquim2JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getEtpaquim2JFT()) {
-				TextFormatter.formatStringJFT(view.getEtpaquim2JFT(), view.getEtpaquim2JFT().getText(), 4);
-				view.getEtpaquim2JFT().setEnabled(false);
-				view.getEtpaquim3JFT().setEnabled(true);
-				view.getEtpaquim3JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getEtpaquim3JFT()) {
-				TextFormatter.formatStringJFT(view.getEtpaquim3JFT(), view.getEtpaquim3JFT().getText(), 4);
-				view.getEtpaquim3JFT().setEnabled(false);
-				view.getPlpaquim1JFT().setEnabled(true);
-				view.getPlpaquim1JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getPlpaquim1JFT()) {
-				TextFormatter.formatStringJFT(view.getPlpaquim1JFT(), view.getPlpaquim1JFT().getText(), 4);
-				view.getPlpaquim1JFT().setEnabled(false);
-				view.getPlpaquim2JFT().setEnabled(true);
-				view.getPlpaquim2JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getPlpaquim2JFT()) {
-				TextFormatter.formatStringJFT(view.getPlpaquim2JFT(), view.getPlpaquim2JFT().getText(), 4);
-				view.getPlpaquim2JFT().setEnabled(false);
-				view.getPlpaquim3JFT().setEnabled(true);
-				view.getPlpaquim3JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getPlpaquim3JFT()) {
-				TextFormatter.formatStringJFT(view.getPlpaquim3JFT(), view.getPlpaquim3JFT().getText(), 4);
-				view.getPlpaquim3JFT().setEnabled(false);
-				view.getGim1JFT().setEnabled(true);
-				view.getGim1JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getGim1JFT()) {
-				TextFormatter.formatStringJFT(view.getGim1JFT(), view.getGim1JFT().getText(), 2);
-				view.getGim1JFT().setEnabled(false);
-				view.getGim2JFT().setEnabled(true);
-				view.getGim2JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getGim2JFT()) {
-				TextFormatter.formatStringJFT(view.getGim2JFT(), view.getGim2JFT().getText(), 2);
-				view.getGim2JFT().setEnabled(false);
-				view.getGim3JFT().setEnabled(true);
-				view.getGim3JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getGim3JFT()) {
-				TextFormatter.formatStringJFT(view.getGim3JFT(), view.getGim3JFT().getText(), 2);
-				view.getGim3JFT().setEnabled(false);
-				view.getCosph1JFT().setEnabled(true);
-				view.getCosph1JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getCosph1JFT()) {
-				TextFormatter.formatStringJFT(view.getCosph1JFT(), view.getCosph1JFT().getText(), 3);
-				view.getCosph1JFT().setEnabled(false);
-				view.getCosph2JFT().setEnabled(true);
-				view.getCosph2JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getCosph2JFT()) {
-				TextFormatter.formatStringJFT(view.getCosph2JFT(), view.getCosph2JFT().getText(), 3);
-				view.getCosph2JFT().setEnabled(false);
-				view.getCosph3JFT().setEnabled(true);
-				view.getCosph3JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getCosph3JFT()) {
-				TextFormatter.formatStringJFT(view.getCosph3JFT(), view.getCosph3JFT().getText(), 3);
-				view.getCosph3JFT().setEnabled(false);
-				view.getCoscjpcs1JFT().setEnabled(true);
-				view.getCoscjpcs1JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getCoscjpcs1JFT()) {
-				TextFormatter.formatStringJFT(view.getCoscjpcs1JFT(), view.getCoscjpcs1JFT().getText(), 2);
-				view.getCoscjpcs1JFT().setEnabled(false);
-				view.getCoscjpcs2JFT().setEnabled(true);
-				view.getCoscjpcs2JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getCoscjpcs2JFT()) {
-				TextFormatter.formatStringJFT(view.getCoscjpcs2JFT(), view.getCoscjpcs2JFT().getText(), 2);
-				view.getCoscjpcs2JFT().setEnabled(false);
-				view.getCoscjpcs3JFT().setEnabled(true);
-				view.getCoscjpcs3JFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getCoscjpcs3JFT()) {
-				TextFormatter.formatStringJFT(view.getCoscjpcs3JFT(), view.getCoscjpcs3JFT().getText(), 2);
-				view.getCoscjpcs3JFT().setEnabled(false);
+			} else if ((JFormattedTextField) e.getSource() == view.getPeso1JFT()) {
+				TextFormatter.formatStringJFT(view.getPeso1JFT(), view.getPeso1JFT().getText(), 4);
+				view.getPeso1JFT().setEnabled(false);
+				view.getPeso2JFT().setEnabled(true);
+				view.getPeso2JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getPeso2JFT()) {
+				TextFormatter.formatStringJFT(view.getPeso2JFT(), view.getPeso2JFT().getText(), 4);
+				view.getPeso2JFT().setEnabled(false);
+				view.getPeso3JFT().setEnabled(true);
+				view.getPeso3JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getPeso3JFT()) {
+				TextFormatter.formatStringJFT(view.getPeso3JFT(), view.getPeso3JFT().getText(), 4);
+				view.getPeso3JFT().setEnabled(false);
+				view.getCptf1JFT().setEnabled(true);
+				view.getCptf1JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getCptf1JFT()) {
+				TextFormatter.formatStringJFT(view.getCptf1JFT(), view.getCptf1JFT().getText(), 4);
+				view.getCptf1JFT().setEnabled(false);
+				view.getCptf2JFT().setEnabled(true);
+				view.getCptf2JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getCptf2JFT()) {
+				TextFormatter.formatStringJFT(view.getCptf2JFT(), view.getCptf2JFT().getText(), 4);
+				view.getCptf2JFT().setEnabled(false);
+				view.getCptf3JFT().setEnabled(true);
+				view.getCptf3JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getCptf3JFT()) {
+				TextFormatter.formatStringJFT(view.getCptf3JFT(), view.getCptf3JFT().getText(), 4);
+				view.getCptf3JFT().setEnabled(false);
+				view.getPronta1JFT().setEnabled(true);
+				view.getPronta1JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getPronta1JFT()) {
+				TextFormatter.formatStringJFT(view.getPronta1JFT(), view.getPronta1JFT().getText(), 2);
+				view.getPronta1JFT().setEnabled(false);
+				view.getPronta2JFT().setEnabled(true);
+				view.getPronta2JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getPronta2JFT()) {
+				TextFormatter.formatStringJFT(view.getPronta2JFT(), view.getPronta2JFT().getText(), 2);
+				view.getPronta2JFT().setEnabled(false);
+				view.getPronta3JFT().setEnabled(true);
+				view.getPronta3JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getPronta3JFT()) {
+				TextFormatter.formatStringJFT(view.getPronta3JFT(), view.getPronta3JFT().getText(), 2);
+				view.getPronta3JFT().setEnabled(false);
+				view.getEsgor1JFT().setEnabled(true);
+				view.getEsgor1JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getEsgor1JFT()) {
+				TextFormatter.formatStringJFT(view.getEsgor1JFT(), view.getEsgor1JFT().getText(), 3);
+				view.getEsgor1JFT().setEnabled(false);
+				view.getEsgor2JFT().setEnabled(true);
+				view.getEsgor2JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getEsgor2JFT()) {
+				TextFormatter.formatStringJFT(view.getEsgor2JFT(), view.getEsgor2JFT().getText(), 3);
+				view.getEsgor2JFT().setEnabled(false);
+				view.getEsgor3JFT().setEnabled(true);
+				view.getEsgor3JFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getEsgor3JFT()) {
+				TextFormatter.formatStringJFT(view.getEsgor3JFT(), view.getEsgor3JFT().getText(), 3);
+				view.getEsgor3JFT().setEnabled(false);
 				view.getControleJFT().setEnabled(true);
 				view.getControleJFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getControleJFT()) {
 				TextFormatter.formatStringJFT(view.getControleJFT(), view.getControleJFT().getText(), 5);
 				if (Integer.parseInt(view.getControleJFT().getText()) == calculaControle()) {
-					if (controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr() == null) {
+					if (controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga() == null) {
 						controller.getModel().getExperimentoVO().getFrigorificoTempVOST().setPcr(new ArrayList<>());
 						salvarPCR();
 					} else {
 						salvarPCR();
 					}
 					updateHist();
-					view.getPnlPCR().setBorder(defaultBorder);
+					view.getPnlBarriga().setBorder(defaultBorder);
 					view.getControleJFT().setText("00000");
 					view.getControleJFT().setEnabled(false);
-					view.getTatuagem1JFT().setEnabled(true);
-					view.getTatuagem1JFT().grabFocus();
+					view.getTatuagemJFT1().setEnabled(true);
+					view.getTatuagemJFT1().grabFocus();
 				} else {
-					view.getPnlPCR().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
+					view.getPnlBarriga().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
 					view.getControleJFT().setEnabled(false);
-					view.getTatuagem1JFT().setEnabled(true);
-					view.getTatuagem1JFT().grabFocus();
+					view.getTatuagemJFT1().setEnabled(true);
+					view.getTatuagemJFT1().grabFocus();
 				}
 			}
 		}
@@ -251,50 +236,44 @@ public class ControllerBarrigaST extends KeyAdapter implements FocusListener, It
 
 	private void carregarHistData() {
 		int index = 0;
-		for (int n = controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().size() - 1; n >= 0; n--) {
-			if (controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(n).getData()
+		for (int n = controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga().size() - 1; n >= 0; n--) {
+			if (controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga().get(n).getData()
 					.equals(view.getDataJFT().getText())) {
 				index = n;
 				break;
 			}
 		}
 		if (index != 0) {
-			view.getTatuagemHist3().setText(
-					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index).getTatuagem()));
-			view.getEtpaquimHist3().setText(
-					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index).getEtpaquim()));
-			view.getPlpaquimHist3().setText(
-					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index).getPlpaquim()));
-			view.getGimHist3().setText(
-					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index).getGim()));
-			view.getCosph24Hist3().setText(
-					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index).getCosph24()));
-			view.getCospcjpcsHist3().setText(
-					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index).getCoscjpcs()));
+			view.getTatuagemHist3_1().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga().get(index).getTatuagem()));
+			view.getPesoHist3().setText(
+					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga().get(index).getBarpeso()));
+			view.getCptfHist3().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga().get(index).getBarcptpf()));
+			view.getProntaHist3().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga().get(index).getBarpront()));
+			view.getEsgorHist3().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga().get(index).getBaresgor()));
 			view.getTatuagemHist2().setText(String
-					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 1).getTatuagem()));
-			view.getEtpaquimHist2().setText(String
-					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 1).getEtpaquim()));
-			view.getPlpaquimHist2().setText(String
-					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 1).getPlpaquim()));
-			view.getGimHist2().setText(
-					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 1).getGim()));
-			view.getCosph24Hist2().setText(
-					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 1).getCosph24()));
-			view.getCospcjpcsHist2().setText(String
-					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 1).getCoscjpcs()));
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga().get(index - 1).getTatuagem()));
+			view.getPesoHist2().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga().get(index - 1).getBarpeso()));
+			view.getCptfHist2().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga().get(index - 1).getBarcptpf()));
+			view.getProntaHist2().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga().get(index - 1).getBarpront()));
+			view.getEsgorHist2().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga().get(index - 1).getBaresgor()));
 			view.getTatuagemHist1().setText(String
-					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 2).getTatuagem()));
-			view.getEtpaquimHist1().setText(String
-					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 2).getEtpaquim()));
-			view.getPlpaquimHist1().setText(String
-					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 2).getPlpaquim()));
-			view.getGimHist1().setText(
-					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 2).getGim()));
-			view.getCosph24Hist1().setText(
-					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 2).getCosph24()));
-			view.getCospcjpcsHist1().setText(String
-					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().get(index - 2).getCoscjpcs()));
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga().get(index - 2).getTatuagem()));
+			view.getPesoHist1().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga().get(index - 2).getBarpeso()));
+			view.getCptfHist1().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga().get(index - 2).getBarcptpf()));
+			view.getProntaHist1().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga().get(index - 2).getBarpront()));
+			view.getEsgorHist1().setText(String
+					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga().get(index - 2).getBaresgor()));
 		} else {
 			limparTela();
 		}
@@ -304,84 +283,72 @@ public class ControllerBarrigaST extends KeyAdapter implements FocusListener, It
 	private void limparTela() {
 		view.getTatuagemHist1().setText("");
 		view.getTatuagemHist2().setText("");
-		view.getTatuagemHist3().setText("");
-		view.getEtpaquimHist1().setText("");
-		view.getEtpaquimHist2().setText("");
-		view.getEtpaquimHist3().setText("");
-		view.getPlpaquimHist1().setText("");
-		view.getPlpaquimHist2().setText("");
-		view.getPlpaquimHist3().setText("");
-		view.getGimHist1().setText("");
-		view.getGimHist2().setText("");
-		view.getGimHist3().setText("");
-		view.getCosph24Hist1().setText("");
-		view.getCosph24Hist2().setText("");
-		view.getCosph24Hist3().setText("");
-		view.getCospcjpcsHist1().setText("");
-		view.getCospcjpcsHist2().setText("");
-		view.getCospcjpcsHist3().setText("");
-		view.getTatuagem1JFT().setText("");
-		view.getTatuagem2JFT().setText("");
-		view.getTatuagem3JFT().setText("");
-		view.getEtpaquim1JFT().setText("");
-		view.getEtpaquim2JFT().setText("");
-		view.getEtpaquim3JFT().setText("");
-		view.getPlpaquim1JFT().setText("");
-		view.getPlpaquim2JFT().setText("");
-		view.getPlpaquim3JFT().setText("");
-		view.getGim1JFT().setText("");
-		view.getGim2JFT().setText("");
-		view.getGim3JFT().setText("");
-		view.getCosph1JFT().setText("");
-		view.getCosph2JFT().setText("");
-		view.getCosph3JFT().setText("");
-		view.getCoscjpcs1JFT().setText("");
-		view.getCoscjpcs2JFT().setText("");
-		view.getCoscjpcs3JFT().setText("");
+		view.getTatuagemHist3_1().setText("");
+		view.getPesoHist1().setText("");
+		view.getPesoHist2().setText("");
+		view.getPesoHist3().setText("");
+		view.getCptfHist1().setText("");
+		view.getCptfHist2().setText("");
+		view.getCptfHist3().setText("");
+		view.getProntaHist1().setText("");
+		view.getProntaHist2().setText("");
+		view.getProntaHist3().setText("");
+		view.getEsgorHist1().setText("");
+		view.getEsgorHist2().setText("");
+		view.getEsgorHist3().setText("");
+		view.getTatuagemJFT1().setText("");
+		view.getTatuagemJFT2().setText("");
+		view.getTatuagemJFT3().setText("");
+		view.getPeso1JFT().setText("");
+		view.getPeso2JFT().setText("");
+		view.getPeso3JFT().setText("");
+		view.getCptf1JFT().setText("");
+		view.getCptf2JFT().setText("");
+		view.getCptf3JFT().setText("");
+		view.getPronta1JFT().setText("");
+		view.getPronta2JFT().setText("");
+		view.getPronta3JFT().setText("");
+		view.getEsgor1JFT().setText("");
+		view.getEsgor2JFT().setText("");
+		view.getEsgor3JFT().setText("");
 	}
 
 	private void salvarPCR() {
-		controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr()
-				.add(new PCRVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem1JFT().getText()),
-						Integer.parseInt(view.getEtpaquim1JFT().getText()), Integer.parseInt(view.getPlpaquim1JFT().getText()),
-						Integer.parseInt(view.getGim1JFT().getText()), Integer.parseInt(view.getCosph1JFT().getText()),
-						Integer.parseInt(view.getCoscjpcs1JFT().getText())));
-		controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr()
-				.add(new PCRVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem2JFT().getText()),
-						Integer.parseInt(view.getEtpaquim2JFT().getText()), Integer.parseInt(view.getPlpaquim2JFT().getText()),
-						Integer.parseInt(view.getGim2JFT().getText()), Integer.parseInt(view.getCosph2JFT().getText()),
-						Integer.parseInt(view.getCoscjpcs2JFT().getText())));
-		controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr()
-				.add(new PCRVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem3JFT().getText()),
-						Integer.parseInt(view.getEtpaquim3JFT().getText()), Integer.parseInt(view.getPlpaquim3JFT().getText()),
-						Integer.parseInt(view.getGim3JFT().getText()), Integer.parseInt(view.getCosph3JFT().getText()),
-						Integer.parseInt(view.getCoscjpcs3JFT().getText())));
+		controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga()
+				.add(new BarrigaVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagemJFT1().getText()),
+						Integer.parseInt(view.getPeso1JFT().getText()), Integer.parseInt(view.getCptf1JFT().getText()),
+						Integer.parseInt(view.getPronta1JFT().getText()), Integer.parseInt(view.getEsgor1JFT().getText())));
+		controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga()
+				.add(new BarrigaVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagemJFT2().getText()),
+						Integer.parseInt(view.getPeso2JFT().getText()), Integer.parseInt(view.getCptf2JFT().getText()),
+						Integer.parseInt(view.getPronta2JFT().getText()), Integer.parseInt(view.getEsgor2JFT().getText())));
+		controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga()
+				.add(new BarrigaVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagemJFT3().getText()),
+						Integer.parseInt(view.getPeso3JFT().getText()), Integer.parseInt(view.getCptf3JFT().getText()),
+						Integer.parseInt(view.getPronta3JFT().getText()), Integer.parseInt(view.getEsgor3JFT().getText())));
 		controller.getModel().getModelStateDAO().saveModelState(false);
 	}
 
 	private void loadHist() {
-		if (pcrHist.size() > 0) {
+		if (barrigaHist.size() > 0) {
 			for (int k = 1; k <= 3; k++) {
 				JLabel lbl1 = (JLabel) orderHist.get(0);
-				lbl1.setText(String.valueOf(pcrHist.get(pcrHist.size() - k).getTatuagem()));
+				lbl1.setText(String.valueOf(barrigaHist.get(barrigaHist.size() - k).getTatuagem()));
 				orderHist.remove(0);
 				JLabel lbl2 = (JLabel) orderHist.get(0);
-				lbl2.setText(String.valueOf(pcrHist.get(pcrHist.size() - k).getEtpaquim()));
+				lbl2.setText(String.valueOf(barrigaHist.get(barrigaHist.size() - k).getBarpeso()));
 				orderHist.remove(0);
 				JLabel lbl3 = (JLabel) orderHist.get(0);
-				lbl3.setText(String.valueOf(pcrHist.get(pcrHist.size() - k).getPlpaquim()));
+				lbl3.setText(String.valueOf(barrigaHist.get(barrigaHist.size() - k).getBarcptpf()));
 				orderHist.remove(0);
 				JLabel lbl4 = (JLabel) orderHist.get(0);
-				lbl4.setText(String.valueOf(pcrHist.get(pcrHist.size() - k).getGim()));
+				lbl4.setText(String.valueOf(barrigaHist.get(barrigaHist.size() - k).getBarpront()));
 				orderHist.remove(0);
 				JLabel lbl5 = (JLabel) orderHist.get(0);
-				lbl5.setText(String.valueOf(pcrHist.get(pcrHist.size() - k).getCosph24()));
-				orderHist.remove(0);
-				JLabel lbl6 = (JLabel) orderHist.get(0);
-				lbl6.setText(String.valueOf(pcrHist.get(pcrHist.size() - k).getCoscjpcs()));
+				lbl5.setText(String.valueOf(barrigaHist.get(barrigaHist.size() - k).getBaresgor()));
 				orderHist.remove(0);
 			}
-			view.getDataJFT().setText(pcrHist.get(pcrHist.size() - 1).getData());
+			view.getDataJFT().setText(barrigaHist.get(barrigaHist.size() - 1).getData());
 			criarOrdemComponentesHist();
 		} else {
 			for (Component c : orderHist) {
@@ -429,94 +396,82 @@ public class ControllerBarrigaST extends KeyAdapter implements FocusListener, It
 	}
 
 	public void updateHist() {
-		view.getTatuagemHist1().setText(view.getTatuagem1JFT().getText());
-		view.getTatuagemHist2().setText(view.getTatuagem2JFT().getText());
-		view.getTatuagemHist3().setText(view.getTatuagem3JFT().getText());
-		view.getEtpaquimHist1().setText(view.getTatuagem1JFT().getText());
-		view.getEtpaquimHist2().setText(view.getTatuagem2JFT().getText());
-		view.getEtpaquimHist3().setText(view.getTatuagem3JFT().getText());
-		view.getPlpaquimHist1().setText(view.getPlpaquim1JFT().getText());
-		view.getPlpaquimHist2().setText(view.getPlpaquim2JFT().getText());
-		view.getPlpaquimHist3().setText(view.getPlpaquim3JFT().getText());
-		view.getGimHist1().setText(view.getGim1JFT().getText());
-		view.getGimHist2().setText(view.getGim1JFT().getText());
-		view.getGimHist3().setText(view.getGim1JFT().getText());
-		view.getCosph24Hist1().setText(view.getCosph1JFT().getText());
-		view.getCosph24Hist2().setText(view.getCosph2JFT().getText());
-		view.getCosph24Hist3().setText(view.getCosph3JFT().getText());
-		view.getCospcjpcsHist1().setText(view.getCoscjpcs1JFT().getText());
-		view.getCospcjpcsHist2().setText(view.getCoscjpcs2JFT().getText());
-		view.getCospcjpcsHist3().setText(view.getCoscjpcs3JFT().getText());
+		view.getTatuagemHist1().setText(view.getTatuagemJFT1().getText());
+		view.getTatuagemHist2().setText(view.getTatuagemJFT2().getText());
+		view.getTatuagemHist3_1().setText(view.getTatuagemJFT3().getText());
+		view.getPesoHist1().setText(view.getTatuagemJFT1().getText());
+		view.getPesoHist2().setText(view.getTatuagemJFT2().getText());
+		view.getPesoHist3().setText(view.getTatuagemJFT3().getText());
+		view.getCptfHist1().setText(view.getCptf1JFT().getText());
+		view.getCptfHist2().setText(view.getCptf2JFT().getText());
+		view.getCptfHist3().setText(view.getCptf3JFT().getText());
+		view.getProntaHist1().setText(view.getPronta1JFT().getText());
+		view.getProntaHist2().setText(view.getPronta1JFT().getText());
+		view.getProntaHist3().setText(view.getPronta1JFT().getText());
+		view.getEsgorHist1().setText(view.getEsgor1JFT().getText());
+		view.getEsgorHist2().setText(view.getEsgor2JFT().getText());
+		view.getEsgorHist3().setText(view.getEsgor3JFT().getText());
 
-		view.getTatuagem1JFT().setText("");
-		view.getTatuagem2JFT().setText("");
-		view.getTatuagem3JFT().setText("");
-		view.getEtpaquim1JFT().setText("");
-		view.getEtpaquim2JFT().setText("");
-		view.getEtpaquim3JFT().setText("");
-		view.getPlpaquim1JFT().setText("");
-		view.getPlpaquim2JFT().setText("");
-		view.getPlpaquim3JFT().setText("");
-		view.getGim1JFT().setText("");
-		view.getGim2JFT().setText("");
-		view.getGim3JFT().setText("");
-		view.getCosph1JFT().setText("");
-		view.getCosph2JFT().setText("");
-		view.getCosph3JFT().setText("");
-		view.getCoscjpcs1JFT().setText("");
-		view.getCoscjpcs2JFT().setText("");
-		view.getCoscjpcs3JFT().setText("");
+		view.getTatuagemJFT1().setText("");
+		view.getTatuagemJFT2().setText("");
+		view.getTatuagemJFT3().setText("");
+		view.getPeso1JFT().setText("");
+		view.getPeso2JFT().setText("");
+		view.getPeso3JFT().setText("");
+		view.getCptf1JFT().setText("");
+		view.getCptf2JFT().setText("");
+		view.getCptf3JFT().setText("");
+		view.getPronta1JFT().setText("");
+		view.getPronta2JFT().setText("");
+		view.getPronta3JFT().setText("");
+		view.getEsgor1JFT().setText("");
+		view.getEsgor2JFT().setText("");
+		view.getEsgor3JFT().setText("");
 	}
 
 	private Integer calculaControle() {
 		int soma = 0;
-		soma += Integer.parseInt(view.getTatuagem1JFT().getText());
-		soma += Integer.parseInt(view.getTatuagem2JFT().getText());
-		soma += Integer.parseInt(view.getTatuagem3JFT().getText());
+		soma += Integer.parseInt(view.getTatuagemJFT1().getText());
+		soma += Integer.parseInt(view.getTatuagemJFT2().getText());
+		soma += Integer.parseInt(view.getTatuagemJFT3().getText());
 
-		soma += Integer.parseInt(view.getEtpaquim1JFT().getText());
-		soma += Integer.parseInt(view.getEtpaquim2JFT().getText());
-		soma += Integer.parseInt(view.getEtpaquim3JFT().getText());
+		soma += Integer.parseInt(view.getPeso1JFT().getText());
+		soma += Integer.parseInt(view.getPeso2JFT().getText());
+		soma += Integer.parseInt(view.getPeso3JFT().getText());
 
-		soma += Integer.parseInt(view.getPlpaquim1JFT().getText());
-		soma += Integer.parseInt(view.getPlpaquim2JFT().getText());
-		soma += Integer.parseInt(view.getPlpaquim3JFT().getText());
+		soma += Integer.parseInt(view.getCptf1JFT().getText());
+		soma += Integer.parseInt(view.getCptf2JFT().getText());
+		soma += Integer.parseInt(view.getCptf3JFT().getText());
 
-		soma += Integer.parseInt(view.getGim1JFT().getText());
-		soma += Integer.parseInt(view.getGim2JFT().getText());
-		soma += Integer.parseInt(view.getGim3JFT().getText());
+		soma += Integer.parseInt(view.getPronta1JFT().getText());
+		soma += Integer.parseInt(view.getPronta2JFT().getText());
+		soma += Integer.parseInt(view.getPronta3JFT().getText());
 
-		soma += Integer.parseInt(view.getCosph1JFT().getText());
-		soma += Integer.parseInt(view.getCosph2JFT().getText());
-		soma += Integer.parseInt(view.getCosph3JFT().getText());
+		soma += Integer.parseInt(view.getEsgor1JFT().getText());
+		soma += Integer.parseInt(view.getEsgor2JFT().getText());
+		soma += Integer.parseInt(view.getEsgor3JFT().getText());
 
-		soma += Integer.parseInt(view.getCoscjpcs1JFT().getText());
-		soma += Integer.parseInt(view.getCoscjpcs2JFT().getText());
-		soma += Integer.parseInt(view.getCoscjpcs3JFT().getText());
 		return soma;
 	}
 
 	private void criarOrdemComponentes() {
 		order = new ArrayList<>();
 		order.add(view.getDataJFT());
-		order.add(view.getTatuagem1JFT());
-		order.add(view.getTatuagem2JFT());
-		order.add(view.getTatuagem3JFT());
-		order.add(view.getEtpaquim1JFT());
-		order.add(view.getEtpaquim2JFT());
-		order.add(view.getEtpaquim3JFT());
-		order.add(view.getPlpaquim1JFT());
-		order.add(view.getPlpaquim2JFT());
-		order.add(view.getPlpaquim3JFT());
-		order.add(view.getGim1JFT());
-		order.add(view.getGim2JFT());
-		order.add(view.getGim3JFT());
-		order.add(view.getCosph1JFT());
-		order.add(view.getCosph2JFT());
-		order.add(view.getCosph3JFT());
-		order.add(view.getCoscjpcs1JFT());
-		order.add(view.getCoscjpcs2JFT());
-		order.add(view.getCoscjpcs3JFT());
+		order.add(view.getTatuagemJFT1());
+		order.add(view.getTatuagemJFT2());
+		order.add(view.getTatuagemJFT3());
+		order.add(view.getPeso1JFT());
+		order.add(view.getPeso2JFT());
+		order.add(view.getPeso3JFT());
+		order.add(view.getCptf1JFT());
+		order.add(view.getCptf2JFT());
+		order.add(view.getCptf3JFT());
+		order.add(view.getPronta1JFT());
+		order.add(view.getPronta2JFT());
+		order.add(view.getPronta3JFT());
+		order.add(view.getEsgor1JFT());
+		order.add(view.getEsgor2JFT());
+		order.add(view.getEsgor3JFT());
 		order.add(view.getControleJFT());
 
 		FocusOrderPolicy newPolicy = new FocusOrderPolicy(order);
@@ -526,24 +481,21 @@ public class ControllerBarrigaST extends KeyAdapter implements FocusListener, It
 
 	private void criarOrdemComponentesHist() {
 		orderHist = new ArrayList<>();
-		orderHist.add(view.getTatuagemHist3());
-		orderHist.add(view.getEtpaquimHist3());
-		orderHist.add(view.getPlpaquimHist3());
-		orderHist.add(view.getGimHist3());
-		orderHist.add(view.getCosph24Hist3());
-		orderHist.add(view.getCospcjpcsHist3());
+		orderHist.add(view.getTatuagemHist3_1());
+		orderHist.add(view.getPesoHist3());
+		orderHist.add(view.getCptfHist3());
+		orderHist.add(view.getProntaHist3());
+		orderHist.add(view.getEsgorHist3());
 		orderHist.add(view.getTatuagemHist2());
-		orderHist.add(view.getEtpaquimHist2());
-		orderHist.add(view.getPlpaquimHist2());
-		orderHist.add(view.getGimHist2());
-		orderHist.add(view.getCosph24Hist2());
-		orderHist.add(view.getCospcjpcsHist2());
+		orderHist.add(view.getPesoHist2());
+		orderHist.add(view.getCptfHist2());
+		orderHist.add(view.getProntaHist2());
+		orderHist.add(view.getEsgorHist2());
 		orderHist.add(view.getTatuagemHist1());
-		orderHist.add(view.getEtpaquimHist1());
-		orderHist.add(view.getPlpaquimHist1());
-		orderHist.add(view.getGimHist1());
-		orderHist.add(view.getCosph24Hist1());
-		orderHist.add(view.getCospcjpcsHist1());
+		orderHist.add(view.getPesoHist1());
+		orderHist.add(view.getCptfHist1());
+		orderHist.add(view.getProntaHist1());
+		orderHist.add(view.getEsgorHist1());
 	}
 
 	@Override
@@ -552,12 +504,12 @@ public class ControllerBarrigaST extends KeyAdapter implements FocusListener, It
 
 	}
 
-	public List<PCRVOST> getPcrHist() {
-		return pcrHist;
+	public List<BarrigaVOST> getBarrigaHist() {
+		return barrigaHist;
 	}
 
-	public void setPcrHist(List<PCRVOST> pcrHist) {
-		this.pcrHist = pcrHist;
+	public void setPcrHist(List<BarrigaVOST> pcrHist) {
+		this.barrigaHist = pcrHist;
 	}
 
 }

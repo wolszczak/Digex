@@ -20,9 +20,6 @@ public class ViewImportarFrigoST extends javax.swing.JFrame {
         return registrosImportadosLabel;
     }
 
-    public JLabel getVisualizarArquivoLabel() {
-        return visualizarArquivoLabel;
-    }
 
     public JFormattedTextField getOpcaoJFT() {
         return opcaoJFT;
@@ -40,16 +37,16 @@ public class ViewImportarFrigoST extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        visualizarArquivoLabel = new javax.swing.JLabel();
+        pcrLabel = new javax.swing.JLabel();
         opcaoJFT = new javax.swing.JFormattedTextField();
         jLabel41 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         registrosImportadosLabel = new javax.swing.JLabel();
-        visualizarArquivoLabel1 = new javax.swing.JLabel();
-        visualizarArquivoLabel2 = new javax.swing.JLabel();
-        visualizarArquivoLabel3 = new javax.swing.JLabel();
-        visualizarArquivoLabel4 = new javax.swing.JLabel();
+        pernilLabel = new javax.swing.JLabel();
+        paletaLabel = new javax.swing.JLabel();
+        costadoLabel = new javax.swing.JLabel();
+        barrigaLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,7 +54,7 @@ public class ViewImportarFrigoST extends javax.swing.JFrame {
 
         jLabel3.setText("1 - Importar arquivo de Frigorífico");
 
-        visualizarArquivoLabel.setText("2 - Digitar dados PCR");
+        pcrLabel.setText("2 - Digitar dados PCR");
 
         try {
             opcaoJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
@@ -76,13 +73,13 @@ public class ViewImportarFrigoST extends javax.swing.JFrame {
         registrosImportadosLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         registrosImportadosLabel.setText("0 registro(s) importado(s)");
 
-        visualizarArquivoLabel1.setText("3 - Digitar dados Pernil");
+        pernilLabel.setText("3 - Digitar dados Pernil");
 
-        visualizarArquivoLabel2.setText("4 - Digitar dados Paleta");
+        paletaLabel.setText("4 - Digitar dados Paleta");
 
-        visualizarArquivoLabel3.setText("5 - Digitar dados Costado");
+        costadoLabel.setText("5 - Digitar dados Costado");
 
-        visualizarArquivoLabel4.setText("6 - Digitar dados Barriga");
+        barrigaLabel.setText("6 - Digitar dados Barriga");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1Layout.setHorizontalGroup(
@@ -97,7 +94,7 @@ public class ViewImportarFrigoST extends javax.swing.JFrame {
         						.addComponent(jLabel2)
         						.addGroup(jPanel1Layout.createSequentialGroup()
         							.addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING, false)
-        								.addComponent(visualizarArquivoLabel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        								.addComponent(pcrLabel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         								.addComponent(jLabel3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         							.addPreferredGap(ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
         							.addComponent(registrosImportadosLabel, GroupLayout.PREFERRED_SIZE, 173, GroupLayout.PREFERRED_SIZE)))
@@ -107,11 +104,11 @@ public class ViewImportarFrigoST extends javax.swing.JFrame {
         					.addPreferredGap(ComponentPlacement.UNRELATED)
         					.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
         					.addGap(15))
-        				.addComponent(visualizarArquivoLabel1, GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
-        				.addComponent(visualizarArquivoLabel2, GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
-        				.addComponent(visualizarArquivoLabel3, GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+        				.addComponent(pernilLabel, GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+        				.addComponent(paletaLabel, GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+        				.addComponent(costadoLabel, GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
         				.addGroup(jPanel1Layout.createSequentialGroup()
-        					.addComponent(visualizarArquivoLabel4, GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+        					.addComponent(barrigaLabel, GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
         					.addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
@@ -124,15 +121,15 @@ public class ViewImportarFrigoST extends javax.swing.JFrame {
         				.addComponent(jLabel3)
         				.addComponent(registrosImportadosLabel))
         			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(visualizarArquivoLabel)
+        			.addComponent(pcrLabel)
         			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(visualizarArquivoLabel1)
+        			.addComponent(pernilLabel)
         			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(visualizarArquivoLabel2)
+        			.addComponent(paletaLabel)
         			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(visualizarArquivoLabel3)
+        			.addComponent(costadoLabel)
         			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(visualizarArquivoLabel4)
+        			.addComponent(barrigaLabel)
         			.addPreferredGap(ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
         			.addComponent(jLabel39)
         			.addPreferredGap(ComponentPlacement.RELATED)
@@ -222,11 +219,11 @@ public class ViewImportarFrigoST extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JFormattedTextField opcaoJFT;
     private javax.swing.JLabel registrosImportadosLabel;
-    private javax.swing.JLabel visualizarArquivoLabel;
-    private javax.swing.JLabel visualizarArquivoLabel1;
-    private javax.swing.JLabel visualizarArquivoLabel2;
-    private javax.swing.JLabel visualizarArquivoLabel3;
-    private javax.swing.JLabel visualizarArquivoLabel4;
+    private javax.swing.JLabel pcrLabel;
+    private javax.swing.JLabel pernilLabel;
+    private javax.swing.JLabel paletaLabel;
+    private javax.swing.JLabel costadoLabel;
+    private javax.swing.JLabel barrigaLabel;
     // End of variables declaration//GEN-END:variables
 	
 
@@ -236,5 +233,97 @@ public class ViewImportarFrigoST extends javax.swing.JFrame {
 
 	public void setRegistrosImportadosLabel(javax.swing.JLabel registrosImportadosLabel) {
 		this.registrosImportadosLabel = registrosImportadosLabel;
+	}
+
+	public javax.swing.JLabel getjLabel2() {
+		return jLabel2;
+	}
+
+	public void setjLabel2(javax.swing.JLabel jLabel2) {
+		this.jLabel2 = jLabel2;
+	}
+
+	public javax.swing.JLabel getjLabel3() {
+		return jLabel3;
+	}
+
+	public void setjLabel3(javax.swing.JLabel jLabel3) {
+		this.jLabel3 = jLabel3;
+	}
+
+	public javax.swing.JLabel getjLabel39() {
+		return jLabel39;
+	}
+
+	public void setjLabel39(javax.swing.JLabel jLabel39) {
+		this.jLabel39 = jLabel39;
+	}
+
+	public javax.swing.JLabel getjLabel40() {
+		return jLabel40;
+	}
+
+	public void setjLabel40(javax.swing.JLabel jLabel40) {
+		this.jLabel40 = jLabel40;
+	}
+
+	public javax.swing.JLabel getjLabel41() {
+		return jLabel41;
+	}
+
+	public void setjLabel41(javax.swing.JLabel jLabel41) {
+		this.jLabel41 = jLabel41;
+	}
+
+	public javax.swing.JPanel getjPanel1() {
+		return jPanel1;
+	}
+
+	public void setjPanel1(javax.swing.JPanel jPanel1) {
+		this.jPanel1 = jPanel1;
+	}
+
+	public javax.swing.JLabel getPcrLabel() {
+		return pcrLabel;
+	}
+
+	public void setPcrLabel(javax.swing.JLabel pcrLabel) {
+		this.pcrLabel = pcrLabel;
+	}
+
+	public javax.swing.JLabel getPernilLabel() {
+		return pernilLabel;
+	}
+
+	public void setPernilLabel(javax.swing.JLabel pernilLabel) {
+		this.pernilLabel = pernilLabel;
+	}
+
+	public javax.swing.JLabel getPaletaLabel() {
+		return paletaLabel;
+	}
+
+	public void setPaletaLabel(javax.swing.JLabel paletaLabel) {
+		this.paletaLabel = paletaLabel;
+	}
+
+	public javax.swing.JLabel getCostadoLabel() {
+		return costadoLabel;
+	}
+
+	public void setCostadoLabel(javax.swing.JLabel costadoLabel) {
+		this.costadoLabel = costadoLabel;
+	}
+
+	public javax.swing.JLabel getBarrigaLabel() {
+		return barrigaLabel;
+	}
+
+	public void setBarrigaLabel(javax.swing.JLabel barrigaLabel) {
+		this.barrigaLabel = barrigaLabel;
+	}
+
+	public void setOpcaoJFT(javax.swing.JFormattedTextField opcaoJFT) {
+		this.opcaoJFT = opcaoJFT;
 	}
 }

@@ -53,7 +53,11 @@ public class ControllerImportarFrigoST extends KeyAdapter implements ItemListene
 
 	public void histSetup() {
 		if (controller.getModel().getExperimentoVO().getFrigorificoVOST().size() == 0) {
-			view.getVisualizarArquivoLabel().setForeground(Color.GRAY);
+			view.getPcrLabel().setForeground(Color.GRAY);
+			view.getBarrigaLabel().setForeground(Color.GRAY);
+			view.getCostadoLabel().setForeground(Color.GRAY);
+			view.getPernilLabel().setForeground(Color.GRAY);
+			view.getPaletaLabel().setForeground(Color.GRAY);
 		} else {
 			view.getRegistrosImportadosLabel()
 					.setText(controller.getModel().getExperimentoVO().getFrigorificoVOST().size() + " registro(s) importado(s)");
@@ -107,6 +111,26 @@ public class ControllerImportarFrigoST extends KeyAdapter implements ItemListene
 			ControllerPCRST pcr = new ControllerPCRST(controller);
 			pcr.openWindow(datasFases);
 			break;
+		case KeyEvent.VK_3:
+			view.setVisible(false);
+			ControllerPernilST pernil = new ControllerPernilST(controller);
+			pernil.openWindow(datasFases);
+			break;
+		case KeyEvent.VK_4:
+			view.setVisible(false);
+			ControllerPaletaST paleta = new ControllerPaletaST(controller);
+			paleta.openWindow(datasFases);
+			break;
+		case KeyEvent.VK_5:
+			view.setVisible(false);
+			ControllerCostadoST costado = new ControllerCostadoST(controller);
+			costado.openWindow(datasFases);
+			break;
+		case KeyEvent.VK_6:
+			view.setVisible(false);
+			ControllerBarrigaST barriga = new ControllerBarrigaST(controller);
+			barriga.openWindow(datasFases);
+			break;
 		}
 	}
 
@@ -136,8 +160,8 @@ public class ControllerImportarFrigoST extends KeyAdapter implements ItemListene
 						key = false;
 					} else {
 						System.out.println("");
-						for(int x = 0; x < data.length; x++) {
-							if(data[x].equals("")) {
+						for (int x = 0; x < data.length; x++) {
+							if (data[x].equals("")) {
 								data[x] = "0";
 							}
 						}
