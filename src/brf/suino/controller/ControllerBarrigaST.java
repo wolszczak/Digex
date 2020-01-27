@@ -47,7 +47,7 @@ public class ControllerBarrigaST extends KeyAdapter implements FocusListener, It
 			barrigaHist = new ArrayList<>();
 		}
 		view = new ViewDigitarBarrigaST();
-		view.setTitle("DIGEX - Avaliação PCR");
+		view.setTitle("DIGEX - Avaliação Barriga");
 		view.setResizable(false);
 		view.setLocationRelativeTo(null);
 		view.setVisible(true);

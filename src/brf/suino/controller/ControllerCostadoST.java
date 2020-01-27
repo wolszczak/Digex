@@ -49,7 +49,7 @@ public class ControllerCostadoST extends KeyAdapter implements FocusListener, It
 			costadoHist = new ArrayList<>();
 		}
 		view = new ViewDigitarCostadoST();
-		view.setTitle("DIGEX - Avaliação PCR");
+		view.setTitle("DIGEX - Avaliação Costado");
 		view.setResizable(false);
 		view.setLocationRelativeTo(null);
 		view.setVisible(true);
