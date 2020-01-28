@@ -58,10 +58,24 @@ public class ControllerImportarFrigoST extends KeyAdapter implements ItemListene
 			view.getCostadoLabel().setForeground(Color.GRAY);
 			view.getPernilLabel().setForeground(Color.GRAY);
 			view.getPaletaLabel().setForeground(Color.GRAY);
+			histLabel();
 		} else {
 			view.getRegistrosImportadosLabel()
 					.setText(controller.getModel().getExperimentoVO().getFrigorificoVOST().size() + " registro(s) importado(s)");
+			histLabel();
 		}
+	}
+
+	private void histLabel() {
+		view.getDigitadosPCR().setText(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().size() + " digitado(s)");
+		view.getDigitadosPernil()
+				.setText(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPernil().size() + " digitado(s)");
+		view.getDigitadosPaleta()
+				.setText(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().size() + " digitado(s)");
+		view.getDigitadosCostado()
+				.setText(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getCostado().size() + " digitado(s)");
+		view.getDigitadosBarriga()
+				.setText(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga().size() + " digitado(s)");
 	}
 
 	public void resumeWindow() {
@@ -85,14 +99,10 @@ public class ControllerImportarFrigoST extends KeyAdapter implements ItemListene
 			break;
 		case KeyEvent.VK_9:
 		case KeyEvent.VK_ESCAPE:
-			int option = JOptionPane.showConfirmDialog(view, "Deseja realmente voltar para tela de escolha de experimento?",
-					"DIGEX - Voltar", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
-			if (option == 0) {
-				view.setVisible(false);
-				ControllerEscolhaDigST ce = new ControllerEscolhaDigST(controller);
-				ce.openWindow(datasFases);
-				System.out.println("Voltar");
-			}
+			view.setVisible(false);
+			ControllerEscolhaDigST ce = new ControllerEscolhaDigST(controller);
+			ce.openWindow(datasFases);
+			System.out.println("Voltar");
 			break;
 		case KeyEvent.VK_1:
 			if (controller.getModel().getExperimentoVO().getFrigorificoVOST().size() != 0) {

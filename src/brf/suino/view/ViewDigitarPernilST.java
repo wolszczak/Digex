@@ -1474,8 +1474,6 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		baiaJP.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
 		jLabel44.setText("Data");
-
-		dataJFT.setEditable(false);
 		try {
 			dataJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
 		} catch (java.text.ParseException ex) {
@@ -1564,7 +1562,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		tatuagem1JFT.setEnabled(false);
 
 		try {
-			peso3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			peso3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1572,7 +1570,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		peso3JFT.setEnabled(false);
 
 		try {
-			peso2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			peso2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1580,7 +1578,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		peso2JFT.setEnabled(false);
 
 		try {
-			peso1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			peso1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1591,7 +1589,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		jLabel30.setText("PESO");
 
 		try {
-			pelgo3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			pelgo3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1599,7 +1597,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		pelgo3JFT.setEnabled(false);
 
 		try {
-			pelgo2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			pelgo2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1607,7 +1605,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		pelgo2JFT.setEnabled(false);
 
 		try {
-			pelgo1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			pelgo1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1618,7 +1616,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		jLabel31.setText("PELGO");
 
 		try {
-			pegof3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			pegof3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1626,7 +1624,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		pegof3JFT.setEnabled(false);
 
 		try {
-			pegof2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			pegof2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1634,7 +1632,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		pegof2JFT.setEnabled(false);
 
 		try {
-			pegof1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			pegof1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1645,7 +1643,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		jLabel32.setText("PEGOF");
 
 		try {
-			pegom3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			pegom3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1653,7 +1651,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		pegom3JFT.setEnabled(false);
 
 		try {
-			pegom2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			pegom2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1661,7 +1659,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		pegom2JFT.setEnabled(false);
 
 		try {
-			pegom1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			pegom1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1672,7 +1670,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		jLabel33.setText("PEGOM");
 
 		try {
-			osste3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			osste3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1680,7 +1678,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		osste3JFT.setEnabled(false);
 
 		try {
-			osste2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			osste2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1688,7 +1686,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		osste2JFT.setEnabled(false);
 
 		try {
-			osste1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			osste1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1699,7 +1697,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		jLabel34.setText("OSSTE");
 
 		try {
-			muscu3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			muscu3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1707,7 +1705,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		muscu3JFT.setEnabled(false);
 
 		try {
-			muscu2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			muscu2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1715,7 +1713,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		muscu2JFT.setEnabled(false);
 
 		try {
-			muscu1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			muscu1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1726,7 +1724,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		jLabel36.setText("MUSCU");
 
 		try {
-			pe3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			pe3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1734,7 +1732,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		pe3JFT.setEnabled(false);
 
 		try {
-			pe2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			pe2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1742,7 +1740,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		pe2JFT.setEnabled(false);
 
 		try {
-			pe1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			pe1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1780,7 +1778,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		jLabel38.setText("JPC");
 
 		try {
-			ph3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			ph3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1788,7 +1786,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		ph3JFT.setEnabled(false);
 
 		try {
-			ph2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			ph2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1796,7 +1794,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		ph2JFT.setEnabled(false);
 
 		try {
-			ph1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			ph1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1807,7 +1805,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		jLabel39.setText("PH");
 
 		try {
-			ini3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			ini3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1815,7 +1813,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		ini3JFT.setEnabled(false);
 
 		try {
-			ini2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			ini2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1823,7 +1821,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		ini2JFT.setEnabled(false);
 
 		try {
-			ini1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			ini1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1834,7 +1832,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		jLabel40.setText("INI");
 
 		try {
-			fin3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			fin3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1842,7 +1840,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		fin3JFT.setEnabled(false);
 
 		try {
-			fin2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			fin2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1850,7 +1848,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		fin2JFT.setEnabled(false);
 
 		try {
-			fin1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			fin1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -2284,24 +2282,33 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		pnlPernil.setLayout(pnlPernilLayout);
 
 		javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-		jPanel2Layout.setHorizontalGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
-				.addGroup(jPanel2Layout.createSequentialGroup().addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
-						.addComponent(registrosLabel, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 884, Short.MAX_VALUE)
-						.addGroup(Alignment.TRAILING,
-								jPanel2Layout.createSequentialGroup().addGroup(jPanel2Layout.createParallelGroup(Alignment.TRAILING)
-										.addComponent(baiaJP, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 694, Short.MAX_VALUE)
-										.addComponent(pnlPernil, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addComponent(jPanel7, GroupLayout.PREFERRED_SIZE, 172, GroupLayout.PREFERRED_SIZE).addGap(21)))
-						.addContainerGap()));
-		jPanel2Layout.setVerticalGroup(jPanel2Layout.createParallelGroup(Alignment.TRAILING)
-				.addGroup(jPanel2Layout.createSequentialGroup().addContainerGap()
-						.addComponent(baiaJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addGroup(jPanel2Layout.createParallelGroup(Alignment.TRAILING)
-								.addComponent(pnlPernil, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-								.addComponent(jPanel7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(ComponentPlacement.RELATED).addComponent(registrosLabel).addContainerGap()));
+		jPanel2Layout.setHorizontalGroup(
+			jPanel2Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel2Layout.createSequentialGroup()
+					.addGroup(jPanel2Layout.createParallelGroup(Alignment.TRAILING)
+						.addComponent(registrosLabel, GroupLayout.DEFAULT_SIZE, 966, Short.MAX_VALUE)
+						.addGroup(jPanel2Layout.createSequentialGroup()
+							.addGroup(jPanel2Layout.createParallelGroup(Alignment.TRAILING)
+								.addComponent(baiaJP, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
+								.addComponent(pnlPernil, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(jPanel7, GroupLayout.PREFERRED_SIZE, 213, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap())
+		);
+		jPanel2Layout.setVerticalGroup(
+			jPanel2Layout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(jPanel2Layout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(jPanel2Layout.createParallelGroup(Alignment.TRAILING)
+						.addGroup(jPanel2Layout.createSequentialGroup()
+							.addComponent(baiaJP, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(pnlPernil, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(jPanel7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(registrosLabel)
+					.addContainerGap())
+		);
 		jPanel2.setLayout(jPanel2Layout);
 
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

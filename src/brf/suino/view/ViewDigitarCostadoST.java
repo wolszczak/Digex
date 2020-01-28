@@ -877,8 +877,6 @@ public class ViewDigitarCostadoST extends javax.swing.JFrame {
 		baiaJP.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
 		jLabel44.setText("Data");
-
-		dataJFT.setEditable(false);
 		try {
 			dataJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
 		} catch (java.text.ParseException ex) {

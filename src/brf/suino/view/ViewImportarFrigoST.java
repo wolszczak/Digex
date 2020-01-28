@@ -6,6 +6,8 @@ import javax.swing.JLabel;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.Color;
+import javax.swing.SwingConstants;
 
 public class ViewImportarFrigoST extends javax.swing.JFrame {
 
@@ -67,7 +69,7 @@ public class ViewImportarFrigoST extends javax.swing.JFrame {
 
         jLabel40.setText("0 - Sair");
 
-        jLabel39.setText("9 - Voltar");
+        jLabel39.setText("9/ESC - Voltar");
 
         registrosImportadosLabel.setForeground(new java.awt.Color(0, 153, 255));
         registrosImportadosLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
@@ -80,16 +82,40 @@ public class ViewImportarFrigoST extends javax.swing.JFrame {
         costadoLabel.setText("5 - Digitar dados Costado");
 
         barrigaLabel.setText("6 - Digitar dados Barriga");
+        
+        digitadosPCR = new JLabel();
+        digitadosPCR.setText("0 digitado(s)");
+        digitadosPCR.setHorizontalAlignment(SwingConstants.TRAILING);
+        digitadosPCR.setForeground(new Color(0, 153, 255));
+        
+        digitadosPernil = new JLabel();
+        digitadosPernil.setText("0 digitado(s)");
+        digitadosPernil.setHorizontalAlignment(SwingConstants.TRAILING);
+        digitadosPernil.setForeground(new Color(0, 153, 255));
+        
+        digitadosPaleta = new JLabel();
+        digitadosPaleta.setText("0 digitado(s)");
+        digitadosPaleta.setHorizontalAlignment(SwingConstants.TRAILING);
+        digitadosPaleta.setForeground(new Color(0, 153, 255));
+        
+        digitadosCostado = new JLabel();
+        digitadosCostado.setText("0 digitado(s)");
+        digitadosCostado.setHorizontalAlignment(SwingConstants.TRAILING);
+        digitadosCostado.setForeground(new Color(0, 153, 255));
+        
+        digitadosBarriga = new JLabel();
+        digitadosBarriga.setText("0 digitado(s)");
+        digitadosBarriga.setHorizontalAlignment(SwingConstants.TRAILING);
+        digitadosBarriga.setForeground(new Color(0, 153, 255));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1Layout.setHorizontalGroup(
         	jPanel1Layout.createParallelGroup(Alignment.LEADING)
         		.addGroup(jPanel1Layout.createSequentialGroup()
         			.addContainerGap()
-        			.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-        				.addGroup(Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        			.addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING)
+        				.addGroup(jPanel1Layout.createSequentialGroup()
         					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-        						.addComponent(jLabel39)
         						.addComponent(jLabel40)
         						.addComponent(jLabel2)
         						.addGroup(jPanel1Layout.createSequentialGroup()
@@ -97,18 +123,35 @@ public class ViewImportarFrigoST extends javax.swing.JFrame {
         								.addComponent(pcrLabel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         								.addComponent(jLabel3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         							.addPreferredGap(ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-        							.addComponent(registrosImportadosLabel, GroupLayout.PREFERRED_SIZE, 173, GroupLayout.PREFERRED_SIZE)))
+        							.addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING)
+        								.addComponent(registrosImportadosLabel, GroupLayout.PREFERRED_SIZE, 173, GroupLayout.PREFERRED_SIZE)
+        								.addComponent(digitadosPCR, GroupLayout.PREFERRED_SIZE, 173, GroupLayout.PREFERRED_SIZE)))
+        						.addComponent(jLabel39, GroupLayout.PREFERRED_SIZE, 153, GroupLayout.PREFERRED_SIZE))
         					.addContainerGap())
-        				.addGroup(Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        				.addGroup(jPanel1Layout.createSequentialGroup()
         					.addComponent(jLabel41)
         					.addPreferredGap(ComponentPlacement.UNRELATED)
         					.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
         					.addGap(15))
-        				.addComponent(pernilLabel, GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
-        				.addComponent(paletaLabel, GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
-        				.addComponent(costadoLabel, GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
         				.addGroup(jPanel1Layout.createSequentialGroup()
-        					.addComponent(barrigaLabel, GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+        					.addComponent(pernilLabel, GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(digitadosPernil, GroupLayout.PREFERRED_SIZE, 173, GroupLayout.PREFERRED_SIZE)
+        					.addContainerGap())
+        				.addGroup(jPanel1Layout.createSequentialGroup()
+        					.addComponent(paletaLabel, GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(digitadosPaleta, GroupLayout.PREFERRED_SIZE, 173, GroupLayout.PREFERRED_SIZE)
+        					.addContainerGap())
+        				.addGroup(jPanel1Layout.createSequentialGroup()
+        					.addComponent(costadoLabel, GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(digitadosCostado, GroupLayout.PREFERRED_SIZE, 173, GroupLayout.PREFERRED_SIZE)
+        					.addContainerGap())
+        				.addGroup(jPanel1Layout.createSequentialGroup()
+        					.addComponent(barrigaLabel, GroupLayout.DEFAULT_SIZE, 361, Short.MAX_VALUE)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(digitadosBarriga, GroupLayout.PREFERRED_SIZE, 173, GroupLayout.PREFERRED_SIZE)
         					.addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
@@ -121,15 +164,25 @@ public class ViewImportarFrigoST extends javax.swing.JFrame {
         				.addComponent(jLabel3)
         				.addComponent(registrosImportadosLabel))
         			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(pcrLabel)
+        			.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(pcrLabel)
+        				.addComponent(digitadosPCR))
         			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(pernilLabel)
+        			.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(pernilLabel)
+        				.addComponent(digitadosPernil))
         			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(paletaLabel)
+        			.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(paletaLabel)
+        				.addComponent(digitadosPaleta))
         			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(costadoLabel)
+        			.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(costadoLabel)
+        				.addComponent(digitadosCostado))
         			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(barrigaLabel)
+        			.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(barrigaLabel)
+        				.addComponent(digitadosBarriga))
         			.addPreferredGap(ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
         			.addComponent(jLabel39)
         			.addPreferredGap(ComponentPlacement.RELATED)
@@ -224,6 +277,11 @@ public class ViewImportarFrigoST extends javax.swing.JFrame {
     private javax.swing.JLabel paletaLabel;
     private javax.swing.JLabel costadoLabel;
     private javax.swing.JLabel barrigaLabel;
+    private javax.swing.JLabel digitadosPCR;
+    private javax.swing.JLabel digitadosPernil;
+    private javax.swing.JLabel digitadosPaleta;
+    private javax.swing.JLabel digitadosCostado;
+    private javax.swing.JLabel digitadosBarriga;
     // End of variables declaration//GEN-END:variables
 	
 
@@ -325,5 +383,45 @@ public class ViewImportarFrigoST extends javax.swing.JFrame {
 
 	public void setOpcaoJFT(javax.swing.JFormattedTextField opcaoJFT) {
 		this.opcaoJFT = opcaoJFT;
+	}
+
+	public javax.swing.JLabel getDigitadosPCR() {
+		return digitadosPCR;
+	}
+
+	public void setDigitadosPCR(javax.swing.JLabel digitadosPCR) {
+		this.digitadosPCR = digitadosPCR;
+	}
+
+	public javax.swing.JLabel getDigitadosPernil() {
+		return digitadosPernil;
+	}
+
+	public void setDigitadosPernil(javax.swing.JLabel digitadosPernil) {
+		this.digitadosPernil = digitadosPernil;
+	}
+
+	public javax.swing.JLabel getDigitadosPaleta() {
+		return digitadosPaleta;
+	}
+
+	public void setDigitadosPaleta(javax.swing.JLabel digitadosPaleta) {
+		this.digitadosPaleta = digitadosPaleta;
+	}
+
+	public javax.swing.JLabel getDigitadosCostado() {
+		return digitadosCostado;
+	}
+
+	public void setDigitadosCostado(javax.swing.JLabel digitadosCostado) {
+		this.digitadosCostado = digitadosCostado;
+	}
+
+	public javax.swing.JLabel getDigitadosBarriga() {
+		return digitadosBarriga;
+	}
+
+	public void setDigitadosBarriga(javax.swing.JLabel digitadosBarriga) {
+		this.digitadosBarriga = digitadosBarriga;
 	}
 }

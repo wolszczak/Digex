@@ -76,7 +76,8 @@ public class ControllerPernilST extends KeyAdapter implements FocusListener, Ite
 					view.getTatuagem1JFT().setEnabled(true);
 					view.getTatuagem1JFT().requestFocus();
 				}
-			} else if ((JFormattedTextField) e.getSource() == view.getTatuagem1JFT()) {
+			} else if ((JFormattedTextField) e.getSource() ==
+					view.getTatuagem1JFT()) {
 				TextFormatter.formatStringJFT(view.getTatuagem1JFT(), view.getTatuagem1JFT().getText(), 4);
 				if (Integer.parseInt(view.getTatuagem1JFT().getText()) == 9999) {
 					view.getTatuagem1JFT().setText(" ");
@@ -137,17 +138,17 @@ public class ControllerPernilST extends KeyAdapter implements FocusListener, Ite
 					}
 				}
 			} else if ((JFormattedTextField) e.getSource() == view.getPeso1JFT()) {
-				TextFormatter.formatStringJFT(view.getPeso1JFT(), view.getPeso1JFT().getText(), 4);
+				TextFormatter.formatStringJFT(view.getPeso1JFT(), view.getPeso1JFT().getText(), 5);
 				view.getPeso1JFT().setEnabled(false);
 				view.getPeso2JFT().setEnabled(true);
 				view.getPeso2JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getPeso2JFT()) {
-				TextFormatter.formatStringJFT(view.getPeso2JFT(), view.getPeso2JFT().getText(), 4);
+				TextFormatter.formatStringJFT(view.getPeso2JFT(), view.getPeso2JFT().getText(), 5);
 				view.getPeso2JFT().setEnabled(false);
 				view.getPeso3JFT().setEnabled(true);
 				view.getPeso3JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getPeso3JFT()) {
-				TextFormatter.formatStringJFT(view.getPeso3JFT(), view.getPeso3JFT().getText(), 4);
+				TextFormatter.formatStringJFT(view.getPeso3JFT(), view.getPeso3JFT().getText(), 5);
 				view.getPeso3JFT().setEnabled(false);
 				view.getPelgo1JFT().setEnabled(true);
 				view.getPelgo1JFT().grabFocus();
@@ -167,62 +168,62 @@ public class ControllerPernilST extends KeyAdapter implements FocusListener, Ite
 				view.getPegof1JFT().setEnabled(true);
 				view.getPegof1JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getPegof1JFT()) {
-				TextFormatter.formatStringJFT(view.getPegof1JFT(), view.getPegof1JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getPegof1JFT(), view.getPegof1JFT().getText(), 4);
 				view.getPegof1JFT().setEnabled(false);
 				view.getPegof2JFT().setEnabled(true);
 				view.getPegof2JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getPegof2JFT()) {
-				TextFormatter.formatStringJFT(view.getPegof2JFT(), view.getPegof2JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getPegof2JFT(), view.getPegof2JFT().getText(), 4);
 				view.getPegof2JFT().setEnabled(false);
 				view.getPegof3JFT().setEnabled(true);
 				view.getPegof3JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getPegof3JFT()) {
-				TextFormatter.formatStringJFT(view.getPegof3JFT(), view.getPegof3JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getPegof3JFT(), view.getPegof3JFT().getText(), 4);
 				view.getPegof3JFT().setEnabled(false);
 				view.getPegom1JFT().setEnabled(true);
 				view.getPegom1JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getPegom1JFT()) {
-				TextFormatter.formatStringJFT(view.getPegom1JFT(), view.getPegom1JFT().getText(), 3);
+				TextFormatter.formatStringJFT(view.getPegom1JFT(), view.getPegom1JFT().getText(), 4);
 				view.getPegom1JFT().setEnabled(false);
 				view.getPegom2JFT().setEnabled(true);
 				view.getPegom2JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getPegom2JFT()) {
-				TextFormatter.formatStringJFT(view.getPegom2JFT(), view.getPegom2JFT().getText(), 3);
+				TextFormatter.formatStringJFT(view.getPegom2JFT(), view.getPegom2JFT().getText(), 4);
 				view.getPegom2JFT().setEnabled(false);
 				view.getPegom3JFT().setEnabled(true);
 				view.getPegom3JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getPegom3JFT()) {
-				TextFormatter.formatStringJFT(view.getPegom3JFT(), view.getPegom3JFT().getText(), 3);
+				TextFormatter.formatStringJFT(view.getPegom3JFT(), view.getPegom3JFT().getText(), 4);
 				view.getPegom3JFT().setEnabled(false);
 				view.getOsste1JFT().setEnabled(true);
 				view.getOsste1JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getOsste1JFT()) {
-				TextFormatter.formatStringJFT(view.getOsste1JFT(), view.getOsste1JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getOsste1JFT(), view.getOsste1JFT().getText(), 4);
 				view.getOsste1JFT().setEnabled(false);
 				view.getOsste2JFT().setEnabled(true);
 				view.getOsste2JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getOsste2JFT()) {
-				TextFormatter.formatStringJFT(view.getOsste2JFT(), view.getOsste2JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getOsste2JFT(), view.getOsste2JFT().getText(), 4);
 				view.getOsste2JFT().setEnabled(false);
 				view.getOsste3JFT().setEnabled(true);
 				view.getOsste3JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getOsste3JFT()) {
-				TextFormatter.formatStringJFT(view.getOsste3JFT(), view.getOsste3JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getOsste3JFT(), view.getOsste3JFT().getText(), 4);
 				view.getOsste3JFT().setEnabled(false);
 				view.getMuscu1JFT().setEnabled(true);
 				view.getMuscu1JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getMuscu1JFT()) {
-				TextFormatter.formatStringJFT(view.getMuscu1JFT(), view.getMuscu1JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getMuscu1JFT(), view.getMuscu1JFT().getText(), 5);
 				view.getMuscu1JFT().setEnabled(false);
 				view.getMuscu2JFT().setEnabled(true);
 				view.getMuscu2JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getMuscu2JFT()) {
-				TextFormatter.formatStringJFT(view.getMuscu2JFT(), view.getMuscu2JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getMuscu2JFT(), view.getMuscu2JFT().getText(), 5);
 				view.getMuscu2JFT().setEnabled(false);
 				view.getMuscu3JFT().setEnabled(true);
 				view.getMuscu3JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getMuscu3JFT()) {
-				TextFormatter.formatStringJFT(view.getMuscu3JFT(), view.getMuscu3JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getMuscu3JFT(), view.getMuscu3JFT().getText(), 5);
 				view.getMuscu3JFT().setEnabled(false);
 				view.getPe1JFT().setEnabled(true);
 				view.getPe1JFT().grabFocus();
@@ -242,67 +243,67 @@ public class ControllerPernilST extends KeyAdapter implements FocusListener, Ite
 				view.getJpc1JFT().setEnabled(true);
 				view.getJpc1JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getJpc1JFT()) {
-				TextFormatter.formatStringJFT(view.getJpc1JFT(), view.getJpc1JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getJpc1JFT(), view.getJpc1JFT().getText(), 3);
 				view.getJpc1JFT().setEnabled(false);
 				view.getJpc2JFT().setEnabled(true);
 				view.getJpc2JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getJpc2JFT()) {
-				TextFormatter.formatStringJFT(view.getJpc2JFT(), view.getJpc2JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getJpc2JFT(), view.getJpc2JFT().getText(), 3);
 				view.getJpc2JFT().setEnabled(false);
 				view.getJpc3JFT().setEnabled(true);
 				view.getJpc3JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getJpc3JFT()) {
-				TextFormatter.formatStringJFT(view.getJpc3JFT(), view.getJpc3JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getJpc3JFT(), view.getJpc3JFT().getText(), 3);
 				view.getJpc3JFT().setEnabled(false);
 				view.getPh1JFT().setEnabled(true);
 				view.getPh1JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getPh1JFT()) {
-				TextFormatter.formatStringJFT(view.getPh1JFT(), view.getPh1JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getPh1JFT(), view.getPh1JFT().getText(), 3);
 				view.getPh1JFT().setEnabled(false);
 				view.getPh2JFT().setEnabled(true);
 				view.getPh2JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getPh2JFT()) {
-				TextFormatter.formatStringJFT(view.getPh2JFT(), view.getPh2JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getPh2JFT(), view.getPh2JFT().getText(), 3);
 				view.getPh2JFT().setEnabled(false);
 				view.getPh3JFT().setEnabled(true);
 				view.getPh3JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getPh3JFT()) {
-				TextFormatter.formatStringJFT(view.getPh3JFT(), view.getPh3JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getPh3JFT(), view.getPh3JFT().getText(), 3);
 				view.getPh3JFT().setEnabled(false);
 				view.getIni1JFT().setEnabled(true);
 				view.getIni1JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getIni1JFT()) {
-				TextFormatter.formatStringJFT(view.getIni1JFT(), view.getIni1JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getIni1JFT(), view.getIni1JFT().getText(), 3);
 				view.getIni1JFT().setEnabled(false);
 				view.getIni2JFT().setEnabled(true);
 				view.getIni2JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getIni2JFT()) {
-				TextFormatter.formatStringJFT(view.getIni2JFT(), view.getIni2JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getIni2JFT(), view.getIni2JFT().getText(), 3);
 				view.getIni2JFT().setEnabled(false);
 				view.getIni3JFT().setEnabled(true);
 				view.getIni3JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getIni3JFT()) {
-				TextFormatter.formatStringJFT(view.getIni3JFT(), view.getIni3JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getIni3JFT(), view.getIni3JFT().getText(), 3);
 				view.getIni3JFT().setEnabled(false);
 				view.getFin1JFT().setEnabled(true);
 				view.getFin1JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getFin1JFT()) {
-				TextFormatter.formatStringJFT(view.getFin1JFT(), view.getFin1JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getFin1JFT(), view.getFin1JFT().getText(), 3);
 				view.getFin1JFT().setEnabled(false);
 				view.getFin2JFT().setEnabled(true);
 				view.getFin2JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getFin2JFT()) {
-				TextFormatter.formatStringJFT(view.getFin2JFT(), view.getFin2JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getFin2JFT(), view.getFin2JFT().getText(), 3);
 				view.getFin2JFT().setEnabled(false);
 				view.getFin3JFT().setEnabled(true);
 				view.getFin3JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getFin3JFT()) {
-				TextFormatter.formatStringJFT(view.getFin3JFT(), view.getFin3JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getFin3JFT(), view.getFin3JFT().getText(), 3);
 				view.getFin3JFT().setEnabled(false);
 				view.getControleJFT().setEnabled(true);
 				view.getControleJFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getControleJFT()) {
-				TextFormatter.formatStringJFT(view.getControleJFT(), view.getControleJFT().getText(), 5);
+				TextFormatter.formatStringJFT(view.getControleJFT(), view.getControleJFT().getText(), 6);
 				if (Integer.parseInt(view.getControleJFT().getText()) == calculaControle()) {
 					if (controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPernil() == null) {
 						controller.getModel().getExperimentoVO().getFrigorificoTempVOST().setPernil(new ArrayList<>());

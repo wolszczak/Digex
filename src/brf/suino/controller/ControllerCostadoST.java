@@ -139,17 +139,17 @@ public class ControllerCostadoST extends KeyAdapter implements FocusListener, It
 					}
 				}
 			} else if ((JFormattedTextField) e.getSource() == view.getPeso1JFT()) {
-				TextFormatter.formatStringJFT(view.getPeso1JFT(), view.getPeso1JFT().getText(), 4);
+				TextFormatter.formatStringJFT(view.getPeso1JFT(), view.getPeso1JFT().getText(), 5);
 				view.getPeso1JFT().setEnabled(false);
 				view.getPeso2JFT().setEnabled(true);
 				view.getPeso2JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getPeso2JFT()) {
-				TextFormatter.formatStringJFT(view.getPeso2JFT(), view.getPeso2JFT().getText(), 4);
+				TextFormatter.formatStringJFT(view.getPeso2JFT(), view.getPeso2JFT().getText(), 5);
 				view.getPeso2JFT().setEnabled(false);
 				view.getPeso3JFT().setEnabled(true);
 				view.getPeso3JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getPeso3JFT()) {
-				TextFormatter.formatStringJFT(view.getPeso3JFT(), view.getPeso3JFT().getText(), 4);
+				TextFormatter.formatStringJFT(view.getPeso3JFT(), view.getPeso3JFT().getText(), 5);
 				view.getPeso3JFT().setEnabled(false);
 				view.getOsste1JFT().setEnabled(true);
 				view.getOsste1JFT().grabFocus();
@@ -169,47 +169,47 @@ public class ControllerCostadoST extends KeyAdapter implements FocusListener, It
 				view.getPelgo1JFT().setEnabled(true);
 				view.getPelgo1JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getPelgo1JFT()) {
-				TextFormatter.formatStringJFT(view.getPelgo1JFT(), view.getPelgo1JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getPelgo1JFT(), view.getPelgo1JFT().getText(), 4);
 				view.getPelgo1JFT().setEnabled(false);
 				view.getPelgo2JFT().setEnabled(true);
 				view.getPelgo2JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getPelgo2JFT()) {
-				TextFormatter.formatStringJFT(view.getPelgo2JFT(), view.getPelgo2JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getPelgo2JFT(), view.getPelgo2JFT().getText(), 4);
 				view.getPelgo2JFT().setEnabled(false);
 				view.getPelgo3JFT().setEnabled(true);
 				view.getPelgo3JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getPelgo3JFT()) {
-				TextFormatter.formatStringJFT(view.getPelgo3JFT(), view.getPelgo3JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getPelgo3JFT(), view.getPelgo3JFT().getText(), 4);
 				view.getPelgo3JFT().setEnabled(false);
 				view.getLombo1JFT().setEnabled(true);
 				view.getLombo1JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getLombo1JFT()) {
-				TextFormatter.formatStringJFT(view.getLombo1JFT(), view.getLombo1JFT().getText(), 3);
+				TextFormatter.formatStringJFT(view.getLombo1JFT(), view.getLombo1JFT().getText(), 4);
 				view.getLombo1JFT().setEnabled(false);
 				view.getLombo2JFT().setEnabled(true);
 				view.getLombo2JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getLombo2JFT()) {
-				TextFormatter.formatStringJFT(view.getLombo2JFT(), view.getLombo2JFT().getText(), 3);
+				TextFormatter.formatStringJFT(view.getLombo2JFT(), view.getLombo2JFT().getText(), 4);
 				view.getLombo2JFT().setEnabled(false);
 				view.getLombo3JFT().setEnabled(true);
 				view.getLombo3JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getLombo3JFT()) {
-				TextFormatter.formatStringJFT(view.getLombo3JFT(), view.getLombo3JFT().getText(), 3);
+				TextFormatter.formatStringJFT(view.getLombo3JFT(), view.getLombo3JFT().getText(), 4);
 				view.getLombo3JFT().setEnabled(false);
 				view.getReta1JFT().setEnabled(true);
 				view.getReta1JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getReta1JFT()) {
-				TextFormatter.formatStringJFT(view.getReta1JFT(), view.getReta1JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getReta1JFT(), view.getReta1JFT().getText(), 4);
 				view.getReta1JFT().setEnabled(false);
 				view.getReta2JFT().setEnabled(true);
 				view.getReta2JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getReta2JFT()) {
-				TextFormatter.formatStringJFT(view.getReta2JFT(), view.getReta2JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getReta2JFT(), view.getReta2JFT().getText(), 4);
 				view.getReta2JFT().setEnabled(false);
 				view.getReta3JFT().setEnabled(true);
 				view.getReta3JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getReta3JFT()) {
-				TextFormatter.formatStringJFT(view.getReta3JFT(), view.getReta3JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getReta3JFT(), view.getReta3JFT().getText(), 4);
 				view.getReta3JFT().setEnabled(false);
 				view.getControleJFT().setEnabled(true);
 				view.getControleJFT().grabFocus();

@@ -167,17 +167,17 @@ public class ControllerBarrigaST extends KeyAdapter implements FocusListener, It
 				view.getPronta1JFT().setEnabled(true);
 				view.getPronta1JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getPronta1JFT()) {
-				TextFormatter.formatStringJFT(view.getPronta1JFT(), view.getPronta1JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getPronta1JFT(), view.getPronta1JFT().getText(), 4);
 				view.getPronta1JFT().setEnabled(false);
 				view.getPronta2JFT().setEnabled(true);
 				view.getPronta2JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getPronta2JFT()) {
-				TextFormatter.formatStringJFT(view.getPronta2JFT(), view.getPronta2JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getPronta2JFT(), view.getPronta2JFT().getText(), 4);
 				view.getPronta2JFT().setEnabled(false);
 				view.getPronta3JFT().setEnabled(true);
 				view.getPronta3JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getPronta3JFT()) {
-				TextFormatter.formatStringJFT(view.getPronta3JFT(), view.getPronta3JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getPronta3JFT(), view.getPronta3JFT().getText(), 4);
 				view.getPronta3JFT().setEnabled(false);
 				view.getEsgor1JFT().setEnabled(true);
 				view.getEsgor1JFT().grabFocus();

@@ -137,17 +137,17 @@ public class ControllerPaletaST extends KeyAdapter implements FocusListener, Ite
 					}
 				}
 			} else if ((JFormattedTextField) e.getSource() == view.getPeso1JFT()) {
-				TextFormatter.formatStringJFT(view.getPeso1JFT(), view.getPeso1JFT().getText(), 4);
+				TextFormatter.formatStringJFT(view.getPeso1JFT(), view.getPeso1JFT().getText(), 5);
 				view.getPeso1JFT().setEnabled(false);
 				view.getPeso2JFT().setEnabled(true);
 				view.getPeso2JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getPeso2JFT()) {
-				TextFormatter.formatStringJFT(view.getPeso2JFT(), view.getPeso2JFT().getText(), 4);
+				TextFormatter.formatStringJFT(view.getPeso2JFT(), view.getPeso2JFT().getText(), 5);
 				view.getPeso2JFT().setEnabled(false);
 				view.getPeso3JFT().setEnabled(true);
 				view.getPeso3JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getPeso3JFT()) {
-				TextFormatter.formatStringJFT(view.getPeso3JFT(), view.getPeso3JFT().getText(), 4);
+				TextFormatter.formatStringJFT(view.getPeso3JFT(), view.getPeso3JFT().getText(), 5);
 				view.getPeso3JFT().setEnabled(false);
 				view.getPelgo1JFT().setEnabled(true);
 				view.getPelgo1JFT().grabFocus();
@@ -167,17 +167,17 @@ public class ControllerPaletaST extends KeyAdapter implements FocusListener, Ite
 				view.getPegof1JFT().setEnabled(true);
 				view.getPegof1JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getPegof1JFT()) {
-				TextFormatter.formatStringJFT(view.getPegof1JFT(), view.getPegof1JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getPegof1JFT(), view.getPegof1JFT().getText(), 4);
 				view.getPegof1JFT().setEnabled(false);
 				view.getPegof2JFT().setEnabled(true);
 				view.getPegof2JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getPegof2JFT()) {
-				TextFormatter.formatStringJFT(view.getPegof2JFT(), view.getPegof2JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getPegof2JFT(), view.getPegof2JFT().getText(), 4);
 				view.getPegof2JFT().setEnabled(false);
 				view.getPegof3JFT().setEnabled(true);
 				view.getPegof3JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getPegof3JFT()) {
-				TextFormatter.formatStringJFT(view.getPegof3JFT(), view.getPegof3JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getPegof3JFT(), view.getPegof3JFT().getText(), 4);
 				view.getPegof3JFT().setEnabled(false);
 				view.getPegom1JFT().setEnabled(true);
 				view.getPegom1JFT().grabFocus();
@@ -197,47 +197,47 @@ public class ControllerPaletaST extends KeyAdapter implements FocusListener, Ite
 				view.getOsste1JFT().setEnabled(true);
 				view.getOsste1JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getOsste1JFT()) {
-				TextFormatter.formatStringJFT(view.getOsste1JFT(), view.getOsste1JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getOsste1JFT(), view.getOsste1JFT().getText(), 4);
 				view.getOsste1JFT().setEnabled(false);
 				view.getOsste2JFT().setEnabled(true);
 				view.getOsste2JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getOsste2JFT()) {
-				TextFormatter.formatStringJFT(view.getOsste2JFT(), view.getOsste2JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getOsste2JFT(), view.getOsste2JFT().getText(), 4);
 				view.getOsste2JFT().setEnabled(false);
 				view.getOsste3JFT().setEnabled(true);
 				view.getOsste3JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getOsste3JFT()) {
-				TextFormatter.formatStringJFT(view.getOsste3JFT(), view.getOsste3JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getOsste3JFT(), view.getOsste3JFT().getText(), 4);
 				view.getOsste3JFT().setEnabled(false);
 				view.getCama1JFT().setEnabled(true);
 				view.getCama1JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getCama1JFT()) {
-				TextFormatter.formatStringJFT(view.getCama1JFT(), view.getCama1JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getCama1JFT(), view.getCama1JFT().getText(), 4);
 				view.getCama1JFT().setEnabled(false);
 				view.getCama2JFT().setEnabled(true);
 				view.getCama2JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getCama2JFT()) {
-				TextFormatter.formatStringJFT(view.getCama2JFT(), view.getCama2JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getCama2JFT(), view.getCama2JFT().getText(), 4);
 				view.getCama2JFT().setEnabled(false);
 				view.getCama3JFT().setEnabled(true);
 				view.getCama3JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getCama3JFT()) {
-				TextFormatter.formatStringJFT(view.getCama3JFT(), view.getCama3JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getCama3JFT(), view.getCama3JFT().getText(), 4);
 				view.getCama3JFT().setEnabled(false);
 				view.getCmsp1JFT().setEnabled(true);
 				view.getCmsp1JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getCmsp1JFT()) {
-				TextFormatter.formatStringJFT(view.getCmsp1JFT(), view.getCmsp1JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getCmsp1JFT(), view.getCmsp1JFT().getText(), 4);
 				view.getCmsp1JFT().setEnabled(false);
 				view.getCmsp2JFT().setEnabled(true);
 				view.getCmsp2JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getCmsp2JFT()) {
-				TextFormatter.formatStringJFT(view.getCmsp2JFT(), view.getCmsp2JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getCmsp2JFT(), view.getCmsp2JFT().getText(), 4);
 				view.getCmsp2JFT().setEnabled(false);
 				view.getCmsp3JFT().setEnabled(true);
 				view.getCmsp3JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getCmsp3JFT()) {
-				TextFormatter.formatStringJFT(view.getCmsp3JFT(), view.getCmsp3JFT().getText(), 2);
+				TextFormatter.formatStringJFT(view.getCmsp3JFT(), view.getCmsp3JFT().getText(), 4);
 				view.getCmsp3JFT().setEnabled(false);
 				view.getPalleca1JFT().setEnabled(true);
 				view.getPalleca1JFT().grabFocus();

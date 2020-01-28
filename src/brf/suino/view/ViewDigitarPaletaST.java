@@ -1270,7 +1270,7 @@ public class ViewDigitarPaletaST extends javax.swing.JFrame {
         jLabel28.setText("PESO");
 
         try {
-            tatuagem3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            tatuagem3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1296,7 +1296,7 @@ public class ViewDigitarPaletaST extends javax.swing.JFrame {
         jLabel21.setText("OLC");
 
         try {
-            tatuagem2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            tatuagem2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1304,7 +1304,7 @@ public class ViewDigitarPaletaST extends javax.swing.JFrame {
         tatuagem2JFT.setEnabled(false);
 
         try {
-            tatuagem1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            tatuagem1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1324,7 +1324,7 @@ public class ViewDigitarPaletaST extends javax.swing.JFrame {
         tatuagem1Hist.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         try {
-            peso3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            peso3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1332,7 +1332,7 @@ public class ViewDigitarPaletaST extends javax.swing.JFrame {
         peso3JFT.setEnabled(false);
 
         try {
-            peso2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            peso2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1340,7 +1340,7 @@ public class ViewDigitarPaletaST extends javax.swing.JFrame {
         peso2JFT.setEnabled(false);
 
         try {
-            peso1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            peso1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1372,7 +1372,7 @@ public class ViewDigitarPaletaST extends javax.swing.JFrame {
         pelgo3Hist.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         try {
-            pelgo3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            pelgo3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1380,7 +1380,7 @@ public class ViewDigitarPaletaST extends javax.swing.JFrame {
         pelgo3JFT.setEnabled(false);
 
         try {
-            pelgo2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            pelgo2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1388,15 +1388,15 @@ public class ViewDigitarPaletaST extends javax.swing.JFrame {
         pelgo2JFT.setEnabled(false);
 
         try {
-            pelgo1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
+            pelgo1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+            } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
         pelgo1JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         pelgo1JFT.setEnabled(false);
 
         try {
-            pegof3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            pegof3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1404,7 +1404,7 @@ public class ViewDigitarPaletaST extends javax.swing.JFrame {
         pegof3JFT.setEnabled(false);
 
         try {
-            pegof2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            pegof2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1412,7 +1412,7 @@ public class ViewDigitarPaletaST extends javax.swing.JFrame {
         pegof2JFT.setEnabled(false);
 
         try {
-            pegof1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            pegof1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1432,7 +1432,7 @@ public class ViewDigitarPaletaST extends javax.swing.JFrame {
         pegof1Hist.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         try {
-            pegom3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            pegom3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1440,7 +1440,7 @@ public class ViewDigitarPaletaST extends javax.swing.JFrame {
         pegom3JFT.setEnabled(false);
 
         try {
-            pegom2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            pegom2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1448,7 +1448,7 @@ public class ViewDigitarPaletaST extends javax.swing.JFrame {
         pegom2JFT.setEnabled(false);
 
         try {
-            pegom1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            pegom1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1468,7 +1468,7 @@ public class ViewDigitarPaletaST extends javax.swing.JFrame {
         pegom1Hist.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         try {
-            osste3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            osste3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1476,7 +1476,7 @@ public class ViewDigitarPaletaST extends javax.swing.JFrame {
         osste3JFT.setEnabled(false);
 
         try {
-            osste2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            osste2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1484,7 +1484,7 @@ public class ViewDigitarPaletaST extends javax.swing.JFrame {
         osste2JFT.setEnabled(false);
 
         try {
-            osste1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            osste1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1504,7 +1504,7 @@ public class ViewDigitarPaletaST extends javax.swing.JFrame {
         osste1Hist.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         try {
-            cama1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            cama1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1512,7 +1512,7 @@ public class ViewDigitarPaletaST extends javax.swing.JFrame {
         cama1JFT.setEnabled(false);
 
         try {
-            cama2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            cama2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1520,7 +1520,7 @@ public class ViewDigitarPaletaST extends javax.swing.JFrame {
         cama2JFT.setEnabled(false);
 
         try {
-            cama3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            cama3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1552,7 +1552,7 @@ public class ViewDigitarPaletaST extends javax.swing.JFrame {
         cmsp1Hist.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         try {
-            cmsp1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            cmsp1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1560,7 +1560,7 @@ public class ViewDigitarPaletaST extends javax.swing.JFrame {
         cmsp1JFT.setEnabled(false);
 
         try {
-            cmsp2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            cmsp2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1568,7 +1568,7 @@ public class ViewDigitarPaletaST extends javax.swing.JFrame {
         cmsp2JFT.setEnabled(false);
 
         try {
-            cmsp3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            cmsp3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -1615,7 +1615,7 @@ public class ViewDigitarPaletaST extends javax.swing.JFrame {
         jLabel22.setText("CONTROLE");
 
         try {
-            controleJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+            controleJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
