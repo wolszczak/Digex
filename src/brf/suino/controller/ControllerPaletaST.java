@@ -541,15 +541,15 @@ public class ControllerPaletaST extends KeyAdapter implements FocusListener, Ite
 		view.getOsste1Hist().setText(view.getOsste1JFT().getText());
 		view.getOsste2Hist().setText(view.getOsste2JFT().getText());
 		view.getOsste3Hist().setText(view.getOsste3JFT().getText());
-		view.getCama1Hist().setText(view.getCama1Hist().getText());
-		view.getCama2Hist().setText(view.getCama2Hist().getText());
-		view.getCama3Hist().setText(view.getCama3Hist().getText());
-		view.getCmsp1Hist().setText(view.getCmsp1Hist().getText());
-		view.getCmsp2Hist().setText(view.getCmsp2Hist().getText());
-		view.getCmsp3Hist().setText(view.getCmsp3Hist().getText());
-		view.getPalleca1Hist().setText(view.getPalleca1Hist().getText());
-		view.getPalleca2Hist().setText(view.getPalleca2Hist().getText());
-		view.getPalleca3Hist().setText(view.getPalleca3Hist().getText());
+		view.getCama1Hist().setText(view.getCama1JFT().getText());
+		view.getCama2Hist().setText(view.getCama2JFT().getText());
+		view.getCama3Hist().setText(view.getCama3JFT().getText());
+		view.getCmsp1Hist().setText(view.getCmsp1JFT().getText());
+		view.getCmsp2Hist().setText(view.getCmsp2JFT().getText());
+		view.getCmsp3Hist().setText(view.getCmsp3JFT().getText());
+		view.getPalleca1Hist().setText(view.getPalleca1JFT().getText());
+		view.getPalleca2Hist().setText(view.getPalleca2JFT().getText());
+		view.getPalleca3Hist().setText(view.getPalleca3JFT().getText());
 
 		view.getTatuagem1JFT().setText("");
 		view.getTatuagem2JFT().setText("");
@@ -699,8 +699,8 @@ public class ControllerPaletaST extends KeyAdapter implements FocusListener, Ite
 		return paletaHist;
 	}
 
-	public void setPaletaHist(List<PaletaVOST> pcrHist) {
-		this.paletaHist = pcrHist;
+	public void setPaletaHist(List<PaletaVOST> paletaHist) {
+		this.paletaHist = paletaHist;
 	}
 
 }

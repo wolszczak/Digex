@@ -1535,7 +1535,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		jLabel7.setText("Avaliação Pernil");
 
 		try {
-			tatuagem3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			tatuagem3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1546,7 +1546,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		jLabel29.setText("TATU");
 
 		try {
-			tatuagem2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			tatuagem2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -1554,7 +1554,7 @@ public class ViewDigitarPernilST extends javax.swing.JFrame {
 		tatuagem2JFT.setEnabled(false);
 
 		try {
-			tatuagem1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+			tatuagem1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}

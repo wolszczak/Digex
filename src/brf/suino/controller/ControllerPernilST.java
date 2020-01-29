@@ -447,24 +447,24 @@ public class ControllerPernilST extends KeyAdapter implements FocusListener, Ite
 		view.getOsste1Hist().setText("");
 		view.getOsste2Hist().setText("");
 		view.getOsste3Hist().setText("");
-		view.getTatuagem1JFT().setText("");
-		view.getTatuagem2JFT().setText("");
-		view.getTatuagem3JFT().setText("");
-		view.getPeso1JFT().setText("");
-		view.getPeso2JFT().setText("");
-		view.getPeso3JFT().setText("");
-		view.getPelgo1JFT().setText("");
-		view.getPelgo2JFT().setText("");
-		view.getPelgo3JFT().setText("");
-		view.getPegof1JFT().setText("");
-		view.getPegof2JFT().setText("");
-		view.getPegof3JFT().setText("");
-		view.getPegom1JFT().setText("");
-		view.getPegom2JFT().setText("");
-		view.getPegom3JFT().setText("");
-		view.getOsste1JFT().setText("");
-		view.getOsste2JFT().setText("");
-		view.getMuscu3JFT().setText("");
+		view.getMuscu1Hist().setText("");
+		view.getMuscu2Hist().setText("");
+		view.getMuscu3Hist().setText("");
+		view.getPe1Hist().setText("");
+		view.getPe2Hist().setText("");
+		view.getPe3Hist().setText("");
+		view.getJpc1Hist().setText("");
+		view.getJpc2Hist().setText("");
+		view.getJpc3Hist().setText("");
+		view.getPh1Hist().setText("");
+		view.getPh2Hist().setText("");
+		view.getPh3Hist().setText("");
+		view.getIni1Hist().setText("");
+		view.getIni2Hist().setText("");
+		view.getIni3Hist().setText("");
+		view.getFin1Hist().setText("");
+		view.getFin2Hist().setText("");
+		view.getFin3Hist().setText("");
 	}
 
 	private void salvarPernil() {
@@ -600,7 +600,25 @@ public class ControllerPernilST extends KeyAdapter implements FocusListener, Ite
 		view.getPegom3Hist().setText(view.getPegom3JFT().getText());
 		view.getOsste1Hist().setText(view.getOsste1JFT().getText());
 		view.getOsste2Hist().setText(view.getOsste2JFT().getText());
-		view.getOsste3Hist().setText(view.getMuscu3JFT().getText());
+		view.getOsste3Hist().setText(view.getOsste3JFT().getText());
+		view.getMuscu1Hist().setText(view.getMuscu1JFT().getText());
+		view.getMuscu2Hist().setText(view.getMuscu2JFT().getText());
+		view.getMuscu3Hist().setText(view.getMuscu3JFT().getText());
+		view.getPe1Hist().setText(view.getPe1JFT().getText());
+		view.getPe2Hist().setText(view.getPe2JFT().getText());
+		view.getPe3Hist().setText(view.getPe3JFT().getText());
+		view.getJpc1Hist().setText(view.getJpc1JFT().getText());
+		view.getJpc2Hist().setText(view.getJpc2JFT().getText());
+		view.getJpc3Hist().setText(view.getJpc3JFT().getText());
+		view.getPh1Hist().setText(view.getPh1JFT().getText());
+		view.getPh2Hist().setText(view.getPh2JFT().getText());
+		view.getPh3Hist().setText(view.getPh3JFT().getText());
+		view.getIni1Hist().setText(view.getIni1JFT().getText());
+		view.getIni2Hist().setText(view.getIni2JFT().getText());
+		view.getIni3Hist().setText(view.getIni3JFT().getText());
+		view.getFin1Hist().setText(view.getFin1JFT().getText());
+		view.getFin2Hist().setText(view.getFin2JFT().getText());
+		view.getFin3Hist().setText(view.getFin3JFT().getText());
 
 		view.getTatuagem1JFT().setText("");
 		view.getTatuagem2JFT().setText("");
@@ -619,7 +637,25 @@ public class ControllerPernilST extends KeyAdapter implements FocusListener, Ite
 		view.getPegom3JFT().setText("");
 		view.getOsste1JFT().setText("");
 		view.getOsste2JFT().setText("");
+		view.getOsste3JFT().setText("");
+		view.getMuscu1JFT().setText("");
+		view.getMuscu2JFT().setText("");
 		view.getMuscu3JFT().setText("");
+		view.getPe1JFT().setText("");
+		view.getPe2JFT().setText("");
+		view.getPe3JFT().setText("");
+		view.getJpc1JFT().setText("");
+		view.getJpc2JFT().setText("");
+		view.getJpc3JFT().setText("");
+		view.getPh1JFT().setText("");
+		view.getPh2JFT().setText("");
+		view.getPh3JFT().setText("");
+		view.getIni1JFT().setText("");
+		view.getIni2JFT().setText("");
+		view.getIni3JFT().setText("");
+		view.getFin1JFT().setText("");
+		view.getFin2JFT().setText("");
+		view.getFin3JFT().setText("");
 	}
 
 	private Integer calculaControle() {
@@ -646,7 +682,31 @@ public class ControllerPernilST extends KeyAdapter implements FocusListener, Ite
 
 		soma += Integer.parseInt(view.getOsste1JFT().getText());
 		soma += Integer.parseInt(view.getOsste2JFT().getText());
+		soma += Integer.parseInt(view.getOsste3JFT().getText());
+		
+		soma += Integer.parseInt(view.getMuscu1JFT().getText());
+		soma += Integer.parseInt(view.getMuscu2JFT().getText());
 		soma += Integer.parseInt(view.getMuscu3JFT().getText());
+		
+		soma += Integer.parseInt(view.getPe1JFT().getText());
+		soma += Integer.parseInt(view.getPe2JFT().getText());
+		soma += Integer.parseInt(view.getPe3JFT().getText());
+		
+		soma += Integer.parseInt(view.getJpc1JFT().getText());
+		soma += Integer.parseInt(view.getJpc2JFT().getText());
+		soma += Integer.parseInt(view.getJpc3JFT().getText());
+		
+		soma += Integer.parseInt(view.getPh1JFT().getText());
+		soma += Integer.parseInt(view.getPh2JFT().getText());
+		soma += Integer.parseInt(view.getPh3JFT().getText());
+		
+		soma += Integer.parseInt(view.getIni1JFT().getText());
+		soma += Integer.parseInt(view.getIni2JFT().getText());
+		soma += Integer.parseInt(view.getIni3JFT().getText());
+		
+		soma += Integer.parseInt(view.getFin1JFT().getText());
+		soma += Integer.parseInt(view.getFin2JFT().getText());
+		soma += Integer.parseInt(view.getFin3JFT().getText());
 		return soma;
 	}
 
@@ -670,7 +730,25 @@ public class ControllerPernilST extends KeyAdapter implements FocusListener, Ite
 		order.add(view.getPegom3JFT());
 		order.add(view.getOsste1JFT());
 		order.add(view.getOsste2JFT());
+		order.add(view.getOsste3JFT());
+		order.add(view.getMuscu1JFT());
+		order.add(view.getMuscu2JFT());
 		order.add(view.getMuscu3JFT());
+		order.add(view.getPe1JFT());
+		order.add(view.getPe2JFT());
+		order.add(view.getPe3JFT());
+		order.add(view.getJpc1JFT());
+		order.add(view.getJpc2JFT());
+		order.add(view.getJpc3JFT());
+		order.add(view.getPh1JFT());
+		order.add(view.getPh2JFT());
+		order.add(view.getPh3JFT());
+		order.add(view.getIni1JFT());
+		order.add(view.getIni2JFT());
+		order.add(view.getIni3JFT());
+		order.add(view.getFin1JFT());
+		order.add(view.getFin2JFT());
+		order.add(view.getFin3JFT());
 		order.add(view.getControleJFT());
 
 		FocusOrderPolicy newPolicy = new FocusOrderPolicy(order);

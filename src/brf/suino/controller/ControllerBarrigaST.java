@@ -200,10 +200,10 @@ public class ControllerBarrigaST extends KeyAdapter implements FocusListener, It
 				TextFormatter.formatStringJFT(view.getControleJFT(), view.getControleJFT().getText(), 5);
 				if (Integer.parseInt(view.getControleJFT().getText()) == calculaControle()) {
 					if (controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga() == null) {
-						controller.getModel().getExperimentoVO().getFrigorificoTempVOST().setPcr(new ArrayList<>());
-						salvarPCR();
+						controller.getModel().getExperimentoVO().getFrigorificoTempVOST().setBarriga(new ArrayList<>());
+						salvarBarriga();
 					} else {
-						salvarPCR();
+						salvarBarriga();
 					}
 					updateHist();
 					view.getPnlBarriga().setBorder(defaultBorder);
@@ -313,7 +313,7 @@ public class ControllerBarrigaST extends KeyAdapter implements FocusListener, It
 		view.getEsgor3JFT().setText("");
 	}
 
-	private void salvarPCR() {
+	private void salvarBarriga() {
 		controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga()
 				.add(new BarrigaVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagemJFT1().getText()),
 						Integer.parseInt(view.getPeso1JFT().getText()), Integer.parseInt(view.getCptf1JFT().getText()),
@@ -508,8 +508,8 @@ public class ControllerBarrigaST extends KeyAdapter implements FocusListener, It
 		return barrigaHist;
 	}
 
-	public void setPcrHist(List<BarrigaVOST> pcrHist) {
-		this.barrigaHist = pcrHist;
+	public void setBarrigaHist(List<BarrigaVOST> barrigaHist) {
+		this.barrigaHist = barrigaHist;
 	}
 
 }
