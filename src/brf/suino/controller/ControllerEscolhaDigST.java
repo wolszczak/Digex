@@ -3,15 +3,22 @@ package brf.suino.controller;
 import java.awt.Color;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 import brf.main.controller.ControllerEscolhaExp;
 import brf.main.view.ViewEscolhaExp;
+import brf.suino.model.dao.ConsumoDAOSC;
+import brf.suino.model.dao.FrigorificoDAOST;
 import brf.suino.view.ViewEscolhaDigST;
+import brf.util.ExpFileFilter;
+import brf.util.SystemFileView;
 
 public class ControllerEscolhaDigST extends KeyAdapter {
 	private final ControllerST controller;
@@ -59,6 +66,15 @@ public class ControllerEscolhaDigST extends KeyAdapter {
 		if (controller.getModel().getExperimentoVO().getConsumosTratos() == null
 				|| controller.getModel().getExperimentoVO().getConsumosTratos().isEmpty()) {
 			view.getExportarTratosLabel().setForeground(Color.GRAY);
+		}
+
+		if (controller.getModel().getExperimentoVO().getFrigorificoTempVOST() == null
+				|| (controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().size() == 0
+						&& controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPernil().size() == 0
+						&& controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().size() == 0
+						&& controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getCostado().size() == 0
+						&& controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga().size() == 0)) {
+			view.getExportarFrigoLabel().setForeground(Color.GRAY);
 		}
 
 		histSetup();
@@ -118,6 +134,40 @@ public class ControllerEscolhaDigST extends KeyAdapter {
 			cif.openWindow(datasFases);
 			break;
 		case KeyEvent.VK_4:
+			break;
+		case KeyEvent.VK_5:
+			break;
+		case KeyEvent.VK_6:
+			break;
+		case KeyEvent.VK_7:
+//			if(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().size() == 0
+//					&& controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPernil().size() == 0
+//					&& controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().size() == 0
+//					&& controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getCostado().size() == 0
+//					&& controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga().size() == 0)) {
+//				
+//			}
+			
+			JFileChooser fileChooser = new JFileChooser();
+			fileChooser.addChoosableFileFilter(new ExpFileFilter());
+			fileChooser.setFileView(new SystemFileView());
+			fileChooser.setAcceptAllFileFilterUsed(false);
+			fileChooser.setSelectedFile(new File(view.getTesteJFT().getText()));
+			int returnVal = fileChooser.showDialog(view, "Salvar");
+			if (returnVal == JFileChooser.APPROVE_OPTION) {
+				File file = fileChooser.getSelectedFile();
+				String localExportar = file.getAbsolutePath();
+				try {
+					FrigorificoDAOST.exportarArquivo(controller.getModel().getExperimentoVO().getInfoExp(),
+							controller.getModel().getExperimentoVO().getFrigorificoVOST(),
+							controller.getModel().getExperimentoVO().getFrigorificoTempVOST(), localExportar);
+					JOptionPane.showMessageDialog(view, "Arquivo de FRIGORIFICO salvo com sucesso!");
+				} catch (IOException ex) {
+					String msg = "Falha ao tentar salvar o arquivo! \n" + "Verifique se ele está aberto e tente novamente.";
+					JOptionPane.showMessageDialog(view, msg);
+				}
+			}
+			fileChooser.setSelectedFile(null);
 			break;
 		}
 	}

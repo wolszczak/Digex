@@ -68,14 +68,6 @@ public class PaletaVOST implements Serializable {
 		this.palpeso = palpeso;
 	}
 
-	public int getPelpelgo() {
-		return palpelgo;
-	}
-
-	public void setPelpelgo(int pelpelgo) {
-		this.palpelgo = pelpelgo;
-	}
-
 	public int getPalpegof() {
 		return palpegof;
 	}
@@ -123,5 +115,6 @@ public class PaletaVOST implements Serializable {
 	public void setPalpelgo(int palpelgo) {
 		this.palpelgo = palpelgo;
 	}
+
 
 }

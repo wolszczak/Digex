@@ -64,9 +64,9 @@ public class ConsumoBOSC {
 		} else {
 			String[] split = dataString.split("/");
 			dataString = split[0] + "/" + split[1] + "/20" + split[2];
-			Date digitada = Utils.dateFromString(dataString);
-			Date inicioFase = Utils.dateFromString(controller.getModel().getExperimentoVO().getInfoExp().getInicioExp().toString());
-			Date finalFase = Utils.dateFromString(fases.get(fases.size() - 1));
+			Date digitada = Utils.stringToDate(dataString);
+			Date inicioFase = Utils.stringToDate(controller.getModel().getExperimentoVO().getInfoExp().getInicioExp().toString());
+			Date finalFase = Utils.stringToDate(fases.get(fases.size() - 1));
 			if (digitada.before(inicioFase) || digitada.after(finalFase)) {
 				return "- Data fora do período do experimento.";
 			}

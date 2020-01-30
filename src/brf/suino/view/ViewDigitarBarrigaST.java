@@ -191,7 +191,7 @@ public class ViewDigitarBarrigaST extends javax.swing.JFrame {
 		pronta3JFT.setEnabled(false);
 
 		try {
-			peso3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+			peso3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -302,7 +302,7 @@ public class ViewDigitarBarrigaST extends javax.swing.JFrame {
 		tatuagemJFT1.setEnabled(false);
 
 		try {
-			peso2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+			peso2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -312,7 +312,7 @@ public class ViewDigitarBarrigaST extends javax.swing.JFrame {
 		peso2JFT.setEnabled(false);
 
 		try {
-			peso1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+			peso1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

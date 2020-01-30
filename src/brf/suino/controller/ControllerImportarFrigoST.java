@@ -177,9 +177,9 @@ public class ControllerImportarFrigoST extends KeyAdapter implements ItemListene
 						}
 						controller.getModel().getExperimentoVO().getFrigorificoVOST()
 								.add(new FrigorificoVOST(Integer.parseInt(data[0]), Integer.parseInt(data[1]), Integer.parseInt(data[2]),
-										data[3], data[4], Integer.parseInt(data[5]), data[6], Utils.dateFromString(data[7]),
-										Integer.parseInt(data[8]), Utils.dateFromString(data[9]), Integer.parseInt(data[10]),
-										Integer.parseInt(data[11]), Utils.dateFromString(data[12]), Integer.parseInt(data[13]),
+										data[3], data[4], Integer.parseInt(data[5]), data[6], Utils.stringToDate(data[7]),
+										Integer.parseInt(data[8]), Utils.stringToDate(data[9]), Integer.parseInt(data[10]),
+										Integer.parseInt(data[11]), Utils.stringToDate(data[12]), Integer.parseInt(data[13]),
 										Integer.parseInt(data[14]), Integer.parseInt(data[15]), Integer.parseInt(data[16]),
 										Integer.parseInt(data[17]), Integer.parseInt(data[18]), Integer.parseInt(data[19]),
 										Integer.parseInt(data[20]), Integer.parseInt(data[21]), Integer.parseInt(data[22]),

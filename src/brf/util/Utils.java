@@ -1,15 +1,13 @@
 package brf.util;
 
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-
-import javax.swing.JFileChooser;
 
 public class Utils {
 
@@ -41,11 +39,11 @@ public class Utils {
 		}
 	}
 
-	public static Date dateFromString(String string) {
+	public static Date stringToDate(String string) {
 		try {
-			if(string.equals("0")) {
+			if (string.equals("0")) {
 				return null;
-			}else {
+			} else {
 				Date data = new SimpleDateFormat("dd/MM/yyyy").parse(string);
 				return data;
 			}
@@ -53,6 +51,11 @@ public class Utils {
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	public static String dateToString(Date date) {
+		DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+		return df.format(date);
 	}
 
 }

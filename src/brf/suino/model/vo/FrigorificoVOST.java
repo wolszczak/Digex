@@ -37,7 +37,7 @@ public class FrigorificoVOST implements Serializable {
 	private int perdini;
 	private int perdfin;
 	private int palpeso;
-	private int pelpelgo;
+	private int palpelgo;
 	private int palpegof;
 	private int palpegom;
 	private int palosste;
@@ -95,7 +95,7 @@ public class FrigorificoVOST implements Serializable {
 		this.perdini = perdini;
 		this.perdfin = perdfin;
 		this.palpeso = palpeso;
-		this.pelpelgo = pelpelgo;
+		this.palpelgo = pelpelgo;
 		this.palpegof = palpegof;
 		this.palpegom = palpegom;
 		this.palosste = palosste;
@@ -362,12 +362,12 @@ public class FrigorificoVOST implements Serializable {
 		this.palpeso = palpeso;
 	}
 
-	public int getPelpelgo() {
-		return pelpelgo;
+	public int getPalpelgo() {
+		return palpelgo;
 	}
 
-	public void setPelpelgo(int pelpelgo) {
-		this.pelpelgo = pelpelgo;
+	public void setPalpelgo(int palpelgo) {
+		this.palpelgo = palpelgo;
 	}
 
 	public int getPalpegof() {

@@ -137,17 +137,17 @@ public class ControllerBarrigaST extends KeyAdapter implements FocusListener, It
 					}
 				}
 			} else if ((JFormattedTextField) e.getSource() == view.getPeso1JFT()) {
-				TextFormatter.formatStringJFT(view.getPeso1JFT(), view.getPeso1JFT().getText(), 4);
+				TextFormatter.formatStringJFT(view.getPeso1JFT(), view.getPeso1JFT().getText(), 5);
 				view.getPeso1JFT().setEnabled(false);
 				view.getPeso2JFT().setEnabled(true);
 				view.getPeso2JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getPeso2JFT()) {
-				TextFormatter.formatStringJFT(view.getPeso2JFT(), view.getPeso2JFT().getText(), 4);
+				TextFormatter.formatStringJFT(view.getPeso2JFT(), view.getPeso2JFT().getText(), 5);
 				view.getPeso2JFT().setEnabled(false);
 				view.getPeso3JFT().setEnabled(true);
 				view.getPeso3JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getPeso3JFT()) {
-				TextFormatter.formatStringJFT(view.getPeso3JFT(), view.getPeso3JFT().getText(), 4);
+				TextFormatter.formatStringJFT(view.getPeso3JFT(), view.getPeso3JFT().getText(), 5);
 				view.getPeso3JFT().setEnabled(false);
 				view.getCptf1JFT().setEnabled(true);
 				view.getCptf1JFT().grabFocus();
@@ -219,9 +219,7 @@ public class ControllerBarrigaST extends KeyAdapter implements FocusListener, It
 				}
 			}
 		}
-		if (e.getKeyChar() == KeyEvent.VK_ESCAPE)
-
-		{
+		if (e.getKeyChar() == KeyEvent.VK_ESCAPE) {
 			int option = JOptionPane.showConfirmDialog(view, "Deseja realmente voltar para tela anterior?", "DIGEX - Voltar",
 					JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 			if (option == 0) {

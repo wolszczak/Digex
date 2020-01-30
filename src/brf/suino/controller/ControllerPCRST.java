@@ -234,9 +234,7 @@ public class ControllerPCRST extends KeyAdapter implements FocusListener, ItemLi
 				}
 			}
 		}
-		if (e.getKeyChar() == KeyEvent.VK_ESCAPE)
-
-		{
+		if (e.getKeyChar() == KeyEvent.VK_ESCAPE) {
 			int option = JOptionPane.showConfirmDialog(view, "Deseja realmente voltar para tela anterior?", "DIGEX - Voltar",
 					JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 			if (option == 0) {

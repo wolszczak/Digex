@@ -20,9 +20,9 @@ public class DigitacaoFrigoBOST {
 		if (dataString.equals("00/00/0000")) {
 			return "- Data fora do período do experimento.";
 		} else {
-			Date digitada = Utils.dateFromString(dataString);
-			Date inicioFase = Utils.dateFromString(controller.getModel().getExperimentoVO().getInfoExp().getInicioExp().toString());
-			Date finalFase = Utils.dateFromString(fases.get(fases.size() - 1));
+			Date digitada = Utils.stringToDate(dataString);
+			Date inicioFase = Utils.stringToDate(controller.getModel().getExperimentoVO().getInfoExp().getInicioExp().toString());
+			Date finalFase = Utils.stringToDate(fases.get(fases.size() - 1));
 			if (digitada.before(inicioFase) || digitada.after(finalFase)) {
 				return "- Data fora do período do experimento.";
 			}
