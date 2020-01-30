@@ -122,18 +122,33 @@ public class FrigorificoDAOST {
 			buffer.write(";");
 			buffer.write("" + f.getBloco());
 			buffer.write(";");
-			buffer.write("" + Utils.dateToString(f.getData1()));
-			buffer.write(";");
+			if (f.getData1() == null) {
+				buffer.write("");
+				buffer.write(";");
+			} else {
+				buffer.write("" + Utils.dateToString(f.getData1()));
+				buffer.write(";");
+			}
 			buffer.write("" + f.getPeso1());
 			buffer.write(";");
-			buffer.write("" + Utils.dateToString(f.getData2()));
-			buffer.write(";");
+			if (f.getData2() == null) {
+				buffer.write("");
+				buffer.write(";");
+			} else {
+				buffer.write("" + Utils.dateToString(f.getData2()));
+				buffer.write(";");
+			}
 			buffer.write("" + f.getPeso2());
 			buffer.write(";");
 			buffer.write("" + f.getTatuagem());
 			buffer.write(";");
-			buffer.write("" + Utils.dateToString(f.getDataaba()));
-			buffer.write(";");
+			if (f.getDataaba() == null) {
+				buffer.write("");
+				buffer.write(";");
+			} else {
+				buffer.write("" + Utils.dateToString(f.getDataaba()));
+				buffer.write(";");
+			}
 			buffer.write("" + f.getAbate());
 			buffer.write(";");
 			buffer.write("" + f.getEtpaquim());
