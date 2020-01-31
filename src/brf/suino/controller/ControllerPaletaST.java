@@ -86,15 +86,9 @@ public class ControllerPaletaST extends KeyAdapter implements FocusListener, Ite
 					view.getDataJFT().grabFocus();
 					limparTela();
 				} else {
-					String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagem1JFT().getText()));
-					if (msg == null) {
-						view.getTatuagem1JFT().setEnabled(false);
-						view.getTatuagem2JFT().setEnabled(true);
-						view.getTatuagem2JFT().grabFocus();
-					} else {
-						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
-						view.getTatuagem1JFT().grabFocus();
-					}
+					view.getTatuagem1JFT().setEnabled(false);
+					view.getTatuagem2JFT().setEnabled(true);
+					view.getTatuagem2JFT().grabFocus();
 				}
 			} else if ((JFormattedTextField) e.getSource() == view.getTatuagem2JFT()) {
 				TextFormatter.formatStringJFT(view.getTatuagem2JFT(), view.getTatuagem2JFT().getText(), 4);
@@ -106,15 +100,9 @@ public class ControllerPaletaST extends KeyAdapter implements FocusListener, Ite
 					view.getDataJFT().grabFocus();
 					limparTela();
 				} else {
-					String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagem2JFT().getText()));
-					if (msg == null) {
-						view.getTatuagem2JFT().setEnabled(false);
-						view.getTatuagem3JFT().setEnabled(true);
-						view.getTatuagem3JFT().grabFocus();
-					} else {
-						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
-						view.getTatuagem2JFT().grabFocus();
-					}
+					view.getTatuagem2JFT().setEnabled(false);
+					view.getTatuagem3JFT().setEnabled(true);
+					view.getTatuagem3JFT().grabFocus();
 				}
 			} else if ((JFormattedTextField) e.getSource() == view.getTatuagem3JFT()) {
 				TextFormatter.formatStringJFT(view.getTatuagem3JFT(), view.getTatuagem3JFT().getText(), 4);
@@ -126,15 +114,9 @@ public class ControllerPaletaST extends KeyAdapter implements FocusListener, Ite
 					view.getDataJFT().grabFocus();
 					limparTela();
 				} else {
-					String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagem3JFT().getText()));
-					if (msg == null) {
-						view.getTatuagem3JFT().setEnabled(false);
-						view.getPeso1JFT().setEnabled(true);
-						view.getPeso1JFT().grabFocus();
-					} else {
-						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
-						view.getTatuagem3JFT().grabFocus();
-					}
+					view.getTatuagem3JFT().setEnabled(false);
+					view.getPeso1JFT().setEnabled(true);
+					view.getPeso1JFT().grabFocus();
 				}
 			} else if ((JFormattedTextField) e.getSource() == view.getPeso1JFT()) {
 				TextFormatter.formatStringJFT(view.getPeso1JFT(), view.getPeso1JFT().getText(), 5);
@@ -428,13 +410,13 @@ public class ControllerPaletaST extends KeyAdapter implements FocusListener, Ite
 						Integer.parseInt(view.getOsste1JFT().getText()), Integer.parseInt(view.getCama1JFT().getText()),
 						Integer.parseInt(view.getCmsp1JFT().getText()), Integer.parseInt(view.getPalleca1JFT().getText())));
 		controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta()
-				.add(new PaletaVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem1JFT().getText()),
+				.add(new PaletaVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem2JFT().getText()),
 						Integer.parseInt(view.getPeso1JFT().getText()), Integer.parseInt(view.getPelgo1JFT().getText()),
 						Integer.parseInt(view.getPegof1JFT().getText()), Integer.parseInt(view.getPegom1JFT().getText()),
 						Integer.parseInt(view.getOsste1JFT().getText()), Integer.parseInt(view.getCama1JFT().getText()),
 						Integer.parseInt(view.getCmsp1JFT().getText()), Integer.parseInt(view.getPalleca1JFT().getText())));
 		controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta()
-				.add(new PaletaVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem1JFT().getText()),
+				.add(new PaletaVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem3JFT().getText()),
 						Integer.parseInt(view.getPeso1JFT().getText()), Integer.parseInt(view.getPelgo1JFT().getText()),
 						Integer.parseInt(view.getPegof1JFT().getText()), Integer.parseInt(view.getPegom1JFT().getText()),
 						Integer.parseInt(view.getOsste1JFT().getText()), Integer.parseInt(view.getCama1JFT().getText()),

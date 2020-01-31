@@ -5,7 +5,6 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +13,7 @@ import javax.swing.JOptionPane;
 
 import brf.main.controller.ControllerEscolhaExp;
 import brf.main.view.ViewEscolhaExp;
-import brf.suino.model.dao.ConsumoDAOSC;
+import brf.suino.model.dao.BaiaDAOST;
 import brf.suino.model.dao.FrigorificoDAOST;
 import brf.suino.view.ViewEscolhaDigST;
 import brf.util.ExpFileFilter;
@@ -134,20 +133,50 @@ public class ControllerEscolhaDigST extends KeyAdapter {
 			cif.openWindow(datasFases);
 			break;
 		case KeyEvent.VK_4:
+			JFileChooser fileMort = new JFileChooser();
+			fileMort.addChoosableFileFilter(new ExpFileFilter());
+			fileMort.setFileView(new SystemFileView());
+			fileMort.setAcceptAllFileFilterUsed(false);
+			fileMort.setSelectedFile(new File(view.getTesteJFT().getText()));
+			int returnMort = fileMort.showDialog(view, "Salvar");
+			if (returnMort == JFileChooser.APPROVE_OPTION) {
+				File file = fileMort.getSelectedFile();
+				String localExportar = file.getAbsolutePath();
+				try {
+					BaiaDAOST.exportarArquivoMortalidade(controller.getModel().getExperimentoVO().getInfoExp(),
+							controller.getModel().getExperimentoVO().getBaias(), localExportar);
+					JOptionPane.showMessageDialog(view, "Arquivo de MORTALIDADE salvo com sucesso!");
+				} catch (IOException ex) {
+					String msg = "Falha ao tentar salvar o arquivo! \n" + "Verifique se ele está aberto e tente novamente.";
+					JOptionPane.showMessageDialog(view, msg);
+				}
+			}
+			fileMort.setSelectedFile(null);
 			break;
 		case KeyEvent.VK_5:
+			JFileChooser fileMedi = new JFileChooser();
+			fileMedi.addChoosableFileFilter(new ExpFileFilter());
+			fileMedi.setFileView(new SystemFileView());
+			fileMedi.setAcceptAllFileFilterUsed(false);
+			fileMedi.setSelectedFile(new File(view.getTesteJFT().getText()));
+			int returnMedi = fileMedi.showDialog(view, "Salvar");
+			if (returnMedi == JFileChooser.APPROVE_OPTION) {
+				File file = fileMedi.getSelectedFile();
+				String localExportar = file.getAbsolutePath();
+				try {
+					BaiaDAOST.exportarArquivoMedicados(controller.getModel().getExperimentoVO().getInfoExp(),
+							controller.getModel().getExperimentoVO().getBaias(), localExportar);
+					JOptionPane.showMessageDialog(view, "Arquivo de MORTALIDADE salvo com sucesso!");
+				} catch (IOException ex) {
+					String msg = "Falha ao tentar salvar o arquivo! \n" + "Verifique se ele está aberto e tente novamente.";
+					JOptionPane.showMessageDialog(view, msg);
+				}
+			}
+			fileMedi.setSelectedFile(null);
 			break;
 		case KeyEvent.VK_6:
 			break;
 		case KeyEvent.VK_7:
-//			if(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr().size() == 0
-//					&& controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPernil().size() == 0
-//					&& controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta().size() == 0
-//					&& controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getCostado().size() == 0
-//					&& controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga().size() == 0)) {
-//				
-//			}
-			
 			JFileChooser fileChooser = new JFileChooser();
 			fileChooser.addChoosableFileFilter(new ExpFileFilter());
 			fileChooser.setFileView(new SystemFileView());

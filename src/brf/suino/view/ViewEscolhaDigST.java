@@ -57,7 +57,7 @@ public class ViewEscolhaDigST extends javax.swing.JFrame {
 
 		desempenhoLabel.setText("[1] - Baias");
 
-		exportarMortLabel.setText("[3] - Arquivo de Mortalidade");
+		exportarMortLabel.setText("[4] - Arquivo de Mortalidade");
 
 		jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 		jLabel9.setText("Opção");
@@ -73,7 +73,7 @@ public class ViewEscolhaDigST extends javax.swing.JFrame {
 		}
 		opcaoJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-		exportarLivreLabel.setText("[5] - Arquivo de Cons. Livre");
+		exportarLivreLabel.setText("[6] - Arquivo de Cons. Livre");
 
 		jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		jLabel6.setText("Digitação");
@@ -82,16 +82,16 @@ public class ViewEscolhaDigST extends javax.swing.JFrame {
 		jLabel7.setText("Exportação");
 
 		exportarMediLabel = new JLabel();
-		exportarMediLabel.setText("[4] - Arquivo de Medicados");
+		exportarMediLabel.setText("[5] - Arquivo de Medicados");
 
 		lblMedicados = new JLabel();
 		lblMedicados.setText("[3] - Abrir Frigorífico");
 
 		exportarTratosLabel = new JLabel();
-		exportarTratosLabel.setText("[6] - Arquivo de Cons. Tratos");
+		exportarTratosLabel.setText("[7] - Arquivo de Cons. Tratos");
 
 		exportarFrigoLabel = new JLabel();
-		exportarFrigoLabel.setText("[7] - Arquivo de Frigorífico");
+		exportarFrigoLabel.setText("[8] - Arquivo de Frigorífico");
 
 		lblConsumo = new JLabel();
 		lblConsumo.setText("[2] - Consumo por Tratos");

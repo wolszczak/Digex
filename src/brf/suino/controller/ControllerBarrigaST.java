@@ -86,15 +86,9 @@ public class ControllerBarrigaST extends KeyAdapter implements FocusListener, It
 					view.getDataJFT().grabFocus();
 					limparTela();
 				} else {
-					String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagemJFT1().getText()));
-					if (msg == null) {
-						view.getTatuagemJFT1().setEnabled(false);
-						view.getTatuagemJFT2().setEnabled(true);
-						view.getTatuagemJFT2().grabFocus();
-					} else {
-						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
-						view.getTatuagemJFT1().grabFocus();
-					}
+					view.getTatuagemJFT1().setEnabled(false);
+					view.getTatuagemJFT2().setEnabled(true);
+					view.getTatuagemJFT2().grabFocus();
 				}
 			} else if ((JFormattedTextField) e.getSource() == view.getTatuagemJFT2()) {
 				TextFormatter.formatStringJFT(view.getTatuagemJFT2(), view.getTatuagemJFT2().getText(), 4);
@@ -106,15 +100,9 @@ public class ControllerBarrigaST extends KeyAdapter implements FocusListener, It
 					view.getDataJFT().grabFocus();
 					limparTela();
 				} else {
-					String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagemJFT2().getText()));
-					if (msg == null) {
-						view.getTatuagemJFT2().setEnabled(false);
-						view.getTatuagemJFT3().setEnabled(true);
-						view.getTatuagemJFT3().grabFocus();
-					} else {
-						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
-						view.getTatuagemJFT2().grabFocus();
-					}
+					view.getTatuagemJFT2().setEnabled(false);
+					view.getTatuagemJFT3().setEnabled(true);
+					view.getTatuagemJFT3().grabFocus();
 				}
 			} else if ((JFormattedTextField) e.getSource() == view.getTatuagemJFT3()) {
 				TextFormatter.formatStringJFT(view.getTatuagemJFT3(), view.getTatuagemJFT3().getText(), 4);
@@ -126,15 +114,9 @@ public class ControllerBarrigaST extends KeyAdapter implements FocusListener, It
 					view.getDataJFT().grabFocus();
 					limparTela();
 				} else {
-					String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagemJFT3().getText()));
-					if (msg == null) {
-						view.getTatuagemJFT3().setEnabled(false);
-						view.getPeso1JFT().setEnabled(true);
-						view.getPeso1JFT().grabFocus();
-					} else {
-						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
-						view.getTatuagemJFT3().grabFocus();
-					}
+					view.getTatuagemJFT3().setEnabled(false);
+					view.getPeso1JFT().setEnabled(true);
+					view.getPeso1JFT().grabFocus();
 				}
 			} else if ((JFormattedTextField) e.getSource() == view.getPeso1JFT()) {
 				TextFormatter.formatStringJFT(view.getPeso1JFT(), view.getPeso1JFT().getText(), 5);
