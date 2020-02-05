@@ -22,7 +22,6 @@ public class ViewInfoExpST extends javax.swing.JFrame {
 	private javax.swing.JPanel fasesJP;
 	private javax.swing.JFormattedTextField fimExpJFT;
 	private javax.swing.JFormattedTextField idDigitadorJFT;
-	private javax.swing.JFormattedTextField idadeAlojJFT;
 	private javax.swing.JLabel dataFaseHist1Label;
 	private javax.swing.JLabel dataFaseHist2Label;
 	private javax.swing.JFormattedTextField inicioExpJFT;
@@ -36,7 +35,6 @@ public class ViewInfoExpST extends javax.swing.JFrame {
 	private javax.swing.JLabel jLabel18;
 	private javax.swing.JLabel jLabel19;
 	private javax.swing.JLabel jLabel2;
-	private javax.swing.JLabel jLabel23;
 	private javax.swing.JLabel jLabel24;
 	private javax.swing.JLabel jLabel3;
 	private javax.swing.JLabel jLabel4;
@@ -87,8 +85,6 @@ public class ViewInfoExpST extends javax.swing.JFrame {
 		inicioExpJFT = new javax.swing.JFormattedTextField();
 		jLabel9 = new javax.swing.JLabel();
 		fimExpJFT = new javax.swing.JFormattedTextField();
-		jLabel23 = new javax.swing.JLabel();
-		idadeAlojJFT = new javax.swing.JFormattedTextField();
 		fasesJP = new javax.swing.JPanel();
 		jLabel11 = new javax.swing.JLabel();
 		nrFasesJFT = new javax.swing.JFormattedTextField();
@@ -195,58 +191,42 @@ public class ViewInfoExpST extends javax.swing.JFrame {
 		fimExpJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		fimExpJFT.setEnabled(false);
 
-		jLabel23.setText("Idade Aloj.");
-
-		try {
-			idadeAlojJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-		} catch (java.text.ParseException ex) {
-			ex.printStackTrace();
-		}
-		idadeAlojJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-		idadeAlojJFT.setEnabled(false);
-
 		javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-		jPanel2Layout.setHorizontalGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
-				.addGroup(jPanel2Layout.createSequentialGroup().addContainerGap()
-						.addGroup(jPanel2Layout
-								.createParallelGroup(Alignment.LEADING).addComponent(jLabel1).addComponent(jLabel2)
-								.addComponent(
-										jLabel5, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-								.addComponent(jLabel8).addComponent(jLabel23))
-						.addPreferredGap(ComponentPlacement.UNRELATED)
-						.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
-								.addComponent(idDigitadorJFT, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
-								.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel2Layout
+		jPanel2Layout.setHorizontalGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel2Layout.createSequentialGroup()
+				.addContainerGap()
+				.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING).addComponent(jLabel1).addComponent(jLabel2)
+						.addComponent(jLabel5, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE).addComponent(jLabel8))
+				.addPreferredGap(ComponentPlacement.UNRELATED)
+				.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+						.addComponent(idDigitadorJFT, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
+						.addGroup(jPanel2Layout.createSequentialGroup().addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+								.addComponent(inicioExpJFT, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
+								.addComponent(protocoloJFT, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE)
+								.addComponent(testeJFT, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE))
+								.addPreferredGap(ComponentPlacement.UNRELATED)
+								.addGroup(jPanel2Layout.createParallelGroup(Alignment.TRAILING, false).addGroup(jPanel2Layout
 										.createSequentialGroup()
-										.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
-												.addComponent(inicioExpJFT, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
-												.addComponent(protocoloJFT, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE)
-												.addComponent(testeJFT, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addGroup(jPanel2Layout.createParallelGroup(Alignment.TRAILING, false).addGroup(jPanel2Layout
-												.createSequentialGroup()
-												.addGroup(jPanel2Layout
-														.createParallelGroup(Alignment.LEADING).addComponent(jLabel6).addComponent(jLabel3))
-												.addGap(18)
-												.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
-														.addComponent(localJCB, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
-														.addComponent(areaJCB, GroupLayout.PREFERRED_SIZE, 110,
-																GroupLayout.PREFERRED_SIZE)))
-												.addGroup(jPanel2Layout.createSequentialGroup().addComponent(jLabel9)
-														.addPreferredGap(ComponentPlacement.RELATED, 41, Short.MAX_VALUE).addComponent(
-																fimExpJFT, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)))
+										.addGroup(jPanel2Layout
+												.createParallelGroup(Alignment.LEADING).addComponent(jLabel6).addComponent(jLabel3))
 										.addGap(18)
-										.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING).addComponent(jLabel4)
-												.addComponent(jLabel7, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(ComponentPlacement.RELATED)
 										.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
-												.addComponent(galpaoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
-												.addComponent(nrBaiaJFT, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)))
-										.addComponent(idadeAlojJFT, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)))
-						.addContainerGap(68, Short.MAX_VALUE)));
+												.addComponent(localJCB, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
+												.addComponent(areaJCB, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)))
+										.addGroup(jPanel2Layout.createSequentialGroup().addComponent(jLabel9)
+												.addPreferredGap(ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+												.addComponent(fimExpJFT, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)))
+								.addGap(18)
+								.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING).addComponent(jLabel4).addComponent(jLabel7,
+										GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE))
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+										.addComponent(galpaoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+										.addComponent(nrBaiaJFT, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))))
+				.addContainerGap(58, Short.MAX_VALUE)));
 		jPanel2Layout.setVerticalGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel2Layout.createSequentialGroup()
-				.addContainerGap().addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE).addComponent(jLabel1).addComponent(
-						idDigitadorJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+				.addContainerGap()
+				.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE).addComponent(jLabel1).addComponent(idDigitadorJFT,
+						GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 				.addPreferredGap(ComponentPlacement.UNRELATED)
 				.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel2Layout.createSequentialGroup()
 						.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE).addComponent(jLabel6)
@@ -271,11 +251,8 @@ public class ViewInfoExpST extends javax.swing.JFrame {
 										.addComponent(jLabel5))
 								.addPreferredGap(ComponentPlacement.RELATED)
 								.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE).addComponent(jLabel8).addComponent(
-										inicioExpJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-								.addPreferredGap(ComponentPlacement.RELATED)
-								.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE).addComponent(jLabel23).addComponent(
-										idadeAlojJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
-				.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+										inicioExpJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
+				.addContainerGap(37, Short.MAX_VALUE)));
 		jPanel2.setLayout(jPanel2Layout);
 
 		fasesJP.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -317,8 +294,7 @@ public class ViewInfoExpST extends javax.swing.JFrame {
 
 		dataFaseJFT = new JFormattedTextField();
 		try {
-			dataFaseJFT
-					.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+			dataFaseJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -489,14 +465,6 @@ public class ViewInfoExpST extends javax.swing.JFrame {
 		this.dataFaseHist2Label = idadeHist2Label;
 	}
 
-	public JFormattedTextField getIdadeAlojJFT() {
-		return idadeAlojJFT;
-	}
-
-	public void setIdadeAlojJFT(JFormattedTextField idadeAlojJFT) {
-		this.idadeAlojJFT = idadeAlojJFT;
-	}
-
 	public JPanel getFasesJP() {
 		return fasesJP;
 	}
@@ -632,7 +600,6 @@ public class ViewInfoExpST extends javax.swing.JFrame {
 	public void setDataAbateHist2Label(javax.swing.JLabel dataAbateHist2Label) {
 		this.dataFaseHist2Label = dataAbateHist2Label;
 	}
-
 
 	public JFormattedTextField getDataFaseJFT() {
 		return dataFaseJFT;

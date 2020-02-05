@@ -27,17 +27,17 @@ public class ConsumoBOST {
 		}
 		return msg;
 	}
-	
-	public String verificaCabecalhoConsumoTratos(String data,List<String> datasFases, int tratos) {
+
+	public String verificaCabecalhoConsumoTratos(String data, List<String> datasFases, int tratos) {
 		String msg = "";
-		if(tratos == 0 && data != "00/00/0000") {
+		if (tratos == 0 && data != "00/00/0000") {
 			return "- Quantidade de tratos não pode ser 0.";
 		}
-		if(tratos != 0 && data == "00/00/0000") {
+		if (tratos != 0 && data == "00/00/0000") {
 			return "- Valor de data inválido.";
 		}
 		msg = verificaData(data, datasFases);
-		if(msg != null) {
+		if (msg != null) {
 			return "- Data fora do período do experimento\n";
 		}
 		return null;
@@ -65,15 +65,11 @@ public class ConsumoBOST {
 //	}
 
 	public String verificaData(String dataString, List<String> fases) {
-		if (dataString.equals("00/00/0000")) {
-			return null;
-		} else {
-			Date digitada = Utils.stringToDate(dataString);
-			Date inicioFase = Utils.stringToDate(controller.getModel().getExperimentoVO().getInfoExp().getInicioExp().toString());
-			Date finalFase = Utils.stringToDate(fases.get(fases.size() - 1));
-			if (digitada.before(inicioFase) || digitada.after(finalFase)) {
-				return "- Data fora do período do experimento.";
-			}
+		Date digitada = Utils.stringToDate(dataString);
+		Date inicioFase = Utils.stringToDate(controller.getModel().getExperimentoVO().getInfoExp().getInicioExp().toString());
+		Date finalFase = Utils.stringToDate(fases.get(fases.size() - 1));
+		if (digitada.before(inicioFase) || digitada.after(finalFase)) {
+			return "- Data fora do período do experimento.";
 		}
 		return null;
 	}

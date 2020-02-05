@@ -89,7 +89,6 @@ public class ControllerInfoExpST extends KeyAdapter implements ActionListener, F
 		order.add(viewInfoExp.getNrBaiaJFT());
 		order.add(viewInfoExp.getInicioExpJFT());
 		order.add(viewInfoExp.getFimExpJFT());
-		order.add(viewInfoExp.getIdadeAlojJFT());
 		order.add(viewInfoExp.getNrFasesJFT());
 		order.add(viewInfoExp.getIdadeFaseJFT());
 		order.add(viewInfoExp.getOpcaoJFT());
@@ -232,7 +231,6 @@ public class ControllerInfoExpST extends KeyAdapter implements ActionListener, F
 				if (!duplaDigitacao) {
 					info1 = new InfoExpVOST(idDigitador, protocolo, idLocal, local, galpao, teste, idArea, area,
 							Integer.parseInt(viewInfoExp.getNrBaiaJFT().getText()), inicioExp, fimExp,
-							Integer.parseInt(viewInfoExp.getIdadeAlojJFT().getText()),
 							Integer.parseInt(viewInfoExp.getNrFasesJFT().getText()), datasFase);
 					duplaDigitacao = true;
 					viewInfoExp.setVisible(false);
@@ -251,7 +249,6 @@ public class ControllerInfoExpST extends KeyAdapter implements ActionListener, F
 				} else if (duplaDigitacao) {
 					info2 = new InfoExpVOST(idDigitador, protocolo, idLocal, local, galpao, teste, idArea, area,
 							Integer.parseInt(viewInfoExp.getNrBaiaJFT().getText()), inicioExp, fimExp,
-							Integer.parseInt(viewInfoExp.getIdadeAlojJFT().getText()),
 							Integer.parseInt(viewInfoExp.getNrFasesJFT().getText()), datasFase);
 					boolean isOk = controller.getModel().getInfoExpBO().duplaDigitacao(info1, info2);
 					if (isOk) {
@@ -272,7 +269,7 @@ public class ControllerInfoExpST extends KeyAdapter implements ActionListener, F
 						datasFase = new ArrayList<>();
 						mostraCamposErrados();
 						resetaFasesAbates();
-                        }
+					}
 				}
 				break;
 			case KeyEvent.VK_9:
@@ -346,15 +343,11 @@ public class ControllerInfoExpST extends KeyAdapter implements ActionListener, F
 				fimExp = viewInfoExp.getFimExpJFT().getText();
 				if (VerifyRules.verifyData(fimExp)) {
 					viewInfoExp.getFimExpJFT().setEnabled(false);
-					viewInfoExp.getIdadeAlojJFT().setEnabled(true);
+					viewInfoExp.getNrFasesJFT().setEnabled(true);
 				} else {
 					viewInfoExp.getFimExpJFT().setEnabled(true);
 					viewInfoExp.getFimExpJFT().grabFocus();
 				}
-			} else if (src == viewInfoExp.getIdadeAlojJFT()) {
-				TextFormatter.formatStringJFT((JFormattedTextField) src, text, 2);
-				viewInfoExp.getIdadeAlojJFT().setEnabled(false);
-				viewInfoExp.getNrFasesJFT().setEnabled(true);
 			} else if (src == viewInfoExp.getNrFasesJFT()) {
 				TextFormatter.formatStringJFT((JFormattedTextField) src, text, 1);
 				viewInfoExp.getNrFasesJFT().setEnabled(false);
@@ -425,11 +418,6 @@ public class ControllerInfoExpST extends KeyAdapter implements ActionListener, F
 			viewInfoExp.getFimExpJFT().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
 		} else {
 			viewInfoExp.getFimExpJFT().setBorder(defaultJTF);
-		}
-		if (info2.getProblemas()[9]) {
-			viewInfoExp.getIdadeAlojJFT().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
-		} else {
-			viewInfoExp.getIdadeAlojJFT().setBorder(defaultJTF);
 		}
 		if (info2.getProblemas()[10] || info2.getProblemas()[14]) {
 			viewInfoExp.getFasesJP().setBorder(BorderFactory.createLineBorder(Color.RED, 2));

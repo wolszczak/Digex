@@ -8,16 +8,17 @@ public class ConsumoTratosVOST implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String data;
 	private int tratos;
-	private List<RmeTratosVOST> consumosTratos;
+	private List<RmeTratosVOST> consumo;
 	private boolean finalizado;
 
 	public ConsumoTratosVOST() {
+		this.consumo = new ArrayList<>();
 	}
 
 	public ConsumoTratosVOST(String data, int tratos, List<RmeTratosVOST> consumos,  boolean finalizado) {
 		this.data = data;
 		this.tratos = tratos;
-		this.consumosTratos = consumos;
+		this.consumo = consumos;
 		this.finalizado = finalizado;
 	}
 
@@ -29,12 +30,20 @@ public class ConsumoTratosVOST implements Serializable {
 		this.data = data;
 	}
 
-	public List<RmeTratosVOST> getConsumosTratos() {
-		return consumosTratos;
+	public int getTratos() {
+		return tratos;
 	}
 
-	public void setConsumosTratos(List<RmeTratosVOST> consumosTratos) {
-		this.consumosTratos = consumosTratos;
+	public void setTratos(int tratos) {
+		this.tratos = tratos;
+	}
+
+	public List<RmeTratosVOST> getConsumo() {
+		return consumo;
+	}
+
+	public void setConsumo(List<RmeTratosVOST> consumo) {
+		this.consumo = consumo;
 	}
 
 	public boolean isFinalizado() {
@@ -45,13 +54,7 @@ public class ConsumoTratosVOST implements Serializable {
 		this.finalizado = finalizado;
 	}
 
-	public int getTratos() {
-		return tratos;
-	}
 
-	public void setTratos(int tratos) {
-		this.tratos = tratos;
-	}
 	
 	
 

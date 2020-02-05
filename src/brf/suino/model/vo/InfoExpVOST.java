@@ -20,16 +20,14 @@ public class InfoExpVOST implements Serializable {
 	private int nrBaias;
 	private String inicioExp;
 	private String fimExp;
-	private int idadeAloj;
 	private int nrFases;
 	private List<String> datasFases;
 	private String msg;
 	private boolean[] problemas = { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false,
-			false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false };
+			false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false };
 
-	public InfoExpVOST(String idDigitador, String protocolo, int local, String local1, int galpao, String teste, int tipo,
-			String tipo1, int nrBaias, String inicioExp, String fimExp, int idadeAloj,  int nrFases,
-			List<String> datasFases) {
+	public InfoExpVOST(String idDigitador, String protocolo, int local, String local1, int galpao, String teste, int tipo, String tipo1,
+			int nrBaias, String inicioExp, String fimExp, int nrFases, List<String> datasFases) {
 		this.idDigitador = idDigitador;
 		this.protocolo = protocolo;
 		this.local = local;
@@ -41,7 +39,6 @@ public class InfoExpVOST implements Serializable {
 		this.nrBaias = nrBaias;
 		this.inicioExp = inicioExp;
 		this.fimExp = fimExp;
-		this.idadeAloj = idadeAloj;
 		this.nrFases = nrFases;
 		this.datasFases = datasFases;
 		msg = "";
@@ -135,14 +132,6 @@ public class InfoExpVOST implements Serializable {
 		this.fimExp = fimExp;
 	}
 
-	public String getIdadeAloj() {
-		return Integer.toString(idadeAloj);
-	}
-
-	public void setIdadeAloj(int idadeAloj) {
-		this.idadeAloj = idadeAloj;
-	}
-
 	public int getNrFases() {
 		return nrFases;
 	}
@@ -150,8 +139,6 @@ public class InfoExpVOST implements Serializable {
 	public void setNrFases(int nrFases) {
 		this.nrFases = nrFases;
 	}
-
-
 
 	public boolean[] getProblemas() {
 		return problemas;
@@ -216,10 +203,6 @@ public class InfoExpVOST implements Serializable {
 		if (!Objects.equals(this.fimExp, other.fimExp)) {
 			msg = msg.concat("- Fim do Experimento não confere\n");
 			problemas[10] = true;
-		}
-		if (this.idadeAloj != other.idadeAloj) {
-			msg = msg.concat("- Idade de Alojamento não confere\n");
-			problemas[11] = true;
 		}
 		if (this.nrFases != other.nrFases) {
 			msg = msg.concat("- Número de fases não confere\n");
