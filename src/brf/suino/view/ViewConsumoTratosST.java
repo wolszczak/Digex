@@ -76,7 +76,6 @@ public class ViewConsumoTratosST extends javax.swing.JFrame {
 		jLabel12 = new javax.swing.JLabel();
 		consumoJFT = new javax.swing.JFormattedTextField();
 		consumo10Label = new javax.swing.JLabel();
-		baiaJFT = new javax.swing.JFormattedTextField();
 		baia10Label = new javax.swing.JLabel();
 		ordemJFT = new javax.swing.JFormattedTextField();
 		ordemJFT.setEditable(false);
@@ -457,13 +456,7 @@ public class ViewConsumoTratosST extends javax.swing.JFrame {
 		consumo10Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		consumo10Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-		try {
-			baiaJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
-		} catch (java.text.ParseException ex) {
-			ex.printStackTrace();
-		}
-		baiaJFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-		baiaJFT.setEnabled(false);
+		
 
 		baia10Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		baia10Label.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -579,167 +572,159 @@ public class ViewConsumoTratosST extends javax.swing.JFrame {
 		}
 		controle.setHorizontalAlignment(SwingConstants.CENTER);
 		controle.setEnabled(false);
+		
+		baiaJFT = new JFormattedTextField();
+		try {
+			baiaJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+		} catch (java.text.ParseException ex) {
+			ex.printStackTrace();
+		}
+		baiaJFT.setHorizontalAlignment(SwingConstants.CENTER);
+		baiaJFT.setEnabled(false);
 
 		javax.swing.GroupLayout pnlConsumoLayout = new javax.swing.GroupLayout(pnlConsumo);
-		pnlConsumoLayout.setHorizontalGroup(pnlConsumoLayout.createParallelGroup(Alignment.TRAILING).addGroup(pnlConsumoLayout
-				.createSequentialGroup().addContainerGap()
-				.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.TRAILING).addGroup(pnlConsumoLayout.createSequentialGroup()
-						.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.TRAILING, false)
+		pnlConsumoLayout.setHorizontalGroup(
+			pnlConsumoLayout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(pnlConsumoLayout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(pnlConsumoLayout.createSequentialGroup()
+							.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.TRAILING, false)
 								.addComponent(ordem9Label, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
 								.addComponent(ordem8Label, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
 								.addComponent(ordem7Label, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
 								.addComponent(ordem10Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
 								.addComponent(ordemJFT, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
 								.addComponent(ordem6Label, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
-								.addComponent(ordem1Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(ordem2Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(ordem3Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(ordem4Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
+								.addComponent(ordem1Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(ordem2Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(ordem3Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(ordem4Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 								.addComponent(ordem5Label, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(ComponentPlacement.UNRELATED)
-						.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.LEADING, false).addGroup(pnlConsumoLayout
-								.createSequentialGroup()
-								.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.LEADING, false)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.LEADING, false)
+								.addGroup(pnlConsumoLayout.createSequentialGroup()
+									.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.LEADING, false)
 										.addComponent(baia2Label, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
 										.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.TRAILING)
-												.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.TRAILING, false)
-														.addComponent(baia4Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE,
-																GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-														.addComponent(baia5Label, GroupLayout.PREFERRED_SIZE, 32,
-																GroupLayout.PREFERRED_SIZE))
-												.addComponent(baia3Label, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 32,
-														GroupLayout.PREFERRED_SIZE)))
-								.addPreferredGap(ComponentPlacement.UNRELATED)
-								.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.LEADING, false)
+											.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.TRAILING, false)
+												.addComponent(baia4Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+												.addComponent(baia5Label, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE))
+											.addComponent(baia3Label, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)))
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.LEADING, false)
 										.addComponent(consumo2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 										.addComponent(consumo3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 										.addComponent(consumo4Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 										.addComponent(consumo5Label, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)))
 								.addGroup(pnlConsumoLayout.createSequentialGroup()
-										.addComponent(baia1Label, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addComponent(consumo1Label, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE))
+									.addComponent(baia1Label, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(consumo1Label, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE))
 								.addGroup(pnlConsumoLayout.createSequentialGroup()
+									.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.LEADING)
 										.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.TRAILING, false)
-												.addComponent(baia9Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE,
-														GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(baia10Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE,
-														GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(baia8Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-												.addComponent(baia7Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-												.addComponent(baia6Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE,
-														GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(baiaJFT, Alignment.LEADING))
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.LEADING)
-												.addComponent(consumoJFT, 56, 56, 56)
-												.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.LEADING, false)
-														.addComponent(consumo9Label, GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
-														.addComponent(consumo10Label, GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
-														.addComponent(consumo8Label, GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
-														.addComponent(consumo7Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-																Short.MAX_VALUE)
-														.addComponent(consumo6Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-																Short.MAX_VALUE)))))
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.LEADING, false).addComponent(controle)
+											.addComponent(baia9Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+											.addComponent(baia10Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+											.addComponent(baia8Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+											.addComponent(baia7Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+											.addComponent(baia6Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+										.addComponent(baiaJFT, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE))
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.LEADING)
+										.addComponent(consumoJFT, 56, 56, 56)
+										.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.LEADING, false)
+											.addComponent(consumo9Label, GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+											.addComponent(consumo10Label, GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+											.addComponent(consumo8Label, GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+											.addComponent(consumo7Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+											.addComponent(consumo6Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.LEADING, false)
+								.addComponent(controle)
 								.addComponent(jLabel12, GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)))
-						.addGroup(Alignment.LEADING,
-								pnlConsumoLayout.createSequentialGroup().addComponent(jLabel13).addPreferredGap(ComponentPlacement.RELATED)
-										.addComponent(jLabel14, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addComponent(jLabel15, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)))
-				.addContainerGap()));
-		pnlConsumoLayout
-				.setVerticalGroup(
-						pnlConsumoLayout.createParallelGroup(Alignment.TRAILING)
-								.addGroup(pnlConsumoLayout.createSequentialGroup().addContainerGap()
-										.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.BASELINE).addComponent(jLabel13)
-												.addComponent(jLabel14).addComponent(jLabel15))
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.LEADING)
-												.addComponent(ordem1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-												.addComponent(baia1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-												.addComponent(consumo1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.TRAILING)
-												.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.LEADING)
-														.addComponent(consumo2Label, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 14,
-																GroupLayout.PREFERRED_SIZE)
-														.addComponent(ordem2Label, GroupLayout.PREFERRED_SIZE, 14,
-																GroupLayout.PREFERRED_SIZE))
-												.addComponent(baia2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.TRAILING)
-												.addComponent(ordem3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-												.addComponent(consumo3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-												.addComponent(baia3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.TRAILING)
-												.addComponent(ordem4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-												.addComponent(consumo4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-												.addComponent(baia4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.TRAILING)
-												.addComponent(baia5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-												.addComponent(ordem5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-												.addComponent(consumo5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
-										.addGap(12)
-										.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.TRAILING)
-												.addComponent(ordem6Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-												.addComponent(baia6Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-												.addComponent(consumo6Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(ComponentPlacement.UNRELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.TRAILING)
-												.addComponent(ordem7Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-												.addComponent(baia7Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-												.addComponent(consumo7Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.TRAILING, false).addGroup(pnlConsumoLayout
-												.createSequentialGroup()
-												.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.LEADING)
-														.addComponent(baia8Label, GroupLayout.PREFERRED_SIZE, 14,
-																GroupLayout.PREFERRED_SIZE)
-														.addComponent(consumo8Label, GroupLayout.PREFERRED_SIZE, 14,
-																GroupLayout.PREFERRED_SIZE))
-												.addPreferredGap(ComponentPlacement.UNRELATED)
-												.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.TRAILING)
-														.addComponent(baia9Label, GroupLayout.PREFERRED_SIZE, 14,
-																GroupLayout.PREFERRED_SIZE)
-														.addComponent(consumo9Label, GroupLayout.PREFERRED_SIZE, 14,
-																GroupLayout.PREFERRED_SIZE)))
-												.addGroup(pnlConsumoLayout.createSequentialGroup()
-														.addComponent(ordem8Label, GroupLayout.PREFERRED_SIZE, 14,
-																GroupLayout.PREFERRED_SIZE)
-														.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE,
-																Short.MAX_VALUE)
-														.addComponent(
-																ordem9Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)))
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.TRAILING).addGroup(pnlConsumoLayout
-												.createSequentialGroup()
-												.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.LEADING)
-														.addComponent(baia10Label, GroupLayout.PREFERRED_SIZE, 14,
-																GroupLayout.PREFERRED_SIZE)
-														.addComponent(ordem10Label, GroupLayout.PREFERRED_SIZE, 14,
-																GroupLayout.PREFERRED_SIZE))
-												.addPreferredGap(ComponentPlacement.UNRELATED)
-												.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.BASELINE)
-														.addComponent(baiaJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
-														.addComponent(ordemJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
-														.addComponent(consumoJFT, GroupLayout.PREFERRED_SIZE, 20,
-																GroupLayout.PREFERRED_SIZE)
-														.addComponent(controle, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-																GroupLayout.PREFERRED_SIZE)))
-												.addGroup(Alignment.LEADING,
-														pnlConsumoLayout.createParallelGroup(Alignment.LEADING).addComponent(jLabel12)
-																.addComponent(consumo10Label, GroupLayout.PREFERRED_SIZE, 14,
-																		GroupLayout.PREFERRED_SIZE)))
-										.addContainerGap()));
+						.addGroup(pnlConsumoLayout.createSequentialGroup()
+							.addComponent(jLabel13)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(jLabel14, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(jLabel15, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap())
+		);
+		pnlConsumoLayout.setVerticalGroup(
+			pnlConsumoLayout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(pnlConsumoLayout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(jLabel13)
+						.addComponent(jLabel14)
+						.addComponent(jLabel15))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(ordem1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+						.addComponent(baia1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+						.addComponent(consumo1Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.TRAILING)
+						.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.LEADING)
+							.addComponent(consumo2Label, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+							.addComponent(ordem2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
+						.addComponent(baia2Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.TRAILING)
+						.addComponent(ordem3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+						.addComponent(consumo3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+						.addComponent(baia3Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.TRAILING)
+						.addComponent(ordem4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+						.addComponent(consumo4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+						.addComponent(baia4Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.TRAILING)
+						.addComponent(baia5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+						.addComponent(ordem5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+						.addComponent(consumo5Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
+					.addGap(12)
+					.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.TRAILING)
+						.addComponent(ordem6Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+						.addComponent(baia6Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+						.addComponent(consumo6Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.UNRELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.TRAILING)
+						.addComponent(ordem7Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+						.addComponent(baia7Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+						.addComponent(consumo7Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.TRAILING, false)
+						.addGroup(pnlConsumoLayout.createSequentialGroup()
+							.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(baia8Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+								.addComponent(consumo8Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.TRAILING)
+								.addComponent(baia9Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+								.addComponent(consumo9Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)))
+						.addGroup(pnlConsumoLayout.createSequentialGroup()
+							.addComponent(ordem8Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addComponent(ordem9Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(pnlConsumoLayout.createSequentialGroup()
+							.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(baia10Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+								.addComponent(ordem10Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addGroup(pnlConsumoLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(ordemJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+								.addComponent(consumoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+								.addComponent(controle, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(baiaJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+						.addComponent(jLabel12)
+						.addComponent(consumo10Label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap())
+		);
 		pnlConsumo.setLayout(pnlConsumoLayout);
 
 		javax.swing.GroupLayout pnlGeralLayout = new javax.swing.GroupLayout(pnlGeral);
@@ -981,7 +966,6 @@ public class ViewConsumoTratosST extends javax.swing.JFrame {
 	private javax.swing.JLabel baiaHist7Label;
 	private javax.swing.JLabel baiaHist8Label;
 	private javax.swing.JLabel baiaHist9Label;
-	private javax.swing.JFormattedTextField baiaJFT;
 	private javax.swing.JLabel consumo10Label;
 	private javax.swing.JLabel consumo1Label;
 	private javax.swing.JLabel consumo2Label;
@@ -1047,6 +1031,7 @@ public class ViewConsumoTratosST extends javax.swing.JFrame {
 	private javax.swing.JLabel registrosLabel;
 	private javax.swing.JFormattedTextField tratosJFT;
 	private JFormattedTextField controle;
+	private JFormattedTextField baiaJFT;
 	public javax.swing.JLabel getBaia10Label() {
 		return baia10Label;
 	}
@@ -1207,13 +1192,6 @@ public class ViewConsumoTratosST extends javax.swing.JFrame {
 		this.baiaHist9Label = baiaHist9Label;
 	}
 
-	public javax.swing.JFormattedTextField getBaiaJFT() {
-		return baiaJFT;
-	}
-
-	public void setBaiaJFT(javax.swing.JFormattedTextField baiaJFT) {
-		this.baiaJFT = baiaJFT;
-	}
 
 	public javax.swing.JLabel getConsumo10Label() {
 		return consumo10Label;
@@ -1731,6 +1709,11 @@ public class ViewConsumoTratosST extends javax.swing.JFrame {
 		this.registrosLabel = registrosLabel;
 	}
 
-	
+	public JFormattedTextField getBaiaJFT() {
+		return baiaJFT;
+	}
 
+	public void setBaiaJFT(JFormattedTextField baiaJFT) {
+		this.baiaJFT = baiaJFT;
+	}
 }

@@ -30,7 +30,7 @@ public class ControllerConsumoTratosST extends KeyAdapter implements FocusListen
 	private ViewConsumoTratosST view;
 	private ConsumoBOST consumoBO;
 	private ConsumoTratosVOST ultimoConsumo, consumoHist;
-	private List<RmeTratosVOST> consumosErros;
+	private List<RmeTratosVOST> consumosErros,  consumoTemp;
 	private int ordem;
 	private List<String> datasFases;
 	private List<Component> order, orderHist, orderErros;
@@ -142,8 +142,8 @@ public class ControllerConsumoTratosST extends KeyAdapter implements FocusListen
 				}
 			} else if (e.getSource() == view.getTratosJFT()) {
 				TextFormatter.formatStringJFT(src, view.getTratosJFT().getText().trim(), 1);
-				String msg = consumoBO.verificaCabecalhoConsumoTratos(view.getDataJFT().getText().trim(), datasFases,
-						Integer.parseInt(view.getTratosJFT().getText().trim()));
+				String msg = consumoBO.verificaCabecalhoConsumoTratos(view.getDataJFT().getText(), datasFases,
+						Integer.parseInt(view.getTratosJFT().getText()));
 				if (msg != null) {
 					JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
 					view.getTratosJFT().setEnabled(false);
@@ -155,12 +155,12 @@ public class ControllerConsumoTratosST extends KeyAdapter implements FocusListen
 					view.getBaiaJFT().grabFocus();
 				}
 			} else if (e.getSource() == view.getBaiaJFT()) {
-				TextFormatter.formatStringJFT(src, view.getBaiaJFT().getText().trim(), 3);
+				TextFormatter.formatStringJFT(src, view.getBaiaJFT().getText(), 3);
 				view.getBaiaJFT().setEnabled(false);
 				view.getConsumoJFT().setEnabled(true);
 				view.getConsumoJFT().grabFocus();
 			} else if (e.getSource() == view.getConsumoJFT()) {
-				TextFormatter.formatStringJFT(src, view.getConsumoJFT().getText().trim(), 5);
+				TextFormatter.formatStringJFT(src, view.getConsumoJFT().getText(), 5);
 				if (Integer.parseInt(view.getBaiaJFT().getText().trim()) == 0
 						&& Integer.parseInt(view.getConsumoJFT().getText().trim()) == 0) {
 					view.getConsumoJFT().setEnabled(false);
@@ -168,8 +168,11 @@ public class ControllerConsumoTratosST extends KeyAdapter implements FocusListen
 					view.getControle().grabFocus();
 				} else {
 					String msg = consumoBO.verificaConsumoTratos(Integer.parseInt(view.getBaiaJFT().getText().trim()),
-							Integer.parseInt(view.getConsumoJFT().getText().trim()));
+							Integer.parseInt(view.getConsumoJFT().getText()));
 					if (msg == null) {
+						consumoTemp.add(new RmeTratosVOST(Integer.parseInt(view.getOrdemJFT().getText()),
+								Integer.parseInt(view.getBaiaJFT().getText()),
+								Integer.parseInt(view.getConsumoJFT().getText())));
 						view.getConsumoJFT().setEnabled(false);
 						view.getBaiaJFT().setEnabled(true);
 						view.getBaiaJFT().grabFocus();
@@ -180,17 +183,18 @@ public class ControllerConsumoTratosST extends KeyAdapter implements FocusListen
 					}
 				}
 			} else if (e.getSource() == view.getControle()) {
-				TextFormatter.formatStringJFT(src, view.getControle().getText().trim(), 5);
-				if (Integer.parseInt(view.getBaiaJFT().getText().trim()) == 0
-						&& Integer.parseInt(view.getConsumoJFT().getText().trim()) == 0
-						&& Integer.parseInt(view.getControle().getText().trim()) == 0) {
+				TextFormatter.formatStringJFT(src, view.getControle().getText(), 5);
+				if (Integer.parseInt(view.getBaiaJFT().getText()) == 0 && Integer.parseInt(view.getConsumoJFT().getText()) == 0
+						&& Integer.parseInt(view.getControle().getText()) == 0) {
 					view.getControle().setEnabled(false);
 					view.getOpcaoJFT().setEnabled(true);
 					view.getOpcaoJFT().grabFocus();
-				} else if (Integer.parseInt(view.getControle().getText().trim()) == calculaControleConsumo()) {
+				} else if (Integer.parseInt(view.getControle().getText()) == calculaControleConsumo()) {
 					if (controller.getModel().getExperimentoVO().getConsumosTratos().isEmpty()) {
 						ConsumoTratosVOST novoconsumo = new ConsumoTratosVOST();
-						adicionarConsumo(novoconsumo);
+						novoconsumo.getConsumo().addAll(consumoTemp);
+						novoconsumo.setData(view.getDataJFT().getText());
+						novoconsumo.setTratos(Integer.parseInt(view.getTratosJFT().getText()));
 						controller.getModel().getExperimentoVO().getConsumosTratos().add(novoconsumo);
 						controller.getModel().getModelStateDAO().saveModelState(false);
 						view.getPnlConsumo().setBorder(defaultBorder);
@@ -202,15 +206,19 @@ public class ControllerConsumoTratosST extends KeyAdapter implements FocusListen
 					} else {
 						if (controller.getModel().getExperimentoVO().getConsumosTratos()
 								.get(controller.getModel().getExperimentoVO().getConsumosTratos().size() - 1).getData()
-								.equals(view.getDataJFT().getText().trim())) {
+								.equals(view.getDataJFT().getText())) {
 							ConsumoTratosVOST novoconsumo = new ConsumoTratosVOST();
-							adicionarConsumo(novoconsumo);
+							novoconsumo.getConsumo().addAll(consumoTemp);
+							novoconsumo.setData(view.getDataJFT().getText());
+							novoconsumo.setTratos(Integer.parseInt(view.getTratosJFT().getText()));
 							controller.getModel().getExperimentoVO().getConsumosTratos()
 									.get(controller.getModel().getExperimentoVO().getConsumosTratos().size() - 1).getConsumo()
 									.addAll(novoconsumo.getConsumo());
 						} else {
 							ConsumoTratosVOST novoconsumo = new ConsumoTratosVOST();
-							adicionarConsumo(novoconsumo);
+							novoconsumo.getConsumo().addAll(consumoTemp);
+							novoconsumo.setData(view.getDataJFT().getText());
+							novoconsumo.setTratos(Integer.parseInt(view.getTratosJFT().getText()));
 							controller.getModel().getExperimentoVO().getConsumosTratos().add(novoconsumo);
 						}
 						controller.getModel().getModelStateDAO().saveModelState(false);
@@ -222,6 +230,8 @@ public class ControllerConsumoTratosST extends KeyAdapter implements FocusListen
 						view.getBaiaJFT().grabFocus();
 					}
 				} else {
+					consumosErros.addAll(consumoTemp);
+					consumoTemp = new ArrayList<>();
 					fluxoErroControle();
 				}
 			}
@@ -229,26 +239,35 @@ public class ControllerConsumoTratosST extends KeyAdapter implements FocusListen
 	}
 
 	private void carregarHistData() {
-		
+		consumoHist = new ConsumoTratosVOST();
 		if (controller.getModel().getExperimentoVO().getConsumosTratos().size() > 0) {
 			for (int t = 0; t < controller.getModel().getExperimentoVO().getConsumosTratos().size(); t++) {
 				if (controller.getModel().getExperimentoVO().getConsumosTratos().get(t).getData().equals(view.getDataJFT().getText())) {
-					consumoHist =  new ConsumoTratosVOST();
 					consumoHist = controller.getModel().getExperimentoVO().getConsumosTratos().get(t);
 					break;
 				}
 			}
 		}
 
-		if (consumoHist != null) {
-			for(int s = 0; s < 10; s++) {
-				.setText(String.valueOf(consumoHist.getConsumo().get(consumoHist.getConsumo().size() - s)));
-				view.getBaia10Label().setText(String.valueOf(consumoHist.getConsumo().get(consumoHist.getConsumo().size() - s)));
-				view.getBaia10Label().setText(String.valueOf(consumoHist.getConsumo().get(consumoHist.getConsumo().size() - s)));
-				
-				
-				
+		if (consumoHist.getConsumo().size() > 0) {
+			ordem = consumoHist.getConsumo().size() + 1;
+			view.getOrdemJFT().setText(String.valueOf(ordem));
+			for (int s = 1; s <= 10; s++) {
+				JLabel l1 = (JLabel) orderHist.get(0);
+				l1.setText(String.valueOf(consumoHist.getConsumo().get(consumoHist.getConsumo().size() - s).getOrdem()));
+				orderHist.remove(0);
+				JLabel l2 = (JLabel) orderHist.get(0);
+				l2.setText(String.valueOf(consumoHist.getConsumo().get(consumoHist.getConsumo().size() - s).getBaia()));
+				orderHist.remove(0);
+				JLabel l3 = (JLabel) orderHist.get(0);
+				l3.setText(String.valueOf(consumoHist.getConsumo().get(consumoHist.getConsumo().size() - s).getConsumo()));
+				orderHist.remove(0);
 			}
+			criarOrdemComponentesHist();
+		} else {
+			limparTela();
+			ordem = 1;
+			view.getOrdemJFT().setText(String.valueOf(ordem));
 		}
 
 	}
@@ -256,55 +275,96 @@ public class ControllerConsumoTratosST extends KeyAdapter implements FocusListen
 	private void adicionarConsumo(ConsumoTratosVOST novoConsumo) {
 		novoConsumo.setData(view.getDataJFT().getText());
 		novoConsumo.setTratos(Integer.parseInt(view.getTratosJFT().getText()));
-		if (Integer.parseInt(view.getBaia1Label().getText().trim()) != 0
-				&& Integer.parseInt(view.getConsumo1Label().getText().trim()) != 0) {
-			novoConsumo.getConsumo().add(new RmeTratosVOST(Integer.parseInt(view.getOrdem1Label().getText().trim()),
-					Integer.parseInt(view.getBaia1Label().getText().trim()), Integer.parseInt(view.getConsumo1Label().getText().trim())));
+		if (!view.getBaia1Label().getText().trim().equals("")) {
+			if (Integer.parseInt(view.getBaia1Label().getText().trim()) != 0
+					&& Integer.parseInt(view.getConsumo1Label().getText().trim()) != 0) {
+				novoConsumo.getConsumo()
+						.add(new RmeTratosVOST(Integer.parseInt(view.getOrdem1Label().getText().trim()),
+								Integer.parseInt(view.getBaia1Label().getText().trim()),
+								Integer.parseInt(view.getConsumo1Label().getText().trim())));
+			}
 		}
-		if (Integer.parseInt(view.getBaia2Label().getText().trim()) != 0
-				&& Integer.parseInt(view.getConsumo2Label().getText().trim()) != 0) {
-			novoConsumo.getConsumo().add(new RmeTratosVOST(Integer.parseInt(view.getOrdem2Label().getText().trim()),
-					Integer.parseInt(view.getBaia2Label().getText().trim()), Integer.parseInt(view.getConsumo2Label().getText().trim())));
+
+		if (!view.getBaia2Label().getText().trim().equals("")) {
+			if (Integer.parseInt(view.getBaia2Label().getText().trim()) != 0
+					&& Integer.parseInt(view.getConsumo2Label().getText().trim()) != 0) {
+				novoConsumo.getConsumo()
+						.add(new RmeTratosVOST(Integer.parseInt(view.getOrdem2Label().getText().trim()),
+								Integer.parseInt(view.getBaia2Label().getText().trim()),
+								Integer.parseInt(view.getConsumo2Label().getText().trim())));
+			}
 		}
-		if (Integer.parseInt(view.getBaia3Label().getText().trim()) != 0
-				&& Integer.parseInt(view.getConsumo3Label().getText().trim()) != 0) {
-			novoConsumo.getConsumo().add(new RmeTratosVOST(Integer.parseInt(view.getOrdem3Label().getText().trim()),
-					Integer.parseInt(view.getBaia3Label().getText().trim()), Integer.parseInt(view.getConsumo3Label().getText().trim())));
+		if (!view.getBaia3Label().getText().trim().equals("")) {
+			if (Integer.parseInt(view.getBaia3Label().getText().trim()) != 0
+					&& Integer.parseInt(view.getConsumo3Label().getText().trim()) != 0) {
+				novoConsumo.getConsumo()
+						.add(new RmeTratosVOST(Integer.parseInt(view.getOrdem3Label().getText().trim()),
+								Integer.parseInt(view.getBaia3Label().getText().trim()),
+								Integer.parseInt(view.getConsumo3Label().getText().trim())));
+			}
 		}
-		if (Integer.parseInt(view.getBaia4Label().getText().trim()) != 0
-				&& Integer.parseInt(view.getConsumo4Label().getText().trim()) != 0) {
-			novoConsumo.getConsumo().add(new RmeTratosVOST(Integer.parseInt(view.getOrdem4Label().getText().trim()),
-					Integer.parseInt(view.getBaia4Label().getText().trim()), Integer.parseInt(view.getConsumo4Label().getText().trim())));
+		if (!view.getBaia4Label().getText().trim().equals("")) {
+			if (Integer.parseInt(view.getBaia4Label().getText().trim()) != 0
+					&& Integer.parseInt(view.getConsumo4Label().getText().trim()) != 0) {
+				novoConsumo.getConsumo()
+						.add(new RmeTratosVOST(Integer.parseInt(view.getOrdem4Label().getText().trim()),
+								Integer.parseInt(view.getBaia4Label().getText().trim()),
+								Integer.parseInt(view.getConsumo4Label().getText().trim())));
+			}
 		}
-		if (Integer.parseInt(view.getBaia5Label().getText().trim()) != 0
-				&& Integer.parseInt(view.getConsumo5Label().getText().trim()) != 0) {
-			novoConsumo.getConsumo().add(new RmeTratosVOST(Integer.parseInt(view.getOrdem5Label().getText().trim()),
-					Integer.parseInt(view.getBaia5Label().getText().trim()), Integer.parseInt(view.getConsumo5Label().getText().trim())));
+		if (!view.getBaia5Label().getText().trim().equals("")) {
+			if (Integer.parseInt(view.getBaia5Label().getText().trim()) != 0
+					&& Integer.parseInt(view.getConsumo5Label().getText().trim()) != 0) {
+				novoConsumo.getConsumo()
+						.add(new RmeTratosVOST(Integer.parseInt(view.getOrdem5Label().getText().trim()),
+								Integer.parseInt(view.getBaia5Label().getText().trim()),
+								Integer.parseInt(view.getConsumo5Label().getText().trim())));
+			}
 		}
-		if (Integer.parseInt(view.getBaia6Label().getText().trim()) != 0
-				&& Integer.parseInt(view.getConsumo6Label().getText().trim()) != 0) {
-			novoConsumo.getConsumo().add(new RmeTratosVOST(Integer.parseInt(view.getOrdem6Label().getText().trim()),
-					Integer.parseInt(view.getBaia6Label().getText().trim()), Integer.parseInt(view.getConsumo6Label().getText().trim())));
+		if (!view.getBaia6Label().getText().trim().equals("")) {
+			if (Integer.parseInt(view.getBaia6Label().getText().trim()) != 0
+					&& Integer.parseInt(view.getConsumo6Label().getText().trim()) != 0) {
+				novoConsumo.getConsumo()
+						.add(new RmeTratosVOST(Integer.parseInt(view.getOrdem6Label().getText().trim()),
+								Integer.parseInt(view.getBaia6Label().getText().trim()),
+								Integer.parseInt(view.getConsumo6Label().getText().trim())));
+			}
 		}
-		if (Integer.parseInt(view.getBaia7Label().getText().trim()) != 0
-				&& Integer.parseInt(view.getConsumo7Label().getText().trim()) != 0) {
-			novoConsumo.getConsumo().add(new RmeTratosVOST(Integer.parseInt(view.getOrdem7Label().getText().trim()),
-					Integer.parseInt(view.getBaia7Label().getText().trim()), Integer.parseInt(view.getConsumo7Label().getText().trim())));
+		if (!view.getBaia7Label().getText().trim().equals("")) {
+			if (Integer.parseInt(view.getBaia7Label().getText().trim()) != 0
+					&& Integer.parseInt(view.getConsumo7Label().getText().trim()) != 0) {
+				novoConsumo.getConsumo()
+						.add(new RmeTratosVOST(Integer.parseInt(view.getOrdem7Label().getText().trim()),
+								Integer.parseInt(view.getBaia7Label().getText().trim()),
+								Integer.parseInt(view.getConsumo7Label().getText().trim())));
+			}
 		}
-		if (Integer.parseInt(view.getBaia8Label().getText().trim()) != 0
-				&& Integer.parseInt(view.getConsumo8Label().getText().trim()) != 0) {
-			novoConsumo.getConsumo().add(new RmeTratosVOST(Integer.parseInt(view.getOrdem8Label().getText().trim()),
-					Integer.parseInt(view.getBaia8Label().getText().trim()), Integer.parseInt(view.getConsumo8Label().getText().trim())));
+		if (!view.getBaia8Label().getText().trim().equals("")) {
+			if (Integer.parseInt(view.getBaia8Label().getText().trim()) != 0
+					&& Integer.parseInt(view.getConsumo8Label().getText().trim()) != 0) {
+				novoConsumo.getConsumo()
+						.add(new RmeTratosVOST(Integer.parseInt(view.getOrdem8Label().getText().trim()),
+								Integer.parseInt(view.getBaia8Label().getText().trim()),
+								Integer.parseInt(view.getConsumo8Label().getText().trim())));
+			}
 		}
-		if (Integer.parseInt(view.getBaia9Label().getText().trim()) != 0
-				&& Integer.parseInt(view.getConsumo9Label().getText().trim()) != 0) {
-			novoConsumo.getConsumo().add(new RmeTratosVOST(Integer.parseInt(view.getOrdem9Label().getText().trim()),
-					Integer.parseInt(view.getBaia1Label().getText().trim()), Integer.parseInt(view.getConsumo9Label().getText().trim())));
+		if (!view.getBaia9Label().getText().trim().equals("")) {
+			if (Integer.parseInt(view.getBaia9Label().getText().trim()) != 0
+					&& Integer.parseInt(view.getConsumo9Label().getText().trim()) != 0) {
+				novoConsumo.getConsumo()
+						.add(new RmeTratosVOST(Integer.parseInt(view.getOrdem9Label().getText().trim()),
+								Integer.parseInt(view.getBaia9Label().getText().trim()),
+								Integer.parseInt(view.getConsumo9Label().getText().trim())));
+			}
 		}
-		if (Integer.parseInt(view.getBaia10Label().getText().trim()) != 0
-				&& Integer.parseInt(view.getConsumo10Label().getText().trim()) != 0) {
-			novoConsumo.getConsumo().add(new RmeTratosVOST(Integer.parseInt(view.getOrdem10Label().getText().trim()),
-					Integer.parseInt(view.getBaia10Label().getText().trim()), Integer.parseInt(view.getConsumo10Label().getText().trim())));
+		if (!view.getBaia10Label().getText().trim().equals("")) {
+			if (Integer.parseInt(view.getBaia10Label().getText().trim()) != 0
+					&& Integer.parseInt(view.getConsumo10Label().getText().trim()) != 0) {
+				novoConsumo.getConsumo()
+						.add(new RmeTratosVOST(Integer.parseInt(view.getOrdem10Label().getText().trim()),
+								Integer.parseInt(view.getBaia10Label().getText().trim()),
+								Integer.parseInt(view.getConsumo10Label().getText().trim())));
+			}
 		}
 	}
 
@@ -339,26 +399,109 @@ public class ControllerConsumoTratosST extends KeyAdapter implements FocusListen
 		view.getConsumoHist8Label().setText(view.getConsumo8Label().getText().trim());
 		view.getConsumoHist9Label().setText(view.getConsumo9Label().getText().trim());
 		view.getConsumoHist10Label().setText(view.getConsumo10Label().getText().trim());
-		limparTela();
+
+		view.getOrdem1Label().setText("");
+		view.getBaia1Label().setText("");
+		view.getConsumo1Label().setText("");
+		view.getOrdem2Label().setText("");
+		view.getBaia2Label().setText("");
+		view.getConsumo2Label().setText("");
+		view.getOrdem3Label().setText("");
+		view.getBaia3Label().setText("");
+		view.getConsumo3Label().setText("");
+		view.getOrdem4Label().setText("");
+		view.getBaia4Label().setText("");
+		view.getConsumo4Label().setText("");
+		view.getOrdem5Label().setText("");
+		view.getBaia5Label().setText("");
+		view.getConsumo5Label().setText("");
+		view.getOrdem6Label().setText("");
+		view.getBaia6Label().setText("");
+		view.getConsumo6Label().setText("");
+		view.getOrdem7Label().setText("");
+		view.getBaia7Label().setText("");
+		view.getConsumo7Label().setText("");
+		view.getOrdem8Label().setText("");
+		view.getBaia8Label().setText("");
+		view.getConsumo8Label().setText("");
+		view.getOrdem9Label().setText("");
+		view.getBaia9Label().setText("");
+		view.getConsumo9Label().setText("");
+		view.getOrdem10Label().setText("");
+		view.getBaia10Label().setText("");
+		view.getConsumo10Label().setText("");
+		view.getBaiaJFT().setText("");
+		view.getConsumoJFT().setText("");
+		view.getControle().setText("");
 	}
 
 	private void fluxoErroControle() {
+		consumosErros = new ArrayList<>();
 		view.getBaiaJFT().setEnabled(false);
 		view.getConsumoJFT().setEnabled(false);
 		view.getControle().setEnabled(false);
 		view.getPnlConsumo().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
 
-		for (Component c : orderErros) {
-			JLabel lbl = (JLabel) c;
-			if (c.getName().equals("ordem") && Integer.parseInt(lbl.getText().trim()) != 0) {
-				consumosErros.add(new RmeTratosVOST());
-				consumosErros.get(consumosErros.size() - 1).setOrdem(Integer.parseInt(lbl.getText().trim()));
-			} else if (c.getName().equals("baia") && Integer.parseInt(lbl.getText().trim()) != 0) {
-				consumosErros.get(consumosErros.size() - 1).setBaia(Integer.parseInt(lbl.getText().trim()));
-			} else if (c.getName().equals("consumo") && Integer.parseInt(lbl.getText().trim()) != 0) {
-				consumosErros.get(consumosErros.size() - 1).setConsumo(Integer.parseInt(lbl.getText().trim()));
-			}
+		if (!view.getOrdem1Label().getText().equals("") && !view.getBaia1Label().getText().equals("")
+				&& !view.getConsumo1Label().getText().equals("")) {
+			consumosErros.add(new RmeTratosVOST(Integer.parseInt(view.getOrdem1Label().getText()),
+					Integer.parseInt(view.getBaia1Label().getText()), Integer.parseInt(view.getConsumo1Label().getText())));
 		}
+		
+		if (!view.getOrdem2Label().getText().equals("") && !view.getBaia2Label().getText().equals("")
+				&& !view.getConsumo2Label().getText().equals("")) {
+			consumosErros.add(new RmeTratosVOST(Integer.parseInt(view.getOrdem2Label().getText()),
+					Integer.parseInt(view.getBaia2Label().getText()), Integer.parseInt(view.getConsumo2Label().getText())));
+		}
+		
+		if (!view.getOrdem3Label().getText().equals("") && !view.getBaia3Label().getText().equals("")
+				&& !view.getConsumo3Label().getText().equals("")) {
+			consumosErros.add(new RmeTratosVOST(Integer.parseInt(view.getOrdem3Label().getText()),
+					Integer.parseInt(view.getBaia3Label().getText()), Integer.parseInt(view.getConsumo3Label().getText())));
+		}
+		
+		if (!view.getOrdem4Label().getText().equals("") && !view.getBaia4Label().getText().equals("")
+				&& !view.getConsumo4Label().getText().equals("")) {
+			consumosErros.add(new RmeTratosVOST(Integer.parseInt(view.getOrdem4Label().getText()),
+					Integer.parseInt(view.getBaia4Label().getText()), Integer.parseInt(view.getConsumo4Label().getText())));
+		}
+		
+		if (!view.getOrdem5Label().getText().equals("") && !view.getBaia5Label().getText().equals("")
+				&& !view.getConsumo5Label().getText().equals("")) {
+			consumosErros.add(new RmeTratosVOST(Integer.parseInt(view.getOrdem5Label().getText()),
+					Integer.parseInt(view.getBaia5Label().getText()), Integer.parseInt(view.getConsumo5Label().getText())));
+		}
+		
+		if (!view.getOrdem6Label().getText().equals("") && !view.getBaia6Label().getText().equals("")
+				&& !view.getConsumo6Label().getText().equals("")) {
+			consumosErros.add(new RmeTratosVOST(Integer.parseInt(view.getOrdem6Label().getText()),
+					Integer.parseInt(view.getBaia6Label().getText()), Integer.parseInt(view.getConsumo6Label().getText())));
+		}
+		
+		if (!view.getOrdem7Label().getText().equals("") && !view.getBaia7Label().getText().equals("")
+				&& !view.getConsumo7Label().getText().equals("")) {
+			consumosErros.add(new RmeTratosVOST(Integer.parseInt(view.getOrdem7Label().getText()),
+					Integer.parseInt(view.getBaia7Label().getText()), Integer.parseInt(view.getConsumo7Label().getText())));
+		}
+		
+		if (!view.getOrdem8Label().getText().equals("") && !view.getBaia8Label().getText().equals("")
+				&& !view.getConsumo8Label().getText().equals("")) {
+			consumosErros.add(new RmeTratosVOST(Integer.parseInt(view.getOrdem8Label().getText()),
+					Integer.parseInt(view.getBaia8Label().getText()), Integer.parseInt(view.getConsumo8Label().getText())));
+		}
+		
+		if (!view.getOrdem9Label().getText().equals("") && !view.getBaia9Label().getText().equals("")
+				&& !view.getConsumo9Label().getText().equals("")) {
+			consumosErros.add(new RmeTratosVOST(Integer.parseInt(view.getOrdem9Label().getText()),
+					Integer.parseInt(view.getBaia9Label().getText()), Integer.parseInt(view.getConsumo9Label().getText())));
+		}
+		
+		if (!view.getOrdem1Label().getText().equals("") && !view.getBaia10Label().getText().equals("")
+				&& !view.getConsumo10Label().getText().equals("")) {
+			consumosErros.add(new RmeTratosVOST(Integer.parseInt(view.getOrdem10Label().getText()),
+					Integer.parseInt(view.getBaia10Label().getText()), Integer.parseInt(view.getConsumo10Label().getText())));
+		}
+
 
 		view.getOrdem1Label().setText("");
 		view.getBaia1Label().setText("");
@@ -410,61 +553,61 @@ public class ControllerConsumoTratosST extends KeyAdapter implements FocusListen
 			soma += Integer.parseInt(view.getBaia1Label().getText().trim());
 		}
 		if (!view.getBaia2Label().getText().trim().equals("")) {
-			soma += Integer.parseInt(view.getBaia1Label().getText().trim());
+			soma += Integer.parseInt(view.getBaia2Label().getText().trim());
 		}
 		if (!view.getBaia3Label().getText().trim().equals("")) {
-			soma += Integer.parseInt(view.getBaia1Label().getText().trim());
+			soma += Integer.parseInt(view.getBaia3Label().getText().trim());
 		}
 		if (!view.getBaia4Label().getText().trim().equals("")) {
-			soma += Integer.parseInt(view.getBaia1Label().getText().trim());
+			soma += Integer.parseInt(view.getBaia4Label().getText().trim());
 		}
 		if (!view.getBaia5Label().getText().trim().equals("")) {
-			soma += Integer.parseInt(view.getBaia1Label().getText().trim());
+			soma += Integer.parseInt(view.getBaia5Label().getText().trim());
 		}
 		if (!view.getBaia6Label().getText().trim().equals("")) {
-			soma += Integer.parseInt(view.getBaia1Label().getText().trim());
+			soma += Integer.parseInt(view.getBaia6Label().getText().trim());
 		}
 		if (!view.getBaia7Label().getText().trim().equals("")) {
-			soma += Integer.parseInt(view.getBaia1Label().getText().trim());
+			soma += Integer.parseInt(view.getBaia7Label().getText().trim());
 		}
 		if (!view.getBaia8Label().getText().trim().equals("")) {
-			soma += Integer.parseInt(view.getBaia1Label().getText().trim());
+			soma += Integer.parseInt(view.getBaia8Label().getText().trim());
 		}
 		if (!view.getBaia9Label().getText().trim().equals("")) {
-			soma += Integer.parseInt(view.getBaia1Label().getText().trim());
+			soma += Integer.parseInt(view.getBaia9Label().getText().trim());
 		}
 		if (!view.getBaia10Label().getText().trim().equals("")) {
-			soma += Integer.parseInt(view.getBaia1Label().getText().trim());
+			soma += Integer.parseInt(view.getBaia10Label().getText().trim());
 		}
 		if (!view.getConsumo1Label().getText().trim().equals("")) {
-			soma += Integer.parseInt(view.getBaia1Label().getText().trim());
+			soma += Integer.parseInt(view.getConsumo1Label().getText().trim());
 		}
 		if (!view.getConsumo2Label().getText().trim().equals("")) {
-			soma += Integer.parseInt(view.getBaia1Label().getText().trim());
+			soma += Integer.parseInt(view.getConsumo2Label().getText().trim());
 		}
 		if (!view.getConsumo3Label().getText().trim().equals("")) {
-			soma += Integer.parseInt(view.getBaia1Label().getText().trim());
+			soma += Integer.parseInt(view.getConsumo3Label().getText().trim());
 		}
 		if (!view.getConsumo4Label().getText().trim().equals("")) {
-			soma += Integer.parseInt(view.getBaia1Label().getText().trim());
+			soma += Integer.parseInt(view.getConsumo4Label().getText().trim());
 		}
 		if (!view.getConsumo5Label().getText().trim().equals("")) {
-			soma += Integer.parseInt(view.getBaia1Label().getText().trim());
+			soma += Integer.parseInt(view.getConsumo5Label().getText().trim());
 		}
 		if (!view.getConsumo6Label().getText().trim().equals("")) {
-			soma += Integer.parseInt(view.getBaia1Label().getText().trim());
+			soma += Integer.parseInt(view.getConsumo6Label().getText().trim());
 		}
 		if (!view.getConsumo7Label().getText().trim().equals("")) {
-			soma += Integer.parseInt(view.getBaia1Label().getText().trim());
+			soma += Integer.parseInt(view.getConsumo7Label().getText().trim());
 		}
 		if (!view.getConsumo8Label().getText().trim().equals("")) {
-			soma += Integer.parseInt(view.getBaia1Label().getText().trim());
+			soma += Integer.parseInt(view.getConsumo8Label().getText().trim());
 		}
 		if (!view.getConsumo9Label().getText().trim().equals("")) {
-			soma += Integer.parseInt(view.getBaia1Label().getText().trim());
+			soma += Integer.parseInt(view.getConsumo9Label().getText().trim());
 		}
 		if (!view.getConsumo10Label().getText().trim().equals("")) {
-			soma += Integer.parseInt(view.getBaia1Label().getText().trim());
+			soma += Integer.parseInt(view.getConsumo10Label().getText().trim());
 		}
 		return soma;
 	}
@@ -491,7 +634,7 @@ public class ControllerConsumoTratosST extends KeyAdapter implements FocusListen
 				break;
 			}
 		}
-		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(view.getOpcaoJFT()) && !e.getSource().equals(view.getBaiaJFT())) {
+		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(view.getOpcaoJFT()) && !e.getSource().equals(view.getDataJFT())) {
 			System.out.println("left");
 			Component prev = view.getFocusTraversalPolicy().getComponentBefore(view, (JFormattedTextField) src);
 			((JFormattedTextField) src).setEnabled(false);
@@ -502,6 +645,37 @@ public class ControllerConsumoTratosST extends KeyAdapter implements FocusListen
 	}
 
 	private void limparTela() {
+		view.getTratosJFT().setText("");
+		view.getOrdemHist1Label().setText("");
+		view.getOrdemHist2Label().setText("");
+		view.getOrdemHist3Label().setText("");
+		view.getOrdemHist4Label().setText("");
+		view.getOrdemHist5Label().setText("");
+		view.getOrdemHist6Label().setText("");
+		view.getOrdemHist7Label().setText("");
+		view.getOrdemHist8Label().setText("");
+		view.getOrdemHist9Label().setText("");
+		view.getOrdemHist10Label().setText("");
+		view.getBaiaHist1Label().setText("");
+		view.getBaiaHist2Label().setText("");
+		view.getBaiaHist3Label().setText("");
+		view.getBaiaHist4Label().setText("");
+		view.getBaiaHist5Label().setText("");
+		view.getBaiaHist6Label().setText("");
+		view.getBaiaHist7Label().setText("");
+		view.getBaiaHist8Label().setText("");
+		view.getBaiaHist9Label().setText("");
+		view.getBaiaHist10Label().setText("");
+		view.getConsumoHist1Label().setText("");
+		view.getConsumoHist2Label().setText("");
+		view.getConsumoHist3Label().setText("");
+		view.getConsumoHist4Label().setText("");
+		view.getConsumoHist5Label().setText("");
+		view.getConsumoHist6Label().setText("");
+		view.getConsumoHist7Label().setText("");
+		view.getConsumoHist8Label().setText("");
+		view.getConsumoHist9Label().setText("");
+		view.getConsumoHist10Label().setText("");
 		view.getOrdem1Label().setText("");
 		view.getBaia1Label().setText("");
 		view.getConsumo1Label().setText("");
@@ -571,7 +745,7 @@ public class ControllerConsumoTratosST extends KeyAdapter implements FocusListen
 		view.getConsumo10Label().setText(view.getConsumoJFT().getText().trim());
 
 		if (consumosErros != null) {
-//			recuperaHistConsumo();
+			recuperaHistConsumo();
 		} else {
 			view.getOrdemJFT().setText(String.valueOf(++ordem));
 			TextFormatter.formatStringJFT(view.getOrdemJFT(), view.getOrdemJFT().getText().trim(), 3);
@@ -595,20 +769,19 @@ public class ControllerConsumoTratosST extends KeyAdapter implements FocusListen
 //		viewLivre.getControleSobraJFT().setEnabled(false);
 //	}
 
-//	public void recuperaHistConsumo() {
-//		
-//		view.getOrdemJFT().setText("" + consumosErros.getConsumosTratos().getOrdem());
-//		TextFormatter.formatStringJFT(view.getOrdemJFT(), view.getOrdemJFT().getText().trim(), 3);
-//		view.getDataJFT().setText("" + consumosErros.get(0).getData());
-//		TextFormatter.formatStringJFT(view.getOrdemJFT(), view.getOrdemJFT().getText().trim(), 3);
-//		view.getOrdemJFT().setText("" + consumosErros.get(0).getOrdem());
-//		TextFormatter.formatStringJFT(view.getOrdemJFT(), view.getOrdemJFT().getText().trim(), 3);
-//
-//		consumosErros.remove(0);
-//		view.getSobraJFT().setEnabled(false);
-//		view.getDataJFT().setEnabled(true);
-//		view.getDataJFT().grabFocus();
-//	}
+	public void recuperaHistConsumo() {
+		view.getConsumoJFT().setText("" + consumosErros.get(0).getConsumo());
+		TextFormatter.formatStringJFT(view.getConsumoJFT(), view.getConsumoJFT().getText(), 5);
+		view.getBaiaJFT().setText("" + consumosErros.get(0).getBaia());
+		TextFormatter.formatStringJFT(view.getBaiaJFT(), view.getBaiaJFT().getText(), 3);
+		view.getOrdemJFT().setText("" + consumosErros.get(0).getOrdem());
+		TextFormatter.formatStringJFT(view.getOrdemJFT(), view.getOrdemJFT().getText(), 3);
+
+		consumosErros.remove(0);
+		view.getConsumoJFT().setEnabled(false);
+		view.getBaiaJFT().setEnabled(true);
+		view.getBaiaJFT().grabFocus();
+	}
 
 //	public void fluxoErroControle() {
 //		viewLivre.getDataJFT().setText("00/00/0000");
