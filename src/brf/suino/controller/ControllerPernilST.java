@@ -447,30 +447,53 @@ public class ControllerPernilST extends KeyAdapter implements FocusListener, Ite
 	}
 
 	private void salvarPernil() {
-		controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPernil()
-				.add(new PernilVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem1JFT().getText()),
-						Integer.parseInt(view.getPeso1JFT().getText()), Integer.parseInt(view.getPelgo1JFT().getText()),
-						Integer.parseInt(view.getPegof1JFT().getText()), Integer.parseInt(view.getPegom1JFT().getText()),
-						Integer.parseInt(view.getOsste1JFT().getText()), Integer.parseInt(view.getMuscu1JFT().getText()),
-						Integer.parseInt(view.getPe1JFT().getText()), Integer.parseInt(view.getJpc1JFT().getText()),
-						Integer.parseInt(view.getPh1JFT().getText()), Integer.parseInt(view.getIni1JFT().getText()),
-						Integer.parseInt(view.getFin1JFT().getText())));
-		controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPernil()
-				.add(new PernilVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem2JFT().getText()),
-						Integer.parseInt(view.getPeso2JFT().getText()), Integer.parseInt(view.getPelgo2JFT().getText()),
-						Integer.parseInt(view.getPegof2JFT().getText()), Integer.parseInt(view.getPegom2JFT().getText()),
-						Integer.parseInt(view.getOsste2JFT().getText()), Integer.parseInt(view.getMuscu2JFT().getText()),
-						Integer.parseInt(view.getPe2JFT().getText()), Integer.parseInt(view.getJpc2JFT().getText()),
-						Integer.parseInt(view.getPh2JFT().getText()), Integer.parseInt(view.getIni2JFT().getText()),
-						Integer.parseInt(view.getFin2JFT().getText())));
-		controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPernil()
-				.add(new PernilVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem3JFT().getText()),
-						Integer.parseInt(view.getPeso3JFT().getText()), Integer.parseInt(view.getPelgo3JFT().getText()),
-						Integer.parseInt(view.getPegof3JFT().getText()), Integer.parseInt(view.getPegom3JFT().getText()),
-						Integer.parseInt(view.getMuscu3JFT().getText()), Integer.parseInt(view.getMuscu3JFT().getText()),
-						Integer.parseInt(view.getPe3JFT().getText()), Integer.parseInt(view.getJpc3JFT().getText()),
-						Integer.parseInt(view.getPh3JFT().getText()), Integer.parseInt(view.getIni3JFT().getText()),
-						Integer.parseInt(view.getFin3JFT().getText())));
+		if (Integer.parseInt(view.getTatuagem1JFT().getText()) != 0 && Integer.parseInt(view.getPeso1JFT().getText()) != 0
+				&& Integer.parseInt(view.getPelgo1JFT().getText()) != 0 && Integer.parseInt(view.getPegof1JFT().getText()) != 0
+				&& Integer.parseInt(view.getPegom1JFT().getText()) != 0 && Integer.parseInt(view.getOsste1JFT().getText()) != 0
+				&& Integer.parseInt(view.getMuscu1JFT().getText()) != 0 && Integer.parseInt(view.getPe1JFT().getText()) != 0
+				&& Integer.parseInt(view.getJpc1JFT().getText()) != 0 && Integer.parseInt(view.getPh1JFT().getText()) != 0
+				&& Integer.parseInt(view.getIni1JFT().getText()) != 0 && Integer.parseInt(view.getFin1JFT().getText()) != 0) {
+			controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPernil()
+					.add(new PernilVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem1JFT().getText()),
+							Integer.parseInt(view.getPeso1JFT().getText()), Integer.parseInt(view.getPelgo1JFT().getText()),
+							Integer.parseInt(view.getPegof1JFT().getText()), Integer.parseInt(view.getPegom1JFT().getText()),
+							Integer.parseInt(view.getOsste1JFT().getText()), Integer.parseInt(view.getMuscu1JFT().getText()),
+							Integer.parseInt(view.getPe1JFT().getText()), Integer.parseInt(view.getJpc1JFT().getText()),
+							Integer.parseInt(view.getPh1JFT().getText()), Integer.parseInt(view.getIni1JFT().getText()),
+							Integer.parseInt(view.getFin1JFT().getText())));
+		}
+
+		if (Integer.parseInt(view.getTatuagem2JFT().getText()) != 0 && Integer.parseInt(view.getPeso2JFT().getText()) != 0
+				&& Integer.parseInt(view.getPelgo2JFT().getText()) != 0 && Integer.parseInt(view.getPegof2JFT().getText()) != 0
+				&& Integer.parseInt(view.getPegom2JFT().getText()) != 0 && Integer.parseInt(view.getOsste2JFT().getText()) != 0
+				&& Integer.parseInt(view.getMuscu2JFT().getText()) != 0 && Integer.parseInt(view.getPe2JFT().getText()) != 0
+				&& Integer.parseInt(view.getJpc2JFT().getText()) != 0 && Integer.parseInt(view.getPh2JFT().getText()) != 0
+				&& Integer.parseInt(view.getIni2JFT().getText()) != 0 && Integer.parseInt(view.getFin2JFT().getText()) != 0) {
+			controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPernil()
+					.add(new PernilVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem2JFT().getText()),
+							Integer.parseInt(view.getPeso2JFT().getText()), Integer.parseInt(view.getPelgo2JFT().getText()),
+							Integer.parseInt(view.getPegof2JFT().getText()), Integer.parseInt(view.getPegom2JFT().getText()),
+							Integer.parseInt(view.getOsste2JFT().getText()), Integer.parseInt(view.getMuscu2JFT().getText()),
+							Integer.parseInt(view.getPe2JFT().getText()), Integer.parseInt(view.getJpc2JFT().getText()),
+							Integer.parseInt(view.getPh2JFT().getText()), Integer.parseInt(view.getIni2JFT().getText()),
+							Integer.parseInt(view.getFin2JFT().getText())));
+		}
+
+		if (Integer.parseInt(view.getTatuagem3JFT().getText()) != 0 && Integer.parseInt(view.getPeso3JFT().getText()) != 0
+				&& Integer.parseInt(view.getPelgo3JFT().getText()) != 0 && Integer.parseInt(view.getPegof3JFT().getText()) != 0
+				&& Integer.parseInt(view.getPegom3JFT().getText()) != 0 && Integer.parseInt(view.getOsste3JFT().getText()) != 0
+				&& Integer.parseInt(view.getMuscu3JFT().getText()) != 0 && Integer.parseInt(view.getPe3JFT().getText()) != 0
+				&& Integer.parseInt(view.getJpc3JFT().getText()) != 0 && Integer.parseInt(view.getPh3JFT().getText()) != 0
+				&& Integer.parseInt(view.getIni3JFT().getText()) != 0 && Integer.parseInt(view.getFin3JFT().getText()) != 0) {
+			controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPernil()
+					.add(new PernilVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem3JFT().getText()),
+							Integer.parseInt(view.getPeso3JFT().getText()), Integer.parseInt(view.getPelgo3JFT().getText()),
+							Integer.parseInt(view.getPegof3JFT().getText()), Integer.parseInt(view.getPegom3JFT().getText()),
+							Integer.parseInt(view.getMuscu3JFT().getText()), Integer.parseInt(view.getMuscu3JFT().getText()),
+							Integer.parseInt(view.getPe3JFT().getText()), Integer.parseInt(view.getJpc3JFT().getText()),
+							Integer.parseInt(view.getPh3JFT().getText()), Integer.parseInt(view.getIni3JFT().getText()),
+							Integer.parseInt(view.getFin3JFT().getText())));
+		}
 		controller.getModel().getModelStateDAO().saveModelState(false);
 	}
 

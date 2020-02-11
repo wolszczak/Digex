@@ -403,24 +403,45 @@ public class ControllerPaletaST extends KeyAdapter implements FocusListener, Ite
 	}
 
 	private void salvarPaleta() {
-		controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta()
-				.add(new PaletaVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem1JFT().getText()),
-						Integer.parseInt(view.getPeso1JFT().getText()), Integer.parseInt(view.getPelgo1JFT().getText()),
-						Integer.parseInt(view.getPegof1JFT().getText()), Integer.parseInt(view.getPegom1JFT().getText()),
-						Integer.parseInt(view.getOsste1JFT().getText()), Integer.parseInt(view.getCama1JFT().getText()),
-						Integer.parseInt(view.getCmsp1JFT().getText()), Integer.parseInt(view.getPalleca1JFT().getText())));
-		controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta()
-				.add(new PaletaVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem2JFT().getText()),
-						Integer.parseInt(view.getPeso1JFT().getText()), Integer.parseInt(view.getPelgo1JFT().getText()),
-						Integer.parseInt(view.getPegof1JFT().getText()), Integer.parseInt(view.getPegom1JFT().getText()),
-						Integer.parseInt(view.getOsste1JFT().getText()), Integer.parseInt(view.getCama1JFT().getText()),
-						Integer.parseInt(view.getCmsp1JFT().getText()), Integer.parseInt(view.getPalleca1JFT().getText())));
-		controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta()
-				.add(new PaletaVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem3JFT().getText()),
-						Integer.parseInt(view.getPeso1JFT().getText()), Integer.parseInt(view.getPelgo1JFT().getText()),
-						Integer.parseInt(view.getPegof1JFT().getText()), Integer.parseInt(view.getPegom1JFT().getText()),
-						Integer.parseInt(view.getOsste1JFT().getText()), Integer.parseInt(view.getCama1JFT().getText()),
-						Integer.parseInt(view.getCmsp1JFT().getText()), Integer.parseInt(view.getPalleca1JFT().getText())));
+
+		if (Integer.parseInt(view.getTatuagem1JFT().getText()) != 0 && Integer.parseInt(view.getPeso1JFT().getText()) != 0
+				&& Integer.parseInt(view.getPelgo1JFT().getText()) != 0 && Integer.parseInt(view.getPegof1JFT().getText()) != 0
+				&& Integer.parseInt(view.getPegom1JFT().getText()) != 0 && Integer.parseInt(view.getOsste1JFT().getText()) != 0
+				&& Integer.parseInt(view.getCama1JFT().getText()) != 0 && Integer.parseInt(view.getCmsp1JFT().getText()) != 0
+				&& Integer.parseInt(view.getPalleca1JFT().getText()) != 0) {
+			controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta()
+					.add(new PaletaVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem1JFT().getText()),
+							Integer.parseInt(view.getPeso1JFT().getText()), Integer.parseInt(view.getPelgo1JFT().getText()),
+							Integer.parseInt(view.getPegof1JFT().getText()), Integer.parseInt(view.getPegom1JFT().getText()),
+							Integer.parseInt(view.getOsste1JFT().getText()), Integer.parseInt(view.getCama1JFT().getText()),
+							Integer.parseInt(view.getCmsp1JFT().getText()), Integer.parseInt(view.getPalleca1JFT().getText())));
+		}
+		if (Integer.parseInt(view.getTatuagem2JFT().getText()) != 0 && Integer.parseInt(view.getPeso2JFT().getText()) != 0
+				&& Integer.parseInt(view.getPelgo2JFT().getText()) != 0 && Integer.parseInt(view.getPegof2JFT().getText()) != 0
+				&& Integer.parseInt(view.getPegom2JFT().getText()) != 0 && Integer.parseInt(view.getOsste2JFT().getText()) != 0
+				&& Integer.parseInt(view.getCama2JFT().getText()) != 0 && Integer.parseInt(view.getCmsp2JFT().getText()) != 0
+				&& Integer.parseInt(view.getPalleca2JFT().getText()) != 0) {
+			controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta()
+					.add(new PaletaVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem2JFT().getText()),
+							Integer.parseInt(view.getPeso2JFT().getText()), Integer.parseInt(view.getPelgo2JFT().getText()),
+							Integer.parseInt(view.getPegof2JFT().getText()), Integer.parseInt(view.getPegom2JFT().getText()),
+							Integer.parseInt(view.getOsste2JFT().getText()), Integer.parseInt(view.getCama2JFT().getText()),
+							Integer.parseInt(view.getCmsp2JFT().getText()), Integer.parseInt(view.getPalleca2JFT().getText())));
+		}
+
+		if (Integer.parseInt(view.getTatuagem3JFT().getText()) != 0 && Integer.parseInt(view.getPeso3JFT().getText()) != 0
+				&& Integer.parseInt(view.getPelgo3JFT().getText()) != 0 && Integer.parseInt(view.getPegof3JFT().getText()) != 0
+				&& Integer.parseInt(view.getPegom3JFT().getText()) != 0 && Integer.parseInt(view.getOsste3JFT().getText()) != 0
+				&& Integer.parseInt(view.getCama3JFT().getText()) != 0 && Integer.parseInt(view.getCmsp3JFT().getText()) != 0
+				&& Integer.parseInt(view.getPalleca3JFT().getText()) != 0) {
+			controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta()
+					.add(new PaletaVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem3JFT().getText()),
+							Integer.parseInt(view.getPeso3JFT().getText()), Integer.parseInt(view.getPelgo3JFT().getText()),
+							Integer.parseInt(view.getPegof3JFT().getText()), Integer.parseInt(view.getPegom3JFT().getText()),
+							Integer.parseInt(view.getOsste3JFT().getText()), Integer.parseInt(view.getCama3JFT().getText()),
+							Integer.parseInt(view.getCmsp3JFT().getText()), Integer.parseInt(view.getPalleca3JFT().getText())));
+		}
+
 		controller.getModel().getModelStateDAO().saveModelState(false);
 	}
 

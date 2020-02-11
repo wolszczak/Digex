@@ -294,18 +294,32 @@ public class ControllerBarrigaST extends KeyAdapter implements FocusListener, It
 	}
 
 	private void salvarBarriga() {
-		controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga()
-				.add(new BarrigaVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagemJFT1().getText()),
-						Integer.parseInt(view.getPeso1JFT().getText()), Integer.parseInt(view.getCptf1JFT().getText()),
-						Integer.parseInt(view.getPronta1JFT().getText()), Integer.parseInt(view.getEsgor1JFT().getText())));
-		controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga()
-				.add(new BarrigaVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagemJFT2().getText()),
-						Integer.parseInt(view.getPeso2JFT().getText()), Integer.parseInt(view.getCptf2JFT().getText()),
-						Integer.parseInt(view.getPronta2JFT().getText()), Integer.parseInt(view.getEsgor2JFT().getText())));
-		controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga()
-				.add(new BarrigaVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagemJFT3().getText()),
-						Integer.parseInt(view.getPeso3JFT().getText()), Integer.parseInt(view.getCptf3JFT().getText()),
-						Integer.parseInt(view.getPronta3JFT().getText()), Integer.parseInt(view.getEsgor3JFT().getText())));
+		if (Integer.parseInt(view.getTatuagemJFT1().getText()) != 0 && Integer.parseInt(view.getTatuagemJFT1().getText()) != 0
+				&& Integer.parseInt(view.getTatuagemJFT1().getText()) != 0 && Integer.parseInt(view.getTatuagemJFT1().getText()) != 0
+				&& Integer.parseInt(view.getTatuagemJFT1().getText()) != 0) {
+			controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga()
+					.add(new BarrigaVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagemJFT1().getText()),
+							Integer.parseInt(view.getPeso1JFT().getText()), Integer.parseInt(view.getCptf1JFT().getText()),
+							Integer.parseInt(view.getPronta1JFT().getText()), Integer.parseInt(view.getEsgor1JFT().getText())));
+		}
+		if (Integer.parseInt(view.getTatuagemJFT2().getText()) != 0 && Integer.parseInt(view.getTatuagemJFT2().getText()) != 0
+				&& Integer.parseInt(view.getTatuagemJFT2().getText()) != 0 && Integer.parseInt(view.getTatuagemJFT2().getText()) != 0
+				&& Integer.parseInt(view.getTatuagemJFT2().getText()) != 0) {
+			controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga()
+					.add(new BarrigaVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagemJFT2().getText()),
+							Integer.parseInt(view.getPeso2JFT().getText()), Integer.parseInt(view.getCptf2JFT().getText()),
+							Integer.parseInt(view.getPronta2JFT().getText()), Integer.parseInt(view.getEsgor2JFT().getText())));
+		}
+
+		if (Integer.parseInt(view.getTatuagemJFT3().getText()) != 0 && Integer.parseInt(view.getTatuagemJFT3().getText()) != 0
+				&& Integer.parseInt(view.getTatuagemJFT3().getText()) != 0 && Integer.parseInt(view.getTatuagemJFT3().getText()) != 0
+				&& Integer.parseInt(view.getTatuagemJFT3().getText()) != 0) {
+			controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getBarriga()
+					.add(new BarrigaVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagemJFT3().getText()),
+							Integer.parseInt(view.getPeso3JFT().getText()), Integer.parseInt(view.getCptf3JFT().getText()),
+							Integer.parseInt(view.getPronta3JFT().getText()), Integer.parseInt(view.getEsgor3JFT().getText())));
+		}
+
 		controller.getModel().getModelStateDAO().saveModelState(false);
 	}
 
