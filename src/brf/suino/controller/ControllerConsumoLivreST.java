@@ -90,17 +90,18 @@ public class ControllerConsumoLivreST extends KeyAdapter implements FocusListene
 			view.getBaiaJFT().grabFocus();
 		}
 
-		if (ultimaBaia.getConsumos() != null) {
-			ordem = baia.getConsumos().getRme().get(baia.getConsumos().getRme().size() - 1).getOrdem() + 1;
-		} else {
-			ordem = 1;
-		}
 
 		criarOrdemComponentes();
 		criarOrdemComponentesHist();
 
 		loadHist();
 
+		if (ultimaBaia.getConsumos().getRme().size() > 0) {
+			ordem = ultimaBaia.getConsumos().getRme().get(baia.getConsumos().getRme().size() - 1).getOrdem() + 1;
+		} else {
+			ordem = 1;
+		}
+		
 		view.getFornecidaJFT().setText("00000");
 		view.getSobraJFT().setText("00000");
 		view.getControleFornecidaJFT().setText("000000");
@@ -113,7 +114,7 @@ public class ControllerConsumoLivreST extends KeyAdapter implements FocusListene
 
 	private void loadHist() {
 		if (ultimaBaia.getConsumos() != null) {
-			if (!ultimaBaia.getConsumos().isFinalizado()) {
+//			if (!ultimaBaia.getConsumos().isFinalizado()) {
 				consumoHist = controller.getModel().getExperimentoVO().getBaias()
 						.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumos();
 				view.getBaiaJFT().setText(String.valueOf(consumoHist.getBaia()));
@@ -122,23 +123,23 @@ public class ControllerConsumoLivreST extends KeyAdapter implements FocusListene
 				view.getTrata2JFT().setText(String.valueOf(consumoHist.getTrat2()));
 				view.getTrata3JFT().setText(String.valueOf(consumoHist.getTrat3()));
 				carregaRacao();
-			} else {
-				consumoHist = controller.getModel().getExperimentoVO().getBaias()
-						.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumos();
-				view.getBaiaJFT().setText(String.valueOf(consumoHist.getBaia()));
-				view.getSexoJFT().setText(String.valueOf(consumoHist.getSexo()));
-				view.getTrataJFT().setText(String.valueOf(consumoHist.getTrat1()));
-				view.getTrata2JFT().setText(String.valueOf(consumoHist.getTrat2()));
-				view.getTrata3JFT().setText(String.valueOf(consumoHist.getTrat3()));
-				carregaRacao();
-				view.getDataJFT().setEnabled(false);
-				view.getFornecidaJFT().setEnabled(false);
-				view.getSobraJFT().setEnabled(false);
-				view.getControleFornecidaJFT().setEnabled(false);
-				view.getControleSobraJFT().setEnabled(false);
-				view.getOpcaoJFT().setEnabled(true);
-				view.getOpcaoJFT().grabFocus();
-			}
+//			} else {
+//				consumoHist = controller.getModel().getExperimentoVO().getBaias()
+//						.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumos();
+//				view.getBaiaJFT().setText(String.valueOf(consumoHist.getBaia()));
+//				view.getSexoJFT().setText(String.valueOf(consumoHist.getSexo()));
+//				view.getTrataJFT().setText(String.valueOf(consumoHist.getTrat1()));
+//				view.getTrata2JFT().setText(String.valueOf(consumoHist.getTrat2()));
+//				view.getTrata3JFT().setText(String.valueOf(consumoHist.getTrat3()));
+//				carregaRacao();
+//				view.getDataJFT().setEnabled(false);
+//				view.getFornecidaJFT().setEnabled(false);
+//				view.getSobraJFT().setEnabled(false);
+//				view.getControleFornecidaJFT().setEnabled(false);
+//				view.getControleSobraJFT().setEnabled(false);
+//				view.getOpcaoJFT().setEnabled(true);
+//				view.getOpcaoJFT().grabFocus();
+//			}
 		}
 	}
 
@@ -232,8 +233,8 @@ public class ControllerConsumoLivreST extends KeyAdapter implements FocusListene
 							JOptionPane.WARNING_MESSAGE);
 					if (option == 0) {
 						view.setVisible(false);
-						controller.getModel().getExperimentoVO().getBaias()
-								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumos().setFinalizado(true);
+//						controller.getModel().getExperimentoVO().getBaias()
+//								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumos().setFinalizado(true);
 						controller.getModel().getExperimentoVO().getBaias()
 								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).setFinalizado(true);
 						controller.getModel().getModelStateDAO().saveModelState(false);
@@ -244,8 +245,8 @@ public class ControllerConsumoLivreST extends KeyAdapter implements FocusListene
 					}
 				} else {
 					view.setVisible(false);
-					controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
-							.getConsumos().setFinalizado(true);
+//					controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
+//							.getConsumos().setFinalizado(true);
 					controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
 							.setFinalizado(true);
 					controller.getModel().getModelStateDAO().saveModelState(false);
@@ -332,9 +333,12 @@ public class ControllerConsumoLivreST extends KeyAdapter implements FocusListene
 						view.getDataJFT().grabFocus();
 						if (controller.getModel().getExperimentoVO().getBaias()
 								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumos() == null) {
+//							controller.getModel().getExperimentoVO().getBaias()
+//									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
+//									.setConsumos(new ConsumoLivreVOST(galpao, baia, sexo, trata, trata2, trata3, false, new ArrayList<>()));
 							controller.getModel().getExperimentoVO().getBaias()
-									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
-									.setConsumos(new ConsumoLivreVOST(galpao, baia, sexo, trata, trata2, trata3, false, new ArrayList<>()));
+							.get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
+							.setConsumos(new ConsumoLivreVOST(galpao, baia, sexo, trata, trata2, trata3, new ArrayList<>()));
 							controller.getModel().getExperimentoVO().getBaias()
 									.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumos().getRme()
 									.add(new RmeLivreVOST(Integer.parseInt(view.getOrdemJFT().getText().trim()),
@@ -403,8 +407,8 @@ public class ControllerConsumoLivreST extends KeyAdapter implements FocusListene
 					if (Integer.parseInt(view.getControleSobraJFT().getText().trim()) == calculaControleSobra()) {
 						TextFormatter.formatStringJFT(jft, text, 6);
 						view.getPnlConsumo().setBorder(defaultBorder);
-						controller.getModel().getExperimentoVO().getBaias()
-								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumos().setFinalizado(true);
+//						controller.getModel().getExperimentoVO().getBaias()
+//								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumos().setFinalizado(true);
 						controller.getModel().getModelStateDAO().saveModelState(false);
 						view.getControleSobraJFT().setEnabled(false);
 						view.getOpcaoJFT().setEnabled(true);

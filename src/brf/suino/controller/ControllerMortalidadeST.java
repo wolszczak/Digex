@@ -77,27 +77,27 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 				view.getTrata2JFT().setText(String.valueOf(ultimaBaia.getTrat2()));
 				TextFormatter.formatStringJFT(view.getTrata2JFT(), view.getTrata2JFT().getText(), 2);
 
-				if (ultimaBaia.getConsumos() != null) {
-					if (!ultimaBaia.getConsumos().isFinalizado()) {
-						view.setVisible(false);
-						ControllerConsumoLivreST ccl = new ControllerConsumoLivreST(controller);
-						ccl.openWindow(ultimaBaia, datasFases);
-					} else {
-						if (ultimaBaia.getMedicados() != null) {
-							loadMedicadosHist(ultimaBaia);
-						}
-						if (ultimaBaia.getMortalidades() != null) {
-							loadMortalidadesHist(ultimaBaia);
-						}
-					}
-				} else {
+//				if (ultimaBaia.getConsumos() != null) {
+//					if (!ultimaBaia.getConsumos().isFinalizado()) {
+//						view.setVisible(false);
+//						ControllerConsumoLivreST ccl = new ControllerConsumoLivreST(controller);
+//						ccl.openWindow(ultimaBaia, datasFases);
+//					} else {
+//						if (ultimaBaia.getMedicados() != null) {
+//							loadMedicadosHist(ultimaBaia);
+//						}
+//						if (ultimaBaia.getMortalidades() != null) {
+//							loadMortalidadesHist(ultimaBaia);
+//						}
+//					}
+//				} else {
 					if (ultimaBaia.getMortalidades() != null) {
 						loadMortalidadesHist(ultimaBaia);
 					}
 					if (ultimaBaia.getMedicados() != null) {
 						loadMedicadosHist(ultimaBaia);
 					}
-				}
+//				}
 				view.getBaiaJFT().setEnabled(false);
 				view.getOpcaoJFT().setEnabled(true);
 				view.getOpcaoJFT().grabFocus();

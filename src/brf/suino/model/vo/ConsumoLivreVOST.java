@@ -16,21 +16,19 @@ public class ConsumoLivreVOST implements Serializable {
 	private int trat1;
 	private int trat2;
 	private int trat3;
-	private boolean finalizado;
 	private List<RmeLivreVOST> rme;
 
 	public ConsumoLivreVOST() {
 		this.rme = new ArrayList<>();
 	}
 
-	public ConsumoLivreVOST(int galpao, int baia, int sexo, int trat1, int trat2, int trat3, boolean finalizado, List<RmeLivreVOST> rme) {
+	public ConsumoLivreVOST(int galpao, int baia, int sexo, int trat1, int trat2, int trat3,  List<RmeLivreVOST> rme) {
 		this.galpao = galpao;
 		this.baia = baia;
 		this.sexo = sexo;
 		this.trat1 = trat1;
 		this.trat2 = trat2;
 		this.trat3 = trat3;
-		this.finalizado = finalizado;
 		this.rme = rme;
 	}
 
@@ -74,13 +72,6 @@ public class ConsumoLivreVOST implements Serializable {
 		this.rme = rme;
 	}
 
-	public boolean isFinalizado() {
-		return finalizado;
-	}
-
-	public void setFinalizado(boolean finalizado) {
-		this.finalizado = finalizado;
-	}
 
 	public int getGalpao() {
 		return galpao;
