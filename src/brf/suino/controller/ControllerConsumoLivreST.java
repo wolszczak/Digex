@@ -376,7 +376,7 @@ public class ControllerConsumoLivreST extends KeyAdapter implements FocusListene
 					view.getControleSobraJFT().grabFocus();
 				} else {
 					if (Integer.parseInt(view.getControleFornecidaJFT().getText().trim()) == calculaControleRacaoFornecida()) {
-						TextFormatter.formatStringJFT(jft, text, 6);
+						TextFormatter.formatStringJFT(jft, text, 7);
 						view.getPnlConsumo().setBorder(defaultBorder);
 						view.getControleFornecidaJFT().setEnabled(false);
 						view.getControleSobraJFT().setEnabled(true);

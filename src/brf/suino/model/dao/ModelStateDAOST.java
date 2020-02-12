@@ -79,8 +79,8 @@ public class ModelStateDAOST {
 			c.printStackTrace();
 			return false;
 		}
-//		ExperimentoVOST e = (ExperimentoVOST) obj;
-//		e.setFrigorificoTempVOST(new FrigorificoTempVOST());
+		ExperimentoVOST e = (ExperimentoVOST) obj;
+		e.setFrigorificoTempVOST(new FrigorificoTempVOST());
 //		e.setBaias(new ArrayList<>());
 //		e.setMortalidade(new ArrayList<MortalidadeVOST>());
 //		e.setMedicados(new ArrayList<MedicadosVOST>());
