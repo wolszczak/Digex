@@ -65,11 +65,15 @@ public class ConsumoBOST {
 //	}
 
 	public String verificaData(String dataString, List<String> fases) {
-		Date digitada = Utils.stringToDate(dataString);
-		Date inicioFase = Utils.stringToDate(controller.getModel().getExperimentoVO().getInfoExp().getInicioExp().toString());
-		Date finalFase = Utils.stringToDate(fases.get(fases.size() - 1));
-		if (digitada.before(inicioFase) || digitada.after(finalFase)) {
-			return "- Data fora do período do experimento.";
+		if(dataString.equals("00/00/0000")) {
+			return null;
+		}else {
+			Date digitada = Utils.stringToDate(dataString);
+			Date inicioFase = Utils.stringToDate(controller.getModel().getExperimentoVO().getInfoExp().getInicioExp().toString());
+			Date finalFase = Utils.stringToDate(fases.get(fases.size() - 1));
+			if (digitada.before(inicioFase) || digitada.after(finalFase)) {
+				return "- Data fora do período do experimento.";
+			}
 		}
 		return null;
 	}

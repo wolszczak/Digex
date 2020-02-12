@@ -595,7 +595,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 				}
 
 			} else if ((JFormattedTextField) e.getSource() == view.getDataMortJFT()) {
-				view.getRegistrosLabel().setVisible(false);
+				view.getRegistrosMortLabel().setVisible(false);
 				TextFormatter.formatStringJFT(src, text, 10);
 				String msg = bo.verificaData(view.getDataMortJFT().getText(), datasFases);
 				if (msg != null) {
@@ -662,7 +662,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 						ordemMort++;
 						updateHistMort();
 						view.getOrdemMortJFT().setText(String.valueOf(ordemMort));
-						view.getRegistrosLabel().setVisible(true);
+						view.getRegistrosMortLabel().setVisible(true);
 						view.getPnlMortalidade().setBorder(defaultBorder);
 					} else {
 						fluxoErroControleMort();
@@ -684,16 +684,16 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 			} else if ((JFormattedTextField) e.getSource() == view.getBrincoMediJFT()) {
 				TextFormatter.formatStringJFT(src, text, 4);
 				view.getBrincoMediJFT().setEnabled(false);
-				view.getMedicamentoJFT().setEnabled(true);
-				view.getMedicamentoJFT().grabFocus();
-			} else if ((JFormattedTextField) e.getSource() == view.getMedicamentoJFT()) {
-				TextFormatter.formatStringJFT(src, text, 2);
-				view.getMedicamentoJFT().setEnabled(false);
 				view.getCausaMediJFT().setEnabled(true);
 				view.getCausaMediJFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getCausaMediJFT()) {
 				TextFormatter.formatStringJFT(src, text, 2);
 				view.getCausaMediJFT().setEnabled(false);
+				view.getMedicamentoJFT().setEnabled(true);
+				view.getMedicamentoJFT().grabFocus();
+			} else if ((JFormattedTextField) e.getSource() == view.getMedicamentoJFT()) {
+				TextFormatter.formatStringJFT(src, text, 2);
+				view.getMedicamentoJFT().setEnabled(false);
 				view.getDose1JFT().setEnabled(true);
 				view.getDose1JFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getDose1JFT()) {
