@@ -9,16 +9,20 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.swing.JFileChooser;
 
 import brf.suino.model.ModelST;
+import brf.suino.model.vo.BarrigaVOST;
+import brf.suino.model.vo.CostadoVOST;
 import brf.suino.model.vo.ExperimentoVOST;
 import brf.suino.model.vo.FrigorificoTempVOST;
-import brf.suino.model.vo.MedicadosVOST;
-import brf.suino.model.vo.MortalidadeVOST;
+import brf.suino.model.vo.PCRVOST;
+import brf.suino.model.vo.PaletaVOST;
+import brf.suino.model.vo.PernilVOST;
 
 public class ModelStateDAOST {
 	private final ModelST model;
@@ -79,8 +83,48 @@ public class ModelStateDAOST {
 			c.printStackTrace();
 			return false;
 		}
-		ExperimentoVOST e = (ExperimentoVOST) obj;
-		e.setFrigorificoTempVOST(new FrigorificoTempVOST());
+//		ExperimentoVOST e = (ExperimentoVOST) obj;
+//		List<PCRVOST> pcrs = new ArrayList<>();
+//		List<CostadoVOST> costados = new ArrayList<>();
+//		List<BarrigaVOST> barrigas = new ArrayList<>();
+//		List<PernilVOST> pernis = new ArrayList<>();
+//		List<PaletaVOST> paletas = new ArrayList<>();
+//		pcrs.addAll(e.getFrigorificoTempVOST().getPcr());
+//		costados.addAll(e.getFrigorificoTempVOST().getCostado());
+//		barrigas.addAll(e.getFrigorificoTempVOST().getBarriga());
+//		pernis.addAll(e.getFrigorificoTempVOST().getPernil());
+//		paletas.addAll(e.getFrigorificoTempVOST().getPaleta());
+//		e.getFrigorificoTempVOST().setBarriga(new ArrayList<>());
+//		e.getFrigorificoTempVOST().setPernil(new ArrayList<>());
+//		e.getFrigorificoTempVOST().setCostado(new ArrayList<>());
+//		e.getFrigorificoTempVOST().setPcr(new ArrayList<>());
+//		e.getFrigorificoTempVOST().setPaleta(new ArrayList<>());
+//		for (PCRVOST pcr : pcrs) {
+//			if(pcr.getTatuagem() != 0) {
+//				e.getFrigorificoTempVOST().getPcr().add(pcr);
+//			}
+//		}
+//		for (PaletaVOST pcr : paletas) {
+//			if(pcr.getTatuagem() != 0) {
+//				e.getFrigorificoTempVOST().getPaleta().add(pcr);
+//			}
+//		}
+//		for (PernilVOST pcr : pernis) {
+//			if(pcr.getTatuagem() != 0) {
+//				e.getFrigorificoTempVOST().getPernil().add(pcr);
+//			}
+//		}
+//		for (CostadoVOST pcr : costados) {
+//			if(pcr.getTatuagem() != 0) {
+//				e.getFrigorificoTempVOST().getCostado().add(pcr);
+//			}
+//		}
+//		for (BarrigaVOST pcr : barrigas) {
+//			if(pcr.getTatuagem() != 0) {
+//				e.getFrigorificoTempVOST().getBarriga().add(pcr);
+//			}
+//		}
+//		e.setFrigorificoTempVOST(new FrigorificoTempVOST());
 //		e.setBaias(new ArrayList<>());
 //		e.setMortalidade(new ArrayList<MortalidadeVOST>());
 //		e.setMedicados(new ArrayList<MedicadosVOST>());

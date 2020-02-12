@@ -120,13 +120,6 @@ public class BaiaVOST implements Serializable {
 		this.finalizado = finalizado;
 	}
 
-	public ConsumoLivreVOST getConsumosLivres() {
-		return consumosLivres;
-	}
-
-	public void setConsumosLivres(ConsumoLivreVOST consumosLivres) {
-		this.consumosLivres = consumosLivres;
-	}
 
 
 }
