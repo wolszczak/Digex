@@ -118,8 +118,7 @@ public class ControllerConsumoLivreST extends KeyAdapter implements FocusListene
 	private void loadHist() {
 		if (ultimaBaia.getConsumos() != null) {
 //			if (!ultimaBaia.getConsumos().isFinalizado()) {
-			consumoHist = controller.getModel().getExperimentoVO().getBaias()
-					.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getConsumos();
+			consumoHist = ultimaBaia.getConsumos();
 			view.getBaiaJFT().setText(String.valueOf(consumoHist.getBaia()));
 			view.getSexoJFT().setText(String.valueOf(consumoHist.getSexo()));
 			view.getTrataJFT().setText(String.valueOf(consumoHist.getTrat1()));
@@ -376,11 +375,9 @@ public class ControllerConsumoLivreST extends KeyAdapter implements FocusListene
 					view.getControleSobraJFT().grabFocus();
 				} else {
 					if (Integer.parseInt(view.getControleFornecidaJFT().getText().trim()) == calculaControleRacaoFornecida()) {
-						TextFormatter.formatStringJFT(jft, text, 7);
 						view.getPnlConsumo().setBorder(defaultBorder);
 						view.getControleFornecidaJFT().setEnabled(false);
 						view.getControleSobraJFT().setEnabled(true);
-						((JFormattedTextField) e.getSource()).transferFocus();
 						view.getControleSobraJFT().grabFocus();
 					} else {
 						view.getPnlConsumo().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
