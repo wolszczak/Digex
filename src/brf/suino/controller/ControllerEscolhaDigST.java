@@ -15,6 +15,8 @@ import brf.main.controller.ControllerEscolhaExp;
 import brf.main.view.ViewEscolhaExp;
 import brf.suino.model.dao.BaiaDAOST;
 import brf.suino.model.dao.FrigorificoDAOST;
+import brf.suino.model.vo.BaiaVOST;
+import brf.suino.model.vo.MortalidadeVOST;
 import brf.suino.view.ViewEscolhaDigST;
 import brf.util.ExpFileFilter;
 import brf.util.SystemFileView;
@@ -43,23 +45,38 @@ public class ControllerEscolhaDigST extends KeyAdapter {
 
 		if (controller.getModel().getExperimentoVO().getBaias() == null || controller.getModel().getExperimentoVO().getBaias().isEmpty()) {
 			view.getExportarMortLabel().setForeground(Color.GRAY);
-		} else if (controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
-				.getMortalidades() == null) {
-			view.getExportarMortLabel().setForeground(Color.GRAY);
+		} else {
+			for(BaiaVOST b : controller.getModel().getExperimentoVO().getBaias()) {
+				if(b.getMortalidades().size() > 0) {
+					break;
+				}else {
+					view.getExportarMortLabel().setForeground(Color.GRAY);
+				}
+			}
 		}
 
 		if (controller.getModel().getExperimentoVO().getBaias() == null || controller.getModel().getExperimentoVO().getBaias().isEmpty()) {
 			view.getExportarMediLabel().setForeground(Color.GRAY);
-		} else if (controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
-				.getMedicados() == null) {
-			view.getExportarMediLabel().setForeground(Color.GRAY);
+		} else{
+			for(BaiaVOST b : controller.getModel().getExperimentoVO().getBaias()) {
+				if(b.getMedicados().size() > 0) {
+					break;
+				}else {
+					view.getExportarMediLabel().setForeground(Color.GRAY);
+				}
+			}
 		}
 
 		if (controller.getModel().getExperimentoVO().getBaias() == null || controller.getModel().getExperimentoVO().getBaias().isEmpty()) {
 			view.getExportarLivreLabel().setForeground(Color.GRAY);
-		} else if (controller.getModel().getExperimentoVO().getBaias().get(controller.getModel().getExperimentoVO().getBaias().size() - 1)
-				.getConsumos() == null) {
-			view.getExportarLivreLabel().setForeground(Color.GRAY);
+		} else {
+			for(BaiaVOST b : controller.getModel().getExperimentoVO().getBaias()) {
+				if(b.getConsumos().getRme().size() > 0) {
+					break;
+				}else {
+					view.getExportarMortLabel().setForeground(Color.GRAY);
+				}
+			}
 		}
 
 		if (controller.getModel().getExperimentoVO().getConsumosTratos() == null

@@ -95,6 +95,8 @@ public class BaiaDAOST {
 						buffer.write(";");
 						buffer.write("" + m.getCausa());
 						buffer.write(";");
+//						String[] split = String.valueOf(m.getDose1()).split("");
+						
 						buffer.write("" + m.getDose1());
 						buffer.write(";");
 						buffer.write("" + m.getDose2());
@@ -135,7 +137,11 @@ public class BaiaDAOST {
 						buffer.write(";");
 						buffer.write("" + rme.getDataRacao());
 						buffer.write(";");
-						buffer.write("" + rme.getFornecida());
+						if (rme.getFornecida() != 0) {
+							buffer.write("" + rme.getFornecida());
+						} else {
+							buffer.write("" + rme.getSobra() * -1);
+						}
 						buffer.write(";");
 					}
 				}
@@ -148,10 +154,10 @@ public class BaiaDAOST {
 	public static void exportarArquivoConsumoTratos(InfoExpVOST infoExp, List<ConsumoTratosVOST> tratos, String localArquivo)
 			throws IOException {
 		List<String> header = new ArrayList<>();
-		header.addAll(Arrays.asList(HEADER_CONSL));
+		header.addAll(Arrays.asList(HEADER_CONST));
 
 		BufferedWriter buffer;
-		buffer = new BufferedWriter(new FileWriter(localArquivo + "CONSUMOLIVRE.csv"));
+		buffer = new BufferedWriter(new FileWriter(localArquivo + "CONSUMOTRATOS.csv"));
 		for (String h : header) {
 			buffer.write(h);
 			buffer.write(";");

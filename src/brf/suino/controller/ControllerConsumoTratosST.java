@@ -606,10 +606,15 @@ public class ControllerConsumoTratosST extends KeyAdapter implements FocusListen
 			case KeyEvent.VK_1:
 				view.getRegistrosLabel().setVisible(true);
 				limparTela();
+				ordem = 1;
+				view.getOrdemJFT().setText(String.valueOf(ordem));
 				view.getOpcaoJFT().setText("");
 				view.getOpcaoJFT().setEnabled(false);
-				view.getBaiaJFT().setEnabled(true);
-				view.getBaiaJFT().grabFocus();
+				view.getTratosJFT().setText("0");
+				view.getTratosJFT().setEnabled(false);
+				view.getDataJFT().setText("00/00/0000");
+				view.getDataJFT().setEnabled(true);
+				view.getDataJFT().grabFocus();
 				break;
 			}
 		}
