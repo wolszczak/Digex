@@ -95,13 +95,28 @@ public class BaiaDAOST {
 						buffer.write(";");
 						buffer.write("" + m.getCausa());
 						buffer.write(";");
-//						String[] split = String.valueOf(m.getDose1()).split("");
-						
-						buffer.write("" + m.getDose1());
+						String[] split = String.valueOf(m.getDose1()).split("");
+						if(split.length < 2) {
+							buffer.write("\t" + split[0] + ",0");	
+						}else {
+							buffer.write("\t" + split[0] + "," + split[1]);	
+						}
 						buffer.write(";");
-						buffer.write("" + m.getDose2());
+						split = new String[2];
+						split = String.valueOf(m.getDose2()).split("");
+						if(split.length < 2) {
+							buffer.write("\t" + split[0] + ",0");	
+						}else {
+							buffer.write("\t" + split[0] + "," + split[1]);	
+						}
 						buffer.write(";");
-						buffer.write("" + m.getDose3());
+						split = new String[2];
+						split = String.valueOf(m.getDose3()).split("");
+						if(split.length < 2) {
+							buffer.write("\t" + split[0] + ",0");	
+						}else {
+							buffer.write("\t" + split[0] + "," + split[1]);	
+						}
 						buffer.write(";");
 					}
 				}
