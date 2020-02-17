@@ -386,7 +386,7 @@ public class ViewConeP extends javax.swing.JFrame {
         numero1JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         try {
-            pGord1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+            pGord1JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -394,7 +394,7 @@ public class ViewConeP extends javax.swing.JFrame {
         pGord1JFT.setEnabled(false);
 
         try {
-            pPeito11JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+            pPeito11JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -532,7 +532,7 @@ public class ViewConeP extends javax.swing.JFrame {
         numero2JFT.setEnabled(false);
 
         try {
-            pGord2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+            pGord2JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -540,7 +540,7 @@ public class ViewConeP extends javax.swing.JFrame {
         pGord2JFT.setEnabled(false);
 
         try {
-            pPeito12JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+            pPeito12JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -564,7 +564,7 @@ public class ViewConeP extends javax.swing.JFrame {
         pCoxa2JFT.setEnabled(false);
 
         try {
-            pGord3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+            pGord3JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -588,7 +588,7 @@ public class ViewConeP extends javax.swing.JFrame {
         ordem3JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         try {
-            pPeito13JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+            pPeito13JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -612,7 +612,7 @@ public class ViewConeP extends javax.swing.JFrame {
         pCoxa3JFT.setEnabled(false);
 
         try {
-            pPeito14JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+            pPeito14JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -644,7 +644,7 @@ public class ViewConeP extends javax.swing.JFrame {
         ordem4JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         try {
-            pGord4JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+            pGord4JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -660,7 +660,7 @@ public class ViewConeP extends javax.swing.JFrame {
         pPeito24JFT.setEnabled(false);
 
         try {
-            pPeito15JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+            pPeito15JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -692,7 +692,7 @@ public class ViewConeP extends javax.swing.JFrame {
         ordem5JFT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         try {
-            pGord5JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+            pGord5JFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }

@@ -326,10 +326,10 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getPeso35JFT()) {
 					TextFormatter.formatStringJFT(src, text, 5);
 					viewBaiaAmostrados.getPeso35JFT().setEnabled(false);
-					if (usarColunaExtra) {
-						viewBaiaAmostrados.getNasa31JFT().setEnabled(true);
-						viewBaiaAmostrados.getNasa31JFT().requestFocus();
-					} else {
+//					if (usarColunaExtra) {
+//						viewBaiaAmostrados.getNasa31JFT().setEnabled(true);
+//						viewBaiaAmostrados.getNasa31JFT().requestFocus();
+//					} else {
 						popularListaAmostrados();
 						String msg = bo.verificaAmostrados(amostrados);
 						if (msg != null && msg.length() != 0) {
@@ -339,7 +339,7 @@ public class ControllerBaiaAmostradosP extends KeyAdapter implements FocusListen
 							viewBaiaAmostrados.getControleJFT().setEnabled(true);
 							viewBaiaAmostrados.getControleJFT().grabFocus();
 						}
-					}
+//					}
 				} else if ((JFormattedTextField) e.getSource() == viewBaiaAmostrados.getControleJFT()) {
 					TextFormatter.formatStringJFT(src, text, 6);
 					if (Integer.parseInt(viewBaiaAmostrados.getControleJFT().getText()) == calculaTotalControle()) {
