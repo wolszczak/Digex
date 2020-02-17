@@ -408,7 +408,8 @@ public class ControllerDesempenhoP extends KeyAdapter implements FocusListener {
 			} else if ((JFormattedTextField) e.getSource() == viewDesempenho.getControleSobraJFT()) {
 				if (Integer.parseInt(viewDesempenho.getControleSobraJFT().getText().trim()) == calculaControleSobra()) {
 					TextFormatter.formatStringJFT(src, text, 6);
-					if (rmeTemp.get(rmeTemp.size() - 1).getIdadeRacao() == idades.get(idades.size() - 1)) {
+					if (rmeTemp.get(rmeTemp.size() - 1).getIdadeRacao() <= idades.get(idades.size() - 1) &&
+							rmeTemp.get(rmeTemp.size() - 1).getIdadeRacao() > idades.get(idades.size() - 2)) {
 						// IDADE DA LISTA É A ÚLTIMA, ADICIONA TODOS OS CONSUMOS NA LISTA E SEGUE PARA
 						// DIGITAR AS MORTALIDADES
 						rme.addAll(rmeTemp);

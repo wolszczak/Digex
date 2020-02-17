@@ -210,6 +210,11 @@ public class ModelStateDAOP {
 //		model.setExperimentoVO(e);
 //		model.getModelStateDAO().saveModelState(false);
 		
+//		ExperimentoVOP e = (ExperimentoVOP) obj;
+//		e.getDesempenho().remove(e.getDesempenho().size()-1);
+//		model.setExperimentoVO(e);
+//		model.getModelStateDAO().saveModelState(false);
+		
 		model.setExperimentoVO(obj);
 		
 		return true;
