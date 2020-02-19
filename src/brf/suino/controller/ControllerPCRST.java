@@ -321,27 +321,21 @@ public class ControllerPCRST extends KeyAdapter implements FocusListener, ItemLi
 	}
 
 	private void salvarPCR() {
-		if (Integer.parseInt(view.getTatuagem1JFT().getText()) != 0 && Integer.parseInt(view.getEtpaquim1JFT().getText()) != 0
-				&& Integer.parseInt(view.getPlpaquim1JFT().getText()) != 0 && Integer.parseInt(view.getGim1JFT().getText()) != 0
-				&& Integer.parseInt(view.getCosph1JFT().getText()) != 0 && Integer.parseInt(view.getCoscjpcs1JFT().getText()) != 0) {
+		if (Integer.parseInt(view.getTatuagem1JFT().getText()) != 0) {
 			controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr()
 					.add(new PCRVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem1JFT().getText()),
 							Integer.parseInt(view.getEtpaquim1JFT().getText()), Integer.parseInt(view.getPlpaquim1JFT().getText()),
 							Integer.parseInt(view.getGim1JFT().getText()), Integer.parseInt(view.getCosph1JFT().getText()),
 							Integer.parseInt(view.getCoscjpcs1JFT().getText())));
 		}
-		if (Integer.parseInt(view.getTatuagem2JFT().getText()) != 0 && Integer.parseInt(view.getEtpaquim2JFT().getText()) != 0
-				&& Integer.parseInt(view.getPlpaquim2JFT().getText()) != 0 && Integer.parseInt(view.getGim2JFT().getText()) != 0
-				&& Integer.parseInt(view.getCosph2JFT().getText()) != 0 && Integer.parseInt(view.getCoscjpcs2JFT().getText()) != 0) {
+		if (Integer.parseInt(view.getTatuagem2JFT().getText()) != 0) {
 			controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr()
 					.add(new PCRVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem2JFT().getText()),
 							Integer.parseInt(view.getEtpaquim2JFT().getText()), Integer.parseInt(view.getPlpaquim2JFT().getText()),
 							Integer.parseInt(view.getGim2JFT().getText()), Integer.parseInt(view.getCosph2JFT().getText()),
 							Integer.parseInt(view.getCoscjpcs2JFT().getText())));
 		}
-		if (Integer.parseInt(view.getTatuagem3JFT().getText()) != 0 && Integer.parseInt(view.getEtpaquim3JFT().getText()) != 0
-				&& Integer.parseInt(view.getPlpaquim3JFT().getText()) != 0 && Integer.parseInt(view.getGim3JFT().getText()) != 0
-				&& Integer.parseInt(view.getCosph3JFT().getText()) != 0 && Integer.parseInt(view.getCoscjpcs3JFT().getText()) != 0) {
+		if (Integer.parseInt(view.getTatuagem3JFT().getText()) != 0) {
 			controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPcr()
 					.add(new PCRVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem3JFT().getText()),
 							Integer.parseInt(view.getEtpaquim3JFT().getText()), Integer.parseInt(view.getPlpaquim3JFT().getText()),

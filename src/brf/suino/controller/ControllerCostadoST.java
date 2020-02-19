@@ -305,9 +305,7 @@ public class ControllerCostadoST extends KeyAdapter implements FocusListener, It
 	}
 
 	private void salvarCostado() {
-		if (Integer.parseInt(view.getTatuagem1JFT().getText()) != 0 && Integer.parseInt(view.getTatuagem1JFT().getText()) != 0
-				&& Integer.parseInt(view.getTatuagem1JFT().getText()) != 0 && Integer.parseInt(view.getTatuagem1JFT().getText()) != 0
-				&& Integer.parseInt(view.getTatuagem1JFT().getText()) != 0 && Integer.parseInt(view.getTatuagem1JFT().getText()) != 0) {
+		if (Integer.parseInt(view.getTatuagem1JFT().getText()) != 0) {
 			controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getCostado()
 					.add(new CostadoVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem1JFT().getText()),
 							Integer.parseInt(view.getPeso1JFT().getText()), Integer.parseInt(view.getOsste1JFT().getText()),
@@ -315,18 +313,14 @@ public class ControllerCostadoST extends KeyAdapter implements FocusListener, It
 							Integer.parseInt(view.getReta1JFT().getText())));
 		}
 
-		if (Integer.parseInt(view.getTatuagem2JFT().getText()) != 0 && Integer.parseInt(view.getTatuagem2JFT().getText()) != 0
-				&& Integer.parseInt(view.getTatuagem2JFT().getText()) != 0 && Integer.parseInt(view.getTatuagem2JFT().getText()) != 0
-				&& Integer.parseInt(view.getTatuagem2JFT().getText()) != 0 && Integer.parseInt(view.getTatuagem2JFT().getText()) != 0) {
+		if (Integer.parseInt(view.getTatuagem2JFT().getText()) != 0) {
 			controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getCostado()
 					.add(new CostadoVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem2JFT().getText()),
 							Integer.parseInt(view.getPeso2JFT().getText()), Integer.parseInt(view.getOsste2JFT().getText()),
 							Integer.parseInt(view.getPelgo2JFT().getText()), Integer.parseInt(view.getLombo2JFT().getText()),
 							Integer.parseInt(view.getReta2JFT().getText())));
 		}
-		if (Integer.parseInt(view.getTatuagem3JFT().getText()) != 0 && Integer.parseInt(view.getTatuagem3JFT().getText()) != 0
-				&& Integer.parseInt(view.getTatuagem3JFT().getText()) != 0 && Integer.parseInt(view.getTatuagem3JFT().getText()) != 0
-				&& Integer.parseInt(view.getTatuagem3JFT().getText()) != 0 && Integer.parseInt(view.getTatuagem3JFT().getText()) != 0) {
+		if (Integer.parseInt(view.getTatuagem3JFT().getText()) != 0) {
 			controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getCostado()
 					.add(new CostadoVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem3JFT().getText()),
 							Integer.parseInt(view.getPeso3JFT().getText()), Integer.parseInt(view.getOsste3JFT().getText()),

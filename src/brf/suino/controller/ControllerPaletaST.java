@@ -239,7 +239,7 @@ public class ControllerPaletaST extends KeyAdapter implements FocusListener, Ite
 				view.getControleJFT().setEnabled(true);
 				view.getControleJFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getControleJFT()) {
-				TextFormatter.formatStringJFT(view.getControleJFT(), view.getControleJFT().getText(), 5);
+				TextFormatter.formatStringJFT(view.getControleJFT(), view.getControleJFT().getText(), 6);
 				if (Integer.parseInt(view.getControleJFT().getText()) == calculaControle()) {
 					if (controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta() == null) {
 						controller.getModel().getExperimentoVO().getFrigorificoTempVOST().setPaleta(new ArrayList<>());
@@ -404,11 +404,7 @@ public class ControllerPaletaST extends KeyAdapter implements FocusListener, Ite
 
 	private void salvarPaleta() {
 
-		if (Integer.parseInt(view.getTatuagem1JFT().getText()) != 0 && Integer.parseInt(view.getPeso1JFT().getText()) != 0
-				&& Integer.parseInt(view.getPelgo1JFT().getText()) != 0 && Integer.parseInt(view.getPegof1JFT().getText()) != 0
-				&& Integer.parseInt(view.getPegom1JFT().getText()) != 0 && Integer.parseInt(view.getOsste1JFT().getText()) != 0
-				&& Integer.parseInt(view.getCama1JFT().getText()) != 0 && Integer.parseInt(view.getCmsp1JFT().getText()) != 0
-				&& Integer.parseInt(view.getPalleca1JFT().getText()) != 0) {
+		if (Integer.parseInt(view.getTatuagem1JFT().getText()) != 0) {
 			controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta()
 					.add(new PaletaVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem1JFT().getText()),
 							Integer.parseInt(view.getPeso1JFT().getText()), Integer.parseInt(view.getPelgo1JFT().getText()),
@@ -416,11 +412,7 @@ public class ControllerPaletaST extends KeyAdapter implements FocusListener, Ite
 							Integer.parseInt(view.getOsste1JFT().getText()), Integer.parseInt(view.getCama1JFT().getText()),
 							Integer.parseInt(view.getCmsp1JFT().getText()), Integer.parseInt(view.getPalleca1JFT().getText())));
 		}
-		if (Integer.parseInt(view.getTatuagem2JFT().getText()) != 0 && Integer.parseInt(view.getPeso2JFT().getText()) != 0
-				&& Integer.parseInt(view.getPelgo2JFT().getText()) != 0 && Integer.parseInt(view.getPegof2JFT().getText()) != 0
-				&& Integer.parseInt(view.getPegom2JFT().getText()) != 0 && Integer.parseInt(view.getOsste2JFT().getText()) != 0
-				&& Integer.parseInt(view.getCama2JFT().getText()) != 0 && Integer.parseInt(view.getCmsp2JFT().getText()) != 0
-				&& Integer.parseInt(view.getPalleca2JFT().getText()) != 0) {
+		if (Integer.parseInt(view.getTatuagem2JFT().getText()) != 0) {
 			controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta()
 					.add(new PaletaVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem2JFT().getText()),
 							Integer.parseInt(view.getPeso2JFT().getText()), Integer.parseInt(view.getPelgo2JFT().getText()),
@@ -429,11 +421,7 @@ public class ControllerPaletaST extends KeyAdapter implements FocusListener, Ite
 							Integer.parseInt(view.getCmsp2JFT().getText()), Integer.parseInt(view.getPalleca2JFT().getText())));
 		}
 
-		if (Integer.parseInt(view.getTatuagem3JFT().getText()) != 0 && Integer.parseInt(view.getPeso3JFT().getText()) != 0
-				&& Integer.parseInt(view.getPelgo3JFT().getText()) != 0 && Integer.parseInt(view.getPegof3JFT().getText()) != 0
-				&& Integer.parseInt(view.getPegom3JFT().getText()) != 0 && Integer.parseInt(view.getOsste3JFT().getText()) != 0
-				&& Integer.parseInt(view.getCama3JFT().getText()) != 0 && Integer.parseInt(view.getCmsp3JFT().getText()) != 0
-				&& Integer.parseInt(view.getPalleca3JFT().getText()) != 0) {
+		if (Integer.parseInt(view.getTatuagem3JFT().getText()) != 0) {
 			controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getPaleta()
 					.add(new PaletaVOST(view.getDataJFT().getText(), Integer.parseInt(view.getTatuagem3JFT().getText()),
 							Integer.parseInt(view.getPeso3JFT().getText()), Integer.parseInt(view.getPelgo3JFT().getText()),
@@ -455,7 +443,7 @@ public class ControllerPaletaST extends KeyAdapter implements FocusListener, Ite
 				lbl2.setText(String.valueOf(paletaHist.get(paletaHist.size() - k).getPalpeso()));
 				orderHist.remove(0);
 				JLabel lbl3 = (JLabel) orderHist.get(0);
-				lbl3.setText(String.valueOf(paletaHist.get(paletaHist.size() - k).getPalpegof()));
+				lbl3.setText(String.valueOf(paletaHist.get(paletaHist.size() - k).getPalpelgo()));
 				orderHist.remove(0);
 				JLabel lbl4 = (JLabel) orderHist.get(0);
 				lbl4.setText(String.valueOf(paletaHist.get(paletaHist.size() - k).getPalpegof()));
@@ -576,9 +564,9 @@ public class ControllerPaletaST extends KeyAdapter implements FocusListener, Ite
 		view.getCmsp1JFT().setText("");
 		view.getCmsp2JFT().setText("");
 		view.getCmsp3JFT().setText("");
-		view.getPalleca1Hist().setText("");
-		view.getPalleca2Hist().setText("");
-		view.getPalleca3Hist().setText("");
+		view.getPalleca1JFT().setText("");
+		view.getPalleca2JFT().setText("");
+		view.getPalleca3JFT().setText("");
 	}
 
 	private Integer calculaControle() {
