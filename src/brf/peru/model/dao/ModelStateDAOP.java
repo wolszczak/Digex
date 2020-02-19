@@ -35,8 +35,7 @@ public class ModelStateDAOP {
 	}
 
 	public void saveModelState(boolean backup) {
-		String localArquivo = new JFileChooser().getFileSystemView().getDefaultDirectory().toString()
-				+ "\\DIGEX\\experimentos\\peru\\";
+		String localArquivo = new JFileChooser().getFileSystemView().getDefaultDirectory().toString() + "\\DIGEX\\experimentos\\peru\\";
 		String nomeArquivo = model.getExperimentoVO().getInfoExp().getTeste();
 		try {
 			Files.createDirectories(Paths.get(localArquivo));
@@ -46,10 +45,9 @@ public class ModelStateDAOP {
 				obj = in.readObject();
 				in.close();
 				fileIn.close();
-				FileOutputStream backupFile = new FileOutputStream(
-						localArquivo + nomeArquivo + LocalDateTime.now().getDayOfMonth()
-								+ LocalDateTime.now().getMonthValue() + LocalDateTime.now().getYear()
-								+ LocalDateTime.now().getHour() + LocalDateTime.now().getMinute() + ".digexbkp");
+				FileOutputStream backupFile = new FileOutputStream(localArquivo + nomeArquivo + LocalDateTime.now().getDayOfMonth()
+						+ LocalDateTime.now().getMonthValue() + LocalDateTime.now().getYear() + LocalDateTime.now().getHour()
+						+ LocalDateTime.now().getMinute() + ".digexbkp");
 				ObjectOutputStream backupOut = new ObjectOutputStream(backupFile);
 				backupOut.writeObject(obj);
 				backupOut.close();
@@ -85,140 +83,43 @@ public class ModelStateDAOP {
 			c.printStackTrace();
 			return false;
 		}
+		
+		
 //		ExperimentoVOP e = (ExperimentoVOP) obj;
-//		
-//		for(int z = 0; z < e.getAbates().get(0).getCones().size(); z++) {
-//			if(e.getAbates().get(0).getCones().get(z).getNasa() == 0) {
-//				e.getAbates().get(0).getCones().remove(z);
-//			}
-//		}
-//		for(int z = 0; z < e.getAbates().get(0).getCones().size(); z++) {
-//			if(e.getAbates().get(0).getCones().get(z).getNasa() == 0) {
-//				e.getAbates().get(0).getCones().remove(z);
-//			}
-//		}
-//		
-//		for(int z = 0; z < e.getAbates().get(1).getCones().size(); z++) {
-//			if(e.getAbates().get(1).getCones().get(z).getNasa() == 0) {
-//				e.getAbates().get(1).getCones().remove(z);
-//			}
-//		}
-//		for(int z = 0; z < e.getAbates().get(1).getCones().size(); z++) {
-//			if(e.getAbates().get(1).getCones().get(z).getNasa() == 0) {
-//				e.getAbates().get(1).getCones().remove(z);
-//			}
-//		}
-//		
-//		for(int z = 0; z < e.getAbates().get(2).getCones().size(); z++) {
-//			if(e.getAbates().get(2).getCones().get(z).getNasa() == 0) {
-//				e.getAbates().get(2).getCones().remove(z);
-//			}
-//		}
-//		for(int z = 0; z < e.getAbates().get(2).getCones().size(); z++) {
-//			if(e.getAbates().get(2).getCones().get(z).getNasa() == 0) {
-//				e.getAbates().get(2).getCones().remove(z);
-//			}
-//		}
-		
-		
-//		for(int z = 0; z < e.getAbates().get(0).getCamaras().size(); z++) {
-//			if(e.getAbates().get(0).getCamaras().get(z).getNasa() == 0) {
-//				e.getAbates().get(0).getCamaras().remove(z);
-//			}
-//		}
-//		for(int z = 0; z < e.getAbates().get(0).getCamaras().size(); z++) {
-//			if(e.getAbates().get(0).getCamaras().get(z).getNasa() == 0) {
-//				e.getAbates().get(0).getCamaras().remove(z);
-//			}
-//		}
-//		
-//		
-//		for(int z = 0; z < e.getAbates().get(1).getCamaras().size(); z++) {
-//			if(e.getAbates().get(1).getCamaras().get(z).getNasa() == 0) {
-//				e.getAbates().get(1).getCamaras().remove(z);
-//			}
-//		}
-//		for(int z = 0; z < e.getAbates().get(1).getCamaras().size(); z++) {
-//			if(e.getAbates().get(1).getCamaras().get(z).getNasa() == 0) {
-//				e.getAbates().get(1).getCamaras().remove(z);
-//			}
-//		}
-//		
-//		for(int z = 0; z < e.getAbates().get(2).getCamaras().size(); z++) {
-//			if(e.getAbates().get(2).getCamaras().get(z).getNasa() == 0) {
-//				e.getAbates().get(2).getCamaras().remove(z);
-//			}
-//		}
-//		for(int z = 0; z < e.getAbates().get(2).getCamaras().size(); z++) {
-//			if(e.getAbates().get(2).getCamaras().get(z).getNasa() == 0) {
-//				e.getAbates().get(2).getCamaras().remove(z);
-//			}
-//		}
-
-		
-		
-//		for(int y = 0; y < e.getAbates().get(2).getCamaras().size();y++) {
-//			
-//			for(int z = 0; z < e.getAbates().get(2).getCamaras().size();z++) {
-//				if(e.getAbates().get(2).getCamaras().get(z).getNasa() == 14 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 14 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 11 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 60 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 29 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 68 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 40 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 38 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 51 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 62 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 27 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 1  ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 45 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 49 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 6  ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 19 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 30 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 42 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 61 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 18 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 20 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 32 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 71 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 75 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 70 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 28 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 64 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 31 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 9  ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 50 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 15 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 23 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 21 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 35 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 34 ||
-//						e.getAbates().get(2).getCamaras().get(z).getNasa() == 52 ) {
-//					e.getAbates().get(2).getCamaras().remove(z);
-//				}
-//			}
-//			
-//		}
-		
-//		e.getAbates().remove(2);
+//		e.setAbates(new ArrayList<>());
 //		e.getAbates().add(new AbateVOP());
+//		e.getAbates().add(new AbateVOP());
+//		e.getAbates().add(new AbateVOP());
+//		e.getAbates().add(new AbateVOP());
+//		
+//		e.getAbates().get(0).setAbate(1);
+//		e.getAbates().get(1).setAbate(2);
 //		e.getAbates().get(2).setAbate(3);
+//		e.getAbates().get(3).setAbate(4);
+//		
+//		e.getAbates().get(0).setBaiaAmostrados(new ArrayList<>());
+//		e.getAbates().get(0).setCamaras(new ArrayList<>());
+//		e.getAbates().get(0).setCones(new ArrayList<>());
+//		
+//		e.getAbates().get(1).setBaiaAmostrados(new ArrayList<>());
+//		e.getAbates().get(1).setCamaras(new ArrayList<>());
+//		e.getAbates().get(1).setCones(new ArrayList<>());
+//		
+//		e.getAbates().get(2).setBaiaAmostrados(new ArrayList<>());
+//		e.getAbates().get(2).setCamaras(new ArrayList<>());
+//		e.getAbates().get(2).setCones(new ArrayList<>());
+//		
+//		e.getAbates().get(3).setBaiaAmostrados(new ArrayList<>());
+//		e.getAbates().get(3).setCamaras(new ArrayList<>());
+//		e.getAbates().get(3).setCones(new ArrayList<>());
 //		
 //		
 //		model.setExperimentoVO(e);
 //		model.getModelStateDAO().saveModelState(false);
-		
-//		ExperimentoVOP e = (ExperimentoVOP) obj;
-//		e.getDesempenho().remove(e.getDesempenho().size()-1);
-//		model.setExperimentoVO(e);
-//		model.getModelStateDAO().saveModelState(false);
-		
+
 		model.setExperimentoVO(obj);
-		
+
 		return true;
 	}
-
 
 }

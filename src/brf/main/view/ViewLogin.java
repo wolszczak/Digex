@@ -68,7 +68,7 @@ public class ViewLogin extends javax.swing.JFrame {
 
         jLabel2.setText("Digitação de Dados das Granjas Experimentais.");
 
-        jLabel4.setText("v2.1.5_teste");
+        jLabel4.setText("v2.1.9_teste");
 
         try {
             idDigitadorJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));

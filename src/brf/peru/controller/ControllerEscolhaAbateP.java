@@ -43,6 +43,12 @@ public class ControllerEscolhaAbateP extends KeyAdapter {
 			if (controller.getModel().getExperimentoVO().getAbates().size() == 1) {
 				controller.getModel().getExperimentoVO().getAbates().add(new AbateVOP());
 			}
+		} else if (controller.getModel().getExperimentoVO().getInfoExp().getNrAbate() == 3) {
+			viewEscolhaAbate.getAbate4Label().setForeground(Color.GRAY);
+			viewEscolhaAbate.getQtdeAbate4Label().setVisible(false);
+			if (controller.getModel().getExperimentoVO().getAbates().size() == 1) {
+				controller.getModel().getExperimentoVO().getAbates().add(new AbateVOP());
+			}
 		} else {
 			if (controller.getModel().getExperimentoVO().getAbates().size() == 1) {
 				controller.getModel().getExperimentoVO().getAbates().add(new AbateVOP());
@@ -54,12 +60,12 @@ public class ControllerEscolhaAbateP extends KeyAdapter {
 
 	public void histSetup() {
 		int obsAbate[] = { 0, 0, 0 };
-		if(controller.getModel().getExperimentoVO().getAbates().size() == 1) {
+		if (controller.getModel().getExperimentoVO().getAbates().size() == 1) {
 			obsAbate[0] += controller.getModel().getExperimentoVO().getAbates().get(0).getBaiaAmostrados().size();
 			obsAbate[0] += controller.getModel().getExperimentoVO().getAbates().get(0).getCamaras().size();
 			obsAbate[0] += controller.getModel().getExperimentoVO().getAbates().get(0).getCones().size();
 			viewEscolhaAbate.getQtdeAbate1Label().setText(obsAbate[0] + " registro(s)");
-		}else if(controller.getModel().getExperimentoVO().getAbates().size() == 2) {
+		} else if (controller.getModel().getExperimentoVO().getAbates().size() == 2) {
 			obsAbate[0] += controller.getModel().getExperimentoVO().getAbates().get(0).getBaiaAmostrados().size();
 			obsAbate[0] += controller.getModel().getExperimentoVO().getAbates().get(0).getCamaras().size();
 			obsAbate[0] += controller.getModel().getExperimentoVO().getAbates().get(0).getCones().size();
@@ -68,7 +74,7 @@ public class ControllerEscolhaAbateP extends KeyAdapter {
 			obsAbate[1] += controller.getModel().getExperimentoVO().getAbates().get(1).getCones().size();
 			viewEscolhaAbate.getQtdeAbate1Label().setText(obsAbate[0] + " registro(s)");
 			viewEscolhaAbate.getQtdeAbate2Label().setText(obsAbate[1] + " registro(s)");
-		}else if(controller.getModel().getExperimentoVO().getAbates().size() == 3) {
+		} else if (controller.getModel().getExperimentoVO().getAbates().size() == 3) {
 			obsAbate[0] += controller.getModel().getExperimentoVO().getAbates().get(0).getBaiaAmostrados().size();
 			obsAbate[0] += controller.getModel().getExperimentoVO().getAbates().get(0).getCamaras().size();
 			obsAbate[0] += controller.getModel().getExperimentoVO().getAbates().get(0).getCones().size();
@@ -96,8 +102,8 @@ public class ControllerEscolhaAbateP extends KeyAdapter {
 	public void keyTyped(KeyEvent e) {
 		switch (e.getKeyChar()) {
 		case KeyEvent.VK_0:
-			int n = JOptionPane.showConfirmDialog(viewEscolhaAbate, "Deseja realmente sair do programa?",
-					"DIGEX - Sair", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+			int n = JOptionPane.showConfirmDialog(viewEscolhaAbate, "Deseja realmente sair do programa?", "DIGEX - Sair",
+					JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 			if (n == 0) {
 				System.out.println("Fim...");
 				System.exit(0);
@@ -105,8 +111,7 @@ public class ControllerEscolhaAbateP extends KeyAdapter {
 			break;
 		case KeyEvent.VK_1:
 			viewEscolhaAbate.setVisible(false);
-			controller.startEscolhaDigRend(1, 0,
-					controller.getModel().getExperimentoVO().getInfoExp().getDataAbate().get(0));
+			controller.startEscolhaDigRend(1, 0, controller.getModel().getExperimentoVO().getInfoExp().getDataAbate().get(0));
 			System.out.println("Abate 1");
 			if (controller.getModel().getExperimentoVO().getAbates() == null) {
 				controller.getModel().getExperimentoVO().getAbates().get(0).setAbate(1);
@@ -116,8 +121,7 @@ public class ControllerEscolhaAbateP extends KeyAdapter {
 			break;
 		case KeyEvent.VK_2:
 			viewEscolhaAbate.setVisible(false);
-			controller.startEscolhaDigRend(2, 0,
-					controller.getModel().getExperimentoVO().getInfoExp().getDataAbate().get(1));
+			controller.startEscolhaDigRend(2, 0, controller.getModel().getExperimentoVO().getInfoExp().getDataAbate().get(1));
 			if (controller.getModel().getExperimentoVO().getAbates() == null) {
 				controller.getModel().getExperimentoVO().getAbates().get(1).setAbate(2);
 			} else {
@@ -127,8 +131,7 @@ public class ControllerEscolhaAbateP extends KeyAdapter {
 			break;
 		case KeyEvent.VK_3:
 			viewEscolhaAbate.setVisible(false);
-			controller.startEscolhaDigRend(3, 0,
-					controller.getModel().getExperimentoVO().getInfoExp().getDataAbate().get(2));
+			controller.startEscolhaDigRend(3, 0, controller.getModel().getExperimentoVO().getInfoExp().getDataAbate().get(2));
 			if (controller.getModel().getExperimentoVO().getAbates() == null) {
 				controller.getModel().getExperimentoVO().getAbates().get(2).setAbate(3);
 			} else {
@@ -136,10 +139,20 @@ public class ControllerEscolhaAbateP extends KeyAdapter {
 			}
 			System.out.println("Abate 3");
 			break;
+		case KeyEvent.VK_4:
+			viewEscolhaAbate.setVisible(false);
+			controller.startEscolhaDigRend(4, 0, controller.getModel().getExperimentoVO().getInfoExp().getDataAbate().get(3));
+			if (controller.getModel().getExperimentoVO().getAbates() == null) {
+				controller.getModel().getExperimentoVO().getAbates().get(3).setAbate(4);
+			} else {
+				controller.getModel().getExperimentoVO().getAbates().get(3).setAbate(4);
+			}
+			System.out.println("Abate 4");
+			break;
 		case KeyEvent.VK_9:
 		case KeyEvent.VK_ESCAPE:
-			int option = JOptionPane.showConfirmDialog(viewEscolhaAbate, "Deseja realmente voltar para tela anterior?",
-					"DIGEX - Voltar", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+			int option = JOptionPane.showConfirmDialog(viewEscolhaAbate, "Deseja realmente voltar para tela anterior?", "DIGEX - Voltar",
+					JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 			if (option == 0) {
 				viewEscolhaAbate.setVisible(false);
 				controller.resumeEscolhaDig();

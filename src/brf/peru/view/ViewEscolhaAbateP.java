@@ -2,6 +2,10 @@ package brf.peru.view;
 
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.Color;
 
 public class ViewEscolhaAbateP extends javax.swing.JFrame {
 
@@ -12,33 +16,7 @@ public class ViewEscolhaAbateP extends javax.swing.JFrame {
         initComponents();
     }
 
-    public JLabel getAbate1Label() {
-        return abate1Label;
-    }
-
-    public JLabel getAbate2Label() {
-        return abate2Label;
-    }
-
-    public JLabel getAbate3Label() {
-        return abate3Label;
-    }
-
-    public JFormattedTextField getOpcaoJFT() {
-        return opcaoJFT;
-    }
-
-    public JLabel getQtdeAbate1Label() {
-        return qtdeAbate1Label;
-    }
-
-    public JLabel getQtdeAbate2Label() {
-        return qtdeAbate2Label;
-    }
-
-    public JLabel getQtdeAbate3Label() {
-        return qtdeAbate3Label;
-    }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -96,71 +74,86 @@ public class ViewEscolhaAbateP extends javax.swing.JFrame {
 
         qtdeAbate3Label.setForeground(new java.awt.Color(0, 153, 255));
         qtdeAbate3Label.setText("0 registro(s)");
+        
+        abate4Label = new JLabel();
+        abate4Label.setText("[4] - Quarto Abate");
+        
+        qtdeAbate4Label = new JLabel();
+        qtdeAbate4Label.setText("0 registro(s)");
+        qtdeAbate4Label.setForeground(new Color(0, 153, 255));
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                        .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(opcaoJFT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(abate1Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(abate2Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(abate3Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(qtdeAbate2Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
-                            .addComponent(qtdeAbate1Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(qtdeAbate3Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+        	jPanel11Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(jPanel11Layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addGroup(jPanel11Layout.createParallelGroup(Alignment.TRAILING)
+        				.addComponent(jLabel37, GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+        				.addGroup(jPanel11Layout.createSequentialGroup()
+        					.addGroup(jPanel11Layout.createParallelGroup(Alignment.LEADING, false)
+        						.addComponent(abate1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        						.addComponent(abate2Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        						.addComponent(abate3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        					.addPreferredGap(ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+        					.addGroup(jPanel11Layout.createParallelGroup(Alignment.TRAILING, false)
+        						.addComponent(qtdeAbate2Label, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+        						.addComponent(qtdeAbate1Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        						.addComponent(qtdeAbate3Label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        				.addGroup(jPanel11Layout.createSequentialGroup()
+        					.addComponent(abate4Label, GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(qtdeAbate4Label, GroupLayout.PREFERRED_SIZE, 82, GroupLayout.PREFERRED_SIZE))
+        				.addGroup(jPanel11Layout.createSequentialGroup()
+        					.addComponent(jLabel41, GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+        					.addGap(10)
+        					.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
+        				.addComponent(jLabel40, GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+        				.addComponent(jLabel39, GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE))
+        			.addContainerGap())
         );
         jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel37)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(abate1Label)
-                    .addComponent(qtdeAbate1Label))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(abate2Label)
-                    .addComponent(qtdeAbate2Label))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(abate3Label)
-                    .addComponent(qtdeAbate3Label))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel39)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel40)
-                .addGap(17, 17, 17)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel41)
-                    .addComponent(opcaoJFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+        	jPanel11Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(jPanel11Layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addComponent(jLabel37)
+        			.addGap(18)
+        			.addGroup(jPanel11Layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(abate1Label)
+        				.addComponent(qtdeAbate1Label))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(jPanel11Layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(abate2Label)
+        				.addComponent(qtdeAbate2Label))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(jPanel11Layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(abate3Label)
+        				.addComponent(qtdeAbate3Label))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(jPanel11Layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(abate4Label)
+        				.addComponent(qtdeAbate4Label))
+        			.addGap(28)
+        			.addComponent(jLabel39)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(jLabel40)
+        			.addGap(18)
+        			.addGroup(jPanel11Layout.createParallelGroup(Alignment.TRAILING)
+        				.addComponent(opcaoJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(jLabel41))
+        			.addContainerGap())
         );
+        jPanel11.setLayout(jPanel11Layout);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addComponent(jPanel11, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addComponent(jPanel11, GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
         );
+        getContentPane().setLayout(layout);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -220,5 +213,171 @@ public class ViewEscolhaAbateP extends javax.swing.JFrame {
     private javax.swing.JLabel qtdeAbate1Label;
     private javax.swing.JLabel qtdeAbate2Label;
     private javax.swing.JLabel qtdeAbate3Label;
-    // End of variables declaration//GEN-END:variables
+    private JLabel abate4Label;
+    private JLabel qtdeAbate4Label;
+	public javax.swing.JLabel getAbate1Label() {
+		return abate1Label;
+	}
+
+
+
+	public void setAbate1Label(javax.swing.JLabel abate1Label) {
+		this.abate1Label = abate1Label;
+	}
+
+
+
+	public javax.swing.JLabel getAbate2Label() {
+		return abate2Label;
+	}
+
+
+
+	public void setAbate2Label(javax.swing.JLabel abate2Label) {
+		this.abate2Label = abate2Label;
+	}
+
+
+
+	public javax.swing.JLabel getAbate3Label() {
+		return abate3Label;
+	}
+
+
+
+	public void setAbate3Label(javax.swing.JLabel abate3Label) {
+		this.abate3Label = abate3Label;
+	}
+
+
+
+	public javax.swing.JLabel getjLabel37() {
+		return jLabel37;
+	}
+
+
+
+	public void setjLabel37(javax.swing.JLabel jLabel37) {
+		this.jLabel37 = jLabel37;
+	}
+
+
+
+	public javax.swing.JLabel getjLabel39() {
+		return jLabel39;
+	}
+
+
+
+	public void setjLabel39(javax.swing.JLabel jLabel39) {
+		this.jLabel39 = jLabel39;
+	}
+
+
+
+	public javax.swing.JLabel getjLabel40() {
+		return jLabel40;
+	}
+
+
+
+	public void setjLabel40(javax.swing.JLabel jLabel40) {
+		this.jLabel40 = jLabel40;
+	}
+
+
+
+	public javax.swing.JLabel getjLabel41() {
+		return jLabel41;
+	}
+
+
+
+	public void setjLabel41(javax.swing.JLabel jLabel41) {
+		this.jLabel41 = jLabel41;
+	}
+
+
+
+	public javax.swing.JPanel getjPanel11() {
+		return jPanel11;
+	}
+
+
+
+	public void setjPanel11(javax.swing.JPanel jPanel11) {
+		this.jPanel11 = jPanel11;
+	}
+
+
+
+	public javax.swing.JFormattedTextField getOpcaoJFT() {
+		return opcaoJFT;
+	}
+
+
+
+	public void setOpcaoJFT(javax.swing.JFormattedTextField opcaoJFT) {
+		this.opcaoJFT = opcaoJFT;
+	}
+
+
+
+	public javax.swing.JLabel getQtdeAbate1Label() {
+		return qtdeAbate1Label;
+	}
+
+
+
+	public void setQtdeAbate1Label(javax.swing.JLabel qtdeAbate1Label) {
+		this.qtdeAbate1Label = qtdeAbate1Label;
+	}
+
+
+
+	public javax.swing.JLabel getQtdeAbate2Label() {
+		return qtdeAbate2Label;
+	}
+
+
+
+	public void setQtdeAbate2Label(javax.swing.JLabel qtdeAbate2Label) {
+		this.qtdeAbate2Label = qtdeAbate2Label;
+	}
+
+
+
+	public javax.swing.JLabel getQtdeAbate3Label() {
+		return qtdeAbate3Label;
+	}
+
+
+
+	public void setQtdeAbate3Label(javax.swing.JLabel qtdeAbate3Label) {
+		this.qtdeAbate3Label = qtdeAbate3Label;
+	}
+
+
+
+	public JLabel getAbate4Label() {
+		return abate4Label;
+	}
+
+
+
+	public void setAbate4Label(JLabel abate4Label) {
+		this.abate4Label = abate4Label;
+	}
+
+
+
+	public JLabel getQtdeAbate4Label() {
+		return qtdeAbate4Label;
+	}
+
+
+
+	public void setQtdeAbate4Label(JLabel qtdeAbate4Label) {
+		this.qtdeAbate4Label = qtdeAbate4Label;
+	}
 }
