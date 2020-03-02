@@ -85,7 +85,7 @@ public class AbateDAOP {
 				// VERIFICA SE O ANIMAL FOI AVALIADO NO FRIGORÍFICO E PEGA O NUMERO DO INDICE
 				// DELE NA LISTA DE CAMARAS
 				for (int j = 0; j < camaras.size(); j++) {
-					if (camaras.get(j).getNasa() == amostrados.get(i).getNasa()) {
+					if (camaras.get(j).getNasa() == amostrados.get(i).getNasa() && camaras.get(j).getAbate() == amostrados.get(i).getAbate()) {
 						keyCamara = true;
 						camara = new CamaraVOP(camaras.get(j).getAbate(), camaras.get(j).getCamara(), camaras.get(j).getNasa(),
 								camaras.get(j).getpCarcaca(), camaras.get(j).getEscGordura(), camaras.get(j).getEscCarcaca());
@@ -97,7 +97,7 @@ public class AbateDAOP {
 				// VERIFICA SE O ANIMAL FOI AVALIADO NO FRIGORÍFICO E PEGA O NUMERO DO INDICE
 				// DELE NA LISTA DE CONES
 				for (int k = 0; k < cones.size(); k++) {
-					if (cones.get(k).getNasa() == amostrados.get(i).getNasa()) {
+					if (cones.get(k).getNasa() == amostrados.get(i).getNasa()  && cones.get(k).getAbate() == amostrados.get(i).getAbate()) {
 						keyCone = true;
 						cone = new ConeVOP(cones.get(k).getAbate(), cones.get(k).getCamara(), cones.get(k).getNcone(),
 								cones.get(k).getNasa(), cones.get(k).getpGordura(), cones.get(k).getpPeito1(),

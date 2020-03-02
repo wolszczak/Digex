@@ -141,7 +141,7 @@ public class ControllerEscolhaDigST extends KeyAdapter {
 			break;
 		case KeyEvent.VK_2:
 			view.setVisible(false);
-			ControllerConsumoTratosST cl = new ControllerConsumoTratosST(controller);
+			ControllerConsumoTST cl = new ControllerConsumoTST(controller);
 			cl.openWindow(datasFases);
 			break;
 		case KeyEvent.VK_3:

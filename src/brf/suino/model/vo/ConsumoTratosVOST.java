@@ -9,17 +9,15 @@ public class ConsumoTratosVOST implements Serializable {
 	private String data;
 	private int tratos;
 	private List<RmeTratosVOST> consumo;
-	private boolean finalizado;
 
 	public ConsumoTratosVOST() {
 		this.consumo = new ArrayList<>();
 	}
 
-	public ConsumoTratosVOST(String data, int tratos, List<RmeTratosVOST> consumos,  boolean finalizado) {
+	public ConsumoTratosVOST(String data, int tratos, List<RmeTratosVOST> consumos) {
 		this.data = data;
 		this.tratos = tratos;
 		this.consumo = consumos;
-		this.finalizado = finalizado;
 	}
 
 	public String getData() {
@@ -45,18 +43,5 @@ public class ConsumoTratosVOST implements Serializable {
 	public void setConsumo(List<RmeTratosVOST> consumo) {
 		this.consumo = consumo;
 	}
-
-	public boolean isFinalizado() {
-		return finalizado;
-	}
-
-	public void setFinalizado(boolean finalizado) {
-		this.finalizado = finalizado;
-	}
-
-
-	
-	
-
 
 }

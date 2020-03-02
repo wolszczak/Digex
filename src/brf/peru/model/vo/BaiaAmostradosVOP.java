@@ -4,13 +4,16 @@ import java.io.Serializable;
 
 public class BaiaAmostradosVOP implements Serializable {
 	private static final long serialVersionUID = 1L;
-    private int nrBaia;
+	private int abate;
+	private int nrBaia;
     private int nasa;
     private int peso;
     private int idade;
     
-    public BaiaAmostradosVOP(int nrBaia, int nasa, int peso, int idade) {
-        this.nrBaia = nrBaia;
+    
+    public BaiaAmostradosVOP(int abate, int nrBaia, int nasa, int peso, int idade) {
+        this.abate = abate;
+    	this.nrBaia = nrBaia;
         this.nasa = nasa;
         this.peso = peso;
         this.idade = idade;
@@ -49,6 +52,14 @@ public class BaiaAmostradosVOP implements Serializable {
 
 	public void setIdade(int idade) {
 		this.idade = idade;
+	}
+
+	public int getAbate() {
+		return abate;
+	}
+
+	public void setAbate(int abate) {
+		this.abate = abate;
 	}
 
 

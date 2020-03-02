@@ -11,8 +11,8 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JFormattedTextField;
 import javax.swing.SwingConstants;
 
-public class ViewConsumoTratosST extends javax.swing.JFrame {
-	public ViewConsumoTratosST() {
+public class ViewConsumoTratosST_old extends javax.swing.JFrame {
+	public ViewConsumoTratosST_old() {
 		initComponents();
 	}
 
@@ -912,13 +912,13 @@ public class ViewConsumoTratosST extends javax.swing.JFrame {
 				}
 			}
 		} catch (ClassNotFoundException ex) {
-			java.util.logging.Logger.getLogger(ViewConsumoTratosST.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+			java.util.logging.Logger.getLogger(ViewConsumoTratosST_old.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (InstantiationException ex) {
-			java.util.logging.Logger.getLogger(ViewConsumoTratosST.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+			java.util.logging.Logger.getLogger(ViewConsumoTratosST_old.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (IllegalAccessException ex) {
-			java.util.logging.Logger.getLogger(ViewConsumoTratosST.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+			java.util.logging.Logger.getLogger(ViewConsumoTratosST_old.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
-			java.util.logging.Logger.getLogger(ViewConsumoTratosST.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+			java.util.logging.Logger.getLogger(ViewConsumoTratosST_old.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		}
 		// </editor-fold>
 		// </editor-fold>
@@ -940,7 +940,7 @@ public class ViewConsumoTratosST extends javax.swing.JFrame {
 		/* Create and display the form */
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				new ViewConsumoTratosST().setVisible(true);
+				new ViewConsumoTratosST_old().setVisible(true);
 			}
 		});
 	}

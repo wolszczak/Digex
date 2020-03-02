@@ -20,7 +20,7 @@ public class BaiaDAOST {
 	public static final String[] HEADER_MORT = { "BAIA", "SEXO", "TRAT1", "TRAT2", "DATAMO", "BRINCO", "PMORTO", "CAUSA", "FASE" };
 	public static final String[] HEADER_MEDI = { "BAIA", "SEXO", "TRAT1", "TRAT2", "DATAMO", "BRINCO", "MEDICACAO", "CAUSA", "DOSE1",
 			"DOSE2", "DOSE3" };
-	public static final String[] HEADER_CONSL = { "BAIA", "SEXO", "TRAT1", "TRAT2", "DATA", "RACAO" };
+	public static final String[] HEADER_CONSL = { "BAIA", "SEXO", "TRAT1", "TRAT2", "DATA", "CONSUMO" };
 	public static final String[] HEADER_CONST = { "BAIA", "DATA", "TRATOS", "CONSUMO" };
 
 	public static void exportarArquivoMortalidade(InfoExpVOST infoExp, List<BaiaVOST> baias, String localArquivo) throws IOException {

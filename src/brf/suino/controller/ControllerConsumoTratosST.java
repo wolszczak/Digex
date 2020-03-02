@@ -21,13 +21,13 @@ import javax.swing.border.Border;
 import brf.suino.model.bo.ConsumoBOST;
 import brf.suino.model.vo.ConsumoTratosVOST;
 import brf.suino.model.vo.RmeTratosVOST;
-import brf.suino.view.ViewConsumoTratosST;
+import brf.suino.view.ViewConsumoTratosST_old;
 import brf.util.FocusOrderPolicy;
 import brf.util.TextFormatter;
 
 public class ControllerConsumoTratosST extends KeyAdapter implements FocusListener, ItemListener {
 	private final ControllerST controller;
-	private ViewConsumoTratosST view;
+	private ViewConsumoTratosST_old view;
 	private ConsumoBOST consumoBO;
 	private ConsumoTratosVOST ultimoConsumo, consumoHist;
 	private List<RmeTratosVOST> consumosErros, consumoTemp;
@@ -45,7 +45,7 @@ public class ControllerConsumoTratosST extends KeyAdapter implements FocusListen
 		this.datasFases = datasFases;
 		this.consumoTemp = new ArrayList<>();
 		this.consumosErros = new ArrayList<>();
-		view = new ViewConsumoTratosST();
+		view = new ViewConsumoTratosST_old();
 		view.setTitle("DIGEX - Consumo Tratos Suínos Terminação");
 		view.setResizable(false);
 		view.setLocationRelativeTo(null);

@@ -21,6 +21,7 @@ import javax.swing.JFileChooser;
 
 import brf.peru.model.ModelP;
 import brf.peru.model.vo.AbateVOP;
+import brf.peru.model.vo.BaiaAmostradosVOP;
 import brf.peru.model.vo.CamaraVOP;
 import brf.peru.model.vo.DesempenhoVOP;
 import brf.peru.model.vo.ExperimentoVOP;
@@ -85,7 +86,7 @@ public class ModelStateDAOP {
 		}
 		
 		
-//		ExperimentoVOP e = (ExperimentoVOP) obj;
+		ExperimentoVOP e = (ExperimentoVOP) obj;
 //		e.setAbates(new ArrayList<>());
 //		e.getAbates().add(new AbateVOP());
 //		e.getAbates().add(new AbateVOP());
@@ -114,6 +115,18 @@ public class ModelStateDAOP {
 //		e.getAbates().get(3).setCones(new ArrayList<>());
 //		
 //		
+//		for(BaiaAmostradosVOP b : e.getAbates().get(0).getBaiaAmostrados()) {
+//			b.setAbate(1);
+//		}
+//		for(BaiaAmostradosVOP b : e.getAbates().get(1).getBaiaAmostrados()) {
+//			b.setAbate(2);
+//		}
+//		for(BaiaAmostradosVOP b : e.getAbates().get(2).getBaiaAmostrados()) {
+//			b.setAbate(3);
+//		}
+//		for(BaiaAmostradosVOP b : e.getAbates().get(3).getBaiaAmostrados()) {
+//			b.setAbate(4);
+//		}
 //		model.setExperimentoVO(e);
 //		model.getModelStateDAO().saveModelState(false);
 
