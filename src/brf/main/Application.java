@@ -19,10 +19,8 @@ import brf.main.controller.ControllerLogin;
 import brf.peru.model.dao.ModelStateDAOP;
 
 public class Application {
-
-    public static void main(String[] args) {
-        ControllerLogin c = new ControllerLogin();
-        c.openWindow();
-   }
-    
+	public static void main(String[] args) {
+		ControllerLogin c = new ControllerLogin();
+		c.openWindow();
+	}
 }

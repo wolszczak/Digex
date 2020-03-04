@@ -7,6 +7,7 @@ import java.util.List;
 
 import brf.suino.controller.ControllerST;
 import brf.suino.model.vo.ConsumoVOSC;
+import brf.suino.model.vo.RmeTratosVOST;
 import brf.suino.model.vo.ConsumoLivreVOST;
 import brf.util.Utils;
 
@@ -78,12 +79,14 @@ public class ConsumoBOST {
 		return null;
 	}
 
-	public String verificaConsumoTratos(int baia, int consumo) {
-		if (baia == 0 && consumo != 0) {
-			return "Baia não digitada!";
-		}
-		if (baia != 0 && consumo == 0) {
-			return "Consumo não digitado!";
+	public String verificaConsumoTratos(List<RmeTratosVOST> consumoTemp) {
+		for(RmeTratosVOST r : consumoTemp) {
+			if (r.getBaia() == 0 && r.getConsumo() != 0) {
+				return "Baia não digitada!";
+			}
+			if (r.getBaia() != 0 && r.getConsumo()== 0) {
+				return "Consumo não digitado!";
+			}	
 		}
 		return null;
 	}

@@ -126,12 +126,14 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="dataJFT" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="jLabel77" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="tratosJFT" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="dataJFT" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -753,19 +755,19 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="ordemJFT9" alignment="0" pref="34" max="32767" attributes="0"/>
-                                          <Component id="ordemJFT8" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="ordemJFT7" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="ordemJFT6" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="ordemJFT5" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="ordemJFT4" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="ordemJFT3" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="ordemJFT2" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="ordemJFT1" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="ordemJFT0" alignment="1" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="ordemJFT1" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                                          <Component id="ordemJFT2" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                                          <Component id="ordemJFT3" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                                          <Component id="ordemJFT4" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                                          <Component id="ordemJFT5" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                                          <Component id="ordemJFT6" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                                          <Component id="ordemJFT7" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                                          <Component id="ordemJFT8" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                                          <Component id="ordemJFT9" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                                          <Component id="ordemJFT10" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                           <Component id="baiaJFT9" alignment="0" max="32767" attributes="0"/>
                                           <Component id="baiaJFT8" alignment="0" max="32767" attributes="0"/>
@@ -800,7 +802,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jLabel11" pref="58" max="32767" attributes="0"/>
+                                      <Component id="jLabel11" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -823,27 +825,6 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="ordemJFT1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="ordemJFT2" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="ordemJFT3" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="ordemJFT4" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="ordemJFT5" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="ordemJFT6" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="ordemJFT7" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="ordemJFT8" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="ordemJFT9" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="ordemJFT0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
                                   <Group type="102" attributes="0">
                                       <Component id="baiaJFT1" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -892,6 +873,28 @@
                                       </Group>
                                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                   </Group>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="ordemJFT1" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="ordemJFT2" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="ordemJFT3" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="ordemJFT4" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="ordemJFT5" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="ordemJFT6" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="ordemJFT7" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="ordemJFT8" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="ordemJFT9" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="ordemJFT10" min="-2" pref="20" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -907,126 +910,6 @@
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="text" type="java.lang.String" value="Ordem"/>
                       </Properties>
-                    </Component>
-                    <Component class="javax.swing.JFormattedTextField" name="ordemJFT1">
-                      <Properties>
-                        <Property name="editable" type="boolean" value="false"/>
-                        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                          <Format format="#" subtype="-1" type="5"/>
-                        </Property>
-                        <Property name="horizontalAlignment" type="int" value="0"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ordemJFT1ActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JFormattedTextField" name="ordemJFT2">
-                      <Properties>
-                        <Property name="editable" type="boolean" value="false"/>
-                        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                          <Format format="#" subtype="-1" type="5"/>
-                        </Property>
-                        <Property name="horizontalAlignment" type="int" value="0"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ordemJFT2ActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JFormattedTextField" name="ordemJFT3">
-                      <Properties>
-                        <Property name="editable" type="boolean" value="false"/>
-                        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                          <Format format="#" subtype="-1" type="5"/>
-                        </Property>
-                        <Property name="horizontalAlignment" type="int" value="0"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ordemJFT3ActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JFormattedTextField" name="ordemJFT4">
-                      <Properties>
-                        <Property name="editable" type="boolean" value="false"/>
-                        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                          <Format format="#" subtype="-1" type="5"/>
-                        </Property>
-                        <Property name="horizontalAlignment" type="int" value="0"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ordemJFT4ActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JFormattedTextField" name="ordemJFT5">
-                      <Properties>
-                        <Property name="editable" type="boolean" value="false"/>
-                        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                          <Format format="#" subtype="-1" type="5"/>
-                        </Property>
-                        <Property name="horizontalAlignment" type="int" value="0"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ordemJFT5ActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JFormattedTextField" name="ordemJFT0">
-                      <Properties>
-                        <Property name="editable" type="boolean" value="false"/>
-                        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                          <Format format="#" subtype="-1" type="5"/>
-                        </Property>
-                        <Property name="horizontalAlignment" type="int" value="0"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ordemJFT0ActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JFormattedTextField" name="ordemJFT9">
-                      <Properties>
-                        <Property name="editable" type="boolean" value="false"/>
-                        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                          <Format format="#" subtype="-1" type="5"/>
-                        </Property>
-                        <Property name="horizontalAlignment" type="int" value="0"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ordemJFT9ActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JFormattedTextField" name="ordemJFT8">
-                      <Properties>
-                        <Property name="editable" type="boolean" value="false"/>
-                        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                          <Format format="#" subtype="-1" type="5"/>
-                        </Property>
-                        <Property name="horizontalAlignment" type="int" value="0"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ordemJFT8ActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JFormattedTextField" name="ordemJFT7">
-                      <Properties>
-                        <Property name="editable" type="boolean" value="false"/>
-                        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                          <Format format="#" subtype="-1" type="5"/>
-                        </Property>
-                        <Property name="horizontalAlignment" type="int" value="0"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ordemJFT7ActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JFormattedTextField" name="ordemJFT6">
-                      <Properties>
-                        <Property name="editable" type="boolean" value="false"/>
-                        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                          <Format format="#" subtype="-1" type="5"/>
-                        </Property>
-                        <Property name="horizontalAlignment" type="int" value="0"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ordemJFT6ActionPerformed"/>
-                      </Events>
                     </Component>
                     <Component class="javax.swing.JFormattedTextField" name="baiaJFT1">
                       <Properties>
@@ -1306,6 +1189,96 @@
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="controleJFTActionPerformed"/>
                       </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="ordemJFT1">
+                      <Properties>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                            <BevelBorder bevelType="1"/>
+                          </Border>
+                        </Property>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="ordemJFT7">
+                      <Properties>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                            <BevelBorder bevelType="1"/>
+                          </Border>
+                        </Property>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="ordemJFT2">
+                      <Properties>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                            <BevelBorder bevelType="1"/>
+                          </Border>
+                        </Property>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="ordemJFT8">
+                      <Properties>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                            <BevelBorder bevelType="1"/>
+                          </Border>
+                        </Property>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="ordemJFT5">
+                      <Properties>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                            <BevelBorder bevelType="1"/>
+                          </Border>
+                        </Property>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="ordemJFT9">
+                      <Properties>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                            <BevelBorder bevelType="1"/>
+                          </Border>
+                        </Property>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="ordemJFT6">
+                      <Properties>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                            <BevelBorder bevelType="1"/>
+                          </Border>
+                        </Property>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="ordemJFT4">
+                      <Properties>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                            <BevelBorder bevelType="1"/>
+                          </Border>
+                        </Property>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="ordemJFT3">
+                      <Properties>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                            <BevelBorder bevelType="1"/>
+                          </Border>
+                        </Property>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="ordemJFT10">
+                      <Properties>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                            <BevelBorder bevelType="1"/>
+                          </Border>
+                        </Property>
+                      </Properties>
                     </Component>
                   </SubComponents>
                 </Container>
