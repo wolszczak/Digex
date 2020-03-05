@@ -30,7 +30,7 @@ public class ControllerConsumoTST extends KeyAdapter implements FocusListener, I
 	private ViewConsumoTST view;
 	private ConsumoBOST consumoBO;
 	private ConsumoTratosVOST ultimoConsumo, consumoHist;
-	private List<RmeTratosVOST> consumosErros, consumoTemp;
+	private List<RmeTratosVOST> consumoTemp;
 	private int ordem;
 	private List<String> datasFases;
 	private List<Component> order, orderHist;
@@ -44,7 +44,6 @@ public class ControllerConsumoTST extends KeyAdapter implements FocusListener, I
 	public void openWindow(List<String> datasFases) {
 		this.datasFases = datasFases;
 		this.consumoTemp = new ArrayList<>();
-		this.consumosErros = new ArrayList<>();
 		view = new ViewConsumoTST();
 		view.setTitle("DIGEX - Consumo Tratos Suínos Terminação");
 		view.setResizable(false);
@@ -339,7 +338,6 @@ public class ControllerConsumoTST extends KeyAdapter implements FocusListener, I
 						view.getPnlConsT().setBorder(defaultBorder);
 						consumoTemp = new ArrayList<>();
 						atualizarHistorico();
-						updateOrdem();
 						view.getControleJFT().setText("00000");
 						view.getControleJFT().setEnabled(false);
 						view.getBaiaJFT1().setEnabled(true);
@@ -353,7 +351,7 @@ public class ControllerConsumoTST extends KeyAdapter implements FocusListener, I
 								break;
 							}
 						}
-						if(index != null ) {
+						if (index != null) {
 							controller.getModel().getExperimentoVO().getConsumosTratos().get(index).getConsumo().addAll(consumoTemp);
 						} else {
 							ConsumoTratosVOST novoconsumo = new ConsumoTratosVOST();
@@ -367,14 +365,12 @@ public class ControllerConsumoTST extends KeyAdapter implements FocusListener, I
 						consumoTemp = new ArrayList<>();
 						view.getPnlConsT().setBorder(defaultBorder);
 						atualizarHistorico();
-						updateOrdem();
 						view.getControleJFT().setText("000000");
 						view.getControleJFT().setEnabled(false);
 						view.getBaiaJFT1().setEnabled(true);
 						view.getBaiaJFT1().grabFocus();
 					}
 				} else {
-					consumosErros.addAll(consumoTemp);
 					consumoTemp = new ArrayList<>();
 					view.getConsumoJFT10().setEnabled(false);
 					view.getBaiaJFT1().setEnabled(true);
@@ -493,38 +489,42 @@ public class ControllerConsumoTST extends KeyAdapter implements FocusListener, I
 	}
 
 	private void atualizarHistorico() {
-		view.getOrdemHist1().setText(view.getOrdemJFT1().getText());
-		view.getOrdemHist2().setText(view.getOrdemJFT2().getText());
-		view.getOrdemHist3().setText(view.getOrdemJFT3().getText());
-		view.getOrdemHist4().setText(view.getOrdemJFT4().getText());
-		view.getOrdemHist5().setText(view.getOrdemJFT5().getText());
-		view.getOrdemHist6().setText(view.getOrdemJFT6().getText());
-		view.getOrdemHist7().setText(view.getOrdemJFT7().getText());
-		view.getOrdemHist8().setText(view.getOrdemJFT8().getText());
-		view.getOrdemHist9().setText(view.getOrdemJFT9().getText());
-		view.getOrdemHist10().setText(view.getOrdemJFT10().getText());
-		view.getBaiaHist1().setText(view.getBaiaJFT1().getText());
-		view.getBaiaHist2().setText(view.getBaiaJFT2().getText());
-		view.getBaiaHist3().setText(view.getBaiaJFT3().getText());
-		view.getBaiaHist4().setText(view.getBaiaJFT4().getText());
-		view.getBaiaHist5().setText(view.getBaiaJFT5().getText());
-		view.getBaiaHist6().setText(view.getBaiaJFT6().getText());
-		view.getBaiaHist7().setText(view.getBaiaJFT7().getText());
-		view.getBaiaHist8().setText(view.getBaiaJFT8().getText());
-		view.getBaiaHist9().setText(view.getBaiaJFT9().getText());
-		view.getBaiaHist10().setText(view.getBaiaJFT10().getText());
-		view.getConsumoHist1().setText(view.getConsumoJFT1().getText());
-		view.getConsumoHist2().setText(view.getConsumoJFT2().getText());
-		view.getConsumoHist3().setText(view.getConsumoJFT3().getText());
-		view.getConsumoHist4().setText(view.getConsumoJFT4().getText());
-		view.getConsumoHist5().setText(view.getConsumoJFT5().getText());
-		view.getConsumoHist6().setText(view.getConsumoJFT6().getText());
-		view.getConsumoHist7().setText(view.getConsumoJFT7().getText());
-		view.getConsumoHist8().setText(view.getConsumoJFT8().getText());
-		view.getConsumoHist9().setText(view.getConsumoJFT9().getText());
-		view.getConsumoHist10().setText(view.getConsumoJFT10().getText());
+		for (ConsumoTratosVOST c : controller.getModel().getExperimentoVO().getConsumosTratos()) {
+			if (c.getData().equals(view.getDataJFT().getText())) {
+				ultimoConsumo = c;
+				break;
+			}
+		}
 
-		// TODO adicionar ordem
+		if (ultimoConsumo.getConsumo().size() < 10) {
+			for (int z = 1; z <= ultimoConsumo.getConsumo().size(); z++) {
+				JLabel lbl1 = (JLabel) orderHist.get(0);
+				lbl1.setText(String.valueOf(ultimoConsumo.getConsumo().get(ultimoConsumo.getConsumo().size() - z).getOrdem()).trim());
+				orderHist.remove(0);
+				JLabel lbl2 = (JLabel) orderHist.get(0);
+				lbl2.setText(String.valueOf(ultimoConsumo.getConsumo().get(ultimoConsumo.getConsumo().size() - z).getBaia()).trim());
+				orderHist.remove(0);
+				JLabel lbl3 = (JLabel) orderHist.get(0);
+				lbl3.setText(String.valueOf(ultimoConsumo.getConsumo().get(ultimoConsumo.getConsumo().size() - z).getConsumo()).trim());
+				orderHist.remove(0);
+			}
+		} else {
+			for (int z = 1; z <= 10; z++) {
+				JLabel lbl1 = (JLabel) orderHist.get(0);
+				lbl1.setText(String.valueOf(ultimoConsumo.getConsumo().get(ultimoConsumo.getConsumo().size() - z).getOrdem()).trim());
+				orderHist.remove(0);
+				JLabel lbl2 = (JLabel) orderHist.get(0);
+				lbl2.setText(String.valueOf(ultimoConsumo.getConsumo().get(ultimoConsumo.getConsumo().size() - z).getBaia()).trim());
+				orderHist.remove(0);
+				JLabel lbl3 = (JLabel) orderHist.get(0);
+				lbl3.setText(String.valueOf(ultimoConsumo.getConsumo().get(ultimoConsumo.getConsumo().size() - z).getConsumo()).trim());
+				orderHist.remove(0);
+			}
+		}
+		criarOrdemComponentesHist();
+		ordem = ultimoConsumo.getConsumo().size();
+		updateOrdem();
+
 		view.getBaiaJFT1().setText("");
 		view.getBaiaJFT2().setText("");
 		view.getBaiaJFT3().setText("");
