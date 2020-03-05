@@ -324,8 +324,6 @@ public class ControllerConsumoTST extends KeyAdapter implements FocusListener, I
 				if (Integer.parseInt(view.getBaiaJFT1().getText()) == 0 && Integer.parseInt(view.getConsumoJFT1().getText()) == 0
 						&& Integer.parseInt(view.getControleJFT().getText()) == 0) {
 					view.getControleJFT().setEnabled(false);
-					view.getOpcaoJFT().setEnabled(true);
-					view.getOpcaoJFT().grabFocus();
 				} else if (Integer.parseInt(view.getControleJFT().getText()) == calculaControleConsumo()) {
 					if (controller.getModel().getExperimentoVO().getConsumosTratos().isEmpty()) {
 						ConsumoTratosVOST novoconsumo = new ConsumoTratosVOST();
@@ -575,32 +573,7 @@ public class ControllerConsumoTST extends KeyAdapter implements FocusListener, I
 	@Override
 	public void keyPressed(KeyEvent e) {
 		Object src = e.getSource();
-		if ((JFormattedTextField) e.getSource() == view.getOpcaoJFT()) {
-			switch (e.getKeyChar()) {
-			case KeyEvent.VK_0:
-				int n = JOptionPane.showConfirmDialog(view, "Deseja realmente sair do programa?", "DIGEX - Sair", JOptionPane.YES_NO_OPTION,
-						JOptionPane.WARNING_MESSAGE);
-				if (n == 0) {
-					System.out.println("Fim...");
-					System.exit(0);
-				}
-				break;
-			case KeyEvent.VK_1:
-				view.getRegistrosLabel().setVisible(true);
-				limparTela();
-				ordem = 1;
-//				view.getOrdemJFT().setText(String.valueOf(ordem));
-				view.getOpcaoJFT().setText("");
-				view.getOpcaoJFT().setEnabled(false);
-				view.getTratosJFT().setText("0");
-				view.getTratosJFT().setEnabled(false);
-				view.getDataJFT().setText("00/00/0000");
-				view.getDataJFT().setEnabled(true);
-				view.getDataJFT().grabFocus();
-				break;
-			}
-		}
-		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(view.getOpcaoJFT()) && !e.getSource().equals(view.getDataJFT())) {
+		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(view.getDataJFT())) {
 			System.out.println("left");
 			Component prev = view.getFocusTraversalPolicy().getComponentBefore(view, (JFormattedTextField) src);
 			((JFormattedTextField) src).setEnabled(false);
@@ -735,7 +708,6 @@ public class ControllerConsumoTST extends KeyAdapter implements FocusListener, I
 		order.add(view.getConsumoJFT9());
 		order.add(view.getConsumoJFT10());
 		order.add(view.getControleJFT());
-		order.add(view.getOpcaoJFT());
 
 		FocusOrderPolicy newPolicy = new FocusOrderPolicy(order);
 		view.setFocusTraversalPolicy(newPolicy);

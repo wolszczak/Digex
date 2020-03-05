@@ -83,7 +83,7 @@ public class ModelStateDAOST {
 			c.printStackTrace();
 			return false;
 		}
-//		ExperimentoVOST e = (ExperimentoVOST) obj;
+		ExperimentoVOST e = (ExperimentoVOST) obj;
 //		List<PCRVOST> pcrs = new ArrayList<>();
 //		List<CostadoVOST> costados = new ArrayList<>();
 //		List<BarrigaVOST> barrigas = new ArrayList<>();
@@ -129,8 +129,9 @@ public class ModelStateDAOST {
 //		e.setMortalidade(new ArrayList<MortalidadeVOST>());
 //		e.setMedicados(new ArrayList<MedicadosVOST>());
 //		e.setConsumoLivre(new ArrayList<>());
-//		model.setExperimentoVO(e);
-//		saveModelState(false);
+		e.setConsumosTratos(new ArrayList<>());
+		model.setExperimentoVO(e);
+		saveModelState(false);
 		model.setExperimentoVO((ExperimentoVOST) obj);
 		return true;
 	}
