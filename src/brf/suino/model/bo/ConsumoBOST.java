@@ -88,6 +88,13 @@ public class ConsumoBOST {
 				return "Consumo não digitado!";
 			}	
 		}
+		for(int i = 0; i < consumoTemp.size(); i++) {
+			for(int j = 1; j < consumoTemp.size(); j++) {
+				if(consumoTemp.get(i).getBaia() == consumoTemp.get(j).getBaia()) {
+					return "Baias Repetidas!";
+				}
+			}
+		}
 		return null;
 	}
 

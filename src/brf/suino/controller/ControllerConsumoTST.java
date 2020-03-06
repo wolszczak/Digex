@@ -161,8 +161,39 @@ public class ControllerConsumoTST extends KeyAdapter implements FocusListener, I
 				if (msg != null) {
 					JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
 				} else {
-					carregarHistData();
-
+					ConsumoTratosVOST consumo = null;
+					int index = 0;
+					for (int i = 0; i < controller.getModel().getExperimentoVO().getConsumosTratos().size(); i++) {
+						if (view.getDataJFT().getText().equals(controller.getModel().getExperimentoVO().getConsumosTratos().get(i).getData())) {
+							consumo = new ConsumoTratosVOST();
+							consumo = controller.getModel().getExperimentoVO().getConsumosTratos().get(i);
+							index = i;
+							break;
+						}
+					}
+					if (consumo != null) {
+						int option = JOptionPane.showConfirmDialog(view, "Baia já digitada. Deseja digitar novamente?", "DIGEX - Voltar",
+								JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+						if (option == 0) {
+							controller.getModel().getExperimentoVO().getConsumosTratos().get(index).setConsumo( new ArrayList<>());
+							controller.getModel().getModelStateDAO().saveModelState(false);
+							limparTela();
+							ordem = 0;
+							updateOrdem();
+							view.getDataJFT().setEnabled(false);
+							view.getTratosJFT().setEnabled(true);
+							view.getTratosJFT().grabFocus();
+						} else {
+							view.getDataJFT().grabFocus();
+						}
+					} else {
+						limparTela();
+						ordem = 0;
+						updateOrdem();
+						view.getDataJFT().setEnabled(false);
+						view.getTratosJFT().setEnabled(true);
+						view.getTratosJFT().grabFocus();
+					}
 				}
 			} else if (e.getSource() == view.getTratosJFT()) {
 				TextFormatter.formatStringJFT(src, view.getTratosJFT().getText().trim(), 1);
