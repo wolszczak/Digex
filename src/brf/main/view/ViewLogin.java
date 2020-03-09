@@ -71,7 +71,7 @@ public class ViewLogin extends javax.swing.JFrame {
 
         jLabel2.setText("Digitação de Dados das Granjas Experimentais.");
 
-        jLabel4.setText("v2.1.010_teste");
+        jLabel4.setText("v2.2");
 
         try {
             idDigitadorJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
@@ -84,25 +84,21 @@ public class ViewLogin extends javax.swing.JFrame {
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1Layout.setHorizontalGroup(
-        	jPanel1Layout.createParallelGroup(Alignment.LEADING)
+        	jPanel1Layout.createParallelGroup(Alignment.TRAILING)
         		.addGroup(jPanel1Layout.createSequentialGroup()
-        			.addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING)
+        			.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
+        			.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+        				.addComponent(jLabel3)
+        				.addComponent(jLabel2)
         				.addGroup(jPanel1Layout.createSequentialGroup()
-        					.addContainerGap()
-        					.addComponent(jLabel4, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE))
-        				.addGroup(Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-        					.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        					.addGap(6)
+        					.addComponent(jLabel1)
         					.addPreferredGap(ComponentPlacement.UNRELATED)
-        					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-        						.addComponent(jLabel3)
-        						.addComponent(jLabel2)
-        						.addGroup(jPanel1Layout.createSequentialGroup()
-        							.addGap(6)
-        							.addComponent(jLabel1)
-        							.addPreferredGap(ComponentPlacement.UNRELATED)
-        							.addComponent(idDigitadorJFT, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-        							.addGap(28)
-        							.addComponent(iniciarProgramaBTN)))))
+        					.addComponent(idDigitadorJFT, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        					.addGap(28)
+        					.addComponent(iniciarProgramaBTN))
+        				.addComponent(jLabel4, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE))
         			.addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -120,9 +116,9 @@ public class ViewLogin extends javax.swing.JFrame {
         				.addComponent(jLabel1)
         				.addComponent(idDigitadorJFT, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
         				.addComponent(iniciarProgramaBTN))
-        			.addPreferredGap(ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+        			.addGap(18)
         			.addComponent(jLabel4)
-        			.addContainerGap())
+        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1.setLayout(jPanel1Layout);
 
