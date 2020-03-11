@@ -86,22 +86,28 @@ public class ControllerPCRST extends KeyAdapter implements FocusListener, ItemLi
 					view.getDataJFT().grabFocus();
 					limparTela();
 				} else {
-					String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagem1JFT().getText()), "PCR");
-					if (msg == null) {
+					if (Integer.parseInt(view.getTatuagem1JFT().getText()) != 0) {
+						String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagem1JFT().getText()), "PCR");
+						if (msg == null) {
+							view.getTatuagem1JFT().setEnabled(false);
+							view.getTatuagem2JFT().setEnabled(true);
+							view.getTatuagem2JFT().grabFocus();
+						} else if (msg.equals("INEXISTENTE")) {
+							msg = "tatuagem digitada não existe no arquivo de frigorífico";
+							JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+						} else if (msg.equals("DUPLICADA")) {
+							msg = "Tatuagem nº" + view.getTatuagem1JFT().getText() + " já foi digitada.";
+							JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+						}
+					} else {
 						view.getTatuagem1JFT().setEnabled(false);
 						view.getTatuagem2JFT().setEnabled(true);
 						view.getTatuagem2JFT().grabFocus();
-					} else if (msg.equals("INEXISTENTE")) {
-						msg = "tatuagem digitada não existe no arquivo de frigorífico";
-						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
-					} else if (msg.equals("DUPLICADA")) {
-						msg = "Tatuagem nº" + view.getTatuagem1JFT().getText() + " já foi digitada.";
-						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
 					}
 				}
 			} else if ((JFormattedTextField) e.getSource() == view.getTatuagem2JFT()) {
 				TextFormatter.formatStringJFT(view.getTatuagem2JFT(), view.getTatuagem2JFT().getText(), 4);
-				if (Integer.parseInt(view.getTatuagem1JFT().getText()) == 9999) {
+				if (Integer.parseInt(view.getTatuagem2JFT().getText()) == 9999) {
 					view.getTatuagem2JFT().setText(" ");
 					view.getTatuagem2JFT().setEnabled(false);
 					view.getDataJFT().setEnabled(true);
@@ -109,17 +115,23 @@ public class ControllerPCRST extends KeyAdapter implements FocusListener, ItemLi
 					view.getDataJFT().grabFocus();
 					limparTela();
 				} else {
-					String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagem2JFT().getText()), "PCR");
-					if (msg == null) {
+					if (Integer.parseInt(view.getTatuagem2JFT().getText()) != 0) {
+						String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagem2JFT().getText()), "PCR");
+						if (msg == null) {
+							view.getTatuagem2JFT().setEnabled(false);
+							view.getTatuagem3JFT().setEnabled(true);
+							view.getTatuagem3JFT().grabFocus();
+						} else if (msg.equals("INEXISTENTE")) {
+							msg = "Tatuagem nº" + view.getTatuagem2JFT().getText() + " já foi digitada.";
+							JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+						} else if (msg.equals("DUPLICADA")) {
+							msg = "tatuagem não encontrada não existe no arquivo de frigorífico";
+							JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+						}
+					} else {
 						view.getTatuagem2JFT().setEnabled(false);
 						view.getTatuagem3JFT().setEnabled(true);
 						view.getTatuagem3JFT().grabFocus();
-					} else if (msg.equals("INEXISTENTE")) {
-						msg = "Tatuagem nº" + view.getTatuagem2JFT().getText() + " já foi digitada.";
-						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
-					} else if (msg.equals("DUPLICADA")) {
-						msg = "tatuagem não encontrada não existe no arquivo de frigorífico";
-						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
 					}
 				}
 			} else if ((JFormattedTextField) e.getSource() == view.getTatuagem3JFT()) {
@@ -132,17 +144,23 @@ public class ControllerPCRST extends KeyAdapter implements FocusListener, ItemLi
 					view.getDataJFT().grabFocus();
 					limparTela();
 				} else {
-					String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagem3JFT().getText()), "PCR");
-					if (msg == null) {
+					if (Integer.parseInt(view.getTatuagem3JFT().getText()) != 0) {
+						String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagem3JFT().getText()), "PCR");
+						if (msg == null) {
+							view.getTatuagem3JFT().setEnabled(false);
+							view.getEtpaquim1JFT().setEnabled(true);
+							view.getEtpaquim1JFT().grabFocus();
+						} else if (msg.equals("INEXISTENTE")) {
+							msg = "Tatuagem nº" + view.getTatuagem3JFT().getText() + " já foi digitada.";
+							JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+						} else if (msg.equals("DUPLICADA")) {
+							msg = "tatuagem não encontrada não existe no arquivo de frigorífico";
+							JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+						}
+					} else {
 						view.getTatuagem3JFT().setEnabled(false);
 						view.getEtpaquim1JFT().setEnabled(true);
 						view.getEtpaquim1JFT().grabFocus();
-					} else if (msg.equals("INEXISTENTE")) {
-						msg = "Tatuagem nº" + view.getTatuagem3JFT().getText() + " já foi digitada.";
-						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
-					} else if (msg.equals("DUPLICADA")) {
-						msg = "tatuagem não encontrada não existe no arquivo de frigorífico";
-						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
 					}
 				}
 			} else if ((JFormattedTextField) e.getSource() == view.getEtpaquim1JFT()) {
