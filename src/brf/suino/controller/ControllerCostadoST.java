@@ -88,9 +88,18 @@ public class ControllerCostadoST extends KeyAdapter implements FocusListener, It
 					view.getDataJFT().grabFocus();
 					limparTela();
 				} else {
-					view.getTatuagem1JFT().setEnabled(false);
-					view.getTatuagem2JFT().setEnabled(true);
-					view.getTatuagem2JFT().grabFocus();
+					String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagem1JFT().getText()), "COSTADO");
+					if (msg == null) {
+						view.getTatuagem1JFT().setEnabled(false);
+						view.getTatuagem2JFT().setEnabled(true);
+						view.getTatuagem2JFT().grabFocus();
+					} else if (msg.equals("INEXISTENTE")) {
+						msg = "tatuagem digitada não existe no arquivo de frigorífico";
+						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+					} else if (msg.equals("DUPLICADA")) {
+						msg = "Tatuagem nº" + view.getTatuagem1JFT().getText() + " já foi digitada.";
+						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+					}
 				}
 			} else if ((JFormattedTextField) e.getSource() == view.getTatuagem2JFT()) {
 				TextFormatter.formatStringJFT(view.getTatuagem2JFT(), view.getTatuagem2JFT().getText(), 4);
@@ -102,9 +111,18 @@ public class ControllerCostadoST extends KeyAdapter implements FocusListener, It
 					view.getDataJFT().grabFocus();
 					limparTela();
 				} else {
-					view.getTatuagem2JFT().setEnabled(false);
-					view.getTatuagem3JFT().setEnabled(true);
-					view.getTatuagem3JFT().grabFocus();
+					String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagem2JFT().getText()), "COSTADO");
+					if (msg == null) {
+						view.getTatuagem2JFT().setEnabled(false);
+						view.getTatuagem3JFT().setEnabled(true);
+						view.getTatuagem3JFT().grabFocus();
+					} else if (msg.equals("INEXISTENTE")) {
+						msg = "Tatuagem nº" + view.getTatuagem2JFT().getText() + " já foi digitada.";
+						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+					} else if (msg.equals("DUPLICADA")) {
+						msg = "tatuagem não encontrada não existe no arquivo de frigorífico";
+						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+					}
 				}
 			} else if ((JFormattedTextField) e.getSource() == view.getTatuagem3JFT()) {
 				TextFormatter.formatStringJFT(view.getTatuagem3JFT(), view.getTatuagem3JFT().getText(), 4);
@@ -116,9 +134,18 @@ public class ControllerCostadoST extends KeyAdapter implements FocusListener, It
 					view.getDataJFT().grabFocus();
 					limparTela();
 				} else {
-					view.getTatuagem3JFT().setEnabled(false);
-					view.getPeso1JFT().setEnabled(true);
-					view.getPeso1JFT().grabFocus();
+					String msg = bo.verificaTatuagem(Integer.parseInt(view.getTatuagem3JFT().getText()), "COSTADO");
+					if (msg == null) {
+						view.getTatuagem3JFT().setEnabled(false);
+						view.getPeso1JFT().setEnabled(true);
+						view.getPeso1JFT().grabFocus();
+					} else if (msg.equals("INEXISTENTE")) {
+						msg = "Tatuagem nº" + view.getTatuagem3JFT().getText() + " já foi digitada.";
+						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+					} else if (msg.equals("DUPLICADA")) {
+						msg = "tatuagem não encontrada não existe no arquivo de frigorífico";
+						JOptionPane.showMessageDialog(view, "Problema(s):\n" + msg, "DIGEX - Erro", JOptionPane.ERROR_MESSAGE);
+					}
 				}
 			} else if ((JFormattedTextField) e.getSource() == view.getPeso1JFT()) {
 				TextFormatter.formatStringJFT(view.getPeso1JFT(), view.getPeso1JFT().getText(), 5);
@@ -253,29 +280,29 @@ public class ControllerCostadoST extends KeyAdapter implements FocusListener, It
 					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getCostado().get(index).getCoslombo()));
 			view.getReta3Hist().setText(
 					String.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getCostado().get(index).getCosreta()));
-			view.getTatuagem3Hist().setText(String
+			view.getTatuagem2Hist().setText(String
 					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getCostado().get(index - 1).getTatuagem()));
-			view.getPeso3Hist().setText(String
+			view.getPeso2Hist().setText(String
 					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getCostado().get(index - 1).getCospeso()));
-			view.getOsste3Hist().setText(String
+			view.getOsste2Hist().setText(String
 					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getCostado().get(index - 1).getCocosste()));
-			view.getPelgo3Hist().setText(String
+			view.getPelgo2Hist().setText(String
 					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getCostado().get(index - 1).getCospelgo()));
-			view.getLombo3Hist().setText(String
+			view.getLombo2Hist().setText(String
 					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getCostado().get(index - 1).getCoslombo()));
-			view.getReta3Hist().setText(String
+			view.getReta2Hist().setText(String
 					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getCostado().get(index - 1).getCosreta()));
-			view.getTatuagem3Hist().setText(String
+			view.getTatuagem1Hist().setText(String
 					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getCostado().get(index - 2).getTatuagem()));
-			view.getPeso3Hist().setText(String
+			view.getPeso1Hist().setText(String
 					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getCostado().get(index - 2).getCospeso()));
-			view.getOsste3Hist().setText(String
+			view.getOsste1Hist().setText(String
 					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getCostado().get(index - 2).getCocosste()));
-			view.getPelgo3Hist().setText(String
+			view.getPelgo1Hist().setText(String
 					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getCostado().get(index - 2).getCospelgo()));
-			view.getLombo3Hist().setText(String
+			view.getLombo1Hist().setText(String
 					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getCostado().get(index - 2).getCoslombo()));
-			view.getReta3Hist().setText(String
+			view.getReta1Hist().setText(String
 					.valueOf(controller.getModel().getExperimentoVO().getFrigorificoTempVOST().getCostado().get(index - 2).getCosreta()));
 		} else {
 			limparTela();

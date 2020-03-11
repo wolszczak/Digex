@@ -67,6 +67,7 @@ public class ModelStateDAOST {
 		System.out.println("Serialized data is saved in " + localArquivo);
 	}
 
+	@SuppressWarnings("unused")
 	public boolean loadModelState(String localArquivo) {
 		Object obj = null;
 		try {
@@ -129,9 +130,9 @@ public class ModelStateDAOST {
 //		e.setMortalidade(new ArrayList<MortalidadeVOST>());
 //		e.setMedicados(new ArrayList<MedicadosVOST>());
 //		e.setConsumoLivre(new ArrayList<>());
-		e.setConsumosTratos(new ArrayList<>());
-		model.setExperimentoVO(e);
-		saveModelState(false);
+//		e.setConsumosTratos(new ArrayList<>());
+//		model.setExperimentoVO(e);
+//		saveModelState(false);
 		model.setExperimentoVO((ExperimentoVOST) obj);
 		return true;
 	}
