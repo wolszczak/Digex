@@ -84,47 +84,17 @@ public class ModelStateDAOST {
 			c.printStackTrace();
 			return false;
 		}
-		ExperimentoVOST e = (ExperimentoVOST) obj;
-//		List<PCRVOST> pcrs = new ArrayList<>();
-//		List<CostadoVOST> costados = new ArrayList<>();
-//		List<BarrigaVOST> barrigas = new ArrayList<>();
-//		List<PernilVOST> pernis = new ArrayList<>();
-//		List<PaletaVOST> paletas = new ArrayList<>();
-//		pcrs.addAll(e.getFrigorificoTempVOST().getPcr());
-//		costados.addAll(e.getFrigorificoTempVOST().getCostado());
-//		barrigas.addAll(e.getFrigorificoTempVOST().getBarriga());
-//		pernis.addAll(e.getFrigorificoTempVOST().getPernil());
-//		paletas.addAll(e.getFrigorificoTempVOST().getPaleta());
-//		e.getFrigorificoTempVOST().setBarriga(new ArrayList<>());
-//		e.getFrigorificoTempVOST().setPernil(new ArrayList<>());
-//		e.getFrigorificoTempVOST().setCostado(new ArrayList<>());
-//		e.getFrigorificoTempVOST().setPcr(new ArrayList<>());
-//		e.getFrigorificoTempVOST().setPaleta(new ArrayList<>());
-//		for (PCRVOST pcr : pcrs) {
-//			if(pcr.getTatuagem() != 0) {
-//				e.getFrigorificoTempVOST().getPcr().add(pcr);
+//		ExperimentoVOST e = (ExperimentoVOST) obj;
+//		
+//		for(int z = e.getFrigorificoTempVOST().getCostado().size() -1; z >= 0; z--) {
+//			if(e.getFrigorificoTempVOST().getCostado().get(z).getTatuagem() == 823 || e.getFrigorificoTempVOST().getCostado().get(z).getTatuagem() == 824) {
+//				e.getFrigorificoTempVOST().getCostado().remove(z);	
 //			}
 //		}
-//		for (PaletaVOST pcr : paletas) {
-//			if(pcr.getTatuagem() != 0) {
-//				e.getFrigorificoTempVOST().getPaleta().add(pcr);
-//			}
-//		}
-//		for (PernilVOST pcr : pernis) {
-//			if(pcr.getTatuagem() != 0) {
-//				e.getFrigorificoTempVOST().getPernil().add(pcr);
-//			}
-//		}
-//		for (CostadoVOST pcr : costados) {
-//			if(pcr.getTatuagem() != 0) {
-//				e.getFrigorificoTempVOST().getCostado().add(pcr);
-//			}
-//		}
-//		for (BarrigaVOST pcr : barrigas) {
-//			if(pcr.getTatuagem() != 0) {
-//				e.getFrigorificoTempVOST().getBarriga().add(pcr);
-//			}
-//		}
+//		
+//		
+//		System.out.println(e.getFrigorificoTempVOST().getCostado().size());
+		
 //		e.setFrigorificoTempVOST(new FrigorificoTempVOST());
 //		e.setBaias(new ArrayList<>());
 //		e.setMortalidade(new ArrayList<MortalidadeVOST>());
