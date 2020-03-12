@@ -1,11 +1,5 @@
 package brf.suino.model;
 
-import brf.peru.model.bo.AbateBOP;
-import brf.peru.model.bo.InfoExpBOP;
-import brf.peru.model.dao.ModelStateDAOP;
-import brf.peru.model.vo.AbateVOP;
-import brf.peru.model.vo.ExperimentoVOP;
-import brf.peru.model.vo.InfoExpVOP;
 import brf.suino.model.bo.InfoExpBOSC;
 import brf.suino.model.dao.ModelStateDAOSC;
 import brf.suino.model.vo.ExperimentoVOSC;

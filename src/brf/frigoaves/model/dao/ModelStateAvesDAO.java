@@ -15,13 +15,13 @@ import javax.swing.JFileChooser;
 
 import brf.frango.model.ModelF;
 import brf.frango.model.vo.ExperimentoVOF;
-import brf.frigoaves.model.ModelAves;
+import brf.frigoaves.model.ModelFrigoAves;
 
 public class ModelStateAvesDAO {
-    private final ModelAves model;
+    private final ModelFrigoAves model;
     private Object obj;
     
-    public ModelStateAvesDAO(ModelAves model) {
+    public ModelStateAvesDAO(ModelFrigoAves model) {
         this.model = model;
         obj = null;
     }

@@ -3,11 +3,11 @@ package brf.frigoaves.model;
 import brf.frigoaves.model.dao.ModelStateAvesDAO;
 import brf.frigoaves.model.vo.FrigorificoAvesVO;
 
-public class ModelAves {
+public class ModelFrigoAves {
 	private ModelStateAvesDAO modelStateDAO;
-	private FrigorificoAvesVO frigorifico;
+	private FrigorificoAvesVO avaliacao;
 
-	public ModelAves() {
+	public ModelFrigoAves() {
 		modelStateDAO = new ModelStateAvesDAO(this);
 	}
 
@@ -16,11 +16,11 @@ public class ModelAves {
 	}
 
 	public FrigorificoAvesVO getFrigorifico() {
-		return frigorifico;
+		return avaliacao;
 	}
 
 	public void setFrigorifico(FrigorificoAvesVO frigorifico) {
-		this.frigorifico = frigorifico;
+		this.avaliacao = frigorifico;
 	}
 
 	public void setModelStateDAO(ModelStateAvesDAO modelStateDAO) {

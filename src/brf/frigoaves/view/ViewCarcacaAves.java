@@ -1,4 +1,4 @@
-package brf.suino.view;
+package brf.frigoaves.view;
 
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;

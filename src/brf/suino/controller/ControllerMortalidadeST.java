@@ -91,12 +91,12 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 //						}
 //					}
 //				} else {
-					if (ultimaBaia.getMortalidades() != null) {
-						loadMortalidadesHist(ultimaBaia);
-					}
-					if (ultimaBaia.getMedicados() != null) {
-						loadMedicadosHist(ultimaBaia);
-					}
+				if (ultimaBaia.getMortalidades() != null) {
+					loadMortalidadesHist(ultimaBaia);
+				}
+				if (ultimaBaia.getMedicados() != null) {
+					loadMedicadosHist(ultimaBaia);
+				}
 //				}
 				view.getBaiaJFT().setEnabled(false);
 				view.getOpcaoJFT().setEnabled(true);
@@ -198,14 +198,14 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 		view.getTrataJFT().setText("00");
 		view.getTrata2JFT().setText("00");
 		view.getTrata3JFT().setText("00");
-		view.getControleBaiaJFT().setText("0000");
+		view.getControleBaiaJFT().setText("0000000");
 
 		view.getDataMortJFT().setText("00/00/0000");
 		view.getBrincoMortJFT().setText("0000");
 		view.getPesoJFT().setText("000000");
 		view.getFaseMortJFT().setText("0");
 		view.getCausaMortJFT().setText("00");
-		view.getControleMortJFT().setText("000000");
+		view.getControleMortJFT().setText("0000000");
 		view.getDataMediJFT().setText("00/00/0000");
 		view.getBrincoMediJFT().setText("0000");
 		view.getMedicamentoJFT().setText("00");
@@ -213,7 +213,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 		view.getDose1JFT().setText("000");
 		view.getDose2JFT().setText("000");
 		view.getDose3JFT().setText("000");
-		view.getControleMediJFT().setText("000000");
+		view.getControleMediJFT().setText("00000000");
 
 		view.getBaiaJFT().setEnabled(true);
 		view.getBaiaJFT().grabFocus();
@@ -550,7 +550,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 				}
 			} else if ((JFormattedTextField) e.getSource() == view.getControleBaiaJFT()) {
 				view.getControleBaiaJFT().setEnabled(false);
-				TextFormatter.formatStringJFT(src, text, 4);
+				TextFormatter.formatStringJFT(src, text, 7);
 
 				if (bo.isBaiaDigitada(Integer.parseInt(view.getBaiaJFT().getText()))) {
 					int option = JOptionPane.showConfirmDialog(view, "Baia já digitada.\nDeseja digitar novamente?", "DIGEX - Aviso",
@@ -626,16 +626,16 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 				view.getControleMortJFT().setEnabled(true);
 				view.getControleMortJFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getControleMortJFT()) {
-				TextFormatter.formatStringJFT(src, text, 6);
 				if (view.getDataMortJFT().getText().equals("00/00/0000") && view.getBrincoMortJFT().getText().equals("0000")
 						&& view.getPesoJFT().getText().equals("000000") && view.getFaseMortJFT().getText().equals("0")
 						&& view.getCausaMortJFT().getText().equals("00")) {
+					TextFormatter.formatStringJFT(src, text, 7);
 					view.getControleMortJFT().setEnabled(false);
 					view.getOpcaoJFT().setEnabled(true);
 					view.getOpcaoJFT().setText("");
 					view.getOpcaoJFT().grabFocus();
 				} else {
-					if (Integer.parseInt(view.getControleMortJFT().getText()) == calculaControleMortJFT()) {
+					if (Integer.parseInt(view.getControleMortJFT().getText().trim()) == calculaControleMortJFT()) {
 						if (controller.getModel().getExperimentoVO().getBaias()
 								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMortalidades() != null) {
 							controller.getModel().getExperimentoVO().getBaias()
@@ -656,6 +656,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 											Integer.parseInt(view.getFaseMortJFT().getText().trim()),
 											Integer.parseInt(view.getCausaMortJFT().getText().trim())));
 						}
+						TextFormatter.formatStringJFT(src, text, 7);
 						controller.getModel().getModelStateDAO().saveModelState(false);
 						view.getDataMortJFT().setEnabled(true);
 						view.getDataMortJFT().grabFocus();
@@ -665,6 +666,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 						view.getRegistrosMortLabel().setVisible(true);
 						view.getPnlMortalidade().setBorder(defaultBorder);
 					} else {
+						TextFormatter.formatStringJFT(src, text, 7);
 						fluxoErroControleMort();
 						view.getPnlMortalidade().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
 					}
@@ -712,17 +714,17 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 				view.getControleMediJFT().setEnabled(true);
 				view.getControleMediJFT().grabFocus();
 			} else if ((JFormattedTextField) e.getSource() == view.getControleMediJFT()) {
-				TextFormatter.formatStringJFT(src, text, 6);
 				if (view.getDataMediJFT().getText().equals("00/00/0000") && view.getBrincoMediJFT().getText().equals("0000")
 						&& view.getCausaMediJFT().getText().equals("00") && view.getMedicamentoJFT().getText().equals("00")
 						&& view.getDose1JFT().getText().equals("000") && view.getDose2JFT().getText().equals("000")
-						&& view.getDose3JFT().getText().equals("000") && view.getControleMediJFT().getText().trim().equals("000000")) {
+						&& view.getDose3JFT().getText().equals("000") && view.getControleMediJFT().getText().trim().equals("00000000")) {
+					TextFormatter.formatStringJFT(src, text, 8);
 					view.getControleMediJFT().setEnabled(false);
 					view.getOpcaoJFT().setEnabled(true);
 					view.getOpcaoJFT().setText("");
 					view.getOpcaoJFT().grabFocus();
 				} else {
-					if (Integer.parseInt(view.getControleMediJFT().getText()) == calculaControleMediJFT()) {
+					if (Integer.parseInt(view.getControleMediJFT().getText().trim()) == calculaControleMediJFT()) {
 						if (controller.getModel().getExperimentoVO().getBaias()
 								.get(controller.getModel().getExperimentoVO().getBaias().size() - 1).getMedicados() != null) {
 							controller.getModel().getExperimentoVO().getBaias()
@@ -749,6 +751,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 											Integer.parseInt(view.getDose2JFT().getText().trim()),
 											Integer.parseInt(view.getDose3JFT().getText().trim())));
 						}
+						TextFormatter.formatStringJFT(src, text, 8);
 						controller.getModel().getModelStateDAO().saveModelState(false);
 						ordemMedi++;
 						updateHistMedi();
@@ -757,6 +760,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 						view.getDataMediJFT().setEnabled(true);
 						view.getDataMediJFT().grabFocus();
 					} else {
+						TextFormatter.formatStringJFT(src, text, 8);
 						fluxoErroControleMedi();
 						view.getPnlMedicados().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
 					}
@@ -892,7 +896,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 		view.getDose1JFT().setText("000");
 		view.getDose2JFT().setText("000");
 		view.getDose3JFT().setText("000");
-		view.getControleMediJFT().setText("000000");
+		view.getControleMediJFT().setText("00000000");
 
 		view.getBrincoMediJFT().setEnabled(false);
 		view.getMedicamentoJFT().setEnabled(false);
@@ -919,7 +923,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 	private Integer calculaControleMortJFT() {
 		int soma = 0;
 		String[] split = view.getDataMortJFT().getText().split("/");
-		soma += Integer.parseInt(split[0] + split[1] + split[2].replace("20", ""));
+		soma += Integer.parseInt(split[0] + split[1] + split[2]);
 		soma += Integer.parseInt(view.getBrincoMortJFT().getText());
 		soma += Integer.parseInt(view.getPesoJFT().getText());
 		soma += Integer.parseInt(view.getFaseMortJFT().getText());
@@ -930,7 +934,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 	private Integer calculaControleMediJFT() {
 		int soma = 0;
 		String[] split = view.getDataMediJFT().getText().split("/");
-		soma += Integer.parseInt(split[0] + split[1] + split[2].replace("20", ""));
+		soma += Integer.parseInt(split[0] + split[1] + split[2]);
 		soma += Integer.parseInt(view.getBrincoMediJFT().getText());
 		soma += Integer.parseInt(view.getMedicamentoJFT().getText());
 		soma += Integer.parseInt(view.getCausaMediJFT().getText());
