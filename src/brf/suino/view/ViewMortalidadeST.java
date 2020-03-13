@@ -397,7 +397,7 @@ public class ViewMortalidadeST extends javax.swing.JFrame {
 
 		try {
 			controleMortJFT
-					.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#######")));
+					.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}

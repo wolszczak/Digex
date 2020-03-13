@@ -4,14 +4,14 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FrigorificoAvesVO implements Serializable {
+public class AvaliacaoAvesVO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private List<PlataformaAvesVO> plataformas;
 	private List<CarcacaAvesVO> carcacas;
 	private List<PartesAvesVO> partes;
 
-	public FrigorificoAvesVO() {
+	public AvaliacaoAvesVO() {
 		this.plataformas = new ArrayList<>();
 		this.carcacas = new ArrayList<>();
 		this.partes = new ArrayList<>();

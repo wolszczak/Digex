@@ -205,7 +205,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 		view.getPesoJFT().setText("000000");
 		view.getFaseMortJFT().setText("0");
 		view.getCausaMortJFT().setText("00");
-		view.getControleMortJFT().setText("0000000");
+		view.getControleMortJFT().setText("00000000");
 		view.getDataMediJFT().setText("00/00/0000");
 		view.getBrincoMediJFT().setText("0000");
 		view.getMedicamentoJFT().setText("00");
@@ -629,7 +629,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 				if (view.getDataMortJFT().getText().equals("00/00/0000") && view.getBrincoMortJFT().getText().equals("0000")
 						&& view.getPesoJFT().getText().equals("000000") && view.getFaseMortJFT().getText().equals("0")
 						&& view.getCausaMortJFT().getText().equals("00")) {
-					TextFormatter.formatStringJFT(src, text, 7);
+					TextFormatter.formatStringJFT(src, text, 8);
 					view.getControleMortJFT().setEnabled(false);
 					view.getOpcaoJFT().setEnabled(true);
 					view.getOpcaoJFT().setText("");
@@ -656,7 +656,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 											Integer.parseInt(view.getFaseMortJFT().getText().trim()),
 											Integer.parseInt(view.getCausaMortJFT().getText().trim())));
 						}
-						TextFormatter.formatStringJFT(src, text, 7);
+						TextFormatter.formatStringJFT(src, text, 8);
 						controller.getModel().getModelStateDAO().saveModelState(false);
 						view.getDataMortJFT().setEnabled(true);
 						view.getDataMortJFT().grabFocus();
@@ -666,7 +666,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 						view.getRegistrosMortLabel().setVisible(true);
 						view.getPnlMortalidade().setBorder(defaultBorder);
 					} else {
-						TextFormatter.formatStringJFT(src, text, 7);
+						TextFormatter.formatStringJFT(src, text, 8);
 						fluxoErroControleMort();
 						view.getPnlMortalidade().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
 					}
@@ -825,7 +825,7 @@ public class ControllerMortalidadeST extends KeyAdapter implements FocusListener
 		view.getPesoJFT().setText("000000");
 		view.getFaseMortJFT().setText("0");
 		view.getCausaMortJFT().setText("00");
-		view.getControleMortJFT().setText("000000");
+		view.getControleMortJFT().setText("00000000");
 
 		view.getBrincoMortJFT().setEnabled(false);
 		view.getPesoJFT().setEnabled(false);

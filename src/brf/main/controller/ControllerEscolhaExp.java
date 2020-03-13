@@ -11,6 +11,8 @@ import javax.swing.JOptionPane;
 
 import brf.frango.controller.ControllerF;
 import brf.frango.model.ModelF;
+import brf.frigoaves.controller.ControllerFrigoAves;
+import brf.frigoaves.model.ModelFrigoAves;
 import brf.main.view.ViewEscolhaExp;
 import brf.peru.controller.ControllerP;
 import brf.peru.model.ModelP;
@@ -27,11 +29,13 @@ public class ControllerEscolhaExp extends KeyAdapter {
 	private ControllerF cf;
 	private ModelP mp;
 	private ControllerP cp;
-	boolean frango, peru, suinoCreche, suinoTerminacao;
+	boolean frango, peru, suinoCreche, suinoTerminacao, frigoAves;
 	private ModelSC msc;
 	private ControllerSC csc;
 	private ModelST mst;
 	private ControllerST cst;
+	private ModelFrigoAves mfa;
+	private ControllerFrigoAves cfa;
 
 	public void openWindow(String idDigitador) {
 		viewEscolhaExp = new ViewEscolhaExp();
@@ -49,6 +53,8 @@ public class ControllerEscolhaExp extends KeyAdapter {
 		csc = new ControllerSC(msc, idDigitador);
 		mst = new ModelST();
 		cst = new ControllerST(mst, idDigitador);
+		mfa = new ModelFrigoAves();
+		cfa = new ControllerFrigoAves(mfa, idDigitador);
 	}
 
 	public void resumeWindow() {
@@ -138,6 +144,11 @@ public class ControllerEscolhaExp extends KeyAdapter {
 			viewEscolhaExp.setVisible(false);
 			cst.startModuloSuino();
 			System.out.println("SUÍNO TERMINAÇÃO");
+			break;
+		case KeyEvent.VK_5:
+			viewEscolhaExp.setVisible(false);
+			cfa.startEscolhaDig();
+			System.out.println("FRIGORIFICO AVES");
 			break;
 		case KeyEvent.VK_9:
 			viewEscolhaExp.setVisible(false);

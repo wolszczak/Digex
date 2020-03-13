@@ -69,6 +69,9 @@ public class ViewEscolhaExp extends javax.swing.JFrame {
         
         JLabel lblSuno = new JLabel();
         lblSuno.setText("4 - Suíno Terminação");
+        
+        JLabel lblAvaliao = new JLabel();
+        lblAvaliao.setText("5 - Avaliação Frigorífico Aves");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2Layout.setHorizontalGroup(
@@ -76,15 +79,18 @@ public class ViewEscolhaExp extends javax.swing.JFrame {
         		.addGroup(jPanel2Layout.createSequentialGroup()
         			.addContainerGap()
         			.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+        				.addComponent(lblAvaliao, GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
         				.addGroup(jPanel2Layout.createSequentialGroup()
         					.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
-        						.addComponent(jLabel1)
-        						.addComponent(jLabel2)
-        						.addComponent(jLabel3))
-        					.addGap(0, 82, Short.MAX_VALUE))
-        				.addComponent(jLabel6, GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
-        				.addComponent(lblSuno, GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE))
-        			.addContainerGap())
+        						.addGroup(jPanel2Layout.createSequentialGroup()
+        							.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+        								.addComponent(jLabel1)
+        								.addComponent(jLabel2)
+        								.addComponent(jLabel3))
+        							.addGap(0, 82, Short.MAX_VALUE))
+        						.addComponent(jLabel6, GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
+        						.addComponent(lblSuno, GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE))
+        					.addContainerGap())))
         );
         jPanel2Layout.setVerticalGroup(
         	jPanel2Layout.createParallelGroup(Alignment.LEADING)
@@ -98,7 +104,9 @@ public class ViewEscolhaExp extends javax.swing.JFrame {
         			.addComponent(jLabel3)
         			.addPreferredGap(ComponentPlacement.RELATED)
         			.addComponent(lblSuno)
-        			.addContainerGap(12, Short.MAX_VALUE))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(lblAvaliao)
+        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2.setLayout(jPanel2Layout);
 
@@ -108,8 +116,8 @@ public class ViewEscolhaExp extends javax.swing.JFrame {
         		.addGroup(jPanel1Layout.createSequentialGroup()
         			.addContainerGap()
         			.addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING)
-        				.addComponent(jPanel2, GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
-        				.addGroup(jPanel1Layout.createSequentialGroup()
+        				.addComponent(jPanel2, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+        				.addGroup(Alignment.LEADING, jPanel1Layout.createSequentialGroup()
         					.addGap(0, 132, Short.MAX_VALUE)
         					.addComponent(jLabel5)
         					.addPreferredGap(ComponentPlacement.RELATED)
@@ -127,8 +135,8 @@ public class ViewEscolhaExp extends javax.swing.JFrame {
         	jPanel1Layout.createParallelGroup(Alignment.LEADING)
         		.addGroup(jPanel1Layout.createSequentialGroup()
         			.addContainerGap()
-        			.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, 112, GroupLayout.PREFERRED_SIZE)
-        			.addPreferredGap(ComponentPlacement.UNRELATED)
+        			.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.RELATED)
         			.addComponent(retomarExpLabel)
         			.addPreferredGap(ComponentPlacement.RELATED)
         			.addComponent(jLabel4)
