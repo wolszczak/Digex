@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 import brf.frigoaves.model.vo.PlataformaAvesVO;
 import brf.frigoaves.view.ViewPlataformaAves;
 import brf.util.FocusOrderPolicy;
+import brf.util.TextFormatter;
 
 public class ControllerPlataformaAves extends KeyAdapter implements FocusListener {
 
@@ -21,6 +22,8 @@ public class ControllerPlataformaAves extends KeyAdapter implements FocusListene
 	private List<PlataformaAvesVO> plataformasTemp;
 	private ViewPlataformaAves view;
 	private List<Component> order;
+	private String data, nome;
+	private int contrato, instal, carga, horaIni, horaFim;
 
 	public void openWindow(String idDigitador) {
 		this.idDigitador = idDigitador;
@@ -55,7 +58,6 @@ public class ControllerPlataformaAves extends KeyAdapter implements FocusListene
 		order.add(view.getPesoJFT3());
 		order.add(view.getPesoJFT4());
 		order.add(view.getPesoJFT5());
-		order.add(view.getOpcaoJFT());
 
 		FocusOrderPolicy newPolicy = new FocusOrderPolicy(order);
 		view.setFocusTraversalPolicy(newPolicy);
@@ -84,7 +86,6 @@ public class ControllerPlataformaAves extends KeyAdapter implements FocusListene
 	@Override
 	public void keyTyped(KeyEvent e) {
 		switch (e.getKeyChar()) {
-		case KeyEvent.VK_9:
 		case KeyEvent.VK_ESCAPE:
 			int option = JOptionPane.showConfirmDialog(view, "Deseja realmente voltar para tela de escolha de experimento?",
 					"DIGEX - Voltar", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
@@ -95,6 +96,69 @@ public class ControllerPlataformaAves extends KeyAdapter implements FocusListene
 				System.out.println("Voltar");
 			}
 			break;
+		case KeyEvent.VK_ENTER:
+			if((JFormattedTextField) e.getSource() == view.getDataJFT()) {
+				TextFormatter.formatStringJFT(view.getDataJFT(), view.getDataJFT().getText(), 8);
+				data = view.getDataJFT().getText();
+				view.getDataJFT().setEnabled(false);
+				view.getNomeJFT().setEnabled(true);
+				view.getNomeJFT().grabFocus();
+			}else if((JFormattedTextField) e.getSource() == view.getNomeJFT()) {
+				nome = view.getNomeJFT().getText();
+				view.getNomeJFT().setEnabled(false);
+				view.getContratoJFT().setEnabled(true);
+				view.getContratoJFT().grabFocus();
+			}else if((JFormattedTextField) e.getSource() == view.getContratoJFT()) {
+				contrato = Integer.parseInt(view.getContratoJFT().getText());
+				view.getContratoJFT().setEnabled(false);
+				view.getInstalJFT().setEnabled(true);
+				view.getInstalJFT().grabFocus();
+			}else if((JFormattedTextField) e.getSource() == view.getInstalJFT()) {
+				instal = Integer.parseInt(view.getInstalJFT().getText());
+				view.getInstalJFT().setEnabled(false);
+				view.getCargaJFT().setEnabled(true);
+				view.getCargaJFT().grabFocus();
+			}else if((JFormattedTextField) e.getSource() == view.getCargaJFT()) {
+				carga = Integer.parseInt(view.getCargaJFT().getText());
+				view.getCargaJFT().setEnabled(false);
+				view.getHoraIniJFT().setEnabled(true);
+				view.getHoraIniJFT().grabFocus();
+			}else if((JFormattedTextField) e.getSource() == view.getHoraIniJFT()) {
+				horaIni = Integer.parseInt(view.getHoraIniJFT().getText());
+				view.getHoraIniJFT().setEnabled(false);
+				view.getHoraFinJFT().setEnabled(true);
+				view.getHoraFinJFT().grabFocus();
+			}else if((JFormattedTextField) e.getSource() == view.getHoraFinJFT()) {
+				horaFim = Integer.parseInt(view.getHoraFinJFT().getText());
+				view.getHoraFinJFT().setEnabled(false);
+				limparCabecalho();
+				view.getCargaJFT().setEnabled(true);
+				view.getCargaJFT().grabFocus();
+			}
+			break;
+		}
+	}
+
+	private void limparCabecalho() {
+		view.getDataJFT().setText("");
+		view.getNomeJFT().setText("");
+		view.getContratoJFT().setText("");
+		view.getInstalJFT().setText("");
+		view.getCargaJFT().setText("");
+		view.getHoraIniJFT().setText("");
+		view.getHoraFinJFT().setText("");
+	}
+	
+	
+	@Override
+	public void keyPressed(KeyEvent e) {
+		Object src = e.getSource();
+		if (e.getKeyCode() == KeyEvent.VK_LEFT && !e.getSource().equals(view.getDataJFT())) {
+			System.out.println("left");
+			Component prev = view.getFocusTraversalPolicy().getComponentBefore(view, (JFormattedTextField) src);
+			((JFormattedTextField) src).setEnabled(false);
+			prev.setEnabled(true);
+			((JFormattedTextField) prev).grabFocus();
 		}
 	}
 
