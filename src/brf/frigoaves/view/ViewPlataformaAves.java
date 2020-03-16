@@ -93,7 +93,7 @@ public class ViewPlataformaAves extends javax.swing.JFrame {
 
 		jLabel46.setText("Contrato");
 		try {
-			contratoJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+			contratoJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##########")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -132,7 +132,7 @@ public class ViewPlataformaAves extends javax.swing.JFrame {
 
 		jLabel49.setText("Hora Inicial");
 		try {
-			horaIniJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+			horaIniJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##:##")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}
@@ -145,7 +145,7 @@ public class ViewPlataformaAves extends javax.swing.JFrame {
 
 		jLabel52.setText("Hora Final");
 		try {
-			horaFinJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
+			horaFinJFT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##:##")));
 		} catch (java.text.ParseException ex) {
 			ex.printStackTrace();
 		}

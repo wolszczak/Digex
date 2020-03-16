@@ -6,13 +6,13 @@ public class infoAvesVO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String data;
 	private String nome;
-	private int contrato;
+	private String contrato;
 	private int instal;
 	private int carga;
 	private int horaini;
 	private int horafin;
 
-	public infoAvesVO(String data, String nome, int contrato, int instal, int carga, int horaini, int horafin) {
+	public infoAvesVO(String data, String nome, String contrato, int instal, int carga, int horaini, int horafin) {
 		this.data = data;
 		this.nome = nome;
 		this.contrato = contrato;
@@ -42,11 +42,11 @@ public class infoAvesVO implements Serializable {
 		this.nome = nome;
 	}
 
-	public int getContrato() {
+	public String getContrato() {
 		return contrato;
 	}
 
-	public void setContrato(int contrato) {
+	public void setContrato(String contrato) {
 		this.contrato = contrato;
 	}
 

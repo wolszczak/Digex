@@ -1,20 +1,27 @@
 package brf.frigoaves.controller;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.BorderFactory;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 
+import com.opencsv.CSVReader;
+
 import brf.frigoaves.model.vo.PlataformaAvesVO;
+import brf.frigoaves.model.vo.infoAvesVO;
 import brf.frigoaves.view.ViewPlataformaAves;
 import brf.util.FocusOrderPolicy;
 import brf.util.TextFormatter;
+import javafx.scene.layout.Border;
 
 public class ControllerPlataformaAves extends KeyAdapter implements FocusListener {
 
@@ -22,17 +29,19 @@ public class ControllerPlataformaAves extends KeyAdapter implements FocusListene
 	private List<PlataformaAvesVO> plataformasTemp;
 	private ViewPlataformaAves view;
 	private List<Component> order;
-	private String data, nome;
-	private int contrato, instal, carga, horaIni, horaFim;
+	private boolean duplaDigitacao;
+	private infoAvesVO info1, info2;
+	private javax.swing.border.Border defaultBorder;
 
 	public void openWindow(String idDigitador) {
-		this.idDigitador = idDigitador;
 		view = new ViewPlataformaAves();
 		view.setTitle("DIGEX - Digitação dados plataforma");
 		view.setResizable(false);
 		view.setLocationRelativeTo(null);
 		view.setVisible(true);
-
+		this.idDigitador = idDigitador;
+		this.duplaDigitacao = false;
+		this.defaultBorder = view.getBaiaJP().getBorder();
 		criarOrdemComponentes();
 
 		view.getDataJFT().setEnabled(true);
@@ -97,43 +106,65 @@ public class ControllerPlataformaAves extends KeyAdapter implements FocusListene
 			}
 			break;
 		case KeyEvent.VK_ENTER:
-			if((JFormattedTextField) e.getSource() == view.getDataJFT()) {
+			if ((JFormattedTextField) e.getSource() == view.getDataJFT()) {
 				TextFormatter.formatStringJFT(view.getDataJFT(), view.getDataJFT().getText(), 8);
-				data = view.getDataJFT().getText();
 				view.getDataJFT().setEnabled(false);
 				view.getNomeJFT().setEnabled(true);
 				view.getNomeJFT().grabFocus();
-			}else if((JFormattedTextField) e.getSource() == view.getNomeJFT()) {
-				nome = view.getNomeJFT().getText();
+			} else if ((JFormattedTextField) e.getSource() == view.getNomeJFT()) {
 				view.getNomeJFT().setEnabled(false);
 				view.getContratoJFT().setEnabled(true);
 				view.getContratoJFT().grabFocus();
-			}else if((JFormattedTextField) e.getSource() == view.getContratoJFT()) {
-				contrato = Integer.parseInt(view.getContratoJFT().getText());
+			} else if ((JFormattedTextField) e.getSource() == view.getContratoJFT()) {
+				TextFormatter.formatStringJFT(view.getContratoJFT(), view.getContratoJFT().getText(), 10);
 				view.getContratoJFT().setEnabled(false);
 				view.getInstalJFT().setEnabled(true);
 				view.getInstalJFT().grabFocus();
-			}else if((JFormattedTextField) e.getSource() == view.getInstalJFT()) {
-				instal = Integer.parseInt(view.getInstalJFT().getText());
+			} else if ((JFormattedTextField) e.getSource() == view.getInstalJFT()) {
+				TextFormatter.formatStringJFT(view.getInstalJFT(), view.getInstalJFT().getText(), 1);
 				view.getInstalJFT().setEnabled(false);
 				view.getCargaJFT().setEnabled(true);
 				view.getCargaJFT().grabFocus();
-			}else if((JFormattedTextField) e.getSource() == view.getCargaJFT()) {
-				carga = Integer.parseInt(view.getCargaJFT().getText());
+			} else if ((JFormattedTextField) e.getSource() == view.getCargaJFT()) {
+				TextFormatter.formatStringJFT(view.getCargaJFT(), view.getCargaJFT().getText(), 1);
 				view.getCargaJFT().setEnabled(false);
 				view.getHoraIniJFT().setEnabled(true);
 				view.getHoraIniJFT().grabFocus();
-			}else if((JFormattedTextField) e.getSource() == view.getHoraIniJFT()) {
-				horaIni = Integer.parseInt(view.getHoraIniJFT().getText());
+			} else if ((JFormattedTextField) e.getSource() == view.getHoraIniJFT()) {
 				view.getHoraIniJFT().setEnabled(false);
 				view.getHoraFinJFT().setEnabled(true);
 				view.getHoraFinJFT().grabFocus();
-			}else if((JFormattedTextField) e.getSource() == view.getHoraFinJFT()) {
-				horaFim = Integer.parseInt(view.getHoraFinJFT().getText());
+			} else if ((JFormattedTextField) e.getSource() == view.getHoraFinJFT()) {
 				view.getHoraFinJFT().setEnabled(false);
-				limparCabecalho();
-				view.getCargaJFT().setEnabled(true);
-				view.getCargaJFT().grabFocus();
+				if (!duplaDigitacao) {
+					info1 = new infoAvesVO(view.getDataJFT().getText(), view.getNomeJFT().getText(), view.getContratoJFT().getText(),
+							Integer.parseInt(view.getInstalJFT().getText()), Integer.parseInt(view.getCargaJFT().getText()),
+							Integer.parseInt(view.getHoraIniJFT().getText().replace(":", "")),
+							Integer.parseInt(view.getHoraFinJFT().getText().replace(":", "")));
+					limparCabecalho();
+					view.getHoraFinJFT().setEnabled(false);
+					view.getDataJFT().setEnabled(true);
+					view.getDataJFT().grabFocus();
+					duplaDigitacao = true;
+				} else {
+					infoAvesVO info2 = new infoAvesVO(view.getDataJFT().getText(), view.getNomeJFT().getText(),
+							view.getContratoJFT().getText(), Integer.parseInt(view.getInstalJFT().getText()),
+							Integer.parseInt(view.getCargaJFT().getText()),
+							Integer.parseInt(view.getHoraIniJFT().getText().replace(":", "")),
+							Integer.parseInt(view.getHoraFinJFT().getText().replace(":", "")));
+					if (info1.equals(info2)) {
+						view.getHoraFinJFT().setEnabled(false);
+						view.getNumeroJFT1().setEnabled(true);
+						view.getNumeroJFT1().grabFocus();
+						view.getBaiaJP().setBorder(defaultBorder);
+					} else {
+						view.getBaiaJP().setBorder(BorderFactory.createLineBorder(Color.RED, 2));
+						view.getHoraFinJFT().setEnabled(false);
+						view.getDataJFT().setEnabled(true);
+						view.getDataJFT().grabFocus();
+					}
+				}
+
 			}
 			break;
 		}
@@ -148,8 +179,7 @@ public class ControllerPlataformaAves extends KeyAdapter implements FocusListene
 		view.getHoraIniJFT().setText("");
 		view.getHoraFinJFT().setText("");
 	}
-	
-	
+
 	@Override
 	public void keyPressed(KeyEvent e) {
 		Object src = e.getSource();

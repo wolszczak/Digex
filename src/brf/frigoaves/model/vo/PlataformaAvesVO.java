@@ -16,7 +16,6 @@ public class PlataformaAvesVO implements Serializable {
 	private int peso;
 
 	public PlataformaAvesVO(String data, String nome, int contrato, int instal, String cor, int carga, int horaIni, int horaFim, int numero, int peso) {
-		super();
 		this.data = data;
 		this.nome = nome;
 		this.contrato = contrato;
